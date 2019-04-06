@@ -25,4 +25,4 @@
 [Apache Commons Codec](http://commons.apache.org/proper/commons-codec/)(1.11)
 
 
-[Gson] (https://github.com/google/gson)(2.8.5)(未正式使用)
+[Gson](https://github.com/google/gson)(2.8.5) (未正式使用)
