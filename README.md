@@ -11,7 +11,8 @@
 ## 截图:
 
 
-［还没有截图！］
+
+[![N|Solid](https://github.com/Het7230/iamgeLib/raw/master/n1.PNG)]
 
 
 
@@ -22,3 +23,6 @@
 
 
 [Apache Commons Codec](http://commons.apache.org/proper/commons-codec/)(1.11)
+
+
+[Gson] (https://github.com/google/gson)(2.8.5)(未正式使用)

@@ -6,7 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af52816d-3d8d-420e-823c-b3961a36b72e" name="Default" comment="" />
+    <list default="true" id="af52816d-3d8d-420e-823c-b3961a36b72e" name="Default" comment=".">
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/UICtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/UICtrl.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,80 +26,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProgramMain.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProgramMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2601">
-              <caret line="251" column="53" selection-start-line="251" selection-start-column="53" selection-end-line="251" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="595">
+              <caret line="494" selection-start-line="494" selection-end-line="494" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UICtrl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UICtrl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-288">
-              <caret line="417" lean-forward="true" selection-start-line="417" selection-end-line="417" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="releaseData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/releaseData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="104">
+              <caret line="235" column="23" selection-start-line="235" selection-start-column="23" selection-end-line="235" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1299#3553#0" expanded="true" />
+                <element signature="e#3552#3553#0" expanded="true" />
+                <element signature="e#3675#6164#0" expanded="true" />
+                <element signature="e#6163#6164#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UIFileData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/sourcesData/UIFileData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="3" column="5153" selection-start-line="3" selection-start-column="5153" selection-end-line="3" selection-end-column="5153" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="img1Data_1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/sourcesData/img1Data_1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="img1Data_2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/sourcesData/img1Data_2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="3" column="47810" selection-start-line="3" selection-start-column="47810" selection-end-line="3" selection-end-column="47810" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="img1Data.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/sourcesData/img1Data.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/sourcesData/backData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -186,44 +141,38 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="DM_msater" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DM_msater" type="462c0819:PsiDirectoryNode" />
+              <item name="DM_master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DM_master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DM_msater" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DM_msater" type="462c0819:PsiDirectoryNode" />
+              <item name="DM_master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DM_master" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DM_msater" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DM_msater" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="commons-codec-1.11.jar" type="ab9368bb:PsiFileNode" />
-            </path>
-            <path>
-              <item name="DM_msater" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DM_msater" type="462c0819:PsiDirectoryNode" />
+              <item name="DM_master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DM_master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DM_msater" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DM_msater" type="462c0819:PsiDirectoryNode" />
+              <item name="DM_master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DM_master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DM_msater" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DM_master" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -340,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549187527767</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=".">
+      <created>1554547676146</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554547676146</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -349,30 +305,50 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.325887" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.325887" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32325888" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298292" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32325888" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21388888" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22638889" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2759527" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2759527" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298292" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32325888" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2759527" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.30354795" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.325887" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21388888" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -564,9 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -580,18 +553,21 @@
     <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/scene/Node.java" />
     <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2601">
-          <caret line="251" column="53" selection-start-line="251" selection-start-column="53" selection-end-line="251" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="595">
+          <caret line="494" selection-start-line="494" selection-end-line="494" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="417" lean-forward="true" selection-start-line="417" selection-end-line="417" />
+        <state relative-caret-position="104">
+          <caret line="235" column="23" selection-start-line="235" selection-start-column="23" selection-end-line="235" selection-end-column="23" />
+          <folding>
+            <element signature="e#1299#3553#0" expanded="true" />
+            <element signature="e#3552#3553#0" expanded="true" />
+            <element signature="e#3675#6164#0" expanded="true" />
+            <element signature="e#6163#6164#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
