@@ -12,7 +12,7 @@
 
 
 
-[![N|Solid](https://github.com/Het7230/iamgeLib/raw/master/n1.PNG)]
+![N|Solid](https://github.com/Het7230/iamgeLib/raw/master/n1.PNG)
 
 
 
