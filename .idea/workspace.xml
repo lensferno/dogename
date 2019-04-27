@@ -7,14 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af52816d-3d8d-420e-823c-b3961a36b72e" name="Default" comment=".">
-      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/UICtrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DM_msater/main/UICtrl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/httpclient_4_5_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/httpcore_4_4_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Downloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DM_msater.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DM_msater.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/Config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/Data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/MoveWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/MoveWindowByTouch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$Update$UpdateSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain$Update.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/ProgramMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/UICtrl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/UICtrl$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/UICtrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/releaseData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/sourcesData/UIFileData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/sourcesData/backData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/sourcesData/img1Data.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/sourcesData/img1Data_1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DM_msater/main/sourcesData/img1Data_2.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +46,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProgramMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProgramMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="494" selection-start-line="494" selection-end-line="494" />
+            <state relative-caret-position="1717">
+              <caret line="491" column="8" selection-start-line="491" selection-start-column="8" selection-end-line="491" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Downloader.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/Downloader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-776">
+              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1845#1846#0" expanded="true" />
+                <element signature="e#1873#1874#0" expanded="true" />
+                <element signature="e#2283#2284#0" expanded="true" />
+                <element signature="e#2319#2320#0" expanded="true" />
+                <element signature="e#7876#7877#0" expanded="true" />
+                <element signature="e#7904#7905#0" expanded="true" />
+                <element signature="e#7929#7930#0" expanded="true" />
+                <element signature="e#7962#7963#0" expanded="true" />
+                <element signature="e#8224#8225#0" expanded="true" />
+                <element signature="e#8264#8265#0" expanded="true" />
+                <element signature="e#8304#8305#0" expanded="true" />
+                <element signature="e#8342#8343#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,7 +82,7 @@
       <file leaf-file-name="UICtrl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
+            <state relative-caret-position="3553">
               <caret line="235" column="23" selection-start-line="235" selection-start-column="23" selection-end-line="235" selection-end-column="23" />
               <folding>
                 <element signature="e#1299#3553#0" expanded="true" />
@@ -85,6 +129,8 @@
       <find>Iamge</find>
       <find>2002</find>
       <find>showW</find>
+      <find>DownloadTask</find>
+      <find>Log.info</find>
     </findStrings>
     <replaceStrings>
       <replace>text</replace>
@@ -99,6 +145,8 @@
       <replace>400</replace>
       <replace>primaryStage</replace>
       <replace>Image</replace>
+      <replace>Downloader</replace>
+      <replace>System.out.println</replace>
     </replaceStrings>
     <dirStrings>
       <dir>N:\project\DM_msater</dir>
@@ -126,6 +174,7 @@
         <option value="$PROJECT_DIR$/src/main/Data.java" />
         <option value="$PROJECT_DIR$/src/main/ProgramMain.java" />
         <option value="$PROJECT_DIR$/src/main/UICtrl.java" />
+        <option value="$PROJECT_DIR$/src/main/Downloader.java" />
       </list>
     </option>
   </component>
@@ -141,6 +190,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,17 +223,16 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Downloaded.Files.Path" value="I:\DM_master\libs" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/httpcore-4.4.11.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -305,7 +355,6 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.325887" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -316,39 +365,20 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22638889" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21388888" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2759527" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298292" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32325888" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2759527" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.30354795" />
       <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.325887" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21388888" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -364,20 +394,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -553,20 +569,45 @@
     <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/scene/Node.java" />
     <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="494" selection-start-line="494" selection-end-line="494" />
+        <state relative-caret-position="1717">
+          <caret line="491" column="8" selection-start-line="491" selection-start-column="8" selection-end-line="491" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
+        <state relative-caret-position="3553">
           <caret line="235" column="23" selection-start-line="235" selection-start-column="23" selection-end-line="235" selection-end-column="23" />
           <folding>
             <element signature="e#1299#3553#0" expanded="true" />
             <element signature="e#3552#3553#0" expanded="true" />
             <element signature="e#3675#6164#0" expanded="true" />
             <element signature="e#6163#6164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DM_msater.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Downloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-776">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1845#1846#0" expanded="true" />
+            <element signature="e#1873#1874#0" expanded="true" />
+            <element signature="e#2283#2284#0" expanded="true" />
+            <element signature="e#2319#2320#0" expanded="true" />
+            <element signature="e#7876#7877#0" expanded="true" />
+            <element signature="e#7904#7905#0" expanded="true" />
+            <element signature="e#7929#7930#0" expanded="true" />
+            <element signature="e#7962#7963#0" expanded="true" />
+            <element signature="e#8224#8225#0" expanded="true" />
+            <element signature="e#8264#8265#0" expanded="true" />
+            <element signature="e#8304#8305#0" expanded="true" />
+            <element signature="e#8342#8343#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,7 +691,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>commons-codec-1.11</last-edited>
+          <last-edited>httpcore-4.4.11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
