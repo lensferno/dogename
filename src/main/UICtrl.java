@@ -216,14 +216,14 @@ public class UICtrl {
     public JFXButton showNameMangerButton;
     public  JFXButton recover;
 
-    public JFXCheckBox numbChoose;
-    public JFXCheckBox nameChoose;
+    public JFXRadioButton numbChoose;
+    public JFXRadioButton nameChoose;
 
-    public JFXCheckBox chooseOnce;
-    public JFXCheckBox ignoreOnce;
+    public JFXRadioButton chooseOnce;
+    public JFXRadioButton ignoreOnce;
 
-    public JFXCheckBox randomTimes;
-    public JFXCheckBox fixedTimes;
+    public JFXRadioButton randomTimes;
+    public JFXRadioButton fixedTimes;
 
     public JFXSlider chooseTimes;
     public JFXSlider speedBar;
