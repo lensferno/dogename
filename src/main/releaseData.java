@@ -79,5 +79,18 @@ public class releaseData {
     public InputStream getUIStream(){
         return new ByteArrayInputStream(base64.decode(UIFileData.data));
     }
+    
+    public InputStream getImageStream(){
+        StringBuffer sb =new StringBuffer();
+        sb.append(img1Data_1.data);
+        sb.append(img1Data_2.data);
+        
+        return new ByteArrayInputStream(base64.decode(sb.toString));
+    }
+    
+    public InputStream getBackStream(){
+        return new ByteArrayInputStream(base64.decode(backData.data));
+    }
+    
 
 }
