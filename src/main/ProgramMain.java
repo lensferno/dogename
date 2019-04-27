@@ -85,8 +85,8 @@ public class ProgramMain extends Application {
         public void run() {
             try {
                 //Thread.sleep(6000);
-                getSources();
-                unZip();
+                //getSources();
+                //unZip();
                 Platform.runLater(showRunnable);
             }catch(Exception e) {
                 e.printStackTrace();
@@ -132,6 +132,13 @@ public class ProgramMain extends Application {
             for(int i=0;i<200;i++){
                 System.out.println((int)min+(int)(Math.random()*(max-min)));
             }*/
+/*
+            Downloader dl=new Downloader("https://github.com/Het7230/DM_master/releases/download/1.3.2.0/DMmaster.exe","I:\\DM_master\\update.temp",16);
+
+            try{
+            dl.startDown();
+            }
+            catch (Exception e){e.printStackTrace();}*/
             if(hasSources()==false){
 
                 secondPane.setPrefWidth(700);
@@ -215,8 +222,9 @@ public class ProgramMain extends Application {
 
 
             try {
-                FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
-                Parent root = loader.load();
+                FXMLLoader loader = new FXMLLoader();
+                releaseData rd =new releaseData();
+                Parent root = loader.load(rd.getUIStream());
                 Scene scene = new Scene(root, 990, 700);
                 stage.setTitle("MDmaster 初号姬");
                 stage.setScene(scene);
@@ -295,8 +303,9 @@ public class ProgramMain extends Application {
         }
 
         try {
-            FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
-            Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader();
+            releaseData rd =new releaseData();
+            Parent root = loader.load(rd.getUIStream());
             Scene scene = new Scene(root, 990, 700);
             stage.setTitle("MDmaster 初号姬");
             stage.setScene(scene);
@@ -324,6 +333,8 @@ public class ProgramMain extends Application {
                 controller.randomTimes_selected();
             else
                 controller.fixedTimes_selected();
+
+
 
 
             if (config.isIgnorePast())

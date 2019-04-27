@@ -3,8 +3,10 @@ package main;
 import main.sourcesData.*;
 import org.apache.commons.codec.binary.Base64;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 
 public class releaseData {
 
@@ -72,6 +74,10 @@ public class releaseData {
             e.printStackTrace();
             return -1;
         }
+    }
+
+    public InputStream getUIStream(){
+        return new ByteArrayInputStream(base64.decode(UIFileData.data));
     }
 
 }

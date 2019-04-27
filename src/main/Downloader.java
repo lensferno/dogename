@@ -20,6 +20,13 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import sun.rmi.runtime.Log;
 
+
+interface DownloadTaskListener
+{
+    public void downloadCompleted();
+}
+
+
 public class Downloader {
 
     /**
@@ -201,6 +208,7 @@ public class Downloader {
                     Calendar time1 = Calendar.getInstance();
                     System.out.println(file + "总耗时为："+(endMili-startMili)+"毫秒");
                     System.out.println("time------------- ："+file+time1.compareTo(time));
+                    System.out.println("Complete!");
                     //listener.downloadCompleted();
                 }
                 if (getDebug()) {
@@ -335,7 +343,7 @@ class DownloadThread extends Thread {
                 byte[] buffer = new byte[10240];
                 while ((count = inputStream.read(buffer, 0, buffer.length)) > 0) {
                     outputStream.write(buffer, 0, count);
-                    downloaded+=count;
+                    downloaded += count;
                     listener.afterPerDown(new DownloadThreadEvent(this, count));
                 }
                 outputStream.close();
@@ -356,4 +364,5 @@ class DownloadThread extends Thread {
             }
         }
 
+    }
 }
