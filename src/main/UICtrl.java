@@ -237,6 +237,12 @@ public class UICtrl {
     public Scene scene;
 
     public Pane mainPane;
+    
+    public ImageView mainView;
+    public ImageView backBtn;
+    public Image mainImage =new Image(releaseData.getMainImageStream());
+    public Image backBtnImage =new Image(releaseData.getBackBtnStream());
+    
 
     short oldX;
     short oldY;
@@ -251,7 +257,10 @@ public class UICtrl {
 
     public static final ObservableList names = FXCollections.observableArrayList();
 
-
+    public void setImages(){
+        mainView.setImage(mainImage);
+        backBtn.setImage(backBtnImage);
+    }
 
     public void setStage(Stage stage){
         this.stage = stage;

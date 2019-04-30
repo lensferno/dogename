@@ -80,7 +80,7 @@ public class releaseData {
         return new ByteArrayInputStream(base64.decode(UIFileData.data));
     }
     
-    public InputStream getImageStream(){
+    public InputStream getMainImageStream(){
         StringBuffer sb =new StringBuffer();
         sb.append(img1Data_1.data);
         sb.append(img1Data_2.data);
@@ -88,7 +88,7 @@ public class releaseData {
         return new ByteArrayInputStream(base64.decode(sb.toString));
     }
     
-    public InputStream getBackStream(){
+    public InputStream getBackBtnStream(){
         return new ByteArrayInputStream(base64.decode(backData.data));
     }
     

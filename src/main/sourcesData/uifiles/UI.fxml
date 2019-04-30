@@ -108,11 +108,7 @@
                   </Pane>
                </children>
             </Pane>
-            <ImageView fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="mainVIew" fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true"></ImageView>
          </children>
       </Pane>
       <Pane fx:id="namePane" layoutX="1007.0" prefHeight="710.0" prefWidth="1007.0">
@@ -152,11 +148,7 @@
                   </DropShadow>
                </effect>
             </Rectangle>
-            <ImageView fitHeight="28.0" fitWidth="57.0" layoutX="14.0" layoutY="8.0" onDragDone="#turnBack" onMouseReleased="#turnBack" onTouchReleased="#turnBack" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@back.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="backBtn" fitHeight="28.0" fitWidth="57.0" layoutX="14.0" layoutY="8.0" onDragDone="#turnBack" onMouseReleased="#turnBack" onTouchReleased="#turnBack" pickOnBounds="true" preserveRatio="true"></ImageView>
          </children>
       </Pane>
    </children>
