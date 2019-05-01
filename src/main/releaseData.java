@@ -76,20 +76,20 @@ public class releaseData {
         }
     }
 
-    public InputStream getUIStream(){
-        return new ByteArrayInputStream(base64.decode(UIFileData.data));
+    public static InputStream getUIStream(){
+        return new ByteArrayInputStream(Base64.decodeBase64(UIFileData.data));
     }
-    
-    public InputStream getMainImageStream(){
+
+    public static InputStream getMainImageStream(){
         StringBuffer sb =new StringBuffer();
         sb.append(img1Data_1.data);
         sb.append(img1Data_2.data);
-        
-        return new ByteArrayInputStream(base64.decode(sb.toString()));
+
+        return new ByteArrayInputStream(Base64.decodeBase64(sb.toString()));
     }
     
-    public InputStream getBackBtnStream(){
-        return new ByteArrayInputStream(base64.decode(backData.data));
+    public static InputStream getBackBtnStream(){
+        return new ByteArrayInputStream(Base64.decodeBase64(backData.data));
     }
     
 
