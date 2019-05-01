@@ -38,6 +38,9 @@ import org.apache.commons.codec.binary.Hex;
 import static javafx.stage.StageStyle.*;
 
 public class ProgramMain extends Application {
+
+    private boolean debugMode=true;
+
     final static private String FXML_FILE="file:/D:/DM_Master_sources-master/sources/UI.fxml";
 
     final static private String UI_FILE="D:\\DM_Master_sources-master\\sources\\UI.fxml";
@@ -124,6 +127,7 @@ public class ProgramMain extends Application {
     };
     @Override
         public void start(Stage primaryStage) throws IOException {
+
 /*
             int min=250;
             int max=100;
@@ -139,6 +143,7 @@ public class ProgramMain extends Application {
             dl.startDown();
             }
             catch (Exception e){e.printStackTrace();}*/
+/*
             if(hasSources()==false){
 
                 secondPane.setPrefWidth(700);
@@ -190,7 +195,8 @@ public class ProgramMain extends Application {
 
                 //showInfoDialog("先等等吧","第一次运行 或 资源文件受损 加载资源文件中，视网络情况需要一段时间，请耐心等等。\n：）",secondPane);
 
-            }else
+            }else*/
+
                 showWindow();
 
         }
@@ -305,7 +311,12 @@ public class ProgramMain extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             releaseData rd =new releaseData();
-            Parent root = loader.load(rd.getUIStream());
+            Parent root;
+            if(debugMode)
+                root = loader.load(getClass().getResource(""));
+            else
+                root = loader.load(rd.getUIStream());
+
             Scene scene = new Scene(root, 990, 700);
             stage.setTitle("MDmaster 初号姬");
             stage.setScene(scene);

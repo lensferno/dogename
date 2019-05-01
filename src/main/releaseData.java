@@ -85,7 +85,7 @@ public class releaseData {
         sb.append(img1Data_1.data);
         sb.append(img1Data_2.data);
         
-        return new ByteArrayInputStream(base64.decode(sb.toString));
+        return new ByteArrayInputStream(base64.decode(sb.toString()));
     }
     
     public InputStream getBackBtnStream(){
