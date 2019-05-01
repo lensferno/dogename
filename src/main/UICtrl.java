@@ -20,6 +20,7 @@ import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -244,7 +245,8 @@ public class UICtrl {
     public ImageView backBtn;
     public Image mainImage =new Image(releaseData.getMainImageStream());
     public Image backBtnImage =new Image(releaseData.getBackBtnStream());
-    
+
+
 
     short oldX;
     short oldY;
