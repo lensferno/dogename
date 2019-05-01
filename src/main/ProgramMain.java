@@ -127,7 +127,7 @@ public class ProgramMain extends Application {
     };
     @Override
         public void start(Stage primaryStage) throws IOException {
-
+System.out.println("##########################");
 /*
             int min=250;
             int max=100;
@@ -210,6 +210,7 @@ public class ProgramMain extends Application {
 
         public void showWindow(Stage firstStage){
 
+        System.out.println("##########################");
             try{
                 File configFile=new File(CONFIG_FILE);
                 
@@ -309,15 +310,17 @@ public class ProgramMain extends Application {
             e.printStackTrace();
         }
 
+        System.out.println("##########################");
         try {
             FXMLLoader loader = new FXMLLoader();
             releaseData rd =new releaseData();
             Parent root;
             if(debugMode)
-                root = loader.load(getClass().getResource(""));
+                root = loader.load(new URL(UI_FILE));
             else
                 root = loader.load(rd.getUIStream());
 
+            System.out.println("##########################");
             Scene scene = new Scene(root, 990, 700);
             stage.setTitle("MDmaster 初号姬");
             stage.setScene(scene);
