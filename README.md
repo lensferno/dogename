@@ -7,14 +7,14 @@
 没什么好介绍的（其实是懒），随缘考虑更新（也是懒）。
 
 
-Nothing to introduce (in fact, lazy), consider updating depending on mood(also lazy).
+There's nothing to introduce (in fact, you know, lazy), and update depending on mood(also lazy).
 
 
 
 使用JAVA编写，UI风格采用Google Material Design。
 
 
-Write in JAVA and use Google Material Design for UI style.
+It is written in JAVA and used Google Material Design for UI style.
 
 
 ## 截图/Screenshot:
@@ -34,6 +34,6 @@ Write in JAVA and use Google Material Design for UI style.
 [Apache Commons Codec](http://commons.apache.org/proper/commons-codec/)(1.11)
 
 
-[Gson](https://github.com/google/gson)(2.8.5) (未正式使用)
+[Gson](https://github.com/google/gson)(2.8.5) (未正式在release中使用)
 
-[Apache HttpComponents ](http://hc.apache.org/)  (HttpClient 4.5.8 & HttpCore  4.4.11) (未正式使用)
+[Apache HttpComponents ](http://hc.apache.org/)  (HttpClient 4.5.8 & HttpCore  4.4.11) (未正式在release中使用)
