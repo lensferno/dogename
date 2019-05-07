@@ -65,7 +65,7 @@ public class ProgramMain extends Application {
 
     Stage stage=new Stage();
 
-    Text text_1=new Text("第一次运行需要加载文件，视网络情况需要一段时间，请耐心等等。：）");
+    Text text_1=new Text("第一次运行 或 文件受损 需要加载文件，视网络情况需要一段时间，请耐心等等。：）");
     Text text_2=new Text("资源文件不大，正常情况下不会用太长时间。");
     Text text_3=new Text("若网络不可用将尝试使用本地加载。");
 
@@ -104,7 +104,7 @@ public class ProgramMain extends Application {
                 }else {
                     loading.setVisible(false);
                     showInfoDialog("啊？","程序无法加载资源文件到这台计算机上，请检查系统是否有关于文件权限的问题，然后重启程序尝试。",secondPane);
-                    text_1.setText("资源文件加载失败，请检查系统是否有关于文件权限的问题，然后重启程序尝试。");
+                    text_1.setText("资源文件加载失败，请检查程序是否有权限访问文件，然后重启本程序尝试。");
                     text_2.setText("请手动访问：");
                     TextArea ta=new TextArea("http://t.cn/EtFODZy");
                     ta.setLayoutX(text_2.getLayoutX()+50);
@@ -143,7 +143,7 @@ public class ProgramMain extends Application {
             dl.startDown();
             }
             catch (Exception e){e.printStackTrace();}*/
-/*
+
             if(hasSources()==false){
 
                 secondPane.setPrefWidth(700);
@@ -195,7 +195,7 @@ public class ProgramMain extends Application {
 
                 //showInfoDialog("先等等吧","第一次运行 或 资源文件受损 加载资源文件中，视网络情况需要一段时间，请耐心等等。\n：）",secondPane);
 
-            }else*/
+            }else
 
                 showWindow();
 
@@ -228,9 +228,8 @@ public class ProgramMain extends Application {
 
 
             try {
-                FXMLLoader loader = new FXMLLoader();
-                releaseData rd =new releaseData();
-                Parent root = loader.load(rd.getUIStream());
+                FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
+                Parent root = loader.load();
                 Scene scene = new Scene(root, 990, 700);
                 stage.setTitle("MDmaster 初号姬");
                 stage.setScene(scene);
@@ -310,14 +309,9 @@ public class ProgramMain extends Application {
         }
 
         try {
-            FXMLLoader loader = new FXMLLoader();
-            releaseData rd =new releaseData();
-            Parent root;
-            if(debugMode)
-                root = loader.load(getClass().getResource(""));
-            else
-                root = loader.load(rd.getUIStream());
-
+            FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
+            Parent root = loader.load();
+            
             Scene scene = new Scene(root, 990, 700);
             stage.setTitle("MDmaster 初号姬");
             stage.setScene(scene);
@@ -468,7 +462,7 @@ public class ProgramMain extends Application {
         //判断有没有资源文件，有则告诉main不需再下载资源文件(返回true)
         public static boolean hasSources() {
 
-        System.out.println(UIFile.exists());
+            System.out.println(UIFile.exists());
             System.out.println(imageFile.exists());
             System.out.println(backImageFile.exists());
             if(!UIFile.exists()||!imageFile.exists()||!backImageFile.exists()) {
@@ -476,16 +470,20 @@ public class ProgramMain extends Application {
                 return false;
                 }
             else {
-                String UIFileMD5=getMD5(UIFile);
-                String imageFileMD5=getMD5(imageFile);
-                String backImageFileMD5=getMD5(backImageFile);
-                if(UIFileMD5.equals(FXML_FILE_MD5) && imageFileMD5.equals(IAMGE_FILE_MD5) && backImageFileMD5.equals(BACKIAMGE_FILE_MD5)){
-                    System.out.println("[INFO]有UI文件，直接运行。");
+                if(debugMode){
+                    System.out.println("[DEBUG][调试模式]跳过检查");
                     return true;
-                }else{
-                    System.out.println("[INFO]文件校验错误，拉取文件。");
-                    return false;
-                }
+                 }else {
+                    String UIFileMD5=getMD5(UIFile);
+                    String imageFileMD5=getMD5(imageFile);
+                    String backImageFileMD5=getMD5(backImageFile);
+                    if(UIFileMD5.equals(FXML_FILE_MD5) && imageFileMD5.equals(IAMGE_FILE_MD5) && backImageFileMD5.equals(BACKIAMGE_FILE_MD5)){
+                        System.out.println("[INFO]有UI文件，直接运行。");
+                        return true;
+                    }else {
+                        System.out.println("[INFO]文件校验错误，拉取文件。");
+                        return false;
+                 }
             }
         }
 
