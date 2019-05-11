@@ -8,6 +8,8 @@ import java.util.TreeMap;
 
 public class Data {
     private List<String> nameList;
+
+    private List<String> chooseList;
     private int listSize = 0;
 
 
@@ -84,11 +86,18 @@ public class Data {
     }
 
     //------------------------------------------------------
-    public String randomGet(){
-        //int i=(int)(1+Math.random()*(nameList.size()));
-        int i=(int)(Math.random()*((nameList.size()-1)));
-        return  nameList.get(i);
+    public String randomGet(boolean taoluMode){
+        if(taoluMode){
+            int i=(int)(Math.random()*((chooseList.size()-1)));
+            return  chooseList.get(i);
+        }else{
+            //int i=(int)(1+Math.random()*(nameList.size()));
+            int i=(int)(Math.random()*((nameList.size()-1)));
+            return  nameList.get(i);
+        }
     }
+
+    
 
     //------------------------------------------------------
     public String[] getAll(){
