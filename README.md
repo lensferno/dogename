@@ -37,3 +37,14 @@ It is written in JAVA and used Google Material Design for UI style.
 [Gson](https://github.com/google/gson)(2.8.5) (未正式在release中使用)
 
 [Apache HttpComponents ](http://hc.apache.org/)  (HttpClient 4.5.8 & HttpCore  4.4.11) (未正式在release中使用)
+
+
+
+
+
+
+
+
+`另:目前打算将JDK从Sun JDK换到OpenJDK`
+
+`And: I am currently planning to change the JDK from Sun JDK to OpenJDK.`
