@@ -7,24 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af52816d-3d8d-420e-823c-b3961a36b72e" name="Default" comment=".">
-      <change afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/HuajiForce.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/lailelaodi.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Downloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MoveWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MoveWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MoveWindowByTouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MoveWindowByTouch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ProgramMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Updater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/firstPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/firstPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/UIFileData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/UIFileData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/backData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/backData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/img1Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/img1Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/img1Data_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/img1Data_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/img1Data_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/img1Data_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI - 副本.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI - 副本.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/UICtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProgramMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProgramMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-561">
-              <caret line="126" column="6" lean-forward="true" selection-start-line="126" selection-start-column="6" selection-end-line="126" selection-end-column="6" />
+            <state relative-caret-position="391">
+              <caret line="182" column="28" lean-forward="true" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
               <folding>
                 <element signature="e#2836#2837#0" expanded="true" />
                 <element signature="e#2882#2883#0" expanded="true" />
@@ -94,11 +77,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UICtrl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UICtrl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4080">
-              <caret line="263" column="28" selection-start-line="263" selection-start-column="28" selection-end-line="263" selection-end-column="28" />
+            <state relative-caret-position="-1216">
+              <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
+              <folding>
+                <element signature="e#1474#3749#0" expanded="true" />
+                <element signature="e#3748#3749#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,15 +172,13 @@
         <option value="$PROJECT_DIR$/src/main/Downloader.java" />
         <option value="$PROJECT_DIR$/src/main/Updater.java" />
         <option value="$PROJECT_DIR$/src/main/releaseData.java" />
-        <option value="$PROJECT_DIR$/src/main/UICtrl.java" />
         <option value="$PROJECT_DIR$/src/main/ProgramMain.java" />
+        <option value="$PROJECT_DIR$/src/main/UICtrl.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-4" />
-    <option name="y" value="-20" />
-    <option name="width" value="1452" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1440" />
     <option name="height" value="817" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -202,6 +187,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -234,7 +220,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -362,22 +347,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <frame x="0" y="0" width="1440" height="817" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32518598" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32325888" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43304843" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298292" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21388888" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21629213" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -386,7 +372,6 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.325887" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -623,13 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4080">
-          <caret line="263" column="28" selection-start-line="263" selection-start-column="28" selection-end-line="263" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/releaseData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -639,11 +617,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="126" column="6" lean-forward="true" selection-start-line="126" selection-start-column="6" selection-end-line="126" selection-end-column="6" />
+        <state relative-caret-position="391">
+          <caret line="182" column="28" lean-forward="true" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
           <folding>
             <element signature="e#2836#2837#0" expanded="true" />
             <element signature="e#2882#2883#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1216">
+          <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
+          <folding>
+            <element signature="e#1474#3749#0" expanded="true" />
+            <element signature="e#3748#3749#0" expanded="true" />
           </folding>
         </state>
       </provider>

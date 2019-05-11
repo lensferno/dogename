@@ -28,6 +28,10 @@ import java.util.List;
 
 public class UICtrl {
 
+    boolean taoluMode=true;
+
+    List<String> chooseList=new ArrayList<>();
+
     List<String> ignoreNameList=new ArrayList<>();
     short ignoreNameTimes=0;
 
@@ -75,13 +79,23 @@ public class UICtrl {
                         case 1:{
                             if(chosen_2.getText().contains("→"))
                                 chosen_2.setText(chosen_2.getText().replace("→",""));
+
                             chosen_1.setText("→"+chosen_1.getText());
+
+                            for(int i=0;i<15;i++)
+                                chooseList.add(chosen_1.getText());
+
                             break;
                         }
                         case 2:{
                             if(chosen_1.getText().contains("→"))
                                 chosen_1.setText(chosen_1.getText().replace("→",""));
+
                             chosen_2.setText("→"+chosen_2.getText());
+
+                            for(int i=0;i<15;i++)
+                                chooseList.add(chosen_2.getText());
+
                             break;
                         }
                     }
@@ -90,6 +104,8 @@ public class UICtrl {
                     return;
                 }else
                     ignoreTinmesOut=true;
+
+
 
             }
             if(singleCycle>=times&&!ignoreTinmesOut){
@@ -102,6 +118,8 @@ public class UICtrl {
                 cycleEnd=false;
                 showWhich=(int)(1+Math.random()*2);
             }
+
+
 
             switch (showWhich){
                 case 1:{
@@ -146,13 +164,23 @@ public class UICtrl {
                         case 1:{
                             if(chosen_2.getText().contains("→"))
                                 chosen_2.setText(chosen_2.getText().replace("→",""));
+
                             chosen_1.setText("→"+chosen_1.getText());
+
+                            for(int i=0;i<15;i++)
+                                chooseList.add(chosen_1.getText());
+
                             break;
                         }
                         case 2:{
                             if(chosen_1.getText().contains("→"))
                                 chosen_1.setText(chosen_1.getText().replace("→",""));
+
                             chosen_2.setText("→"+chosen_2.getText());
+
+                            for(int i=0;i<15;i++)
+                                chooseList.add(chosen_2.getText());
+
                             break;
                         }
                     }
