@@ -106,7 +106,7 @@
                         <JFXTextField fx:id="maxNumb" alignment="CENTER" layoutX="141.0" prefHeight="25.0" prefWidth="28.0" text="90" />
                      </children>
                   </Pane>
-                  <JFXCheckBox layoutX="16.0" layoutY="153.0" prefHeight="18.0" prefWidth="207.0" selected="true" text=" 套路模式" unCheckedColor="#12d071">
+                  <JFXCheckBox fx:id="taoluModeBtn" layoutX="16.0" layoutY="153.0" prefHeight="18.0" prefWidth="207.0" selected="true" text=" 套路模式(实验功能，仅限名字)" unCheckedColor="#12d071">
                      <font>
                         <Font size="14.0" />
                      </font>
