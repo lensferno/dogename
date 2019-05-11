@@ -167,9 +167,6 @@ public class UICtrl {
 
                             chosen_1.setText("→"+chosen_1.getText());
 
-                            for(int i=0;i<15;i++)
-                                chooseList.add(chosen_1.getText());
-
                             break;
                         }
                         case 2:{
@@ -177,9 +174,6 @@ public class UICtrl {
                                 chosen_1.setText(chosen_1.getText().replace("→",""));
 
                             chosen_2.setText("→"+chosen_2.getText());
-
-                            for(int i=0;i<15;i++)
-                                chooseList.add(chosen_2.getText());
 
                             break;
                         }
@@ -247,6 +241,8 @@ public class UICtrl {
     public JFXButton showNameMangerButton;
     public  JFXButton recover;
 
+    public JFXCheckBox taoluModeBtn;
+
     public JFXRadioButton numbChoose;
     public JFXRadioButton nameChoose;
 
@@ -306,7 +302,7 @@ public class UICtrl {
         this.config = config;
     }
 
-
+0
     public void setMinNumber(short minNumber) {
         this.minNumber = minNumber;
     }
@@ -433,6 +429,10 @@ public class UICtrl {
         nameChoose.setSelected(false);
         numbPane.setVisible(true);
         showNameMangerButton.setVisible(false);
+        if(taoluMode){
+            taoluMode=false;
+            taoluModeBtn.setVisible(false);
+        }
     }
 
     @FXML
@@ -443,7 +443,12 @@ public class UICtrl {
         numbChoose.setSelected(false);
         namePane.setVisible(true);
         showNameMangerButton.setVisible(true);
+        if(chooseOnce){
+            taoluMode=true;
+            taoluModeBtn.setVisible(true);
+        }
     }
+
     @FXML
     void addName(){
         data.add(inputName.getText());
@@ -594,13 +599,21 @@ public class UICtrl {
         ignorePast=true;
         ignoreOnce.setSelected(true);
         chooseOnce.setSelected(false);
+        if(taoluMode){
+            taoluMode=false;
+            taoluModeBtn.setVisible(false);
+        }
     }
-
+    
     @FXML
     void chooseOnce_selected() {
         ignorePast=false;
         chooseOnce.setSelected(true);
-        ignoreOnce.setSelected(false);
+        ign7oreOnce.setSelected(false);
+        if(nameChoose){
+            taoluMode=true;
+            taoluModeBtn.setValue(true);
+        }
     }
 
 
