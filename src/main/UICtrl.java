@@ -28,7 +28,7 @@ import java.util.List;
 
 public class UICtrl {
 
-    boolean taoluMode=true;
+    boolean taoluMode;
 
     List<String> chooseList=new ArrayList<>();
 
@@ -123,7 +123,7 @@ public class UICtrl {
 
             switch (showWhich){
                 case 1:{
-                    chosenName=data.randomGet();
+                    chosenName=data.randomGet(taoluMode);
                     chosen_1.setText(chosenName);
                     already++;
                     singleCycle++;
@@ -131,7 +131,7 @@ public class UICtrl {
                 }
 
                 case 2:{
-                    chosenName=data.randomGet();
+                    chosenName=data.randomGet(taoluMode);
                     chosen_2.setText(chosenName);
                     already++;
                     singleCycle++;
@@ -330,6 +330,10 @@ public class UICtrl {
         this.speed = (short) speedBar.getValue();
     }
 
+    public void setTaoluMode(boolean taoluMode){
+        this.taoluMode=taoluMode;
+    }
+
 
     final static private String CONFIG_FILE="D:\\DM_Master_sources-master\\config";
     final private File configFile=new File(CONFIG_FILE);
@@ -343,6 +347,7 @@ public class UICtrl {
         config.setNameChoose(isNameChoose);
         config.setSpeed(speed);
         config.setRandomTimes(isRandomTimes);
+        config.setTaoluMode(taoluMode);
 
         System.out.println(speed);
         System.out.println(chosenTime);
@@ -376,7 +381,7 @@ public class UICtrl {
         //int s=(int)min+(int)(Math.random()*(max-min));
 
         if(isNameChoose){
-            if(data.isEmpty()){
+            if(data.isEmpty(taoluMode)){
                 showInfoDialog("哦霍~","现在名单还是空的捏~请前往名单管理添加名字 或 使用数字挑选法。");
                 return;
              }
@@ -432,6 +437,7 @@ public class UICtrl {
         if(taoluMode){
             taoluMode=false;
             taoluModeBtn.setVisible(false);
+            taoluModeBtn.setSelected(false);
         }
     }
 
@@ -444,10 +450,29 @@ public class UICtrl {
         namePane.setVisible(true);
         showNameMangerButton.setVisible(true);
         if(chooseOnce){
-            taoluMode=true;
+            //taoluMode=true;
             taoluModeBtn.setVisible(true);
         }
     }
+    
+    @FXML
+    void taoluModeBtn_selected(){
+        taoluMode=true;
+        taoluModeBtn.setSelected();
+    }
+
+    void taoluModeBtn_unselect(){
+        taoluMode=false;
+        taoluModeBtn.setSelected();
+    }
+
+   @FXML
+   void taoluModeBtn_Aciton(){
+        if(taoluModeBtn.isSelect())
+            taoluModeBtn_selected();
+        else
+            taoluModeBtn_unselect();
+   }
 
     @FXML
     void addName(){
@@ -602,6 +627,7 @@ public class UICtrl {
         if(taoluMode){
             taoluMode=false;
             taoluModeBtn.setVisible(false);
+            taoluModeBtn.setSelected(false);
         }
     }
     
@@ -611,8 +637,9 @@ public class UICtrl {
         chooseOnce.setSelected(true);
         ign7oreOnce.setSelected(false);
         if(nameChoose){
-            taoluMode=true;
-            taoluModeBtn.setValue(true);
+            //taoluMode=true;
+            taoluModeBtn.setVisible(true);
+            
         }
     }
 

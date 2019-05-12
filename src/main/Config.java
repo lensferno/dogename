@@ -15,9 +15,14 @@ public class Config implements Serializable {
     private short minNumber;
     private short maxNumber;
 
+    private boolean taoluMode=false;
 
     public boolean isIgnorePast() {
         return ignorePast;
+    }
+
+    public boolean isTaoluMode(){
+        return taoluMode;
     }
 
     public boolean isRandomTimes() {
@@ -70,6 +75,10 @@ public class Config implements Serializable {
 
     public void setSpeed(short speed) {
         this.speed = speed;
+    }
+
+    public void setTaoluMode(boolean taoluMode){
+        this.taoluMode=taoluMode;
     }
 
 
