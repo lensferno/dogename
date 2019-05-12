@@ -455,7 +455,7 @@ public class UICtrl {
         }
     }
     
-    @FXML
+    
     void taoluModeBtn_selected(){
         taoluMode=true;
         taoluModeBtn.setSelected();
@@ -468,10 +468,10 @@ public class UICtrl {
 
    @FXML
    void taoluModeBtn_Aciton(){
-        if(taoluModeBtn.isSelect())
-            taoluModeBtn_selected();
+        if(taoluMode)
+            taoluModeBtn_unselected();
         else
-            taoluModeBtn_unselect();
+            taoluModeBtn_select();
    }
 
     @FXML
