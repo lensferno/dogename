@@ -30,11 +30,14 @@ public class Data {
 
             ObjectInputStream ois =new ObjectInputStream(new FileInputStream(dataFile));
             this.nameList=(ArrayList)ois.readObject();
+            
             listSize=nameList.size();
             System.out.println(listSize);
+            this.chooseList=new ArrayList<>(nameList);
 
         }catch (Exception e){
             nameList=new ArrayList<>();
+            chooseList=new ArrayList<>();
             e.printStackTrace();
         }
 
@@ -54,6 +57,8 @@ public class Data {
             nameList.add(text);
             listSize=nameList.size();
         }
+        chooseList=new ArrayList<>(nameList);
+        System.gc();
     }
     //------------------------------------------------------
     public String get(int i){
@@ -73,7 +78,9 @@ public class Data {
         if(nameList.isEmpty())
             return;
         nameList.remove(name);
+        chooseList=new ArrayList<>(nameList);
         listSize=nameList.size();
+        System.gc();
 
         for (String myString :nameList.toArray(new String[0])) {
             System.out.println(myString);
@@ -81,8 +88,14 @@ public class Data {
     }
 
     //------------------------------------------------------
-    public boolean isEmpty(){
-        return  nameList.isEmpty();
+    public boolean isEmpty(boolean taoluMode){
+        if(taoluMode){
+            if(nameList.isEmpty()&&chooseList.isEmpty())
+                return true;
+            else
+                return false;
+        }
+        return nameList.isEmpty();
     }
 
     //------------------------------------------------------
@@ -105,6 +118,12 @@ public class Data {
     }
 
     //------------------------------------------------------
+    public void addTaoluedName(String taoluedName,int taoluLevel){
+        for(int i=0;i<taoluLevel;i++)
+            chooseList.add(taoluedName);
+    }
+
+    //------------------------------------------------------
     public int saveToFile(){
 
         try{
@@ -122,6 +141,7 @@ public class Data {
     //------------------------------------------------------
     public void deleteAll(){
         nameList.clear();
+        chooseList.clear();
     }
 
 }

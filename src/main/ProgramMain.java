@@ -277,6 +277,13 @@ public class ProgramMain extends Application {
             else
                 controller.numbChoose_selected();
 
+            if(config.isTaoluMode())
+                controller.taoluModeBtn_selected();
+            else
+                controller
+                
+            
+
             controller.setMaxNumber(config.getMaxNumber());
             controller.maxNumb.setText(String.valueOf(config.getMaxNumber()));
             controller.setMinNumber(config.getMinNumber());
