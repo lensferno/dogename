@@ -302,7 +302,7 @@ public class UICtrl {
         this.config = config;
     }
 
-0
+
     public void setMinNumber(short minNumber) {
         this.minNumber = minNumber;
     }
@@ -449,7 +449,7 @@ public class UICtrl {
         numbChoose.setSelected(false);
         namePane.setVisible(true);
         showNameMangerButton.setVisible(true);
-        if(chooseOnce){
+        if(!ignorePast){
             //taoluMode=true;
             taoluModeBtn.setVisible(true);
         }
@@ -458,20 +458,20 @@ public class UICtrl {
     
     void taoluModeBtn_selected(){
         taoluMode=true;
-        taoluModeBtn.setSelected();
+        taoluModeBtn.setSelected(true);
     }
 
     void taoluModeBtn_unselect(){
         taoluMode=false;
-        taoluModeBtn.setSelected();
+        taoluModeBtn.setSelected(false);
     }
 
    @FXML
    void taoluModeBtn_Aciton(){
         if(taoluMode)
-            taoluModeBtn_unselected();
+            taoluModeBtn_unselect();
         else
-            taoluModeBtn_select();
+            taoluModeBtn_selected();
    }
 
     @FXML
@@ -635,8 +635,8 @@ public class UICtrl {
     void chooseOnce_selected() {
         ignorePast=false;
         chooseOnce.setSelected(true);
-        ign7oreOnce.setSelected(false);
-        if(nameChoose){
+        ignoreOnce.setSelected(false);
+        if(isNameChoose){
             //taoluMode=true;
             taoluModeBtn.setVisible(true);
             
