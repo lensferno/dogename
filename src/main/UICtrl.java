@@ -30,7 +30,6 @@ public class UICtrl {
 
     boolean taoluMode;
 
-    List<String> chooseList=new ArrayList<>();
 
     List<String> ignoreNameList=new ArrayList<>();
     short ignoreNameTimes=0;
@@ -264,13 +263,6 @@ public class UICtrl {
     public Scene scene;
 
     public Pane mainPane;
-    
-    public ImageView mainView;
-    public ImageView backBtn;
-    public Image mainImage =new Image(releaseData.getMainImageStream());
-    public Image backBtnImage =new Image(releaseData.getBackBtnStream());
-
-
 
     short oldX;
     short oldY;
@@ -284,11 +276,6 @@ public class UICtrl {
     public Config config;
 
     public static final ObservableList names = FXCollections.observableArrayList();
-
-    public void setImages(){
-        mainView.setImage(mainImage);
-        backBtn.setImage(backBtnImage);
-    }
 
     public void setStage(Stage stage){
         this.stage = stage;
