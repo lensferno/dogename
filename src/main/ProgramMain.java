@@ -245,7 +245,7 @@ public class ProgramMain extends Application {
                 }
             });
             stage.show();
-            controller.setImages();
+            //controller.setImages();
             //primaryStage.show();
 
             //stage.close();
@@ -327,7 +327,7 @@ public class ProgramMain extends Application {
             controller.setStage(stage);
             controller.setScene(scene);
             stage.show();
-            controller.setImages();
+            //controller.setImages();
 
             //primaryStage.show();
 
