@@ -281,7 +281,7 @@ public class ProgramMain extends Application {
             if(config.isTaoluMode())
                 controller.taoluModeBtn_selected();
             else
-                controller.taoluModeBtn_unselected();
+                controller.taoluModeBtn_unselect();
                 
             
             controller.setMaxNumber(config.getMaxNumber());
@@ -364,7 +364,7 @@ public class ProgramMain extends Application {
             if(config.isTaoluMode())
                 controller.taoluModeBtn_selected();
             else
-                controller.taoluModeBtn_unselected();
+                controller.taoluModeBtn_unselect();
      
            
             controller.setMaxNumber(config.getMaxNumber());
