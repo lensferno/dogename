@@ -82,8 +82,8 @@ public class UICtrl {
 
                             chosen_1.setText("→"+chosen_1.getText());
 
-                            for(int i=0;i<15;i++)
-                                chooseList.add(chosen_1.getText());
+                            //for(int i=0;i<15;i++)
+                            data.addTaoluedName(chosen_1.getText(),15);
 
                             break;
                         }
@@ -93,8 +93,8 @@ public class UICtrl {
 
                             chosen_2.setText("→"+chosen_2.getText());
 
-                            for(int i=0;i<15;i++)
-                                chooseList.add(chosen_2.getText());
+                            //for(int i=0;i<15;i++)
+                            data.addTaoluedName(chosen_2.getText(),15);
 
                             break;
                         }
