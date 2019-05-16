@@ -3,10 +3,8 @@ package main;
 import main.sourcesData.*;
 import org.apache.commons.codec.binary.Base64;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.InputStream;
 
 public class releaseData {
 
@@ -75,22 +73,5 @@ public class releaseData {
             return -1;
         }
     }
-
-    public static InputStream getUIStream(){
-        return new ByteArrayInputStream(Base64.decodeBase64(UIFileData.data));
-    }
-
-    public static InputStream getMainImageStream(){
-        StringBuffer sb =new StringBuffer();
-        sb.append(img1Data_1.data);
-        sb.append(img1Data_2.data);
-
-        return new ByteArrayInputStream(Base64.decodeBase64(sb.toString()));
-    }
-    
-    public static InputStream getBackBtnStream(){
-        return new ByteArrayInputStream(Base64.decodeBase64(backData.data));
-    }
-    
 
 }
