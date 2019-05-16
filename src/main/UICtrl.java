@@ -9,8 +9,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
@@ -20,16 +18,12 @@ import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class UICtrl {
-
-    boolean taoluMode;
-
 
     List<String> ignoreNameList=new ArrayList<>();
     short ignoreNameTimes=0;
@@ -76,25 +70,11 @@ public class UICtrl {
 
                     switch (showWhich){
                         case 1:{
-                            if(chosen_2.getText().contains("→"))
-                                chosen_2.setText(chosen_2.getText().replace("→",""));
-
                             chosen_1.setText("→"+chosen_1.getText());
-
-                            //for(int i=0;i<15;i++)
-                            data.addTaoluedName(chosen_1.getText(),15);
-
                             break;
                         }
                         case 2:{
-                            if(chosen_1.getText().contains("→"))
-                                chosen_1.setText(chosen_1.getText().replace("→",""));
-
                             chosen_2.setText("→"+chosen_2.getText());
-
-                            //for(int i=0;i<15;i++)
-                            data.addTaoluedName(chosen_2.getText(),15);
-
                             break;
                         }
                     }
@@ -103,8 +83,6 @@ public class UICtrl {
                     return;
                 }else
                     ignoreTinmesOut=true;
-
-
 
             }
             if(singleCycle>=times&&!ignoreTinmesOut){
@@ -118,11 +96,9 @@ public class UICtrl {
                 showWhich=(int)(1+Math.random()*2);
             }
 
-
-
             switch (showWhich){
                 case 1:{
-                    chosenName=data.randomGet(taoluMode);
+                    chosenName=data.randomGet();
                     chosen_1.setText(chosenName);
                     already++;
                     singleCycle++;
@@ -130,7 +106,7 @@ public class UICtrl {
                 }
 
                 case 2:{
-                    chosenName=data.randomGet(taoluMode);
+                    chosenName=data.randomGet();
                     chosen_2.setText(chosenName);
                     already++;
                     singleCycle++;
@@ -161,19 +137,11 @@ public class UICtrl {
 
                     switch (showWhich){
                         case 1:{
-                            if(chosen_2.getText().contains("→"))
-                                chosen_2.setText(chosen_2.getText().replace("→",""));
-
                             chosen_1.setText("→"+chosen_1.getText());
-
                             break;
                         }
                         case 2:{
-                            if(chosen_1.getText().contains("→"))
-                                chosen_1.setText(chosen_1.getText().replace("→",""));
-
                             chosen_2.setText("→"+chosen_2.getText());
-
                             break;
                         }
                     }
@@ -240,16 +208,14 @@ public class UICtrl {
     public JFXButton showNameMangerButton;
     public  JFXButton recover;
 
-    public JFXCheckBox taoluModeBtn;
+    public JFXCheckBox numbChoose;
+    public JFXCheckBox nameChoose;
 
-    public JFXRadioButton numbChoose;
-    public JFXRadioButton nameChoose;
+    public JFXCheckBox chooseOnce;
+    public JFXCheckBox ignoreOnce;
 
-    public JFXRadioButton chooseOnce;
-    public JFXRadioButton ignoreOnce;
-
-    public JFXRadioButton randomTimes;
-    public JFXRadioButton fixedTimes;
+    public JFXCheckBox randomTimes;
+    public JFXCheckBox fixedTimes;
 
     public JFXSlider chooseTimes;
     public JFXSlider speedBar;
@@ -276,6 +242,8 @@ public class UICtrl {
     public Config config;
 
     public static final ObservableList names = FXCollections.observableArrayList();
+
+
 
     public void setStage(Stage stage){
         this.stage = stage;
@@ -305,7 +273,7 @@ public class UICtrl {
 
     public void setSpeed(short speed) {
         this.speed = speed;
-        speedBar.setValue(100-speed);
+        speedBar.setValue(speed);
     }
 
 
@@ -315,10 +283,6 @@ public class UICtrl {
 
     public void setSpeedHere() {
         this.speed = (short) speedBar.getValue();
-    }
-
-    public void setTaoluMode(boolean taoluMode){
-        this.taoluMode=taoluMode;
     }
 
 
@@ -334,7 +298,6 @@ public class UICtrl {
         config.setNameChoose(isNameChoose);
         config.setSpeed(speed);
         config.setRandomTimes(isRandomTimes);
-        config.setTaoluMode(taoluMode);
 
         System.out.println(speed);
         System.out.println(chosenTime);
@@ -368,7 +331,7 @@ public class UICtrl {
         //int s=(int)min+(int)(Math.random()*(max-min));
 
         if(isNameChoose){
-            if(data.isEmpty(taoluMode)){
+            if(data.isEmpty()){
                 showInfoDialog("哦霍~","现在名单还是空的捏~请前往名单管理添加名字 或 使用数字挑选法。");
                 return;
              }
@@ -421,11 +384,6 @@ public class UICtrl {
         nameChoose.setSelected(false);
         numbPane.setVisible(true);
         showNameMangerButton.setVisible(false);
-        if(taoluMode){
-            taoluMode=false;
-            taoluModeBtn.setVisible(false);
-            taoluModeBtn.setSelected(false);
-        }
     }
 
     @FXML
@@ -436,31 +394,7 @@ public class UICtrl {
         numbChoose.setSelected(false);
         namePane.setVisible(true);
         showNameMangerButton.setVisible(true);
-        if(!ignorePast){
-            //taoluMode=true;
-            taoluModeBtn.setVisible(true);
-        }
     }
-    
-    
-    void taoluModeBtn_selected(){
-        taoluMode=true;
-        taoluModeBtn.setSelected(true);
-    }
-
-    void taoluModeBtn_unselect(){
-        taoluMode=false;
-        taoluModeBtn.setSelected(false);
-    }
-
-   @FXML
-   void taoluModeBtn_Aciton(){
-        if(taoluMode)
-            taoluModeBtn_unselect();
-        else
-            taoluModeBtn_selected();
-   }
-
     @FXML
     void addName(){
         data.add(inputName.getText());
@@ -611,23 +545,13 @@ public class UICtrl {
         ignorePast=true;
         ignoreOnce.setSelected(true);
         chooseOnce.setSelected(false);
-        if(taoluMode){
-            taoluMode=false;
-            taoluModeBtn.setVisible(false);
-            taoluModeBtn.setSelected(false);
-        }
     }
-    
+
     @FXML
     void chooseOnce_selected() {
         ignorePast=false;
         chooseOnce.setSelected(true);
         ignoreOnce.setSelected(false);
-        if(isNameChoose){
-            //taoluMode=true;
-            taoluModeBtn.setVisible(true);
-            
-        }
     }
 
 
