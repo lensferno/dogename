@@ -82,7 +82,7 @@ public class UICtrl {
                             chosen_1.setText("→"+chosen_1.getText());
 
                             //for(int i=0;i<15;i++)
-                            data.addTaoluedName(chosen_1.getText(),15);
+                            data.addTaoluedName(chosen_1.getText().replace("→",""),5);
 
                             break;
                         }
@@ -93,7 +93,7 @@ public class UICtrl {
                             chosen_2.setText("→"+chosen_2.getText());
 
                             //for(int i=0;i<15;i++)
-                            data.addTaoluedName(chosen_2.getText(),15);
+                            data.addTaoluedName(chosen_2.getText().replace("→",""),5);
 
                             break;
                         }
@@ -421,11 +421,11 @@ public class UICtrl {
         nameChoose.setSelected(false);
         numbPane.setVisible(true);
         showNameMangerButton.setVisible(false);
-        if(taoluMode){
-            taoluMode=false;
-            taoluModeBtn.setVisible(false);
-            taoluModeBtn.setSelected(false);
-        }
+
+        taoluMode=false;
+        taoluModeBtn.setSelected(false);
+        taoluModeBtn.setVisible(false);
+
     }
 
     @FXML
@@ -611,11 +611,11 @@ public class UICtrl {
         ignorePast=true;
         ignoreOnce.setSelected(true);
         chooseOnce.setSelected(false);
-        if(taoluMode){
-            taoluMode=false;
-            taoluModeBtn.setVisible(false);
-            taoluModeBtn.setSelected(false);
-        }
+
+        taoluMode=false;
+        taoluModeBtn.setVisible(false);
+        taoluModeBtn.setSelected(false);
+
     }
     
     @FXML
