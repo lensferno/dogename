@@ -10,6 +10,7 @@ import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Random;
+import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -34,6 +35,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import org.apache.commons.codec.binary.Hex;
+import sun.rmi.runtime.Log;
 
 import static javafx.stage.StageStyle.*;
 
@@ -309,7 +311,7 @@ public class ProgramMain extends Application {
 
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(configFile));
             this.config = (Config) ois.readObject();
-
+            System.out.println("ha?");
         } catch (Exception e) {
             config = new Config();
             e.printStackTrace();
@@ -321,6 +323,7 @@ public class ProgramMain extends Application {
 
             Scene scene = new Scene(root, 990, 700);
             stage.setTitle("MDmaster 初号姬");
+            System.out.println("ha2?");
             stage.setScene(scene);
             stage.setResizable(false);
             UICtrl controller = loader.getController(); //获取Controller的实例对象//传递primaryStage，scene参数给Controller

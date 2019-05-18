@@ -7,7 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af52816d-3d8d-420e-823c-b3961a36b72e" name="Default" comment=".">
+      <change afterPath="$PROJECT_DIR$/src/main/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Downloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ProgramMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UICtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UIback.fxml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,61 +23,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/DM_master$ProgramMain.ic" NAME="ProgramMain Coverage Results" MODIFIED="1558174412476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ProgramMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="182" column="28" lean-forward="true" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
-              <folding>
-                <element signature="e#2836#2837#0" expanded="true" />
-                <element signature="e#2882#2883#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Updater.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Updater.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="releaseData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/releaseData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FXMLLoader.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32827">
-              <caret line="2055" column="11" selection-start-line="2055" selection-start-column="11" selection-end-line="2055" selection-end-column="11" />
-              <folding>
-                <element signature="e#79010#79011#0" expanded="true" />
-                <element signature="e#79046#79047#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Downloader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Downloader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="118" selection-start-line="118" selection-end-line="118" />
+            <state relative-caret-position="1952">
+              <caret line="298" lean-forward="true" selection-start-line="298" selection-end-line="298" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1922#1923#0" expanded="true" />
-                <element signature="e#1950#1951#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,11 +45,28 @@
       <file leaf-file-name="UICtrl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1216">
-              <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
+            <state relative-caret-position="254">
+              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="String.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="2236" column="7" lean-forward="true" selection-start-line="2236" selection-start-column="7" selection-end-line="2236" selection-end-column="7" />
               <folding>
-                <element signature="e#1474#3749#0" expanded="true" />
-                <element signature="e#3748#3749#0" expanded="true" />
+                <element signature="e#22786#22787#0" expanded="true" />
+                <element signature="e#22821#22822#0" expanded="true" />
+                <element signature="e#29462#29463#0" expanded="true" />
+                <element signature="e#29533#29534#0" expanded="true" />
+                <element signature="e#55800#55801#0" expanded="true" />
+                <element signature="e#55844#55845#0" expanded="true" />
+                <element signature="e#56437#56438#0" expanded="true" />
+                <element signature="e#56514#56515#0" expanded="true" />
+                <element signature="e#58481#58482#0" expanded="true" />
+                <element signature="e#58518#58519#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,6 +111,7 @@
       <find>Log.info</find>
       <find>downloadCompleted</find>
       <find>showInfoDialog</find>
+      <find>new URL(FXML_FILE)</find>
     </findStrings>
     <replaceStrings>
       <replace>text</replace>
@@ -145,6 +128,7 @@
       <replace>Image</replace>
       <replace>Downloader</replace>
       <replace>System.out.println</replace>
+      <replace>getClass().getResource(&quot;/main/sourcesData/uifiles/UI.fxml&quot;)</replace>
     </replaceStrings>
     <dirStrings>
       <dir>N:\project\DM_msater</dir>
@@ -169,15 +153,18 @@
         <option value="$PROJECT_DIR$/src/main/sourcesData/UIFileData.java" />
         <option value="$PROJECT_DIR$/src/main/sourcesData/backData.java" />
         <option value="$PROJECT_DIR$/src/main/Data.java" />
-        <option value="$PROJECT_DIR$/src/main/Downloader.java" />
         <option value="$PROJECT_DIR$/src/main/Updater.java" />
         <option value="$PROJECT_DIR$/src/main/releaseData.java" />
+        <option value="$PROJECT_DIR$/src/main/Update.java" />
+        <option value="$PROJECT_DIR$/src/main/Downloader.java" />
         <option value="$PROJECT_DIR$/src/main/ProgramMain.java" />
         <option value="$PROJECT_DIR$/src/main/UICtrl.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1440" />
     <option name="height" value="817" />
   </component>
@@ -187,8 +174,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -347,29 +334,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="817" extended-state="0" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32518598" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32457292" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43304843" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298292" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39947438" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3298611" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21629213" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21388888" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2759527" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2759527" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -390,101 +378,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/ProgramMain.java</url>
-          <line>239</line>
+          <line>332</line>
           <properties />
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/ProgramMain.java</url>
-          <line>252</line>
+          <line>321</line>
           <properties />
-          <option name="timeStamp" value="19" />
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/ProgramMain.java</url>
-          <line>320</line>
+          <line>323</line>
           <properties />
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/ProgramMain.java</url>
-          <line>328</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/ProgramMain.java</url>
-          <line>314</line>
-          <properties />
-          <option name="timeStamp" value="23" />
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="24" />
+      <option name="time" value="34" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Data.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2242">
-          <caret line="118" column="24" lean-forward="true" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Arrays.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/sourcesData.java" />
-    <entry file="jar://C:/Program Files/Java/src.zip!/java/util/Random.java" />
-    <entry file="jar://C:/Program Files/Java/src.zip!/java/lang/Math.java" />
-    <entry file="jar://C:/Program Files/Java/src.zip!/java/lang/Thread.java" />
-    <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/animation/Timeline.java" />
-    <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/animation/Animation.java" />
-    <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/scene/control/Labeled.java" />
-    <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/animation/KeyValue.java" />
-    <entry file="jar://C:/Program Files/Java/src.zip!/java/util/List.java" />
-    <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/animation/Interpolator.java" />
-    <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/beans/property/BooleanPropertyBase.java" />
     <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/scene/control/CheckBox.java" />
     <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/event/Event.java" />
     <entry file="jar://C:/Program Files/Java/javafx-src.zip!/javafx/scene/Scene.java" />
@@ -578,26 +492,10 @@
     <entry file="file://$PROJECT_DIR$/DM_msater.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Downloader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/releaseData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="118" selection-start-line="118" selection-end-line="118" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
-            <element signature="e#1950#1951#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32827">
-          <caret line="2055" column="11" selection-start-line="2055" selection-start-column="11" selection-end-line="2055" selection-end-column="11" />
-          <folding>
-            <element signature="e#79010#79011#0" expanded="true" />
-            <element signature="e#79046#79047#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -608,32 +506,245 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/releaseData.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Update.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+        <state relative-caret-position="141">
+          <caret line="39" column="43" lean-forward="true" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+          <folding>
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#370#371#0" expanded="true" />
+            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Downloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/com/sun/javafx/application/PlatformImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="294" selection-start-line="294" selection-end-line="294" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/ObjectInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="430" selection-start-line="430" selection-end-line="430" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="487" selection-start-line="487" selection-end-line="487" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="333" selection-start-line="333" selection-end-line="333" />
+          <folding>
+            <element signature="e#11597#11598#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/net/URL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="810" selection-start-line="810" selection-end-line="810" />
+          <folding>
+            <element signature="e#30400#30401#0" expanded="true" />
+            <element signature="e#30877#30878#0" expanded="true" />
+            <element signature="e#30904#30905#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/net/www/ParseUtil.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/net/www/protocol/file/Handler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="1335" selection-start-line="1335" selection-end-line="1335" />
+          <folding>
+            <element signature="e#52271#52272#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="3334" selection-start-line="3334" selection-end-line="3334" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="434" selection-start-line="434" selection-end-line="434" />
+          <folding>
+            <element signature="e#10361#10362#0" expanded="true" />
+            <element signature="e#10388#10389#0" expanded="true" />
+            <element signature="e#15586#15587#0" expanded="true" />
+            <element signature="e#15631#15632#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="2439" selection-start-line="2439" selection-end-line="2439" />
+          <folding>
+            <element signature="e#79010#79011#0" expanded="true" />
+            <element signature="e#79046#79047#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/misc/URLClassPath.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="180" selection-start-line="180" selection-end-line="180" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/net/URLClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="381" selection-start-line="381" selection-end-line="381" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/ClassNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+          <folding>
+            <element signature="e#2269#2270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/ReflectiveOperationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="e#1958#1959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="e#2443#2444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="285" selection-start-line="285" selection-end-line="285" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/misc/MetaIndex.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="2236" column="7" lean-forward="true" selection-start-line="2236" selection-start-column="7" selection-end-line="2236" selection-end-column="7" />
+          <folding>
+            <element signature="e#22786#22787#0" expanded="true" />
+            <element signature="e#22821#22822#0" expanded="true" />
+            <element signature="e#29462#29463#0" expanded="true" />
+            <element signature="e#29533#29534#0" expanded="true" />
+            <element signature="e#55800#55801#0" expanded="true" />
+            <element signature="e#55844#55845#0" expanded="true" />
+            <element signature="e#56437#56438#0" expanded="true" />
+            <element signature="e#56514#56515#0" expanded="true" />
+            <element signature="e#58481#58482#0" expanded="true" />
+            <element signature="e#58518#58519#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="182" column="28" lean-forward="true" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
+        <state relative-caret-position="1952">
+          <caret line="298" lean-forward="true" selection-start-line="298" selection-end-line="298" />
           <folding>
-            <element signature="e#2836#2837#0" expanded="true" />
-            <element signature="e#2882#2883#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1216">
-          <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
-          <folding>
-            <element signature="e#1474#3749#0" expanded="true" />
-            <element signature="e#3748#3749#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="254">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
         </state>
       </provider>
     </entry>
