@@ -1,10 +1,11 @@
 {
-    visionNumber : 2,
-    vision : "1.3.3.0",
-    desc : "1. 新增升级功能\n2. UI文件可直接在程序中加载，不需另外输出文件。",
-    updateSource : 
-    [
-        { sourceName : "Gitee" , link : ""}
-        {sourceName : "Github" , link : "https://github.com/Het7230/DM_master/releases/download/1.3.2.0/DMmaster.exe"}
+    "versionNumber": 2,
+    "version": "1.4.7.0",
+    "describe": "1.增加了一些bug；\n2.修复了一些bug",
+    "updateSource": [
+        {
+            "sourceName": "Github",
+            "updateURL": "https://github.com/Het7230/DM_master/releases/download/1.3.2.0/DMmaster.exe"
+        }
     ]
 }
