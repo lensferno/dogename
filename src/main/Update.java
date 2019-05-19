@@ -71,11 +71,10 @@ public class Update {
 
     @Override
     public String toString() {
-        return "以下是Udater信息：\nUpdate{" +
+        return "以下是Udater信息：\n" +
                 "versionNumber=" + versionNumber +
                 ", version=" + version +
                 ", describe='" + describe + '\'' +
-                ", updateSource=" + updateSource +
-                '}';
+                ", updateSource=" + updateSource ;
     }
 }

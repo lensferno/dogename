@@ -55,12 +55,16 @@ public class UICtrl {
     boolean cycleEnd =true;
     boolean ignoreTinmesOut=false;
     boolean ignorePast=true;
-
+    
+    boolean forceStop =false;
 //-------------------------------------------------------------------------------------------
     AnimationTimer timer =new AnimationTimer() {
         @Override
         public void handle(long now) {
-
+            
+            if(forceStop)
+                already=chosenTime+1;
+            
             try{
                 Thread.sleep(speed);
             }catch (Exception e){ }
@@ -98,6 +102,7 @@ public class UICtrl {
                             break;
                         }
                     }
+                    isRunning=false;
                     stop();
                     controllerPane.setDisable(false);
                     return;
@@ -146,6 +151,10 @@ public class UICtrl {
         @Override
         public void handle(long now) {
 
+
+            if(forceStop)
+                already=chosenTime+1;
+
             try{
                 Thread.sleep(speed);
             }catch (Exception e){ }
@@ -177,6 +186,7 @@ public class UICtrl {
                             break;
                         }
                     }
+                    isRunning=false;
                     stop();
                     controllerPane.setDisable(false);
                     return;
@@ -353,9 +363,17 @@ public class UICtrl {
 
     }
 
+    
+    boolean isRunning=false;
 
     @FXML
     void anPai(){
+
+        if(isRunning){
+            forceStop=true;
+            choose.setText("安排一下")
+            return;
+        }
 
         if(isRandomTimes) {
             chosenTime =  100 + (int) (Math.random() * (250 - 100));
@@ -379,6 +397,8 @@ public class UICtrl {
              }
             controllerPane.setDisable(true);
             speed=(short) (100-speedBar.getValue());
+            isRunning=true;
+            choose.setText("不玩了！");
             timer.start();
 
         }else {
@@ -404,6 +424,8 @@ public class UICtrl {
 
             controllerPane.setDisable(true);
             speed=(short) (100-speedBar.getValue());
+            isRunning=true;
+            choose.setText("不玩了！")
             numbTimer.start();
 
         }
