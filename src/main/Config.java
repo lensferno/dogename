@@ -10,7 +10,7 @@ public class Config implements Serializable {
 
     private boolean ignorePast=true;
     private int chosenTime=120;
-    private short speed=80;
+    private short speed=20;
 
     private short minNumber;
     private short maxNumber;
