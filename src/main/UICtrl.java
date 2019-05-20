@@ -62,8 +62,10 @@ public class UICtrl {
         @Override
         public void handle(long now) {
             
-            if(forceStop)
+            if(forceStop){
                 already=chosenTime+1;
+                isRunning=false;
+            }
             
             try{
                 Thread.sleep(speed);
@@ -102,7 +104,8 @@ public class UICtrl {
                             break;
                         }
                     }
-                    isRunning=false;
+                    //isRunning=false;
+                    forceStop=false;
                     stop();
                     controllerPane.setDisable(false);
                     return;
@@ -152,8 +155,10 @@ public class UICtrl {
         public void handle(long now) {
 
 
-            if(forceStop)
+            if(forceStop){
                 already=chosenTime+1;
+                isRunning=false;
+            }
 
             try{
                 Thread.sleep(speed);
@@ -186,7 +191,8 @@ public class UICtrl {
                             break;
                         }
                     }
-                    isRunning=false;
+                    //isRunning=false;
+                    forceStop=false;
                     stop();
                     controllerPane.setDisable(false);
                     return;
@@ -371,7 +377,7 @@ public class UICtrl {
 
         if(isRunning){
             forceStop=true;
-            choose.setText("安排一下")
+            choose.setText("安排一下");
             return;
         }
 
@@ -425,7 +431,7 @@ public class UICtrl {
             controllerPane.setDisable(true);
             speed=(short) (100-speedBar.getValue());
             isRunning=true;
-            choose.setText("不玩了！")
+            choose.setText("不玩了！");
             numbTimer.start();
 
         }
