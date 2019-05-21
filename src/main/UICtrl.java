@@ -65,6 +65,7 @@ public class UICtrl {
             if(forceStop){
                 already=chosenTime+1;
                 isRunning=false;
+                forceStop=false;
             }
             
             try{
@@ -104,8 +105,6 @@ public class UICtrl {
                             break;
                         }
                     }
-                    //isRunning=false;
-                    forceStop=false;
                     stop();
                     controllerPane.setDisable(false);
                     return;
@@ -158,6 +157,7 @@ public class UICtrl {
             if(forceStop){
                 already=chosenTime+1;
                 isRunning=false;
+                forceStop=false;
             }
 
             try{
@@ -191,8 +191,6 @@ public class UICtrl {
                             break;
                         }
                     }
-                    //isRunning=false;
-                    forceStop=false;
                     stop();
                     controllerPane.setDisable(false);
                     return;
