@@ -88,8 +88,8 @@ public class UICtrl {
 
                             chosen_1.setText("→"+chosen_1.getText());
 
-                            //for(int i=0;i<15;i++)
-                            data.addTaoluedName(chosen_1.getText().replace("→",""),5);
+                            if(taoluMode)
+                                data.addTaoluedName(chosen_1.getText().replace("→",""),5);
 
                             break;
                         }
@@ -99,12 +99,14 @@ public class UICtrl {
 
                             chosen_2.setText("→"+chosen_2.getText());
 
-                            //for(int i=0;i<15;i++)
-                            data.addTaoluedName(chosen_2.getText().replace("→",""),5);
+                            if(taoluMode)
+                                data.addTaoluedName(chosen_2.getText().replace("→",""),5);
 
                             break;
                         }
                     }
+                    isRunning=false;
+                    choose.setText("安排一下");
                     stop();
                     controllerPane.setDisable(false);
                     return;
@@ -191,6 +193,8 @@ public class UICtrl {
                             break;
                         }
                     }
+                    isRunning=false;
+                    choose.setText("安排一下");
                     stop();
                     controllerPane.setDisable(false);
                     return;
