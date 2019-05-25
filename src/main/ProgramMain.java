@@ -88,43 +88,19 @@ public class ProgramMain extends Application {
     Runnable getSourceRunnable = new Runnable() {
         @Override
         public void run() {
-            try {
-                //Thread.sleep(6000);
-                //getSources();
-                //unZip();
-                Platform.runLater(showRunnable);
-            } catch (Exception e) {
-                e.printStackTrace();
-                System.out.println("[ERROR]无法从网络获取资源或解压文件，尝试本地释放文件。");
-                text_1.setText("从网络加载资源文件加载失败，尝试本地释放文件中。");
-                text_2.setText("");
-                text_3.setText("");
 
                 releaseData rd = new releaseData();
                 if (rd.releaseAllFile() == 0) {
                     Platform.runLater(showRunnable);
                 } else {
+                    Platform.runLater(new Runnable(){
                     loading.setVisible(false);
                     showInfoDialog("啊？", "程序无法加载资源文件到这台计算机上，请检查系统是否有关于文件权限的问题，然后重启程序尝试。", secondPane);
                     text_1.setText("资源文件加载失败，请检查程序是否有权限访问文件，然后重启本程序尝试。");
-                    text_2.setText("请手动访问：");
-                    TextArea ta = new TextArea("http://t.cn/EtFODZy");
-                    ta.setLayoutX(text_2.getLayoutX() + 50);
-                    ta.setLayoutY(text_2.getLayoutY());
-                    ta.setPrefWidth(200);
-                    ta.setPrefHeight(50);
-
-                    TextArea ta2 = new TextArea("https://github.com/Het7230/DM_Master_sources");
-                    ta2.setLayoutX(text_3.getLayoutX() + 50);
-                    ta2.setLayoutY(text_3.getLayoutY());
-                    ta2.setPrefWidth(200);
-                    ta2.setPrefHeight(50);
-                    secondPane.getChildren().add(ta2);
-                    text_3.setText("完整网址：");
+                    text_2.setText("");
+                    text_3.setText("");
+                  });
                     return;
-                }
-
-            }
         }
     };
 
@@ -294,7 +270,7 @@ public class ProgramMain extends Application {
             controller.setSpeed(config.getSpeed());
             controller.setChosenTime(config.getChosenTime());
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
     }
@@ -378,7 +354,7 @@ public class ProgramMain extends Application {
             controller.setSpeed(config.getSpeed());
             controller.setChosenTime(config.getChosenTime());
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
     }
