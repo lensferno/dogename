@@ -1,5 +1,15 @@
 package main;
 
+import com.google.gson.Gson;
+
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URLConnection;
+import java.net.URL;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.Inflater;
+import java.util.zip.InflaterInputStream;
+
 public class Updater {
     
   Update updateInfo;
@@ -7,7 +17,7 @@ public class Updater {
     public boolean checkUpdate(int versionNumb){
         try{
 
-            updateInfo=new Gson().fromJson(getHtml("https://raw.githubusercontent.com/Het7230/DM_master/master/update.json",Update.class);
+            updateInfo=new Gson().fromJson(getHtml("https://raw.githubusercontent.com/Het7230/DM_master/master/update.json"),Update.class);
 
             if(versionNumb<updateInfo.getVersionNumber())
                 return true;
@@ -15,12 +25,12 @@ public class Updater {
                 return false;
 
         }catch(Exception e){
-            return false;
             e.printStackTrace();
+            return false;
         }
     }
     
-    public Update getUpdateInfo(){}
+    //public Update getUpdateInfo(){}
     
     public int downloadUpdate(String fileLocation){
         int i=downloader(updateInfo.getUpdateSource().get(0).getUpdateURL(),fileLocation);
@@ -58,7 +68,7 @@ public class Updater {
         StringBuilder sb = new StringBuilder();
         try {
             BufferedReader bis;
-            URL url = new URL(address);
+            URL url = new URL(URL);
             URLConnection conn = url.openConnection();
             conn.setRequestProperty("Accept-Encoding", "gzip,deflate");
             conn.connect();
