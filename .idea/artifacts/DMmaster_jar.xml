@@ -7,6 +7,8 @@
       </element>
       <element id="module-output" name="DM_msater" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/jfoenix/jfoenix/8.0.8/jfoenix-8.0.8.jar" path-in-jar="/" />
+      <element id="library" level="project" name="commons-codec-1.11" />
+      <element id="library" level="project" name="gson-2.8.5" />
     </root>
   </artifact>
 </component>
