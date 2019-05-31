@@ -89,7 +89,7 @@ public class UICtrl {
                             chosen_1.setText("→"+chosen_1.getText());
 
                             if(taoluMode)
-                                data.addTaoluedName(chosen_1.getText().replace("→",""),5);
+                                data.addTaoluedName(chosen_1.getText().replace("→",""),5);System.out.println(chosen_1.getText()+"已安排5次");
 
                             break;
                         }
@@ -100,7 +100,7 @@ public class UICtrl {
                             chosen_2.setText("→"+chosen_2.getText());
 
                             if(taoluMode)
-                                data.addTaoluedName(chosen_2.getText().replace("→",""),5);
+                                data.addTaoluedName(chosen_2.getText().replace("→",""),4);System.out.println(chosen_2.getText()+"已安排4次");
 
                             break;
                         }

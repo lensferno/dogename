@@ -48,7 +48,7 @@ public class ProgramMain extends Application {
     final static private String IAMGE_FILE = "D:\\DM_Master_sources-master\\sources\\img1.png";
     final static private String BACKIAMGE_FILE = "D:\\DM_Master_sources-master\\sources\\back.png";
 
-    final static private String FXML_FILE_MD5 = "4443e5d25340d3b7b43cd233635a500d";
+    final static private String FXML_FILE_MD5 = "0b33ef9a80e667c2435f7513b489e803";
     final static private String IAMGE_FILE_MD5 = "c525694ef2bb39c0d04826ca6cf58c79";
     final static private String BACKIAMGE_FILE_MD5 = "e481912f539f59bc38b6cc26d278dfcd";
 
@@ -89,18 +89,22 @@ public class ProgramMain extends Application {
         @Override
         public void run() {
 
-                releaseData rd = new releaseData();
-                if (rd.releaseAllFile() == 0) {
-                    Platform.runLater(showRunnable);
-                } else {
-                    Platform.runLater(new Runnable(){
-                    loading.setVisible(false);
-                    showInfoDialog("啊？", "程序无法加载资源文件到这台计算机上，请检查系统是否有关于文件权限的问题，然后重启程序尝试。", secondPane);
-                    text_1.setText("资源文件加载失败，请检查程序是否有权限访问文件，然后重启本程序尝试。");
-                    text_2.setText("");
-                    text_3.setText("");
-                  });
-                    return;
+            releaseData rd = new releaseData();
+            if (rd.releaseAllFile() == 0) {
+                Platform.runLater(showRunnable);
+            } else {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        loading.setVisible(false);
+                        showInfoDialog("啊？", "程序无法加载资源文件到这台计算机上，请检查系统是否有关于文件权限的问题，然后重启程序尝试。", secondPane);
+                        text_1.setText("资源文件加载失败，请检查程序是否有权限访问文件，然后重启本程序尝试。");
+                        text_2.setText("");
+                        text_3.setText("");
+                    }
+                });
+                return;
+            }
         }
     };
 
