@@ -18,10 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,8 +52,68 @@ public class UICtrl {
     boolean cycleEnd =true;
     boolean ignoreTinmesOut=false;
     boolean ignorePast=true;
+
+    boolean equalityMode=true;
     
     boolean forceStop =false;
+    File nameIgnoreFile =new File("D:\\DM_Master_sources-master\\nameIgnoreList");
+    File numbIgnoreFile =new File("D:\\DM_Master_sources-master\\numbIgnoreList");
+
+    public void readIgnoreList(){
+
+        try{
+
+            if(nameIgnoreFile.exists()!=true){
+                nameIgnoreFile.createNewFile();
+                ignoreNameList= new ArrayList<>();
+                return;
+            }
+
+            ObjectInputStream ois =new ObjectInputStream(new FileInputStream(nameIgnoreFile));
+            this.ignoreNameList=(ArrayList)ois.readObject();
+
+            ignoreNameTimes=(short) ignoreNameList.size();
+
+        }catch (Exception e){
+            ignoreNameList=new ArrayList<>();
+            e.printStackTrace();
+        }
+
+        try{
+
+            if(numbIgnoreFile.exists()!=true){
+                numbIgnoreFile.createNewFile();
+                ignoreNumberList= new ArrayList<>();
+                return;
+            }
+
+            ObjectInputStream ois =new ObjectInputStream(new FileInputStream(nameIgnoreFile));
+            this.ignoreNumberList=(ArrayList)ois.readObject();
+
+            ignoreNumberTimes=(short) ignoreNumberList.size();
+
+        }catch (Exception e){
+            ignoreNumberList=new ArrayList<>();
+            e.printStackTrace();
+        }
+    }
+
+    void writeIgnoreList(){
+        try{
+            ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(nameIgnoreFile));
+            oos.writeObject(ignoreNameList);
+            oos.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try{
+            ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(numbIgnoreFile));
+            oos.writeObject(ignoreNumberList);
+            oos.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 //-------------------------------------------------------------------------------------------
     AnimationTimer timer =new AnimationTimer() {
         @Override
