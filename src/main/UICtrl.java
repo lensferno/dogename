@@ -60,9 +60,21 @@ public class UICtrl {
     File nameIgnoreFile =new File("D:\\DM_Master_sources-master\\nameIgnoreList");
     File numbIgnoreFile =new File("D:\\DM_Master_sources-master\\numbIgnoreList");
 
-    void clearIagnoreList(){
+    void clearIgnoreList(){
         ignoreNameList=new ArrayList<>();
         ignoreNumberList=new ArrayList<>();
+    }
+	
+	void clearTaoluList(){
+        data.clearTaoluedName();
+	}
+
+	void showTaoluMode(){
+
+    }
+
+    void showEqualMode(){
+
     }
 
     public void readIgnoreList(){
@@ -325,6 +337,7 @@ public class UICtrl {
     public  JFXButton recover;
 
     public JFXCheckBox taoluModeBtn;
+    public JFXCheckBox equalModeBtn;
 
     public JFXRadioButton numbChoose;
     public JFXRadioButton nameChoose;
@@ -521,7 +534,7 @@ public class UICtrl {
 
         taoluMode=false;
         taoluModeBtn.setSelected(false);
-        taoluModeBtn.setVisible(false);
+        taoluModeBtn.setDisable(false);
 
     }
 
@@ -535,7 +548,7 @@ public class UICtrl {
         showNameMangerButton.setVisible(true);
         if(!ignorePast){
             //taoluMode=true;
-            taoluModeBtn.setVisible(true);
+            taoluModeBtn.setDisable(true);
         }
     }
     
@@ -710,7 +723,7 @@ public class UICtrl {
         chooseOnce.setSelected(false);
 
         taoluMode=false;
-        taoluModeBtn.setVisible(false);
+        taoluModeBtn.setDisable(false);
         taoluModeBtn.setSelected(false);
 
     }
@@ -722,7 +735,7 @@ public class UICtrl {
         ignoreOnce.setSelected(false);
         if(isNameChoose){
             //taoluMode=true;
-            taoluModeBtn.setVisible(true);
+            taoluModeBtn.setDisable(true);
             
         }
     }
