@@ -96,11 +96,21 @@
                         <Font size="17.0" />
                      </font>
                   </JFXRadioButton>
-                  <JFXCheckBox fx:id="taoluModeBtn" layoutY="151.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="233.0" text=" 套路模式(试验功能，仅限名字)" unCheckedColor="#12d071" visible="false">
+                  <JFXCheckBox fx:id="taoluModeBtn" layoutY="147.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="机会均等" unCheckedColor="#12d071">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXCheckBox>
+                  <JFXCheckBox fx:id="taoluModeBtn1" layoutY="171.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="套路模式" unCheckedColor="#12d071">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXCheckBox>
+                  <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="171.0" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
+                  <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="147.0" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
+                  <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="171.0" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
+                  <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="147.0" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
+                  <Line endX="100.0" layoutX="101.0" layoutY="170.0" startX="-100.0" />
                </children>
             </Pane>
             <ImageView fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">

@@ -267,6 +267,10 @@ public class ProgramMain extends Application {
 
             if(config.isEqualMode())
                 //do some thing
+
+
+
+                //https://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-1x-archive-2199384.html
                 
             
             controller.setMaxNumber(config.getMaxNumber());
