@@ -264,6 +264,9 @@ public class ProgramMain extends Application {
                 controller.taoluModeBtn_selected();
             else
                 controller.taoluModeBtn_unselect();
+
+            if(config.isEqualMode())
+                //do some thing
                 
             
             controller.setMaxNumber(config.getMaxNumber());

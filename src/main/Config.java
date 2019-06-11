@@ -17,6 +17,16 @@ public class Config implements Serializable {
 
     private boolean taoluMode=false;
 
+    private boolean equalMode=true;
+
+    public boolean isEqualMode() {
+        return equalMode;
+    }
+
+    public void setEqualMode(boolean equalMode) {
+        this.equalMode = equalMode;
+    }
+
     public boolean isIgnorePast() {
         return ignorePast;
     }

@@ -144,6 +144,11 @@ public class Data {
         chooseList.clear();
     }
 
+    //------------------------------------------------------
+    public void clearTaoluedName(){
+        chooseList=new ArrayList<String>();
+    }
+
 }
 
 
