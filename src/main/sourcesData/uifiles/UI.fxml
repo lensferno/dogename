@@ -96,20 +96,20 @@
                         <Font size="17.0" />
                      </font>
                   </JFXRadioButton>
-                  <JFXCheckBox fx:id="taoluModeBtn" layoutY="147.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="机会均等" unCheckedColor="#12d071">
+                  <JFXCheckBox fx:id="equalModeBtn" layoutY="147.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="机会均等" unCheckedColor="#12d071">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="taoluModeBtn1" layoutY="171.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="套路模式" unCheckedColor="#12d071">
+                  <JFXCheckBox fx:id="taoluModeBtn" layoutY="171.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="套路模式" unCheckedColor="#12d071">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="171.0" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
-                  <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="147.0" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
-                  <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="171.0" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
-                  <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="147.0" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
+                  <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="171.0" onAction="#clearTaoluList" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
+                  <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="147.0" onAction="#clearIgnoreList" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
+                  <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="171.0" onAction="#showTaoluMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
+                  <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="147.0" onAction="#showEqualMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
                   <Line endX="100.0" layoutX="101.0" layoutY="170.0" startX="-100.0" />
                </children>
             </Pane>
