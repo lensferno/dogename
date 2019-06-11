@@ -50,14 +50,20 @@ public class UICtrl {
     String chosenName;
 
     boolean cycleEnd =true;
-    boolean ignoreTinmesOut=false;
+    boolean ignoreTimesOut=false;
     boolean ignorePast=true;
 
-    boolean equalityMode=true;
+    boolean equalMode=true;
     
     boolean forceStop =false;
+
     File nameIgnoreFile =new File("D:\\DM_Master_sources-master\\nameIgnoreList");
     File numbIgnoreFile =new File("D:\\DM_Master_sources-master\\numbIgnoreList");
+
+    void clearIagnoreList(){
+        ignoreNameList=new ArrayList<>();
+        ignoreNumberList=new ArrayList<>();
+    }
 
     public void readIgnoreList(){
 
@@ -135,7 +141,7 @@ public class UICtrl {
                     cycleEnd=true;
                     already=0;
                     singleCycle=0;
-                    ignoreTinmesOut=false;
+                    ignoreTimesOut=false;
                     ignoreNameTimes++;
 
                     switch (showWhich){
@@ -168,12 +174,12 @@ public class UICtrl {
                     controllerPane.setDisable(false);
                     return;
                 }else
-                    ignoreTinmesOut=true;
+                    ignoreTimesOut=true;
 
 
 
             }
-            if(singleCycle>=times&&!ignoreTinmesOut){
+            if(singleCycle>=times&&!ignoreTimesOut){
                 cycleEnd=true;
                 singleCycle=0;
             }
@@ -229,7 +235,7 @@ public class UICtrl {
                     cycleEnd=true;
                     already=0;
                     singleCycle=0;
-                    ignoreTinmesOut=false;
+                    ignoreTimesOut=false;
                     ignoreNameTimes++;
 
                     switch (showWhich){
@@ -256,10 +262,10 @@ public class UICtrl {
                     controllerPane.setDisable(false);
                     return;
                 }else
-                    ignoreTinmesOut=true;
+                    ignoreTimesOut=true;
 
             }
-            if(singleCycle>=times&&!ignoreTinmesOut){
+            if(singleCycle>=times&&!ignoreTimesOut){
                 cycleEnd=true;
                 singleCycle=0;
             }
