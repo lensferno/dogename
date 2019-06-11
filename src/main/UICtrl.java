@@ -138,6 +138,8 @@ public class UICtrl {
             if(already>=chosenTime){
                 if(!ignoreNameList.contains(chosenName)||!ignorePast){
                     ignoreNameList.add(chosenName);
+                    if(equalMode)
+                        writeIgnoreList();
                     cycleEnd=true;
                     already=0;
                     singleCycle=0;
@@ -232,6 +234,8 @@ public class UICtrl {
             if(already>=chosenTime){
                 if(!ignoreNumberList.contains(chosenName)||!ignorePast){
                     ignoreNumberList.add(chosenName);
+                    if(equalMode)
+                        writeIgnoreList();
                     cycleEnd=true;
                     already=0;
                     singleCycle=0;
@@ -281,7 +285,6 @@ public class UICtrl {
                     chosen_1.setText(String.valueOf(
                             (int)minNumber+(int)(Math.random()*(maxNumber-minNumber))
                     ));
-
                     chosenName=chosen_1.getText();
                     already++;
                     singleCycle++;
@@ -416,6 +419,7 @@ public class UICtrl {
         config.setSpeed(speed);
         config.setRandomTimes(isRandomTimes);
         config.setTaoluMode(taoluMode);
+        config.setEqualMode(equalMode);
 
         System.out.println(speed);
         System.out.println(chosenTime);
