@@ -96,7 +96,7 @@
                         <Font size="17.0" />
                      </font>
                   </JFXRadioButton>
-                  <JFXCheckBox fx:id="equalModeBtn" layoutY="147.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="机会均等" unCheckedColor="#12d071">
+                  <JFXCheckBox fx:id="equalModeBtn" layoutY="147.0" onAction="#equalBtnAction" prefHeight="20.0" prefWidth="94.0" text="机会均等" unCheckedColor="#12d071">
                      <font>
                         <Font size="14.0" />
                      </font>
