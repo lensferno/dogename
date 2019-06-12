@@ -149,7 +149,8 @@ public class UICtrl {
 
             if(already>=chosenTime){
                 if(!ignoreNameList.contains(chosenName)||!ignorePast){
-                    ignoreNameList.add(chosenName);
+                    if(ignorePast)
+                        ignoreNameList.add(chosenName);
                     if(equalMode)
                         writeIgnoreList();
                     cycleEnd=true;
@@ -245,7 +246,8 @@ public class UICtrl {
 
             if(already>=chosenTime){
                 if(!ignoreNumberList.contains(chosenName)||!ignorePast){
-                    ignoreNumberList.add(chosenName);
+                    if(ignorePast)
+                        ignoreNumberList.add(chosenName);
                     if(equalMode)
                         writeIgnoreList();
                     cycleEnd=true;
@@ -571,6 +573,26 @@ public class UICtrl {
             taoluModeBtn_selected();
    }
 
+   @FXML
+   void equalBtnAction(){
+       if(equalMode)
+           unSelectEqualBtn();
+       else
+           selectEqualBtn();
+   }
+
+   @FXML
+   void selectEqualBtn(){
+        equalModeBtn.setSelected(true);
+        equalMode=true;
+   }
+
+   @FXML
+   void unSelectEqualBtn(){
+       equalModeBtn.setSelected(false);
+       equalMode=false;
+   }
+
     @FXML
     void addName(){
         data.add(inputName.getText());
@@ -712,6 +734,8 @@ public class UICtrl {
     @FXML
     void deleteAllName(){
         data.deleteAll();
+        clearIgnoreList();
+        clearTaoluList();
         names.clear();
         data.saveToFile();
     }
@@ -723,8 +747,10 @@ public class UICtrl {
         chooseOnce.setSelected(false);
 
         taoluMode=false;
-        taoluModeBtn.setDisable(false);
+        taoluModeBtn.setDisable(true);
         taoluModeBtn.setSelected(false);
+
+        equalModeBtn.setDisable(false);
 
     }
     
@@ -733,9 +759,11 @@ public class UICtrl {
         ignorePast=false;
         chooseOnce.setSelected(true);
         ignoreOnce.setSelected(false);
+        unSelectEqualBtn();
+        equalModeBtn.setDisable(true);
         if(isNameChoose){
             //taoluMode=true;
-            taoluModeBtn.setDisable(true);
+            taoluModeBtn.setDisable(false);
             
         }
     }
