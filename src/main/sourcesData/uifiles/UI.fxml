@@ -101,7 +101,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="taoluModeBtn" layoutY="171.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="套路模式" unCheckedColor="#12d071">
+                  <JFXCheckBox fx:id="taoluModeBtn" layoutY="171.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="娱乐模式" unCheckedColor="#12d071">
                      <font>
                         <Font size="14.0" />
                      </font>

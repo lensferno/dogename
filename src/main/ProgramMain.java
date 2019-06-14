@@ -185,10 +185,10 @@ public class ProgramMain extends Application {
     }
 
     //程序主函数
+
     public static void main(String[] args) {
         launch(args);
     }
-
 
     public void showWindow(Stage firstStage) {
 
