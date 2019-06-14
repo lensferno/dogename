@@ -61,8 +61,10 @@ public class UICtrl {
     File numbIgnoreFile =new File("D:\\DM_Master_sources-master\\numbIgnoreList");
 
     void clearIgnoreList(){
-        ignoreNameList=new ArrayList<>();
-        ignoreNumberList=new ArrayList<>();
+        if(isNameChoose)
+            ignoreNameList=new ArrayList<>();
+        else
+            ignoreNumberList=new ArrayList<>();
     }
 	
 	void clearTaoluList(){
@@ -70,11 +72,11 @@ public class UICtrl {
 	}
 
 	void showTaoluMode(){
-
+        showInfoDialog("","");
     }
 
     void showEqualMode(){
-
+        showInfoDialog("","");
     }
 
     public void readIgnoreList(){
@@ -481,8 +483,11 @@ public class UICtrl {
                 return;
              }
 
-             if(ignoreNameList.size()>=data.getSize()&&ignorePast){
-                 showInfoDialog("啊？","全部名字都被点完啦！\n请多添加几个名字 或 选择“被点过的还要点”。");
+             if(ignoreNameList.size()>=data.getSize()&&ignorePast){                    if(equalMode) {
+                 showInfoDialog("啊？", "全部名字都被点完啦！\n名字列表将会重置");
+                 clearIgnoreList();
+             }else
+                 showInfoDialog("啊？","全部名字都被点完啦！\n请多添加几个名字 或 点击“机会均等”的“重置”按钮。");
                  return;
              }
             controllerPane.setDisable(true);
@@ -503,7 +508,11 @@ public class UICtrl {
                 }
 
                 if(ignoreNumberList.size()>=(maxNumber-minNumber) && ignorePast){
-                    showInfoDialog("啊？","全部数字都被点完啦！\n请扩大数字范围 或 选择“被点过的还要点”。");
+                    if(equalMode) {
+                        showInfoDialog("啊？", "全部数字都被点完啦！\n数字列表将会重置");
+                        clearIgnoreList();
+                    }else
+                        showInfoDialog("啊？","全部数字都被点完啦！\n请扩大数字范围 或 点击“机会均等”的“重置”按钮。");
                     return;
                 }
 
