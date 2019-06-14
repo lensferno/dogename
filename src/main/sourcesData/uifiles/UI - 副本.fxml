@@ -113,7 +113,7 @@
                   <Line endX="100.0" layoutX="101.0" layoutY="170.0" startX="-100.0" />
                </children>
             </Pane>
-            <ImageView fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mainView" fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
                
             </ImageView>
             <JFXButton fx:id="choose" buttonType="RAISED" layoutX="576.0" layoutY="621.0" onAction="#anPai" prefHeight="53.0" prefWidth="207.0" text="安排一下">
@@ -165,7 +165,7 @@
                   </DropShadow>
                </effect>
             </Rectangle>
-            <ImageView fitHeight="28.0" fitWidth="57.0" layoutX="14.0" layoutY="8.0" onDragDone="#turnBack" onMouseReleased="#turnBack" onTouchReleased="#turnBack" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="backBtn" fitHeight="28.0" fitWidth="57.0" layoutX="14.0" layoutY="8.0" onDragDone="#turnBack" onMouseReleased="#turnBack" onTouchReleased="#turnBack" pickOnBounds="true" preserveRatio="true">
 
             </ImageView>
          </children>

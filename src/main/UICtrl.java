@@ -76,12 +76,12 @@ public class UICtrl {
 
     @FXML
 	void showTaoluMode(){
-        showInfoDialog("","");
+        showInfoDialog("啥玩意？","旧称“套路模式”，勾选后会使被点过的名字在挑选列表中多出现4~5次，增加了再次被点中的几率。\n注意：仅在勾选此模式后点中的名字才会被多增加4~5次，不勾选时选中的名字不受影响。\n退出后会自动重置，不影响下次使用。");
     }
 
     @FXML
     void showEqualMode(){
-        showInfoDialog("","");
+        showInfoDialog("啥玩意？","");
     }
 
     public void readIgnoreList(){
