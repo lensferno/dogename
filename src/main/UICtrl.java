@@ -60,21 +60,26 @@ public class UICtrl {
     File nameIgnoreFile =new File("D:\\DM_Master_sources-master\\nameIgnoreList");
     File numbIgnoreFile =new File("D:\\DM_Master_sources-master\\numbIgnoreList");
 
+    @FXML
     void clearIgnoreList(){
         if(isNameChoose)
             ignoreNameList=new ArrayList<>();
         else
             ignoreNumberList=new ArrayList<>();
+        writeIgnoreList();
     }
-	
+
+    @FXML
 	void clearTaoluList(){
         data.clearTaoluedName();
 	}
 
+    @FXML
 	void showTaoluMode(){
         showInfoDialog("","");
     }
 
+    @FXML
     void showEqualMode(){
         showInfoDialog("","");
     }
@@ -418,6 +423,7 @@ public class UICtrl {
         this.speed = (short) speedBar.getValue();
     }
 
+    @FXML
     public void setTaoluMode(boolean taoluMode){
         this.taoluMode=taoluMode;
     }
@@ -531,7 +537,17 @@ public class UICtrl {
 
     }
 
+    @FXML
+    public ImageView mainView;
+    @FXML
+    public ImageView backBtn;
+    public Image mainImage =new Image(releaseData.getMainImageStream());
+    public Image backBtnImage =new Image(releaseData.getBackBtnStream());
 
+    public void setImages(){
+        mainView.setImage(mainImage);
+        backBtn.setImage(backBtnImage);
+    }
 
     //两种选择方式的切换，没什么好说的。
     @FXML
@@ -545,7 +561,7 @@ public class UICtrl {
 
         taoluMode=false;
         taoluModeBtn.setSelected(false);
-        taoluModeBtn.setDisable(false);
+        taoluModeBtn.setDisable(true);
 
     }
 

@@ -210,7 +210,8 @@ public class ProgramMain extends Application {
 
 
         try {
-            FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
+            //FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
             Parent root = loader.load();
             Scene scene = new Scene(root, 990, 700);
             stage.setTitle("MDmaster 初号姬");
@@ -266,7 +267,9 @@ public class ProgramMain extends Application {
                 controller.taoluModeBtn_unselect();
 
             if(config.isEqualMode())
-                //do some thing
+                controller.selectEqualBtn();
+            else
+                controller.unSelectEqualBtn();
 
 
 
@@ -305,8 +308,10 @@ public class ProgramMain extends Application {
         }
 
         try {
-            FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
-            Parent root = loader.load();
+            FXMLLoader loader =new FXMLLoader();
+            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
+            //FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
+            Parent root = loader.load(releaseData.getUIStream());
 
             Scene scene = new Scene(root, 990, 700);
             stage.setTitle("MDmaster 初号姬");
@@ -355,8 +360,14 @@ public class ProgramMain extends Application {
                 controller.taoluModeBtn_selected();
             else
                 controller.taoluModeBtn_unselect();
-     
-           
+
+            if(config.isEqualMode())
+                controller.selectEqualBtn();
+            else
+                controller.unSelectEqualBtn();
+
+            controller.setImages();
+
             controller.setMaxNumber(config.getMaxNumber());
             controller.maxNumb.setText(String.valueOf(config.getMaxNumber()));
             controller.setMinNumber(config.getMinNumber());

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import com.jfoenix.validation.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="rootPane" prefWidth="2014.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.UICtrl">
+   <children>
+      <JFXButton fx:id="recover" onAction="#recoverWindow" prefHeight="60.0" prefWidth="60.0" text="■ ■ ■" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <Pane fx:id="mainPane" prefHeight="710.0" prefWidth="1007.0">
+         <children>
+            <Label fx:id="chosen_1" alignment="CENTER" layoutX="194.0" layoutY="61.0" prefHeight="117.0" prefWidth="419.0" text="不是我" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Microsoft YaHei" size="86.0" />
+               </font>
+            </Label>
+            <Label fx:id="chosen_2" alignment="CENTER" layoutX="194.0" layoutY="178.0" prefHeight="117.0" prefWidth="419.0" text="也不是我" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Microsoft YaHei" size="86.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="1007.0" text="富强 民主 文明 和谐      自由 平等 公正 法治      爱国 敬业 诚信 友善" textAlignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Pane fx:id="controllerPane" layoutX="232.0" layoutY="432.0" prefHeight="191.0" prefWidth="620.0">
+               <children>
+                  <JFXSlider fx:id="speedBar" layoutX="69.0" layoutY="7.0" majorTickUnit="10.0" onMouseReleased="#setSpeedHere" onTouchReleased="#setSpeedHere" prefHeight="14.0" prefWidth="548.0" showTickLabels="true" showTickMarks="true" value="80.0" />
+                  <JFXButton fx:id="showNameMangerButton" layoutX="209.0" layoutY="54.0" onAction="#showNameManger" prefHeight="36.0" prefWidth="92.0" ripplerFill="#00eafff7" text="名单管理">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="15.0" prefHeight="23.0" prefWidth="57.0" text="调速：">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXSlider fx:id="chooseTimes" layoutX="379.0" layoutY="133.0" max="250.0" min="100.0" onMouseReleased="#setChosenTimeHere" onTouchReleased="#setChosenTimeHere" prefHeight="18.0" prefWidth="241.0" showTickLabels="true" showTickMarks="true" value="120.0" />
+                  <Pane fx:id="numbPane" layoutX="222.0" layoutY="58.0" prefHeight="30.0" prefWidth="176.0" visible="false">
+                     <children>
+                        <JFXTextField fx:id="minNumb" alignment="CENTER" layoutX="96.0" prefHeight="25.0" prefWidth="28.0" text="11" />
+                        <Label text="数字范围：">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="124.0" text="to">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="maxNumb" alignment="CENTER" layoutX="141.0" prefHeight="25.0" prefWidth="28.0" text="90" />
+                     </children>
+                  </Pane>
+                  <JFXRadioButton fx:id="randomTimes" layoutX="215.0" layoutY="96.0" onAction="#randomTimes_selected" selected="true" text="挑选次数随机（100~250）">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="fixedTimes" layoutX="215.0" layoutY="125.0" onAction="#fixedTimes_selected" text="挑选次数固定：">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="ignoreOnce" layoutY="96.0" onAction="#ignoreOnce_selected" selected="true" text="这次点过就不点了">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="chooseOnce" layoutY="125.0" onAction="#chooseOnce_selected" text="被点过的还要点">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="nameChoose" layoutY="63.0" onAction="#nameChoose_selected" selected="true" text="名字挑选法">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="numbChoose" layoutY="37.0" onAction="#numbChoose_selected" text="号码挑选法">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXCheckBox fx:id="equalModeBtn" layoutY="147.0" onAction="#equalBtnAction" prefHeight="20.0" prefWidth="94.0" text="机会均等" unCheckedColor="#12d071">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXCheckBox>
+                  <JFXCheckBox fx:id="taoluModeBtn" layoutY="171.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="娱乐模式" unCheckedColor="#12d071">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXCheckBox>
+                  <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="171.0" onAction="#clearTaoluList" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
+                  <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="147.0" onAction="#clearIgnoreList" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
+                  <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="171.0" onAction="#showTaoluMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
+                  <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="147.0" onAction="#showEqualMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
+                  <Line endX="100.0" layoutX="101.0" layoutY="170.0" startX="-100.0" />
+               </children>
+            </Pane>
+            <ImageView fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               
+            </ImageView>
+            <JFXButton fx:id="choose" buttonType="RAISED" layoutX="576.0" layoutY="621.0" onAction="#anPai" prefHeight="53.0" prefWidth="207.0" text="安排一下">
+               <font>
+                  <Font name="Microsoft YaHei" size="26.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="goBackButton" buttonType="RAISED" layoutX="274.0" layoutY="621.0" onAction="#goBack" prefHeight="53.0" prefWidth="207.0" text="←缩回去">
+               <font>
+                  <Font name="Microsoft YaHei" size="26.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane fx:id="namePane" layoutX="1007.0" prefHeight="710.0" prefWidth="1007.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff" height="710.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="1007.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Rectangle>
+            <JFXTextArea fx:id="inputName" focusColor="#0086ff" labelFloat="true" layoutX="366.0" layoutY="282.0" prefHeight="146.0" prefWidth="460.0" promptText="请输入要添加的名字，如需批量添加请用“。”隔开">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextArea>
+            <JFXButton fx:id="addName" buttonType="RAISED" layoutX="458.0" layoutY="440.0" onAction="#addName" prefHeight="36.0" prefWidth="92.0" ripplerFill="#00eeff" text="添加">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="deleteName" buttonType="RAISED" layoutX="550.0" layoutY="440.0" onAction="#deleteName" prefHeight="36.0" prefWidth="92.0" ripplerFill="RED" text="删除" textFill="RED">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXListView fx:id="nameList" editable="true" layoutX="128.0" layoutY="118.0" prefHeight="553.0" prefWidth="198.0" styleClass="nameList" />
+            <JFXButton fx:id="deleteAll" buttonType="RAISED" layoutX="642.0" layoutY="440.0" onAction="#deleteAllName" prefHeight="36.0" prefWidth="92.0" ripplerFill="RED" text="删除所有" textFill="RED">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <Rectangle arcHeight="4.0" arcWidth="4.0" fill="#0ab6ff" height="43.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="1007.0">
+               <effect>
+                  <DropShadow height="35.71" radius="8.4275" spread="0.05" width="0.0">
+                     <input>
+                        <Shadow blurType="ONE_PASS_BOX" color="#0ab6ff" height="2.97" radius="0.24250000000000005" width="0.0" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </Rectangle>
+            <ImageView fitHeight="28.0" fitWidth="57.0" layoutX="14.0" layoutY="8.0" onDragDone="#turnBack" onMouseReleased="#turnBack" onTouchReleased="#turnBack" pickOnBounds="true" preserveRatio="true">
+
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</Pane>
