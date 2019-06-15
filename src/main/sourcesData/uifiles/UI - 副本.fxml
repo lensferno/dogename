@@ -36,9 +36,9 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Pane fx:id="controllerPane" layoutX="232.0" layoutY="432.0" prefHeight="191.0" prefWidth="620.0">
+            <Pane fx:id="controllerPane" layoutX="231.0" layoutY="405.0" prefHeight="214.0" prefWidth="620.0">
                <children>
-                  <JFXSlider fx:id="speedBar" layoutX="69.0" layoutY="7.0" majorTickUnit="10.0" onMouseReleased="#setSpeedHere" onTouchReleased="#setSpeedHere" prefHeight="14.0" prefWidth="548.0" showTickLabels="true" showTickMarks="true" value="80.0" />
+                  <JFXSlider fx:id="speedBar" layoutX="69.0" layoutY="7.0" majorTickUnit="10.0" onMouseReleased="#setSpeedHere" onTouchReleased="#setSpeedHere" prefHeight="15.0" prefWidth="501.0" showTickLabels="true" showTickMarks="true" value="80.0" />
                   <JFXButton fx:id="showNameMangerButton" layoutX="209.0" layoutY="54.0" onAction="#showNameManger" prefHeight="36.0" prefWidth="92.0" ripplerFill="#00eafff7" text="名单管理">
                      <font>
                         <Font size="17.0" />
@@ -101,16 +101,17 @@
                         <Font size="14.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="taoluModeBtn" layoutY="171.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="娱乐模式" unCheckedColor="#12d071">
+                  <JFXCheckBox fx:id="taoluModeBtn" layoutY="181.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="94.0" text="娱乐模式" unCheckedColor="#12d071">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="171.0" onAction="#clearTaoluList" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
+                  <JFXButton buttonType="RAISED" layoutX="91.0" layoutY="176.0" onAction="#clearTaoluList" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
                   <JFXButton buttonType="RAISED" layoutX="90.0" layoutY="147.0" onAction="#clearIgnoreList" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
-                  <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="171.0" onAction="#showTaoluMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
+                  <JFXButton buttonType="RAISED" layoutX="135.0" layoutY="176.0" onAction="#showTaoluMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
                   <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="147.0" onAction="#showEqualMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
                   <Line endX="100.0" layoutX="101.0" layoutY="170.0" startX="-100.0" />
+                  <JFXToggleButton contentDisplay="RIGHT" layoutX="557.0" layoutY="-8.0" prefHeight="36.0" prefWidth="98.0" selected="true" text="渐慢" />
                </children>
             </Pane>
             <ImageView fx:id="mainView" fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">

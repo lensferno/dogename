@@ -429,6 +429,25 @@ public class UICtrl {
         this.taoluMode=taoluMode;
     }
 
+    @FXML
+    JFXToggleButton slowBtn;
+
+    @FXML
+    public void lastSlowBtnAction(){
+        if(slowBtn.isSelected())
+            unselectSlowBtn();
+        else
+            selectSlowBtn();
+    }
+
+    void selectSlowBtn(){
+        
+    }
+
+    void unselectSlowBtn(){
+
+    }
+
 
     final static private String CONFIG_FILE="D:\\DM_Master_sources-master\\config";
     final private File configFile=new File(CONFIG_FILE);
@@ -490,7 +509,8 @@ public class UICtrl {
                 return;
              }
 
-             if(ignoreNameList.size()>=data.getSize()&&ignorePast){                    if(equalMode) {
+             if(ignoreNameList.size()>=data.getSize()&&ignorePast){
+                 if(equalMode) {
                  showInfoDialog("啊？", "全部名字都被点完啦！\n名字列表将会重置");
                  clearIgnoreList();
              }else
