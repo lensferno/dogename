@@ -81,8 +81,9 @@ public class UICtrl {
 
     @FXML
     void showEqualMode(){
-        showInfoDialog("啥玩意？","");
+        showInfoDialog("啥玩意？","勾选“机会均等”后，将会保存已点过的的名字和数字到文件中，下次启动时仍不会被点到，直到全部名字或数字被点完 或点击“机会均等”的“重置”按钮。\n注意：仅保存“这次点过就不点了”模式下选中的名字或数字。");
     }
+
 
     public void readIgnoreList(){
 
@@ -174,7 +175,7 @@ public class UICtrl {
                             chosen_1.setText("→"+chosen_1.getText());
 
                             if(taoluMode)
-                                data.addTaoluedName(chosen_1.getText().replace("→",""),5);System.out.println(chosen_1.getText()+"已安排5次");
+                                data.addTaoluedName(chosen_1.getText().replace("→",""),5);
 
                             break;
                         }
@@ -185,7 +186,7 @@ public class UICtrl {
                             chosen_2.setText("→"+chosen_2.getText());
 
                             if(taoluMode)
-                                data.addTaoluedName(chosen_2.getText().replace("→",""),4);System.out.println(chosen_2.getText()+"已安排4次");
+                                data.addTaoluedName(chosen_2.getText().replace("→",""),4);
 
                             break;
                         }
@@ -575,7 +576,7 @@ public class UICtrl {
         showNameMangerButton.setVisible(true);
         if(!ignorePast){
             //taoluMode=true;
-            taoluModeBtn.setDisable(true);
+            taoluModeBtn.setDisable(false);
         }
     }
     
@@ -610,6 +611,7 @@ public class UICtrl {
    void selectEqualBtn(){
         equalModeBtn.setSelected(true);
         equalMode=true;
+        readIgnoreList();
    }
 
    @FXML
@@ -627,6 +629,9 @@ public class UICtrl {
         nameList.setItems(names);
         nameList.refresh();
 
+        clearIgnoreList();
+        clearTaoluList();
+
         data.saveToFile();
         inputName.setText("");
     }
@@ -635,6 +640,8 @@ public class UICtrl {
     void deleteName(){
         data.delete((String)nameList.getSelectionModel().getSelectedItems().get(0));
         names.remove((String)nameList.getSelectionModel().getSelectedItems().get(0));
+        clearIgnoreList();
+        clearTaoluList();
         data.saveToFile();
     }
 
