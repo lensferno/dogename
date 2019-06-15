@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af52816d-3d8d-420e-823c-b3961a36b72e" name="Default" comment=".">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UICtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/UIFileData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/UIFileData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI - 副本.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI - 副本.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6175">
-              <caret line="368" column="35" selection-start-line="368" selection-start-column="35" selection-end-line="368" selection-end-column="35" />
+            <state relative-caret-position="38">
+              <caret line="330" column="22" selection-start-line="330" selection-start-column="22" selection-end-line="357" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="91" column="47" lean-forward="true" selection-start-line="91" selection-start-column="47" selection-end-line="91" selection-end-column="47" />
+            <state relative-caret-position="392">
+              <caret line="578" column="41" selection-start-line="578" selection-start-column="41" selection-end-line="578" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -53,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/sourcesData/UIFileData.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="57">
-              <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+              <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -87,8 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>KeyValue</find>
-      <find>random</find>
       <find>new ani()</find>
       <find>mainPane.setDisable</find>
       <find>stage.initStyle(StageStyle.UNDECORATED);</find>
@@ -117,6 +114,8 @@
       <find>clearIgnoreList</find>
       <find>numb</find>
       <find>show</find>
+      <find>sel</find>
+      <find>namec</find>
     </findStrings>
     <replaceStrings>
       <replace>text</replace>
@@ -163,8 +162,8 @@
         <option value="$PROJECT_DIR$/src/main/Data.java" />
         <option value="$PROJECT_DIR$/src/main/Config.java" />
         <option value="$PROJECT_DIR$/../DM_Master_sources-master/change.java" />
-        <option value="$PROJECT_DIR$/src/main/ProgramMain.java" />
         <option value="$PROJECT_DIR$/src/main/sourcesData/UIFileData.java" />
+        <option value="$PROJECT_DIR$/src/main/ProgramMain.java" />
         <option value="$PROJECT_DIR$/src/main/UICtrl.java" />
       </list>
     </option>
@@ -181,7 +180,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,6 +227,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -341,9 +340,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1651" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1661442" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16802508" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -352,7 +350,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.29985857" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39886847" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27722773" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2759527" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -554,13 +552,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/change.java" />
     <entry file="file://$PROJECT_DIR$/../DM_Master_sources-master/change.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/sourcesData/UIFileData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6175">
-          <caret line="368" column="35" selection-start-line="368" selection-start-column="35" selection-end-line="368" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="57">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -578,17 +573,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sourcesData/UIFileData.java">
+    <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        <state relative-caret-position="38">
+          <caret line="330" column="22" selection-start-line="330" selection-start-column="22" selection-end-line="357" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="91" column="47" lean-forward="true" selection-start-line="91" selection-start-column="47" selection-end-line="91" selection-end-column="47" />
+        <state relative-caret-position="392">
+          <caret line="578" column="41" selection-start-line="578" selection-start-column="41" selection-end-line="578" selection-end-column="41" />
         </state>
       </provider>
     </entry>
