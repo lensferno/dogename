@@ -67,6 +67,7 @@ public class UICtrl {
         else
             ignoreNumberList=new ArrayList<>();
         writeIgnoreList();
+        
     }
 
     @FXML
@@ -152,7 +153,14 @@ public class UICtrl {
             }
             
             try{
-                Thread.sleep(speed);
+                if(slow){
+                    if(times-already<50){
+                        speed= (short) (speed+5);
+                        Thread.sleep(speed);
+
+                    }else
+                        Thread.sleep(speed);
+                }
             }catch (Exception e){ }
 
             if(already>=chosenTime){
@@ -249,7 +257,14 @@ public class UICtrl {
             }
 
             try{
-                Thread.sleep(speed);
+                if(slow){
+                    if(times-already<50){
+                        speed= (short) (speed+5);
+                        Thread.sleep(speed);
+
+                    }else
+                        Thread.sleep(speed);
+                }
             }catch (Exception e){ }
 
             if(already>=chosenTime){
@@ -432,20 +447,39 @@ public class UICtrl {
     @FXML
     JFXToggleButton slowBtn;
 
+    boolean slow=true;
+
     @FXML
     public void lastSlowBtnAction(){
-        if(slowBtn.isSelected())
+        if(slow)
             unselectSlowBtn();
         else
             selectSlowBtn();
     }
 
+    public boolean isSlow() {
+        return slow;
+    }
+
+    public void setSlow(boolean slow) {
+        this.slow = slow;
+    }
+
     void selectSlowBtn(){
-        
+        if(speedBar.getValue()<50){
+            showInfoDialog("","");
+            slow=false;
+            slowBtn.setSelected(false);
+        }else {
+            slow = true;
+            slowBtn.setSelected(true);
+        }
+
     }
 
     void unselectSlowBtn(){
-
+        slow=false;
+        slowBtn.setSelected(false);
     }
 
 
@@ -639,6 +673,7 @@ public class UICtrl {
        equalModeBtn.setSelected(false);
        equalMode=false;
    }
+
 
     @FXML
     void addName(){

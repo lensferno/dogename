@@ -9,7 +9,8 @@
     <list default="true" id="af52816d-3d8d-420e-823c-b3961a36b72e" name="Default" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UICtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI - 副本.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI - 副本.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI - 副本.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,7 +32,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4305">
+            <state relative-caret-position="5453">
               <caret line="330" column="22" selection-start-line="330" selection-start-column="22" selection-end-line="357" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -43,8 +44,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="443" column="8" lean-forward="true" selection-start-line="443" selection-start-column="8" selection-end-line="443" selection-end-column="8" />
+            <state relative-caret-position="322">
+              <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+              <folding>
+                <element signature="e#3858#6987#0" expanded="true" />
+                <element signature="e#6986#6987#0" expanded="true" />
+                <element signature="e#12073#12074#0" expanded="true" />
+                <element signature="e#12100#12101#0" expanded="true" />
+                <element signature="e#12141#12142#0" expanded="true" />
+                <element signature="e#12173#12174#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/sourcesData/UIFileData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="57">
               <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
             </state>
           </provider>
@@ -61,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
+            <state relative-caret-position="1064">
               <caret line="92" selection-start-line="92" selection-end-line="92" />
             </state>
           </provider>
@@ -70,7 +79,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2085">
+            <state relative-caret-position="2641">
               <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
             </state>
           </provider>
@@ -87,8 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new ani()</find>
-      <find>mainPane.setDisable</find>
       <find>stage.initStyle(StageStyle.UNDECORATED);</find>
       <find>Boolean</find>
       <find>dataFile</find>
@@ -117,6 +124,8 @@
       <find>show</find>
       <find>sel</find>
       <find>namec</find>
+      <find>tao</find>
+      <find>clear</find>
     </findStrings>
     <replaceStrings>
       <replace>text</replace>
@@ -169,7 +178,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="480" />
     <option name="width" value="960" />
     <option name="height" value="570" />
@@ -180,8 +189,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -339,10 +348,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1442" height="856" extended-state="6" />
+    <frame x="-6" y="-6" width="1651" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11262554" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17178683" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -549,7 +558,7 @@
     <entry file="file://$PROJECT_DIR$/../DM_Master_sources-master/change.java" />
     <entry file="file://$PROJECT_DIR$/src/main/ProgramMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4305">
+        <state relative-caret-position="5453">
           <caret line="330" column="22" selection-start-line="330" selection-start-column="22" selection-end-line="357" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -559,29 +568,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/sourcesData/UIFileData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="57">
           <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
+        <state relative-caret-position="1064">
           <caret line="92" selection-start-line="92" selection-end-line="92" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2085">
+        <state relative-caret-position="2641">
           <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/UICtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="443" column="8" lean-forward="true" selection-start-line="443" selection-start-column="8" selection-end-line="443" selection-end-column="8" />
+        <state relative-caret-position="322">
+          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+          <folding>
+            <element signature="e#3858#6987#0" expanded="true" />
+            <element signature="e#6986#6987#0" expanded="true" />
+            <element signature="e#12073#12074#0" expanded="true" />
+            <element signature="e#12100#12101#0" expanded="true" />
+            <element signature="e#12141#12142#0" expanded="true" />
+            <element signature="e#12173#12174#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
