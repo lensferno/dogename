@@ -19,6 +19,16 @@ public class Config implements Serializable {
 
     private boolean equalMode=true;
 
+    private boolean slow=true;
+
+    public boolean isSlow() {
+        return slow;
+    }
+
+    public void setSlow(boolean slow) {
+        this.slow = slow;
+    }
+
     public boolean isEqualMode() {
         return equalMode;
     }

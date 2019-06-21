@@ -19,7 +19,8 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.HashSet;
 import java.util.List;
 
 
@@ -28,10 +29,10 @@ public class UICtrl {
     boolean taoluMode;
 
 
-    List<String> ignoreNameList=new ArrayList<>();
+    HashSet<String> ignoreNameList=new HashSet<>();
     short ignoreNameTimes=0;
 
-    List<String> ignoreNumberList=new ArrayList<>();
+    HashSet<String> ignoreNumberList=new HashSet<>();
     short ignoreNumberTimes=0;
 
     public JFXTextField minNumb;
@@ -63,11 +64,15 @@ public class UICtrl {
     @FXML
     void clearIgnoreList(){
         if(isNameChoose)
-            ignoreNameList=new ArrayList<>();
+            ignoreNameList=new HashSet<>();
         else
-            ignoreNumberList=new ArrayList<>();
+            ignoreNumberList=new HashSet<>();
         writeIgnoreList();
-        
+
+        ignoreNameTimes=0;
+        ignoreNumberTimes=0;
+        System.gc();
+
     }
 
     @FXML
@@ -92,17 +97,17 @@ public class UICtrl {
 
             if(nameIgnoreFile.exists()!=true){
                 nameIgnoreFile.createNewFile();
-                ignoreNameList= new ArrayList<>();
+                ignoreNameList= new HashSet<>();
                 return;
             }
 
             ObjectInputStream ois =new ObjectInputStream(new FileInputStream(nameIgnoreFile));
-            this.ignoreNameList=(ArrayList)ois.readObject();
+            this.ignoreNameList=(HashSet)ois.readObject();
 
             ignoreNameTimes=(short) ignoreNameList.size();
 
         }catch (Exception e){
-            ignoreNameList=new ArrayList<>();
+            ignoreNameList=new HashSet<>();
             e.printStackTrace();
         }
 
@@ -110,17 +115,17 @@ public class UICtrl {
 
             if(numbIgnoreFile.exists()!=true){
                 numbIgnoreFile.createNewFile();
-                ignoreNumberList= new ArrayList<>();
+                ignoreNumberList= new HashSet<>();
                 return;
             }
 
             ObjectInputStream ois =new ObjectInputStream(new FileInputStream(nameIgnoreFile));
-            this.ignoreNumberList=(ArrayList)ois.readObject();
+            this.ignoreNumberList=(HashSet)ois.readObject();
 
             ignoreNumberTimes=(short) ignoreNumberList.size();
 
         }catch (Exception e){
-            ignoreNumberList=new ArrayList<>();
+            ignoreNumberList=new HashSet<>();
             e.printStackTrace();
         }
     }
@@ -149,22 +154,23 @@ public class UICtrl {
             if(forceStop){
                 already=chosenTime+1;
                 isRunning=false;
-                forceStop=false;
             }
-            
+
             try{
                 if(slow){
-                    if(times-already<50){
-                        speed= (short) (speed+5);
-                        Thread.sleep(speed);
+                    if(times-already<5){
+                        newSpeed= (short) (newSpeed+3);
+                        Thread.sleep(newSpeed);
+                        System.out.println("newspeed"+newSpeed);
+                    }else Thread.sleep(speed);
+                }else
+                    Thread.sleep(speed);
 
-                    }else
-                        Thread.sleep(speed);
-                }
+                Thread.sleep(speed);
             }catch (Exception e){ }
-
             if(already>=chosenTime){
-                if(!ignoreNameList.contains(chosenName)||!ignorePast){
+                if(!ignoreNameList.contains(chosenName)||!ignorePast||forceStop){
+                    forceStop=false;
                     if(ignorePast)
                         ignoreNameList.add(chosenName);
                     if(equalMode)
@@ -203,6 +209,7 @@ public class UICtrl {
                     choose.setText("安排一下");
                     stop();
                     controllerPane.setDisable(false);
+                    System.gc();
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -245,6 +252,7 @@ public class UICtrl {
         }
     };
 //---------------------------------------------------------------------------------------
+    short newSpeed;
     AnimationTimer numbTimer =new AnimationTimer() {
         @Override
         public void handle(long now) {
@@ -253,22 +261,24 @@ public class UICtrl {
             if(forceStop){
                 already=chosenTime+1;
                 isRunning=false;
-                forceStop=false;
             }
 
-            try{
+            try{/*
                 if(slow){
-                    if(times-already<50){
-                        speed= (short) (speed+5);
-                        Thread.sleep(speed);
-
-                    }else
-                        Thread.sleep(speed);
-                }
+                    if(times-already<5){
+                        newSpeed= (short) (newSpeed+3);
+                        Thread.sleep(newSpeed);
+                        System.out.println("newspeed"+newSpeed);
+                    }else Thread.sleep(speed);
+                }else
+                    Thread.sleep(speed);
+                    */
+                Thread.sleep(speed);
             }catch (Exception e){ }
 
             if(already>=chosenTime){
-                if(!ignoreNumberList.contains(chosenName)||!ignorePast){
+                if(!ignoreNumberList.contains(chosenName)||!ignorePast||forceStop){
+                    forceStop=false;
                     if(ignorePast)
                         ignoreNumberList.add(chosenName);
                     if(equalMode)
@@ -301,6 +311,7 @@ public class UICtrl {
                     choose.setText("安排一下");
                     stop();
                     controllerPane.setDisable(false);
+                    System.gc();
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -520,7 +531,9 @@ public class UICtrl {
 
     @FXML
     void anPai(){
-
+        saveConfigToFile();
+        newSpeed=speed;
+        System.out.println(newSpeed);
         if(isRunning){
             forceStop=true;
             choose.setText("安排一下");

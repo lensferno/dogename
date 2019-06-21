@@ -210,8 +210,8 @@ public class ProgramMain extends Application {
 
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
-            //FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
+            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
+            FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
             Parent root = loader.load();
             Scene scene = new Scene(root, 990, 700);
             stage.setTitle("MDmaster 初号姬");
@@ -308,14 +308,14 @@ public class ProgramMain extends Application {
         }
 
         try {
-            FXMLLoader loader =new FXMLLoader();
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
+            //FXMLLoader loader =new FXMLLoader();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
             //FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
-            Parent root = loader.load(releaseData.getUIStream());
+            //Parent root = loader.load(releaseData.getUIStream());
+            Parent root = loader.load();
 
             Scene scene = new Scene(root, 990, 700);
             stage.setTitle("MDmaster 初号姬");
-            System.out.println("ha2?");
             stage.setScene(scene);
             stage.setResizable(false);
             UICtrl controller = loader.getController(); //获取Controller的实例对象//传递primaryStage，scene参数给Controller
@@ -365,7 +365,12 @@ public class ProgramMain extends Application {
                 controller.selectEqualBtn();
             else
                 controller.unSelectEqualBtn();
-
+/*
+            if(config.isSlow())
+                controller.selectSlowBtn();
+            else
+                controller.unselectSlowBtn();
+*/
             controller.setImages();
 
             controller.setMaxNumber(config.getMaxNumber());
@@ -490,7 +495,10 @@ public class ProgramMain extends Application {
             return false;
         } else {
             if (debugMode) {
-                System.out.println("[DEBUG][调试模式]跳过检查");
+                //System.out.println("[DEBUG][调试模式]跳过检查");
+                getMD5(UIFile);
+                getMD5(imageFile);
+                getMD5(backImageFile);
                 return true;
             } else {
                 String UIFileMD5 = getMD5(UIFile);
