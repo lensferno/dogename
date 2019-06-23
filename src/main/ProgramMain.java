@@ -315,7 +315,7 @@ public class ProgramMain extends Application {
             Parent root = loader.load();
 
             Scene scene = new Scene(root, 990, 700);
-            stage.setTitle("MDmaster 初号姬");
+            stage.setTitle("DMmaster 初号姬");
             stage.setScene(scene);
             stage.setResizable(false);
             UICtrl controller = loader.getController(); //获取Controller的实例对象//传递primaryStage，scene参数给Controller
