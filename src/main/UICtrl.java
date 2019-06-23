@@ -161,7 +161,10 @@ public class UICtrl {
                     if(times-already<5){
                         newSpeed= (short) (newSpeed+3);
                         Thread.sleep(newSpeed);
+
                         System.out.println("newspeed"+newSpeed);
+
+                        System.out.println("times"+(times-already));
                     }else Thread.sleep(speed);
                 }else
                     Thread.sleep(speed);
