@@ -1,5 +1,5 @@
 package main;
-
+//Random(size)
 import com.jfoenix.controls.*;
 import javafx.animation.*;
 import javafx.collections.FXCollections;
