@@ -44,9 +44,9 @@ public class ProgramMain extends Application {
 
     final static private String FXML_FILE = "file:/D:/DM_Master_sources-master/sources/UI.fxml";
 
-    final static private String UI_FILE = "D:\\DM_Master_sources-master\\sources\\UI.fxml";
-    final static private String IAMGE_FILE = "D:\\DM_Master_sources-master\\sources\\img1.png";
-    final static private String BACKIAMGE_FILE = "D:\\DM_Master_sources-master\\sources\\back.png";
+    final static private String UI_FILE = "D:\\dogename\\files\\sources\\UI.fxml";
+    final static private String IAMGE_FILE = "D:\\dogename\\files\\sources\\img1.png";
+    final static private String BACKIAMGE_FILE = "D:\\dogename\\files\\sources\\back.png";
 
     final static private String FXML_FILE_MD5 = "0b33ef9a80e667c2435f7513b489e803";
     final static private String IAMGE_FILE_MD5 = "c525694ef2bb39c0d04826ca6cf58c79";
@@ -56,7 +56,7 @@ public class ProgramMain extends Application {
     final static private String SOURCES_LOCA = "D:\\";
     final static private String SOURCES_URL = "https://github.com/Het7230/DM_Master_sources/archive/master.zip";
     final static private String ZIP_FILE_LOCA = "D:\\TEMP.ZIP";
-    final static private String CONFIG_FILE = "D:\\DM_Master_sources-master\\config";
+    final static private String CONFIG_FILE = "D:\\dogename\\files\\config";
 
     final static private File imageFile = new File(IAMGE_FILE);
     final static private File backImageFile = new File(BACKIAMGE_FILE);
@@ -187,6 +187,7 @@ public class ProgramMain extends Application {
     //程序主函数
 
     public static void main(String[] args) {
+        new File("D:\\dogename\\files").mkdir();
         launch(args);
     }
 
@@ -301,21 +302,20 @@ public class ProgramMain extends Application {
 
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(configFile));
             this.config = (Config) ois.readObject();
-            System.out.println("ha?");
         } catch (Exception e) {
             config = new Config();
             e.printStackTrace();
         }
 
         try {
-            //FXMLLoader loader =new FXMLLoader();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
+            FXMLLoader loader =new FXMLLoader();
+            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
             //FXMLLoader loader = new FXMLLoader(new URL(FXML_FILE));
-            //Parent root = loader.load(releaseData.getUIStream());
-            Parent root = loader.load();
+            Parent root = loader.load(releaseData.getUIStream());
+            //Parent root = loader.load();
 
             Scene scene = new Scene(root, 990, 700);
-            stage.setTitle("DMmaster 初号姬");
+            stage.setTitle("DogeName 初号姬");
             stage.setScene(scene);
             stage.setResizable(false);
             UICtrl controller = loader.getController(); //获取Controller的实例对象//传递primaryStage，scene参数给Controller
@@ -485,7 +485,7 @@ public class ProgramMain extends Application {
 
     //判断有没有资源文件，有则告诉main不需再下载资源文件(返回true)
     public static boolean hasSources() {
-
+/*
         boolean debugMode=true;
         System.out.println(UIFile.exists());
         System.out.println(imageFile.exists());
@@ -512,7 +512,8 @@ public class ProgramMain extends Application {
                     return false;
                 }
             }
-        }
+        }*/
+		return true;
     }
 
         public void showInfoDialog (String header, String message, Pane pane){
