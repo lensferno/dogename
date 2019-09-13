@@ -1,10 +1,7 @@
 package main;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Data {
     private List<String> nameList;
@@ -13,7 +10,7 @@ public class Data {
     private int listSize = 0;
 
 
-    File dataFile =new File("D:\\DM_Master_sources-master\\data");
+    File dataFile =new File("D:\\dogename\\files\\data");
 
     //不做注释了，自己慢慢看。：）
 
@@ -32,7 +29,6 @@ public class Data {
             this.nameList=(ArrayList)ois.readObject();
             
             listSize=nameList.size();
-            System.out.println(listSize);
             this.chooseList=new ArrayList<>(nameList);
 
         }catch (Exception e){
@@ -49,8 +45,8 @@ public class Data {
     public void add(String text){
         String[] temp;
 
-        if(text.contains("。")){
-            temp=text.split("。");
+        if(text.contains("\n")||text.contains("\t")){
+            temp=text.split("\n");
             for(int i=0;i<temp.length;i++)
                 nameList.add(temp[i]);
         }else {
@@ -82,9 +78,7 @@ public class Data {
         listSize=nameList.size();
         System.gc();
 
-        for (String myString :nameList.toArray(new String[0])) {
-            System.out.println(myString);
-        }
+        
     }
 
     //------------------------------------------------------
@@ -98,14 +92,15 @@ public class Data {
         return nameList.isEmpty();
     }
 
+    Random random =new Random();
     //------------------------------------------------------
     public String randomGet(boolean taoluMode){
         if(taoluMode){
-            int i=(int)(Math.random()*((chooseList.size()-1)));
+            int i=random.nextInt(nameList.size());
             return  chooseList.get(i);
         }else{
             //int i=(int)(1+Math.random()*(nameList.size()));
-            int i=(int)(Math.random()*((nameList.size()-1)));
+            int i=random.nextInt(nameList.size());
             return  nameList.get(i);
         }
     }

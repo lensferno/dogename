@@ -1,5 +1,5 @@
 package main;
-//Random(size)
+
 import com.jfoenix.controls.*;
 import javafx.animation.*;
 import javafx.collections.FXCollections;
@@ -11,18 +11,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.io.*;
 import java.util.HashSet;
-import java.util.HashSet;
-import java.util.List;
-
+import java.util.Random;
 
 public class UICtrl {
 
@@ -37,6 +36,8 @@ public class UICtrl {
 
     public JFXTextField minNumb;
     public JFXTextField maxNumb;
+
+    Random random =new Random();
 
     public short minNumber;
     public short maxNumber;
@@ -58,8 +59,9 @@ public class UICtrl {
     
     boolean forceStop =false;
 
-    File nameIgnoreFile =new File("D:\\DM_Master_sources-master\\nameIgnoreList");
-    File numbIgnoreFile =new File("D:\\DM_Master_sources-master\\numbIgnoreList");
+    File nameIgnoreFile =new File("D:\\dogename\\files\\nameIgnoreList");
+    File numbIgnoreFile =new File("D:\\dogename\\files\\numbIgnoreList");
+
 
     @FXML
     void clearIgnoreList(){
@@ -156,21 +158,11 @@ public class UICtrl {
                 isRunning=false;
             }
 
+
             try{
-                if(slow){
-                    if(times-already<5){
-                        newSpeed= (short) (newSpeed+3);
-                        Thread.sleep(newSpeed);
-
-                        System.out.println("newspeed"+newSpeed);
-
-                        System.out.println("times"+(times-already));
-                    }else Thread.sleep(speed);
-                }else
-                    Thread.sleep(speed);
-
                 Thread.sleep(speed);
-            }catch (Exception e){ }
+            }catch (Exception e){e.printStackTrace(); }
+			
             if(already>=chosenTime){
                 if(!ignoreNameList.contains(chosenName)||!ignorePast||forceStop){
                     forceStop=false;
@@ -266,6 +258,7 @@ public class UICtrl {
                 isRunning=false;
             }
 
+
             try{/*
                 if(slow){
                     if(times-already<5){
@@ -277,7 +270,7 @@ public class UICtrl {
                     Thread.sleep(speed);
                     */
                 Thread.sleep(speed);
-            }catch (Exception e){ }
+            }catch (Exception e){e.printStackTrace(); }
 
             if(already>=chosenTime){
                 if(!ignoreNumberList.contains(chosenName)||!ignorePast||forceStop){
@@ -334,7 +327,7 @@ public class UICtrl {
             switch (showWhich){
                 case 1:{
                     chosen_1.setText(String.valueOf(
-                            (int)minNumber+(int)(Math.random()*(maxNumber-minNumber))
+                            minNumber+random.nextInt(maxNumber-minNumber+1)
                     ));
                     chosenName=chosen_1.getText();
                     already++;
@@ -344,7 +337,7 @@ public class UICtrl {
 
                 case 2:{
                     chosen_2.setText(String.valueOf(
-                            (int)minNumber+(int)(Math.random()*(maxNumber-minNumber))
+                            minNumber+random.nextInt(maxNumber-minNumber+1)
                     ));
                     chosenName=chosen_2.getText();
                     already++;
@@ -458,18 +451,10 @@ public class UICtrl {
         this.taoluMode=taoluMode;
     }
 
-    @FXML
-    JFXToggleButton slowBtn;
 
     boolean slow=true;
 
-    @FXML
-    public void lastSlowBtnAction(){
-        if(slow)
-            unselectSlowBtn();
-        else
-            selectSlowBtn();
-    }
+
 
     public boolean isSlow() {
         return slow;
@@ -479,25 +464,10 @@ public class UICtrl {
         this.slow = slow;
     }
 
-    void selectSlowBtn(){
-        if(speedBar.getValue()<50){
-            showInfoDialog("","");
-            slow=false;
-            slowBtn.setSelected(false);
-        }else {
-            slow = true;
-            slowBtn.setSelected(true);
-        }
-
-    }
-
-    void unselectSlowBtn(){
-        slow=false;
-        slowBtn.setSelected(false);
-    }
 
 
-    final static private String CONFIG_FILE="D:\\DM_Master_sources-master\\config";
+
+    final static private String CONFIG_FILE="D:\\dogename\\files\\config";
     final private File configFile=new File(CONFIG_FILE);
 
     public int saveConfigToFile(){
@@ -512,8 +482,6 @@ public class UICtrl {
         config.setTaoluMode(taoluMode);
         config.setEqualMode(equalMode);
 
-        System.out.println(speed);
-        System.out.println(chosenTime);
 
         try{
             ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(configFile));
@@ -536,7 +504,6 @@ public class UICtrl {
     void anPai(){
         saveConfigToFile();
         newSpeed=speed;
-        System.out.println(newSpeed);
         if(isRunning){
             forceStop=true;
             choose.setText("安排一下");
@@ -584,7 +551,7 @@ public class UICtrl {
                     return;
                 }
 
-                if(ignoreNumberList.size()>=(maxNumber-minNumber) && ignorePast){
+                if(ignoreNumberList.size()>=(maxNumber-minNumber+1) && ignorePast){
                     if(equalMode) {
                         showInfoDialog("啊？", "全部数字都被点完啦！\n数字列表将会重置");
                         clearIgnoreList();
@@ -886,6 +853,12 @@ public class UICtrl {
         fixedTimes.setSelected(true);
         randomTimes.setSelected(false);
     }
+	
+	@FXML
+	void showInfo(){
+	    showInfoDialog("Me?","这是一个以Java语言编写，采用Google Material Design（Google MD）为界面风格的用来点名的东西。\n该程序的源代码可在 https://github.com/eatenid/dogename 查看和获取。（更新什么的基本不不打算的了ヾ§ ￣▽)ゞ）\n\n使用到的第三方库：\nJFoenix(8.0.4)\nApache Commons Codec(1.11)\nGson(2.8.5) \n\n关于作者的一些东西：\nGithub主页：https://github.com/eatenid\nGoogle+：kygbuff@gamil.com\n\n邮箱等：\nHet2002@outlook.com\n2318724550@qq.com\nulcch@foxmail.com\n\n\nCreated by He T.Y.");
+	}
+	
 
     public void showInfoDialog(String header,String message) {
         JFXDialogLayout content = new JFXDialogLayout();
@@ -899,6 +872,14 @@ public class UICtrl {
         dialog.setPrefHeight(mainPane.getPrefHeight());
         dialog.setPrefWidth(mainPane.getPrefWidth());
         JFXButton button = new JFXButton("OK");
+        tempPane.setOnMousePressed((MouseEvent e) -> {
+            dialog.close();
+            mainPane.getChildren().remove(tempPane);
+        });
+        tempPane.setOnTouchPressed((TouchEvent e) -> {
+            dialog.close();
+            mainPane.getChildren().remove(tempPane);
+        });
         button.setPrefWidth(50);
         button.setPrefHeight(30);
         button.setOnAction((ActionEvent e) -> {
@@ -906,6 +887,7 @@ public class UICtrl {
             mainPane.getChildren().remove(tempPane);
         });
         content.setActions(button);
+		
         dialog.show();
     }
 

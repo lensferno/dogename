@@ -1,0 +1,2 @@
+javac UICtrl.java
+pause
