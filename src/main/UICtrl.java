@@ -692,6 +692,7 @@ public class UICtrl {
 
         data.saveToFile();
         inputName.setText("");
+        System.gc();
     }
 
     @FXML
@@ -701,6 +702,7 @@ public class UICtrl {
         clearIgnoreList();
         clearTaoluList();
         data.saveToFile();
+        System.gc();
     }
 
     @FXML
@@ -828,6 +830,7 @@ public class UICtrl {
         clearTaoluList();
         names.clear();
         data.saveToFile();
+        System.gc();
     }
 
     @FXML
@@ -881,6 +884,7 @@ public class UICtrl {
 	fileChooser.setTitle("想保存到哪？");
 	File file = fileChooser.showSaveDialog(stage);
         data.exportNameList(file);
+        System.gc();
     }
     
     @FXML
@@ -899,6 +903,7 @@ public class UICtrl {
         clearTaoluList();
 
         data.saveToFile();
+        System.gc();
     }
     
     @FXML
@@ -914,6 +919,7 @@ public class UICtrl {
         clearTaoluList();
 
         data.saveToFile();
+        System.gc();
     }
 	
     @FXML
