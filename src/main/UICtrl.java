@@ -21,6 +21,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.*;
+import java.security.SecureRandom;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -166,11 +167,14 @@ public class UICtrl {
 			
             if(already>=chosenTime){
                 if(!ignoreNameList.contains(chosenName)||!ignorePast||forceStop){
+                    
                     forceStop=false;
+                    
                     if(ignorePast)
                         ignoreNameList.add(chosenName);
                     if(equalMode)
                         writeIgnoreList();
+                    
                     cycleEnd=true;
                     already=0;
                     singleCycle=0;
@@ -248,38 +252,30 @@ public class UICtrl {
         }
     };
 //---------------------------------------------------------------------------------------
-    short newSpeed;
+    SecureRandom secRandom =new SecureRandom();
     AnimationTimer numbTimer =new AnimationTimer() {
         @Override
         public void handle(long now) {
-
 
             if(forceStop){
                 already=chosenTime+1;
                 isRunning=false;
             }
 
-
-            try{/*
-                if(newAlgo){
-                    if(times-already<5){
-                        newSpeed= (short) (newSpeed+3);
-                        Thread.sleep(newSpeed);
-                        System.out.println("newspeed"+newSpeed);
-                    }else Thread.sleep(speed);
-                }else
-                    Thread.sleep(speed);
-                    */
+            try{
                 Thread.sleep(speed);
             }catch (Exception e){e.printStackTrace(); }
 
             if(already>=chosenTime){
                 if(!ignoreNumberList.contains(chosenName)||!ignorePast||forceStop){
+                    
                     forceStop=false;
+                    
                     if(ignorePast)
                         ignoreNumberList.add(chosenName);
                     if(equalMode)
                         writeIgnoreList();
+                    
                     cycleEnd=true;
                     already=0;
                     singleCycle=0;
@@ -327,9 +323,11 @@ public class UICtrl {
 
             switch (showWhich){
                 case 1:{
-                    chosen_1.setText(String.valueOf(
-                            minNumber+random.nextInt(maxNumber-minNumber+1)
-                    ));
+                    if(newAlgo)
+                        chosen_1.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
+                    else
+                        chosen_1.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
+                	
                     chosenName=chosen_1.getText();
                     already++;
                     singleCycle++;
@@ -337,9 +335,11 @@ public class UICtrl {
                 }
 
                 case 2:{
-                    chosen_2.setText(String.valueOf(
-                            minNumber+random.nextInt(maxNumber-minNumber+1)
-                    ));
+                if(newAlgo)
+                    chosen_2.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
+                else
+                    chosen_2.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
+            	
                     chosenName=chosen_2.getText();
                     already++;
                     singleCycle++;
@@ -500,6 +500,7 @@ public class UICtrl {
         config.setRandomTimes(isRandomTimes);
         config.setTaoluMode(taoluMode);
         config.setEqualMode(equalMode);
+        config.setNewAlgo(newAlgo);
 
 
         try{
@@ -522,7 +523,6 @@ public class UICtrl {
     @FXML
     void anPai(){
         saveConfigToFile();
-        newSpeed=speed;
         if(isRunning){
             forceStop=true;
             choose.setText("安排一下");
@@ -547,10 +547,11 @@ public class UICtrl {
 
              if(ignoreNameList.size()>=data.getSize()&&ignorePast){
                  if(equalMode) {
-                 showInfoDialog("啊？", "全部名字都被点完啦！\n名字列表将会重置");
-                 clearIgnoreList();
-             }else
-                 showInfoDialog("啊？","全部名字都被点完啦！\n请多添加几个名字 或 点击“机会均等”的“重置”按钮。");
+                     showInfoDialog("啊？", "全部名字都被点完啦！\n名字列表将会重置");
+                     clearIgnoreList();
+                 }else
+                     showInfoDialog("啊？","全部名字都被点完啦！\n请多添加几个名字 或 点击“机会均等”的“重置”按钮。");
+                 
                  return;
              }
             controllerPane.setDisable(true);
@@ -565,7 +566,7 @@ public class UICtrl {
                 minNumber=Short.parseShort(minNumb.getText());
                 maxNumber=Short.parseShort(maxNumb.getText());
 
-                if(maxNumber-minNumber<0){
+                if(maxNumber-minNumber<=0){
                     showInfoDialog("嗯哼？","数字要前小后大啊~");
                     return;
                 }
@@ -877,7 +878,7 @@ public class UICtrl {
     void exoprtNameList() {
 	FileChooser fileChooser = new FileChooser();
 	fileChooser.setInitialFileName("nameList.txt");
-	fileChooser.setTitle("保存到哪？");
+	fileChooser.setTitle("想保存到哪？");
 	File file = fileChooser.showSaveDialog(stage);
         data.exportNameList(file);
     }
