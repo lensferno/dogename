@@ -16,6 +16,7 @@ import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -260,7 +261,7 @@ public class UICtrl {
 
 
             try{/*
-                if(slow){
+                if(newAlgo){
                     if(times-already<5){
                         newSpeed= (short) (newSpeed+3);
                         Thread.sleep(newSpeed);
@@ -370,6 +371,7 @@ public class UICtrl {
 
     public JFXCheckBox taoluModeBtn;
     public JFXCheckBox equalModeBtn;
+    public JFXCheckBox newAlgoBtn;
 
     public JFXRadioButton numbChoose;
     public JFXRadioButton nameChoose;
@@ -452,19 +454,36 @@ public class UICtrl {
     }
 
 
-    boolean slow=true;
+    boolean newAlgo=true;
 
 
-
-    public boolean isSlow() {
-        return slow;
+    @FXML
+    public void newAlgoBtnAction(){
+        if(newAlgo)
+            unselectNewAlgoBtn();
+        else
+            selectNewAlgoBtn();
     }
 
-    public void setSlow(boolean slow) {
-        this.slow = slow;
+    public boolean isNewAlgo() {
+        return newAlgo;
     }
 
+    public void setNewAlgo(boolean newAlgo) {
+        this.newAlgo = newAlgo;
+    }
 
+    void selectNewAlgoBtn(){
+        newAlgo = true;
+        newAlgoBtn.setSelected(true);
+        data.setNewAlgo(newAlgo);
+    }
+
+    void unselectNewAlgoBtn(){
+        newAlgo=false;
+        newAlgoBtn.setSelected(false);
+        data.setNewAlgo(newAlgo);
+    }
 
 
     final static private String CONFIG_FILE="D:\\dogename\\files\\config";
@@ -853,11 +872,53 @@ public class UICtrl {
         fixedTimes.setSelected(true);
         randomTimes.setSelected(false);
     }
+    
+    @FXML
+    void exoprtNameList() {
+	FileChooser fileChooser = new FileChooser();
+	fileChooser.setInitialFileName("nameList.txt");
+	fileChooser.setTitle("保存到哪？");
+	File file = fileChooser.showSaveDialog(stage);
+        data.exportNameList(file);
+    }
+    
+    @FXML
+    void importNameList() {
+	FileChooser fileChooser = new FileChooser();
+	fileChooser.setTitle("告诉我在哪？");
+	File file = fileChooser.showSaveDialog(stage);
 	
-	@FXML
-	void showInfo(){
-	    showInfoDialog("Me?","这是一个以Java语言编写，采用Google Material Design（Google MD）为界面风格的用来点名的东西。\n该程序的源代码可在 https://github.com/eatenid/dogename 查看和获取。（更新什么的基本不不打算的了ヾ§ ￣▽)ゞ）\n\n使用到的第三方库：\nJFoenix(8.0.4)\nApache Commons Codec(1.11)\nGson(2.8.5) \n\n关于作者的一些东西：\nGithub主页：https://github.com/eatenid\nGoogle+：kygbuff@gamil.com\n\n邮箱等：\nHet2002@outlook.com\n2318724550@qq.com\nulcch@foxmail.com\n\n\nCreated by He T.Y.");
-	}
+        data.importNameList(file);
+        names.clear();
+        names.addAll(data.getAll());
+        nameList.setItems(names);
+        nameList.refresh();
+
+        clearIgnoreList();
+        clearTaoluList();
+
+        data.saveToFile();
+    }
+    
+    @FXML
+    void makeAMass() {
+	data.makeMass();
+
+        names.clear();
+        names.addAll(data.getAll());
+        nameList.setItems(names);
+        nameList.refresh();
+
+        clearIgnoreList();
+        clearTaoluList();
+
+        data.saveToFile();
+    }
+	
+    @FXML
+    void showInfo(){
+        showInfoDialog("Me?","这是一个以Java语言编写，采用Google Material Design（Google MD）为界面风格的用来点名的东西。\n该程序的源代码可在 https://github.com/eatenid/dogename 查看和获取。（更新什么的基本不打算的了ヾ§ ￣▽)ゞ）\n\n使用到的第三方库：\nJFoenix(8.0.4)\nApache Commons Codec(1.11)\nGson(2.8.5) \n\n关于作者的一些东西：\nGithub主页：https://github.com/eatenid\nGoogle+：kygbuff@gamil.com\n\n邮箱等：\nHet2002@outlook.com\n2318724550@qq.com\nulcch@foxmail.com\n\n\nCreated by He T.Y.");
+    }
 	
 
     public void showInfoDialog(String header,String message) {

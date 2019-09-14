@@ -49,7 +49,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <JFXSlider fx:id="chooseTimes" layoutX="379.0" layoutY="133.0" max="250.0" min="100.0" onMouseReleased="#setChosenTimeHere" onTouchReleased="#setChosenTimeHere" prefHeight="18.0" prefWidth="241.0" showTickLabels="true" showTickMarks="true" value="120.0" />
+                  <JFXSlider fx:id="chooseTimes" layoutX="364.0" layoutY="128.0" max="250.0" min="100.0" onMouseReleased="#setChosenTimeHere" onTouchReleased="#setChosenTimeHere" prefHeight="18.0" prefWidth="241.0" showTickLabels="true" showTickMarks="true" value="120.0" />
                   <Pane fx:id="numbPane" layoutX="222.0" layoutY="58.0" prefHeight="30.0" prefWidth="176.0" visible="false">
                      <children>
                         <JFXTextField fx:id="minNumb" alignment="CENTER" layoutX="96.0" prefHeight="25.0" prefWidth="28.0" text="11" />
@@ -96,12 +96,12 @@
                         <Font size="17.0" />
                      </font>
                   </JFXRadioButton>
-                  <JFXCheckBox fx:id="equalModeBtn" layoutY="152.0" onAction="#equalBtnAction" prefHeight="20.0" prefWidth="94.0" text="机会均等" unCheckedColor="#12d071">
+                  <JFXCheckBox fx:id="equalModeBtn" checkedColor="#079cd7" layoutY="152.0" onAction="#equalBtnAction" prefHeight="28.0" prefWidth="94.0" text="机会均等" unCheckedColor="#13aecf">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXCheckBox fx:id="taoluModeBtn" layoutY="181.0" onAction="#taoluModeBtn_Aciton" prefHeight="20.0" prefWidth="89.0" text="娱乐模式" unCheckedColor="#12d071">
+                  <JFXCheckBox fx:id="taoluModeBtn" checkedColor="#079cd7" layoutY="180.0" onAction="#taoluModeBtn_Aciton" prefHeight="28.0" prefWidth="89.0" text="娱乐模式" unCheckedColor="#13aecf">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -111,6 +111,12 @@
                   <JFXButton buttonType="RAISED" layoutX="135.0" layoutY="180.0" onAction="#showTaoluMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
                   <JFXButton buttonType="RAISED" layoutX="135.0" layoutY="152.0" onAction="#showEqualMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
                   <Line endX="100.0" layoutX="97.0" layoutY="180.0" startX="-100.0" />
+                  <JFXCheckBox fx:id="newAlgoBtn" checkedColor="#079cd7" layoutX="215.0" layoutY="156.0" onAction="#newAlgoBtnAction" selected="true" text="使用新的随机算法(Java SecureRandom)" textFill="#2c2424" unCheckedColor="#13aecf">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXCheckBox>
+                  <Text layoutX="241.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="理论上可能会更随机，性能可能会有些许下降" wrappingWidth="272.0" />
                </children>
             </Pane>
             <ImageView fx:id="mainView" fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
@@ -141,18 +147,18 @@
                   <Font size="13.0" />
                </font>
             </JFXTextArea>
-            <JFXButton fx:id="addName" buttonType="RAISED" layoutX="458.0" layoutY="440.0" onAction="#addName" prefHeight="36.0" prefWidth="92.0" ripplerFill="#00eeff" text="添加">
+            <JFXButton fx:id="addName" layoutX="366.0" layoutY="440.0" onAction="#addName" prefHeight="36.0" prefWidth="153.0" ripplerFill="#00eeff" text="添加">
                <font>
                   <Font size="17.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="deleteName" buttonType="RAISED" layoutX="550.0" layoutY="440.0" onAction="#deleteName" prefHeight="36.0" prefWidth="92.0" ripplerFill="RED" text="删除" textFill="RED">
+            <JFXButton fx:id="deleteName" layoutX="520.0" layoutY="440.0" onAction="#deleteName" prefHeight="36.0" prefWidth="153.0" ripplerFill="RED" text="删除" textFill="RED">
                <font>
                   <Font size="17.0" />
                </font>
             </JFXButton>
             <JFXListView fx:id="nameList" editable="true" layoutX="128.0" layoutY="118.0" prefHeight="553.0" prefWidth="198.0" styleClass="nameList" />
-            <JFXButton fx:id="deleteAll" buttonType="RAISED" layoutX="642.0" layoutY="440.0" onAction="#deleteAllName" prefHeight="36.0" prefWidth="92.0" ripplerFill="RED" text="删除所有" textFill="RED">
+            <JFXButton fx:id="deleteAll" layoutX="673.0" layoutY="440.0" onAction="#deleteAllName" prefHeight="36.0" prefWidth="153.0" ripplerFill="RED" text="删除所有" textFill="RED">
                <font>
                   <Font size="17.0" />
                </font>
@@ -169,6 +175,21 @@
             <ImageView fx:id="backBtn" fitHeight="28.0" fitWidth="57.0" layoutX="14.0" layoutY="8.0" onDragDone="#turnBack" onMouseReleased="#turnBack" onTouchReleased="#turnBack" pickOnBounds="true" preserveRatio="true">
 
             </ImageView>
+            <JFXButton layoutX="366.0" layoutY="476.0" onAction="#exoprtNameList" prefHeight="28.0" prefWidth="153.0" text="导出">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="520.0" layoutY="476.0" onAction="#importNameList" prefHeight="28.0" prefWidth="153.0" text="导入">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="673.0" layoutY="476.0" onAction="#makeAMass" prefHeight="28.0" prefWidth="153.0" text="打乱顺序">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXButton>
          </children>
       </Pane>
    </children>

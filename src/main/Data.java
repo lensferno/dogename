@@ -1,7 +1,10 @@
 package main;
 
 import java.io.*;
+import java.security.SecureRandom;
 import java.util.*;
+
+import com.google.gson.Gson;
 
 public class Data {
     private List<String> nameList;
@@ -11,9 +14,77 @@ public class Data {
 
 
     File dataFile =new File("D:\\dogename\\files\\data");
-
+    
+    boolean newAlgo=true;
+    SecureRandom secRandom =new SecureRandom();
+    
     //不做注释了，自己慢慢看。：）
+    
+    public void exportNameList(File path) {
+	if(path!=null) {
+            try{
+                FileOutputStream oos =new FileOutputStream(path);
+                oos.write(new Gson().toJson(nameList).getBytes());
+                oos.close();
+                System.out.println("[INFO]Exported list to:"+path.getPath());
+            }catch (Exception e){e.printStackTrace();}
+            
+	}else
+	    return;
+        
+    }
+    
+    public void importNameList(File path) {
+	if(path!=null) {
+	    
+            try{
+                FileInputStream fis =new FileInputStream(path);
+                String temp;
+                BufferedReader bis=new BufferedReader(new InputStreamReader(fis, "utf-8"));
+                StringBuilder sb=new StringBuilder();
+            
+                while ((temp = bis.readLine()) != null) {
+                    sb.append(temp);
+                    sb.append("\n");
+                }
+                
+                nameList=new Gson().fromJson(sb.toString(),List.class);
+                System.out.println("[INFO]Imported list from:"+path.getPath());
+            }catch (Exception e){e.printStackTrace();}
+	
+	}else
+	    return;
+        
+    }
 
+    public void makeMass() {
+	
+	HashSet already=new HashSet();
+	List<String> tempList =new LinkedList<>();
+	int i=0;
+	Random random =new Random();
+	while(tempList.size()<nameList.size()) {
+	    i=random.nextInt(nameList.size());
+	    while(already.contains(i))
+		i=random.nextInt(nameList.size());
+	    tempList.add(nameList.get(i));
+	    already.add(i);
+	    
+	}
+	nameList.clear();
+	nameList.addAll(tempList);
+    }
+    
+
+
+    //------------------------------------------------------
+    public void setNewAlgo(boolean newAlgo) {
+	this.newAlgo=newAlgo;
+	if(newAlgo)
+	    System.out.println("[INFO]Use SecureRandom");
+	else
+	    System.out.println("[INFO]Not use SecureRandom");
+    }
     //------------------------------------------------------
     public Data(){
 
@@ -95,14 +166,10 @@ public class Data {
     Random random =new Random();
     //------------------------------------------------------
     public String randomGet(boolean taoluMode){
-        if(taoluMode){
-            int i=random.nextInt(nameList.size());
-            return  chooseList.get(i);
-        }else{
-            //int i=(int)(1+Math.random()*(nameList.size()));
-            int i=random.nextInt(nameList.size());
-            return  nameList.get(i);
-        }
+	if(newAlgo) 
+            return  nameList.get(secRandom.nextInt(nameList.size()));
+        else 
+            return  nameList.get(random.nextInt(nameList.size()));
     }
 
     
