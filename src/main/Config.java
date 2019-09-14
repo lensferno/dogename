@@ -19,14 +19,14 @@ public class Config implements Serializable {
 
     private boolean equalMode=true;
 
-    private boolean slow=true;
+    private boolean newAlgo=true;
 
-    public boolean isSlow() {
-        return slow;
+    public boolean isNewAlgo() {
+        return newAlgo;
     }
 
-    public void setSlow(boolean slow) {
-        this.slow = slow;
+    public void setNewAlgo(boolean newAlgo) {
+        this.newAlgo = newAlgo;
     }
 
     public boolean isEqualMode() {
