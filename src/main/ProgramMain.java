@@ -66,7 +66,8 @@ public class ProgramMain extends Application {
             if(debugMode) {
                 System.out.print("[INFO]Running in debug mode\n");
                 System.out.print("[INFO]Working in:"+getClass().getResource("/").toString()+"\n");
-                System.out.println("[INFO]UI file in:"+getClass().getResource("/main/sourcesData/uifiles/UI.fxml").toString()+"\n");
+                System.out.println("[INFO]UI file is in:"+getClass().getResource("/main/sourcesData/uifiles/UI.fxml").toString());
+                
                 loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
                 root = loader.load();
             }else {
@@ -78,7 +79,7 @@ public class ProgramMain extends Application {
             }
             
             Scene scene = new Scene(root, 990, 700);
-            stage.setTitle("DogeName 初号姬");
+            stage.setTitle("DogeName 贰号姬");
             stage.setScene(scene);
 
             //stage.setResizable(false);
