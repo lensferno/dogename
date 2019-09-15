@@ -142,6 +142,8 @@ public class ProgramMain extends Application {
             controller.setSpeed(config.getSpeed());
             controller.setChosenTime(config.getChosenTime());
             
+            controller.showShiCi();
+            
         } catch (Exception e) {
             e.printStackTrace();
         }

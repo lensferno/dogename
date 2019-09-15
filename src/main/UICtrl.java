@@ -2,6 +2,7 @@ package main;
 
 import com.jfoenix.controls.*;
 import javafx.animation.*;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -77,6 +79,61 @@ public class UICtrl {
         ignoreNumberTimes=0;
         System.gc();
 
+    }
+    
+    public Label topBar;
+    @FXML
+    void showShiCi() {
+	new Thread(new Runnable() {
+	    @Override
+	    public void run() {
+		try {
+		    GuShiCi gsc=new GuShiCi();
+		    String shici =gsc.get();
+		    Platform.runLater(new Runnable() {
+	                    @Override
+	                    public void run() {
+	    		        String topText=gsc.getShiciContent();
+			        showShiCi("每日古诗词",shici);
+			        topBar.setText(topText);
+	                    }
+	                });
+		}catch(Exception e) {e.printStackTrace();}
+	    }
+	}).start();
+    }
+    
+    public void showShiCi(String header,String message) {
+        JFXDialogLayout content = new JFXDialogLayout();
+        content.setHeading(new Text(header));
+        Text text =new Text(message);
+        text.setFont(new Font(14));
+        content.setBody(text);
+        StackPane tempPane=new StackPane();
+        tempPane.setPrefHeight(mainPane.getPrefHeight());
+        tempPane.setPrefWidth(mainPane.getPrefWidth());
+        mainPane.getChildren().add(tempPane);
+        JFXDialog dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
+        dialog.setPrefHeight(mainPane.getPrefHeight());
+        dialog.setPrefWidth(mainPane.getPrefWidth());
+        JFXButton button = new JFXButton("已阅");
+        tempPane.setOnMousePressed((MouseEvent e) -> {
+            dialog.close();
+            mainPane.getChildren().remove(tempPane);
+        });
+        tempPane.setOnTouchPressed((TouchEvent e) -> {
+            dialog.close();
+            mainPane.getChildren().remove(tempPane);
+        });
+        button.setPrefWidth(50);
+        button.setPrefHeight(30);
+        button.setOnAction((ActionEvent e) -> {
+            dialog.close();
+            mainPane.getChildren().remove(tempPane);
+        });
+        content.setActions(button);
+		
+        dialog.show();
     }
 
     @FXML
