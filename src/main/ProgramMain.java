@@ -64,9 +64,9 @@ public class ProgramMain extends Application {
             Parent root;
             
             if(debugMode) {
-                System.out.print("[INFO]Running in debug mode\n");
-                System.out.print("[INFO]Working in:"+getClass().getResource("/").toString()+"\n");
-                System.out.println("[INFO]UI file is in:"+getClass().getResource("/main/sourcesData/uifiles/UI.fxml").toString());
+                //System.out.print("[INFO]Running in debug mode\n");
+                //System.out.print("[INFO]Working in:"+getClass().getResource("/").toString()+"\n");
+               // System.out.println("[INFO]UI file is in:"+getClass().getResource("/main/sourcesData/uifiles/UI.fxml").toString());
                 
                 loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
                 root = loader.load();
@@ -82,8 +82,7 @@ public class ProgramMain extends Application {
             stage.setTitle("DogeName 贰号姬");
             stage.setScene(scene);
 
-            //stage.setResizable(false);
-            stage.setResizable(true);
+            //stage.setResizable(true);
             UICtrl controller = loader.getController();
             controller.setStage(stage);
             controller.setScene(scene);
@@ -141,7 +140,8 @@ public class ProgramMain extends Application {
 
             controller.setSpeed(config.getSpeed());
             controller.setChosenTime(config.getChosenTime());
-            
+
+            stage.setResizable(false);
             controller.showShiCi();
             
         } catch (Exception e) {
