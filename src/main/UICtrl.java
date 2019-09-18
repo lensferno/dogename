@@ -16,8 +16,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -60,7 +62,7 @@ public class UICtrl {
     boolean ignorePast=true;
 
     boolean equalMode=true;
-    
+
     boolean forceStop =false;
 
     File nameIgnoreFile =new File("D:\\dogename\\files\\nameIgnoreList");
@@ -80,35 +82,50 @@ public class UICtrl {
         System.gc();
 
     }
-    
+
     public Label topBar;
     @FXML
     void showShiCi() {
-	new Thread(new Runnable() {
-	    @Override
-	    public void run() {
-		try {
-		    GuShiCi gsc=new GuShiCi();
-		    String shici =gsc.get();
-		    Platform.runLater(new Runnable() {
-	                    @Override
-	                    public void run() {
-	    		        String topText=gsc.getShiciContent();
-			        showShiCi("每日古诗词",shici);
-			        topBar.setText(topText);
-	                    }
-	                });
-		}catch(Exception e) {e.printStackTrace();}
-	    }
-	}).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    GuShiCi gsc=new GuShiCi();
+                    String shici =gsc.get();
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            String topText=gsc.getShiciContent();
+                            showShiCi("每日古诗词",gsc);
+                            topBar.setText(topText+"——"+gsc.getAuthor()+"《"+gsc.getOrigin()+"》");
+                        }
+                    });
+                }catch(Exception e) {e.printStackTrace();}
+            }
+        }).start();
     }
-    
-    public void showShiCi(String header,String message) {
+
+    public void showShiCi(String header,GuShiCi gsc) {
+        VBox vb =new VBox();
+        vb.setPrefHeight(200);
+        vb.setPrefWidth(300);
+        Text contentText =new Text("“"+gsc.getShiciContent()+"”");
+        contentText.setFont(new Font("BLOOD",26));
+        contentText.setTextAlignment(TextAlignment.CENTER);
+        Text authorText =new Text("\n\n——"+gsc.getAuthor()+"《"+gsc.getOrigin()+"》");
+        authorText.setTextAlignment(TextAlignment.RIGHT);
+        authorText.setFont(new Font(14));
+        Text categoryText =new Text("\n\n\n#"+gsc.getCategory());
+        categoryText.setFont(new Font(12));
+        categoryText.setTextAlignment(TextAlignment.RIGHT);
+        vb.getChildren().addAll(contentText,authorText,categoryText);
+
         JFXDialogLayout content = new JFXDialogLayout();
         content.setHeading(new Text(header));
-        Text text =new Text(message);
+        Text text =new Text("");
         text.setFont(new Font(14));
-        content.setBody(text);
+        text.setTextAlignment(TextAlignment.CENTER);
+        content.setBody(vb);
         StackPane tempPane=new StackPane();
         tempPane.setPrefHeight(mainPane.getPrefHeight());
         tempPane.setPrefWidth(mainPane.getPrefWidth());
@@ -132,17 +149,17 @@ public class UICtrl {
             mainPane.getChildren().remove(tempPane);
         });
         content.setActions(button);
-		
+
         dialog.show();
     }
 
     @FXML
-	void clearTaoluList(){
+    void clearTaoluList(){
         data.clearTaoluedName();
-	}
+    }
 
     @FXML
-	void showTaoluMode(){
+    void showTaoluMode(){
         showInfoDialog("啥玩意？","旧称“套路模式”，勾选后会使被点过的名字在挑选列表中多出现4~5次，增加了再次被点中的几率。\n注意：仅在勾选此模式后点中的名字才会被多增加4~5次，不勾选时选中的名字不受影响。\n退出后会自动重置，不影响下次使用。");
     }
 
@@ -207,11 +224,11 @@ public class UICtrl {
             e.printStackTrace();
         }
     }
-//-------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------
     AnimationTimer timer =new AnimationTimer() {
         @Override
         public void handle(long now) {
-            
+
             if(forceStop){
                 already=chosenTime+1;
                 isRunning=false;
@@ -221,17 +238,17 @@ public class UICtrl {
             try{
                 Thread.sleep(speed);
             }catch (Exception e){e.printStackTrace(); }
-			
+
             if(already>=chosenTime){
                 if(!ignoreNameList.contains(chosenName)||!ignorePast||forceStop){
-                    
+
                     forceStop=false;
-                    
+
                     if(ignorePast)
                         ignoreNameList.add(chosenName);
                     if(equalMode)
                         writeIgnoreList();
-                    
+
                     cycleEnd=true;
                     already=0;
                     singleCycle=0;
@@ -308,7 +325,7 @@ public class UICtrl {
 
         }
     };
-//---------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------
     SecureRandom secRandom =new SecureRandom();
     AnimationTimer numbTimer =new AnimationTimer() {
         @Override
@@ -325,14 +342,14 @@ public class UICtrl {
 
             if(already>=chosenTime){
                 if(!ignoreNumberList.contains(chosenName)||!ignorePast||forceStop){
-                    
+
                     forceStop=false;
-                    
+
                     if(ignorePast)
                         ignoreNumberList.add(chosenName);
                     if(equalMode)
                         writeIgnoreList();
-                    
+
                     cycleEnd=true;
                     already=0;
                     singleCycle=0;
@@ -384,7 +401,7 @@ public class UICtrl {
                         chosen_1.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
                     else
                         chosen_1.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
-                	
+
                     chosenName=chosen_1.getText();
                     already++;
                     singleCycle++;
@@ -392,11 +409,11 @@ public class UICtrl {
                 }
 
                 case 2:{
-                if(newAlgo)
-                    chosen_2.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
-                else
-                    chosen_2.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
-            	
+                    if(newAlgo)
+                        chosen_2.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
+                    else
+                        chosen_2.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
+
                     chosenName=chosen_2.getText();
                     already++;
                     singleCycle++;
@@ -574,7 +591,7 @@ public class UICtrl {
 
     }
 
-    
+
     boolean isRunning=false;
 
     @FXML
@@ -600,17 +617,17 @@ public class UICtrl {
             if(data.isEmpty(taoluMode)){
                 showInfoDialog("哦霍~","现在名单还是空的捏~请前往名单管理添加名字 或 使用数字挑选法。");
                 return;
-             }
+            }
 
-             if(ignoreNameList.size()>=data.getSize()&&ignorePast){
-                 if(equalMode) {
-                     showInfoDialog("啊？", "全部名字都被点完啦！\n名字列表将会重置");
-                     clearIgnoreList();
-                 }else
-                     showInfoDialog("啊？","全部名字都被点完啦！\n请多添加几个名字 或 点击“机会均等”的“重置”按钮。");
-                 
-                 return;
-             }
+            if(ignoreNameList.size()>=data.getSize()&&ignorePast){
+                if(equalMode) {
+                    showInfoDialog("啊？", "全部名字都被点完啦！\n名字列表将会重置");
+                    clearIgnoreList();
+                }else
+                    showInfoDialog("啊？","全部名字都被点完啦！\n请多添加几个名字 或 点击“机会均等”的“重置”按钮。");
+
+                return;
+            }
             controllerPane.setDisable(true);
             speed=(short) (100-speedBar.getValue());
             isRunning=true;
@@ -693,8 +710,8 @@ public class UICtrl {
             taoluModeBtn.setDisable(false);
         }
     }
-    
-    
+
+
     void taoluModeBtn_selected(){
         taoluMode=true;
         taoluModeBtn.setSelected(true);
@@ -705,34 +722,34 @@ public class UICtrl {
         taoluModeBtn.setSelected(false);
     }
 
-   @FXML
-   void taoluModeBtn_Aciton(){
+    @FXML
+    void taoluModeBtn_Aciton(){
         if(taoluMode)
             taoluModeBtn_unselect();
         else
             taoluModeBtn_selected();
-   }
+    }
 
-   @FXML
-   void equalBtnAction(){
-       if(equalMode)
-           unSelectEqualBtn();
-       else
-           selectEqualBtn();
-   }
+    @FXML
+    void equalBtnAction(){
+        if(equalMode)
+            unSelectEqualBtn();
+        else
+            selectEqualBtn();
+    }
 
-   @FXML
-   void selectEqualBtn(){
+    @FXML
+    void selectEqualBtn(){
         equalModeBtn.setSelected(true);
         equalMode=true;
         readIgnoreList();
-   }
+    }
 
-   @FXML
-   void unSelectEqualBtn(){
-       equalModeBtn.setSelected(false);
-       equalMode=false;
-   }
+    @FXML
+    void unSelectEqualBtn(){
+        equalModeBtn.setSelected(false);
+        equalMode=false;
+    }
 
 
     @FXML
@@ -784,10 +801,10 @@ public class UICtrl {
         timeline.play();
 
     }
-    
+
     @FXML
     void turnBack() {
-        
+
         final Timeline timeline = new Timeline();
         timeline.setCycleCount(1);
         timeline.setAutoReverse(true);
@@ -803,8 +820,8 @@ public class UICtrl {
 
         timeline.play();
     }
-    
-    
+
+
     @FXML
     void goBack() {
 
@@ -903,7 +920,7 @@ public class UICtrl {
         equalModeBtn.setDisable(false);
 
     }
-    
+
     @FXML
     void chooseOnce_selected() {
         ignorePast=false;
@@ -914,7 +931,7 @@ public class UICtrl {
         if(isNameChoose){
             //taoluMode=true;
             taoluModeBtn.setDisable(false);
-            
+
         }
     }
 
@@ -933,23 +950,23 @@ public class UICtrl {
         fixedTimes.setSelected(true);
         randomTimes.setSelected(false);
     }
-    
+
     @FXML
     void exoprtNameList() {
-	FileChooser fileChooser = new FileChooser();
-	fileChooser.setInitialFileName("nameList.txt");
-	fileChooser.setTitle("想保存到哪？");
-	File file = fileChooser.showSaveDialog(stage);
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialFileName("nameList.txt");
+        fileChooser.setTitle("想保存到哪？");
+        File file = fileChooser.showSaveDialog(stage);
         data.exportNameList(file);
         System.gc();
     }
-    
+
     @FXML
     void importNameList() {
-	FileChooser fileChooser = new FileChooser();
-	fileChooser.setTitle("告诉我在哪？");
-	File file = fileChooser.showSaveDialog(stage);
-	
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("告诉我在哪？");
+        File file = fileChooser.showSaveDialog(stage);
+
         data.importNameList(file);
         names.clear();
         names.addAll(data.getAll());
@@ -962,28 +979,26 @@ public class UICtrl {
         data.saveToFile();
         System.gc();
     }
-    
+
     @FXML
     void makeAMass() {
-	data.makeMass();
+        data.makeMass();
 
         names.clear();
         names.addAll(data.getAll());
         nameList.setItems(names);
         nameList.refresh();
 
-        clearIgnoreList();
-        clearTaoluList();
 
         data.saveToFile();
         System.gc();
     }
-	
+
     @FXML
     void showInfo(){
-        showInfoDialog("Me?","这是一个以Java语言编写，采用Google Material Design（Google MD）为界面风格的用来点名的东西。\n该程序的源代码可在 https://github.com/eatenid/dogename 查看和获取。（更新什么的基本不打算的了ヾ§ ￣▽)ゞ）\n\n使用到的第三方库：\nJFoenix(8.0.4)\nApache Commons Codec(1.11)\nGson(2.8.5) \n\n关于作者的一些东西：\nGithub主页：https://github.com/eatenid\nGoogle+：kygbuff@gamil.com\n\n邮箱等：\nHet2002@outlook.com\n2318724550@qq.com\nulcch@foxmail.com\n\n\nCreated by He T.Y.");
+        showInfoDialog("Me?","这是一个以Java语言编写，采用Google Material Design（Google MD）为界面风格的用来点名的东西。\n该程序的源代码可在 https://github.com/eatenid/dogename 查看和获取。（更新什么的基本不打算的了ヾ§ ￣▽)ゞ）\n\n使用到的第三方库：\nJFoenix(8.0.4)\nApache Commons Codec(1.11)\nGson(2.8.5) \n感谢gushici项目提供的古诗词数据接口，详情请前往：https://github.com/xenv/gushici\n\n关于作者的一些东西：\nGithub主页：https://github.com/eatenid\nGoogle+：kygbuff@gamil.com\n\n邮箱等：\nHet2002@outlook.com\n2318724550@qq.com\nulcch@foxmail.com\n\n\nCreated by He T.Y.");
     }
-	
+
 
     public void showInfoDialog(String header,String message) {
         JFXDialogLayout content = new JFXDialogLayout();
@@ -1012,7 +1027,7 @@ public class UICtrl {
             mainPane.getChildren().remove(tempPane);
         });
         content.setActions(button);
-		
+
         dialog.show();
     }
 

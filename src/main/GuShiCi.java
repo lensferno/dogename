@@ -12,10 +12,10 @@ import com.google.gson.Gson;
 public class GuShiCi {
     private String shiciContent;
     private final String API="https://api.gushi.ci/all.json";
-    
+    Gushici gsc;
     public String get() {
 	String respond = getHtml(API);
-	Gushici gsc = new Gson().fromJson(respond, Gushici.class);
+	gsc = new Gson().fromJson(respond, Gushici.class);
 	shiciContent = gsc.getContent();
 	return gsc.getOrigin()+"\n\n"+gsc.getAuthor()+"\n\n"+gsc.getContent()+"\n\n\n#"+gsc.getCategory();
     }
@@ -64,7 +64,18 @@ public class GuShiCi {
         System.out.println("[INFO]Got："+sb.toString());
         return sb.toString();
     }
-    
+
+    public String getCategory() {
+        return gsc.getCategory();
+    }
+
+    public String getOrigin() {
+        return gsc.getOrigin();
+    }
+
+    public String getAuthor() {
+        return gsc.getAuthor();
+    }
     class Gushici {
 
        private String content;//诗歌的内容
