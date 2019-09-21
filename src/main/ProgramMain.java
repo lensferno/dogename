@@ -16,7 +16,7 @@ import javafx.stage.WindowEvent;
 
 public class ProgramMain extends Application {
 
-    final static private String CONFIG_FILE = "D:\\dogename\\files\\config";
+    final static private String CONFIG_FILE = "config.data";
 
 
     private Config config;
@@ -65,7 +65,7 @@ public class ProgramMain extends Application {
             
             if(debugMode) {
                 //System.out.print("[INFO]Running in debug mode\n");
-                //System.out.print("[INFO]Working in:"+getClass().getResource("/").toString()+"\n");
+                System.out.print("[INFO]Working in:"+getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
                // System.out.println("[INFO]UI file is in:"+getClass().getResource("/main/sourcesData/uifiles/UI.fxml").toString());
                 
                 loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));

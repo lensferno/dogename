@@ -13,7 +13,7 @@ public class Data {
     private int listSize = 0;
 
 
-    File dataFile =new File("D:\\dogename\\files\\data");
+    File dataFile =new File("namelist.data");
     
     boolean newAlgo=true;
     SecureRandom secRandom =new SecureRandom();
@@ -24,7 +24,7 @@ public class Data {
 	if(path!=null) {
             try{
                 FileOutputStream oos =new FileOutputStream(path);
-                oos.write(new Gson().toJson(nameList).getBytes());
+                oos.write(new Gson().toJson(nameList).getBytes("utf-8"));
                 oos.close();
                 System.out.println("[INFO]Exported list to:"+path.getPath());
             }catch (Exception e){e.printStackTrace();}
