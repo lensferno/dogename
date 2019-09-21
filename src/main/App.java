@@ -9,7 +9,7 @@ public class App {
     {
 	
 	File file = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
-	debug = file.isFile();
+	debug = !file.isFile();
 
         if(System.getProperty("os.name").toLowerCase().contains("window")) {
             

@@ -157,6 +157,10 @@ public class ProgramMain extends Application {
             stage.setResizable(true);
             
             controller.showShiCi();
+            Update update =new Update();
+
+            System.out.println("[INFO]Update statu:"+update.checkUpdate());
+            
             
         } catch (Exception e) {
             e.printStackTrace();
