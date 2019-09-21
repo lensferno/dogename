@@ -560,7 +560,7 @@ public class UICtrl {
     }
 
 
-    final static private String CONFIG_FILE="D:\\dogename\\files\\config";
+    final static private String CONFIG_FILE="config.data";
     final private File configFile=new File(CONFIG_FILE);
 
     public int saveConfigToFile(){
@@ -965,7 +965,7 @@ public class UICtrl {
     void importNameList() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("告诉我在哪？");
-        File file = fileChooser.showSaveDialog(stage);
+        File file = fileChooser.showOpenDialog(stage);
 
         data.importNameList(file);
         names.clear();
