@@ -1,0 +1,2 @@
+7z x  Dogename.7z.001
+7z x -o{/home/hety/dogggename} Dogename.7z.001

@@ -89,7 +89,10 @@ public class Data {
     //------------------------------------------------------
     public Data(){
 
-        dataFile=new File(app.APP_LOCA+"\\files\\namelist.data");
+	if(System.getProperty("os.name").toLowerCase().contains("window"))
+            dataFile=new File(app.APP_LOCA+"files\\namelist.data");
+	else
+            dataFile=new File(app.APP_LOCA+"files/namelist.data");
         try{
 
             if(dataFile.exists()!=true){

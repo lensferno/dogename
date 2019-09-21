@@ -26,7 +26,7 @@ public class ProgramMain extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        File fileDir = new File(app.APP_LOCA+"\\files");
+        File fileDir = new File(app.APP_LOCA+"files");
         if(!fileDir.exists())
             fileDir.mkdir();
 
@@ -50,7 +50,11 @@ public class ProgramMain extends Application {
     
     public void showWindow() {
 
-        CONFIG_FILE=app.APP_LOCA+"\\files\\config.data";
+
+	if(System.getProperty("os.name").toLowerCase().contains("window"))
+            CONFIG_FILE=app.APP_LOCA+"files\\config.data";
+	else
+            CONFIG_FILE=app.APP_LOCA+"files/config.data";
 
 
         try {
@@ -150,7 +154,8 @@ public class ProgramMain extends Application {
             controller.setSpeed(config.getSpeed());
             controller.setChosenTime(config.getChosenTime());
 
-            stage.setResizable(false);
+            stage.setResizable(true);
+            
             controller.showShiCi();
             
         } catch (Exception e) {

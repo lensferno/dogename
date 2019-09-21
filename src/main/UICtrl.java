@@ -67,8 +67,8 @@ public class UICtrl {
 
     boolean forceStop =false;
 
-    File nameIgnoreFile =new File(app.APP_LOCA+"\\files\\nameIgnoreList.data");
-    File numbIgnoreFile =new File(app.APP_LOCA+"\\files\\numbIgnoreList.data");
+    File nameIgnoreFile =new File(app.APP_LOCA+"files\\nameIgnoreList.data");
+    File numbIgnoreFile =new File(app.APP_LOCA+"files\\numbIgnoreList.data");
 
 
     @FXML
@@ -562,8 +562,9 @@ public class UICtrl {
     }
 
 
-    final private String CONFIG_FILE=app.APP_LOCA+"\\files\\config.data";
-    final private File configFile=new File(CONFIG_FILE);
+
+    private String CONFIG_FILE;
+    private File configFile;
 
     public int saveConfigToFile(){
 
@@ -579,6 +580,13 @@ public class UICtrl {
         config.setNewAlgo(newAlgo);
 
 
+
+	if(System.getProperty("os.name").toLowerCase().contains("window"))
+            CONFIG_FILE=app.APP_LOCA+"files\\config.data";
+	else
+            CONFIG_FILE=app.APP_LOCA+"files/config.data";
+
+        configFile=new File(CONFIG_FILE);
         try{
             ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(configFile));
             oos.writeObject(config);
