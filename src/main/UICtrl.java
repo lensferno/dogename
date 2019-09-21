@@ -49,6 +49,8 @@ public class UICtrl {
     public short maxNumber;
 
 
+
+    App app=new App();
     int chosenTime=120;
     int times=0;
     int already=0;
@@ -65,8 +67,8 @@ public class UICtrl {
 
     boolean forceStop =false;
 
-    File nameIgnoreFile =new File("D:\\dogename\\files\\nameIgnoreList");
-    File numbIgnoreFile =new File("D:\\dogename\\files\\numbIgnoreList");
+    File nameIgnoreFile =new File(app.APP_LOCA+"\\files\\nameIgnoreList.data");
+    File numbIgnoreFile =new File(app.APP_LOCA+"\\files\\numbIgnoreList.data");
 
 
     @FXML
@@ -560,7 +562,7 @@ public class UICtrl {
     }
 
 
-    final static private String CONFIG_FILE="config.data";
+    final private String CONFIG_FILE=app.APP_LOCA+"\\files\\config.data";
     final private File configFile=new File(CONFIG_FILE);
 
     public int saveConfigToFile(){
