@@ -1,0 +1,17 @@
+{
+    "ver": 24,
+    "desc": "没有要说的～",
+    "resources": [
+        {
+            "type": "github",
+            "updateURL": [
+                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.001",
+                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.002",
+                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.003",
+                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.004",
+                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.005",
+                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.006"
+            ]
+        }
+    ]
+}
