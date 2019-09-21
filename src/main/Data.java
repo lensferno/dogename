@@ -13,13 +13,14 @@ public class Data {
     private int listSize = 0;
 
 
-    File dataFile =new File("namelist.data");
+    File dataFile ;//=new File("namelist.data");
     
     boolean newAlgo=true;
     SecureRandom secRandom =new SecureRandom();
     
     //不做注释了，自己慢慢看。：）
-    
+
+    App app=new App();
     public void exportNameList(File path) {
 	if(path!=null) {
             try{
@@ -88,6 +89,7 @@ public class Data {
     //------------------------------------------------------
     public Data(){
 
+        dataFile=new File(app.APP_LOCA+"\\files\\namelist.data");
         try{
 
             if(dataFile.exists()!=true){

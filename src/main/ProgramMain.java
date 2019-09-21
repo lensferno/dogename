@@ -16,7 +16,7 @@ import javafx.stage.WindowEvent;
 
 public class ProgramMain extends Application {
 
-    final static private String CONFIG_FILE = "config.data";
+    private String CONFIG_FILE ;//="config.data";
 
 
     private Config config;
@@ -25,15 +25,21 @@ public class ProgramMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+
+        File fileDir = new File(app.APP_LOCA+"\\files");
+        if(!fileDir.exists())
+            fileDir.mkdir();
+
         showWindow();
+
+
     }
 
+    App app=new App();
     public static void main(String[] args) {
-	
-	File fileDir = new File("D:\\dogename\\files");
-	if(!fileDir.exists())
-	    fileDir.mkdir();
-	
+
+
+
         launch(args);
 
     }
@@ -43,6 +49,9 @@ public class ProgramMain extends Application {
     private boolean debugMode=true;
     
     public void showWindow() {
+
+        CONFIG_FILE=app.APP_LOCA+"\\files\\config.data";
+
 
         try {
             File configFile = new File(CONFIG_FILE);
