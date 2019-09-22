@@ -8,8 +8,39 @@ import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class Common {
+
+    public static int download(String URL,String fileLocation){
+        try{
+            URL sourcesURL = new URL(URL);
+            HttpURLConnection connection = (HttpURLConnection) sourcesURL.openConnection();
+            connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36");
+            connection.connect();
+
+            InputStream stream = connection.getInputStream();
+
+            String[] temp=URL.split("/");
+            String fileName=temp[temp.length-1];
+            FileOutputStream fileStream = new FileOutputStream(new File(fileLocation+fileName));
+
+            for (int i = stream.read(); i != -1; i = stream.read())
+                fileStream.write(i);
+
+            fileStream.close();
+
+            System.out.println("[INFO]文件下载成功。保存至："+fileLocation);
+            return 0;
+        }catch(Exception e){
+            e.printStackTrace();
+            return -1;
+        }
+    }
 
     public static String getHtml(String address)
     {
