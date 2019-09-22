@@ -159,8 +159,30 @@ public class ProgramMain extends Application {
             controller.showShiCi();
             Update update =new Update();
 
-            System.out.println("[INFO]Update statu:"+update.checkUpdate());
+            //System.out.println("[INFO]Update statu:"+update.checkUpdate());
+
+            int URLNumbs;
+            boolean failded=false;
+            int finishStatus = 0;
             
+            if(update.checkUpdate()){
+                String[] updateURLs=update.getUpdateURL();
+                for(int i=0;i<updateURLs.length;i++){
+                    int finalI = i;
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(Common.download(updateURLs[finalI],app.APP_LOCA)==-1)
+                                failded=true;
+                            else 
+                                finishStatus++;
+                            
+                        }
+                    }).start();
+                }
+            
+            }
+
             
         } catch (Exception e) {
             e.printStackTrace();
