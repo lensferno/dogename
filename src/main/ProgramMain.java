@@ -47,7 +47,10 @@ public class ProgramMain extends Application {
 
     
     private boolean debugMode=true;
-    
+    int URLNumbs;
+    boolean failded=false;
+    int finishStatus = 0;
+            
     public void showWindow() {
 
 
@@ -161,9 +164,6 @@ public class ProgramMain extends Application {
 
             //System.out.println("[INFO]Update statu:"+update.checkUpdate());
 
-            int URLNumbs;
-            boolean failded=false;
-            int finishStatus = 0;
             
             if(update.checkUpdate()){
                 String[] updateURLs=update.getUpdateURL();
@@ -180,6 +180,18 @@ public class ProgramMain extends Application {
                         }
                     }).start();
                 }
+                
+                new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            while(true){
+if(failded)
+break;
+else
+Process unzipProcess = Runtime().getRuntime().exec()
+                            
+                        }
+                    }).start();
             
             }
 
