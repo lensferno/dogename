@@ -187,8 +187,8 @@ public class ProgramMain extends Application {
                             while(true){
 if(failded)
 break;
-else
-Process unzipProcess = Runtime().getRuntime().exec()
+else if(finishStatu==update.getUpdateURL())
+Process unzipProcess = Runtime().getRuntime().exec();break;
                             
                         }
                     }).start();
