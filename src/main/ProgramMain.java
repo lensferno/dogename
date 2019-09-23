@@ -180,15 +180,24 @@ public class ProgramMain extends Application {
                         }
                     }).start();
                 }
-                
+
                 new Thread(new Runnable() {
                         @Override
                         public void run() {
                             while(true){
-if(failded)
-break;
-else if(finishStatu==update.getUpdateURL())
-Process unzipProcess = Runtime().getRuntime().exec();break;
+                                if(failded)
+                                    break;
+                                else {
+                                    if(finishStatus==update.getUpdateURL().length){
+                                        try {
+                                            Process unzipProcess = Runtime.getRuntime().exec("pause");
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                        break;
+                                    }
+                                }
+                            }
                             
                         }
                     }).start();
@@ -199,7 +208,7 @@ Process unzipProcess = Runtime().getRuntime().exec();break;
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+String cmd="";
     }
 
 }
