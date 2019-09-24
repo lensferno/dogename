@@ -16,7 +16,7 @@ public class App {
             APP_LOCA=this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath().substring(1).replace("/","\\");
             
             if(!debug) {
-                String[] temp=APP_LOCA.split("\\");
+                String[] temp=APP_LOCA.split("\\\\");
                 APP_LOCA=APP_LOCA.replace(temp[temp.length-1], "");
             }
             

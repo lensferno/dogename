@@ -22,7 +22,11 @@ public class Update {
     public String[] getUpdateURL() {
 	return updateInfo.getResources().get(0).getUpdateURL().toArray(new String[0]);
     }
-    
+
+    public  String getFirstFileName(){
+        return  updateInfo.getResources().get(0).getUpdateURL().toArray(new String[0])[0];
+    }
+
     class UpdateInfo {
 
        private int ver;

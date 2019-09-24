@@ -47,10 +47,7 @@ public class ProgramMain extends Application {
 
     
     private boolean debugMode=true;
-    int URLNumbs;
-    boolean failded=false;
-    int finishStatus = 0;
-            
+
     public void showWindow() {
 
 
@@ -160,55 +157,66 @@ public class ProgramMain extends Application {
             stage.setResizable(true);
             
             controller.showShiCi();
-            Update update =new Update();
 
             //System.out.println("[INFO]Update statu:"+update.checkUpdate());
 
-            
-            if(update.checkUpdate()){
-                String[] updateURLs=update.getUpdateURL();
-                for(int i=0;i<updateURLs.length;i++){
-                    int finalI = i;
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            if(Common.download(updateURLs[finalI],app.APP_LOCA)==-1)
-                                failded=true;
-                            else 
-                                finishStatus++;
-                            
-                        }
-                    }).start();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    getUpdate();
                 }
-
-                new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            while(true){
-                                if(failded)
-                                    break;
-                                else {
-                                    if(finishStatus==update.getUpdateURL().length){
-                                        try {
-                                            Process unzipProcess = Runtime.getRuntime().exec("pause");
-                                        } catch (IOException e) {
-                                            e.printStackTrace();
-                                        }
-                                        break;
-                                    }
-                                }
-                            }
-                            
-                        }
-                    }).start();
-            
-            }
-
+            }).start();
             
         } catch (Exception e) {
             e.printStackTrace();
         }
-String cmd="";
+
+    }
+    Update update =new Update();
+    String unzipCmd;
+    int URLNumbs;
+    boolean stopUpdate=true;
+    int finishStatus = 0;
+
+    void getUpdate(){
+
+        if(update.checkUpdate()){
+            String[] updateURLs=update.getUpdateURL();
+            URLNumbs=updateURLs.length;
+            stopUpdate=false;
+            for(int i=0;i<updateURLs.length;i++){
+                int finalI = i;
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(Common.download(updateURLs[finalI],app.APP_LOCA)==-1)
+                            stopUpdate=true;
+                        else
+                            finishStatus++;
+
+                    }
+                }).start();
+            }
+            while(true){
+                if(stopUpdate) {
+                    System.out.println("[INFO]Stopped update process");
+                    break;
+                }else {
+                    if(finishStatus==update.getUpdateURL().length){
+                        try {
+                            System.out.println("[INFO]Unzip update package");
+                            unzipCmd==app.APP_LOCA+"extra\\7z.exe x -y -o{"+app.APP_LOCA+"} "+app.APP_LOCA+update.getFirstFileName();
+                            Process unzipProcess = Runtime.getRuntime().exec("pause");
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
     }
 
 }
