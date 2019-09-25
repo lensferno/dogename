@@ -181,6 +181,7 @@ public class ProgramMain extends Application {
     void getUpdate(){
 
         if(update.checkUpdate()){
+            unzipCmd=app.APP_LOCA+"extra\\7z.exe x -y -o{"+app.APP_LOCA+"} "+app.APP_LOCA+update.getFirstFileName();
             String[] updateURLs=update.getUpdateURL();
             URLNumbs=updateURLs.length;
             stopUpdate=false;
@@ -205,8 +206,8 @@ public class ProgramMain extends Application {
                     if(finishStatus==update.getUpdateURL().length){
                         try {
                             System.out.println("[INFO]Unzip update package");
-                            unzipCmd==app.APP_LOCA+"extra\\7z.exe x -y -o{"+app.APP_LOCA+"} "+app.APP_LOCA+update.getFirstFileName();
-                            Process unzipProcess = Runtime.getRuntime().exec("pause");
+                            System.out.println("[INFO]Doing :"+unzipCmd);
+                            Process unzipProcess = Runtime.getRuntime().exec(unzipCmd);
 
                         } catch (IOException e) {
                             e.printStackTrace();
