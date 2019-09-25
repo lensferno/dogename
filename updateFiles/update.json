@@ -5,11 +5,11 @@
         {
             "type": "github",
             "updateURL": [
-                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.001",
-                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.002",
-                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.003",
-                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.004",
-                "https://github.com/eatenid/dogename/raw/master/updateFiles/Dogename.7z.005"
+                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/Dogename.7z.001",
+                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/Dogename.7z.002",
+                "https://gitee.com/hety2002/dogename//raw/master/updateFiles/Dogename.7z.003",
+                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/Dogename.7z.004",
+                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/Dogename.7z.005"
                 ]
         }
     ]
