@@ -24,7 +24,9 @@ public class Update {
     }
 
     public  String getFirstFileName(){
-        return  updateInfo.getResources().get(0).getUpdateURL().toArray(new String[0])[0];
+        String[] temp =updateInfo.getResources().get(0).getUpdateURL().toArray(new String[0]);
+        String[] temp2=temp[0].split("/");
+        return temp2[temp2.length-1];
     }
 
     class UpdateInfo {
