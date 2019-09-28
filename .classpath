@@ -3,7 +3,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="lib" path="libs/jfoenix-8.0.4.jar"/>
-	<classpathentry kind="lib" path="libs/commons-codec-1.11.jar"/>
-	<classpathentry kind="lib" path="libs/gson-2.8.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/commons-codec-1.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/gson-2.8.5.jar"/>
 	<classpathentry kind="output" path="out/production/DM_msater"/>
 </classpath>
