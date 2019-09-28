@@ -181,7 +181,7 @@ public class ProgramMain extends Application {
     void getUpdate(){
 
         if(update.checkUpdate()){
-            unzipCmd=app.APP_LOCA+"extra\\7z.exe x -y -o{"+app.APP_LOCA+"} "+app.APP_LOCA+update.getFirstFileName();
+            unzipCmd=app.APP_LOCA+"extra\\7z.exe x -y -o"+app.APP_LOCA+" "+app.APP_LOCA+update.getFirstFileName();
             String[] updateURLs=update.getUpdateURL();
             URLNumbs=updateURLs.length;
             stopUpdate=false;
