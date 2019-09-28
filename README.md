@@ -60,6 +60,8 @@
 
 **主界面：**
 
+![每日古诗词](https://github.com/eatenid/dogename/raw/master/main_gushici.png)
+
 ![主界面](https://github.com/eatenid/dogename/raw/master/screenshot_main.png)
 
 **名单界面*
