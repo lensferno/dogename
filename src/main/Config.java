@@ -20,6 +20,9 @@ public class Config implements Serializable {
     private boolean equalMode=true;
 
     private boolean newAlgo=true;
+    
+
+    private boolean exciting=true;
 
     public boolean isNewAlgo() {
         return newAlgo;
@@ -100,6 +103,15 @@ public class Config implements Serializable {
     public void setTaoluMode(boolean taoluMode){
         this.taoluMode=taoluMode;
     }
+
+    public boolean isExciting() {
+        return exciting;
+    }
+
+    public void setExciting(boolean exciting) {
+        this.exciting = exciting;
+    }
+    
 
 
 

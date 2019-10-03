@@ -3,6 +3,7 @@
 #include <direct.h>
 #include <iostream>
 #include <string>
+#include <unistd.h>
 
 using namespace std;
 
@@ -15,21 +16,17 @@ int main()
 	}
 	else
 	{
-        printf("工作在：%s\n", work);
+        printf("working in：%s\n", work);
 	}
 
 	string workDir=work;
-	string java="\\java\\bin\\java.exe -jar ";
-	string program="\\dogename.jar\"";
 	
-	//string maincommand="start ";
-	//string command=maincommand+"\""+workDir+java+workDir+program;
+	string program=workDir+"\\java\\bin\\java.exe";
+	string jarFile=workDir+"\\dogename.jar";
 
-	string command="\""+workDir+java+workDir+program;
+	const char *args[]={"java.exe","-jar",jarFile.data(),NULL};
 
-	cout<< command <<endl;
-
-	system(command.c_str());
+	execv(program.data(),args);
 
 	return 0;
 }
