@@ -299,9 +299,11 @@ public class UICtrl {
             }
 
             if(cycleEnd){
-                times=(int)(1+Math.random()*(chosenTime-already));
+                //times=(int)(1+Math.random()*(chosenTime-already));
+        	times=1+random.nextInt(chosenTime-already+1);
                 cycleEnd=false;
-                showWhich=(int)(1+Math.random()*2);
+                //showWhich=(int)(1+Math.random()*2);
+                showWhich=1+random.nextInt(2);
             }
 
 
@@ -345,6 +347,7 @@ public class UICtrl {
             if(already>=chosenTime){
                 if(!ignoreNumberList.contains(chosenName)||!ignorePast||forceStop){
 
+                    
                     forceStop=false;
 
                     if(ignorePast)
@@ -386,16 +389,9 @@ public class UICtrl {
                     ignoreTimesOut=true;
 
             }
-            if(singleCycle>=times&&!ignoreTimesOut){
-                cycleEnd=true;
-                singleCycle=0;
-            }
 
-            if(cycleEnd){
-                times=(int)(1+Math.random()*(chosenTime-already));
-                cycleEnd=false;
-                showWhich=(int)(1+Math.random()*2);
-            }
+            showWhich=1+random.nextInt(2);
+            speed=(short)(65+random.nextInt(100));
 
             switch (showWhich){
                 case 1:{
@@ -427,6 +423,211 @@ public class UICtrl {
         }
     };
 
+    
+    AnimationTimer timer_exciting =new AnimationTimer() {
+        @Override
+        public void handle(long now) {
+
+            if(forceStop){
+                already=chosenTime+1;
+                isRunning=false;
+            }
+
+            if(!ignoreTimesOut) {
+                try{
+                    Thread.sleep(speed);
+                }catch (Exception e){e.printStackTrace(); }
+            }else {
+        	if(!forceStop) {
+                    try{
+                        Thread.sleep(speed);
+                    }catch (Exception e){e.printStackTrace(); }
+        	}
+            }
+            
+            if(already>=chosenTime){
+                if(!ignoreNameList.contains(chosenName)||!ignorePast||forceStop){
+
+                    if(random.nextBoolean()) {
+                	if(!forceStop) {
+                            try{
+                                Thread.sleep(150);
+                            }catch (Exception e){e.printStackTrace(); }
+                	}
+                    }
+                    
+                    forceStop=false;
+
+                    if(ignorePast)
+                        ignoreNameList.add(chosenName);
+                    if(equalMode)
+                        writeIgnoreList();
+
+                    already=0;
+                    ignoreTimesOut=false;
+
+                    switch (showWhich){
+                        case 1:{
+                            if(chosen_2.getText().contains("→"))
+                                chosen_2.setText(chosen_2.getText().replace("→",""));
+
+                            chosen_1.setText("→"+chosen_1.getText());
+
+                            if(taoluMode)
+                                data.addTaoluedName(chosen_1.getText().replace("→",""),5);
+
+                            break;
+                        }
+                        case 2:{
+                            if(chosen_1.getText().contains("→"))
+                                chosen_1.setText(chosen_1.getText().replace("→",""));
+
+                            chosen_2.setText("→"+chosen_2.getText());
+
+                            if(taoluMode)
+                                data.addTaoluedName(chosen_2.getText().replace("→",""),4);
+
+                            break;
+                        }
+                    }
+                    isRunning=false;
+                    choose.setText("安排一下");
+                    stop();
+                    controllerPane.setDisable(false);
+                    System.gc();
+                    return;
+                }else
+                    ignoreTimesOut=true;
+
+            }
+
+
+            showWhich=1+random.nextInt(2);
+            speed=(short)(30+random.nextInt(250));
+
+            switch (showWhich){
+                case 1:{
+                    chosenName=data.randomGet(taoluMode);
+                    chosen_1.setText(chosenName);
+                    already++;
+                    break;
+                }
+
+                case 2:{
+                    chosenName=data.randomGet(taoluMode);
+                    chosen_2.setText(chosenName);
+                    already++;
+                    break;
+                }
+            }
+
+
+        }
+    };
+    //---------------------------------------------------------------------------------------
+
+    AnimationTimer numbTimer_exciting =new AnimationTimer() {
+        @Override
+        public void handle(long now) {
+
+            if(forceStop){
+                already=chosenTime+1;
+                isRunning=false;
+            }
+
+            if(!ignoreTimesOut) {
+                try{
+                    Thread.sleep(speed);
+                }catch (Exception e){e.printStackTrace(); }
+            }else {
+        	if(!forceStop) {
+                    try{
+                        Thread.sleep(speed);
+                    }catch (Exception e){e.printStackTrace(); }
+        	}
+            }
+            
+            if(already>=chosenTime){
+                if(!ignoreNumberList.contains(chosenName)||!ignorePast||forceStop){
+
+                    if(random.nextBoolean()) {
+                	if(!forceStop) {
+                            try{
+                                Thread.sleep(150);
+                            }catch (Exception e){e.printStackTrace(); }
+                	}
+                    }
+                    forceStop=false;
+
+                    if(ignorePast)
+                        ignoreNumberList.add(chosenName);
+                    if(equalMode)
+                        writeIgnoreList();
+
+                    already=0;
+                    ignoreTimesOut=false;
+
+                    switch (showWhich){
+                        case 1:{
+                            if(chosen_2.getText().contains("→"))
+                                chosen_2.setText(chosen_2.getText().replace("→",""));
+
+                            chosen_1.setText("→"+chosen_1.getText());
+
+                            break;
+                        }
+                        case 2:{
+                            if(chosen_1.getText().contains("→"))
+                                chosen_1.setText(chosen_1.getText().replace("→",""));
+
+                            chosen_2.setText("→"+chosen_2.getText());
+
+                            break;
+                        }
+                    }
+                    isRunning=false;
+                    choose.setText("安排一下");
+                    stop();
+                    controllerPane.setDisable(false);
+                    System.gc();
+                    return;
+                }else
+                    ignoreTimesOut=true;
+
+            }
+
+
+            showWhich=1+random.nextInt(2);
+            speed=(short)(30+random.nextInt(250));
+
+            switch (showWhich){
+                case 1:{
+                    if(newAlgo)
+                        chosen_1.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
+                    else
+                        chosen_1.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
+
+                    chosenName=chosen_1.getText();
+                    already++;
+                    break;
+                }
+
+                case 2:{
+                    if(newAlgo)
+                        chosen_2.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
+                    else
+                        chosen_2.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
+
+                    chosenName=chosen_2.getText();
+                    already++;
+                    break;
+                }
+            }
+
+
+        }
+    };
+
 
 
     public boolean isNameChoose=true;
@@ -443,7 +644,7 @@ public class UICtrl {
     public JFXButton goBackButton;
     public JFXButton choose;
     public JFXButton showNameMangerButton;
-    public  JFXButton recover;
+    public JFXButton recover;
 
     public JFXCheckBox taoluModeBtn;
     public JFXCheckBox equalModeBtn;
@@ -461,6 +662,8 @@ public class UICtrl {
     public JFXSlider chooseTimes;
     public JFXSlider speedBar;
     public JFXTextArea inputName;
+    
+    public JFXToggleButton excitingBtn;
 
     public Pane numbPane;
     public Pane namePane;
@@ -540,7 +743,20 @@ public class UICtrl {
         else
             selectNewAlgoBtn();
     }
+    
+    void unselectNewAlgoBtn(){
+        newAlgo=false;
+        newAlgoBtn.setSelected(false);
+        data.setNewAlgo(newAlgo);
+    }
 
+    
+    void selectNewAlgoBtn(){
+        newAlgo = true;
+        newAlgoBtn.setSelected(true);
+        data.setNewAlgo(newAlgo);
+    }
+    
     public boolean isNewAlgo() {
         return newAlgo;
     }
@@ -548,18 +764,48 @@ public class UICtrl {
     public void setNewAlgo(boolean newAlgo) {
         this.newAlgo = newAlgo;
     }
+    
 
-    void selectNewAlgoBtn(){
-        newAlgo = true;
-        newAlgoBtn.setSelected(true);
-        data.setNewAlgo(newAlgo);
+    public boolean isExciting() {
+        return exciting;
     }
 
-    void unselectNewAlgoBtn(){
-        newAlgo=false;
-        newAlgoBtn.setSelected(false);
-        data.setNewAlgo(newAlgo);
+    public void setExciting(boolean exciting) {
+        this.exciting = exciting;
     }
+    
+    boolean exciting=true;
+    @FXML
+    public void excitingBtn_action(){
+        if(exciting)
+            unselectExcitingBtn();
+        else
+            selectExcitingBtn();
+    }
+    
+    void unselectExcitingBtn(){
+	exciting=false;
+	excitingBtn.setSelected(false);
+
+	speedBar.setDisable(false);
+	randomTimes.setDisable(false);
+	chooseTimes.setDisable(false);
+	fixedTimes.setDisable(false);
+    }
+
+    
+    void selectExcitingBtn(){
+	exciting = true;
+	excitingBtn.setSelected(true);
+	speedBar.setDisable(true);
+	randomTimes.setDisable(true);
+	chooseTimes.setDisable(true);
+	fixedTimes.setDisable(true);
+    }
+
+
+
+
 
 
 
@@ -578,6 +824,7 @@ public class UICtrl {
         config.setTaoluMode(taoluMode);
         config.setEqualMode(equalMode);
         config.setNewAlgo(newAlgo);
+        config.setExciting(exciting);
 
 
 
@@ -613,14 +860,23 @@ public class UICtrl {
             return;
         }
 
+        
         if(isRandomTimes) {
-            chosenTime =  100 + (int) (Math.random() * (250 - 100));
+            if(exciting) {
+        	chosenTime=4+random.nextInt(8);//4~7
+            }else
+        	chosenTime=100+random.nextInt(151);
+            //chosenTime =  100 + (int) (Math.random() * (250 - 100));
             chooseTimes.setValue(chosenTime);
         }
-        else
-            chosenTime=(int)chooseTimes.getValue();
-
-
+        else {
+            
+            if(exciting) {
+        	chosenTime=4+random.nextInt(8);//4~7
+            }else
+        	chosenTime=(int)chooseTimes.getValue();
+        }
+            
         //int s=(int)min+(int)(Math.random()*(max-min));
 
         if(isNameChoose){
@@ -642,7 +898,10 @@ public class UICtrl {
             speed=(short) (100-speedBar.getValue());
             isRunning=true;
             choose.setText("不玩了！");
-            timer.start();
+            if(exciting)
+        	timer_exciting.start();
+            else
+                timer.start();
 
         }else {
 
@@ -673,7 +932,10 @@ public class UICtrl {
             speed=(short) (100-speedBar.getValue());
             isRunning=true;
             choose.setText("不玩了！");
-            numbTimer.start();
+            if(exciting)
+        	numbTimer_exciting.start();
+            else
+        	numbTimer.start();
 
         }
 

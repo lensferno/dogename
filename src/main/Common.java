@@ -34,7 +34,7 @@ public class Common {
 
             fileStream.close();
 
-            System.out.println("[INFO]文件下载成功。保存至："+fileLocation);
+            System.out.println("[INFO]Download done save to："+fileLocation+fileName);
             return 0;
         }catch(Exception e){
             e.printStackTrace();

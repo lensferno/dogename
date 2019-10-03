@@ -36,20 +36,20 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Pane fx:id="controllerPane" layoutX="231.0" layoutY="405.0" prefHeight="214.0" prefWidth="620.0">
+            <Pane fx:id="controllerPane" layoutX="231.0" layoutY="380.0" prefHeight="214.0" prefWidth="620.0">
                <children>
-                  <JFXSlider fx:id="speedBar" layoutX="69.0" layoutY="7.0" majorTickUnit="10.0" onMouseReleased="#setSpeedHere" onTouchReleased="#setSpeedHere" prefHeight="15.0" prefWidth="546.0" showTickLabels="true" showTickMarks="true" value="80.0" />
+                  <JFXSlider fx:id="speedBar" layoutX="57.0" layoutY="6.0" majorTickUnit="10.0" onMouseReleased="#setSpeedHere" onTouchReleased="#setSpeedHere" prefHeight="15.0" prefWidth="435.0" showTickLabels="true" showTickMarks="true" value="80.0" />
                   <JFXButton fx:id="showNameMangerButton" layoutX="209.0" layoutY="54.0" onAction="#showNameManger" prefHeight="36.0" prefWidth="92.0" ripplerFill="#00eafff7" text="名单管理">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </JFXButton>
-                  <Label layoutX="15.0" prefHeight="23.0" prefWidth="57.0" text="调速：">
+                  <Label prefHeight="23.0" prefWidth="57.0" text="调速：">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <JFXSlider fx:id="chooseTimes" layoutX="364.0" layoutY="128.0" max="250.0" min="100.0" onMouseReleased="#setChosenTimeHere" onTouchReleased="#setChosenTimeHere" prefHeight="18.0" prefWidth="241.0" showTickLabels="true" showTickMarks="true" value="120.0" />
+                  <JFXSlider fx:id="chooseTimes" layoutX="364.0" layoutY="128.0" max="200.0" min="3.0" onMouseReleased="#setChosenTimeHere" onTouchReleased="#setChosenTimeHere" prefHeight="18.0" prefWidth="263.0" showTickLabels="true" showTickMarks="true" value="120.0" />
                   <Pane fx:id="numbPane" layoutX="222.0" layoutY="58.0" prefHeight="30.0" prefWidth="176.0" visible="false">
                      <children>
                         <JFXTextField fx:id="minNumb" alignment="CENTER" layoutX="96.0" prefHeight="25.0" prefWidth="28.0" text="11" />
@@ -117,17 +117,18 @@
                      </font>
                   </JFXCheckBox>
                   <Text layoutX="241.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="理论上可能会更随机，性能可能会有些许下降" wrappingWidth="272.0" />
+                  <JFXToggleButton fx:id="excitingBtn" contentDisplay="RIGHT" layoutX="496.0" layoutY="-23.0" onAction="#excitingBtn_action" prefHeight="60.0" prefWidth="121.0" selected="true" text="Exciting" />
                </children>
             </Pane>
             <ImageView fx:id="mainView" fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
                
             </ImageView>
-            <JFXButton fx:id="choose" buttonType="RAISED" layoutX="576.0" layoutY="621.0" onAction="#anPai" prefHeight="53.0" prefWidth="207.0" text="安排一下">
+            <JFXButton fx:id="choose" buttonType="RAISED" layoutX="551.0" layoutY="594.0" onAction="#anPai" prefHeight="53.0" prefWidth="207.0" text="安排一下">
                <font>
                   <Font name="Microsoft YaHei" size="26.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="goBackButton" buttonType="RAISED" layoutX="274.0" layoutY="621.0" onAction="#goBack" prefHeight="53.0" prefWidth="207.0" text="←缩起来">
+            <JFXButton fx:id="goBackButton" buttonType="RAISED" layoutX="249.0" layoutY="594.0" onAction="#goBack" prefHeight="53.0" prefWidth="207.0" text="←缩起来">
                <font>
                   <Font name="Microsoft YaHei" size="26.0" />
                </font>

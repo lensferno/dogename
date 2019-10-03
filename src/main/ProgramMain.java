@@ -48,20 +48,13 @@ public class ProgramMain extends Application {
     
     private boolean debugMode=true;
 
-    public void showWindow() {
-
-
-	if(System.getProperty("os.name").toLowerCase().contains("window"))
-            CONFIG_FILE=app.APP_LOCA+"files\\config.data";
-	else
-            CONFIG_FILE=app.APP_LOCA+"files/config.data";
-
-
+    void readConfig() {
         try {
             File configFile = new File(CONFIG_FILE);
             if (configFile.exists() != true) {
                 configFile.createNewFile();
                 config = new Config();
+                return;
             }
 
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(configFile));
@@ -70,6 +63,18 @@ public class ProgramMain extends Application {
             config = new Config();
             e.printStackTrace();
         }
+    }
+    
+    
+    public void showWindow() {
+
+
+	if(System.getProperty("os.name").toLowerCase().contains("window"))
+            CONFIG_FILE=app.APP_LOCA+"files\\config.data";
+	else
+            CONFIG_FILE=app.APP_LOCA+"files/config.data";
+
+	readConfig();
 
         try {
             
@@ -143,6 +148,12 @@ public class ProgramMain extends Application {
                 controller.selectNewAlgoBtn();
             else
                 controller.unselectNewAlgoBtn();
+            
+
+            if(config.isExciting())
+                controller.selectExcitingBtn();
+            else
+                controller.unselectExcitingBtn();
 
             controller.setImages();
 
@@ -160,18 +171,21 @@ public class ProgramMain extends Application {
 
             //System.out.println("[INFO]Update statu:"+update.checkUpdate());
 
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    getUpdate();
-                }
-            }).start();
+            if(System.getProperty("os.name").contains("window")) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        getUpdate();
+                    }
+                }).start();
+            }
             
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
+    
     Update update =new Update();
     String unzipCmd;
     int URLNumbs;
@@ -208,6 +222,7 @@ public class ProgramMain extends Application {
                             System.out.println("[INFO]Unzip update package");
                             System.out.println("[INFO]Doing :"+unzipCmd);
                             Process unzipProcess = Runtime.getRuntime().exec(unzipCmd);
+                            return;
 
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -215,6 +230,7 @@ public class ProgramMain extends Application {
                         break;
                     }
                 }
+            return;
             }
         }
 
