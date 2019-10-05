@@ -93,8 +93,19 @@ public class Data {
             dataFile=new File(app.APP_LOCA+"files\\namelist.data");
 	else
             dataFile=new File(app.APP_LOCA+"files/namelist.data");
+	File oldDataFile=new File("D:\\dogename\\files\\namelist");
         try{
 
+            if(oldDataFile.exists()) {
+                ObjectInputStream ois =new ObjectInputStream(new FileInputStream(oldDataFile));
+                this.nameList=(ArrayList)ois.readObject();
+                
+                listSize=nameList.size();
+                this.chooseList=new ArrayList<>(nameList);
+                oldDataFile.delete();
+                return;
+            }
+            
             if(dataFile.exists()!=true){
                 dataFile.createNewFile();
                 nameList= new ArrayList<>();

@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -28,6 +29,8 @@ import java.io.*;
 import java.security.SecureRandom;
 import java.util.HashSet;
 import java.util.Random;
+
+import javax.swing.GroupLayout.Alignment;
 
 public class UICtrl {
 
@@ -121,6 +124,7 @@ public class UICtrl {
         categoryText.setFont(new Font(12));
         categoryText.setTextAlignment(TextAlignment.RIGHT);
         vb.getChildren().addAll(contentText,authorText,categoryText);
+        vb.setAlignment(Pos.CENTER);
 
         JFXDialogLayout content = new JFXDialogLayout();
         content.setHeading(new Text(header));
@@ -1268,7 +1272,7 @@ public class UICtrl {
 
     @FXML
     void showInfo(){
-        showInfoDialog("Me?","这是一个以Java语言编写，采用Google Material Design（Google MD）为界面风格的用来点名的东西。\n该程序的源代码可在 https://github.com/eatenid/dogename 查看和获取。（更新什么的基本不打算的了ヾ§ ￣▽)ゞ）\n\n使用到的第三方库：\nJFoenix(8.0.4)\nApache Commons Codec(1.11)\nGson(2.8.5) \n感谢gushici项目提供的古诗词数据接口，详情请前往：https://github.com/xenv/gushici\n\n关于作者的一些东西：\nGithub主页：https://github.com/eatenid\nGoogle+：kygbuff@gamil.com\n\n邮箱等：\nHet2002@outlook.com\n2318724550@qq.com\nulcch@foxmail.com\n\n\nCreated by He T.Y.");
+	showAuInfo("Me?","这是一个以Java语言编写，采用Google Material Design（Google MD）为界面风格的用来点名的东西。\n该程序的源代码可在 https://github.com/eatenid/dogename 查看和获取。（更新什么的基本不打算的了ヾ§ ￣▽)ゞ）\n\n使用到的第三方库：\nJFoenix(8.0.4)\nApache Commons Codec(1.11)\nGson(2.8.5) \n感谢gushici项目提供的古诗词数据接口，详情请前往：https://github.com/xenv/gushici\n\n关于作者的一些东西：\nGithub主页：https://github.com/eatenid\nGoogle+：kygbuff@gamil.com\n\n邮箱等：\nHet2002@outlook.com\n2318724550@qq.com\nulcch@foxmail.com\n\n\nCreated by He T.Y.");
     }
 
 
@@ -1303,5 +1307,46 @@ public class UICtrl {
         dialog.show();
     }
 
+
+    public void showAuInfo(String header,String message) {
+        JFXDialogLayout content = new JFXDialogLayout();
+        content.setHeading(new Text(header));
+        VBox vb =new VBox();
+        vb.setPrefHeight(200);
+        vb.setPrefWidth(300);
+        Text text=new Text(message);
+        //content.setBody(new Text(message));
+
+        vb.getChildren().add(new ImageView(new Image(releaseData.getDogenameStream())));
+        vb.getChildren().add(text);
+        vb.setAlignment(Pos.CENTER);
+        content.setBody(vb);
+        
+        StackPane tempPane=new StackPane();
+        tempPane.setPrefHeight(mainPane.getPrefHeight());
+        tempPane.setPrefWidth(mainPane.getPrefWidth());
+        mainPane.getChildren().add(tempPane);
+        JFXDialog dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
+        dialog.setPrefHeight(mainPane.getPrefHeight());
+        dialog.setPrefWidth(mainPane.getPrefWidth());
+        JFXButton button = new JFXButton("OK");
+        tempPane.setOnMousePressed((MouseEvent e) -> {
+            dialog.close();
+            mainPane.getChildren().remove(tempPane);
+        });
+        tempPane.setOnTouchPressed((TouchEvent e) -> {
+            dialog.close();
+            mainPane.getChildren().remove(tempPane);
+        });
+        button.setPrefWidth(50);
+        button.setPrefHeight(30);
+        button.setOnAction((ActionEvent e) -> {
+            dialog.close();
+            mainPane.getChildren().remove(tempPane);
+        });
+        content.setActions(button);
+
+        dialog.show();
+    }
 
 }
