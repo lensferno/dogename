@@ -1,5 +1,7 @@
 # 一个用来点名的玩意/Some thing to choose name
 
+![ ](https://github.com/eatenid/dogename/raw/master/top.png)
+
 看下面
 
 
@@ -11,11 +13,9 @@
 ##### 0 . 安装与配置
 
 + 如果您使用Windows系统
-您从release下载了提供Windows的程序包后，您需要通过运行压缩包中的“configure”文件来完成安装与配置。如果一切顺利，Dogename会立即开始运行，并在桌面上创建一个狗头的图标。
+您从release下载了提供Windows的程序包后一路点击下一步。如果一切顺利，Dogename会立即开始运行，并在桌面上创建一个狗头的图标。
 	
-如果您是玩弄bat文件的高手，还可以修改“configure”文件来根据您的喜好安装。
-	
-如果您更是玩弄Java的好手，也可以直接运行“dogename.jar”。
+如果您是玩弄Java的好手，也可以直接运行“dogename.jar”。
 
 + 如果您使用linux系统
 从release下载digename.jar后........
@@ -83,5 +83,8 @@
 
 
 [Gson](https://github.com/google/gson)(2.8.5)
+
+
+感谢[gushici](https://github.com/xenv/gushici/ "gushici")项目提供的古诗词接口。
 
 
