@@ -93,7 +93,9 @@ public class Data {
             dataFile=new File(app.APP_LOCA+"files\\namelist.data");
 	else
             dataFile=new File(app.APP_LOCA+"files/namelist.data");
+
 	File oldDataFile=new File("D:\\dogename\\files\\namelist");
+
         try{
 
             if(oldDataFile.exists()) {
@@ -103,6 +105,7 @@ public class Data {
                 listSize=nameList.size();
                 this.chooseList=new ArrayList<>(nameList);
                 oldDataFile.delete();
+                saveToFile();
                 return;
             }
             

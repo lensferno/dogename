@@ -506,7 +506,7 @@ public class UICtrl {
             }
 
 
-            showWhich=1+random.nextInt(2);
+
             speed=(short)(30+random.nextInt(250));
 
             switch (showWhich){
@@ -514,6 +514,7 @@ public class UICtrl {
                     chosenName=data.randomGet(taoluMode);
                     chosen_1.setText(chosenName);
                     already++;
+                    showWhich=2;
                     break;
                 }
 
@@ -521,6 +522,7 @@ public class UICtrl {
                     chosenName=data.randomGet(taoluMode);
                     chosen_2.setText(chosenName);
                     already++;
+                    showWhich=1;
                     break;
                 }
             }
@@ -601,7 +603,6 @@ public class UICtrl {
             }
 
 
-            showWhich=1+random.nextInt(2);
             speed=(short)(30+random.nextInt(250));
 
             switch (showWhich){
@@ -613,6 +614,7 @@ public class UICtrl {
 
                     chosenName=chosen_1.getText();
                     already++;
+                    showWhich=2;
                     break;
                 }
 
@@ -624,6 +626,7 @@ public class UICtrl {
 
                     chosenName=chosen_2.getText();
                     already++;
+                    showWhich=1;
                     break;
                 }
             }
@@ -808,11 +811,6 @@ public class UICtrl {
     }
 
 
-
-
-
-
-
     private String CONFIG_FILE;
     private File configFile;
 
@@ -823,7 +821,10 @@ public class UICtrl {
         config.setMaxNumber(maxNumber);
         config.setMinNumber(minNumber);
         config.setNameChoose(isNameChoose);
-        config.setSpeed(speed);
+        if(exciting)
+            config.setSpeed((short)(100-speedBar.getValue()));
+        else
+            config.setSpeed(speed);
         config.setRandomTimes(isRandomTimes);
         config.setTaoluMode(taoluMode);
         config.setEqualMode(equalMode);
@@ -867,18 +868,18 @@ public class UICtrl {
         
         if(isRandomTimes) {
             if(exciting) {
-        	chosenTime=4+random.nextInt(8);//4~7
+        	    chosenTime=4+random.nextInt(7);//4~6
             }else
-        	chosenTime=100+random.nextInt(151);
+        	    chosenTime=100+random.nextInt(151);
             //chosenTime =  100 + (int) (Math.random() * (250 - 100));
             chooseTimes.setValue(chosenTime);
         }
         else {
             
             if(exciting) {
-        	chosenTime=4+random.nextInt(8);//4~7
+        	    chosenTime=4+random.nextInt(8);//4~7
             }else
-        	chosenTime=(int)chooseTimes.getValue();
+        	    chosenTime=(int)chooseTimes.getValue();
         }
             
         //int s=(int)min+(int)(Math.random()*(max-min));
@@ -902,8 +903,9 @@ public class UICtrl {
             speed=(short) (100-speedBar.getValue());
             isRunning=true;
             choose.setText("不玩了！");
+            showWhich=1+random.nextInt(2);
             if(exciting)
-        	timer_exciting.start();
+        	    timer_exciting.start();
             else
                 timer.start();
 
@@ -936,8 +938,9 @@ public class UICtrl {
             speed=(short) (100-speedBar.getValue());
             isRunning=true;
             choose.setText("不玩了！");
+            showWhich=1+random.nextInt(2);
             if(exciting)
-        	numbTimer_exciting.start();
+        	    numbTimer_exciting.start();
             else
         	numbTimer.start();
 
