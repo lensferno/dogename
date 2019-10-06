@@ -19,7 +19,7 @@ public class GuShiCi {
 	shiciContent = gsc.getContent();
 	return gsc.getOrigin()+"\n\n"+gsc.getAuthor()+"\n\n"+gsc.getContent()+"\n\n\n#"+gsc.getCategory();
     }
-    
+
     public String getShiciContent() {
         return shiciContent;
     }
@@ -28,6 +28,7 @@ public class GuShiCi {
     {
         StringBuffer sb = new StringBuffer();
         try {
+
             BufferedReader bis;
             URL url = new URL(address);
             URLConnection conn = url.openConnection();
