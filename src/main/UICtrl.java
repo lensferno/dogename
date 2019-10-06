@@ -115,7 +115,7 @@ public class UICtrl {
         vb.setPrefHeight(200);
         vb.setPrefWidth(300);
         Text contentText =new Text("“"+gsc.getShiciContent()+"”");
-        contentText.setFont(new Font("BLOOD",26));
+        contentText.setFont(new Font("BLOOD",30));
         contentText.setTextAlignment(TextAlignment.CENTER);
         Text authorText =new Text("\n\n——"+gsc.getAuthor()+"《"+gsc.getOrigin()+"》");
         authorText.setTextAlignment(TextAlignment.RIGHT);
