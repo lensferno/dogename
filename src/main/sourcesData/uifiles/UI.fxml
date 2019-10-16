@@ -116,8 +116,8 @@
                         <Font size="14.0" />
                      </font>
                   </JFXCheckBox>
-                  <Text layoutX="241.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="理论上可能会更随机，性能可能会有些许下降" wrappingWidth="272.0" />
-                  <JFXToggleButton fx:id="excitingBtn" contentDisplay="RIGHT" layoutX="496.0" layoutY="-23.0" onAction="#excitingBtn_action" prefHeight="60.0" prefWidth="121.0" selected="true" text="Exciting" />
+                  <JFXToggleButton fx:id="excitingBtn" contentDisplay="RIGHT" layoutX="496.0" layoutY="-23.0" onAction="#excitingBtn_action" prefHeight="60.0" prefWidth="121.0" selected="true" text="清楚明白" />
+                  <JFXButton fx:id="showHistory" layoutX="215.0" layoutY="180.0" prefHeight="23.0" prefWidth="121.0" text="查看历史记录" />
                </children>
             </Pane>
             <ImageView fx:id="mainView" fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">

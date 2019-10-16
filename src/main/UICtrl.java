@@ -27,8 +27,7 @@ import javafx.util.Duration;
 
 import java.io.*;
 import java.security.SecureRandom;
-import java.util.HashSet;
-import java.util.Random;
+import java.util.*;
 
 import javax.swing.GroupLayout.Alignment;
 
@@ -290,6 +289,7 @@ public class UICtrl {
                     stop();
                     controllerPane.setDisable(false);
                     System.gc();
+                    history.add(chosenName);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -388,6 +388,7 @@ public class UICtrl {
                     stop();
                     controllerPane.setDisable(false);
                     System.gc();
+                    history.add(chosenName);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -470,6 +471,11 @@ public class UICtrl {
                     already=0;
                     ignoreTimesOut=false;
 
+                    if(showWhich==1)
+                        showWhich=2;
+                    else
+                        showWhich=1;
+
                     switch (showWhich){
                         case 1:{
                             if(chosen_2.getText().contains("→"))
@@ -499,6 +505,8 @@ public class UICtrl {
                     stop();
                     controllerPane.setDisable(false);
                     System.gc();
+
+                    history.add(chosenName);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -573,6 +581,11 @@ public class UICtrl {
                     already=0;
                     ignoreTimesOut=false;
 
+                    if(showWhich==1)
+                        showWhich=2;
+                    else
+                        showWhich=1;
+
                     switch (showWhich){
                         case 1:{
                             if(chosen_2.getText().contains("→"))
@@ -596,6 +609,7 @@ public class UICtrl {
                     stop();
                     controllerPane.setDisable(false);
                     System.gc();
+                    history.add(chosenName);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -811,8 +825,77 @@ public class UICtrl {
     }
 
 
+
+    private String HISTORY_FILE;
+    private File historyFile;
+
+    public static final ObservableList historyShow = FXCollections.observableArrayList();
+    List history;
+    public JFXListView historyList=new JFXListView();
+    void loadHistory(){
+
+        if(System.getProperty("os.name").toLowerCase().contains("window"))
+            HISTORY_FILE=app.APP_LOCA+"files\\history.data";
+        else
+            HISTORY_FILE=app.APP_LOCA+"files/history.data";
+
+            try {
+                File configFile = new File(HISTORY_FILE);
+                if (historyFile.exists() != true) {
+                    historyFile.createNewFile();
+                    history = new ArrayList();
+
+                    historyShow.clear();
+                    historyShow.addAll(history);
+
+                    historyList.setItems(historyShow);
+                    historyList.refresh();
+
+                    return;
+                }
+
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(historyFile));
+                this.history = (ArrayList) ois.readObject();
+                historyShow.clear();
+                historyShow.addAll(history);
+
+                historyList.setItems(historyShow);
+                historyList.refresh();
+
+            } catch (Exception e) {
+                history = new ArrayList();
+                historyShow.clear();
+                historyShow.addAll(history);
+
+                historyList.setItems(historyShow);
+                historyList.refresh();
+
+                e.printStackTrace();
+            }
+
+    }
+
+    void saveHistory(){
+
+        if(System.getProperty("os.name").toLowerCase().contains("window"))
+            HISTORY_FILE=app.APP_LOCA+"files\\history.data";
+        else
+            HISTORY_FILE=app.APP_LOCA+"files/history.data";
+
+        historyFile=new File(HISTORY_FILE);
+        try{
+            ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(historyFile));
+            oos.writeObject(history);
+            oos.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
     private String CONFIG_FILE;
     private File configFile;
+
 
     public int saveConfigToFile(){
 
@@ -1048,6 +1131,45 @@ public class UICtrl {
         System.gc();
     }
 
+    @FXML
+    void showHistory(){
+
+        historyShow.clear();
+        historyShow.addAll(history);
+
+        historyList.setItems(historyShow);
+        historyList.refresh();
+
+
+        JFXDialogLayout content = new JFXDialogLayout();
+        content.setHeading(new Text(""));
+        VBox vb =new VBox();
+        vb.setPrefHeight(200);
+        vb.setPrefWidth(300);
+        //content.setBody(new Text(message));
+
+        vb.getChildren().add(historyList);
+        vb.setAlignment(Pos.CENTER);
+        content.setBody(vb);
+
+        StackPane tempPane=new StackPane();
+        tempPane.setPrefHeight(mainPane.getPrefHeight());
+        tempPane.setPrefWidth(mainPane.getPrefWidth());
+        mainPane.getChildren().add(tempPane);
+        JFXDialog dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
+        dialog.setPrefHeight(mainPane.getPrefHeight());
+        dialog.setPrefWidth(mainPane.getPrefWidth());
+        JFXButton button = new JFXButton("OK");
+
+        button.setPrefWidth(50);
+        button.setPrefHeight(30);
+        button.setOnAction((ActionEvent e) -> {
+            dialog.close();
+            mainPane.getChildren().remove(tempPane);
+        });
+        content.setActions(button);
+
+        dialog.show();n    }
     @FXML
     void deleteName(){
         data.delete((String)nameList.getSelectionModel().getSelectedItems().get(0));
