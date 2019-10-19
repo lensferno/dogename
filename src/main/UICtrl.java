@@ -1,5 +1,6 @@
 package main;
 
+import com.baidu.aip.speech.AipSpeech;
 import com.jfoenix.controls.*;
 import javafx.animation.*;
 import javafx.application.Platform;
@@ -229,6 +230,8 @@ public class UICtrl {
             e.printStackTrace();
         }
     }
+
+    Voice voice =new Voice();
     //-------------------------------------------------------------------------------------------
     AnimationTimer timer =new AnimationTimer() {
         @Override
@@ -289,7 +292,8 @@ public class UICtrl {
                     stop();
                     controllerPane.setDisable(false);
                     System.gc();
-                    history.add(chosenName);
+                    addHistory(chosenName);
+                    voice.playVoice(chosenName);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -388,7 +392,8 @@ public class UICtrl {
                     stop();
                     controllerPane.setDisable(false);
                     System.gc();
-                    history.add(chosenName);
+                    addHistory(chosenName);
+                    voice.playVoice(chosenName);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -506,7 +511,9 @@ public class UICtrl {
                     controllerPane.setDisable(false);
                     System.gc();
 
-                    history.add(chosenName);
+                    addHistory(chosenName);
+
+                    voice.playVoice(chosenName);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -609,7 +616,9 @@ public class UICtrl {
                     stop();
                     controllerPane.setDisable(false);
                     System.gc();
-                    history.add(chosenName);
+                    addHistory(chosenName);
+
+                    voice.playVoice(chosenName);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -699,6 +708,7 @@ public class UICtrl {
     short oldY;
     short oldW;
     short oldH;
+    AipSpeech aipSpeech =new AipSpeech("","","");
 
     private Data data=new Data();
 
@@ -840,39 +850,29 @@ public class UICtrl {
             HISTORY_FILE=app.APP_LOCA+"files/history.data";
 
             try {
-                File configFile = new File(HISTORY_FILE);
+                File historyFile = new File(HISTORY_FILE);
                 if (historyFile.exists() != true) {
                     historyFile.createNewFile();
                     history = new ArrayList();
-
-                    historyShow.clear();
-                    historyShow.addAll(history);
-
-                    historyList.setItems(historyShow);
-                    historyList.refresh();
-
                     return;
                 }
 
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(historyFile));
                 this.history = (ArrayList) ois.readObject();
-                historyShow.clear();
-                historyShow.addAll(history);
-
-                historyList.setItems(historyShow);
-                historyList.refresh();
 
             } catch (Exception e) {
                 history = new ArrayList();
-                historyShow.clear();
-                historyShow.addAll(history);
-
-                historyList.setItems(historyShow);
-                historyList.refresh();
 
                 e.printStackTrace();
             }
 
+    }
+
+    void addHistory(String name){
+        if(history.size()>200)
+            history.clear();
+        history.add(String.valueOf(history.size()+1)+". "+name);
+        saveHistory();
     }
 
     void saveHistory(){
@@ -1142,13 +1142,14 @@ public class UICtrl {
 
 
         JFXDialogLayout content = new JFXDialogLayout();
-        content.setHeading(new Text(""));
+        content.setHeading(new Text("历史记录"));
         VBox vb =new VBox();
         vb.setPrefHeight(200);
         vb.setPrefWidth(300);
         //content.setBody(new Text(message));
 
         vb.getChildren().add(historyList);
+        historyList.setPrefHeight(400);
         vb.setAlignment(Pos.CENTER);
         content.setBody(vb);
 
@@ -1169,7 +1170,8 @@ public class UICtrl {
         });
         content.setActions(button);
 
-        dialog.show();n    }
+        dialog.show();
+    }
     @FXML
     void deleteName(){
         data.delete((String)nameList.getSelectionModel().getSelectedItems().get(0));
