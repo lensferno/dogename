@@ -42,7 +42,7 @@ public class Common {
         }
     }
 
-    public static String getHtml(String address)
+    public static String getHtml(String address,boolean output)
     {
         StringBuffer sb = new StringBuffer();
         try {
@@ -79,7 +79,8 @@ public class Common {
                 sb.append("\n");
             }
         }catch(Exception e){e.printStackTrace();}
-        //System.out.println("[INFO]Got："+sb.toString());
+        if(output)
+            System.out.println("[INFO]Got："+sb.toString());
         return sb.toString();
     }
 }
