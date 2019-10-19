@@ -42,6 +42,7 @@ public class Voice {
     void getToken(){
         try{
             token=new Gson().fromJson(Common.getHtml(TOKEN_URL+"?grant_type=client_credentials&client_id="+API_KEY+"&client_secret="+SEC_KEY,true),Token.class);
+            token.setExpTime();
         }catch (Exception e){
             token=null;
         }
@@ -73,6 +74,10 @@ public class Voice {
                 getToken();
                 if(token==null||token.getAccess_token()==null)
                     return false;
+                else {
+                    //saveToken();
+                    return true;
+                }
             }
             return true;
         }catch (Exception e){
