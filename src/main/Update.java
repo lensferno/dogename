@@ -11,7 +11,7 @@ public class Update {
     UpdateInfo updateInfo;
     
     public boolean checkUpdate() {
-	updateInfo =new Gson().fromJson(Common.getHtml(UPDATE_URL), UpdateInfo.class);
+	updateInfo =new Gson().fromJson(Common.getHtml(UPDATE_URL,false), UpdateInfo.class);
 	
 	if(updateInfo.getVer()>nowVer)
 	    return true;
