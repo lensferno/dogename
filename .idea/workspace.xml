@@ -7,10 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af52816d-3d8d-420e-823c-b3961a36b72e" name="Default" comment=".">
-      <change afterPath="$PROJECT_DIR$/src/main/Voice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/aip_java_sdk_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/log4j_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/dogename_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/dogename_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogename.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dogename.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ProgramMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UICtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Voice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Voice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,8 +56,8 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/jfoenix-8.0.4" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/json-20160810" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />

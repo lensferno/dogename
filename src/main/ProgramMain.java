@@ -165,6 +165,8 @@ public class ProgramMain extends Application {
             controller.setSpeed(config.getSpeed());
             controller.setChosenTime(config.getChosenTime());
 
+            controller.loadHistory();
+
             stage.setResizable(true);
             
             controller.showShiCi();

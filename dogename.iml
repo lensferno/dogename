@@ -10,5 +10,8 @@
     <orderEntry type="library" name="commons-codec-1" level="project" />
     <orderEntry type="library" name="gson-2.8" level="project" />
     <orderEntry type="library" name="jfoenix-8.0" level="project" />
+    <orderEntry type="library" name="aip-java-sdk-4.1" level="project" />
+    <orderEntry type="library" name="log4j-1.2" level="project" />
+    <orderEntry type="library" name="json-20160810" level="project" />
   </component>
 </module>
