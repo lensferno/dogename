@@ -102,7 +102,7 @@ public class Voice {
                    try{
 
                       String URL="http://tsn.baidu.com/text2audio?lan=zh&ctp=1&cuid=abcdxxx&tok=24.ed81f7799b5f83949042882e7e9fcbd7.2592000.1573717537.282335-17531281&tex="+ URLEncoder.encode(name,"utf-8")
-                               +"&vol=9&per=0&spd=5&pit=5&aue=6";
+                               +"&vol=9&per=111&spd=5&pit=5&aue=6";
                      //System.out.println(URL);
                        URL sourcesURL = new URL(URL);
                         HttpURLConnection connection = (HttpURLConnection) sourcesURL.openConnection();
@@ -111,7 +111,7 @@ public class Voice {
 
                         InputStream stream = connection.getInputStream();
 
-                        playSound(new BufferedInputStream(stream));
+                        playSound(stream);
 
                        String[] temp=URL.split("/");
                        String fileName=temp[temp.length-1];
@@ -146,10 +146,11 @@ public class Voice {
     }
 
 
-    void playSound(InputStream stream){
+    void playSound(InputStream inptustream){
         AudioInputStream audioInputStream = null;
         try {
-            audioInputStream = AudioSystem.getAudioInputStream(stream);
+            BufferedInputStream bf =new BufferedInputStream(inptustream);
+            audioInputStream = AudioSystem.getAudioInputStream(bf);
         } catch (Exception e1) {
             e1.printStackTrace();
             return;
