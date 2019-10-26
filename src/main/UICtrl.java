@@ -181,9 +181,10 @@ public class UICtrl {
         vb.setPrefHeight(200);
         vb.setPrefWidth(300);
         mainPane.getChildren().remove(controllerPane);
-        content.setBody(controllerPane);
-        content.setPrefHeight(controllerPane.getPrefHeight());
-
+        vb.getChildren().add(controllerPane);
+        vb.setPrefHeight(controllerPane.getPrefHeight());
+        vb.setPrefWidth(controllerPane.getPrefWidth());
+        content.setBody(vb);
 
         content.setPrefWidth(controllerPane.getPrefWidth());
 
@@ -191,10 +192,12 @@ public class UICtrl {
         StackPane tempPane=new StackPane();
         tempPane.setPrefHeight(mainPane.getPrefHeight());
         tempPane.setPrefWidth(mainPane.getPrefWidth());
+
         mainPane.getChildren().add(tempPane);
+
         JFXDialog dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
-        dialog.setPrefHeight(mainPane.getPrefHeight());
-        dialog.setPrefWidth(mainPane.getPrefWidth());
+        dialog.setPrefHeight(controllerPane.getPrefHeight());
+        dialog.setPrefWidth(controllerPane.getPrefWidth());
         JFXButton button = new JFXButton("OK");dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
             @Override
             public void handle(JFXDialogEvent event) {
@@ -207,6 +210,7 @@ public class UICtrl {
             dialog.close();
             mainPane.getChildren().remove(tempPane);
         });
+
         content.setActions(button);
 
         dialog.show();
