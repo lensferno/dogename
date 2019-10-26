@@ -8,15 +8,20 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Voice {
 
     App app =new App();
     String cachedVoicePath=app.APP_LOCA+"caches\\voice\\";
+
     final String API_KEY="dIHCtamVdD0ERO1yyFir2iI4";
     final String SEC_KEY="HmpBQY3gG4PyZ0cmudnCbMeoMcMejuuW";
     final String TOKEN_URL="https://openapi.baidu.com/oauth/2.0/token";
-    String tokenFilePath=app.APP_LOCA+"caches\\voice\\";
+
+    String tokenFilePath=app.APP_LOCA+"files\\voice\\";
+    File cacheDir =new File(cachedVoicePath);
+
     File tokenFile;
 
     Token token=null;
@@ -50,7 +55,7 @@ public class Voice {
 
     void checkNet(){
         try {
-            URL sourcesURL = new URL("htttp://www.baidu.com");
+            URL sourcesURL = new URL("http://www.baidu.com");
             HttpURLConnection connection = (HttpURLConnection) sourcesURL.openConnection();
             connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36");
             connection.connect();
@@ -100,11 +105,11 @@ public class Voice {
                @Override
                public void run() {
                    try{
-
-                      String URL="http://tsn.baidu.com/text2audio?lan=zh&ctp=1&cuid=abcdxxx&tok=24.ed81f7799b5f83949042882e7e9fcbd7.2592000.1573717537.282335-17531281&tex="+ URLEncoder.encode(name,"utf-8")
-                               +"&vol=9&per=111&spd=5&pit=5&aue=6";
-                     //System.out.println(URL);
-                       URL sourcesURL = new URL(URL);
+                       String[] b ={"1","3","106"};
+                       String URL="http://tsn.baidu.com/text2audio?lan=zh&ctp=1&cuid=abcdxxx&tok=24.ed81f7799b5f83949042882e7e9fcbd7.2592000.1573717537.282335-17531281&tex="+ URLEncoder.encode(name,"utf-8")
+                               +"&vol=0&per="+b[new Random().nextInt(b.length)]+"&spd=5&pit=4&aue=6";
+                       System.out.println(URL);
+                        URL sourcesURL = new URL(URL);
                         HttpURLConnection connection = (HttpURLConnection) sourcesURL.openConnection();
                         connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36");
                         connection.connect();
@@ -113,8 +118,12 @@ public class Voice {
 
                         playSound(stream);
 
-                       String[] temp=URL.split("/");
-                       String fileName=temp[temp.length-1];
+                        File cachedVoice=new File(cachedVoicePath+name+".wav");
+                        new File(cachedVoicePath).mkdir();
+
+                        if(!cachedVoice.exists())
+                            cachedVoice.createNewFile();
+
                        FileOutputStream fileStream = new FileOutputStream(new File(cachedVoicePath+name+".wav"));
 
                        for (int i = stream.read(); i != -1; i = stream.read())
