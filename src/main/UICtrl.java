@@ -1,12 +1,13 @@
 package main;
 
-import com.baidu.aip.speech.AipSpeech;
 import com.jfoenix.controls.*;
+import com.jfoenix.controls.events.JFXDialogEvent;
 import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -140,13 +141,11 @@ public class UICtrl {
         dialog.setPrefHeight(mainPane.getPrefHeight());
         dialog.setPrefWidth(mainPane.getPrefWidth());
         JFXButton button = new JFXButton("已阅");
-        tempPane.setOnMousePressed((MouseEvent e) -> {
-            dialog.close();
-            mainPane.getChildren().remove(tempPane);
-        });
-        tempPane.setOnTouchPressed((TouchEvent e) -> {
-            dialog.close();
-            mainPane.getChildren().remove(tempPane);
+        dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
+            @Override
+            public void handle(JFXDialogEvent event) {
+                mainPane.getChildren().remove(tempPane);
+            }
         });
         button.setPrefWidth(50);
         button.setPrefHeight(30);
@@ -174,6 +173,44 @@ public class UICtrl {
         showInfoDialog("啥玩意？","勾选“机会均等”后，将会保存已点过的的名字和数字到文件中，下次启动时仍不会被点到，直到全部名字或数字被点完 或点击“机会均等”的“重置”按钮。\n注意：仅保存“这次点过就不点了”模式下选中的名字或数字。");
     }
 
+    @FXML
+    void showController(){
+        JFXDialogLayout content = new JFXDialogLayout();
+        content.setHeading(new Text("高级设置"));
+        VBox vb =new VBox();
+        vb.setPrefHeight(200);
+        vb.setPrefWidth(300);
+        mainPane.getChildren().remove(controllerPane);
+        content.setBody(controllerPane);
+        content.setPrefHeight(controllerPane.getPrefHeight());
+
+
+        content.setPrefWidth(controllerPane.getPrefWidth());
+
+        controllerPane.setVisible(true);
+        StackPane tempPane=new StackPane();
+        tempPane.setPrefHeight(mainPane.getPrefHeight());
+        tempPane.setPrefWidth(mainPane.getPrefWidth());
+        mainPane.getChildren().add(tempPane);
+        JFXDialog dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
+        dialog.setPrefHeight(mainPane.getPrefHeight());
+        dialog.setPrefWidth(mainPane.getPrefWidth());
+        JFXButton button = new JFXButton("OK");dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
+            @Override
+            public void handle(JFXDialogEvent event) {
+                mainPane.getChildren().remove(tempPane);
+            }
+        });
+        button.setPrefWidth(50);
+        button.setPrefHeight(30);
+        button.setOnAction((ActionEvent e) -> {
+            dialog.close();
+            mainPane.getChildren().remove(tempPane);
+        });
+        content.setActions(button);
+
+        dialog.show();
+    }
 
     public void readIgnoreList(){
 
@@ -708,7 +745,7 @@ public class UICtrl {
     short oldY;
     short oldW;
     short oldH;
-    AipSpeech aipSpeech =new AipSpeech("","","");
+    //AipSpeech aipSpeech =new AipSpeech("","","");
 
     private Data data=new Data();
 
@@ -1161,7 +1198,12 @@ public class UICtrl {
         dialog.setPrefHeight(mainPane.getPrefHeight());
         dialog.setPrefWidth(mainPane.getPrefWidth());
         JFXButton button = new JFXButton("OK");
-
+        dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
+        @Override
+        public void handle(JFXDialogEvent event) {
+          mainPane.getChildren().remove(tempPane);
+            }
+        });
         button.setPrefWidth(50);
         button.setPrefHeight(30);
         button.setOnAction((ActionEvent e) -> {
@@ -1415,13 +1457,11 @@ public class UICtrl {
         dialog.setPrefHeight(mainPane.getPrefHeight());
         dialog.setPrefWidth(mainPane.getPrefWidth());
         JFXButton button = new JFXButton("OK");
-        tempPane.setOnMousePressed((MouseEvent e) -> {
-            dialog.close();
-            mainPane.getChildren().remove(tempPane);
-        });
-        tempPane.setOnTouchPressed((TouchEvent e) -> {
-            dialog.close();
-            mainPane.getChildren().remove(tempPane);
+        dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
+            @Override
+            public void handle(JFXDialogEvent event) {
+                mainPane.getChildren().remove(tempPane);
+            }
         });
         button.setPrefWidth(50);
         button.setPrefHeight(30);
@@ -1456,14 +1496,11 @@ public class UICtrl {
         JFXDialog dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
         dialog.setPrefHeight(mainPane.getPrefHeight());
         dialog.setPrefWidth(mainPane.getPrefWidth());
-        JFXButton button = new JFXButton("OK");
-        tempPane.setOnMousePressed((MouseEvent e) -> {
-            dialog.close();
-            mainPane.getChildren().remove(tempPane);
-        });
-        tempPane.setOnTouchPressed((TouchEvent e) -> {
-            dialog.close();
-            mainPane.getChildren().remove(tempPane);
+        JFXButton button = new JFXButton("OK");dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
+            @Override
+            public void handle(JFXDialogEvent event) {
+                mainPane.getChildren().remove(tempPane);
+            }
         });
         button.setPrefWidth(50);
         button.setPrefHeight(30);

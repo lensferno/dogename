@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="dogename:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="af52816d-3d8d-420e-823c-b3961a36b72e" name="Default" comment=".">
+    <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/dogename_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/aip_java_sdk_4_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_20160810.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogename.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dogename.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/UICtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Voice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Voice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,57 +22,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DM_master$ProgramMain.ic" NAME="ProgramMain Coverage Results" MODIFIED="1558174412476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>main.*</FILTER>
-    </SUITE>
-  </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="dogename" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="388" />
-    <option name="y" value="150" />
-    <option name="width" value="960" />
-    <option name="height" value="570" />
-  </component>
-  <component name="ProjectId" id="1QaDJaS0SyXkpMJOj0HkIXpczsY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1SiyEn11PtSWg3IFCrE05KcjOD0" />
   <component name="PropertiesComponent">
-    <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
-    <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/libs" />
-    <property name="Downloaded.Files.Path.Enabled" value="true" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/json-20160810" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/gson-2.8.5" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="main" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -81,81 +45,25 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="ProgramMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.ProgramMain" />
       <module name="dogename" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.ProgramMain" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="af52816d-3d8d-420e-823c-b3961a36b72e" name="Default" comment="" />
-      <created>1544079169060</created>
+      <changelist id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="" />
+      <created>1572060601486</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1544079169060</updated>
+      <updated>1572060601486</updated>
     </task>
-    <task id="LOCAL-00001" summary=".">
-      <created>1549099485302</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1549099485302</updated>
-    </task>
-    <task id="LOCAL-00002" summary=".">
-      <created>1549187527767</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1549187527767</updated>
-    </task>
-    <task id="LOCAL-00003" summary=".">
-      <created>1554547676146</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1554547676146</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,23 +78,5 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
