@@ -41,6 +41,26 @@ public class Voice {
             tokenFilePath=app.APP_LOCA+"caches//voice//";
 
         checkNet();
+        if(net){
+            checkToken();
+        }
+
+
+    }
+
+    boolean checkToken(){
+        if(!tokenFile.exists()){
+            getToken();
+            if(token==null||token.getAccess_token()==null)
+                return false;
+            else {
+                saveToken();
+                return true;
+            }
+
+        }else {
+            return loadToken();
+        }
 
     }
 
@@ -80,7 +100,7 @@ public class Voice {
                 if(token==null||token.getAccess_token()==null)
                     return false;
                 else {
-                    //saveToken();
+                    saveToken();
                     return true;
                 }
             }
@@ -91,6 +111,17 @@ public class Voice {
                 tokenFile.delete();
             return false;
 
+        }
+    }
+
+    void saveToken(){
+
+        try{
+            ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(tokenFile));
+            oos.writeObject(token);
+            oos.close();
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -106,7 +137,7 @@ public class Voice {
                public void run() {
                    try{
                        String[] b ={"1","3","106"};
-                       String URL="http://tsn.baidu.com/text2audio?lan=zh&ctp=1&cuid=abcdxxx&tok=24.ed81f7799b5f83949042882e7e9fcbd7.2592000.1573717537.282335-17531281&tex="+ URLEncoder.encode(name,"utf-8")
+                       String URL="http://tsn.baidu.com/text2audio?lan=zh&ctp=1&cuid=abcdxxx&tok=24.f44505f2d4604cf88e71cb8328c633b3.2592000.1574825643.282335-17531281&tex="+ URLEncoder.encode(name,"utf-8")
                                +"&vol=0&per="+b[new Random().nextInt(b.length)]+"&spd=5&pit=4&aue=6";
                        System.out.println(URL);
                         URL sourcesURL = new URL(URL);
@@ -116,13 +147,12 @@ public class Voice {
 
                         InputStream stream = connection.getInputStream();
 
-                        playSound(stream);
 
-                        File cachedVoice=new File(cachedVoicePath+name+".wav");
-                        new File(cachedVoicePath).mkdir();
+                       if(!cacheDir.exists())
+                           cacheDir.mkdir();
 
-                        if(!cachedVoice.exists())
-                            cachedVoice.createNewFile();
+                       if(!cachedVoice.exists())
+                           cachedVoice.createNewFile();
 
                        FileOutputStream fileStream = new FileOutputStream(new File(cachedVoicePath+name+".wav"));
 
@@ -130,6 +160,13 @@ public class Voice {
                            fileStream.write(i);
 
                        fileStream.close();
+
+
+                        playSound(new FileInputStream(cachedVoice));
+
+                        File cachedVoice=new File(cachedVoicePath+name+".wav");
+                        new File(cachedVoicePath).mkdir();
+
 
                        System.out.println("[INFO]Download done save to："+cachedVoicePath+name+".wav");
 

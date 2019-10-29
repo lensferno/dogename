@@ -36,7 +36,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Pane fx:id="controllerPane" layoutX="-410.0" layoutY="385.0" prefHeight="155.0" prefWidth="620.0">
+            <Pane fx:id="controllerPane" layoutX="-410.0" layoutY="385.0" prefHeight="155.0" prefWidth="620.0" visible="false">
                <children>
                   <JFXSlider fx:id="speedBar" layoutX="57.0" layoutY="6.0" majorTickUnit="10.0" onMouseReleased="#setSpeedHere" onTouchReleased="#setSpeedHere" prefHeight="15.0" prefWidth="435.0" showTickLabels="true" showTickMarks="true" value="80.0" />
                   <Label prefHeight="23.0" prefWidth="57.0" text="调速：">
@@ -91,23 +91,23 @@
             <ImageView fx:id="mainView" fitHeight="191.0" fitWidth="164.0" layoutX="655.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
                
             </ImageView>
-            <JFXButton fx:id="choose" buttonType="RAISED" layoutX="670.0" layoutY="617.0" onAction="#anPai" prefHeight="53.0" prefWidth="166.0" text="安排一下">
+            <JFXButton fx:id="choose" buttonType="RAISED" layoutX="673.0" layoutY="558.0" onAction="#anPai" prefHeight="53.0" prefWidth="166.0" text="安排一下">
                <font>
                   <Font name="Microsoft YaHei" size="26.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="goBackButton" buttonType="RAISED" layoutX="172.0" layoutY="617.0" onAction="#goBack" prefHeight="53.0" prefWidth="166.0" text="小窗模式">
+            <JFXButton fx:id="goBackButton" buttonType="RAISED" layoutX="175.0" layoutY="558.0" onAction="#goBack" prefHeight="53.0" prefWidth="166.0" text="小窗模式">
                <font>
                   <Font name="Microsoft YaHei" size="26.0" />
                </font>
             </JFXButton>
             <JFXButton layoutY="0" onAction="#showInfo" text="About Author" />
-            <JFXButton fx:id="showHistory" layoutX="504.0" layoutY="616.0" onAction="#showHistory" prefHeight="53.0" prefWidth="166.0" text="历史记录">
+            <JFXButton fx:id="showHistory" layoutX="507.0" layoutY="558.0" onAction="#showHistory" prefHeight="53.0" prefWidth="166.0" text="历史记录">
                <font>
                   <Font size="26.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="338.0" layoutY="617.0" onAction="#showController" prefHeight="53.0" prefWidth="166.0" text="更多设置">
+            <JFXButton layoutX="341.0" layoutY="558.0" onAction="#showController" prefHeight="53.0" prefWidth="166.0" text="更多设置">
                <font>
                   <Font size="26.0" />
                </font></JFXButton>

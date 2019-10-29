@@ -253,6 +253,8 @@ public class UICtrl {
             ignoreNumberList=new HashSet<>();
             e.printStackTrace();
         }
+
+        System.out.println("There are "+ignoreNameList.size()+"names and "+ignoreNumberList.size()+"numbers.");
     }
 
     void writeIgnoreList(){
@@ -910,7 +912,7 @@ public class UICtrl {
     }
 
     void addHistory(String name){
-        if(history.size()>200)
+        if(history.size()>2000)
             history.clear();
         history.add(String.valueOf(history.size()+1)+". "+name);
         saveHistory();
