@@ -21,9 +21,18 @@ public class Config implements Serializable {
 
     private boolean newAlgo=true;
     
+    private boolean voicePlay=true;
+    
 
-    private boolean exciting=true;
 
+    public boolean isVoicePlay() {
+        return voicePlay;
+    }
+
+    public void setVoicePlay(boolean voicePlay) {
+        this.voicePlay = voicePlay;
+    }
+    
     public boolean isNewAlgo() {
         return newAlgo;
     }
@@ -104,14 +113,7 @@ public class Config implements Serializable {
         this.taoluMode=taoluMode;
     }
 
-    public boolean isExciting() {
-        return exciting;
-    }
 
-    public void setExciting(boolean exciting) {
-        this.exciting = exciting;
-    }
-    
 
 
 

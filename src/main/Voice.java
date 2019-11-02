@@ -22,7 +22,7 @@ public class Voice {
     String tokenFilePath=app.APP_LOCA+"files\\voice\\";
     File cacheDir =new File(cachedVoicePath);
 
-    File tokenFile;
+    File tokenFile=new File(app.APP_LOCA+"API_voice.token");
 
     Token token=null;
 
@@ -42,7 +42,7 @@ public class Voice {
 
         checkNet();
         if(net){
-            checkToken();
+            //checkToken();
         }
 
 

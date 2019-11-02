@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -198,10 +199,12 @@ public class UICtrl {
         JFXDialog dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
         dialog.setPrefHeight(controllerPane.getPrefHeight());
         dialog.setPrefWidth(controllerPane.getPrefWidth());
-        JFXButton button = new JFXButton("OK");dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
+        JFXButton button = new JFXButton("OK");
+        dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
             @Override
             public void handle(JFXDialogEvent event) {
                 mainPane.getChildren().remove(tempPane);
+                saveConfigToFile();
             }
         });
         button.setPrefWidth(50);
@@ -336,7 +339,8 @@ public class UICtrl {
                     controllerPane.setDisable(false);
                     System.gc();
                     addHistory(chosenName);
-                    voice.playVoice(chosenName);
+                    if(voicePlay)
+                	voice.playVoice(chosenName);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -436,7 +440,8 @@ public class UICtrl {
                     controllerPane.setDisable(false);
                     System.gc();
                     addHistory(chosenName);
-                    voice.playVoice(chosenName);
+                    if(voicePlay)
+                	voice.playVoice(chosenName);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -477,230 +482,6 @@ public class UICtrl {
     };
 
     
-    AnimationTimer timer_exciting =new AnimationTimer() {
-        @Override
-        public void handle(long now) {
-
-            if(forceStop){
-                already=chosenTime+1;
-                isRunning=false;
-            }
-
-            if(!ignoreTimesOut) {
-                try{
-                    Thread.sleep(speed);
-                }catch (Exception e){e.printStackTrace(); }
-            }else {
-        	if(!forceStop) {
-                    try{
-                        Thread.sleep(speed);
-                    }catch (Exception e){e.printStackTrace(); }
-        	}
-            }
-            
-            if(already>=chosenTime){
-                if(!ignoreNameList.contains(chosenName)||!ignorePast||forceStop){
-
-                    if(random.nextBoolean()) {
-                	if(!forceStop) {
-                            try{
-                                Thread.sleep(150);
-                            }catch (Exception e){e.printStackTrace(); }
-                	}
-                    }
-                    
-                    forceStop=false;
-
-                    if(ignorePast)
-                        ignoreNameList.add(chosenName);
-                    if(equalMode)
-                        writeIgnoreList();
-
-                    already=0;
-                    ignoreTimesOut=false;
-
-                    if(showWhich==1)
-                        showWhich=2;
-                    else
-                        showWhich=1;
-
-                    switch (showWhich){
-                        case 1:{
-                            if(chosen_2.getText().contains("→"))
-                                chosen_2.setText(chosen_2.getText().replace("→",""));
-
-                            chosen_1.setText("→"+chosen_1.getText());
-
-                            if(taoluMode)
-                                data.addTaoluedName(chosen_1.getText().replace("→",""),5);
-
-                            break;
-                        }
-                        case 2:{
-                            if(chosen_1.getText().contains("→"))
-                                chosen_1.setText(chosen_1.getText().replace("→",""));
-
-                            chosen_2.setText("→"+chosen_2.getText());
-
-                            if(taoluMode)
-                                data.addTaoluedName(chosen_2.getText().replace("→",""),4);
-
-                            break;
-                        }
-                    }
-                    isRunning=false;
-                    choose.setText("安排一下");
-                    stop();
-                    controllerPane.setDisable(false);
-                    System.gc();
-
-                    addHistory(chosenName);
-
-                    voice.playVoice(chosenName);
-                    return;
-                }else
-                    ignoreTimesOut=true;
-
-            }
-
-
-
-            speed=(short)(30+random.nextInt(250));
-
-            switch (showWhich){
-                case 1:{
-                    chosenName=data.randomGet(taoluMode);
-                    chosen_1.setText(chosenName);
-                    already++;
-                    showWhich=2;
-                    break;
-                }
-
-                case 2:{
-                    chosenName=data.randomGet(taoluMode);
-                    chosen_2.setText(chosenName);
-                    already++;
-                    showWhich=1;
-                    break;
-                }
-            }
-
-
-        }
-    };
-    //---------------------------------------------------------------------------------------
-
-    AnimationTimer numbTimer_exciting =new AnimationTimer() {
-        @Override
-        public void handle(long now) {
-
-            if(forceStop){
-                already=chosenTime+1;
-                isRunning=false;
-            }
-
-            if(!ignoreTimesOut) {
-                try{
-                    Thread.sleep(speed);
-                }catch (Exception e){e.printStackTrace(); }
-            }else {
-        	if(!forceStop) {
-                    try{
-                        Thread.sleep(speed);
-                    }catch (Exception e){e.printStackTrace(); }
-        	}
-            }
-            
-            if(already>=chosenTime){
-                if(!ignoreNumberList.contains(chosenName)||!ignorePast||forceStop){
-
-                    if(random.nextBoolean()) {
-                	if(!forceStop) {
-                            try{
-                                Thread.sleep(150);
-                            }catch (Exception e){e.printStackTrace(); }
-                	}
-                    }
-                    forceStop=false;
-
-                    if(ignorePast)
-                        ignoreNumberList.add(chosenName);
-                    if(equalMode)
-                        writeIgnoreList();
-
-                    already=0;
-                    ignoreTimesOut=false;
-
-                    if(showWhich==1)
-                        showWhich=2;
-                    else
-                        showWhich=1;
-
-                    switch (showWhich){
-                        case 1:{
-                            if(chosen_2.getText().contains("→"))
-                                chosen_2.setText(chosen_2.getText().replace("→",""));
-
-                            chosen_1.setText("→"+chosen_1.getText());
-
-                            break;
-                        }
-                        case 2:{
-                            if(chosen_1.getText().contains("→"))
-                                chosen_1.setText(chosen_1.getText().replace("→",""));
-
-                            chosen_2.setText("→"+chosen_2.getText());
-
-                            break;
-                        }
-                    }
-                    isRunning=false;
-                    choose.setText("安排一下");
-                    stop();
-                    controllerPane.setDisable(false);
-                    System.gc();
-                    addHistory(chosenName);
-
-                    voice.playVoice(chosenName);
-                    return;
-                }else
-                    ignoreTimesOut=true;
-
-            }
-
-
-            speed=(short)(30+random.nextInt(250));
-
-            switch (showWhich){
-                case 1:{
-                    if(newAlgo)
-                        chosen_1.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
-                    else
-                        chosen_1.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
-
-                    chosenName=chosen_1.getText();
-                    already++;
-                    showWhich=2;
-                    break;
-                }
-
-                case 2:{
-                    if(newAlgo)
-                        chosen_2.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
-                    else
-                        chosen_2.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
-
-                    chosenName=chosen_2.getText();
-                    already++;
-                    showWhich=1;
-                    break;
-                }
-            }
-
-
-        }
-    };
-
 
 
     public boolean isNameChoose=true;
@@ -722,6 +503,7 @@ public class UICtrl {
     public JFXCheckBox taoluModeBtn;
     public JFXCheckBox equalModeBtn;
     public JFXCheckBox newAlgoBtn;
+    public JFXCheckBox voicePlayBtn;
 
     public JFXRadioButton numbChoose;
     public JFXRadioButton nameChoose;
@@ -736,11 +518,10 @@ public class UICtrl {
     public JFXSlider speedBar;
     public JFXTextArea inputName;
     
-    public JFXToggleButton excitingBtn;
 
     public Pane numbPane;
     public Pane namePane;
-    public Pane controllerPane;
+    public ScrollPane controllerPane;
 
     public Stage stage;
     public Scene scene;
@@ -809,7 +590,36 @@ public class UICtrl {
 
     boolean newAlgo=true;
 
+    boolean voicePlay=true;
 
+
+    @FXML
+    public void voicePlayBtnAction(){
+        if(voicePlay)
+            unselectVoicePlayBtn();
+        else
+            selectVoicePlayBtn();
+    }
+    
+    void unselectVoicePlayBtn(){
+	voicePlay=false;
+        voicePlayBtn.setSelected(false);
+    }
+
+    
+    void selectVoicePlayBtn(){
+	voicePlay = true;
+        voicePlayBtn.setSelected(true);
+    }
+    
+    public boolean isVoicePlay() {
+        return voicePlay;
+    }
+
+    public void setVoicePlay(boolean voicePlay) {
+        this.voicePlay = voicePlay;
+    }
+    
     @FXML
     public void newAlgoBtnAction(){
         if(newAlgo)
@@ -839,43 +649,6 @@ public class UICtrl {
         this.newAlgo = newAlgo;
     }
     
-
-    public boolean isExciting() {
-        return exciting;
-    }
-
-    public void setExciting(boolean exciting) {
-        this.exciting = exciting;
-    }
-    
-    boolean exciting=true;
-    @FXML
-    public void excitingBtn_action(){
-        if(exciting)
-            unselectExcitingBtn();
-        else
-            selectExcitingBtn();
-    }
-    
-    void unselectExcitingBtn(){
-	exciting=false;
-	excitingBtn.setSelected(false);
-
-	speedBar.setDisable(false);
-	randomTimes.setDisable(false);
-	chooseTimes.setDisable(false);
-	fixedTimes.setDisable(false);
-    }
-
-    
-    void selectExcitingBtn(){
-	exciting = true;
-	excitingBtn.setSelected(true);
-	speedBar.setDisable(true);
-	randomTimes.setDisable(true);
-	chooseTimes.setDisable(true);
-	fixedTimes.setDisable(true);
-    }
 
 
 
@@ -947,15 +720,11 @@ public class UICtrl {
         config.setMaxNumber(maxNumber);
         config.setMinNumber(minNumber);
         config.setNameChoose(isNameChoose);
-        if(exciting)
-            config.setSpeed((short)(100-speedBar.getValue()));
-        else
-            config.setSpeed(speed);
         config.setRandomTimes(isRandomTimes);
         config.setTaoluMode(taoluMode);
         config.setEqualMode(equalMode);
         config.setNewAlgo(newAlgo);
-        config.setExciting(exciting);
+        config.setVoicePlay(voicePlay);
 
 
 
@@ -993,19 +762,13 @@ public class UICtrl {
 
         
         if(isRandomTimes) {
-            if(exciting) {
-        	    chosenTime=4+random.nextInt(7);//4~6
-            }else
-        	    chosenTime=100+random.nextInt(151);
+            chosenTime=100+random.nextInt(151);
             //chosenTime =  100 + (int) (Math.random() * (250 - 100));
             chooseTimes.setValue(chosenTime);
         }
         else {
             
-            if(exciting) {
-        	    chosenTime=4+random.nextInt(8);//4~7
-            }else
-        	    chosenTime=(int)chooseTimes.getValue();
+            chosenTime=(int)chooseTimes.getValue();
         }
             
         //int s=(int)min+(int)(Math.random()*(max-min));
@@ -1030,9 +793,6 @@ public class UICtrl {
             isRunning=true;
             choose.setText("不玩了！");
             showWhich=1+random.nextInt(2);
-            if(exciting)
-        	    timer_exciting.start();
-            else
                 timer.start();
 
         }else {
@@ -1065,9 +825,6 @@ public class UICtrl {
             isRunning=true;
             choose.setText("不玩了！");
             showWhich=1+random.nextInt(2);
-            if(exciting)
-        	    numbTimer_exciting.start();
-            else
         	numbTimer.start();
 
         }

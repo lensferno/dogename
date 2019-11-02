@@ -149,11 +149,11 @@ public class ProgramMain extends Application {
             else
                 controller.unselectNewAlgoBtn();
             
-
-            if(config.isExciting())
-                controller.selectExcitingBtn();
+            if(config.isVoicePlay())
+        	controller.selectVoicePlayBtn();
             else
-                controller.unselectExcitingBtn();
+        	controller.unselectVoicePlayBtn();
+
 
             controller.setImages();
 
