@@ -244,7 +244,7 @@ aue =6 ，返回为二进制wav文件，具体header信息 Content-Type: audio/w
  */
 
 
-    class Token {
+    class Token implements Serializable {
 
         private long expTime;
 

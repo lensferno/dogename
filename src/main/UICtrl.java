@@ -152,7 +152,7 @@ public class UICtrl {
         button.setPrefHeight(30);
         button.setOnAction((ActionEvent e) -> {
             dialog.close();
-            mainPane.getChildren().remove(tempPane);
+
         });
         content.setActions(button);
 
@@ -211,7 +211,6 @@ public class UICtrl {
         button.setPrefHeight(30);
         button.setOnAction((ActionEvent e) -> {
             dialog.close();
-            mainPane.getChildren().remove(tempPane);
         });
 
         content.setActions(button);
@@ -971,7 +970,6 @@ public class UICtrl {
         button.setPrefHeight(30);
         button.setOnAction((ActionEvent e) -> {
             dialog.close();
-            mainPane.getChildren().remove(tempPane);
         });
         content.setActions(button);
 
@@ -1230,7 +1228,6 @@ public class UICtrl {
         button.setPrefHeight(30);
         button.setOnAction((ActionEvent e) -> {
             dialog.close();
-            mainPane.getChildren().remove(tempPane);
         });
         content.setActions(button);
 
@@ -1269,7 +1266,6 @@ public class UICtrl {
         button.setPrefHeight(30);
         button.setOnAction((ActionEvent e) -> {
             dialog.close();
-            mainPane.getChildren().remove(tempPane);
         });
         content.setActions(button);
 
