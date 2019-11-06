@@ -173,7 +173,7 @@ public class ProgramMain extends Application {
 
             //System.out.println("[INFO]Update statu:"+update.checkUpdate());
 
-            if(System.getProperty("os.name").contains("window")) {
+            if(System.getProperty("os.name").contains("indow")) {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
