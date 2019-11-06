@@ -6,16 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ProgramMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Voice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Voice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updateFiles/Dogename.7z.001" beforeDir="false" afterPath="$PROJECT_DIR$/updateFiles/Dogename.7z.001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updateFiles/Dogename.7z.002" beforeDir="false" afterPath="$PROJECT_DIR$/updateFiles/Dogename.7z.002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updateFiles/Dogename.7z.003" beforeDir="false" afterPath="$PROJECT_DIR$/updateFiles/Dogename.7z.003" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updateFiles/Dogename.7z.004" beforeDir="false" afterPath="$PROJECT_DIR$/updateFiles/Dogename.7z.004" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updateFiles/Dogename.7z.005" beforeDir="false" afterPath="$PROJECT_DIR$/updateFiles/Dogename.7z.005" afterDir="false" />
-    </list>
+    <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
