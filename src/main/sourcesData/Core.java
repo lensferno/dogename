@@ -79,8 +79,6 @@ public class Core {
     private File historyFile;
 
     Voice voice;
-
-
     void loadHistory(){
 
         if(System.getProperty("os.name").toLowerCase().contains("window"))
@@ -425,4 +423,17 @@ public class Core {
     public void setChosen_2(Label chosen_2) {
         this.chosen_2 = chosen_2;
     }
+
+    public boolean isForceStop() {
+        return forceStop;
+    }
+
+    public boolean isRunning() {
+        return isRunning;
+    }
+
+    public List getHistory() {
+        return history;
+    }
+
 }
