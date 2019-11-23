@@ -11,7 +11,7 @@ import com.google.gson.Gson;
 
 public class GuShiCi {
     private String shiciContent;
-    private final String API="https://api.gushi.ci/all.json";
+    private final String API="https://v1.jinrishici.com/all.json";
     Gushici gsc;
     public String get() {
 	String respond = getHtml(API);
