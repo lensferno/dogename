@@ -128,7 +128,7 @@ public class Voice {
     }
 
 
-    void playVoice(String name){
+    public void playVoice(String name){
 
 
         File cachedVoice=new File(cachedVoicePath+name+".wav");
