@@ -1,15 +1,17 @@
 package main.sourcesData;
 
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.Pane;
 import main.App;
 import main.Data;
+import main.Voice;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -33,7 +35,7 @@ public class Core {
     public short minNumber;
     public short maxNumber;
 
-
+    boolean voicePlay=true;
 
     App app=new App();
     int chosenTime=120;
@@ -56,10 +58,14 @@ public class Core {
     boolean newAlgo=true;
 
 
+    public JFXButton choose;
+    public ScrollPane controllerPane;
+
+    public Label chosen_1;
+    public Label chosen_2;
+
     File nameIgnoreFile =new File(app.APP_LOCA+"files\\nameIgnoreList.data");
     File numbIgnoreFile =new File(app.APP_LOCA+"files\\numbIgnoreList.data");
-
-
 
     public boolean isNameChoose=true;
     public short speed;
@@ -69,6 +75,37 @@ public class Core {
     boolean isRunning=false;
 
     List history;
+    private String HISTORY_FILE;
+    private File historyFile;
+
+    Voice voice;
+
+
+    void loadHistory(){
+
+        if(System.getProperty("os.name").toLowerCase().contains("window"))
+            HISTORY_FILE=app.APP_LOCA+"files\\history.data";
+        else
+            HISTORY_FILE=app.APP_LOCA+"files/history.data";
+
+        try {
+            File historyFile = new File(HISTORY_FILE);
+            if (historyFile.exists() != true) {
+                historyFile.createNewFile();
+                history = new ArrayList();
+                return;
+            }
+
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(historyFile));
+            this.history = (ArrayList) ois.readObject();
+
+        } catch (Exception e) {
+            history = new ArrayList();
+
+            e.printStackTrace();
+        }
+
+    }
 
     void writeIgnoreList(){
         try{
@@ -316,9 +353,6 @@ public class Core {
         }
     };
 
-    public Label chosen_1;
-    public Label chosen_2;
-
     public void setMinNumber(short minNumber) {
         this.minNumber = minNumber;
     }
@@ -353,5 +387,42 @@ public class Core {
 
     public void setRunning(boolean running) {
         isRunning = running;
+    }
+
+
+    public void setVoicePlay(boolean voicePlay) {
+        this.voicePlay = voicePlay;
+    }
+
+    public void setTaoluMode(boolean taoluMode) {
+        this.taoluMode = taoluMode;
+    }
+
+    public void setNewAlgo(boolean newAlgo) {
+        this.newAlgo = newAlgo;
+    }
+
+    public void setChoose(JFXButton choose) {
+        this.choose = choose;
+    }
+
+    public void setControllerPane(ScrollPane controllerPane) {
+        this.controllerPane = controllerPane;
+    }
+
+    public void setData(Data data) {
+        this.data = data;
+    }
+
+    public void setVoice(Voice voice) {
+        this.voice = voice;
+    }
+
+    public void setChosen_1(Label chosen_1) {
+        this.chosen_1 = chosen_1;
+    }
+
+    public void setChosen_2(Label chosen_2) {
+        this.chosen_2 = chosen_2;
     }
 }
