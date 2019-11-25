@@ -351,6 +351,15 @@ public class Core {
         }
     };
 
+    public void run(short speed,Data data,int chosenTime,boolean ignorePast,boolean equalMode,boolean taoluMode){
+        setSpeed(speed);
+        setData(data);
+        setChosenTime(chosenTime);
+        setIgnorePast(ignorePast);
+        setEqualMode(equalMode);
+        setTaoluMode(taoluMode);
+        timer.start();
+    }
     public void setMinNumber(short minNumber) {
         this.minNumber = minNumber;
     }
