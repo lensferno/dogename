@@ -351,6 +351,10 @@ public class Core {
         }
     };
 
+    public void forceStop(){
+
+    }
+
     public void run(short speed,Data data,int chosenTime,boolean ignorePast,boolean equalMode,boolean taoluMode){
         setSpeed(speed);
         setData(data);
@@ -360,6 +364,25 @@ public class Core {
         setTaoluMode(taoluMode);
         timer.start();
     }
+
+    public void run(short maxNumber,short minNumber,short speed,int chosenTime,boolean ignorePast,boolean equalMode,boolean taoluMode){
+        setMaxNumber(maxNumber);
+        setMinNumber(minNumber);
+        setSpeed(speed);
+        setChosenTime(chosenTime);
+        setIgnorePast(ignorePast);
+        setEqualMode(equalMode);
+        setTaoluMode(taoluMode);
+        numbTimer.start();
+    }
+
+    public void set(Label chosen_2,Label chosen_1,ScrollPane controllerPane,JFXButton choose){
+        setChosen_1(chosen_1);
+        setChosen_2(chosen_2);
+        setControllerPane(controllerPane);
+        setChoose(choose);
+    }
+
     public void setMinNumber(short minNumber) {
         this.minNumber = minNumber;
     }
