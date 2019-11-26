@@ -86,7 +86,7 @@ public class UICtrl_new {
         ignoreNumberTimes=0;
         System.gc();
 
-    }an
+    }
 
     public Label topBar;
     @FXML
