@@ -101,7 +101,7 @@ public class ProgramMain extends Application {
             stage.setScene(scene);
 
             //stage.setResizable(true);
-            UICtrl controller = loader.getController();
+            UICtrl_new controller = loader.getController();
             controller.setStage(stage);
             controller.setScene(scene);
             stage.show();
