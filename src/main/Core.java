@@ -1,4 +1,4 @@
-package main.sourcesData;
+package main;
 
 import com.jfoenix.controls.*;
 import javafx.animation.AnimationTimer;
@@ -355,17 +355,18 @@ public class Core {
 
     }
 
-    public void run(short speed,Data data,int chosenTime,boolean ignorePast,boolean equalMode,boolean taoluMode){
+    public void run(short speed,Data data,int chosenTime,boolean ignorePast,boolean equalMode,boolean taoluMode,boolean voicePlay){
         setSpeed(speed);
         setData(data);
         setChosenTime(chosenTime);
         setIgnorePast(ignorePast);
         setEqualMode(equalMode);
         setTaoluMode(taoluMode);
+        setVoicePlay(voicePlay);
         timer.start();
     }
 
-    public void run(short maxNumber,short minNumber,short speed,int chosenTime,boolean ignorePast,boolean equalMode,boolean taoluMode){
+    public void run(short maxNumber,short minNumber,short speed,int chosenTime,boolean ignorePast,boolean equalMode,boolean taoluMode,boolean voicePlay){
         setMaxNumber(maxNumber);
         setMinNumber(minNumber);
         setSpeed(speed);
@@ -373,14 +374,21 @@ public class Core {
         setIgnorePast(ignorePast);
         setEqualMode(equalMode);
         setTaoluMode(taoluMode);
+        setVoicePlay(voicePlay);
         numbTimer.start();
     }
 
-    public void set(Label chosen_2,Label chosen_1,ScrollPane controllerPane,JFXButton choose){
+    public void set(Label chosen_2,Label chosen_1,ScrollPane controllerPane,JFXButton choose,List history,Voice voice){
         setChosen_1(chosen_1);
         setChosen_2(chosen_2);
         setControllerPane(controllerPane);
         setChoose(choose);
+        setHistory(history);
+        setVoice(voice);
+    }
+
+    public void setHistory(List history) {
+        this.history = history;
     }
 
     public void setMinNumber(short minNumber) {

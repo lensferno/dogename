@@ -1,0 +1,35 @@
+Map group
+List<String> sysMethod List.
+int group Amount.
+int groupLength;
+int currentGroup,
+int current Name Number,
+List ignored Group Name;
+List removed List;
+Random rand;
+make Group (List nameList) {
+removedList.clear ( ).
+ignoredGroup.clear(),
+sys Method List.clearc);
+SysMethodList.add(nameList);
+mixUpList( ),
+groupAmount=lint) Math. sqrc
+Sys Method List. Size c));
+int removed Amount = Math. mode
+Sys Method List. Sizec)/groupHmount);
+int temp=0;
+for (int 2= 0; i<removedAmount; it+)
+temp = rand, next Int ( sys Method List. sizec));
+removed List. add (sys Method List. get (temp));
+sys Method List. remove (temp).
+} group = new Map (@ group Amount);
+group Length = sysMethodList. size()/groupAmount;
+for Cint 2=0, i< group Amount; it+){
+group. add (i, new List ( String) ())
+for lint a = 0, a <groupLength; att) 8
+group. get (i). add (sys Method List. get(
+a tgroupLength * 2 ) );
+current Name Number = 0.
+current Group = 0.
+
+

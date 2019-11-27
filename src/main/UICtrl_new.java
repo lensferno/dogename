@@ -750,14 +750,15 @@ public class UICtrl_new {
 
     @FXML
     void anPai(){
+        Core core =new Core();
         saveConfigToFile();
-        if(isRunning){
-            forceStop=true;
+        if(core.isRunning()){
+            core.setForceStop(true);
             choose.setText("安排一下");
             return;
         }
 
-        
+
         if(isRandomTimes) {
             chosenTime=100+random.nextInt(151);
             //chosenTime =  100 + (int) (Math.random() * (250 - 100));
@@ -790,7 +791,9 @@ public class UICtrl_new {
             isRunning=true;
             choose.setText("不玩了！");
             showWhich=1+random.nextInt(2);
-                timer.start();
+            //    timer.start();
+            core.set( chosen_2, chosen_1, controllerPane, choose,history,voice);
+            core.run( speed, data, chosenTime, ignorePast, equalMode, taoluMode,voicePlay);
 
         }else {
 
@@ -822,7 +825,8 @@ public class UICtrl_new {
             isRunning=true;
             choose.setText("不玩了！");
             showWhich=1+random.nextInt(2);
-        	numbTimer.start();
+            core.set( chosen_2, chosen_1, controllerPane, choose,history,voice);
+            core.run( maxNumber,minNumber,speed , chosenTime, ignorePast, equalMode, taoluMode,voicePlay);
 
         }
 
