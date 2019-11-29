@@ -1,16 +1,20 @@
 package main;
 
+import com.sun.org.apache.xerces.internal.xs.StringList;
+import javafx.animation.AnimationTimer;
+import javafx.scene.control.Label;
+
 import java.util.*;
 
-public class systemSimpleMethod {
+public class SystemSimpleMethod {
     Map group;
     ArrayList<String> sysMethodList = new ArrayList<>();
     int groupAmount;
     int groupLength;
     int currentGroup;
     int currentNameNumber;
-    List ignoredGroupName;
-    List removedList;
+    List ignoredNameNumber;
+    List removedList=new ArrayList<String>();
     Random rand;
 
     void mixUpList() {
@@ -18,7 +22,7 @@ public class systemSimpleMethod {
 
     public void makeGroup(ArrayList nameList) {
         removedList.clear();
-        ignoredGroupName.clear();
+        ignoredNameNumber.clear();
         sysMethodList.clear();
         sysMethodList.addAll(nameList);
         mixUpList();
@@ -33,10 +37,10 @@ public class systemSimpleMethod {
             sysMethodList.remove(temp);
         }
 
-        group = new HashMap<Integer, ArrayList>();
+        group = new HashMap<Integer, ArrayList<String>>();
         groupLength = (int) (sysMethodList.size() / groupAmount);
 
-        ArrayList tempList=null;
+        ArrayList<String> tempList=null;
         for (int i = 0; i<groupAmount;i++){
             group.put(i, new ArrayList());
             for (int a = 0;a<groupLength;a++){
@@ -47,5 +51,58 @@ public class systemSimpleMethod {
         }
         currentNameNumber = 0;
         currentGroup = 0;
+    }
+
+    public int showNext(Label text,int chosenTime){
+        if(sysMethodList.isEmpty()||group.isEmpty())
+            return -1;
+
+        if(currentGroup>=groupAmount){
+            
+            if(removedList.isEmpty()){
+                currentGroup=0;
+                currentNameNumber=0;
+                return -2;
+            }else {
+                new AnimationTimer() {
+                    int i=0;
+                    @Override
+                    public void handle(long now) {
+                        int a = 0;
+                        a=rand.nextInt(removedList.size());
+                        text.setText((String) removedList.get(a));
+                        if(i>=chosenTime){
+                            removedList.remove(a);
+                            text.setText(""+text.getText());
+                            stop();
+                            return;
+                        }
+                        i++;
+                    }
+                }.start();
+                return 0;
+            }
+            
+        }else {
+            int i=0;
+            new AnimationTimer() {
+                ArrayList<String> temp=null;
+                @Override
+                public void handle(long now) {
+                    currentNameNumber=rand.nextInt(groupLength);
+                    temp=(ArrayList)group.get(1);
+                    text.setText( temp.get(currentNameNumber));
+                    if(i>=chosenTime){
+                        if(!ignoredNameNumber.contains(currentNameNumber)){
+                            ignoredNameNumber.add(currentNameNumber);
+                            text.setText(""+text.getText());
+                            stop();
+                            return;
+                        }
+                    }
+                }
+            }.start();
+            return 0;
+        }
     }
 }

@@ -378,13 +378,18 @@ public class Core {
         numbTimer.start();
     }
 
-    public void set(Label chosen_2,Label chosen_1,ScrollPane controllerPane,JFXButton choose,List history,Voice voice){
+    public void set(Label chosen_2,Label chosen_1,ScrollPane controllerPane,JFXButton choose,List history,Voice voice,App app){
         setChosen_1(chosen_1);
         setChosen_2(chosen_2);
         setControllerPane(controllerPane);
         setChoose(choose);
         setHistory(history);
         setVoice(voice);
+        setApp(app);
+    }
+
+    public void setApp(App app) {
+        this.app = app;
     }
 
     public void setHistory(List history) {

@@ -792,7 +792,7 @@ public class UICtrl_new {
             choose.setText("不玩了！");
             showWhich=1+random.nextInt(2);
             //    timer.start();
-            core.set( chosen_2, chosen_1, controllerPane, choose,history,voice);
+            core.set( chosen_2, chosen_1, controllerPane, choose,history,voice,app);
             core.run( speed, data, chosenTime, ignorePast, equalMode, taoluMode,voicePlay);
 
         }else {
@@ -825,7 +825,7 @@ public class UICtrl_new {
             isRunning=true;
             choose.setText("不玩了！");
             showWhich=1+random.nextInt(2);
-            core.set( chosen_2, chosen_1, controllerPane, choose,history,voice);
+            core.set( chosen_2, chosen_1, controllerPane, choose,history,voice,app);
             core.run( maxNumber,minNumber,speed , chosenTime, ignorePast, equalMode, taoluMode,voicePlay);
 
         }
