@@ -32,7 +32,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
-public class UICtrl_new {
+public final class UICtrl_new {
 
     boolean taoluMode;
 
@@ -276,211 +276,7 @@ public class UICtrl_new {
 
     Voice voice =new Voice();
     //-------------------------------------------------------------------------------------------
-    AnimationTimer timer =new AnimationTimer() {
-        @Override
-        public void handle(long now) {
-
-            if(forceStop){
-                already=chosenTime+1;
-                isRunning=false;
-            }
-
-
-            try{
-                Thread.sleep(speed);
-            }catch (Exception e){e.printStackTrace(); }
-
-            if(already>=chosenTime){
-                if(!ignoreNameList.contains(chosenName)||!ignorePast||forceStop){
-
-                    forceStop=false;
-
-                    if(ignorePast)
-                        ignoreNameList.add(chosenName);
-                    if(equalMode)
-                        writeIgnoreList();
-
-                    cycleEnd=true;
-                    already=0;
-                    singleCycle=0;
-                    ignoreTimesOut=false;
-                    ignoreNameTimes++;
-
-                    switch (showWhich){
-                        case 1:{
-                            if(chosen_2.getText().contains("→"))
-                                chosen_2.setText(chosen_2.getText().replace("→",""));
-
-                            chosen_1.setText("→"+chosen_1.getText());
-
-                            if(taoluMode)
-                                data.addTaoluedName(chosen_1.getText().replace("→",""),5);
-
-                            break;
-                        }
-                        case 2:{
-                            if(chosen_1.getText().contains("→"))
-                                chosen_1.setText(chosen_1.getText().replace("→",""));
-
-                            chosen_2.setText("→"+chosen_2.getText());
-
-                            if(taoluMode)
-                                data.addTaoluedName(chosen_2.getText().replace("→",""),4);
-
-                            break;
-                        }
-                    }
-                    isRunning=false;
-                    choose.setText("安排一下");
-                    stop();
-                    controllerPane.setDisable(false);
-                    System.gc();
-                    addHistory(chosenName);
-                    if(voicePlay)
-                	voice.playVoice(chosenName);
-                    return;
-                }else
-                    ignoreTimesOut=true;
-
-
-
-            }
-            if(singleCycle>=times&&!ignoreTimesOut){
-                cycleEnd=true;
-                singleCycle=0;
-            }
-
-            if(cycleEnd){
-                //times=(int)(1+Math.random()*(chosenTime-already));
-        	times=1+random.nextInt(chosenTime-already+1);
-                cycleEnd=false;
-                //showWhich=(int)(1+Math.random()*2);
-                showWhich=1+random.nextInt(2);
-            }
-
-
-
-            switch (showWhich){
-                case 1:{
-                    chosenName=data.randomGet(taoluMode);
-                    chosen_1.setText(chosenName);
-                    already++;
-                    singleCycle++;
-                    break;
-                }
-
-                case 2:{
-                    chosenName=data.randomGet(taoluMode);
-                    chosen_2.setText(chosenName);
-                    already++;
-                    singleCycle++;
-                    break;
-                }
-            }
-
-
-        }
-    };
-    //---------------------------------------------------------------------------------------
-    SecureRandom secRandom =new SecureRandom();
-    AnimationTimer numbTimer =new AnimationTimer() {
-        @Override
-        public void handle(long now) {
-
-            if(forceStop){
-                already=chosenTime+1;
-                isRunning=false;
-            }
-
-            try{
-                Thread.sleep(speed);
-            }catch (Exception e){e.printStackTrace(); }
-
-            if(already>=chosenTime){
-                if(!ignoreNumberList.contains(chosenName)||!ignorePast||forceStop){
-
-                    
-                    forceStop=false;
-
-                    if(ignorePast)
-                        ignoreNumberList.add(chosenName);
-                    if(equalMode)
-                        writeIgnoreList();
-
-                    cycleEnd=true;
-                    already=0;
-                    singleCycle=0;
-                    ignoreTimesOut=false;
-                    ignoreNameTimes++;
-
-                    switch (showWhich){
-                        case 1:{
-                            if(chosen_2.getText().contains("→"))
-                                chosen_2.setText(chosen_2.getText().replace("→",""));
-
-                            chosen_1.setText("→"+chosen_1.getText());
-
-                            break;
-                        }
-                        case 2:{
-                            if(chosen_1.getText().contains("→"))
-                                chosen_1.setText(chosen_1.getText().replace("→",""));
-
-                            chosen_2.setText("→"+chosen_2.getText());
-
-                            break;
-                        }
-                    }
-                    isRunning=false;
-                    choose.setText("安排一下");
-                    stop();
-                    controllerPane.setDisable(false);
-                    System.gc();
-                    addHistory(chosenName);
-                    if(voicePlay)
-                	voice.playVoice(chosenName);
-                    return;
-                }else
-                    ignoreTimesOut=true;
-
-            }
-
-            showWhich=1+random.nextInt(2);
-            speed=(short)(65+random.nextInt(100));
-
-            switch (showWhich){
-                case 1:{
-                    if(newAlgo)
-                        chosen_1.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
-                    else
-                        chosen_1.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
-
-                    chosenName=chosen_1.getText();
-                    already++;
-                    singleCycle++;
-                    break;
-                }
-
-                case 2:{
-                    if(newAlgo)
-                        chosen_2.setText(String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1)));
-                    else
-                        chosen_2.setText(String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1)));
-
-                    chosenName=chosen_2.getText();
-                    already++;
-                    singleCycle++;
-                    break;
-                }
-            }
-
-
-        }
-    };
-
     
-
-
     public boolean isNameChoose=true;
     public short speed;
 
@@ -655,55 +451,6 @@ public class UICtrl_new {
     public static final ObservableList historyShow = FXCollections.observableArrayList();
     List history;
     public JFXListView historyList=new JFXListView();
-    void loadHistory(){
-
-        if(System.getProperty("os.name").toLowerCase().contains("window"))
-            HISTORY_FILE=app.APP_LOCA+"files\\history.data";
-        else
-            HISTORY_FILE=app.APP_LOCA+"files/history.data";
-
-            try {
-                File historyFile = new File(HISTORY_FILE);
-                if (historyFile.exists() != true) {
-                    historyFile.createNewFile();
-                    history = new ArrayList();
-                    return;
-                }
-
-                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(historyFile));
-                this.history = (ArrayList) ois.readObject();
-
-            } catch (Exception e) {
-                history = new ArrayList();
-
-                e.printStackTrace();
-            }
-
-    }
-
-    void addHistory(String name){
-        if(history.size()>2000)
-            history.clear();
-        history.add(String.valueOf(history.size()+1)+". "+name);
-        saveHistory();
-    }
-
-    void saveHistory(){
-
-        if(System.getProperty("os.name").toLowerCase().contains("window"))
-            HISTORY_FILE=app.APP_LOCA+"files\\history.data";
-        else
-            HISTORY_FILE=app.APP_LOCA+"files/history.data";
-
-        historyFile=new File(HISTORY_FILE);
-        try{
-            ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(historyFile));
-            oos.writeObject(history);
-            oos.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
 
 
     private String CONFIG_FILE;
@@ -750,6 +497,7 @@ public class UICtrl_new {
 
     @FXML
     void anPai(){
+        
         Core core =new Core();
         saveConfigToFile();
         if(core.isRunning()){

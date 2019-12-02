@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 
-public class ProgramMain extends Application {
+public final class ProgramMain extends Application {
 
     private String CONFIG_FILE ;//="config.data";
 
