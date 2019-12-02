@@ -146,16 +146,11 @@
                               <Font size="14.0" />
                            </font>
                         </JFXCheckBox>
-                        <JFXCheckBox fx:id="sysMMbtn" checkedColor="#079cd7" layoutX="180.0" layoutY="217.0" onAction="#sysMMbtnAction" selected="true" text="系统抽样" textFill="#2c2424" unCheckedColor="#13aecf">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXCheckBox>
                      </children>
                   </Pane>
                </content>
             </ScrollPane>
-            <Text fx:id="sysMethodInfo" fill="#170000fa" layoutX="200.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="650.26025390625">
+            <Text fx:id="sysMethodInfo" fill="#170000fa" layoutX="200.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="系统抽样信息：" wrappingWidth="650.26025390625">
                <font>
                   <Font size="15.0" />
                </font>
