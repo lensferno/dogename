@@ -156,6 +156,7 @@ public final class UICtrl_new {
 
         dialog.show();
     }
+    
 
     @FXML
     void clearTaoluList(){
@@ -385,6 +386,10 @@ public final class UICtrl_new {
 
     boolean voicePlay=true;
 
+    boolean sysMethod=true;
+    @FXML
+    JFXCheckBox sysMMbtn;
+
 
     @FXML
     public void voicePlayBtnAction(){
@@ -395,13 +400,13 @@ public final class UICtrl_new {
     }
     
     void unselectVoicePlayBtn(){
-	voicePlay=false;
+	    voicePlay=false;
         voicePlayBtn.setSelected(false);
     }
 
     
     void selectVoicePlayBtn(){
-	voicePlay = true;
+	    voicePlay = true;
         voicePlayBtn.setSelected(true);
     }
     
@@ -412,7 +417,36 @@ public final class UICtrl_new {
     public void setVoicePlay(boolean voicePlay) {
         this.voicePlay = voicePlay;
     }
-    
+
+    @FXML
+    public void sysMMbtnAction(){
+        if(sysMethod)
+            unselectSysMMbtn();
+        else
+            selectSysMMbtn();
+    }
+
+    void unselectSysMMbtn(){
+        sysMethod=false;
+        sysMMbtn.setSelected(false);
+    }
+
+
+    void selectSysMMbtn(){
+        sysMethod = true;
+        sysMMbtn.setSelected(true);
+    }
+
+    public boolean isSysMethod() {
+        return sysMethod;
+    }
+
+    SystemSimpleMethod systemSimpleMethod;
+    public void setSysMethod(boolean sysMethod,SystemSimpleMethod systemSimpleMethod) {
+        this.sysMethod = sysMethod;
+        this.systemSimpleMethod=systemSimpleMethod;
+    }
+
     @FXML
     public void newAlgoBtnAction(){
         if(newAlgo)
@@ -497,7 +531,18 @@ public final class UICtrl_new {
 
     @FXML
     void anPai(){
-        
+        if(sysMethod){
+
+            int systemSMCode=systemSimpleMethod.showNext(chosen_1, chosenTime);
+            switch (systemSMCode) {
+                case -1:
+                    
+                    break;
+            
+                default:
+                    break;
+            }
+        }
         Core core =new Core();
         saveConfigToFile();
         if(core.isRunning()){
@@ -505,6 +550,7 @@ public final class UICtrl_new {
             choose.setText("安排一下");
             return;
         }
+
 
 
         if(isRandomTimes) {
@@ -525,7 +571,7 @@ public final class UICtrl_new {
                 return;
             }
 
-            if(ignoreNameList.size()>=data.getSize()&&ignorePast){
+            if((ignoreNameList.size()>=data.getSize())&&ignorePast){
                 if(equalMode) {
                     showInfoDialog("啊？", "全部名字都被点完啦！\n名字列表将会重置");
                     clearIgnoreList();
@@ -1020,6 +1066,20 @@ public final class UICtrl_new {
         content.setActions(button);
 
         dialog.show();
+    }
+
+    /**
+     * @return the app
+     */
+    public App getApp() {
+        return app;
+    }
+
+    /**
+     * @param app the app to set
+     */
+    public void setApp(App app) {
+        this.app = app;
     }
 
 }
