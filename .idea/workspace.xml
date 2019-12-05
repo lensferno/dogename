@@ -8,26 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GuShiCi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GuShiCi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MoveWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MoveWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MoveWindowByTouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MoveWindowByTouch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ProgramMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/SystemSimpleMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SystemSimpleMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UICtrl_new.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl_new.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Voice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Voice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/UIFileData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/UIFileData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/backData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/backData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/dogename.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/dogename.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/img1Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/img1Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/img1Data_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/img1Data_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/img1Data_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/img1Data_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +35,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">

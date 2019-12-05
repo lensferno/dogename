@@ -53,6 +53,9 @@ public class SystemSimpleMethod implements Serializable{
         currentNameNumber = 0;
         currentGroup = 0;
     }
+    public final int LIST_EMPTY=-1;
+    public final int ALL_END=-2;
+    public final int OK=0;
 
     public int showNext(Label text,int chosenTime){
         if(sysMethodList.isEmpty()||group.isEmpty())
@@ -94,7 +97,7 @@ public class SystemSimpleMethod implements Serializable{
                         if(i>=chosenTime){
                             if(!ignoredNameNumber.contains(currentNameNumber)){
                                 ignoredNameNumber.add(currentNameNumber);
-                                text.setText(""+text.getText());
+                                text.setText("➡"+text.getText());
                                 stop();
                                 return;
                             }
@@ -106,7 +109,7 @@ public class SystemSimpleMethod implements Serializable{
 
         }else {
             ArrayList temp =group.get(currentGroup);
-            text.setText(""+temp.get(currentNameNumber));
+            text.setText("➡"+temp.get(currentNameNumber));
             return 0;
         }
     }
