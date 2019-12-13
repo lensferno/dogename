@@ -24,6 +24,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import main.say.Gushici;
 
 import java.io.*;
 import java.security.SecureRandom;
@@ -91,72 +92,9 @@ public final class UICtrl_new {
     public Label topBar;
     @FXML
     void showShiCi() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    GuShiCi gsc=new GuShiCi();
-                    String shici =gsc.get();
-                    Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            String topText=gsc.getShiciContent();
-                            showShiCi("每日古诗词",gsc);
-                            topBar.setText(topText+"——"+gsc.getAuthor()+"《"+gsc.getOrigin()+"》");
-                        }
-                    });
-                }catch(Exception e) {e.printStackTrace();}
-            }
-        }).start();
+        new Gushici().showShiCi(mainPane,topBar);
     }
 
-    public void showShiCi(String header,GuShiCi gsc) {
-        VBox vb =new VBox();
-        vb.setPrefHeight(200);
-        vb.setPrefWidth(300);
-        Text contentText =new Text("“"+gsc.getShiciContent()+"”");
-        contentText.setFont(new Font("BLOOD",30));
-        contentText.setTextAlignment(TextAlignment.CENTER);
-        Text authorText =new Text("\n\n——"+gsc.getAuthor()+"《"+gsc.getOrigin()+"》");
-        authorText.setTextAlignment(TextAlignment.RIGHT);
-        authorText.setFont(new Font(14));
-        Text categoryText =new Text("\n\n\n#"+gsc.getCategory());
-        categoryText.setFont(new Font(12));
-        categoryText.setTextAlignment(TextAlignment.RIGHT);
-        vb.getChildren().addAll(contentText,authorText,categoryText);
-        vb.setAlignment(Pos.CENTER);
-
-        JFXDialogLayout content = new JFXDialogLayout();
-        content.setHeading(new Text(header));
-        Text text =new Text("");
-        text.setFont(new Font(14));
-        text.setTextAlignment(TextAlignment.CENTER);
-        content.setBody(vb);
-        StackPane tempPane=new StackPane();
-        tempPane.setPrefHeight(mainPane.getPrefHeight());
-        tempPane.setPrefWidth(mainPane.getPrefWidth());
-        mainPane.getChildren().add(tempPane);
-        JFXDialog dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
-        dialog.setPrefHeight(mainPane.getPrefHeight());
-        dialog.setPrefWidth(mainPane.getPrefWidth());
-        JFXButton button = new JFXButton("已阅");
-        dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
-            @Override
-            public void handle(JFXDialogEvent event) {
-                mainPane.getChildren().remove(tempPane);
-            }
-        });
-        button.setPrefWidth(50);
-        button.setPrefHeight(30);
-        button.setOnAction((ActionEvent e) -> {
-            dialog.close();
-
-        });
-        content.setActions(button);
-
-        dialog.show();
-    }
-    
 
     @FXML
     void clearTaoluList(){
@@ -491,6 +429,8 @@ public final class UICtrl_new {
     private File configFile;
 
 
+
+
     public int saveConfigToFile(){
 
         config.setChosenTime(chosenTime);
@@ -526,11 +466,41 @@ public final class UICtrl_new {
 
     }
 
+    Core core =new Core();
+
+    void loadHistory(){
+
+        if(System.getProperty("os.name").toLowerCase().contains("window"))
+            HISTORY_FILE=app.APP_LOCA+"files\\history.data";
+        else
+            HISTORY_FILE=app.APP_LOCA+"files/history.data";
+
+        try {
+            File historyFile = new File(HISTORY_FILE);
+            if (historyFile.exists() != true) {
+                historyFile.createNewFile();
+                history = new ArrayList();
+                return;
+            }
+
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(historyFile));
+            this.history = (ArrayList) ois.readObject();
+
+        } catch (Exception e) {
+            history = new ArrayList();
+
+            e.printStackTrace();
+        }
+        core.set( chosen_2, chosen_1, controllerPane, choose,history,voice,app);
+        core.loadHistory();
+
+    }
+
 
     boolean isRunning=false;
 
     @FXML
-    void anPai(){
+    void anPai(){/*
         if(sysMethod){
 
             int systemSMCode=systemSimpleMethod.showNext(chosen_1, chosenTime);
@@ -542,8 +512,7 @@ public final class UICtrl_new {
                 default:
                     break;
             }
-        }
-        Core core =new Core();
+        }*/
         saveConfigToFile();
         if(core.isRunning()){
             core.setForceStop(true);
@@ -587,6 +556,8 @@ public final class UICtrl_new {
             showWhich=1+random.nextInt(2);
             //    timer.start();
             core.set( chosen_2, chosen_1, controllerPane, choose,history,voice,app);
+            core.setIgnoreNameList(ignoreNameList);
+            core.setIgnoreNumberList(ignoreNumberList);
             core.run( speed, data, chosenTime, ignorePast, equalMode, taoluMode,voicePlay);
 
         }else {
@@ -620,6 +591,8 @@ public final class UICtrl_new {
             choose.setText("不玩了！");
             showWhich=1+random.nextInt(2);
             core.set( chosen_2, chosen_1, controllerPane, choose,history,voice,app);
+            core.setIgnoreNameList(ignoreNameList);
+            core.setIgnoreNumberList(ignoreNumberList);
             core.run( maxNumber,minNumber,speed , chosenTime, ignorePast, equalMode, taoluMode,voicePlay);
 
         }

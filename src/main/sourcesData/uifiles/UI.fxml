@@ -31,7 +31,7 @@
                   <Font name="Microsoft YaHei" size="86.0" />
                </font>
             </Label>
-            <Label fx:id="topBar" alignment="CENTER" prefHeight="18.0" prefWidth="1007.0" text="富强 民主 文明 和谐      自由 平等 公正 法治      爱国 敬业 诚信 友善" textAlignment="CENTER">
+            <Label fx:id="topBar" alignment="CENTER" prefHeight="18.0" prefWidth="1007.0" text="富强 民主 文明 和谐      自由 平等 公正 法治      爱国 敬业 诚信 友善" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="14.0" />
                </font>
