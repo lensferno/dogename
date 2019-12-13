@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="dogename.jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/dogename_jar</output-path>
-    <root id="archive" name="dogename.jar.jar">
+  <artifact type="jar" name="dogename">
+    <output-path>$PROJECT_DIR$/out/artifacts/dogename</output-path>
+    <root id="archive" name="dogename.jar">
       <element id="library" level="project" name="commons-codec-1" />
       <element id="library" level="project" name="gson-2.8" />
       <element id="library" level="project" name="jfoenix-8.0" />

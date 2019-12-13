@@ -78,6 +78,14 @@ public class Core {
     private String HISTORY_FILE;
     private File historyFile;
 
+    public void setIgnoreNameList(HashSet<String> ignoreNameList) {
+        this.ignoreNameList = ignoreNameList;
+    }
+
+    public void setIgnoreNumberList(HashSet<String> ignoreNumberList) {
+        this.ignoreNumberList = ignoreNumberList;
+    }
+
     Voice voice;
     void loadHistory(){
 

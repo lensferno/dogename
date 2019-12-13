@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="dogename.jar" />
+      <artifact name="dogename" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/say/Gushici.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/say/Hitokoto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/dogename_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/dogename.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Core.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UICtrl_new.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl_new.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
