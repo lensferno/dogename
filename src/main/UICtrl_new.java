@@ -3,7 +3,6 @@ package main;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.events.JFXDialogEvent;
 import javafx.animation.*;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,16 +17,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import main.say.Gushici;
+import main.everydaySaying.Gushici;
+import main.everydaySaying.Hitokoto;
 
 import java.io.*;
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -92,7 +89,8 @@ public final class UICtrl_new {
     public Label topBar;
     @FXML
     void showShiCi() {
-        new Gushici().showShiCi(mainPane,topBar);
+        new Hitokoto().showSaying(mainPane,topBar);
+        //new Gushici().showShiCi(mainPane,topBar);
     }
 
 

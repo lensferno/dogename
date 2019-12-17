@@ -1,4 +1,4 @@
-package main.say;
+package main.everydaySaying;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
