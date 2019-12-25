@@ -9,7 +9,7 @@
             "name": "Debug (Launch)-ProgramMain<DM_msater>",
             "request": "launch",
             "mainClass": "main.ProgramMain",
-            "projectName": "DM_msater"
+            "projectName": "Dogename"
         }
     ]
 }

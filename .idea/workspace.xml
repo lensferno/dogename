@@ -7,12 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/NameManager/NameManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/NewData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/UICtrl_new.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl_new.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/say/Gushici.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/everydaySaying/Gushici.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/say/Hitokoto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/everydaySaying/Hitokoto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/everydaySaying/Hitokoto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/everydaySaying/Hitokoto.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
