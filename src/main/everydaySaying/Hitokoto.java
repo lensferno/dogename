@@ -107,8 +107,10 @@ public class Hitokoto {
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
-                            String topText=hit.getHitokoto();
-                            topBar.setText(topText+"——"+hit.getFrom());
+                            if(topBar.getScene().getWindow().isFocused()){
+                                String topText=hit.getHitokoto();
+                                topBar.setText(topText+"——"+hit.getFrom());
+                            }
                         }
                     });
 
