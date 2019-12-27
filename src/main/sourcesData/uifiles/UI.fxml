@@ -44,7 +44,7 @@
                   <Font name="Microsoft YaHei" size="26.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="goBackButton" buttonType="RAISED" layoutX="175.0" layoutY="558.0" onAction="#goBack" prefHeight="53.0" prefWidth="166.0" text="小窗模式">
+            <JFXButton fx:id="goBackButton" buttonType="RAISED" layoutX="175.0" layoutY="558.0" onAction="#test" prefHeight="53.0" prefWidth="166.0" text="小窗模式">
                <font>
                   <Font name="Microsoft YaHei" size="26.0" />
                </font>

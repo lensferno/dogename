@@ -21,6 +21,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import main.DialogBuilder.DialogBuilder;
 import main.everydaySaying.Gushici;
 import main.everydaySaying.Hitokoto;
 
@@ -794,6 +795,17 @@ public final class UICtrl_new {
         timeline.play();
     }
 
+    @FXML
+    void test(){/*
+        new DialogBuilder(showNameMangerButton).setTitle("提示").setMessage("输入").setTextFieldText(new DialogBuilder.OnInputListener() {
+            @Override
+            public void onGetText(String result) {
+                //返回一个输入结果result
+                //相关的逻辑操作
+            }
+        }).setPositiveBtn("确定").setNegativeBtn("取消").create();*/
+        goBack();
+    }
 
     @FXML
     void goBack() {
