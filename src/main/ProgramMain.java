@@ -167,6 +167,13 @@ public final class ProgramMain extends Application {
 
             controller.loadHistory();
 
+            stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                @Override
+                public void handle(WindowEvent event) {
+
+                }
+            });
+
             stage.setResizable(true);
             
             controller.showShiCi();
