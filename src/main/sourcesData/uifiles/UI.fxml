@@ -12,7 +12,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="rootPane" prefWidth="2014.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.UICtrl_new">
+<Pane fx:id="rootPane" prefHeight="711.0" prefWidth="1466.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.UICtrl_new">
    <children>
       <JFXButton fx:id="recover" onAction="#recoverWindow" prefHeight="60.0" prefWidth="60.0" text="■ ■ ■" visible="false">
          <font>
@@ -163,61 +163,52 @@
             <Label layoutX="87.0" layoutY="180.0" prefHeight="85.0" prefWidth="225.0" />
          </children>
       </Pane>
-      <Pane fx:id="namePane" layoutX="1007.0" prefHeight="710.0" prefWidth="1007.0">
+      <Pane fx:id="namePane" layoutX="1007.0" layoutY="112.0" prefHeight="488.0" prefWidth="298.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff" height="710.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="1007.0">
-               <effect>
-                  <DropShadow />
-               </effect>
-            </Rectangle>
-            <JFXTextArea fx:id="inputName" focusColor="#0086ff" labelFloat="true" layoutX="366.0" layoutY="282.0" prefHeight="146.0" prefWidth="460.0" promptText="请输入要添加的名字，如需批量添加请一行一个名字。">
+            <JFXTextArea fx:id="inputName" focusColor="#0086ff" labelFloat="true" layoutY="250.0" prefHeight="149.0" prefWidth="284.0" promptText="请输入要添加的名字，如需批量添加请一行一个名字。">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextArea>
-            <JFXButton fx:id="addName" layoutX="366.0" layoutY="440.0" onAction="#addName" prefHeight="36.0" prefWidth="153.0" ripplerFill="#00eeff" text="添加">
+            <JFXButton fx:id="addName" layoutY="399.0" onAction="#addName" prefHeight="36.0" prefWidth="94.0" ripplerFill="#00eeff" text="添加">
                <font>
                   <Font size="17.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="deleteName" layoutX="520.0" layoutY="440.0" onAction="#deleteName" prefHeight="36.0" prefWidth="153.0" ripplerFill="RED" text="删除" textFill="RED">
+            <JFXButton fx:id="deleteName" layoutX="95.0" layoutY="399.0" onAction="#deleteName" prefHeight="36.0" prefWidth="94.0" ripplerFill="RED" text="删除" textFill="RED">
                <font>
                   <Font size="17.0" />
                </font>
             </JFXButton>
-            <JFXListView fx:id="nameList" editable="true" layoutX="128.0" layoutY="118.0" prefHeight="553.0" prefWidth="198.0" styleClass="nameList" />
-            <JFXButton fx:id="deleteAll" layoutX="673.0" layoutY="440.0" onAction="#deleteAllName" prefHeight="36.0" prefWidth="153.0" ripplerFill="RED" text="删除所有" textFill="RED">
+            <JFXListView fx:id="nameList" editable="true" layoutY="21.0" prefHeight="200.0" prefWidth="284.0" styleClass="nameList" />
+            <JFXButton fx:id="deleteAll" layoutX="190.0" layoutY="399.0" onAction="#deleteAllName" prefHeight="36.0" prefWidth="94.0" ripplerFill="RED" text="删除所有" textFill="RED">
                <font>
                   <Font size="17.0" />
                </font>
             </JFXButton>
-            <Rectangle arcHeight="4.0" arcWidth="4.0" fill="#0ab6ff" height="43.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="1007.0">
-               <effect>
-                  <DropShadow height="35.71" radius="8.4275" spread="0.05" width="0.0">
-                     <input>
-                        <Shadow blurType="ONE_PASS_BOX" color="#0ab6ff" height="2.97" radius="0.24250000000000005" width="0.0" />
-                     </input>
-                  </DropShadow>
-               </effect>
-            </Rectangle>
             <ImageView fx:id="backBtn" fitHeight="28.0" fitWidth="57.0" layoutX="14.0" layoutY="8.0" onDragDone="#turnBack" onMouseReleased="#turnBack" onTouchReleased="#turnBack" pickOnBounds="true" preserveRatio="true">
 
             </ImageView>
-            <JFXButton layoutX="366.0" layoutY="476.0" onAction="#exoprtNameList" prefHeight="28.0" prefWidth="153.0" text="导出">
+            <JFXButton layoutY="435.0" onAction="#exoprtNameList" prefHeight="28.0" prefWidth="94.0" text="导出">
                <font>
                   <Font size="17.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="520.0" layoutY="476.0" onAction="#importNameList" prefHeight="28.0" prefWidth="153.0" text="导入">
+            <JFXButton layoutX="95.0" layoutY="435.0" onAction="#importNameList" prefHeight="28.0" prefWidth="94.0" text="导入">
                <font>
                   <Font size="17.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="673.0" layoutY="476.0" onAction="#makeAMass" prefHeight="28.0" prefWidth="153.0" text="打乱顺序">
+            <JFXButton layoutX="190.0" layoutY="435.0" onAction="#makeAMass" prefHeight="28.0" prefWidth="94.0" text="打乱顺序">
                <font>
                   <Font size="17.0" />
                </font>
             </JFXButton>
+            <Text layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="名字列表" wrappingWidth="284.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
    </children>
