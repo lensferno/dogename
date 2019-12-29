@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -987,7 +988,9 @@ public final class UICtrl_new {
 
     public void showInfoDialog(String header,String message) {
         JFXDialogLayout content = new JFXDialogLayout();
-        content.setHeading(new Text(header));
+        Text title=new Text(header);
+        title.setFont(new Font(17));
+        content.setHeading(title);
         content.setBody(new Text(message));
         StackPane tempPane=new StackPane();
         tempPane.setPrefHeight(mainPane.getPrefHeight());

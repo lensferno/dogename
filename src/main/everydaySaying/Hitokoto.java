@@ -17,6 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.WindowEvent;
 import main.Common;
 import main.GuShiCi;
 
@@ -44,7 +45,8 @@ public class Hitokoto {
                 }catch(Exception e) {e.printStackTrace();}
             }
         }).start();
-        startTime(mainPane, topBar);
+        startTimer(mainPane, topBar);
+
     }
 
     private void showSaying(Pane mainPane,String header, HitokotoData hit) {
@@ -95,7 +97,7 @@ public class Hitokoto {
         dialog.show();
     }
 
-    void startTime(Pane mainPane, Label topBar){
+    void startTimer(Pane mainPane, Label topBar){
         Timer timer =new Timer();
 
         TimerTask task =new TimerTask() {
@@ -119,6 +121,13 @@ public class Hitokoto {
         };
 
         timer.schedule(task,30000,60000);
+
+        mainPane.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                timer.cancel();
+            }
+        });
 
     }
 
