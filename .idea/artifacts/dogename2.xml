@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="dogename2">
+    <output-path>$USER_HOME$/dogename/dogename</output-path>
+    <root id="archive" name="dogename.jar">
+      <element id="library" level="project" name="commons-codec-1" />
+      <element id="library" level="project" name="gson-2.8" />
+      <element id="library" level="project" name="jfoenix-8.0" />
+      <element id="module-output" name="dogename" />
+    </root>
+  </artifact>
+</component>

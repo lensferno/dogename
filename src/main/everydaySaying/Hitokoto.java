@@ -104,19 +104,22 @@ public class Hitokoto {
             @Override
             public void run() {
                 try {
-                    HitokotoData hit=new Gson().fromJson(Common.getHtml(sayingAPI,true),HitokotoData.class);
+                    if(topBar.getScene().getWindow().isFocused()){
+                        HitokotoData hit=new Gson().fromJson(Common.getHtml(sayingAPI,true),HitokotoData.class);
 
-                    Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            if(topBar.getScene().getWindow().isFocused()){
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+
                                 String topText=hit.getHitokoto();
                                 topBar.setText(topText+"——"+hit.getFrom());
+
                             }
-                        }
-                    });
+                        });
+                    }
 
                 }catch(Exception e) {e.printStackTrace();}
+
             }
         };
 
