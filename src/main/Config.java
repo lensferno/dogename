@@ -1,67 +1,69 @@
 package main;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+
 import java.io.Serializable;
 
 public class Config implements Serializable {
 
-    private boolean isRandomTimes=true;
+    private BooleanProperty isRandomTimes=new SimpleBooleanProperty(true);
 
-    private boolean isNameChoose=true;
+    private BooleanProperty isNameChoose=new SimpleBooleanProperty(true);
 
-    private boolean ignorePast=true;
+    private BooleanProperty ignorePast=new SimpleBooleanProperty(true);
     private int chosenTime=120;
     private short speed=20;
 
     private short minNumber;
     private short maxNumber;
 
-    private boolean taoluMode=false;
+    private BooleanProperty taoluMode=new SimpleBooleanProperty(false);
 
-    private boolean equalMode=true;
+    private BooleanProperty equalMode=new SimpleBooleanProperty(true);
 
-    private boolean newAlgo=true;
+    private BooleanProperty newAlgo=new SimpleBooleanProperty(true);
     
-    private boolean voicePlay=true;
-    
+    private BooleanProperty voicePlay=new SimpleBooleanProperty(true);
 
-
-    public boolean isVoicePlay() {
+    public BooleanProperty isVoicePlay() {
         return voicePlay;
     }
-
-    public void setVoicePlay(boolean voicePlay) {
+    public void setVoicePlay(BooleanProperty voicePlay) {
         this.voicePlay = voicePlay;
     }
     
-    public boolean isNewAlgo() {
+    public BooleanProperty isNewAlgo() {
         return newAlgo;
     }
 
-    public void setNewAlgo(boolean newAlgo) {
+    public void setNewAlgo(BooleanProperty newAlgo) {
         this.newAlgo = newAlgo;
     }
 
-    public boolean isEqualMode() {
+    public BooleanProperty isEqualMode() {
         return equalMode;
     }
 
-    public void setEqualMode(boolean equalMode) {
+    public void setEqualMode(BooleanProperty equalMode) {
         this.equalMode = equalMode;
     }
 
-    public boolean isIgnorePast() {
+    public BooleanProperty isIgnorePast() {
         return ignorePast;
     }
 
-    public boolean isTaoluMode(){
+    public BooleanProperty isTaoluMode(){
         return taoluMode;
     }
 
-    public boolean isRandomTimes() {
+    public BooleanProperty isRandomTimes() {
         return isRandomTimes;
     }
 
-    public boolean isNameChoose() {
+    public BooleanProperty isNameChoose() {
         return isNameChoose;
     }
 
@@ -81,7 +83,7 @@ public class Config implements Serializable {
         return speed;
     }
 
-    public void setNameChoose(boolean nameChoose) {
+    public void setNameChoose(BooleanProperty nameChoose) {
         isNameChoose = nameChoose;
     }
 
@@ -89,11 +91,11 @@ public class Config implements Serializable {
         this.chosenTime = chosenTime;
     }
 
-    public void setIgnorePast(boolean ignorePast) {
+    public void setIgnorePast(BooleanProperty ignorePast) {
         this.ignorePast = ignorePast;
     }
 
-    public void setRandomTimes(boolean randomTimes) {
+    public void setRandomTimes(BooleanProperty randomTimes) {
         isRandomTimes = randomTimes;
     }
 
@@ -109,7 +111,7 @@ public class Config implements Serializable {
         this.speed = speed;
     }
 
-    public void setTaoluMode(boolean taoluMode){
+    public void setTaoluMode(BooleanProperty taoluMode){
         this.taoluMode=taoluMode;
     }
 

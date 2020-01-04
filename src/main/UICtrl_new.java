@@ -760,6 +760,35 @@ public final class UICtrl_new {
         names.addAll(data.getAll());
         nameList.setItems(names);
 
+        JFXDialogLayout content = new JFXDialogLayout();
+        content.setHeading(new Text("名单管理"));
+
+        content.setBody(namePane);
+        namePane.getChildren().remove(goBackButton);
+
+        StackPane tempPane=new StackPane();
+        tempPane.setPrefHeight(mainPane.getPrefHeight());
+        tempPane.setPrefWidth(mainPane.getPrefWidth());
+        mainPane.getChildren().add(tempPane);
+        JFXDialog dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
+        dialog.setPrefHeight(mainPane.getPrefHeight());
+        dialog.setPrefWidth(mainPane.getPrefWidth());
+        JFXButton button = new JFXButton("OK");
+        dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
+            @Override
+            public void handle(JFXDialogEvent event) {
+                mainPane.getChildren().remove(tempPane);
+            }
+        });
+        button.setPrefWidth(60);
+        button.setPrefHeight(30);
+        button.setOnAction((ActionEvent e) -> {
+            dialog.close();
+        });
+        content.setActions(button);
+
+        dialog.show();
+/*
         final Timeline timeline = new Timeline();
         timeline.setCycleCount(1);
         timeline.setAutoReverse(true);
@@ -773,7 +802,8 @@ public final class UICtrl_new {
         timeline.getKeyFrames().add(kf);
         timeline.getKeyFrames().add(kf2);
 
-        timeline.play();
+        timeline.play();*/
+
 
     }
 
@@ -988,10 +1018,11 @@ public final class UICtrl_new {
 
     public void showInfoDialog(String header,String message) {
         JFXDialogLayout content = new JFXDialogLayout();
-        Text title=new Text(header);
-        title.setFont(new Font(17));
-        content.setHeading(title);
-        content.setBody(new Text(message));
+        content.setHeading(new Text(header));
+
+        Text messageText=new Text(message);
+        messageText.setFont(new Font(18));
+        content.setBody(messageText);
         StackPane tempPane=new StackPane();
         tempPane.setPrefHeight(mainPane.getPrefHeight());
         tempPane.setPrefWidth(mainPane.getPrefWidth());
