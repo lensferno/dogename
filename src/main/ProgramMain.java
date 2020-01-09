@@ -3,6 +3,7 @@ package main;
 
 
 import java.io.*;
+import java.nio.file.Files;
 import java.security.SecureRandom;
 
 import javafx.application.Application;
@@ -228,6 +229,8 @@ public final class ProgramMain extends Application {
                 }else {
                     if(finishStatus==update.getUpdateURL().length){
                         try {
+                            System.out.println("[INFO]Backuping jar file");
+                            copyFileUsingJava7Files(new File(app.JAR_FILE),new File(app.APP_LOCA+"backup.jar"));
                             System.out.println("[INFO]Unzip update package");
                             System.out.println("[INFO]Doing :"+unzipCmd);
                             Process unzipProcess = Runtime.getRuntime().exec(unzipCmd);
@@ -245,6 +248,11 @@ public final class ProgramMain extends Application {
 
     }
 
-}
+    private static void copyFileUsingJava7Files(File source, File dest)
+            throws IOException {
+        Files.copy(source.toPath(), dest.toPath());
+    }
+
+    }
 
 
