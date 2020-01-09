@@ -6,8 +6,7 @@ import com.google.gson.Gson;
 
 public class Update {
 
-    final String UPDATE_URL="https://github.com/eatenid/dogename/raw/master/updateFiles/update.json";
-    final int nowVer=23;
+    final String UPDATE_URL="https://gitee.com/hety2002/dogename/raw/master/updateFiles/update.json";
     UpdateInfo updateInfo;
     
     public boolean checkUpdate() {
