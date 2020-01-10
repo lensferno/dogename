@@ -17,4 +17,14 @@ intrin.h
 -
 c++/4.8.3/fstream
 -
+combaseapi.h
+-
+shobjidl.h
+-
+shlguid.h
+-
+shlobj.h
+-
+rpcdce.h
+-
 

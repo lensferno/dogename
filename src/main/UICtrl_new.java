@@ -91,8 +91,12 @@ public final class UICtrl_new {
     public Label topBar;
     @FXML
     void showShiCi() {
-        new Hitokoto().showSaying(mainPane,topBar);
-        //new Gushici().showShiCi(mainPane,topBar);
+        if(random.nextBoolean())
+            new Hitokoto().showSaying(mainPane,topBar);
+        else
+            new Gushici().showShiCi(mainPane,topBar);
+
+
     }
 
 
