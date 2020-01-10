@@ -3,42 +3,11 @@
 #include <string>
 #include <intrin.h>
 #include <c++/4.8.3/fstream>
-
-inline int CopyFile(char *SourceFile, char *NewFile)
-{
-    std::ifstream in;
-    std::ofstream out;
-
-    try
-    {
-        in.open(SourceFile, std::ios::binary);//打开源文件
-        if (in.fail())//打开源文件失败
-        {
-            std::cout << "备份文件失败" << std::endl;
-            in.close();
-            out.close();
-            return 0;
-        }
-        out.open(NewFile, std::ios::binary);//创建目标文件
-        if (out.fail())//创建文件失败
-        {
-            std::cout << "备份文件失败" << std::endl;
-            out.close();
-            in.close();
-            return 0;
-        }
-        else//复制文件
-        {
-            out << in.rdbuf();
-            out.close();
-            in.close();
-            return 1;
-        }
-    }
-    catch (std::exception e)
-    {
-    }
-}
+#include <combaseapi.h>
+#include <shobjidl.h>
+#include <shlguid.h>
+#include <shlobj.h>
+#include <rpcdce.h>
 
 int main(int argc, char* argv[]) {
 
@@ -48,9 +17,9 @@ int main(int argc, char* argv[]) {
     }
     const char* javaPid=argv[1];
     const char* compressCmd=argv[2];
-    const char* jarPath=argv[3];
-    const char* backupPath=argv[4];
-    CopyFile(jarPath,backupPath);
+    const char* recoverBatDir=argv[3];
+
+
 
     const char* killCmd="taskkill ";
     char commandTemp[20];
@@ -63,9 +32,52 @@ int main(int argc, char* argv[]) {
 
 
     std::cout << "-------------释放升级文件----------"<<std::endl;
+    std::cout << "Do:"<<compressCmd<<std::endl;
     system(compressCmd);
 
-    std::cout << "----------------------\n\n\n\n结束\n如果不能正常启动，请将文件"<<backupPath<<"重命名为\"dogename.jar\"";
+    //---------创图标------------
+    HRESULT hr = CoInitialize( NULL );
+    if ( SUCCEEDED( hr ) )
+    {
+        IShellLink *pisl;
+        hr = CoCreateInstance( CLSID_ShellLink, NULL,
+                               CLSCTX_INPROC_SERVER, IID_IShellLink, (void * *) &pisl );
+        if ( SUCCEEDED( hr ) )
+        {
+            IPersistFile* pIPF;
+
+            pisl->SetPath( recoverBatDir);
+            hr = pisl->QueryInterface( IID_IPersistFile, (void * *) &pIPF );
+            if ( SUCCEEDED( hr ) )
+            {LPITEMIDLIST pidl;
+                LPMALLOC pShellMalloc;
+                char szDir[200];
+                if (SUCCEEDED(SHGetMalloc(&pShellMalloc)))
+                {
+                    if (SUCCEEDED(SHGetSpecialFolderLocation(NULL, CSIDL_DESKTOP, &pidl))) {
+                        // 如果成功返回true
+                        SHGetPathFromIDListA(pidl, szDir);
+                        pShellMalloc->Free(pidl);
+                    }
+                    pShellMalloc->Release();
+                }
+
+                const char* desktopDir=szDir;
+                std::string lnkName="回滚dogename的版本.lnk";
+                std::string n_str;
+                n_str=desktopDir;
+                n_str+=lnkName;
+                std::cout<<"desktop loca:"<<n_str<<std::endl;
+                pIPF->Save(reinterpret_cast<LPCOLESTR>(n_str.data()), FALSE );
+                pIPF->Release();
+            }
+            pisl->Release();
+        }
+        CoUninitialize();
+    }
+
+
+    std::cout << "----------------------\n\n\n\n结束\n如果不能正常启动，请运行桌面上的“回滚dogename的版本”";
     system("pause");
     return 0;
 }

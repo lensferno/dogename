@@ -8,9 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Common.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ProgramMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/UICtrl_new.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl_new.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Update.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/updater/cmake-build-debug/CMakeFiles/updater.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/updater/cmake-build-debug/CMakeFiles/updater.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/updater/cmake-build-debug/CMakeFiles/updater.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/updater/cmake-build-debug/CMakeFiles/updater.dir/main.cpp.obj" afterDir="false" />
