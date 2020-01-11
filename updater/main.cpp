@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
 
 
 
-    const char* killCmd="taskkill ";
+    const char* killCmd="taskkill /PID ";
     char commandTemp[20];
     strcpy(commandTemp,killCmd);
     strcat(commandTemp,javaPid);
@@ -63,7 +63,9 @@ int main(int argc, char* argv[]) {
                 }
 
                 const char* desktopDir=szDir;
-                std::string lnkName="回滚dogename的版本.lnk";
+                //std::string lnkName="\\回滚dogename的版本.lnk";
+                std::string lnkName="\\87ppo.lnk";
+
                 std::string n_str;
                 n_str=desktopDir;
                 n_str+=lnkName;
