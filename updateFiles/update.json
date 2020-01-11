@@ -1,15 +1,16 @@
 {
-    "ver": 23,
-    "desc": "没有要说的～",
+    "ver": 24,
+    "desc": "测试升级功能",
     "resources": [
         {
-            "type": "github",
+            "type": "gitee",
             "updateURL": [
-                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/Dogename.7z.001",
-                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/Dogename.7z.002",
-                "https://gitee.com/hety2002/dogename//raw/master/updateFiles/Dogename.7z.003",
-                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/Dogename.7z.004",
-                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/Dogename.7z.005"
+                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/dogename.zip.001",
+                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/dogename.zip.002",
+                "https://gitee.com/hety2002/dogename//raw/master/updateFiles/dogename.zip.003",
+                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/dogename.zip.004",
+                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/dogename.zip.005"
+                "https://gitee.com/hety2002/dogename/raw/master/updateFiles/dogename.zip.006"
                 ]
         }
     ]

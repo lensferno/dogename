@@ -1,6 +1,6 @@
-The system is: Windows - 10.0.18363 - AMD64
+The system is: Windows - 6.1.7601 - AMD64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: D:/gcc/bin/gcc.exe 
+Compiler: F:/gcc/gcc/bin/gcc.exe 
 Build flags: 
 Id flags:  
 
@@ -10,197 +10,195 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
 
-The C compiler identification is GNU, found in "D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe"
+The C compiler identification is GNU, found in "G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: D:/gcc/bin/g++.exe 
+Compiler: F:/gcc/gcc/bin/g++.exe 
 Build flags: 
-Id flags:  
+Id flags: -c 
 
 The output was:
 0
 
 
-Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
 
-The CXX compiler identification is GNU, found in "D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe"
+The CXX compiler identification is GNU, found in "G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.o"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):D:/gcc/bin/mingw32-make.exe cmTC_81d67/fast && D:/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_81d67.dir\build.make CMakeFiles/cmTC_81d67.dir/build
-mingw32-make.exe[1]: Entering directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_81d67.dir/testCCompiler.c.obj
-D:\gcc\bin\gcc.exe    -o CMakeFiles\cmTC_81d67.dir\testCCompiler.c.obj   -c D:\pro\dogename\updater\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
-Linking C executable cmTC_81d67.exe
-D:\cloin\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_81d67.dir\link.txt --verbose=1
-D:\cloin\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_81d67.dir/objects.a
-D:\gcc\bin\ar.exe cr CMakeFiles\cmTC_81d67.dir/objects.a @CMakeFiles\cmTC_81d67.dir\objects1.rsp
-D:\gcc\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_81d67.dir/objects.a -Wl,--no-whole-archive  -o cmTC_81d67.exe -Wl,--out-implib,libcmTC_81d67.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_81d67.dir\linklibs.rsp
-mingw32-make.exe[1]: Leaving directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command(s):F:/gcc/gcc/bin/mingw32-make.exe cmTC_a963d/fast && F:/gcc/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_a963d.dir\build.make CMakeFiles/cmTC_a963d.dir/build
+mingw32-make.exe[1]: Entering directory 'G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a963d.dir/testCCompiler.c.obj
+F:\gcc\gcc\bin\gcc.exe    -o CMakeFiles\cmTC_a963d.dir\testCCompiler.c.obj   -c G:\Projects\dogename\updater\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_a963d.exe
+F:\CLion-2019.3.2.win\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_a963d.dir\link.txt --verbose=1
+F:\CLion-2019.3.2.win\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_a963d.dir/objects.a
+F:\gcc\gcc\bin\ar.exe cr CMakeFiles\cmTC_a963d.dir/objects.a @CMakeFiles\cmTC_a963d.dir\objects1.rsp
+F:\gcc\gcc\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_a963d.dir/objects.a -Wl,--no-whole-archive  -o cmTC_a963d.exe -Wl,--out-implib,libcmTC_a963d.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_a963d.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):D:/gcc/bin/mingw32-make.exe cmTC_2ad08/fast && D:/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_2ad08.dir\build.make CMakeFiles/cmTC_2ad08.dir/build
-mingw32-make.exe[1]: Entering directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2ad08.dir/CMakeCCompilerABI.c.obj
-D:\gcc\bin\gcc.exe   -v -o CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj   -c D:\cloin\bin\cmake\win\share\cmake-3.15\Modules\CMakeCCompilerABI.c
-Reading specs from d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs
-COLLECT_GCC=D:\gcc\bin\gcc.exe
+Run Build Command(s):F:/gcc/gcc/bin/mingw32-make.exe cmTC_40c3f/fast && F:/gcc/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_40c3f.dir\build.make CMakeFiles/cmTC_40c3f.dir/build
+mingw32-make.exe[1]: Entering directory 'G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_40c3f.dir/CMakeCCompilerABI.c.obj
+F:\gcc\gcc\bin\gcc.exe   -v -o CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj   -c F:\CLion-2019.3.2.win\bin\cmake\win\share\cmake-3.15\Modules\CMakeCCompilerABI.c
+Reading specs from f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs
+COLLECT_GCC=F:\gcc\gcc\bin\gcc.exe
 Target: i686-w64-mingw32
 Configured with: ../gcc-4.8.3/configure --prefix=/opt/windows_32 --with-sysroot=/opt/windows_32 --libdir=/opt/windows_32/lib --mandir=/opt/windows_32/man --infodir=/opt/windows_32/info --enable-shared --disable-bootstrap --disable-multilib --with-arch=pentium3 --enable-threads=posix --enable-languages=c,c++ --enable-checking=release --enable-libgomp --with-system-zlib --with-python-dir=/lib/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --with-gnu-ld --verbose --enable-java-home --with-java-home=/opt/windows_32/lib/jvm/jre --with-jvm-root-dir=/opt/windows_32/lib/jvm --with-jvm-jar-dir=/opt/windows_32/lib/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar='/home/adrien/projects/win-builds-1.5/slackware64-current/d/gcc/antlr-*.jar' --disable-java-awt --disable-gtktest --build=x86_64-slackware-linux --host=i686-w64-mingw32 --target=i686-w64-mingw32
 Thread model: posix
 gcc version 4.8.3 (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3'
- d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/cc1.exe -quiet -v -iprefix d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/ -D_REENTRANT -ID:/gcc/include D:\cloin\bin\cmake\win\share\cmake-3.15\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=pentium3 -auxbase-strip CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\HITEVI~1\AppData\Local\Temp\ccJlJEVh.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3'
+ f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/cc1.exe -quiet -v -iprefix f:\gcc\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/ -D_REENTRANT -ID:/gcc/include F:\CLion-2019.3.2.win\bin\cmake\win\share\cmake-3.15\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=pentium3 -auxbase-strip CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\hety\AppData\Local\Temp\ccVz0zGj.s
 GNU C (GCC) version 4.8.3 (i686-w64-mingw32)
 	compiled by GNU C version 4.8.3, GMP version 5.1.3, MPFR version 3.1.2, MPC version 0.8.2
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include"
+ignoring duplicate directory "f:/gcc/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include"
 ignoring nonexistent directory "/opt/windows_32/opt/windows_32/lib/gcc/i686-w64-mingw32/4.8.3/../../../../include"
-ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"
-ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"
+ignoring duplicate directory "f:/gcc/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"
+ignoring duplicate directory "f:/gcc/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"
 ignoring nonexistent directory "/opt/windows_32/mingw/include"
+ignoring nonexistent directory "D:/gcc/include"
 #include "..." search starts here:
 #include <...> search starts here:
- D:/gcc/include
- d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include
- d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed
- d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include
+ f:\gcc\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include
+ f:\gcc\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed
+ f:\gcc\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include
 End of search list.
 GNU C (GCC) version 4.8.3 (i686-w64-mingw32)
 	compiled by GNU C version 4.8.3, GMP version 5.1.3, MPFR version 3.1.2, MPC version 0.8.2
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 831b46130873fca7a136b6856a9202af
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3'
- d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj C:\Users\HITEVI~1\AppData\Local\Temp\ccJlJEVh.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3'
+ f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj C:\Users\hety\AppData\Local\Temp\ccVz0zGj.s
 GNU assembler version 2.24 (i686-w64-mingw32) using BFD version (GNU Binutils) 2.24
-COMPILER_PATH=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/;d:/gcc/bin/../libexec/gcc/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/
-LIBRARY_PATH=d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/;d:/gcc/bin/../lib/gcc/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3'
-Linking C executable cmTC_2ad08.exe
-D:\cloin\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_2ad08.dir\link.txt --verbose=1
-D:\cloin\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_2ad08.dir/objects.a
-D:\gcc\bin\ar.exe cr CMakeFiles\cmTC_2ad08.dir/objects.a @CMakeFiles\cmTC_2ad08.dir\objects1.rsp
-D:\gcc\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_2ad08.dir/objects.a -Wl,--no-whole-archive  -o cmTC_2ad08.exe -Wl,--out-implib,libcmTC_2ad08.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
-Reading specs from d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs
-COLLECT_GCC=D:\gcc\bin\gcc.exe
-COLLECT_LTO_WRAPPER=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/lto-wrapper.exe
+COMPILER_PATH=f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/;f:/gcc/gcc/bin/../libexec/gcc/;f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/
+LIBRARY_PATH=f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/;f:/gcc/gcc/bin/../lib/gcc/;f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/;f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3'
+Linking C executable cmTC_40c3f.exe
+F:\CLion-2019.3.2.win\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_40c3f.dir\link.txt --verbose=1
+F:\CLion-2019.3.2.win\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_40c3f.dir/objects.a
+F:\gcc\gcc\bin\ar.exe cr CMakeFiles\cmTC_40c3f.dir/objects.a @CMakeFiles\cmTC_40c3f.dir\objects1.rsp
+F:\gcc\gcc\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_40c3f.dir/objects.a -Wl,--no-whole-archive  -o cmTC_40c3f.exe -Wl,--out-implib,libcmTC_40c3f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Reading specs from f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs
+COLLECT_GCC=F:\gcc\gcc\bin\gcc.exe
+COLLECT_LTO_WRAPPER=f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/lto-wrapper.exe
 Target: i686-w64-mingw32
 Configured with: ../gcc-4.8.3/configure --prefix=/opt/windows_32 --with-sysroot=/opt/windows_32 --libdir=/opt/windows_32/lib --mandir=/opt/windows_32/man --infodir=/opt/windows_32/info --enable-shared --disable-bootstrap --disable-multilib --with-arch=pentium3 --enable-threads=posix --enable-languages=c,c++ --enable-checking=release --enable-libgomp --with-system-zlib --with-python-dir=/lib/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --with-gnu-ld --verbose --enable-java-home --with-java-home=/opt/windows_32/lib/jvm/jre --with-jvm-root-dir=/opt/windows_32/lib/jvm --with-jvm-jar-dir=/opt/windows_32/lib/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar='/home/adrien/projects/win-builds-1.5/slackware64-current/d/gcc/antlr-*.jar' --disable-java-awt --disable-gtktest --build=x86_64-slackware-linux --host=i686-w64-mingw32 --target=i686-w64-mingw32
 Thread model: posix
 gcc version 4.8.3 (GCC) 
-COMPILER_PATH=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/;d:/gcc/bin/../libexec/gcc/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/
-LIBRARY_PATH=d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/;d:/gcc/bin/../lib/gcc/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2ad08.exe' '-mtune=generic' '-march=pentium3'
- d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/collect2.exe --sysroot=/opt/windows_32 -m i386pe -Bdynamic -o cmTC_2ad08.exe d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/crt2.o d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtbegin.o -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3 -Ld:/gcc/bin/../lib/gcc -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib --whole-archive CMakeFiles\cmTC_2ad08.dir/objects.a --no-whole-archive --out-implib libcmTC_2ad08.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -LD:/gcc/lib -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtend.o
-mingw32-make.exe[1]: Leaving directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
+COMPILER_PATH=f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/;f:/gcc/gcc/bin/../libexec/gcc/;f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/
+LIBRARY_PATH=f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/;f:/gcc/gcc/bin/../lib/gcc/;f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/;f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_40c3f.exe' '-mtune=generic' '-march=pentium3'
+ f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/collect2.exe --sysroot=/opt/windows_32 -m i386pe -Bdynamic -o cmTC_40c3f.exe f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/crt2.o f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtbegin.o -Lf:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3 -Lf:/gcc/gcc/bin/../lib/gcc -Lf:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib -Lf:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib --whole-archive CMakeFiles\cmTC_40c3f.dir/objects.a --no-whole-archive --out-implib libcmTC_40c3f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -LD:/gcc/lib -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtend.o
+mingw32-make.exe[1]: Leaving directory 'G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 
 Parsed C implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [D:/gcc/include]
-    add: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include]
-    add: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed]
-    add: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include]
+    add: [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include]
+    add: [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed]
+    add: [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include]
   end of search list found
-  collapse include dir [D:/gcc/include] ==> [D:/gcc/include]
-  collapse include dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include] ==> [D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include]
-  collapse include dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed] ==> [D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include-fixed]
-  collapse include dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include] ==> [D:/gcc/i686-w64-mingw32/include]
-  implicit include dirs: [D:/gcc/include;D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include;D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include-fixed;D:/gcc/i686-w64-mingw32/include]
+  collapse include dir [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include] ==> [F:/gcc/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include]
+  collapse include dir [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed] ==> [F:/gcc/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include-fixed]
+  collapse include dir [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include] ==> [F:/gcc/gcc/i686-w64-mingw32/include]
+  implicit include dirs: [F:/gcc/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include;F:/gcc/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include-fixed;F:/gcc/gcc/i686-w64-mingw32/include]
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):D:/gcc/bin/mingw32-make.exe cmTC_2ad08/fast && D:/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_2ad08.dir\build.make CMakeFiles/cmTC_2ad08.dir/build]
-  ignore line: [mingw32-make.exe[1]: Entering directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_2ad08.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [D:\gcc\bin\gcc.exe   -v -o CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj   -c D:\cloin\bin\cmake\win\share\cmake-3.15\Modules\CMakeCCompilerABI.c]
-  ignore line: [Reading specs from d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs]
-  ignore line: [COLLECT_GCC=D:\gcc\bin\gcc.exe]
+  ignore line: [Run Build Command(s):F:/gcc/gcc/bin/mingw32-make.exe cmTC_40c3f/fast && F:/gcc/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_40c3f.dir\build.make CMakeFiles/cmTC_40c3f.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory 'G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_40c3f.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [F:\gcc\gcc\bin\gcc.exe   -v -o CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj   -c F:\CLion-2019.3.2.win\bin\cmake\win\share\cmake-3.15\Modules\CMakeCCompilerABI.c]
+  ignore line: [Reading specs from f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs]
+  ignore line: [COLLECT_GCC=F:\gcc\gcc\bin\gcc.exe]
   ignore line: [Target: i686-w64-mingw32]
   ignore line: [Configured with: ../gcc-4.8.3/configure --prefix=/opt/windows_32 --with-sysroot=/opt/windows_32 --libdir=/opt/windows_32/lib --mandir=/opt/windows_32/man --infodir=/opt/windows_32/info --enable-shared --disable-bootstrap --disable-multilib --with-arch=pentium3 --enable-threads=posix --enable-languages=c,c++ --enable-checking=release --enable-libgomp --with-system-zlib --with-python-dir=/lib/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --with-gnu-ld --verbose --enable-java-home --with-java-home=/opt/windows_32/lib/jvm/jre --with-jvm-root-dir=/opt/windows_32/lib/jvm --with-jvm-jar-dir=/opt/windows_32/lib/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar='/home/adrien/projects/win-builds-1.5/slackware64-current/d/gcc/antlr-*.jar' --disable-java-awt --disable-gtktest --build=x86_64-slackware-linux --host=i686-w64-mingw32 --target=i686-w64-mingw32]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 4.8.3 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3']
-  ignore line: [ d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/cc1.exe -quiet -v -iprefix d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/ -D_REENTRANT -ID:/gcc/include D:\cloin\bin\cmake\win\share\cmake-3.15\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=pentium3 -auxbase-strip CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\HITEVI~1\AppData\Local\Temp\ccJlJEVh.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3']
+  ignore line: [ f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/cc1.exe -quiet -v -iprefix f:\gcc\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/ -D_REENTRANT -ID:/gcc/include F:\CLion-2019.3.2.win\bin\cmake\win\share\cmake-3.15\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=pentium3 -auxbase-strip CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\hety\AppData\Local\Temp\ccVz0zGj.s]
   ignore line: [GNU C (GCC) version 4.8.3 (i686-w64-mingw32)]
   ignore line: [	compiled by GNU C version 4.8.3, GMP version 5.1.3, MPFR version 3.1.2, MPC version 0.8.2]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include"]
+  ignore line: [ignoring duplicate directory "f:/gcc/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include"]
   ignore line: [ignoring nonexistent directory "/opt/windows_32/opt/windows_32/lib/gcc/i686-w64-mingw32/4.8.3/../../../../include"]
-  ignore line: [ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"]
-  ignore line: [ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"]
+  ignore line: [ignoring duplicate directory "f:/gcc/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"]
+  ignore line: [ignoring duplicate directory "f:/gcc/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"]
   ignore line: [ignoring nonexistent directory "/opt/windows_32/mingw/include"]
+  ignore line: [ignoring nonexistent directory "D:/gcc/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ D:/gcc/include]
-  ignore line: [ d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include]
-  ignore line: [ d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed]
-  ignore line: [ d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include]
+  ignore line: [ f:\gcc\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include]
+  ignore line: [ f:\gcc\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed]
+  ignore line: [ f:\gcc\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include]
   ignore line: [End of search list.]
   ignore line: [GNU C (GCC) version 4.8.3 (i686-w64-mingw32)]
   ignore line: [	compiled by GNU C version 4.8.3, GMP version 5.1.3, MPFR version 3.1.2, MPC version 0.8.2]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 831b46130873fca7a136b6856a9202af]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3']
-  ignore line: [ d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj C:\Users\HITEVI~1\AppData\Local\Temp\ccJlJEVh.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3']
+  ignore line: [ f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj C:\Users\hety\AppData\Local\Temp\ccVz0zGj.s]
   ignore line: [GNU assembler version 2.24 (i686-w64-mingw32) using BFD version (GNU Binutils) 2.24]
-  ignore line: [COMPILER_PATH=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/]
-  ignore line: [d:/gcc/bin/../libexec/gcc/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/]
-  ignore line: [LIBRARY_PATH=d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/]
-  ignore line: [d:/gcc/bin/../lib/gcc/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_2ad08.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3']
-  ignore line: [Linking C executable cmTC_2ad08.exe]
-  ignore line: [D:\cloin\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_2ad08.dir\link.txt --verbose=1]
-  ignore line: [D:\cloin\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_2ad08.dir/objects.a]
-  ignore line: [D:\gcc\bin\ar.exe cr CMakeFiles\cmTC_2ad08.dir/objects.a @CMakeFiles\cmTC_2ad08.dir\objects1.rsp]
-  ignore line: [D:\gcc\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_2ad08.dir/objects.a -Wl,--no-whole-archive  -o cmTC_2ad08.exe -Wl,--out-implib,libcmTC_2ad08.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
-  ignore line: [Reading specs from d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs]
-  ignore line: [COLLECT_GCC=D:\gcc\bin\gcc.exe]
-  ignore line: [COLLECT_LTO_WRAPPER=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/lto-wrapper.exe]
+  ignore line: [COMPILER_PATH=f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/]
+  ignore line: [f:/gcc/gcc/bin/../libexec/gcc/]
+  ignore line: [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/]
+  ignore line: [LIBRARY_PATH=f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/]
+  ignore line: [f:/gcc/gcc/bin/../lib/gcc/]
+  ignore line: [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/]
+  ignore line: [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_40c3f.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=pentium3']
+  ignore line: [Linking C executable cmTC_40c3f.exe]
+  ignore line: [F:\CLion-2019.3.2.win\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_40c3f.dir\link.txt --verbose=1]
+  ignore line: [F:\CLion-2019.3.2.win\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_40c3f.dir/objects.a]
+  ignore line: [F:\gcc\gcc\bin\ar.exe cr CMakeFiles\cmTC_40c3f.dir/objects.a @CMakeFiles\cmTC_40c3f.dir\objects1.rsp]
+  ignore line: [F:\gcc\gcc\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_40c3f.dir/objects.a -Wl,--no-whole-archive  -o cmTC_40c3f.exe -Wl,--out-implib,libcmTC_40c3f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [Reading specs from f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs]
+  ignore line: [COLLECT_GCC=F:\gcc\gcc\bin\gcc.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/lto-wrapper.exe]
   ignore line: [Target: i686-w64-mingw32]
   ignore line: [Configured with: ../gcc-4.8.3/configure --prefix=/opt/windows_32 --with-sysroot=/opt/windows_32 --libdir=/opt/windows_32/lib --mandir=/opt/windows_32/man --infodir=/opt/windows_32/info --enable-shared --disable-bootstrap --disable-multilib --with-arch=pentium3 --enable-threads=posix --enable-languages=c,c++ --enable-checking=release --enable-libgomp --with-system-zlib --with-python-dir=/lib/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --with-gnu-ld --verbose --enable-java-home --with-java-home=/opt/windows_32/lib/jvm/jre --with-jvm-root-dir=/opt/windows_32/lib/jvm --with-jvm-jar-dir=/opt/windows_32/lib/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar='/home/adrien/projects/win-builds-1.5/slackware64-current/d/gcc/antlr-*.jar' --disable-java-awt --disable-gtktest --build=x86_64-slackware-linux --host=i686-w64-mingw32 --target=i686-w64-mingw32]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 4.8.3 (GCC) ]
-  ignore line: [COMPILER_PATH=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/]
-  ignore line: [d:/gcc/bin/../libexec/gcc/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/]
-  ignore line: [LIBRARY_PATH=d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/]
-  ignore line: [d:/gcc/bin/../lib/gcc/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2ad08.exe' '-mtune=generic' '-march=pentium3']
-  link line: [ d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/collect2.exe --sysroot=/opt/windows_32 -m i386pe -Bdynamic -o cmTC_2ad08.exe d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/crt2.o d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtbegin.o -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3 -Ld:/gcc/bin/../lib/gcc -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib --whole-archive CMakeFiles\cmTC_2ad08.dir/objects.a --no-whole-archive --out-implib libcmTC_2ad08.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -LD:/gcc/lib -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtend.o]
-    arg [d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/collect2.exe] ==> ignore
+  ignore line: [COMPILER_PATH=f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/]
+  ignore line: [f:/gcc/gcc/bin/../libexec/gcc/]
+  ignore line: [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/]
+  ignore line: [LIBRARY_PATH=f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/]
+  ignore line: [f:/gcc/gcc/bin/../lib/gcc/]
+  ignore line: [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/]
+  ignore line: [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_40c3f.exe' '-mtune=generic' '-march=pentium3']
+  link line: [ f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/collect2.exe --sysroot=/opt/windows_32 -m i386pe -Bdynamic -o cmTC_40c3f.exe f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/crt2.o f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtbegin.o -Lf:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3 -Lf:/gcc/gcc/bin/../lib/gcc -Lf:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib -Lf:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib --whole-archive CMakeFiles\cmTC_40c3f.dir/objects.a --no-whole-archive --out-implib libcmTC_40c3f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -LD:/gcc/lib -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtend.o]
+    arg [f:/gcc/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/collect2.exe] ==> ignore
     arg [--sysroot=/opt/windows_32] ==> ignore
     arg [-m] ==> ignore
     arg [i386pe] ==> ignore
     arg [-Bdynamic] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_2ad08.exe] ==> ignore
-    arg [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
-    arg [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtbegin.o] ==> ignore
-    arg [-Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3] ==> dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3]
-    arg [-Ld:/gcc/bin/../lib/gcc] ==> dir [d:/gcc/bin/../lib/gcc]
-    arg [-Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib] ==> dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib]
-    arg [-Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib] ==> dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib]
+    arg [cmTC_40c3f.exe] ==> ignore
+    arg [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
+    arg [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtbegin.o] ==> ignore
+    arg [-Lf:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3] ==> dir [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3]
+    arg [-Lf:/gcc/gcc/bin/../lib/gcc] ==> dir [f:/gcc/gcc/bin/../lib/gcc]
+    arg [-Lf:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib] ==> dir [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib]
+    arg [-Lf:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib] ==> dir [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_2ad08.dir/objects.a] ==> ignore
+    arg [CMakeFiles\cmTC_40c3f.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--out-implib] ==> ignore
-    arg [libcmTC_2ad08.dll.a] ==> ignore
+    arg [libcmTC_40c3f.dll.a] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
     arg [--minor-image-version] ==> ignore
@@ -223,323 +221,18 @@ Parsed C implicit link information from above output:
     arg [-lmoldname] ==> lib [moldname]
     arg [-lmingwex] ==> lib [mingwex]
     arg [-lmsvcrt] ==> lib [msvcrt]
-    arg [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtend.o] ==> ignore
+    arg [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtend.o] ==> ignore
   remove lib [gcc_eh]
   remove lib [msvcrt]
   remove lib [gcc_eh]
   remove lib [msvcrt]
-  collapse library dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3] ==> [D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3]
-  collapse library dir [d:/gcc/bin/../lib/gcc] ==> [D:/gcc/lib/gcc]
-  collapse library dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib] ==> [D:/gcc/i686-w64-mingw32/lib]
-  collapse library dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib] ==> [D:/gcc/i686-w64-mingw32/lib]
+  collapse library dir [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3] ==> [F:/gcc/gcc/lib/gcc/i686-w64-mingw32/4.8.3]
+  collapse library dir [f:/gcc/gcc/bin/../lib/gcc] ==> [F:/gcc/gcc/lib/gcc]
+  collapse library dir [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib] ==> [F:/gcc/gcc/i686-w64-mingw32/lib]
+  collapse library dir [f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib] ==> [F:/gcc/gcc/i686-w64-mingw32/lib]
   collapse library dir [D:/gcc/lib] ==> [D:/gcc/lib]
   implicit libs: [mingw32;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex]
-  implicit dirs: [D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3;D:/gcc/lib/gcc;D:/gcc/i686-w64-mingw32/lib;D:/gcc/lib]
+  implicit dirs: [F:/gcc/gcc/lib/gcc/i686-w64-mingw32/4.8.3;F:/gcc/gcc/lib/gcc;F:/gcc/gcc/i686-w64-mingw32/lib;D:/gcc/lib]
   implicit fwks: []
 
 
-Determining if the CXX compiler works passed with the following output:
-Change Dir: D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp
-
-Run Build Command(s):D:/gcc/bin/mingw32-make.exe cmTC_6b644/fast && D:/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_6b644.dir\build.make CMakeFiles/cmTC_6b644.dir/build
-mingw32-make.exe[1]: Entering directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6b644.dir/testCXXCompiler.cxx.obj
-D:\gcc\bin\g++.exe     -o CMakeFiles\cmTC_6b644.dir\testCXXCompiler.cxx.obj -c D:\pro\dogename\updater\cmake-build-debug\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
-Linking CXX executable cmTC_6b644.exe
-D:\cloin\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_6b644.dir\link.txt --verbose=1
-D:\cloin\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_6b644.dir/objects.a
-D:\gcc\bin\ar.exe cr CMakeFiles\cmTC_6b644.dir/objects.a @CMakeFiles\cmTC_6b644.dir\objects1.rsp
-D:\gcc\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_6b644.dir/objects.a -Wl,--no-whole-archive  -o cmTC_6b644.exe -Wl,--out-implib,libcmTC_6b644.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_6b644.dir\linklibs.rsp
-mingw32-make.exe[1]: Leaving directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
-
-
-
-Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp
-
-Run Build Command(s):D:/gcc/bin/mingw32-make.exe cmTC_d57ca/fast && D:/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_d57ca.dir\build.make CMakeFiles/cmTC_d57ca.dir/build
-mingw32-make.exe[1]: Entering directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d57ca.dir/CMakeCXXCompilerABI.cpp.obj
-D:\gcc\bin\g++.exe    -v -o CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj -c D:\cloin\bin\cmake\win\share\cmake-3.15\Modules\CMakeCXXCompilerABI.cpp
-Reading specs from d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs
-COLLECT_GCC=D:\gcc\bin\g++.exe
-Target: i686-w64-mingw32
-Configured with: ../gcc-4.8.3/configure --prefix=/opt/windows_32 --with-sysroot=/opt/windows_32 --libdir=/opt/windows_32/lib --mandir=/opt/windows_32/man --infodir=/opt/windows_32/info --enable-shared --disable-bootstrap --disable-multilib --with-arch=pentium3 --enable-threads=posix --enable-languages=c,c++ --enable-checking=release --enable-libgomp --with-system-zlib --with-python-dir=/lib/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --with-gnu-ld --verbose --enable-java-home --with-java-home=/opt/windows_32/lib/jvm/jre --with-jvm-root-dir=/opt/windows_32/lib/jvm --with-jvm-jar-dir=/opt/windows_32/lib/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar='/home/adrien/projects/win-builds-1.5/slackware64-current/d/gcc/antlr-*.jar' --disable-java-awt --disable-gtktest --build=x86_64-slackware-linux --host=i686-w64-mingw32 --target=i686-w64-mingw32
-Thread model: posix
-gcc version 4.8.3 (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=pentium3'
- d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/cc1plus.exe -quiet -v -iprefix d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/ -D_REENTRANT D:\cloin\bin\cmake\win\share\cmake-3.15\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=pentium3 -auxbase-strip CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj -version -ID:/gcc/include -o C:\Users\HITEVI~1\AppData\Local\Temp\ccxhqfIV.s
-GNU C++ (GCC) version 4.8.3 (i686-w64-mingw32)
-	compiled by GNU C version 4.8.3, GMP version 5.1.3, MPFR version 3.1.2, MPC version 0.8.2
-GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"
-ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"
-ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"
-ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include"
-ignoring nonexistent directory "/opt/windows_32/opt/windows_32/lib/gcc/i686-w64-mingw32/4.8.3/../../../../include"
-ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"
-ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"
-ignoring nonexistent directory "/opt/windows_32/mingw/include"
-#include "..." search starts here:
-#include <...> search starts here:
- D:/gcc/include
- d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3
- d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32
- d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward
- d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include
- d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed
- d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include
-End of search list.
-GNU C++ (GCC) version 4.8.3 (i686-w64-mingw32)
-	compiled by GNU C version 4.8.3, GMP version 5.1.3, MPFR version 3.1.2, MPC version 0.8.2
-GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: c4fe4d0d4d1dfaca074c710f8d712c81
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=pentium3'
- d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\HITEVI~1\AppData\Local\Temp\ccxhqfIV.s
-GNU assembler version 2.24 (i686-w64-mingw32) using BFD version (GNU Binutils) 2.24
-COMPILER_PATH=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/;d:/gcc/bin/../libexec/gcc/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/
-LIBRARY_PATH=d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/;d:/gcc/bin/../lib/gcc/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=pentium3'
-Linking CXX executable cmTC_d57ca.exe
-D:\cloin\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_d57ca.dir\link.txt --verbose=1
-D:\cloin\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_d57ca.dir/objects.a
-D:\gcc\bin\ar.exe cr CMakeFiles\cmTC_d57ca.dir/objects.a @CMakeFiles\cmTC_d57ca.dir\objects1.rsp
-D:\gcc\bin\g++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_d57ca.dir/objects.a -Wl,--no-whole-archive  -o cmTC_d57ca.exe -Wl,--out-implib,libcmTC_d57ca.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
-Reading specs from d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs
-COLLECT_GCC=D:\gcc\bin\g++.exe
-COLLECT_LTO_WRAPPER=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/lto-wrapper.exe
-Target: i686-w64-mingw32
-Configured with: ../gcc-4.8.3/configure --prefix=/opt/windows_32 --with-sysroot=/opt/windows_32 --libdir=/opt/windows_32/lib --mandir=/opt/windows_32/man --infodir=/opt/windows_32/info --enable-shared --disable-bootstrap --disable-multilib --with-arch=pentium3 --enable-threads=posix --enable-languages=c,c++ --enable-checking=release --enable-libgomp --with-system-zlib --with-python-dir=/lib/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --with-gnu-ld --verbose --enable-java-home --with-java-home=/opt/windows_32/lib/jvm/jre --with-jvm-root-dir=/opt/windows_32/lib/jvm --with-jvm-jar-dir=/opt/windows_32/lib/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar='/home/adrien/projects/win-builds-1.5/slackware64-current/d/gcc/antlr-*.jar' --disable-java-awt --disable-gtktest --build=x86_64-slackware-linux --host=i686-w64-mingw32 --target=i686-w64-mingw32
-Thread model: posix
-gcc version 4.8.3 (GCC) 
-COMPILER_PATH=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/;d:/gcc/bin/../libexec/gcc/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/
-LIBRARY_PATH=d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/;d:/gcc/bin/../lib/gcc/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/;d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d57ca.exe' '-shared-libgcc' '-mtune=generic' '-march=pentium3'
- d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/collect2.exe --sysroot=/opt/windows_32 -m i386pe -Bdynamic -o cmTC_d57ca.exe d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/crt2.o d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtbegin.o -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3 -Ld:/gcc/bin/../lib/gcc -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib --whole-archive CMakeFiles\cmTC_d57ca.dir/objects.a --no-whole-archive --out-implib libcmTC_d57ca.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -LD:/gcc/lib -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtend.o
-mingw32-make.exe[1]: Leaving directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
-
-
-
-Parsed CXX implicit include dir info from above output: rv=done
-  found start of include info
-  found start of implicit include info
-    add: [D:/gcc/include]
-    add: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3]
-    add: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32]
-    add: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward]
-    add: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include]
-    add: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed]
-    add: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include]
-  end of search list found
-  collapse include dir [D:/gcc/include] ==> [D:/gcc/include]
-  collapse include dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3] ==> [D:/gcc/include/c++/4.8.3]
-  collapse include dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32] ==> [D:/gcc/include/c++/4.8.3/i686-w64-mingw32]
-  collapse include dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward] ==> [D:/gcc/include/c++/4.8.3/backward]
-  collapse include dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include] ==> [D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include]
-  collapse include dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed] ==> [D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include-fixed]
-  collapse include dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include] ==> [D:/gcc/i686-w64-mingw32/include]
-  implicit include dirs: [D:/gcc/include;D:/gcc/include/c++/4.8.3;D:/gcc/include/c++/4.8.3/i686-w64-mingw32;D:/gcc/include/c++/4.8.3/backward;D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include;D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include-fixed;D:/gcc/i686-w64-mingw32/include]
-
-
-Parsed CXX implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp]
-  ignore line: []
-  ignore line: [Run Build Command(s):D:/gcc/bin/mingw32-make.exe cmTC_d57ca/fast && D:/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_d57ca.dir\build.make CMakeFiles/cmTC_d57ca.dir/build]
-  ignore line: [mingw32-make.exe[1]: Entering directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_d57ca.dir/CMakeCXXCompilerABI.cpp.obj]
-  ignore line: [D:\gcc\bin\g++.exe    -v -o CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj -c D:\cloin\bin\cmake\win\share\cmake-3.15\Modules\CMakeCXXCompilerABI.cpp]
-  ignore line: [Reading specs from d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs]
-  ignore line: [COLLECT_GCC=D:\gcc\bin\g++.exe]
-  ignore line: [Target: i686-w64-mingw32]
-  ignore line: [Configured with: ../gcc-4.8.3/configure --prefix=/opt/windows_32 --with-sysroot=/opt/windows_32 --libdir=/opt/windows_32/lib --mandir=/opt/windows_32/man --infodir=/opt/windows_32/info --enable-shared --disable-bootstrap --disable-multilib --with-arch=pentium3 --enable-threads=posix --enable-languages=c,c++ --enable-checking=release --enable-libgomp --with-system-zlib --with-python-dir=/lib/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --with-gnu-ld --verbose --enable-java-home --with-java-home=/opt/windows_32/lib/jvm/jre --with-jvm-root-dir=/opt/windows_32/lib/jvm --with-jvm-jar-dir=/opt/windows_32/lib/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar='/home/adrien/projects/win-builds-1.5/slackware64-current/d/gcc/antlr-*.jar' --disable-java-awt --disable-gtktest --build=x86_64-slackware-linux --host=i686-w64-mingw32 --target=i686-w64-mingw32]
-  ignore line: [Thread model: posix]
-  ignore line: [gcc version 4.8.3 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=pentium3']
-  ignore line: [ d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/cc1plus.exe -quiet -v -iprefix d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/ -D_REENTRANT D:\cloin\bin\cmake\win\share\cmake-3.15\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=pentium3 -auxbase-strip CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj -version -ID:/gcc/include -o C:\Users\HITEVI~1\AppData\Local\Temp\ccxhqfIV.s]
-  ignore line: [GNU C++ (GCC) version 4.8.3 (i686-w64-mingw32)]
-  ignore line: [	compiled by GNU C version 4.8.3, GMP version 5.1.3, MPFR version 3.1.2, MPC version 0.8.2]
-  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"]
-  ignore line: [ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32"]
-  ignore line: [ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"]
-  ignore line: [ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include"]
-  ignore line: [ignoring nonexistent directory "/opt/windows_32/opt/windows_32/lib/gcc/i686-w64-mingw32/4.8.3/../../../../include"]
-  ignore line: [ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed"]
-  ignore line: [ignoring duplicate directory "d:/gcc/lib/gcc/../../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include"]
-  ignore line: [ignoring nonexistent directory "/opt/windows_32/mingw/include"]
-  ignore line: [#include "..." search starts here:]
-  ignore line: [#include <...> search starts here:]
-  ignore line: [ D:/gcc/include]
-  ignore line: [ d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3]
-  ignore line: [ d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/i686-w64-mingw32]
-  ignore line: [ d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward]
-  ignore line: [ d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include]
-  ignore line: [ d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/include-fixed]
-  ignore line: [ d:\gcc\bin\../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/include]
-  ignore line: [End of search list.]
-  ignore line: [GNU C++ (GCC) version 4.8.3 (i686-w64-mingw32)]
-  ignore line: [	compiled by GNU C version 4.8.3, GMP version 5.1.3, MPFR version 3.1.2, MPC version 0.8.2]
-  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: c4fe4d0d4d1dfaca074c710f8d712c81]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=pentium3']
-  ignore line: [ d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\HITEVI~1\AppData\Local\Temp\ccxhqfIV.s]
-  ignore line: [GNU assembler version 2.24 (i686-w64-mingw32) using BFD version (GNU Binutils) 2.24]
-  ignore line: [COMPILER_PATH=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/]
-  ignore line: [d:/gcc/bin/../libexec/gcc/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/]
-  ignore line: [LIBRARY_PATH=d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/]
-  ignore line: [d:/gcc/bin/../lib/gcc/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d57ca.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=pentium3']
-  ignore line: [Linking CXX executable cmTC_d57ca.exe]
-  ignore line: [D:\cloin\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_d57ca.dir\link.txt --verbose=1]
-  ignore line: [D:\cloin\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_d57ca.dir/objects.a]
-  ignore line: [D:\gcc\bin\ar.exe cr CMakeFiles\cmTC_d57ca.dir/objects.a @CMakeFiles\cmTC_d57ca.dir\objects1.rsp]
-  ignore line: [D:\gcc\bin\g++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_d57ca.dir/objects.a -Wl,--no-whole-archive  -o cmTC_d57ca.exe -Wl,--out-implib,libcmTC_d57ca.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
-  ignore line: [Reading specs from d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/specs]
-  ignore line: [COLLECT_GCC=D:\gcc\bin\g++.exe]
-  ignore line: [COLLECT_LTO_WRAPPER=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/lto-wrapper.exe]
-  ignore line: [Target: i686-w64-mingw32]
-  ignore line: [Configured with: ../gcc-4.8.3/configure --prefix=/opt/windows_32 --with-sysroot=/opt/windows_32 --libdir=/opt/windows_32/lib --mandir=/opt/windows_32/man --infodir=/opt/windows_32/info --enable-shared --disable-bootstrap --disable-multilib --with-arch=pentium3 --enable-threads=posix --enable-languages=c,c++ --enable-checking=release --enable-libgomp --with-system-zlib --with-python-dir=/lib/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --with-gnu-ld --verbose --enable-java-home --with-java-home=/opt/windows_32/lib/jvm/jre --with-jvm-root-dir=/opt/windows_32/lib/jvm --with-jvm-jar-dir=/opt/windows_32/lib/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar='/home/adrien/projects/win-builds-1.5/slackware64-current/d/gcc/antlr-*.jar' --disable-java-awt --disable-gtktest --build=x86_64-slackware-linux --host=i686-w64-mingw32 --target=i686-w64-mingw32]
-  ignore line: [Thread model: posix]
-  ignore line: [gcc version 4.8.3 (GCC) ]
-  ignore line: [COMPILER_PATH=d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/]
-  ignore line: [d:/gcc/bin/../libexec/gcc/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/]
-  ignore line: [LIBRARY_PATH=d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/]
-  ignore line: [d:/gcc/bin/../lib/gcc/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/]
-  ignore line: [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d57ca.exe' '-shared-libgcc' '-mtune=generic' '-march=pentium3']
-  link line: [ d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/collect2.exe --sysroot=/opt/windows_32 -m i386pe -Bdynamic -o cmTC_d57ca.exe d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/crt2.o d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtbegin.o -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3 -Ld:/gcc/bin/../lib/gcc -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib -Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib --whole-archive CMakeFiles\cmTC_d57ca.dir/objects.a --no-whole-archive --out-implib libcmTC_d57ca.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -LD:/gcc/lib -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtend.o]
-    arg [d:/gcc/bin/../libexec/gcc/i686-w64-mingw32/4.8.3/collect2.exe] ==> ignore
-    arg [--sysroot=/opt/windows_32] ==> ignore
-    arg [-m] ==> ignore
-    arg [i386pe] ==> ignore
-    arg [-Bdynamic] ==> ignore
-    arg [-o] ==> ignore
-    arg [cmTC_d57ca.exe] ==> ignore
-    arg [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
-    arg [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtbegin.o] ==> ignore
-    arg [-Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3] ==> dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3]
-    arg [-Ld:/gcc/bin/../lib/gcc] ==> dir [d:/gcc/bin/../lib/gcc]
-    arg [-Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib] ==> dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib]
-    arg [-Ld:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib] ==> dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib]
-    arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_d57ca.dir/objects.a] ==> ignore
-    arg [--no-whole-archive] ==> ignore
-    arg [--out-implib] ==> ignore
-    arg [libcmTC_d57ca.dll.a] ==> ignore
-    arg [--major-image-version] ==> ignore
-    arg [0] ==> ignore
-    arg [--minor-image-version] ==> ignore
-    arg [0] ==> ignore
-    arg [-lstdc++] ==> lib [stdc++]
-    arg [-lmingw32] ==> lib [mingw32]
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [-lgcc] ==> lib [gcc]
-    arg [-lmoldname] ==> lib [moldname]
-    arg [-lmingwex] ==> lib [mingwex]
-    arg [-lmsvcrt] ==> lib [msvcrt]
-    arg [-lpthread] ==> lib [pthread]
-    arg [-ladvapi32] ==> lib [advapi32]
-    arg [-lshell32] ==> lib [shell32]
-    arg [-luser32] ==> lib [user32]
-    arg [-lkernel32] ==> lib [kernel32]
-    arg [-LD:/gcc/lib] ==> dir [D:/gcc/lib]
-    arg [-lmingw32] ==> lib [mingw32]
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [-lgcc] ==> lib [gcc]
-    arg [-lmoldname] ==> lib [moldname]
-    arg [-lmingwex] ==> lib [mingwex]
-    arg [-lmsvcrt] ==> lib [msvcrt]
-    arg [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/crtend.o] ==> ignore
-  remove lib [msvcrt]
-  remove lib [msvcrt]
-  collapse library dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3] ==> [D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3]
-  collapse library dir [d:/gcc/bin/../lib/gcc] ==> [D:/gcc/lib/gcc]
-  collapse library dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib/../lib] ==> [D:/gcc/i686-w64-mingw32/lib]
-  collapse library dir [d:/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/lib] ==> [D:/gcc/i686-w64-mingw32/lib]
-  collapse library dir [D:/gcc/lib] ==> [D:/gcc/lib]
-  implicit libs: [stdc++;mingw32;gcc_s;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;moldname;mingwex]
-  implicit dirs: [D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3;D:/gcc/lib/gcc;D:/gcc/i686-w64-mingw32/lib;D:/gcc/lib]
-  implicit fwks: []
-
-
-
-
-Detecting CXX [-std=c++1y] compiler features compiled with the following output:
-Change Dir: D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp
-
-Run Build Command(s):D:/gcc/bin/mingw32-make.exe cmTC_18248/fast && D:/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_18248.dir\build.make CMakeFiles/cmTC_18248.dir/build
-mingw32-make.exe[1]: Entering directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_18248.dir/feature_tests.cxx.obj
-D:\gcc\bin\g++.exe    -std=c++1y -o CMakeFiles\cmTC_18248.dir\feature_tests.cxx.obj -c D:\pro\dogename\updater\cmake-build-debug\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_18248.exe
-D:\cloin\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_18248.dir\link.txt --verbose=1
-D:\cloin\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_18248.dir/objects.a
-D:\gcc\bin\ar.exe cr CMakeFiles\cmTC_18248.dir/objects.a @CMakeFiles\cmTC_18248.dir\objects1.rsp
-D:\gcc\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_18248.dir/objects.a -Wl,--no-whole-archive  -o cmTC_18248.exe -Wl,--out-implib,libcmTC_18248.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_18248.dir\linklibs.rsp
-mingw32-make.exe[1]: Leaving directory 'D:/pro/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
-
-
-
-    Feature record: CXX_FEATURE:1cxx_template_template_parameters
-    Feature record: CXX_FEATURE:1cxx_alias_templates
-    Feature record: CXX_FEATURE:1cxx_alignas
-    Feature record: CXX_FEATURE:1cxx_alignof
-    Feature record: CXX_FEATURE:1cxx_attributes
-    Feature record: CXX_FEATURE:1cxx_auto_type
-    Feature record: CXX_FEATURE:1cxx_constexpr
-    Feature record: CXX_FEATURE:1cxx_decltype
-    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
-    Feature record: CXX_FEATURE:1cxx_default_function_template_args
-    Feature record: CXX_FEATURE:1cxx_defaulted_functions
-    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
-    Feature record: CXX_FEATURE:1cxx_delegating_constructors
-    Feature record: CXX_FEATURE:1cxx_deleted_functions
-    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
-    Feature record: CXX_FEATURE:1cxx_explicit_conversions
-    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
-    Feature record: CXX_FEATURE:1cxx_extern_templates
-    Feature record: CXX_FEATURE:1cxx_final
-    Feature record: CXX_FEATURE:1cxx_func_identifier
-    Feature record: CXX_FEATURE:1cxx_generalized_initializers
-    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
-    Feature record: CXX_FEATURE:1cxx_inline_namespaces
-    Feature record: CXX_FEATURE:1cxx_lambdas
-    Feature record: CXX_FEATURE:1cxx_local_type_template_args
-    Feature record: CXX_FEATURE:1cxx_long_long_type
-    Feature record: CXX_FEATURE:1cxx_noexcept
-    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
-    Feature record: CXX_FEATURE:1cxx_nullptr
-    Feature record: CXX_FEATURE:1cxx_override
-    Feature record: CXX_FEATURE:1cxx_range_for
-    Feature record: CXX_FEATURE:1cxx_raw_string_literals
-    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
-    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
-    Feature record: CXX_FEATURE:1cxx_rvalue_references
-    Feature record: CXX_FEATURE:1cxx_sizeof_member
-    Feature record: CXX_FEATURE:1cxx_static_assert
-    Feature record: CXX_FEATURE:1cxx_strong_enums
-    Feature record: CXX_FEATURE:1cxx_thread_local
-    Feature record: CXX_FEATURE:1cxx_trailing_return_types
-    Feature record: CXX_FEATURE:1cxx_unicode_literals
-    Feature record: CXX_FEATURE:1cxx_uniform_initialization
-    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
-    Feature record: CXX_FEATURE:1cxx_user_literals
-    Feature record: CXX_FEATURE:1cxx_variadic_macros
-    Feature record: CXX_FEATURE:1cxx_variadic_templates
-    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
-    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
-    Feature record: CXX_FEATURE:0cxx_binary_literals
-    Feature record: CXX_FEATURE:0cxx_contextual_conversions
-    Feature record: CXX_FEATURE:0cxx_decltype_auto
-    Feature record: CXX_FEATURE:0cxx_digit_separators
-    Feature record: CXX_FEATURE:0cxx_generic_lambdas
-    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
-    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
-    Feature record: CXX_FEATURE:0cxx_return_type_deduction
-    Feature record: CXX_FEATURE:0cxx_variable_templates

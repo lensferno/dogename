@@ -1,3 +1,0 @@
-D:\cloin\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\updater.dir/objects.a
-D:\gcc\bin\ar.exe cr CMakeFiles\updater.dir/objects.a @CMakeFiles\updater.dir\objects1.rsp
-D:\gcc\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\updater.dir/objects.a -Wl,--no-whole-archive  -o updater.exe -Wl,--out-implib,libupdater.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\updater.dir\linklibs.rsp

@@ -39,8 +39,6 @@ public final class ProgramMain extends Application {
     App app=new App();
     public static void main(String[] args) {
 
-
-
         launch(args);
 
     }
@@ -65,8 +63,9 @@ public final class ProgramMain extends Application {
             e.printStackTrace();
         }
     }
-    
-    
+
+    UICtrl_new controller;
+
     public void showWindow() {
 
 
@@ -96,7 +95,7 @@ public final class ProgramMain extends Application {
             stage.setScene(scene);
 
             //stage.setResizable(true);
-            UICtrl_new controller = loader.getController();
+            controller = loader.getController();
             controller.setStage(stage);
             controller.setScene(scene);
             stage.show();
@@ -200,17 +199,28 @@ public final class ProgramMain extends Application {
     void getUpdate(){
 
         if(update.checkUpdate()){
-            unzipCmd="\""+app.APP_LOCA+"extra\\7z.exe x -y -o"+app.APP_LOCA+" "+app.APP_LOCA+update.getFirstFileName()+"\"";
+            unzipCmd="\""+app.APP_LOCA+"extra\\7z.exe x -y -o"+app.APP_LOCA+" "+app.APP_LOCA+"updateFiles\\"+update.getFirstFileName()+"\"";
 
             String[] updateURLs=update.getUpdateURL();
             URLNumbs=updateURLs.length;
             stopUpdate=false;
+            File updateDir=new File(app.APP_LOCA+"updateFiles\\");
+
+            if(!updateDir.exists())
+                updateDir.mkdir();
+            else{
+                File[] updateFiles=updateDir.listFiles();
+                if(updateFiles.length>0)
+                    for(int i=0;i<updateFiles.length;i++)
+                        updateFiles[i].delete();
+            }
+
             for(int i=0;i<updateURLs.length;i++){
                 int finalI = i;
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        if(Common.download(updateURLs[finalI],app.APP_LOCA)==-1)
+                        if(Common.download(updateURLs[finalI],app.APP_LOCA+"updateFiles\\")==-1)
                             stopUpdate=true;
                         else
                             finishStatus++;
@@ -218,6 +228,7 @@ public final class ProgramMain extends Application {
                     }
                 }).start();
             }
+
             while(true){
                 if(stopUpdate) {
                     System.out.println("[INFO]Stopped update process");
@@ -227,16 +238,18 @@ public final class ProgramMain extends Application {
                         try {
                             System.out.println("[INFO]Backuping jar file");
                             copyFileUsingJava7Files(new File(app.JAR_FILE),new File(app.APP_LOCA+"backup.jar"));
+
                             System.out.println("[INFO]Unzip update package");
                             String updateCmd=app.APP_LOCA+" "+
                                     app.PID+" "+
                                     unzipCmd+" "+
                                     recoverBatPath;
 
-                            System.out.println("[INFO]Do:"+updateCmd);
+                            System.out.println("[INFO]Will do:"+updateCmd);
+                            controller.showInfoDialog("有更新诶！","这次更新的主要内容有：\n"+update.getUpdateInfo().getDesc());
                             stage.setOnCloseRequest(event -> {
                                 try {
-                                    Process unzipProcess = Runtime.getRuntime().exec("start "+updateCmd);
+                                    Runtime.getRuntime().exec(updateCmd);
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }

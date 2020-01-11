@@ -1,0 +1,37 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: F:/gcc/gcc/bin/g++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/ld.exe: cannot find -lstdc++
+f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/ld.exe: cannot find -lgcc_s
+f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/ld.exe: cannot find -lgcc_s
+collect2.exe: error: ld returned 1 exit status
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/gcc/gcc/bin/mingw32-make.exe cmTC_cd0a4/fast && F:/gcc/gcc/bin/mingw32-make.exe -f CMakeFiles\cmTC_cd0a4.dir\build.make CMakeFiles/cmTC_cd0a4.dir/build
+mingw32-make.exe[1]: Entering directory 'G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_cd0a4.dir/testCXXCompiler.cxx.obj
+F:\gcc\gcc\bin\g++.exe     -o CMakeFiles\cmTC_cd0a4.dir\testCXXCompiler.cxx.obj -c G:\Projects\dogename\updater\cmake-build-debug\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+Linking CXX executable cmTC_cd0a4.exe
+F:\CLion-2019.3.2.win\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_cd0a4.dir\link.txt --verbose=1
+F:\CLion-2019.3.2.win\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_cd0a4.dir/objects.a
+F:\gcc\gcc\bin\ar.exe cr CMakeFiles\cmTC_cd0a4.dir/objects.a @CMakeFiles\cmTC_cd0a4.dir\objects1.rsp
+F:\gcc\gcc\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_cd0a4.dir/objects.a -Wl,--no-whole-archive  -o cmTC_cd0a4.exe -Wl,--out-implib,libcmTC_cd0a4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_cd0a4.dir\linklibs.rsp
+f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/ld.exe: cannot find -lstdc++
+f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/ld.exe: cannot find -lgcc_s
+f:/gcc/gcc/bin/../lib/gcc/i686-w64-mingw32/4.8.3/../../../../i686-w64-mingw32/bin/ld.exe: cannot find -lgcc_s
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_cd0a4.dir\build.make:87: recipe for target 'cmTC_cd0a4.exe' failed
+mingw32-make.exe[1]: *** [cmTC_cd0a4.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'G:/Projects/dogename/updater/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_cd0a4/fast' failed
+mingw32-make.exe: *** [cmTC_cd0a4/fast] Error 2
+
+
+

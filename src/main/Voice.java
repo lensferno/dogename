@@ -169,7 +169,7 @@ public class Voice {
                         playSound(new FileInputStream(cachedVoice));
 
                         File cachedVoice=new File(cachedVoicePath+name+".wav");
-                        new File(cachedVoicePath).mkdir();
+                        new File(cachedVoicePath).mkdirs();
 
 
                        System.out.println("[INFO]Download done save to："+cachedVoicePath+name+".wav");
