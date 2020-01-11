@@ -21,10 +21,7 @@ public class Common {
             URL sourcesURL = new URL(URL);
             HttpURLConnection connection = (HttpURLConnection) sourcesURL.openConnection();
             connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36");
-            connection.setRequestProperty("Accept-Encoding","gzip, deflate");
-            connection.setRequestProperty("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
-            connection.setRequestProperty("Connection","keep-alive");
-            connection.setRequestProperty("Host","gitee.com");
+
             connection.connect();
 
             InputStream stream = connection.getInputStream();
@@ -53,6 +50,8 @@ public class Common {
             BufferedReader bis;
             URL url = new URL(address);
             URLConnection conn = url.openConnection();
+            conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36");
+
             conn.setRequestProperty("Accept-Encoding", "gzip,deflate");
             conn.connect();
 

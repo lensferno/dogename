@@ -192,6 +192,7 @@ public final class ProgramMain extends Application {
     
     Update update =new Update();
     String unzipCmd;
+    String recoverBatPath=app.APP_LOCA+"recover.bat";
     int URLNumbs;
     boolean stopUpdate=true;
     int finishStatus = 0;
@@ -199,7 +200,8 @@ public final class ProgramMain extends Application {
     void getUpdate(){
 
         if(update.checkUpdate()){
-            unzipCmd=app.APP_LOCA+"extra\\7z.exe x -y -o"+app.APP_LOCA+" "+app.APP_LOCA+update.getFirstFileName();
+            unzipCmd="\""+app.APP_LOCA+"extra\\7z.exe x -y -o"+app.APP_LOCA+" "+app.APP_LOCA+update.getFirstFileName()+"\"";
+
             String[] updateURLs=update.getUpdateURL();
             URLNumbs=updateURLs.length;
             stopUpdate=false;
@@ -226,8 +228,19 @@ public final class ProgramMain extends Application {
                             System.out.println("[INFO]Backuping jar file");
                             copyFileUsingJava7Files(new File(app.JAR_FILE),new File(app.APP_LOCA+"backup.jar"));
                             System.out.println("[INFO]Unzip update package");
-                            System.out.println("[INFO]Doing :"+unzipCmd);
-                            Process unzipProcess = Runtime.getRuntime().exec(unzipCmd);
+                            String updateCmd=app.APP_LOCA+" "+
+                                    app.PID+" "+
+                                    unzipCmd+" "+
+                                    recoverBatPath;
+
+                            System.out.println("[INFO]Do:"+updateCmd);
+                            stage.setOnCloseRequest(event -> {
+                                try {
+                                    Process unzipProcess = Runtime.getRuntime().exec("start "+updateCmd);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            });
                             return;
 
                         } catch (IOException e) {
