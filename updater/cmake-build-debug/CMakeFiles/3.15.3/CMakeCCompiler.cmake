@@ -1,4 +1,4 @@
-set(CMAKE_C_COMPILER "D:/gcc/bin/gcc.exe")
+set(CMAKE_C_COMPILER "F:/gcc/gcc/bin/gcc.exe")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "4.8.3")
@@ -17,11 +17,11 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "D:/gcc/bin/ar.exe")
-set(CMAKE_C_COMPILER_AR "D:/gcc/bin/gcc-ar.exe")
-set(CMAKE_RANLIB "D:/gcc/bin/ranlib.exe")
-set(CMAKE_C_COMPILER_RANLIB "D:/gcc/bin/gcc-ranlib.exe")
-set(CMAKE_LINKER "D:/gcc/bin/ld.exe")
+set(CMAKE_AR "F:/gcc/gcc/bin/ar.exe")
+set(CMAKE_C_COMPILER_AR "F:/gcc/gcc/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "F:/gcc/gcc/bin/ranlib.exe")
+set(CMAKE_C_COMPILER_RANLIB "F:/gcc/gcc/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "F:/gcc/gcc/bin/ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCC 1)
 set(CMAKE_C_COMPILER_LOADED 1)
@@ -70,7 +70,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "D:/gcc/include;D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include;D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include-fixed;D:/gcc/i686-w64-mingw32/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "F:/gcc/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include;F:/gcc/gcc/lib/gcc/i686-w64-mingw32/4.8.3/include-fixed;F:/gcc/gcc/i686-w64-mingw32/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingw32;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "D:/gcc/lib/gcc/i686-w64-mingw32/4.8.3;D:/gcc/lib/gcc;D:/gcc/i686-w64-mingw32/lib;D:/gcc/lib")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "F:/gcc/gcc/lib/gcc/i686-w64-mingw32/4.8.3;F:/gcc/gcc/lib/gcc;F:/gcc/gcc/i686-w64-mingw32/lib;D:/gcc/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

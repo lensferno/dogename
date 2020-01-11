@@ -30,6 +30,10 @@ public class Update {
         return temp2[temp2.length-1];
     }
 
+    public UpdateInfo getUpdateInfo() {
+        return updateInfo;
+    }
+
     class UpdateInfo {
 
        private int ver;

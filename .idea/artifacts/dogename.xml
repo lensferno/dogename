@@ -2,10 +2,11 @@
   <artifact type="jar" name="dogename">
     <output-path>$PROJECT_DIR$/out/artifacts/dogename</output-path>
     <root id="archive" name="dogename.jar">
-      <element id="library" level="project" name="commons-codec-1" />
-      <element id="library" level="project" name="gson-2.8" />
-      <element id="library" level="project" name="jfoenix-8.0" />
-      <element id="module-output" name="dogename" />
+      <element id="module-output" name="DM_msater" />
+      <element id="dir-copy" path="$PROJECT_DIR$/libs/json-20160810" />
+      <element id="dir-copy" path="$PROJECT_DIR$/libs/jfoenix-8.0.4" />
+      <element id="dir-copy" path="$PROJECT_DIR$/libs/gson-2.8.5" />
+      <element id="dir-copy" path="$PROJECT_DIR$/libs/commons-codec-1.11" />
     </root>
   </artifact>
 </component>
