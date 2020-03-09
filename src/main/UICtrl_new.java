@@ -329,8 +329,6 @@ public final class UICtrl_new {
     boolean voicePlay=true;
 
     boolean sysMethod=true;
-    @FXML
-    JFXCheckBox sysMMbtn;
 
 
     @FXML
@@ -360,34 +358,7 @@ public final class UICtrl_new {
         this.voicePlay = voicePlay;
     }
 
-    @FXML
-    public void sysMMbtnAction(){
-        if(sysMethod)
-            unselectSysMMbtn();
-        else
-            selectSysMMbtn();
-    }
 
-    void unselectSysMMbtn(){
-        sysMethod=false;
-        sysMMbtn.setSelected(false);
-    }
-
-
-    void selectSysMMbtn(){
-        sysMethod = true;
-        sysMMbtn.setSelected(true);
-    }
-
-    public boolean isSysMethod() {
-        return sysMethod;
-    }
-
-    SystemSimpleMethod systemSimpleMethod;
-    public void setSysMethod(boolean sysMethod,SystemSimpleMethod systemSimpleMethod) {
-        this.sysMethod = sysMethod;
-        this.systemSimpleMethod=systemSimpleMethod;
-    }
 
     @FXML
     public void newAlgoBtnAction(){
@@ -605,14 +576,10 @@ public final class UICtrl_new {
 
     @FXML
     public ImageView mainView;
-    @FXML
-    public ImageView backBtn;
     public Image mainImage =new Image(releaseData.getMainImageStream());
-    public Image backBtnImage =new Image(releaseData.getBackBtnStream());
 
     public void setImages(){
         mainView.setImage(mainImage);
-        backBtn.setImage(backBtnImage);
     }
 
     //两种选择方式的切换，没什么好说的。
@@ -768,7 +735,6 @@ public final class UICtrl_new {
         content.setHeading(new Text("名单管理"));
 
         content.setBody(namePane);
-        namePane.getChildren().remove(goBackButton);
 
         StackPane tempPane=new StackPane();
         tempPane.setPrefHeight(mainPane.getPrefHeight());
@@ -1101,6 +1067,9 @@ public final class UICtrl_new {
      */
     public void setApp(App app) {
         this.app = app;
+        //core.setApp(app);
+        //data.setApp(app);
+        //voice.setApp(app);
     }
 
 }

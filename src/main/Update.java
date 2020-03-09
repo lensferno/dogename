@@ -9,7 +9,7 @@ public class Update {
     final String UPDATE_URL="https://gitee.com/hety2002/dogename/raw/master/updateFiles/update.json";
     UpdateInfo updateInfo;
 
-    final int nowVer=23;
+    final int nowVer=24;
     
     public boolean checkUpdate() {
 	updateInfo =new Gson().fromJson(Common.getHtml(UPDATE_URL,false), UpdateInfo.class);
