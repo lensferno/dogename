@@ -5,13 +5,11 @@
 		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
 		<excludeFolder url="file://$MODULE_DIR$/target"/>
 	</contentEntry>
-	<lib name="commons-codec-1.11" scope="COMPILE">
-		<relative-module-cls project-related="file://$PROJECT_DIR$/libs/commons-codec-1.11"/>
-	</lib>
-	<lib name="gson-2.8.5" scope="COMPILE">
-		<relative-module-cls project-related="file://$PROJECT_DIR$/libs/gson-2.8.5"/>
-	</lib>
-	<lib name="jfoenix-8.0.4" scope="COMPILE">
-		<relative-module-cls project-related="file://$PROJECT_DIR$/libs/jfoenix-8.0.4"/>
-	</lib>
+	<levels>
+		<level name="Maven: com.google.code.gson:gson:2.8.6" value="project"/>
+		<level name="Maven: commons-codec:commons-codec:1.14" value="project"/>
+		<level name="Maven: com.jfoenix:jfoenix:8.0.9" value="project"/>
+		<level name="Maven: org.apache.logging.log4j:log4j-core:2.13.1" value="project"/>
+		<level name="Maven: org.apache.logging.log4j:log4j-api:2.13.1" value="project"/>
+	</levels>
 </component>
