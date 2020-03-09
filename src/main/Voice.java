@@ -153,7 +153,7 @@ public class Voice {
                             return;
 
                        if(!cacheDir.exists())
-                           cacheDir.mkdir();
+                           cacheDir.mkdirs();
 
                        if(!cachedVoice.exists())
                            cachedVoice.createNewFile();

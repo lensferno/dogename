@@ -91,6 +91,9 @@ public final class ProgramMain extends Application {
             }
             
             Scene scene = new Scene(root, 990, 700);
+            //Application.setUserAgentStylesheet(getClass().getResource("/main/sourcesData/uifiles/UI.fxml").toExternalForm());
+            //scene.getStylesheets().add("/main/sourcesData/uifiles/UI.fxml");
+            //root.setStyle("-fx-font-family:\"Microsoft YaHei\";");
             stage.setTitle("DogeName 贰号姬");
             stage.setScene(scene);
 
@@ -158,6 +161,8 @@ public final class ProgramMain extends Application {
 
             controller.setSpeed(config.getSpeed());
             controller.setChosenTime(config.getChosenTime());
+
+            controller.setApp(app);
 
             controller.loadHistory();
 

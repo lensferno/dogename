@@ -8,47 +8,43 @@
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ProgramMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SystemSimpleMethod.java___jb_old___" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SystemSimpleMethod.java___jb_tmp___" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/UICtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/UICtrl_new.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl_new.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Voice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Voice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/.goutputstream-LE5F8Z" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>mkdir</find>
-    </findStrings>
-    <dirStrings>
-      <dir>G:\Projects\dogename\src\main</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1Y1qziZdMWGzl19y3OvDQoXLC41" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/commons-codec-1.11" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application">
+    <configuration name="DogeMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.ProgramMain" />
       <module name="DM_msater" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -81,7 +77,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="baa04086-010c-4d33-84f8-4d8f6bfc97e7" name="Default" comment="" />
+      <changelist id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="" />
       <created>1578733502639</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -94,10 +90,46 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582121737044">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1582121737044" />
+    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1582196751461">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1582196751461" />
+    <state width="1396" height="199" key="GridCell.Tab.0.bottom" timestamp="1582205610572">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="199" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1582205610572" />
+    <state width="1396" height="199" key="GridCell.Tab.0.center" timestamp="1582205610572">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="199" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1582205610572" />
+    <state width="1396" height="199" key="GridCell.Tab.0.left" timestamp="1582205610572">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="199" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1582205610572" />
+    <state width="1396" height="199" key="GridCell.Tab.0.right" timestamp="1582205610572">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="199" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1582205610572" />
+    <state x="206" y="126" key="com.intellij.ide.util.TipDialog" timestamp="1582120763811">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="206" y="126" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1582120763811" />
+    <state x="407" y="62" width="626" height="735" key="find.popup" timestamp="1582189212843">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="407" y="62" width="626" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1582189212843" />
   </component>
 </project>

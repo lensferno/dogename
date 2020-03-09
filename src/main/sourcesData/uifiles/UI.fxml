@@ -146,11 +146,7 @@
                               <Font size="14.0" />
                            </font>
                         </JFXCheckBox>
-                        <JFXCheckBox fx:id="sysMMbtn" checkedColor="#079cd7" layoutX="180.0" layoutY="217.0" onAction="#sysMMbtnAction" selected="true" text="系统抽样" textFill="#2c2424" unCheckedColor="#13aecf">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXCheckBox>
+
                      </children>
                   </Pane>
                </content>
@@ -186,9 +182,7 @@
                   <Font size="17.0" />
                </font>
             </JFXButton>
-            <ImageView fx:id="backBtn" fitHeight="28.0" fitWidth="57.0" layoutX="14.0" layoutY="8.0" onDragDone="#turnBack" onMouseReleased="#turnBack" onTouchReleased="#turnBack" pickOnBounds="true" preserveRatio="true">
 
-            </ImageView>
             <JFXButton layoutY="435.0" onAction="#exoprtNameList" prefHeight="28.0" prefWidth="94.0" text="导出">
                <font>
                   <Font size="17.0" />

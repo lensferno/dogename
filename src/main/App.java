@@ -39,7 +39,7 @@ public class App {
         }
         
         
-        System.out.println("[INFO]Working in:"+APP_LOCA);
+        //System.out.println("[INFO]Working in:"+APP_LOCA);
         System.gc();
 
     }

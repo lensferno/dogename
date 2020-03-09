@@ -1,5 +1,5 @@
 package main;
-
+/*
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.events.JFXDialogEvent;
 import javafx.animation.*;
@@ -1056,11 +1056,11 @@ public class UICtrl {
         goBackButton.setOnTouchMoved(hander);
 
         stage.setAlwaysOnTop(true);
-/*
-        stage.close();
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.show();
-*/
+
+        //stage.close();
+        //stage.initStyle(StageStyle.UNDECORATED);
+        //stage.show();
+
         stage.setWidth(30);
         stage.setHeight(100);
         stage.setY(stage.getY()+stage.getHeight()-50);
@@ -1087,11 +1087,11 @@ public class UICtrl {
         goBackButton.setOnTouchMoved(null);
 
         stage.setAlwaysOnTop(false);
-/*
-        stage.close();
-        stage.initStyle(StageStyle.DECORATED);
-        stage.show();
-*/
+
+        //stage.close();
+        //stage.initStyle(StageStyle.DECORATED);
+        //stage.show();
+
         stage.setResizable(false);
 
         stage.setWidth(oldW);
@@ -1273,3 +1273,4 @@ public class UICtrl {
     }
 
 }
+*/
