@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_1_5" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<lib name="commons-codec-1.11" scope="COMPILE">
+		<relative-module-cls project-related="file://$PROJECT_DIR$/libs/commons-codec-1.11"/>
+	</lib>
+	<lib name="gson-2.8.5" scope="COMPILE">
+		<relative-module-cls project-related="file://$PROJECT_DIR$/libs/gson-2.8.5"/>
+	</lib>
+	<lib name="jfoenix-8.0.4" scope="COMPILE">
+		<relative-module-cls project-related="file://$PROJECT_DIR$/libs/jfoenix-8.0.4"/>
+	</lib>
+</component>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="lib" path="libs/commons-codec-1.11"/>
 	<classpathentry kind="lib" path="libs/gson-2.8.5"/>
 	<classpathentry kind="lib" path="libs/jfoenix-8.0.4"/>
-	<classpathentry kind="output" path="out/production/DM_msater"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

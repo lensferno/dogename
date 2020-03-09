@@ -7,17 +7,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dogename.eml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ProgramMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/SystemSimpleMethod.java___jb_old___" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/SystemSimpleMethod.java___jb_tmp___" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/UICtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/UICtrl_new.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UICtrl_new.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Voice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Voice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/.goutputstream-LE5F8Z" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DM_msater.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DM_msater.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Common.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Core.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Data.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/DialogBuilder/DialogBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/DialogBuilder/MessageUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/DialogBuilder/MyUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GuShiCi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MoveWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MoveWindowByTouch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/NameManager/NameManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/NewData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ProgramMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SystemSimpleMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/UICtrl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/UICtrl_new.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Update.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Voice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/everydaySaying/Gushici.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/everydaySaying/Hitokoto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/new 1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/releaseData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/UIFileData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/backData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/dogename.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/img1Data.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/img1Data_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/img1Data_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/HuajiForce.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/UI.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sourcesData/uifiles/lailelaodi.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +58,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1Y1qziZdMWGzl19y3OvDQoXLC41" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,12 +72,23 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="me.hety.dogename" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="DogeMain" type="Application" factoryName="Application">
@@ -57,6 +106,7 @@
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -64,6 +114,7 @@
     </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -99,6 +150,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="312" y="90" key="#Project_Structure" timestamp="1583758833392">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="312" y="90" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1583758833392" />
     <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582121737044">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -107,6 +162,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1582196751461" />
+    <state x="444" y="110" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1583758872789">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="444" y="110" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1440.860@0.0.1440.860" timestamp="1583758872789" />
+    <state x="504" y="340" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1583757213640">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="504" y="340" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.860@0.0.1440.860" timestamp="1583757213640" />
+    <state x="400" y="97" key="#com.intellij.unscramble.UnscrambleDialog" timestamp="1583757475423">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="400" y="97" key="#com.intellij.unscramble.UnscrambleDialog/0.0.1440.860@0.0.1440.860" timestamp="1583757475423" />
+    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1583758789062">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1583758789062" />
     <state width="1396" height="199" key="GridCell.Tab.0.bottom" timestamp="1582205610572">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -123,13 +194,33 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1396" height="199" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1582205610572" />
+    <state x="382" y="235" key="NewModule_or_Project.wizard" timestamp="1583758807303">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="382" y="235" key="NewModule_or_Project.wizard/0.0.1440.860@0.0.1440.860" timestamp="1583758807303" />
+    <state x="200" y="6" key="SettingsEditor" timestamp="1583758566997">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="200" y="6" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1583758566997" />
     <state x="206" y="126" key="com.intellij.ide.util.TipDialog" timestamp="1582120763811">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="206" y="126" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1582120763811" />
-    <state x="407" y="62" width="626" height="735" key="find.popup" timestamp="1582189212843">
+    <state x="418" y="329" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583758451554">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="407" y="62" width="626" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1582189212843" />
+    <state x="418" y="329" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1440.860@0.0.1440.860" timestamp="1583758451554" />
+    <state x="407" y="62" width="759" height="735" key="find.popup" timestamp="1583757378832">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="407" y="62" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1583757378832" />
+    <state x="27" y="205" key="new project wizard" timestamp="1583758773596">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="27" y="205" key="new project wizard/0.0.1440.860@0.0.1440.860" timestamp="1583758773596" />
+    <state x="376" y="190" width="672" height="677" key="run.anything.popup" timestamp="1583758150878">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="376" y="190" width="672" height="677" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1583758150878" />
   </component>
 </project>
