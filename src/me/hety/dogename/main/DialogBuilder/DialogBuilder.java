@@ -7,6 +7,7 @@ import com.sun.istack.internal.Nullable;
 
 import java.util.Optional;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Control;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -168,7 +169,7 @@ public class DialogBuilder {
         hyperlink = new Hyperlink(text);
         hyperlink.setBorder(Border.EMPTY);
         hyperlink.setOnMouseClicked(event -> {
-            main.DialogBuilder.MyUtils.setLinkAutoAction(hyperlink);
+            me.hety.dogename.main.DialogBuilder.MyUtils.setLinkAutoAction(hyperlink);
         });
         return this;
     }

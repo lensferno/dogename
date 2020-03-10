@@ -26,9 +26,9 @@ public final class ProgramMain extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        File fileDir = new File(app.APP_LOCA+"files");
+        File fileDir = new File("files");
         if(!fileDir.exists())
-            fileDir.mkdir();
+            fileDir.mkdirs();
 
         showWindow();
 
@@ -69,9 +69,9 @@ public final class ProgramMain extends Application {
 
 
 	if(System.getProperty("os.name").toLowerCase().contains("window"))
-            CONFIG_FILE=app.APP_LOCA+"files\\config.data";
+            CONFIG_FILE="files\\config.data";
 	else
-            CONFIG_FILE=app.APP_LOCA+"files/config.data";
+            CONFIG_FILE="files/config.data";
 
 	readConfig();
 
@@ -81,12 +81,12 @@ public final class ProgramMain extends Application {
             Parent root;
             
             if(debugMode) {
-                loader = new FXMLLoader(getClass().getResource("/main/sourcesData/uifiles/UI.fxml"));
+                loader = new FXMLLoader(getClass().getResource("/me/hety/dogename/main/sourcesData/uifiles/UI.fxml"));
                 root = loader.load();
             }else {
                 System.out.print("[INFO]Not run in debug mode\n");
                 loader =new FXMLLoader();
-                root = loader.load(releaseData.getUIStream());
+                root = loader.load(DataReleaser.getUIStream());
             }
             
             Scene scene = new Scene(root, 990, 700);
@@ -161,8 +161,6 @@ public final class ProgramMain extends Application {
             controller.setSpeed(config.getSpeed());
             controller.setChosenTime(config.getChosenTime());
 
-            controller.setApp(app);
-
             controller.loadHistory();
 
             stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
@@ -208,10 +206,10 @@ public final class ProgramMain extends Application {
             String[] updateURLs=update.getUpdateURL();
             URLNumbs=updateURLs.length;
             stopUpdate=false;
-            File updateDir=new File(app.APP_LOCA+"updateFiles\\");
+            File updateDir=new File("updateFiles\\");
 
             if(!updateDir.exists())
-                updateDir.mkdir();
+                updateDir.mkdirs();
             else{
                 File[] updateFiles=updateDir.listFiles();
                 if(updateFiles.length>0)

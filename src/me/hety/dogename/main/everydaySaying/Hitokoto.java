@@ -18,7 +18,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.WindowEvent;
-import main.Common;
+import me.hety.dogename.main.Common;
 
 import java.util.Timer;
 import java.util.TimerTask;

@@ -22,8 +22,8 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import main.everydaySaying.Gushici;
-import main.everydaySaying.Hitokoto;
+import me.hety.dogename.main.everydaySaying.Gushici;
+import me.hety.dogename.main.everydaySaying.Hitokoto;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -52,7 +52,6 @@ public final class UICtrl_new {
 
 
 
-    App app=new App();
     int chosenTime=120;
     int times=0;
     int already=0;
@@ -69,8 +68,8 @@ public final class UICtrl_new {
 
     boolean forceStop =false;
 
-    File nameIgnoreFile =new File(app.APP_LOCA+"files\\nameIgnoreList.data");
-    File numbIgnoreFile =new File(app.APP_LOCA+"files\\numbIgnoreList.data");
+    File nameIgnoreFile =new File("files\\nameIgnoreList.data");
+    File numbIgnoreFile =new File("files\\numbIgnoreList.data");
 
 
     @FXML
@@ -421,9 +420,9 @@ public final class UICtrl_new {
 
 
 	if(System.getProperty("os.name").toLowerCase().contains("window"))
-            CONFIG_FILE=app.APP_LOCA+"files\\config.data";
+            CONFIG_FILE="files\\config.data";
 	else
-            CONFIG_FILE=app.APP_LOCA+"files/config.data";
+            CONFIG_FILE="files/config.data";
 
         configFile=new File(CONFIG_FILE);
         try{
@@ -445,9 +444,9 @@ public final class UICtrl_new {
     void loadHistory(){
 
         if(System.getProperty("os.name").toLowerCase().contains("window"))
-            HISTORY_FILE=app.APP_LOCA+"files\\history.data";
+            HISTORY_FILE="files\\history.data";
         else
-            HISTORY_FILE=app.APP_LOCA+"files/history.data";
+            HISTORY_FILE="files/history.data";
 
         try {
             File historyFile = new File(HISTORY_FILE);
@@ -465,7 +464,7 @@ public final class UICtrl_new {
 
             e.printStackTrace();
         }
-        core.set( chosen_2, chosen_1, controllerPane, choose,history,voice,app);
+        core.set( chosen_2, chosen_1, controllerPane, choose,history,voice);
         core.loadHistory();
 
     }
@@ -529,7 +528,7 @@ public final class UICtrl_new {
             choose.setText("不玩了！");
             showWhich=1+random.nextInt(2);
             //    timer.start();
-            core.set( chosen_2, chosen_1, controllerPane, choose,history,voice,app);
+            core.set( chosen_2, chosen_1, controllerPane, choose,history,voice);
             core.setIgnoreNameList(ignoreNameList);
             core.setIgnoreNumberList(ignoreNumberList);
             core.run( speed, data, chosenTime, ignorePast, equalMode, taoluMode,voicePlay);
@@ -564,7 +563,7 @@ public final class UICtrl_new {
             isRunning=true;
             choose.setText("不玩了！");
             showWhich=1+random.nextInt(2);
-            core.set( chosen_2, chosen_1, controllerPane, choose,history,voice,app);
+            core.set( chosen_2, chosen_1, controllerPane, choose,history,voice);
             core.setIgnoreNameList(ignoreNameList);
             core.setIgnoreNumberList(ignoreNumberList);
             core.run( maxNumber,minNumber,speed , chosenTime, ignorePast, equalMode, taoluMode,voicePlay);
@@ -575,7 +574,7 @@ public final class UICtrl_new {
 
     @FXML
     public ImageView mainView;
-    public Image mainImage =new Image(releaseData.getMainImageStream());
+    public Image mainImage =new Image(DataReleaser.getMainImageStream());
 
     public void setImages(){
         mainView.setImage(mainImage);
@@ -718,8 +717,17 @@ public final class UICtrl_new {
     void deleteName(){
         data.delete((String)nameList.getSelectionModel().getSelectedItems().get(0));
         names.remove((String)nameList.getSelectionModel().getSelectedItems().get(0));
-        clearIgnoreList();
-        clearTaoluList();
+
+        //删除忽略列表中被清除的名字
+        for(int i=0;i<ignoreNameList.size();i++){
+            if(!ignoreNameList.contains(data.get(i))){
+                ignoreNameList.remove(data.get(i));
+            }
+        }
+
+        //删除套路列表中被清除的名字
+        data.clearTaoluedName();
+
         data.saveToFile();
         System.gc();
     }
@@ -1026,7 +1034,7 @@ public final class UICtrl_new {
         Text text=new Text(message);
         //content.setBody(new Text(message));
 
-        vb.getChildren().add(new ImageView(new Image(releaseData.getDogenameStream())));
+        vb.getChildren().add(new ImageView(new Image(DataReleaser.getDogenameStream())));
         vb.getChildren().add(text);
         vb.setAlignment(Pos.CENTER);
         content.setBody(vb);
@@ -1054,21 +1062,5 @@ public final class UICtrl_new {
         dialog.show();
     }
 
-    /**
-     * @return the app
-     */
-    public App getApp() {
-        return app;
-    }
-
-    /**
-     * @param app the app to set
-     */
-    public void setApp(App app) {
-        this.app = app;
-        //core.setApp(app);
-        //data.setApp(app);
-        //voice.setApp(app);
-    }
 
 }

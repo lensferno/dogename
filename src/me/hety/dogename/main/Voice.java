@@ -11,17 +11,16 @@ import java.util.Random;
 
 public class Voice {
 
-    App app =new App();
-    String cachedVoicePath=app.APP_LOCA+"caches\\voice\\";
+    String cachedVoicePath="caches\\voice\\";
 
     final String API_KEY="dIHCtamVdD0ERO1yyFir2iI4";
     final String SEC_KEY="HmpBQY3gG4PyZ0cmudnCbMeoMcMejuuW";
     final String TOKEN_URL="https://openapi.baidu.com/oauth/2.0/token";
 
-    String tokenFilePath=app.APP_LOCA+"files\\voice\\";
+    String tokenFilePath="files\\voice\\";
     File cacheDir =new File(cachedVoicePath);
 
-    File tokenFile=new File(app.APP_LOCA+"API_voice.token");
+    File tokenFile=new File("API_voice.token");
 
     Token token=null;
 
@@ -30,14 +29,14 @@ public class Voice {
 
     public Voice(){
         if(System.getProperty("os.name").toLowerCase().contains("indow"))
-            cachedVoicePath=app.APP_LOCA+"caches\\voice\\";
+            cachedVoicePath="caches\\voice\\";
         else
-            cachedVoicePath=app.APP_LOCA+"caches//voice//";
+            cachedVoicePath="caches//voice//";
 
         if(System.getProperty("os.name").toLowerCase().contains("indow"))
-            tokenFilePath=app.APP_LOCA+"caches\\voice\\";
+            tokenFilePath="caches\\voice\\";
         else
-            tokenFilePath=app.APP_LOCA+"caches//voice//";
+            tokenFilePath="caches//voice//";
 
         checkNet();
         if(net){

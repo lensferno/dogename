@@ -12,7 +12,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="rootPane" prefHeight="711.0" prefWidth="1466.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.UICtrl_new">
+<Pane fx:id="rootPane" prefHeight="711.0" prefWidth="1466.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.hety.dogename.main.UICtrl_new">
    <children>
       <JFXButton fx:id="recover" onAction="#recoverWindow" prefHeight="60.0" prefWidth="60.0" text="■ ■ ■" visible="false">
          <font>
