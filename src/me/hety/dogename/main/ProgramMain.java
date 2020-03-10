@@ -4,6 +4,7 @@ package me.hety.dogename.main;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.util.logging.Logger;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -15,6 +16,8 @@ import javafx.stage.WindowEvent;
 
 
 public final class ProgramMain extends Application {
+
+    Logger log= Logger.getLogger("ProgramLogger");
 
     private String CONFIG_FILE ;//="config.data";
 
@@ -57,8 +60,12 @@ public final class ProgramMain extends Application {
 
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(configFile));
             this.config = (Config) ois.readObject();
+        }catch(EOFException EOFe){
+            config=new Config();
+            log.warning("Config file is empty.");
         } catch (Exception e) {
             config = new Config();
+            log.warning("Failed to load config file.");
             e.printStackTrace();
         }
     }

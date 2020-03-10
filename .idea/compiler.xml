@@ -6,10 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dogename" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="dogename" target="8" />
+      <module name="dogename" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

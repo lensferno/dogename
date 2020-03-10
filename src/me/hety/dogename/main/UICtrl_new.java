@@ -30,8 +30,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Logger;
 
 public final class UICtrl_new {
+
+    Logger log =Logger.getLogger("ControllerLogger");
 
     boolean taoluMode;
 
@@ -172,8 +175,12 @@ public final class UICtrl_new {
 
             ignoreNameTimes=(short) ignoreNameList.size();
 
+        }catch (EOFException e){
+            ignoreNameList=new HashSet<>();
+            log.warning("Past name list is empty.");
         }catch (Exception e){
             ignoreNameList=new HashSet<>();
+            log.warning("Failed to load past name list:"+e.toString());
             e.printStackTrace();
         }
 
@@ -190,8 +197,12 @@ public final class UICtrl_new {
 
             ignoreNumberTimes=(short) ignoreNumberList.size();
 
+        }catch (EOFException e){
+            ignoreNumberList=new HashSet<>();
+            log.warning("Past number list is empty.");
         }catch (Exception e){
             ignoreNumberList=new HashSet<>();
+            log.warning("Failed to load past number list");
             e.printStackTrace();
         }
 
@@ -459,9 +470,12 @@ public final class UICtrl_new {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(historyFile));
             this.history = (ArrayList) ois.readObject();
 
-        } catch (Exception e) {
+        } catch (EOFException e){
+            history=new ArrayList();
+            log.warning("History file is empty.");
+        }catch (Exception e) {
             history = new ArrayList();
-
+            log.warning("Failed to load history file:"+e.toString());
             e.printStackTrace();
         }
         core.set( chosen_2, chosen_1, controllerPane, choose,history,voice);

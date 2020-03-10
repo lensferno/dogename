@@ -3,10 +3,13 @@ package me.hety.dogename.main;
 import java.io.*;
 import java.security.SecureRandom;
 import java.util.*;
+import java.util.logging.Logger;
 
 import com.google.gson.Gson;
 
 public class Data {
+    Logger log = Logger.getLogger("DataLogger");
+
     private List<String> nameList;
 
     private List<String> chooseList;
@@ -121,9 +124,14 @@ public class Data {
             listSize=nameList.size();
             this.chooseList=new ArrayList<>(nameList);
 
+        }catch (EOFException EOFe){
+            nameList=new ArrayList<>();
+            chooseList=new ArrayList<>();
+            log.warning("Data file is empty.");
         }catch (Exception e){
             nameList=new ArrayList<>();
             chooseList=new ArrayList<>();
+            log.warning("Failed to load data file.");
             e.printStackTrace();
         }
 

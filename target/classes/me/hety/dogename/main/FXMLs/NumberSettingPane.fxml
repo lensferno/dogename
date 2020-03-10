@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="94.0" prefWidth="223.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="215.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="最小：">
+               <font>
+                  <Font name="Microsoft YaHei" size="17.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="minVauleField" prefHeight="23.0" prefWidth="141.0" />
+         </children>
+      </HBox>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="215.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="最大：">
+               <font>
+                  <Font name="Microsoft YaHei" size="17.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="maxVauleField" prefHeight="23.0" prefWidth="141.0" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets left="10.0" top="10.0" />
+   </padding>
+</VBox>
