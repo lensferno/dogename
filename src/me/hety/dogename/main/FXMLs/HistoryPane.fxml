@@ -8,20 +8,20 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="367.0" prefWidth="287.0" spacing="5.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXListView prefHeight="270.0" prefWidth="301.0" />
-      <JFXTextField promptText="查找...">
+      <JFXListView fx:id="historyList" prefHeight="270.0" prefWidth="301.0" />
+      <JFXTextField fx:id="searchBar" promptText="查找...">
          <font>
             <Font name="Microsoft YaHei" size="14.0" />
          </font>
       </JFXTextField>
       <HBox prefHeight="29.0" prefWidth="259.0" spacing="5.0">
          <children>
-            <JFXButton text="上一个">
+            <JFXButton fx:id="previousBtn" text="上一个">
                <font>
                   <Font name="Microsoft YaHei" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton text="下一个">
+            <JFXButton fx:id="nextBtn" text="下一个">
                <font>
                   <Font name="Microsoft YaHei" size="14.0" />
                </font>

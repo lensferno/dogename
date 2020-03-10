@@ -1,4 +1,5 @@
 /out
 /files
 /caches
+/target
 *.token

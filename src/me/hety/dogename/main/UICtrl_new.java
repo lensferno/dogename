@@ -22,6 +22,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import me.hety.dogename.main.controllers.ProgramInfoPaneController;
 import me.hety.dogename.main.everydaySaying.Gushici;
 import me.hety.dogename.main.everydaySaying.Hitokoto;
 
@@ -1003,7 +1004,52 @@ public final class UICtrl_new {
 
     @FXML
     void showInfo(){
-	showAuInfo("Me?","这是一个以Java语言编写，采用Google Material Design（Google MD）为界面风格的用来点名的东西。\n该程序的源代码可在 https://github.com/eatenid/dogename 查看和获取。（更新什么的基本不打算的了ヾ§ ￣▽)ゞ）\n\n使用到的第三方库：\nJFoenix(8.0.4)\nApache Commons Codec(1.11)\nGson(2.8.5) \n感谢gushici项目提供的古诗词数据接口，详情请前往：https://github.com/xenv/gushici\n\n关于作者的一些东西：\nGithub主页：https://github.com/eatenid\nGoogle+：kygbuff@gamil.com\n\n邮箱等：\nHet2002@outlook.com\n2318724550@qq.com\nulcch@foxmail.com\n\n\nCreated by He T.Y.");
+	//showAuInfo("Me?","这是一个以Java语言编写，采用Google Material Design（Google MD）为界面风格的用来点名的东西。\n该程序的源代码可在 https://github.com/eatenid/dogename 查看和获取。（更新什么的基本不打算的了ヾ§ ￣▽)ゞ）\n\n使用到的第三方库：\nJFoenix(8.0.4)\nApache Commons Codec(1.11)\nGson(2.8.5) \n感谢gushici项目提供的古诗词数据接口，详情请前往：https://github.com/xenv/gushici\n\n关于作者的一些东西：\nGithub主页：https://github.com/eatenid\nGoogle+：kygbuff@gamil.com\n\n邮箱等：\nHet2002@outlook.com\n2318724550@qq.com\nulcch@foxmail.com\n\n\nCreated by He T.Y.");
+creatDialong("程序信息");
+    }
+
+    private void creatDialong(String header){
+
+        JFXDialogLayout content = new JFXDialogLayout();
+        content.setHeading(new Text(header));
+
+        content.setBody(new ProgramInfoPaneController());
+
+        StackPane tempPane=new StackPane();
+        tempPane.setPrefHeight(mainPane.getPrefHeight());
+        tempPane.setPrefWidth(mainPane.getPrefWidth());
+        mainPane.getChildren().add(tempPane);
+        JFXDialog dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
+        dialog.setPrefHeight(mainPane.getPrefHeight());
+        dialog.setPrefWidth(mainPane.getPrefWidth());
+        JFXButton LButton = new JFXButton("开源协议 LGPL v3");
+        dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
+            @Override
+            public void handle(JFXDialogEvent event) {
+                mainPane.getChildren().remove(tempPane);
+            }
+        });
+        LButton.setPrefWidth(50);
+        LButton.setPrefHeight(30);
+        LButton.setOnAction((ActionEvent e) -> {
+            dialog.close();
+        });
+
+        JFXButton OKButton = new JFXButton("好的！");
+        dialog.setOnDialogClosed(new EventHandler<JFXDialogEvent>() {
+            @Override
+            public void handle(JFXDialogEvent event) {
+                mainPane.getChildren().remove(tempPane);
+            }
+        });
+        OKButton.setPrefWidth(50);
+        OKButton.setPrefHeight(30);
+        OKButton.setOnAction((ActionEvent e) -> {
+            dialog.close();
+        });
+        content.setActions(LButton,OKButton);
+
+        dialog.show();
     }
 
 
