@@ -1,7 +1,3 @@
 /out
-/app
-/home/hety/Projects/dogename/D:\\dogename\\files
-/home/hety/Projects/dogename/D:\\dogename\\files\\config
-/home/hety/Projects/dogename/D:\\dogename\\files\\data
-/home/hety/Projects/dogename/D:\\dogename\\files\\nameIgnoreList
-/home/hety/Projects/dogename/D:\\dogename\\files\\numbIgnoreList
+/files
+*.token

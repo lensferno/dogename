@@ -1,12 +1,12 @@
 package me.hety.dogename.main;
 
-import main.sourcesData.*;
+import me.hety.dogename.main.sourcesData.*;
 import org.apache.commons.codec.binary.Base64;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-public class releaseData {
+public class DataReleaser {
 
 
     public static InputStream getUIStream(){

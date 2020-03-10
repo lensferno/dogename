@@ -20,7 +20,6 @@ public class Data {
     
     //不做注释了，自己慢慢看。：）
 
-    App app=new App();
     public void exportNameList(File path) {
 	if(path!=null) {
             try{
@@ -90,9 +89,9 @@ public class Data {
     public Data(){
 
 	if(System.getProperty("os.name").toLowerCase().contains("window"))
-            dataFile=new File(app.APP_LOCA+"files\\namelist.data");
+            dataFile=new File("files\\namelist.data");
 	else
-            dataFile=new File(app.APP_LOCA+"files/namelist.data");
+            dataFile=new File("files/namelist.data");
 
 	File oldDataFile=new File("D:\\dogename\\files\\data");
 

@@ -33,7 +33,6 @@ public class Core {
 
     boolean voicePlay=true;
 
-    App app=new App();
     int chosenTime=120;
     int times=0;
     int already=0;
@@ -60,8 +59,8 @@ public class Core {
     public Label chosen_1;
     public Label chosen_2;
 
-    File nameIgnoreFile =new File(app.APP_LOCA+"files\\nameIgnoreList.data");
-    File numbIgnoreFile =new File(app.APP_LOCA+"files\\numbIgnoreList.data");
+    File nameIgnoreFile =new File("files\\nameIgnoreList.data");
+    File numbIgnoreFile =new File("files\\numbIgnoreList.data");
 
     public boolean isNameChoose=true;
     public short speed;
@@ -86,9 +85,9 @@ public class Core {
     void loadHistory(){
 
         if(System.getProperty("os.name").toLowerCase().contains("window"))
-            HISTORY_FILE=app.APP_LOCA+"files\\history.data";
+            HISTORY_FILE="files\\history.data";
         else
-            HISTORY_FILE=app.APP_LOCA+"files/history.data";
+            HISTORY_FILE="files/history.data";
 
         try {
             File historyFile = new File(HISTORY_FILE);
@@ -139,9 +138,9 @@ public class Core {
     void saveHistory(){
 
         if(System.getProperty("os.name").toLowerCase().contains("window"))
-            HISTORY_FILE=app.APP_LOCA+"files\\history.data";
+            HISTORY_FILE="files\\history.data";
         else
-            HISTORY_FILE=app.APP_LOCA+"files/history.data";
+            HISTORY_FILE="files/history.data";
 
         historyFile=new File(HISTORY_FILE);
         try{
@@ -382,20 +381,17 @@ public class Core {
         numbTimer.start();
     }
 
-    public void set(Label chosen_2,Label chosen_1,ScrollPane controllerPane,JFXButton choose,List history,Voice voice,App app){
+    public void set(Label chosen_2,Label chosen_1,ScrollPane controllerPane,JFXButton choose,List history,Voice voice){
         setChosen_1(chosen_1);
         setChosen_2(chosen_2);
         setControllerPane(controllerPane);
         setChoose(choose);
         setHistory(history);
         setVoice(voice);
-        setApp(app);
     }
 
 
-    public void setApp(App app) {
-        this.app = app;
-    }
+
 
     public void setHistory(List history) {
         this.history = history;

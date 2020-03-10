@@ -834,8 +834,8 @@ public class UICtrl {
     public ImageView mainView;
     @FXML
     public ImageView backBtn;
-    public Image mainImage =new Image(releaseData.getMainImageStream());
-    public Image backBtnImage =new Image(releaseData.getBackBtnStream());
+    public Image mainImage =new Image(DataReleaser.getMainImageStream());
+    public Image backBtnImage =new Image(DataReleaser.getBackBtnStream());
 
     public void setImages(){
         mainView.setImage(mainImage);
@@ -1244,7 +1244,7 @@ public class UICtrl {
         Text text=new Text(message);
         //content.setBody(new Text(message));
 
-        vb.getChildren().add(new ImageView(new Image(releaseData.getDogenameStream())));
+        vb.getChildren().add(new ImageView(new Image(DataReleaser.getDogenameStream())));
         vb.getChildren().add(text);
         vb.setAlignment(Pos.CENTER);
         content.setBody(vb);

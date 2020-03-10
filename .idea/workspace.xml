@@ -7,28 +7,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dogename_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jfoenix_jfoenix_8_0_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_13_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/dogename.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigValuesBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/VoiceConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename.eml" beforeDir="false" afterPath="$PROJECT_DIR$/dogename.eml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dogename.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/Core.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/DialogBuilder/DialogBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/DialogBuilder/DialogBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/ProgramMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/UICtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/UICtrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/UICtrl_new.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/UICtrl_new.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Voice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/Voice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/everydaySaying/Gushici.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/everydaySaying/Gushici.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/everydaySaying/Hitokoto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/everydaySaying/Hitokoto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/releaseData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/DataReleaser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,6 +48,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1Y1qziZdMWGzl19y3OvDQoXLC41" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -53,12 +63,12 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HMCL" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.18057142" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -125,18 +135,30 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="60" y="103" width="1328" height="679" key="#Getter_Template" timestamp="1583800984047">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="60" y="103" width="1328" height="679" key="#Getter_Template/0.0.1440.860@0.0.1440.860" timestamp="1583800984047" />
     <state x="195" y="62" width="1046" height="725" key="#Project_Structure" timestamp="1583765957655">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="195" y="62" width="1046" height="725" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1583765957655" />
+    <state x="175" y="51" width="1189" height="770" key="#Setter_Template" timestamp="1583800698833">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="175" y="51" width="1189" height="770" key="#Setter_Template/0.0.1440.860@0.0.1440.860" timestamp="1583800698833" />
+    <state x="312" y="91" key="#Template" timestamp="1583801267344">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="312" y="91" key="#Template/0.0.1440.860@0.0.1440.860" timestamp="1583801267344" />
     <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583765876480">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1583765876480" />
-    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1582196751461">
+    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1583811667915">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1582196751461" />
+    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1583811667915" />
     <state x="347" y="178" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583765579817">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -157,34 +179,34 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="448" y="181" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1440.860@0.0.1440.860" timestamp="1583765548213" />
-    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1583765640187">
+    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1583801910320">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1583765640187" />
-    <state width="1396" height="199" key="GridCell.Tab.0.bottom" timestamp="1582205610572">
+    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1583801910320" />
+    <state width="1396" height="217" key="GridCell.Tab.0.bottom" timestamp="1583812476382">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="199" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1582205610572" />
-    <state width="1396" height="199" key="GridCell.Tab.0.center" timestamp="1582205610572">
+    <state width="1396" height="217" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1583812476382" />
+    <state width="1396" height="217" key="GridCell.Tab.0.center" timestamp="1583812476382">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="199" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1582205610572" />
-    <state width="1396" height="199" key="GridCell.Tab.0.left" timestamp="1582205610572">
+    <state width="1396" height="217" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1583812476382" />
+    <state width="1396" height="217" key="GridCell.Tab.0.left" timestamp="1583812476382">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="199" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1582205610572" />
-    <state width="1396" height="199" key="GridCell.Tab.0.right" timestamp="1582205610572">
+    <state width="1396" height="217" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1583812476382" />
+    <state width="1396" height="217" key="GridCell.Tab.0.right" timestamp="1583812476382">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="199" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1582205610572" />
+    <state width="1396" height="217" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1583812476382" />
     <state x="382" y="235" key="NewModule_or_Project.wizard" timestamp="1583758807303">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="382" y="235" key="NewModule_or_Project.wizard/0.0.1440.860@0.0.1440.860" timestamp="1583758807303" />
-    <state x="200" y="6" key="SettingsEditor" timestamp="1583766052165">
+    <state x="200" y="6" key="SettingsEditor" timestamp="1583801028849">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="200" y="6" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1583766052165" />
+    <state x="200" y="6" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1583801028849" />
     <state x="206" y="126" key="com.intellij.ide.util.TipDialog" timestamp="1582120763811">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -193,10 +215,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="418" y="329" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1440.860@0.0.1440.860" timestamp="1583759438641" />
-    <state x="407" y="62" width="759" height="735" key="find.popup" timestamp="1583757378832">
+    <state x="578" y="58" width="759" height="735" key="find.popup" timestamp="1583800447834">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="407" y="62" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1583757378832" />
+    <state x="578" y="58" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1583800447834" />
     <state x="27" y="205" key="new project wizard" timestamp="1583765518131">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
