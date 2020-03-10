@@ -8,6 +8,7 @@ import com.sun.istack.internal.Nullable;
 import java.util.Optional;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.Node;
 import javafx.scene.control.Control;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -36,6 +37,10 @@ public class DialogBuilder {
     private JFXTextField textField = null;
     private JFXAlert<String> alert;
     private OnInputListener onInputListener = null;
+
+    public DialogBuilder addAnything(Node node){
+        return this;
+    }
 
     /**
      * 构造方法
