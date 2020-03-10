@@ -11,8 +11,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Logger;
 
 public class Core {
+
+    Logger log =Logger.getLogger("CoreLogger");
 
     boolean taoluMode;
 
@@ -100,9 +103,12 @@ public class Core {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(historyFile));
             this.history = (ArrayList) ois.readObject();
 
-        } catch (Exception e) {
+        } catch (EOFException e){
+            ignoreNameList=new HashSet<>();
+            log.warning("History file is empty.");
+        }catch (Exception e) {
             history = new ArrayList();
-
+            log.warning("Failed to load history file.");
             e.printStackTrace();
         }
 

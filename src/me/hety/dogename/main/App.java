@@ -1,17 +1,23 @@
 package me.hety.dogename.main;
 
+
+import sun.rmi.runtime.Log;
+
 import java.io.File;
 import java.lang.management.ManagementFactory;
+import java.util.logging.Logger;
 
 public class App {
     public String APP_LOCA;
     public String PID;
     public String JAR_FILE;
     private boolean debug=true;
+    Logger log= Logger.getLogger("dogenameLogger");
     public App()
     {
         String name = ManagementFactory.getRuntimeMXBean().getName();
-        System.out.println(name);
+        log.info("JavaPID@PC: "+name);
+        //System.out.println(name);
 
         PID=name.split("@")[0];
 

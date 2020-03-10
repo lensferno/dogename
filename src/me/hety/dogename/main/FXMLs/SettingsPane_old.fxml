@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane fx:id="controllerPane" prefHeight="200.0" prefWidth="566.0" style="-fx-background-color: rgb(255,255,255);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <Pane prefHeight="245.0" prefWidth="547.0" style="-fx-background-color: white;">
+         <children>
+            <JFXSlider fx:id="speedBar" layoutX="85.0" layoutY="25.0" majorTickUnit="10.0" onMouseReleased="#setSpeedHere" onTouchReleased="#setSpeedHere" prefHeight="15.0" prefWidth="385.0" showTickLabels="true" showTickMarks="true" value="80.0" />
+            <Label layoutX="28.0" layoutY="19.0" prefHeight="23.0" prefWidth="57.0" text="调速：">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <JFXSlider fx:id="chooseTimes" layoutX="178.0" layoutY="165.0" max="200.0" min="3.0" onMouseReleased="#setChosenTimeHere" onTouchReleased="#setChosenTimeHere" prefHeight="18.0" prefWidth="238.0" showTickLabels="true" showTickMarks="true" value="120.0" />
+            <JFXRadioButton fx:id="randomTimes" layoutX="32.0" layoutY="133.0" onAction="#randomTimes_selected" selected="true" text="挑选次数随机（100~250）">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="fixedTimes" layoutX="32.0" layoutY="162.0" onAction="#fixedTimes_selected" text="挑选次数固定：">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="ignoreOnce" layoutX="32.0" layoutY="56.0" onAction="#ignoreOnce_selected" selected="true" text="这次点过就不点了">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="chooseOnce" layoutX="32.0" layoutY="85.0" onAction="#chooseOnce_selected" text="被点过的还要点">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXCheckBox fx:id="equalModeBtn" checkedColor="#079cd7" layoutX="250.0" layoutY="57.0" onAction="#equalBtnAction" prefHeight="28.0" prefWidth="94.0" text="机会均等" unCheckedColor="#13aecf">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="taoluModeBtn" checkedColor="#079cd7" layoutX="250.0" layoutY="85.0" onAction="#taoluModeBtn_Aciton" prefHeight="28.0" prefWidth="89.0" text="娱乐模式" unCheckedColor="#13aecf">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXButton buttonType="RAISED" layoutX="342.0" layoutY="85.0" onAction="#clearTaoluList" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
+            <JFXButton buttonType="RAISED" layoutX="342.0" layoutY="57.0" onAction="#clearIgnoreList" prefHeight="20.0" ripplerFill="#04d5ff" text="重置" textFill="#1797e3" />
+            <JFXButton buttonType="RAISED" layoutX="385.0" layoutY="85.0" onAction="#showTaoluMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
+            <JFXButton buttonType="RAISED" layoutX="385.0" layoutY="57.0" onAction="#showEqualMode" prefHeight="20.0" ripplerFill="#00e842" text="说明" textFill="#294f65" />
+            <Line endX="100.0" layoutX="347.0" layoutY="85.0" startX="-100.0" />
+            <JFXCheckBox fx:id="newAlgoBtn" checkedColor="#079cd7" layoutX="32.0" layoutY="193.0" onAction="#newAlgoBtnAction" selected="true" text="使用新的随机算法(Java SecureRandom)" textFill="#2c2424" unCheckedColor="#13aecf">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="voicePlayBtn" checkedColor="#079cd7" layoutX="32.0" layoutY="217.0" onAction="#voicePlayBtnAction" selected="true" text="语音播报" textFill="#2c2424" unCheckedColor="#13aecf">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXCheckBox>
+         </children>
+      </Pane>
+   </content>
+</ScrollPane>
