@@ -10,7 +10,7 @@ import me.hety.dogename.main.DataReleaser;
 public class ProgramInfoPaneController extends VBox {
 
     @FXML
-    private ImageView dogeView;
+    public ImageView dogeView;
 
     public ProgramInfoPaneController(){
         FXMLLoader loader=new FXMLLoader(getClass().getResource("/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml"));
@@ -21,7 +21,8 @@ public class ProgramInfoPaneController extends VBox {
         }catch(Exception e){
             e.printStackTrace();
         }
-        dogeView.setImage(new Image(DataReleaser.getDogenameStream()));
+        Image dogeImage=new Image(DataReleaser.getDogenameStream());
+        dogeView.setImage(dogeImage);
     }
 
 }

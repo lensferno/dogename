@@ -159,7 +159,67 @@ public class Hitokoto {
         public void setType(String type) {
             this.type = type;
         }
+
+        /**
+         * Type:
+         * a	动画
+         * b	漫画
+         * c	游戏
+         * d	文学
+         * e	原创
+         * f	来自网络
+         * g	其他
+         * h	影视
+         * i	诗词
+         * j	网易云
+         * k	哲学
+         * l	抖机灵
+         *
+         * @return
+         */
+
         public String getType() {
+            switch (type){
+                case "a" :
+                    type="动画";
+                    break;
+                case "b" :
+                    type="漫画";
+                    break;
+                case "c" :
+                    type="游戏";
+                    break;
+                case "d" :
+                    type="文学";
+                    break;
+                case "e" :
+                    type="原创";
+                    break;
+                case "f" :
+                    type="来自网络";
+                    break;
+                case "g" :
+                    type="其他";
+                    break;
+                case "h" :
+                    type="影视";
+                    break;
+                case "i" :
+                    type="诗词";
+                    break;
+                case "j" :
+                    type="网易云";
+                    break;
+                case "k" :
+                    type="哲学";
+                    break;
+                case "l" :
+                    type="抖机灵";
+                    break;
+                default:
+                    type="未知";
+
+            }
             return type;
         }
 

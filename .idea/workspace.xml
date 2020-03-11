@@ -7,31 +7,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/NewMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dogename_new_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/DialogMaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/adapters/BooleanPropertyAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/adapters/IntegerPropertyAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/GushiciPaneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/newbuild/NewMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/DialogBuilder/DialogBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/DialogBuilder/DialogBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/HistoryPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/HistoryPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/UICtrl_new.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/UICtrl_new.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/HistoryPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/HistoryPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NameManagerPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NameManagerPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NumberSettingsPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NumberSettingsPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/MainInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/MainInterface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/NewMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/ProgramMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/UICtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/UICtrl_old.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/UICtrl_new.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/InterfaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/ProgramInfoPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/ProgramInfoPaneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/SettingsPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/SettingsPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/everydaySaying/Hitokoto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/everydaySaying/Hitokoto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/DialogBuilder/DialogBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/DialogBuilder/DialogBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/HistoryPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/HistoryPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/MainInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/MainInterface.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NewSettingsPane.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NumberSettingPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NumberSettingPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/SettingsPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/SettingsPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/ProgramMain$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/ProgramMain$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/ProgramMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/ProgramMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/UICtrl_new.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/ConfigLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/ConfigLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/MainConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/MainConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/everydaySaying/Hitokoto$HitokotoData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/everydaySaying/Hitokoto$HitokotoData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,18 +84,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../HMCL" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.18057142" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="me.hety.dogename" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DogeMain">
+  <component name="RunManager" selected="Application.DogeMain_new">
     <configuration name="DogeMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="me.hety.dogename.main.ProgramMain" />
       <module name="dogename" />
@@ -92,7 +104,7 @@
       </method>
     </configuration>
     <configuration name="DogeMain_new" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="me.hety.dogename.main.NewMain" />
+      <option name="MAIN_CLASS_NAME" value="me.hety.dogename.main.newbuild.NewMain" />
       <module name="dogename" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,10 +170,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="60" y="103" width="1328" height="679" key="#Getter_Template/0.0.1440.860@0.0.1440.860" timestamp="1583800984047" />
-    <state x="195" y="62" width="1046" height="725" key="#Project_Structure" timestamp="1583831128115">
+    <state x="195" y="62" width="1046" height="725" key="#Project_Structure" timestamp="1583915646198">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="195" y="62" width="1046" height="725" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1583831128115" />
+    <state x="195" y="62" width="1046" height="725" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1583915646198" />
     <state x="175" y="51" width="1189" height="770" key="#Setter_Template" timestamp="1583800698833">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -174,14 +186,14 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1583850267403" />
-    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1583849898555">
+    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1583936355246">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1583849898555" />
-    <state x="347" y="178" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583850260108">
+    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1583936355246" />
+    <state x="347" y="178" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583915631633">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="347" y="178" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.860@0.0.1440.860" timestamp="1583850260108" />
+    <state x="347" y="178" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.860@0.0.1440.860" timestamp="1583915631633" />
     <state x="444" y="110" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1583823877025">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -198,34 +210,66 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="448" y="181" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1440.860@0.0.1440.860" timestamp="1583765548213" />
-    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1583801910320">
+    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1583921914070">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1583801910320" />
-    <state width="1396" height="217" key="GridCell.Tab.0.bottom" timestamp="1583850384063">
+    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1583921914070" />
+    <state width="1396" height="217" key="GridCell.Tab.0.bottom" timestamp="1583937876286">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="217" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1583850384063" />
-    <state width="1396" height="217" key="GridCell.Tab.0.center" timestamp="1583850384063">
+    <state width="1396" height="217" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1583937876286" />
+    <state width="1396" height="217" key="GridCell.Tab.0.center" timestamp="1583937876286">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="217" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1583850384063" />
-    <state width="1396" height="217" key="GridCell.Tab.0.left" timestamp="1583850384063">
+    <state width="1396" height="217" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1583937876286" />
+    <state width="1396" height="217" key="GridCell.Tab.0.left" timestamp="1583937876285">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="217" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1583850384063" />
-    <state width="1396" height="217" key="GridCell.Tab.0.right" timestamp="1583850384063">
+    <state width="1396" height="217" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1583937876285" />
+    <state width="1396" height="217" key="GridCell.Tab.0.right" timestamp="1583937876286">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="217" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1583850384063" />
+    <state width="1396" height="217" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1583937876286" />
+    <state width="1396" height="270" key="GridCell.Tab.1.bottom" timestamp="1583928831984">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="270" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1583928831984" />
+    <state width="1396" height="270" key="GridCell.Tab.1.center" timestamp="1583928831984">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="270" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1583928831984" />
+    <state width="1396" height="270" key="GridCell.Tab.1.left" timestamp="1583928831983">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="270" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1583928831983" />
+    <state width="1396" height="270" key="GridCell.Tab.1.right" timestamp="1583928831984">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="270" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1583928831984" />
+    <state width="1396" height="270" key="GridCell.Tab.2.bottom" timestamp="1583928831984">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="270" key="GridCell.Tab.2.bottom/0.0.1440.860@0.0.1440.860" timestamp="1583928831984" />
+    <state width="1396" height="270" key="GridCell.Tab.2.center" timestamp="1583928831984">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="270" key="GridCell.Tab.2.center/0.0.1440.860@0.0.1440.860" timestamp="1583928831984" />
+    <state width="1396" height="270" key="GridCell.Tab.2.left" timestamp="1583928831984">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="270" key="GridCell.Tab.2.left/0.0.1440.860@0.0.1440.860" timestamp="1583928831984" />
+    <state width="1396" height="270" key="GridCell.Tab.2.right" timestamp="1583928831984">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1396" height="270" key="GridCell.Tab.2.right/0.0.1440.860@0.0.1440.860" timestamp="1583928831984" />
     <state x="382" y="235" key="NewModule_or_Project.wizard" timestamp="1583758807303">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="382" y="235" key="NewModule_or_Project.wizard/0.0.1440.860@0.0.1440.860" timestamp="1583758807303" />
-    <state x="446" y="47" key="SettingsEditor" timestamp="1583848990499">
+    <state x="238" y="51" key="SettingsEditor" timestamp="1583895383596">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="446" y="47" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1583848990499" />
+    <state x="238" y="51" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1583895383596" />
     <state x="206" y="126" key="com.intellij.ide.util.TipDialog" timestamp="1582120763811">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -234,10 +278,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="497" y="388" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1440.860@0.0.1440.860" timestamp="1583828563471" />
-    <state x="578" y="58" width="759" height="735" key="find.popup" timestamp="1583800447834">
+    <state x="578" y="58" width="759" height="735" key="find.popup" timestamp="1583925805055">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="578" y="58" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1583800447834" />
+    <state x="578" y="58" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1583925805055" />
     <state x="27" y="205" key="new project wizard" timestamp="1583765518131">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -246,5 +290,94 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="190" width="672" height="677" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1583758150878" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/ProgramMain.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/ProgramMain.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/ProgramMain.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/ProgramMain.java</url>
+          <line>170</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/ProgramMain.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/newbuild/NewMain.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/newbuild/NewMain.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/newbuild/NewMain.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/ProgramMain.java</url>
+          <line>74</line>
+          <properties class="me.hety.dogename.main.ProgramMain" method="showWindow">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

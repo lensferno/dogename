@@ -2,33 +2,52 @@ package me.hety.dogename.main.configs;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import me.hety.dogename.main.configs.adapters.BooleanPropertyAdapter;
+import me.hety.dogename.main.configs.adapters.IntegerPropertyAdapter;
 import org.apache.commons.io.IOUtils;
-import sun.applet.Main;
 
 import java.io.*;
-import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.logging.Logger;
 
 public class ConfigLoader {
 
     Logger log =Logger.getLogger("configLoaderLogger");
 
-    ConfigValuesBean config;
-    MainConfig mainConfig;
+    //ConfigValuesBean config;
+    private MainConfig mainConfig;
 
-    public ConfigValuesBean readConfigFromFile(String fileLocation){
+    public MainConfig getMainConfig() {
+        return mainConfig;
+    }
+
+    public MainConfig readConfigFromFile(String fileLocation){
+
+        //property属性应该要自定义一个json适配器才能解析出来
+        Gson gson=new GsonBuilder()
+                .registerTypeAdapter(SimpleBooleanProperty.class,new BooleanPropertyAdapter())
+                .registerTypeAdapter(SimpleIntegerProperty.class,new IntegerPropertyAdapter())
+                .create();
 
         String ConfigJSON;
+
         try{
             InputStream inputStream=new FileInputStream(fileLocation);
-            ConfigJSON=IOUtils.toString(inputStream,"utf-8");
+            ConfigJSON=IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+            mainConfig=gson.fromJson(ConfigJSON,MainConfig.class);
 
-        }catch (IOException ioe){
-            log.finer("Error to read config fro file:"+ioe.toString());
+
+        }catch (Exception e){
+            log.warning("Error to load config file:"+e.toString()+"\nUse Default config.");
+            mainConfig=new MainConfig();
+            e.printStackTrace();
         }
 
-        return this.config;
+        return this.mainConfig;
     }
+
 
     //
     public MainConfig setValuesToProperty(){
@@ -38,7 +57,7 @@ public class ConfigLoader {
         return this.mainConfig;
     }
 
-    private String toJSON(ConfigValuesBean config){
+    private String toJSON(MainConfig config){
         Gson gson = new Gson();
         return gson.toJson(config);
     }
@@ -51,7 +70,7 @@ public class ConfigLoader {
                 outputFile.createNewFile();
 
             OutputStream stream=new FileOutputStream(outputFile);
-            IOUtils.write(toJSON(this.config).getBytes("utf-8"),stream);
+            IOUtils.write(toJSON(this.mainConfig).getBytes(StandardCharsets.UTF_8),stream);
 
         }catch (IOException ioe){
 
