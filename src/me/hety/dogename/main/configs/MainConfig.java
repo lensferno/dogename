@@ -1,5 +1,6 @@
 package me.hety.dogename.main.configs;
 
+import com.google.gson.annotations.Expose;
 import javafx.beans.InvalidationListener;
 import javafx.beans.property.*;
 import javafx.beans.value.ChangeListener;
@@ -7,9 +8,11 @@ import javafx.beans.value.ObservableValue;
 
 public class MainConfig {
 
-    ConfigValuesBean configValuesBean =new ConfigValuesBean();
+    //ConfigValuesBean configValuesBean =new ConfigValuesBean();
     
     //---------------------- Default values ---------------------------------------------------------
+    public final boolean DEFAULT_NAME_CHOOSE=true;
+
     public final int METHOD_NAME =0; //名字挑选法
     public final int METHOD_NUMBER=1; //数字挑选法
 
@@ -28,6 +31,9 @@ public class MainConfig {
 
 
     //---------------------- Properties ----------------------------------------------------------------
+
+    private SimpleBooleanProperty nameChooseProperty;
+
     private SimpleBooleanProperty randomTimesProperty; //挑选次数是否随机
     private SimpleBooleanProperty ignorePastProperty; //是否忽略已经被点过的名字
 
@@ -51,6 +57,8 @@ public class MainConfig {
         ignorePastProperty=new SimpleBooleanProperty(DEFAULT_IGNORE_PAST);
 
         chooseMethodProperty=new SimpleIntegerProperty(METHOD_NAME);
+        nameChooseProperty=new SimpleBooleanProperty(DEFAULT_NAME_CHOOSE);
+        
         cycleTimesProperty=new SimpleIntegerProperty(DEFAULT_CYCLE_TIMES);
 
         speedProperty=new SimpleIntegerProperty(DEFAULT_SPEED);
@@ -68,12 +76,26 @@ public class MainConfig {
 
     //-------------------------- Getters and Setters ---------------------------------------------
 
-    public ConfigValuesBean getConfigValuesBean() {
-        return configValuesBean;
+    //public ConfigValuesBean getConfigValuesBean() {
+    //    return configValuesBean;
+    //}
+
+    //public void setConfigValuesBean(ConfigValuesBean configValuesBean) {
+    //    this.configValuesBean = configValuesBean;
+    //}
+
+
+
+    public boolean isNameChooseProperty() {
+        return nameChooseProperty.get();
     }
 
-    public void setConfigValuesBean(ConfigValuesBean configValuesBean) {
-        this.configValuesBean = configValuesBean;
+    public SimpleBooleanProperty nameChoosePropertyProperty() {
+        return nameChooseProperty;
+    }
+
+    public void setNameChooseProperty(boolean nameChooseProperty) {
+        this.nameChooseProperty.set(nameChooseProperty);
     }
 
     public boolean isRandomTimesProperty() {

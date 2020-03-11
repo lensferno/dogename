@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import com.jfoenix.controls.JFXTextField;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.stage.Modality;
@@ -78,6 +79,9 @@ public class DialogBuilder {
      */
     public DialogBuilder setNegativeBtn(String negativeBtnText, String color) {
         return setNegativeBtn(negativeBtnText, null, color);
+    }
+    public void show(){
+        alert.show();
     }
 
     /**
@@ -186,6 +190,12 @@ public class DialogBuilder {
         return this;
     }
 
+    Pane bodyPane=null;
+    public DialogBuilder addBody(Pane bodyPane){
+        this.bodyPane=bodyPane;
+        return this;
+    }
+
     /**
      * 创建对话框并显示
      *
@@ -198,18 +208,33 @@ public class DialogBuilder {
 
         JFXDialogLayout layout = new JFXDialogLayout();
         layout.setHeading(new Label(title));
-        //添加hyperlink超链接文本或者是输入框
-        if (hyperlink != null) {
-            layout.setBody(new HBox(new Label(this.message), hyperlink));
-        } else if (textField != null) {
-            layout.setBody(new VBox(new Label(this.message), textField));
-            positiveBtn.setOnAction(event -> {
-                alert.setResult(textField.getText());
-                alert.hideWithAnimation();
-            });
-        } else {
-            layout.setBody(new VBox(new Label(this.message)));
+
+        //给有body就直接用给的body
+        if(bodyPane!=null){
+
+            //添加hyperlink超链接文本或者是输入框
+            if (hyperlink != null) {
+                layout.setBody(new HBox(new Label(this.message), hyperlink));
+            } else if (textField != null) {
+                layout.setBody(new VBox(new Label(this.message), textField));
+                positiveBtn.setOnAction(event -> {
+                    alert.setResult(textField.getText());
+                    alert.hideWithAnimation();
+                });
+            } else {
+                layout.setBody(new VBox(new Label(this.message)));
+            }
+
+        }else {
+            layout.setBody(bodyPane);
         }
+
+
+
+
+
+        //-----------
+
 
         //添加确定和取消按钮
         if (negativeBtn != null && positiveBtn != null) {
@@ -233,6 +258,9 @@ public class DialogBuilder {
     }
 
 
+    public void close(){
+        alert.close();
+    }
     public interface OnClickListener {
         void onClick();
     }

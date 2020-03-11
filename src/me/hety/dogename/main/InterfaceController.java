@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
 
-public final class UICtrl_new {
+public final class InterfaceController {
 
     Logger log =Logger.getLogger("ControllerLogger");
 

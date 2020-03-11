@@ -70,7 +70,7 @@ public final class ProgramMain extends Application {
         }
     }
 
-    UICtrl_new controller;
+    InterfaceController controller;
 
     public void showWindow() {
 
