@@ -42,8 +42,8 @@ public class MainConfig {
 
     private SimpleIntegerProperty speedProperty; //速度
 
-    private SimpleIntegerProperty minNumberProperty; //最小值
-    private SimpleIntegerProperty maxNumberProperty; //最大值
+    private SimpleStringProperty minNumberProperty; //最小值
+    private SimpleStringProperty maxNumberProperty; //最大值
 
     private SimpleBooleanProperty taoluModeProperty; //是否开启"套路模式"
     private SimpleBooleanProperty equalModeProperty; //是否开启"机会均等"
@@ -63,8 +63,8 @@ public class MainConfig {
 
         speedProperty=new SimpleIntegerProperty(DEFAULT_SPEED);
 
-        minNumberProperty=new SimpleIntegerProperty(0);
-        maxNumberProperty=new SimpleIntegerProperty(0);
+        minNumberProperty=new SimpleStringProperty("0");
+        maxNumberProperty=new SimpleStringProperty("10");
 
         taoluModeProperty=new SimpleBooleanProperty(DEFAULT_TAOLU_MODE);
         equalModeProperty=new SimpleBooleanProperty(DEFAULT_EQUAL_MODE);
@@ -158,27 +158,27 @@ public class MainConfig {
         this.speedProperty.set(speedProperty);
     }
 
-    public int getMinNumberProperty() {
+    public String getMinNumberProperty() {
         return minNumberProperty.get();
     }
 
-    public SimpleIntegerProperty minNumberPropertyProperty() {
+    public SimpleStringProperty minNumberPropertyProperty() {
         return minNumberProperty;
     }
 
-    public void setMinNumberProperty(int minNumberProperty) {
+    public void setMinNumberProperty(String minNumberProperty) {
         this.minNumberProperty.set(minNumberProperty);
     }
 
-    public int getMaxNumberProperty() {
+    public String getMaxNumberProperty() {
         return maxNumberProperty.get();
     }
 
-    public SimpleIntegerProperty maxNumberPropertyProperty() {
+    public SimpleStringProperty maxNumberPropertyProperty() {
         return maxNumberProperty;
     }
 
-    public void setMaxNumberProperty(int maxNumberProperty) {
+    public void setMaxNumberProperty(String maxNumberProperty) {
         this.maxNumberProperty.set(maxNumberProperty);
     }
 

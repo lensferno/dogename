@@ -1,22 +1,28 @@
 package me.hety.dogename.main.controllers;
 
 import com.jfoenix.controls.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import me.hety.dogename.main.DialogBuilder.DialogBuilder;
 import me.hety.dogename.main.DialogMaker;
+import me.hety.dogename.main.Voice;
+import me.hety.dogename.main.chooser.Chooser;
 import me.hety.dogename.main.configs.ConfigLoader;
 import me.hety.dogename.main.configs.MainConfig;
+import me.hety.dogename.main.data.NameData;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
 
 public class MainInterfaceController {
 
     //ConfigLoader configLoader=new ConfigLoader();
 
+    Voice voice=new Voice();
 
     @FXML
     private Pane rootPane;
@@ -54,14 +60,20 @@ public class MainInterfaceController {
     @FXML
     private Label chosen_2;
 
+
     MainConfig mainConfig;
 
     public void bindProperties(){
         nameChoose.selectedProperty().bindBidirectional(mainConfig.nameChoosePropertyProperty());
-        //System.out.println(nameChoose.selectedProperty());
-        //System.out.println(mainConfig.nameChoosePropertyProperty());
-        //mainConfig.toString();
-        //mainConfig.nameChoosePropertyProperty().addListener((observable, oldValue, newValue) -> configLoader.writeConfigToFile("files\\Config.json"));
+        //mainConfig.nameChoosePropertyProperty().not()
+
+        numbChoose.selectedProperty().bind(mainConfig.nameChoosePropertyProperty().not());
+        numbChoose.selectedProperty().unbind();
+/*
+        mainConfig.nameChoosePropertyProperty().addListener((observable, oldValue, newValue) -> {
+            //numbChoose.selectedProperty().unbind();
+            numbChoose.setSelected(oldValue);
+        });*/
 
     }
 
@@ -71,7 +83,7 @@ public class MainInterfaceController {
 
     @FXML
     void showProgramInfo(ActionEvent event) {
-        new DialogMaker(rootPane).creatDialongWithOneBtn("程序信息",new ProgramInfoPaneController());
+        new DialogMaker(rootPane).creatDialogWithOneBtn("程序信息",new ProgramInfoPaneController());
     }
 
     @FXML
@@ -83,7 +95,7 @@ public class MainInterfaceController {
     void showNameManger(ActionEvent event) {
 
         NameManagerPaneController nameManagerPaneController =new NameManagerPaneController();
-        new DialogMaker(rootPane).creatDialongWithOneBtn("名单管理",nameManagerPaneController);
+        new DialogMaker(rootPane).creatDialogWithOneBtn("名单管理",nameManagerPaneController);
     }
 
 
@@ -96,7 +108,9 @@ public class MainInterfaceController {
     void showNunberSetting(ActionEvent event) {
 
         NumberSettingsPaneController numberSettingsPaneController =new NumberSettingsPaneController();
-        new DialogMaker(rootPane).creatDialongWithOneBtn("更多设置",numberSettingsPaneController);
+        numberSettingsPaneController.bindProperties(mainConfig);
+        new DialogMaker(rootPane).creatDialogWithOneBtn("调整数字",numberSettingsPaneController);
+
     }
 
 
@@ -108,25 +122,151 @@ public class MainInterfaceController {
     @FXML
     void showSettings(ActionEvent event) {
         SettingsPaneController settingsPaneController =new SettingsPaneController();
-        new DialogMaker(rootPane).creatDialongWithOneBtn("更多设置",settingsPaneController);
         settingsPaneController.setToggleGroup();
+        settingsPaneController.bindProperties(mainConfig);
+        new DialogMaker(rootPane).creatDialogWithOneBtn("更多设置",settingsPaneController);
     }
 
     @FXML
     void showHistory(ActionEvent event) {
 
         HistoryPaneController historyPaneController =new HistoryPaneController();
-        new DialogMaker(rootPane).creatDialongWithOneBtn("更多设置",historyPaneController);
+
+        new DialogMaker(rootPane).creatDialogWithOneBtn("历史记录",historyPaneController);
     }
+
+    Random random=new Random();
+
+    HashSet ignoreNameList=new HashSet<String>();
+    HashSet ignoreNumberList=new HashSet<String>();
+
+    NameData nameData=new NameData();
+    //boolean isRunning=false;
+
+    Chooser chooser=new Chooser();
 
     @FXML
-    void anPai(ActionEvent event) {
+    void anPai() {
+
+
+        
+        if(chooser.isRunning()){
+            chooser.setForceStop(true);
+            anPaiBtn.setText("安排一下");
+            return;
+        }
+        
+        if(mainConfig.isRandomTimesProperty()) {
+            mainConfig.setCycleTimesProperty(100+random.nextInt(151));
+        }
+
+        if(mainConfig.isNameChooseProperty()){
+            runNameMode(chooser);
+        }else {
+            runNumberMode(chooser);
+        }
 
     }
+
+
 
     public void setToggleGroup(){
         ToggleGroup toggleGroup =new ToggleGroup();
         nameChoose.setToggleGroup(toggleGroup);
         numbChoose.setToggleGroup(toggleGroup);
+    }
+
+
+
+    private void runNameMode(Chooser chooser){
+
+        if(nameData.isEmpty(mainConfig.isTaoluModeProperty())){
+            new DialogMaker(rootPane).creatMessageDialog("哦霍~","现在名单还是空的捏~请前往名单管理添加名字 或 使用数字挑选法。");
+            return;
+        }
+
+        if((ignoreNameList.size()>=nameData.getSize())&&mainConfig.isIgnorePastProperty()){
+
+            if(mainConfig.isEqualModeProperty()) {
+                new DialogMaker(rootPane).creatMessageDialog("啊？", "全部名字都被点完啦！\n名字列表将会重置");
+                //clearIgnoreList();
+            }else {
+                new DialogMaker(rootPane).creatMessageDialog("啊？", "全部名字都被点完啦！\n请多添加几个名字 或 点击“机会均等”的“重置”按钮。");
+            }
+            return;
+        }
+        //controllerPane.setDisable(true);
+        //speed=(short) (100-speedBar.getValue());
+        //isRunning=true;
+        anPaiBtn.setText("不玩了！");
+        //    timer.start();
+
+        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,new ArrayList(),voice);
+        chooser.setIgnoreNameList(ignoreNameList);
+        chooser.setIgnoreNumberList(ignoreNumberList);
+
+        //--------------------Name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        chooser.run(
+                nameData,
+                (short) mainConfig.getSpeedProperty(),
+                mainConfig.getCycleTimesProperty(),
+                mainConfig.isIgnorePastProperty(),
+                mainConfig.isEqualModeProperty(),
+                mainConfig.isTaoluModeProperty(),
+                mainConfig.isVoicePlayProperty()
+        );
+
+    }
+
+
+    private void runNumberMode(Chooser chooser){
+
+        try{
+
+            int minNumber=Integer.parseInt(mainConfig.getMinNumberProperty());
+            int maxNumber=Integer.parseInt(mainConfig.getMaxNumberProperty());
+
+            if(maxNumber-minNumber<=0){
+                new DialogMaker(rootPane).creatMessageDialog("嗯哼？","数字要前小后大啊~");
+                return;
+            }
+
+            if(ignoreNumberList.size()>=(maxNumber-minNumber+1) && mainConfig.isIgnorePastProperty()){
+                if(mainConfig.isEqualModeProperty()) {
+                    new DialogMaker(rootPane).creatMessageDialog("啊？", "全部数字都被点完啦！\n数字列表将会重置");
+                    //clearIgnoreList();
+                }else {
+                    new DialogMaker(rootPane).creatMessageDialog("啊？", "全部数字都被点完啦！\n请扩大数字范围 或 点击“机会均等”的“重置”按钮。");
+                }
+
+                return;
+            }
+
+        }catch (Exception e){
+            new DialogMaker(rootPane).creatMessageDialog("嗯哼？","倒是输入个有效的数字啊~");
+            return;
+        }
+
+        //controllerPane.setDisable(true);
+        //speed=(short) (100-speedBar.getValue());
+        //isRunning=true;
+        anPaiBtn.setText("不玩了！");
+
+        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,new ArrayList(),voice);
+
+        chooser.setIgnoreNameList(ignoreNameList);
+        chooser.setIgnoreNumberList(ignoreNumberList);
+
+        //chooser.run( maxNumber,minNumber,speed , chosenTime, ignorePast, equalMode, taoluMode,voicePlay);
+        chooser.run(
+                Short.parseShort(mainConfig.getMaxNumberProperty()),
+                Short.parseShort(mainConfig.getMinNumberProperty()),
+                (short) mainConfig.getSpeedProperty(),
+                mainConfig.getCycleTimesProperty(),
+                mainConfig.isIgnorePastProperty(),
+                mainConfig.isEqualModeProperty(),
+                mainConfig.isTaoluModeProperty(),
+                mainConfig.isVoicePlayProperty()
+        );
     }
 }

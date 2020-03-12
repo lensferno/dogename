@@ -501,6 +501,7 @@ public final class InterfaceController {
                     break;
             }
         }*/
+
         saveConfigToFile();
         if(core.isRunning()){
             core.setForceStop(true);
@@ -508,13 +509,12 @@ public final class InterfaceController {
             return;
         }
 
-
-
         if(isRandomTimes) {
             chosenTime=100+random.nextInt(151);
             //chosenTime =  100 + (int) (Math.random() * (250 - 100));
             chooseTimes.setValue(chosenTime);
         }
+
         else {
             
             chosenTime=(int)chooseTimes.getValue();
@@ -541,7 +541,7 @@ public final class InterfaceController {
             speed=(short) (100-speedBar.getValue());
             isRunning=true;
             choose.setText("不玩了！");
-            showWhich=1+random.nextInt(2);
+            //showWhich=1+random.nextInt(2);
             //    timer.start();
             core.set( chosen_2, chosen_1, controllerPane, choose,history,voice);
             core.setIgnoreNameList(ignoreNameList);
@@ -577,7 +577,7 @@ public final class InterfaceController {
             speed=(short) (100-speedBar.getValue());
             isRunning=true;
             choose.setText("不玩了！");
-            showWhich=1+random.nextInt(2);
+            //showWhich=1+random.nextInt(2);
             core.set( chosen_2, chosen_1, controllerPane, choose,history,voice);
             core.setIgnoreNameList(ignoreNameList);
             core.setIgnoreNumberList(ignoreNumberList);
