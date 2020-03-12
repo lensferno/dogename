@@ -10,16 +10,16 @@ public class BooleanPropertyAdapter implements JsonSerializer<SimpleBooleanPrope
     @Override
     public SimpleBooleanProperty deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         if(jsonElement==null) {
-            return null;
+            throw new JsonParseException("Json is wrong.");
         }else {
-            return new SimpleBooleanProperty(jsonElement.getAsJsonObject().get("value").getAsBoolean());
+            return new SimpleBooleanProperty(jsonElement.getAsBoolean());
         }
     }
 
     @Override
     public JsonElement serialize(SimpleBooleanProperty simpleBooleanProperty, Type type, JsonSerializationContext jsonSerializationContext) {
         if(simpleBooleanProperty==null){
-            return null;
+            throw new JsonParseException("Json is wrong.");
         }else {
             return new JsonPrimitive(simpleBooleanProperty.get());
         }

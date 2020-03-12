@@ -24,7 +24,6 @@ public class Voice {
 
     Token token=null;
 
-
     boolean net=true;
 
     public Voice(){
@@ -39,10 +38,10 @@ public class Voice {
             tokenFilePath="caches//voice//";
 
         checkNet();
+
         if(net){
             checkToken();
         }
-
 
     }
 
@@ -127,7 +126,6 @@ public class Voice {
 
 
     public void playVoice(String name){
-
 
         File cachedVoice=new File(cachedVoicePath+name+".wav");
 

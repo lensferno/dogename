@@ -91,7 +91,7 @@
                   <Font name="Microsoft YaHei" size="17.0" />
                </font>
             </JFXRadioButton>
-            <JFXSlider fx:id="chooseTimes" max="200.0" min="3.0" onMouseReleased="#setChosenTimeHere" onTouchReleased="#setChosenTimeHere" prefHeight="18.0" prefWidth="386.0" showTickLabels="true" showTickMarks="true" value="120.0" />
+            <JFXSlider fx:id="cycleTimesBar" max="200.0" min="3.0" onMouseReleased="#setChosenTimeHere" onTouchReleased="#setChosenTimeHere" prefHeight="18.0" prefWidth="386.0" showTickLabels="true" showTickMarks="true" value="120.0" />
          </children>
          <padding>
             <Insets left="14.0" top="14.0" />
@@ -134,7 +134,7 @@
                   <Font name="Microsoft YaHei" size="14.0" />
                </font>
             </JFXCheckBox>
-            <JFXButton prefHeight="31.0" prefWidth="76.0" text="语音设置">
+            <JFXButton onAction="#showVoiceSettingsPane" prefHeight="31.0" prefWidth="76.0" text="语音设置">
                <font>
                   <Font name="Microsoft YaHei" size="14.0" />
                </font>

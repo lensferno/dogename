@@ -2,10 +2,14 @@ package me.hety.dogename.main.configs;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import javafx.beans.property.Property;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
 import me.hety.dogename.main.configs.adapters.BooleanPropertyAdapter;
 import me.hety.dogename.main.configs.adapters.IntegerPropertyAdapter;
+import me.hety.dogename.main.configs.adapters.StringPropertyAdapter;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
@@ -23,12 +27,15 @@ public class ConfigLoader {
         return mainConfig;
     }
 
+
     public MainConfig readConfigFromFile(String fileLocation){
 
         //property属性应该要自定义一个json适配器才能解析出来
         Gson gson=new GsonBuilder()
                 .registerTypeAdapter(SimpleBooleanProperty.class,new BooleanPropertyAdapter())
                 .registerTypeAdapter(SimpleIntegerProperty.class,new IntegerPropertyAdapter())
+                .registerTypeAdapter(SimpleStringProperty.class,new StringPropertyAdapter())
+                .setPrettyPrinting()
                 .create();
 
         String ConfigJSON;
@@ -58,7 +65,14 @@ public class ConfigLoader {
     }
 
     private String toJSON(MainConfig config){
-        Gson gson = new Gson();
+
+        Gson gson=new GsonBuilder()
+            .registerTypeAdapter(SimpleBooleanProperty.class,new BooleanPropertyAdapter())
+            .registerTypeAdapter(SimpleIntegerProperty.class,new IntegerPropertyAdapter())
+            .registerTypeAdapter(SimpleStringProperty.class,new StringPropertyAdapter())
+            .setPrettyPrinting()
+            .create();
+
         return gson.toJson(config);
     }
 

@@ -16,12 +16,12 @@
       </JFXTextField>
       <HBox prefHeight="29.0" prefWidth="259.0" spacing="5.0">
          <children>
-            <JFXButton fx:id="previousBtn" text="上一个">
+            <JFXButton fx:id="previousBtn" onAction="#upSearch" text="上一个">
                <font>
                   <Font name="Microsoft YaHei" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="nextBtn" text="下一个">
+            <JFXButton fx:id="nextBtn" onAction="#downSearch" text="下一个">
                <font>
                   <Font name="Microsoft YaHei" size="14.0" />
                </font>

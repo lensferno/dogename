@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
+import me.hety.dogename.main.DialogMaker;
 import me.hety.dogename.main.configs.MainConfig;
 
 import java.util.logging.Logger;
@@ -15,7 +16,7 @@ public class SettingsPaneController extends VBox {
     private JFXCheckBox newAlgoBtn;
 
     @FXML
-    private JFXSlider chooseTimes;
+    private JFXSlider cycleTimesBar;
 
     @FXML
     private JFXCheckBox voicePlayBtn;
@@ -64,6 +65,23 @@ public class SettingsPaneController extends VBox {
     public void bindProperties(MainConfig mainConfig){
         setMainConfig(mainConfig);
 
+        ignoreOnce.selectedProperty().bindBidirectional(mainConfig.ignorePastPropertyProperty());
+        chooseOnce.setSelected(!mainConfig.isIgnorePastProperty());
+
+        randomTimes.selectedProperty().bindBidirectional(mainConfig.randomTimesPropertyProperty());
+        fixedTimes.setSelected(mainConfig.isRandomTimesProperty());
+
+        equalModeBtn.selectedProperty().bindBidirectional(mainConfig.equalModePropertyProperty());
+
+        taoluModeBtn.selectedProperty().bindBidirectional(mainConfig.taoluModePropertyProperty());
+
+        newAlgoBtn.selectedProperty().bindBidirectional(mainConfig.newAlgoPropertyProperty());
+
+        voicePlayBtn.selectedProperty().bindBidirectional(mainConfig.voicePlayPropertyProperty());
+
+        cycleTimesBar.valueProperty().bindBidirectional(mainConfig.cycleTimesPropertyProperty());
+
+        speedBar.valueProperty().bindBidirectional(mainConfig.speedPropertyProperty());
     }
 
     public void setToggleGroup(){
@@ -76,7 +94,10 @@ public class SettingsPaneController extends VBox {
         fixedTimes.setToggleGroup(fixedTimesGroup);
     }
 
-
+    @FXML
+    void showVoiceSettingsPane(ActionEvent event) {
+        //new DialogMaker()
+    }
 
     @FXML
     void ignoreOnce_selected(ActionEvent event) {
