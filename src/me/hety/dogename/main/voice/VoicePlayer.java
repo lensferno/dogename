@@ -1,14 +1,20 @@
 package me.hety.dogename.main.voice;
 
+import javazoom.spi.mpeg.sampled.file.MpegAudioFileReader;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
 import org.apache.commons.io.IOUtils;
 
 import javax.sound.sampled.*;
 import java.io.*;
 import java.net.*;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class VoicePlayer {
+
+    public static final String separator=File.separator;
 
     Logger log=Logger.getLogger("VoicePlayerLogger");
 
@@ -20,11 +26,15 @@ public class VoicePlayer {
         this.token=token;
     }
 
+    String cachedVoicePath="caches"+separator+"voice"+separator;
 
-    String cachedVoicePath="caches\\voice\\";
-
-    String tokenFilePath="files\\voice\\";
     File cacheDir =new File(cachedVoicePath);
+
+    OkHttpClient okHttpClient=new OkHttpClient.Builder()
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .writeTimeout(10,TimeUnit.SECONDS)
+            .readTimeout(10,TimeUnit.SECONDS)
+            .build();
 
     public void playVoice(String name,String speaker,String speed){
 
@@ -36,7 +46,21 @@ public class VoicePlayer {
         if(!cachedVoice.exists()){
 
             new Thread(() -> {
+
+
                 try{
+
+                    FormBody formBody=new FormBody.Builder()
+                            .add("tex",URLEncoder.encode(name,"utf-8"))
+                            .add("tok",token.getAccessToken())
+                            .add("cuid",getMACAddress())
+                            .add("ctp","")
+                            .add("lan","zh")
+                            .add("spd",speed)
+                            .add("per",speaker)
+                            .add("aue","6")
+                            .build();
+
                     String[] b ={"1","3","106","0"};
                     String URL="http://tsn.baidu.com/text2audio?lan=zh&ctp=1&cuid=abcdxxx&tok="+token.getAccessToken()+"&tex="+ URLEncoder.encode(name,"utf-8")
                             +"&vol=0&per="+b[new Random().nextInt(b.length)]+"&spd=5&pit=4&aue=6";
@@ -132,6 +156,38 @@ public class VoicePlayer {
         }
 
     }
+
+    private void soundPlayer(String cachedVoicePath) {
+
+        try {
+            File file = new File(cachedVoicePath);
+            //使用 mp3spi 解码 mp3 音频文件
+            MpegAudioFileReader mp = new MpegAudioFileReader();
+            AudioInputStream stream = mp.getAudioInputStream(file);
+            AudioFormat baseFormat = stream.getFormat();
+            //设定输出格式为pcm格式的音频文件
+            AudioFormat format = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, baseFormat.getSampleRate(), 16, baseFormat.getChannels(), baseFormat.getChannels() * 2, baseFormat.getSampleRate(), false);
+            // 输出到音频
+            stream = AudioSystem.getAudioInputStream(format, stream);
+            AudioFormat target = stream.getFormat();
+            DataLine.Info dinfo = new DataLine.Info(SourceDataLine.class, target, AudioSystem.NOT_SPECIFIED);
+            SourceDataLine line = null;
+            int len = -1;
+            line = (SourceDataLine) AudioSystem.getLine(dinfo);
+            line.open(target);
+            line.start();
+            byte[] buffer = new byte[1024];
+            while ((len = stream.read(buffer)) > 0) {
+                line.write(buffer, 0, len);
+            }
+            line.drain();
+            line.stop();
+            line.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
 
     private static String getMACAddress() {
 

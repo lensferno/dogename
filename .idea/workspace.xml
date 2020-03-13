@@ -7,30 +7,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/ObjectReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/ObjectWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/LicenseText.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/data/History.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_soundlibs_jlayer_1_0_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_soundlibs_mp3spi_1_9_5_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_soundlibs_tritonus_share_0_3_7_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_13_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/DialogMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/DialogMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/HistoryPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/HistoryPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/MainInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/MainInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/InterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/InterfaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/chooser/Chooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/chooser/Chooser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NameManagerPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NameManagerPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NumberSettingsPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NumberSettingsPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/ProgramInfoPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/ProgramInfoPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/SettingsPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/SettingsPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/data/NameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/data/NameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/HistoryPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/HistoryPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/MainInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/MainInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogename.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dogename.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/META-INF/maven/com.baidu.aip/java-sdk/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/META-INF/maven/com.baidu.aip/java-sdk/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/auth/CloudAuth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/auth/DevAuth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/client/BaseClient$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/client/BaseClient$AuthState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/client/BaseClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/client/EAuthState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/error/AipError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/exception/AipException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/face/AipFace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/face/FaceConsts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/http/AipHttpClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/http/AipRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/http/AipResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/http/EBodyFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/http/Headers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/http/HttpCharacterEncoding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/http/HttpContentType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/http/HttpMethodName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/imagecensor/AipImageCensor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/imagecensor/EImgType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/imagecensor/ImageCensorConsts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/imageclassify/AipImageClassify.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/imageclassify/ImageClassifyConsts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/imagesearch/AipImageSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/imagesearch/ImageSearchConsts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/kg/AipKnowledgeGraphic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/kg/KnowledgeGraphicConsts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/nlp/AipNlp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/nlp/ESimnetType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/nlp/EWsegType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/nlp/NlpConsts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/nlp/NlpLangId.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/ocr/AipOcr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/ocr/OcrConsts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/speech/AipSpeech.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/speech/SpeechConsts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/speech/TtsResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/util/AipClientConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/util/AipClientConst.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/util/Base64Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/util/ImageUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/util/SignUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/aip-java-sdk-4.1.1/com/baidu/aip/util/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/TokenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/TokenManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/VoicePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/VoicePlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,9 +107,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../HMCL" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.18057142" />
+    <property name="project.structure.side.proportion" value="0.35428572" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="debugger.stepping" />
   </component>
@@ -167,10 +200,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="90" key="#Inspections/0.0.1440.860@0.0.1440.860" timestamp="1584002537298" />
-    <state x="195" y="62" width="1046" height="725" key="#Project_Structure" timestamp="1583915646198">
+    <state x="195" y="62" width="1046" height="725" key="#Project_Structure" timestamp="1584098925862">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="195" y="62" width="1046" height="725" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1583915646198" />
+    <state x="195" y="62" width="1046" height="725" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1584098925862" />
     <state x="175" y="51" width="1189" height="770" key="#Setter_Template" timestamp="1583800698833">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -211,26 +244,26 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="448" y="181" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1440.860@0.0.1440.860" timestamp="1583765548213" />
-    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1583921914070">
+    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1584097034408">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1583921914070" />
-    <state width="1396" height="189" key="GridCell.Tab.0.bottom" timestamp="1584090952417">
+    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1584097034408" />
+    <state width="1396" height="189" key="GridCell.Tab.0.bottom" timestamp="1584098875548">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1584090952417" />
-    <state width="1396" height="189" key="GridCell.Tab.0.center" timestamp="1584090952416">
+    <state width="1396" height="189" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1584098875548" />
+    <state width="1396" height="189" key="GridCell.Tab.0.center" timestamp="1584098875547">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1584090952416" />
-    <state width="1396" height="189" key="GridCell.Tab.0.left" timestamp="1584090952416">
+    <state width="1396" height="189" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1584098875547" />
+    <state width="1396" height="189" key="GridCell.Tab.0.left" timestamp="1584098875547">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1584090952416" />
-    <state width="1396" height="189" key="GridCell.Tab.0.right" timestamp="1584090952417">
+    <state width="1396" height="189" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1584098875547" />
+    <state width="1396" height="189" key="GridCell.Tab.0.right" timestamp="1584098875548">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1584090952417" />
+    <state width="1396" height="189" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1584098875548" />
     <state width="1340" height="218" key="GridCell.Tab.1.bottom" timestamp="1584024939561">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
