@@ -17,12 +17,75 @@ public class NameData {
     private int listSize = 0;
 
 
+    HashSet<String> ignoreNameList=new HashSet<>();
+
+    HashSet<String> ignoreNumberList=new HashSet<>();
+
     File dataFile ;//=new File("namelist.data");
 
     boolean newAlgo=true;
     SecureRandom secRandom =new SecureRandom();
 
     //不做注释了，自己慢慢看。：）
+
+    File nameIgnoreFile =new File("files\\IgnoredNameList.data");
+    File numbIgnoreFile =new File("files\\IgnoredNumberList.data");
+
+    public void writeIgnoreList(String switchy){
+
+        if(!switchy.equals("not name")) {
+            try {
+                ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nameIgnoreFile));
+                oos.writeObject(ignoreNameList);
+                oos.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if(!switchy.equals("not number")) {
+            try {
+                ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(numbIgnoreFile));
+                oos.writeObject(ignoreNumberList);
+                oos.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    public void clearNameIgnoreList(){
+        ignoreNameList.clear();
+        writeIgnoreList("not number");
+    }
+
+    public void clearNumberIgnoreList(){
+        ignoreNumberList.clear();
+        writeIgnoreList("not name");
+    }
+
+
+    public HashSet<String> getIgnoreNameList() {
+        return ignoreNameList;
+    }
+
+    public void setIgnoreNameList(HashSet<String> ignoreNameList) {
+        this.ignoreNameList = ignoreNameList;
+    }
+
+    public HashSet<String> getIgnoreNumberList() {
+        return ignoreNumberList;
+    }
+
+    public void setIgnoreNumberList(HashSet<String> ignoreNumberList) {
+        this.ignoreNumberList = ignoreNumberList;
+    }
+
+
+    public List<String> getNameList() {
+        return nameList;
+    }
 
     public void exportNameList(File path) {
         if(path!=null) {
@@ -35,7 +98,6 @@ public class NameData {
 
         }else
             return;
-
     }
 
     public void importNameList(File path) {
@@ -63,23 +125,21 @@ public class NameData {
 
     public void makeMass() {
 
-        HashSet already=new HashSet();
-        List<String> tempList =new LinkedList<>();
-        int i=0;
-        Random random =new Random();
-        while(tempList.size()<nameList.size()) {
-            i=random.nextInt(nameList.size());
-            while(already.contains(i))
-                i=random.nextInt(nameList.size());
+        HashSet<Integer> alreadyList = new HashSet<>();
+        List<String> tempList = new LinkedList<>();
+        int i = 0;
+        Random random = new Random();
+        while (tempList.size() < nameList.size()) {
+            i = random.nextInt(nameList.size());
+            while (alreadyList.contains(i))
+                i = random.nextInt(nameList.size());
             tempList.add(nameList.get(i));
-            already.add(i);
-
+            alreadyList.add(i);
         }
         nameList.clear();
         nameList.addAll(tempList);
+
     }
-
-
 
     //------------------------------------------------------
     public void setNewAlgo(boolean newAlgo) {
@@ -137,8 +197,6 @@ public class NameData {
             e.printStackTrace();
         }
 
-
-
     }
 
     //------------------------------------------------------
@@ -193,6 +251,7 @@ public class NameData {
     }
 
     Random random =new Random();
+
     //------------------------------------------------------
     public String randomGet(boolean taoluMode){
         if(newAlgo)
@@ -200,8 +259,6 @@ public class NameData {
         else
             return  nameList.get(random.nextInt(nameList.size()));
     }
-
-
 
     //------------------------------------------------------
     public String[] getAll(){
@@ -237,6 +294,6 @@ public class NameData {
 
     //------------------------------------------------------
     public void clearTaoluedName() {
-        chooseList = new ArrayList<String>();
+        chooseList = new ArrayList<>();
     }
 }

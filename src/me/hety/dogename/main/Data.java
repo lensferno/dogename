@@ -24,58 +24,59 @@ public class Data {
     //不做注释了，自己慢慢看。：）
 
     public void exportNameList(File path) {
-	if(path!=null) {
-            try{
-                FileOutputStream oos =new FileOutputStream(path);
+	    if(path!=null) {
+            try {
+                FileOutputStream oos = new FileOutputStream(path);
                 oos.write(new Gson().toJson(nameList).getBytes("utf-8"));
                 oos.close();
-                System.out.println("[INFO]Exported list to:"+path.getPath());
-            }catch (Exception e){e.printStackTrace();}
-            
-	}else
-	    return;
+                System.out.println("[INFO]Exported list to:" + path.getPath());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
         
     }
     
     public void importNameList(File path) {
-	if(path!=null) {
-	    
-            try{
-                FileInputStream fis =new FileInputStream(path);
+	    if(path!=null) {
+
+            try {
+                FileInputStream fis = new FileInputStream(path);
                 String temp;
-                BufferedReader bis=new BufferedReader(new InputStreamReader(fis, "utf-8"));
-                StringBuilder sb=new StringBuilder();
-            
+                BufferedReader bis = new BufferedReader(new InputStreamReader(fis, "utf-8"));
+                StringBuilder sb = new StringBuilder();
+
                 while ((temp = bis.readLine()) != null) {
                     sb.append(temp);
                     sb.append("\n");
                 }
-                
-                nameList=new Gson().fromJson(sb.toString(),List.class);
-                System.out.println("[INFO]Imported list from:"+path.getPath());
-            }catch (Exception e){e.printStackTrace();}
-	
-	}else
-	    return;
+
+                nameList = new Gson().fromJson(sb.toString(), List.class);
+                System.out.println("[INFO]Imported list from:" + path.getPath());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
         
     }
 
     public void makeMass() {
-	
-	HashSet already=new HashSet();
-	List<String> tempList =new LinkedList<>();
-	int i=0;
-	Random random =new Random();
-	while(tempList.size()<nameList.size()) {
-	    i=random.nextInt(nameList.size());
-	    while(already.contains(i))
-		i=random.nextInt(nameList.size());
-	    tempList.add(nameList.get(i));
-	    already.add(i);
-	    
-	}
-	nameList.clear();
-	nameList.addAll(tempList);
+
+        HashSet<Integer> alreadyList = new HashSet<>();
+        List<String> tempList = new LinkedList<>();
+        int i = 0;
+        Random random = new Random();
+        while (tempList.size() < nameList.size()) {
+            i = random.nextInt(nameList.size());
+            while (alreadyList.contains(i))
+                i = random.nextInt(nameList.size());
+            tempList.add(nameList.get(i));
+            alreadyList.add(i);
+        }
+        nameList.clear();
+        nameList.addAll(tempList);
     }
     
 
@@ -135,8 +136,6 @@ public class Data {
             e.printStackTrace();
         }
 
-
-
     }
 
     //------------------------------------------------------
@@ -154,6 +153,7 @@ public class Data {
         chooseList=new ArrayList<>(nameList);
         System.gc();
     }
+
     //------------------------------------------------------
     public String get(int i){
         if(i<listSize-1)

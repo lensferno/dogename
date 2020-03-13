@@ -17,21 +17,37 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
 
+        /*
+
+┴┬┴┬／￣＼＿／￣＼
+┬┴┬┴▏　　▏▔▔▔▔＼
+┴┬┴／＼　／　　　　　　﹨
+┬┴∕　　　　　　　／　　　）
+┴┬▏　　　　　　　　●　　▏
+┬┴▏　　　　　　　　　　　▔█　
+┴◢██◣　　　　　＼＿＿＿／
+┬█████◣　　　　　　　／　　
+┴█████████████◣
+◢██████████████▆▄
+█◤◢██◣◥█████████◤＼
+◥◢████　████████◤　　 ＼
+┴█████　██████◤　　　　　 ﹨
+┬│　　　│█████◤　　　　　　　　▏
+┴│　　　│　　　　　　　　　　　　　　▏
+┬ ∕　　　 ∕　　　　／▔▔▔＼　　　　 ∕
+┴/＿＿＿／﹨　　　∕　　　　　﹨　　／＼
+┬┴┬┴┬┴＼ 　　 ＼ 　　　　　﹨／　　 ﹨
+┴┬┴┬┴┬┴ ＼＿＿＿＼　　　　 ﹨／▔＼﹨ ▔＼
+▲△▲▲╓╥╥╥╥╥╥╥╥＼　　 ∕　 ／▔﹨／▔﹨
+　＊＊╠╬╬╬╬╬╬╬╬＊﹨　　／　　／／
+
+         */
+
 public class Chooser {
 
     Logger log =Logger.getLogger("ChooserLogger");
 
     boolean taoluMode;
-
-
-    HashSet<String> ignoreNameList=new HashSet<>();
-    short ignoreNameTimes=0;
-
-    HashSet<String> ignoreNumberList=new HashSet<>();
-    short ignoreNumberTimes=0;
-
-    public JFXTextField minNumb;
-    public JFXTextField maxNumb;
 
     Random random =new Random();
 
@@ -63,9 +79,6 @@ public class Chooser {
     public Label chosen_1;
     public Label chosen_2;
 
-    File nameIgnoreFile =new File("files\\nameIgnoreList.data");
-    File numbIgnoreFile =new File("files\\numbIgnoreList.data");
-
     public boolean isNameChoose=true;
     public short speed;
 
@@ -79,14 +92,6 @@ public class Chooser {
     List history;
     private String HISTORY_FILE;
     private File historyFile;
-
-    public void setIgnoreNameList(HashSet<String> ignoreNameList) {
-        this.ignoreNameList = ignoreNameList;
-    }
-
-    public void setIgnoreNumberList(HashSet<String> ignoreNumberList) {
-        this.ignoreNumberList = ignoreNumberList;
-    }
 
     Voice voice;
     void loadHistory(){
@@ -108,7 +113,7 @@ public class Chooser {
             this.history = (ArrayList) ois.readObject();
 
         } catch (EOFException e){
-            ignoreNameList=new HashSet<>();
+            //ignoreNameList=new HashSet<>();
             log.warning("History file is empty.");
         }catch (Exception e) {
             history = new ArrayList();
@@ -119,22 +124,8 @@ public class Chooser {
     }
 
     void writeIgnoreList(){
-        try{
-            ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(nameIgnoreFile));
-            oos.writeObject(ignoreNameList);
-            oos.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        try{
-            ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(numbIgnoreFile));
-            oos.writeObject(ignoreNumberList);
-            oos.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        nameData.writeIgnoreList("");
     }
-
 
     void addHistory(String name){
         if(history.size()>2000)
@@ -142,6 +133,7 @@ public class Chooser {
         history.add((history.size() + 1) +". "+name);
         saveHistory();
     }
+
 
     void saveHistory(){
 
@@ -177,12 +169,12 @@ public class Chooser {
             }catch (Exception e){e.printStackTrace(); }
 
             if(already>=chosenTime){
-                if(!ignoreNameList.contains(chosenName)||!ignorePast||forceStop){
+                if(!nameData.getIgnoreNameList().contains(chosenName)||!ignorePast||forceStop){
 
                     forceStop=false;
 
                     if(ignorePast)
-                        ignoreNameList.add(chosenName);
+                        nameData.getIgnoreNameList().add(chosenName);
                     if(equalMode)
                         writeIgnoreList();
 
@@ -190,28 +182,28 @@ public class Chooser {
                     already=0;
                     singleCycle=0;
                     ignoreTimesOut=false;
-                    ignoreNameTimes++;
 
                     switch (showWhich){
                         case 1:{
-                            if(downLabelText.get().contains("→"))
-                                downLabelText.set(downLabelText.get().replace("→",""));
 
-                            upLabelText.set("→"+chosenName);
+                            if(downLabelText.get().contains("→")||downLabelText.get().contains("←"))
+                                downLabelText.set(downLabelText.get().replace("→ ","").replace(" ←",""));
+
+                            upLabelText.set("→ "+chosenName+" ←");
 
                             if(taoluMode)
-                                nameData.addTaoluedName(chosenName.replace("→",""),5);
+                                nameData.addTaoluedName(chosenName,5);
 
                             break;
                         }
                         case 2:{
-                            if(upLabelText.get().contains("→"))
-                                upLabelText.set(upLabelText.get().replace("→",""));
+                            if(upLabelText.get().contains("→")||upLabelText.get().contains("←"))
+                                upLabelText.set(upLabelText.get().replace("→ ","").replace(" ←",""));
 
-                            downLabelText.set("→"+chosenName);
+                            downLabelText.set("→ "+chosenName+" ←");
 
                             if(taoluMode)
-                                nameData.addTaoluedName(chosenName.replace("→",""),4);
+                                nameData.addTaoluedName(chosenName,4);
 
                             break;
                         }
@@ -283,12 +275,12 @@ public class Chooser {
             }catch (Exception e){e.printStackTrace(); }
 
             if(already>=chosenTime){
-                if(!ignoreNumberList.contains(chosenName)||!ignorePast||forceStop){
+                if(!nameData.getIgnoreNumberList().contains(chosenName)||!ignorePast||forceStop){
 
                     forceStop=false;
 
                     if(ignorePast)
-                        ignoreNumberList.add(chosenName);
+                        nameData.getIgnoreNumberList().add(chosenName);
                     if(equalMode)
                         writeIgnoreList();
 
@@ -296,22 +288,22 @@ public class Chooser {
                     already=0;
                     singleCycle=0;
                     ignoreTimesOut=false;
-                    ignoreNameTimes++;
+
 
                     switch (showWhich){
                         case 1:{
-                            if(downLabelText.get().contains("→"))
-                                downLabelText.set(downLabelText.get().replace("→",""));
+                            if(downLabelText.get().contains("→")||downLabelText.get().contains("←"))
+                                downLabelText.set(downLabelText.get().replace("→ ","").replace(" ←",""));
 
-                            upLabelText.set("→"+chosenName);
+                            upLabelText.set("→ "+chosenName+" ←");
 
                             break;
                         }
                         case 2:{
-                            if(upLabelText.get().contains("→"))
-                                upLabelText.set(upLabelText.get().replace("→",""));
+                            if(upLabelText.get().contains("→")||upLabelText.get().contains("←"))
+                                upLabelText.set(upLabelText.get().replace("→ ","").replace(" ←",""));
 
-                            downLabelText.set("→"+chosenName);
+                            downLabelText.set("→ "+chosenName+" ←");
 
                             break;
                         }

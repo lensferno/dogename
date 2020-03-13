@@ -69,7 +69,7 @@ public class SettingsPaneController extends VBox {
         chooseOnce.setSelected(!mainConfig.isIgnorePastProperty());
 
         randomTimes.selectedProperty().bindBidirectional(mainConfig.randomTimesPropertyProperty());
-        fixedTimes.setSelected(mainConfig.isRandomTimesProperty());
+        fixedTimes.setSelected(!mainConfig.isRandomTimesProperty());
 
         equalModeBtn.selectedProperty().bindBidirectional(mainConfig.equalModePropertyProperty());
 

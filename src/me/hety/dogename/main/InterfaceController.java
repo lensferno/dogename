@@ -1013,7 +1013,7 @@ creatDialong("程序信息");
         JFXDialogLayout content = new JFXDialogLayout();
         content.setHeading(new Text(header));
 
-        content.setBody(new ProgramInfoPaneController());
+        content.setBody(new ProgramInfoPaneController(mainPane));
 
         StackPane tempPane=new StackPane();
         tempPane.setPrefHeight(mainPane.getPrefHeight());

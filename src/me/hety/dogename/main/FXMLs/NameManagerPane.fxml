@@ -29,7 +29,7 @@
                   <Font name="Microsoft YaHei" size="17.0" />
                </font>
             </JFXButton>
-            <JFXButton onAction="#makeAMass" prefHeight="28.0" prefWidth="120.0" ripplerFill="#4997fc" text="打乱顺序">
+            <JFXButton onAction="#makeMass" prefHeight="28.0" prefWidth="120.0" ripplerFill="#4997fc" text="打乱顺序">
                <font>
                   <Font name="Microsoft YaHei" size="17.0" />
                </font>
