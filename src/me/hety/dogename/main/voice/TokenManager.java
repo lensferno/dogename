@@ -2,13 +2,14 @@ package me.hety.dogename.main.voice;
 
 import com.google.gson.Gson;
 import me.hety.dogename.main.Common;
-import me.hety.dogename.main.Voice;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class TokenManager {
+
+    public static final String separator=File.separator;
 
     String cachedVoicePath="caches\\voice\\";
 
@@ -17,29 +18,18 @@ public class TokenManager {
 
     final String TOKEN_URL="https://openapi.baidu.com/oauth/2.0/token";
 
-    String tokenFilePath="files\\voice\\";
-    File cacheDir =new File(cachedVoicePath);
-
     File tokenFile=new File("API_voice.token");
 
     Token token=null;
 
-    boolean net=true;
+    boolean netAvailable =true;
 
     public TokenManager(){
-        if(System.getProperty("os.name").toLowerCase().contains("indow"))
-            cachedVoicePath="caches\\voice\\";
-        else
-            cachedVoicePath="caches//voice//";
 
-        if(System.getProperty("os.name").toLowerCase().contains("indow"))
-            tokenFilePath="caches\\voice\\";
-        else
-            tokenFilePath="caches//voice//";
 
         checkNet();
 
-        if(net){
+        if(netAvailable){
             checkToken();
         }
 
@@ -81,10 +71,10 @@ public class TokenManager {
 
             InputStream stream = connection.getInputStream();
             stream.read();
-            net=true;
+            netAvailable =true;
         }catch (Exception e){
             e.printStackTrace();
-            net=false;
+            netAvailable =false;
         }
     }
 
