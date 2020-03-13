@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.geometry.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
@@ -10,7 +11,10 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="692.0" spacing="10.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="dogeView" fitHeight="150.0" fitWidth="692.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="dogeView" fitHeight="150.0" fitWidth="664.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor></ImageView>
       <JFXTextArea editable="false" focusColor="#0072ffbf" labelFloat="true" prefHeight="227.0" prefWidth="678.0" text="这是一个以Java语言编写，采用Google Material Design（GoogleMD）为界面风格的用来点名的东西。&#10;该程序的源代码可在 https://github.com/eatenid/dogename查看和获取。&#10;（大更新基本上是不会有的了ヾ§ ￣▽)ゞ，等什么时候有空了再考虑吧（=´∇｀=））&#10;&#10;Program by He T.Y.&#10;---------------------------------------------------------------------------------------&#10;使用到的第三方库：&#10;　JFoenix(8.0.8)&#10;　Apache Commons Codec(1.14)&#10;　Apache Commons IO(2.6)&#10;　Gson(2.8.6) &#10;　OKHttp(4.4.2)&#10;　gushici项目提供古诗词数据接口，详情请前往：https://github.com/xenv/gushici&#10;---------------------------------------------------------------------------------------&#10;关于作者的一些东西：&#10;　Github主页：https://github.com/eatenid&#10;　邮箱等：Het2002@outlook.com　／　2318724550@qq.com　／　ulcch@foxmail.com&#10;---------------------------------------------------------------------------------------&#10;">
          <font>
             <Font name="Microsoft YaHei" size="13.0" />
@@ -18,7 +22,7 @@
       </JFXTextArea>
       <HBox prefHeight="30.0" prefWidth="678.0">
          <children>
-            <JFXButton prefHeight="23.0" prefWidth="147.0" text="开源协议（LGPL v3）">
+            <JFXButton onAction="#showLicense" prefHeight="23.0" prefWidth="147.0" text="开源协议（LGPL v3）">
                <font>
                   <Font name="Microsoft YaHei" size="13.0" />
                </font>

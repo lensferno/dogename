@@ -83,7 +83,7 @@ public class MainInterfaceController {
 
     @FXML
     void showProgramInfo(ActionEvent event) {
-        new DialogMaker(rootPane).creatDialogWithOneBtn("程序信息",new ProgramInfoPaneController());
+        new DialogMaker(rootPane).creatDialogWithOneBtn("程序信息",new ProgramInfoPaneController(rootPane));
     }
 
     @FXML
@@ -94,7 +94,7 @@ public class MainInterfaceController {
     @FXML
     void showNameManger(ActionEvent event) {
 
-        NameManagerPaneController nameManagerPaneController =new NameManagerPaneController();
+        NameManagerPaneController nameManagerPaneController =new NameManagerPaneController(nameData,rootPane);
         new DialogMaker(rootPane).creatDialogWithOneBtn("名单管理",nameManagerPaneController);
     }
 
@@ -107,7 +107,7 @@ public class MainInterfaceController {
     @FXML
     void showNunberSetting(ActionEvent event) {
 
-        NumberSettingsPaneController numberSettingsPaneController =new NumberSettingsPaneController();
+        NumberSettingsPaneController numberSettingsPaneController =new NumberSettingsPaneController(nameData);
         numberSettingsPaneController.bindProperties(mainConfig);
         new DialogMaker(rootPane).creatDialogWithOneBtn("调整数字",numberSettingsPaneController);
 
@@ -121,9 +121,12 @@ public class MainInterfaceController {
 
     @FXML
     void showSettings(ActionEvent event) {
+
         SettingsPaneController settingsPaneController =new SettingsPaneController();
+
         settingsPaneController.setToggleGroup();
         settingsPaneController.bindProperties(mainConfig);
+
         new DialogMaker(rootPane).creatDialogWithOneBtn("更多设置",settingsPaneController);
     }
 
@@ -188,24 +191,17 @@ public class MainInterfaceController {
         if((ignoreNameList.size()>=nameData.getSize())&&mainConfig.isIgnorePastProperty()){
 
             if(mainConfig.isEqualModeProperty()) {
-                new DialogMaker(rootPane).creatMessageDialog("啊？", "全部名字都被点完啦！\n名字列表将会重置");
-                //clearIgnoreList();
+                new DialogMaker(rootPane).creatDialogWithOKAndCancel("啊？", "全部名字都被点完啦！\n要把名字的忽略列表重置吗？",e ->nameData.clearNameIgnoreList());
             }else {
                 new DialogMaker(rootPane).creatMessageDialog("啊？", "全部名字都被点完啦！\n请多添加几个名字 或 点击“机会均等”的“重置”按钮。");
             }
             return;
         }
-        //controllerPane.setDisable(true);
-        //speed=(short) (100-speedBar.getValue());
-        //isRunning=true;
+
         anPaiBtn.setText("不玩了！");
-        //    timer.start();
 
         chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,new ArrayList(),voice);
-        chooser.setIgnoreNameList(ignoreNameList);
-        chooser.setIgnoreNumberList(ignoreNumberList);
 
-        //--------------------Name!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         chooser.run(
                 nameData,
                 (short) mainConfig.getSpeedProperty(),
@@ -233,12 +229,10 @@ public class MainInterfaceController {
 
             if(ignoreNumberList.size()>=(maxNumber-minNumber+1) && mainConfig.isIgnorePastProperty()){
                 if(mainConfig.isEqualModeProperty()) {
-                    new DialogMaker(rootPane).creatMessageDialog("啊？", "全部数字都被点完啦！\n数字列表将会重置");
-                    //clearIgnoreList();
+                    new DialogMaker(rootPane).creatDialogWithOKAndCancel("啊？", "全部数字都被点完啦！\n要把数字的忽略列表重置吗？", e ->nameData.clearNumberIgnoreList());
                 }else {
                     new DialogMaker(rootPane).creatMessageDialog("啊？", "全部数字都被点完啦！\n请扩大数字范围 或 点击“机会均等”的“重置”按钮。");
                 }
-
                 return;
             }
 
@@ -247,17 +241,10 @@ public class MainInterfaceController {
             return;
         }
 
-        //controllerPane.setDisable(true);
-        //speed=(short) (100-speedBar.getValue());
-        //isRunning=true;
         anPaiBtn.setText("不玩了！");
 
         chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,new ArrayList(),voice);
 
-        chooser.setIgnoreNameList(ignoreNameList);
-        chooser.setIgnoreNumberList(ignoreNumberList);
-
-        //chooser.run( maxNumber,minNumber,speed , chosenTime, ignorePast, equalMode, taoluMode,voicePlay);
         chooser.run(
                 Short.parseShort(mainConfig.getMaxNumberProperty()),
                 Short.parseShort(mainConfig.getMinNumberProperty()),
