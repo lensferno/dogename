@@ -5,9 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import me.hety.dogename.main.DialogMaker;
 import me.hety.dogename.main.configs.MainConfig;
+import me.hety.dogename.main.configs.VoiceConfig;
 
 import java.util.logging.Logger;
 
@@ -43,6 +45,9 @@ public class SettingsPaneController extends VBox {
     private JFXRadioButton fixedTimes;
 
     MainConfig mainConfig;
+    VoiceConfig voiceConfig;
+
+    Pane rootPane;
 
     Logger log = Logger.getLogger("SettingsPaneControllerLogger");
 
@@ -59,7 +64,14 @@ public class SettingsPaneController extends VBox {
 
     public void setMainConfig(MainConfig mainConfig) {
         this.mainConfig = mainConfig;
+    }
 
+    public void setVoiceConfig(VoiceConfig voiceConfig) {
+        this.voiceConfig = voiceConfig;
+    }
+
+    public void setRootPane(Pane rootPane){
+        this.rootPane=rootPane;
     }
 
     public void bindProperties(MainConfig mainConfig){
@@ -96,7 +108,9 @@ public class SettingsPaneController extends VBox {
 
     @FXML
     void showVoiceSettingsPane(ActionEvent event) {
-        //new DialogMaker()
+        VoiceSettingsPaneController voiceSettingsPaneController=new VoiceSettingsPaneController();
+        voiceSettingsPaneController.bindPropertied(voiceConfig);
+        new DialogMaker(rootPane).creatDialogWithOneBtn("语音设置",voiceSettingsPaneController);
     }
 
     @FXML

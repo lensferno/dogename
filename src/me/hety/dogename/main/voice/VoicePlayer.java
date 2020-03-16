@@ -1,9 +1,9 @@
 package me.hety.dogename.main.voice;
 
 import javazoom.spi.mpeg.sampled.file.MpegAudioFileReader;
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
+import okhttp3.*;
 import org.apache.commons.io.IOUtils;
+import org.jetbrains.annotations.NotNull;
 
 import javax.sound.sampled.*;
 import java.io.*;
@@ -18,7 +18,7 @@ public class VoicePlayer {
 
     Logger log=Logger.getLogger("VoicePlayerLogger");
 
-    private final String VOICE_API="http://tsn.baidu.com/text2audio?";
+    private final String VOICE_API="https://tsn.baidu.com/text2audio";
 
     Token token;
 
@@ -36,131 +36,103 @@ public class VoicePlayer {
             .readTimeout(10,TimeUnit.SECONDS)
             .build();
 
-    public void playVoice(String name,String speaker,String speed){
+
+    public void playVoice(String name,String speaker,String intonation,String speed) {
 
         String cachedVoiceName;
-        cachedVoiceName=name+"_"+speaker+"_"+speed;
+        cachedVoiceName = name + "_" + speaker+ "_" + speed +"_"+intonation;
 
-        File cachedVoice=new File(cachedVoicePath+name+".wav");
+        File cachedVoice = new File(cachedVoicePath + cachedVoiceName + ".mp3");
 
-        if(!cachedVoice.exists()){
+        if (!cachedVoice.exists()) {
 
+            getVoiceData(name,speaker,speed,intonation,cachedVoice);
+            playSound(cachedVoice);
+
+        } else {
             new Thread(() -> {
-
-
-                try{
-
-                    FormBody formBody=new FormBody.Builder()
-                            .add("tex",URLEncoder.encode(name,"utf-8"))
-                            .add("tok",token.getAccessToken())
-                            .add("cuid",getMACAddress())
-                            .add("ctp","")
-                            .add("lan","zh")
-                            .add("spd",speed)
-                            .add("per",speaker)
-                            .add("aue","6")
-                            .build();
-
-                    String[] b ={"1","3","106","0"};
-                    String URL="http://tsn.baidu.com/text2audio?lan=zh&ctp=1&cuid=abcdxxx&tok="+token.getAccessToken()+"&tex="+ URLEncoder.encode(name,"utf-8")
-                            +"&vol=0&per="+b[new Random().nextInt(b.length)]+"&spd=5&pit=4&aue=6";
-                    System.out.println(URL);
-                    java.net.URL sourcesURL = new URL(URL);
-                    HttpURLConnection connection = (HttpURLConnection) sourcesURL.openConnection();
-                    connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36");
-                    connection.connect();
-
-                    InputStream stream = connection.getInputStream();
-
-                    if(connection.getHeaderField("Content-type").contains("json")){
-                        log.warning("Error to get voice file.");
-                        return;
-                    }
-
-                    if(!cacheDir.exists())
-                        cacheDir.mkdirs();
-
-                    if(!cachedVoice.exists())
-                        cachedVoice.createNewFile();
-
-                    FileOutputStream fileStream = new FileOutputStream(new File(cachedVoicePath+name+".wav"));
-
-                    fileStream.write(IOUtils.toByteArray(stream));
-
-                    fileStream.close();
-
-                    playSound(new FileInputStream(cachedVoice));
-
-                    File cachedVoice1 =new File(cachedVoicePath+name+".wav");
-
-                    new File(cachedVoicePath).mkdirs();
-
-                    System.out.println("[INFO]Download done save to："+cachedVoicePath+name+".wav");
-
-                }catch(Exception e){
-                    e.printStackTrace();
-                }
-
-            }).start();
-
-        }else{
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        playSound(new FileInputStream(cachedVoice));
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            }).start();
+                playSound(cachedVoice);
+            });
         }
 
     }
 
+    private void getVoiceData(String name,String speaker,String speed,String intonation,File cachedVoice){
 
-    void playSound(InputStream inptustream){
-        AudioInputStream audioInputStream = null;
+        new Thread(() -> {
+            try{
+
+                FormBody formBody=new FormBody.Builder()
+                        .add("tex",URLEncoder.encode(name,"utf-8"))
+                        .add("tok",token.getAccessToken())
+                        .add("cuid",getMACAddress())
+                        .add("ctp","1")
+                        .add("lan","zh")
+                        .add("spd",speed)
+                        .add("per",speaker)
+                        .add("pit",intonation)
+                        .add("aue","6")
+                        .build();
+
+                Request request=new Request.Builder()
+                        .url(VOICE_API)
+                        .header("User-Agent","Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36")
+                        .post(formBody)
+                        .build();
+
+
+                okHttpClient.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                        log.warning("Failed to get voice:"+e.toString());
+                    }
+
+                    @Override
+                    public void onResponse(@NotNull Call call, @NotNull Response response) {
+                        if(request.header("Content-type").contains("json")){
+                            log.warning("Request error:"+response.toString());
+                        }else {
+                            boolean success=cacheVoiceFile(response,cachedVoice);
+                            if (success) {
+                                playSound(cachedVoice);
+                            }
+                        }
+                    }
+                });
+
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+
+        }).start();
+    }
+
+    private boolean cacheVoiceFile(Response response,File cacheVoice){
+
         try {
-            BufferedInputStream bf =new BufferedInputStream(inptustream);
-            audioInputStream = AudioSystem.getAudioInputStream(bf);
-        } catch (Exception e1) {
-            e1.printStackTrace();
-            return;
-        }
-        AudioFormat format = audioInputStream.getFormat();
-        SourceDataLine auline = null;
-        DataLine.Info info = new DataLine.Info(SourceDataLine.class, format);
-        try {
-            auline = (SourceDataLine) AudioSystem.getLine(info);
-            auline.open(format);
+
+            if(!cacheDir.exists())
+            cacheDir.mkdirs();
+
+            if(!cacheVoice.exists())
+                cacheVoice.createNewFile();
+
+            FileOutputStream cacheFile=new FileOutputStream(cacheVoice);
+            IOUtils.write(response.body().bytes(),cacheFile);
+
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
-            return;
-        }
-        auline.start();
-        int nBytesRead = 0;
-        byte[] abData = new byte[512];
-        try {
-            while (nBytesRead != -1) {
-                nBytesRead = audioInputStream.read(abData, 0, abData.length);
-                if (nBytesRead >= 0)
-                    auline.write(abData, 0, nBytesRead);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        } finally {
-            auline.drain();
-            auline.close();
+            log.warning("Error to cache voice file:"+e.toString());
+            return false;
         }
 
     }
 
-    private void soundPlayer(String cachedVoicePath) {
+
+    private void playSound(File file) {
 
         try {
-            File file = new File(cachedVoicePath);
             //使用 mp3spi 解码 mp3 音频文件
             MpegAudioFileReader mp = new MpegAudioFileReader();
             AudioInputStream stream = mp.getAudioInputStream(file);
@@ -184,7 +156,7 @@ public class VoicePlayer {
             line.stop();
             line.close();
         } catch (Exception e) {
-            throw new RuntimeException(e.getMessage());
+            log.warning("Error to play voice audio:"+e.toString());
         }
     }
 

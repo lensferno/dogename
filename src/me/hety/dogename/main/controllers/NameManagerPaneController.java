@@ -122,7 +122,7 @@ public class NameManagerPaneController extends VBox  {
 
         new DialogMaker(rootPane).creatDialogWithOKAndCancel(
                 "问一下",
-                "导入外部名单会覆盖当前已有的名单，是否继续？",
+                "导入恢复名单会覆盖当前已有的名单，是否继续？",
                 event1 -> {
                     FileChooser fileChooser = new FileChooser();
                     fileChooser.setTitle("告诉我在哪？");

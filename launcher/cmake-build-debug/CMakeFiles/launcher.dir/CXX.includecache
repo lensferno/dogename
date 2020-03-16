@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+G:/projects/dogename/launcher/main.cpp
+iostream
+-
+vector
+-
+string
+-
+direct.h
+-
+windows.h
+-
+windows.h
+-
+winnt.h
+-
+cstdio
+-
+fstream
+-
+

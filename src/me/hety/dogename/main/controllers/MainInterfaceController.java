@@ -11,8 +11,11 @@ import me.hety.dogename.main.Voice;
 import me.hety.dogename.main.chooser.Chooser;
 import me.hety.dogename.main.configs.ConfigLoader;
 import me.hety.dogename.main.configs.MainConfig;
+import me.hety.dogename.main.configs.VoiceConfig;
+import me.hety.dogename.main.data.History;
 import me.hety.dogename.main.data.NameData;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -23,6 +26,8 @@ public class MainInterfaceController {
     //ConfigLoader configLoader=new ConfigLoader();
 
     Voice voice=new Voice();
+
+    History history=new History();
 
     @FXML
     private Pane rootPane;
@@ -60,8 +65,13 @@ public class MainInterfaceController {
     @FXML
     private Label chosen_2;
 
+    public MainInterfaceController(){
+        history.loadHistory();
+        nameData.readIgnoreList();
+    }
 
     MainConfig mainConfig;
+    VoiceConfig voiceConfig;
 
     public void bindProperties(){
         nameChoose.selectedProperty().bindBidirectional(mainConfig.nameChoosePropertyProperty());
@@ -78,7 +88,8 @@ public class MainInterfaceController {
     }
 
     public void setUpConfig(ConfigLoader configLoader){
-        mainConfig=configLoader.readConfigFromFile("files\\Config.json");
+        mainConfig=configLoader.readConfigFromFile("files"+ File.separator +"Config.json");
+        voiceConfig=configLoader.readVoiceConfigFromFile("files"+ File.separator +"VoiceConfig.json");
     }
 
     @FXML
@@ -94,6 +105,10 @@ public class MainInterfaceController {
     @FXML
     void showNameManger(ActionEvent event) {
 
+        if (chooser.isRunning()){
+            new DialogMaker(rootPane).creatMessageDialog("(・。・)","安排中......\n为保证运行的稳定，此时还不能进行该操作哦。");
+            return;
+        }
         NameManagerPaneController nameManagerPaneController =new NameManagerPaneController(nameData,rootPane);
         new DialogMaker(rootPane).creatDialogWithOneBtn("名单管理",nameManagerPaneController);
     }
@@ -107,6 +122,10 @@ public class MainInterfaceController {
     @FXML
     void showNunberSetting(ActionEvent event) {
 
+        if (chooser.isRunning()){
+            new DialogMaker(rootPane).creatMessageDialog("(・。・)","安排中......\n为保证运行的稳定，此时还不能进行该操作哦。");
+            return;
+        }
         NumberSettingsPaneController numberSettingsPaneController =new NumberSettingsPaneController(nameData);
         numberSettingsPaneController.bindProperties(mainConfig);
         new DialogMaker(rootPane).creatDialogWithOneBtn("调整数字",numberSettingsPaneController);
@@ -127,13 +146,17 @@ public class MainInterfaceController {
         settingsPaneController.setToggleGroup();
         settingsPaneController.bindProperties(mainConfig);
 
+        settingsPaneController.setVoiceConfig(voiceConfig);
+
+        settingsPaneController.setRootPane(rootPane);
+
         new DialogMaker(rootPane).creatDialogWithOneBtn("更多设置",settingsPaneController);
     }
 
     @FXML
     void showHistory(ActionEvent event) {
 
-        HistoryPaneController historyPaneController =new HistoryPaneController();
+        HistoryPaneController historyPaneController =new HistoryPaneController(history);
 
         new DialogMaker(rootPane).creatDialogWithOneBtn("历史记录",historyPaneController);
     }
@@ -151,8 +174,6 @@ public class MainInterfaceController {
     @FXML
     void anPai() {
 
-
-        
         if(chooser.isRunning()){
             chooser.setForceStop(true);
             anPaiBtn.setText("安排一下");
@@ -179,8 +200,6 @@ public class MainInterfaceController {
         numbChoose.setToggleGroup(toggleGroup);
     }
 
-
-
     private void runNameMode(Chooser chooser){
 
         if(nameData.isEmpty(mainConfig.isTaoluModeProperty())){
@@ -200,10 +219,9 @@ public class MainInterfaceController {
 
         anPaiBtn.setText("不玩了！");
 
-        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,new ArrayList(),voice);
+        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,history,nameData,voice);
 
         chooser.run(
-                nameData,
                 (short) mainConfig.getSpeedProperty(),
                 mainConfig.getCycleTimesProperty(),
                 mainConfig.isIgnorePastProperty(),
@@ -243,7 +261,7 @@ public class MainInterfaceController {
 
         anPaiBtn.setText("不玩了！");
 
-        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,new ArrayList(),voice);
+        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,history,nameData,voice);
 
         chooser.run(
                 Short.parseShort(mainConfig.getMaxNumberProperty()),
@@ -255,5 +273,9 @@ public class MainInterfaceController {
                 mainConfig.isTaoluModeProperty(),
                 mainConfig.isVoicePlayProperty()
         );
+    }
+
+    public Pane getRootPane() {
+        return rootPane;
     }
 }

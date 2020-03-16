@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "g++.exe build active file",
+        "command": "D:\\msys64\\mingw64\\bin\\g++.exe",
+        "args": ["-g", "${file}","-std=c++11","-lstdc++","-lgcc_s","-o", "${fileDirname}\\${fileBasenameNoExtension}.exe",],
+        "options": {
+          "cwd": ""
+        },
+        "problemMatcher": ["$gcc"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+}

@@ -19,7 +19,7 @@ public class GushiciPaneController extends VBox {
     @FXML
     public Text contentInfo;
 
-    public GushiciPaneController (String content,String works,String author,String type){
+    public GushiciPaneController (String content,String title,String author,String type){
 
         FXMLLoader loader=new FXMLLoader(getClass().getResource("/me/hety/dogename/main/FXMLs/GushiciPane.fxml"));
         loader.setRoot(this);
@@ -31,7 +31,7 @@ public class GushiciPaneController extends VBox {
             //e.printStackTrace();
         }
         contentText.setText("“"+content+"”");
-        contentType.setText("《"+works+"》"+"——"+author);
-        contentInfo.setText(type);
+        contentInfo.setText("《"+title+"》"+"——"+author);
+        contentType.setText(type);
     }
 }

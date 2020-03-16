@@ -8,8 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="487.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="176.0" prefWidth="487.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
          <children>
@@ -18,63 +17,7 @@
                   <Font name="Microsoft YaHei" size="16.0" />
                </font>
             </Label>
-            <JFXRadioButton text="度小宇">
-               <font>
-                  <Font name="Microsoft YaHei" size="13.0" />
-               </font>
-            </JFXRadioButton>
-            <JFXRadioButton text="度小美">
-               <font>
-                  <Font name="Microsoft YaHei" size="13.0" />
-               </font>
-            </JFXRadioButton>
-            <JFXRadioButton text="度逍遥">
-               <font>
-                  <Font name="Microsoft YaHei" size="13.0" />
-               </font>
-            </JFXRadioButton>
-            <JFXRadioButton text="度丫丫">
-               <font>
-                  <Font name="Microsoft YaHei" size="13.0" />
-               </font>
-            </JFXRadioButton>
-         </children>
-         <padding>
-            <Insets left="10.0" />
-         </padding>
-      </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
-         <children>
-            <Label prefHeight="22.0" prefWidth="65.0">
-               <font>
-                  <Font name="Microsoft YaHei" size="16.0" />
-               </font>
-            </Label>
-            <JFXRadioButton text="度博文">
-               <font>
-                  <Font name="Microsoft YaHei" size="13.0" />
-               </font>
-            </JFXRadioButton>
-            <JFXRadioButton text="度小童">
-               <font>
-                  <Font name="Microsoft YaHei" size="13.0" />
-               </font>
-            </JFXRadioButton>
-            <JFXRadioButton text="度小萌">
-               <font>
-                  <Font name="Microsoft YaHei" size="13.0" />
-               </font>
-            </JFXRadioButton>
-            <JFXRadioButton text="度米朵">
-               <font>
-                  <Font name="Microsoft YaHei" size="13.0" />
-               </font>
-            </JFXRadioButton>
-            <JFXRadioButton text="度小娇">
-               <font>
-                  <Font name="Microsoft YaHei" size="13.0" />
-               </font>
-            </JFXRadioButton>
+            <JFXComboBox fx:id="speakerSelectBar" prefHeight="23.0" prefWidth="138.0" style="-fx-font-family: Microsoft YaHei;" />
          </children>
          <padding>
             <Insets left="10.0" />
@@ -87,11 +30,33 @@
                   <Font name="Microsoft YaHei" size="16.0" />
                </font>
             </Label>
-            <JFXSlider majorTickUnit="1.0" max="15.0" minorTickCount="1" prefHeight="14.0" prefWidth="395.0" showTickLabels="true" snapToTicks="true" value="5.0" />
+            <JFXSlider fx:id="voiceSpeedBar" majorTickUnit="1.0" max="15.0" minorTickCount="1" prefHeight="14.0" prefWidth="395.0" showTickLabels="true" snapToTicks="true" value="5.0" />
          </children>
          <padding>
             <Insets left="10.0" />
          </padding>
       </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="语调：">
+               <font>
+                  <Font name="Microsoft YaHei" size="16.0" />
+               </font>
+            </Label>
+            <JFXSlider fx:id="intonationBar" majorTickUnit="1.0" max="15.0" minorTickCount="1" prefHeight="14.0" prefWidth="395.0" showTickLabels="true" snapToTicks="true" value="5.0" />
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="487.0">
+         <children>
+            <JFXButton layoutX="14.0" layoutY="9.0" onAction="#showAdvancedVoiceSettings" text="高级设置">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
    </children>
 </fx:root>
