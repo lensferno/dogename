@@ -7,12 +7,13 @@ import javafx.beans.property.SimpleIntegerProperty;
 import java.lang.reflect.Type;
 
 public class DoublePropertyAdapter implements JsonSerializer<SimpleDoubleProperty>, JsonDeserializer<SimpleDoubleProperty> {
+
     @Override
     public SimpleDoubleProperty deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         if(jsonElement==null) {
             throw new JsonParseException("Json is wrong.");
         }else {
-            return new SimpleDoubleProperty(jsonElement.getAsInt());
+            return new SimpleDoubleProperty(jsonElement.getAsDouble());
         }
     }
 

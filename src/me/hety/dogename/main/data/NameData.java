@@ -3,6 +3,7 @@ package me.hety.dogename.main.data;
 import com.google.gson.Gson;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import java.util.*;
 import java.util.logging.Logger;
@@ -55,6 +56,53 @@ public class NameData {
 
     }
 
+
+    public void readIgnoreList(){
+
+        try{
+
+            if(!nameIgnoreFile.exists()){
+                nameIgnoreFile.createNewFile();
+                ignoreNameList= new HashSet<>();
+                return;
+            }
+
+            ObjectInputStream ois =new ObjectInputStream(new FileInputStream(nameIgnoreFile));
+            this.ignoreNameList=(HashSet)ois.readObject();
+
+        }catch (EOFException e){
+            ignoreNameList=new HashSet<>();
+            log.warning("Past name list is empty.");
+        }catch (Exception e){
+            ignoreNameList=new HashSet<>();
+            log.warning("Failed to load past name list:"+e.toString());
+            e.printStackTrace();
+        }
+
+        try{
+
+            if(!numbIgnoreFile.exists()){
+                numbIgnoreFile.createNewFile();
+                ignoreNumberList= new HashSet<>();
+                return;
+            }
+
+            ObjectInputStream ois =new ObjectInputStream(new FileInputStream(numbIgnoreFile));
+            this.ignoreNumberList=(HashSet)ois.readObject();
+
+        }catch (EOFException e){
+            ignoreNumberList=new HashSet<>();
+            log.warning("Ignored number list is empty.");
+        }catch (Exception e){
+            ignoreNumberList=new HashSet<>();
+            log.warning("Failed to load ignored number list");
+            e.printStackTrace();
+        }
+
+        System.out.println("There are "+ignoreNameList.size()+" names and "+ignoreNumberList.size()+" numbers ignored.");
+    }
+
+
     public void clearNameIgnoreList(){
         ignoreNameList.clear();
         writeIgnoreList("not number");
@@ -91,13 +139,12 @@ public class NameData {
         if(path!=null) {
             try{
                 FileOutputStream oos =new FileOutputStream(path);
-                oos.write(new Gson().toJson(nameList).getBytes("utf-8"));
+                oos.write(new Gson().toJson(nameList).getBytes(StandardCharsets.UTF_8));
                 oos.close();
                 System.out.println("[INFO]Exported list to:"+path.getPath());
             }catch (Exception e){e.printStackTrace();}
 
-        }else
-            return;
+        }
     }
 
     public void importNameList(File path) {
@@ -106,7 +153,7 @@ public class NameData {
             try{
                 FileInputStream fis =new FileInputStream(path);
                 String temp;
-                BufferedReader bis=new BufferedReader(new InputStreamReader(fis, "utf-8"));
+                BufferedReader bis=new BufferedReader(new InputStreamReader(fis, StandardCharsets.UTF_8));
                 StringBuilder sb=new StringBuilder();
 
                 while ((temp = bis.readLine()) != null) {
@@ -118,8 +165,7 @@ public class NameData {
                 System.out.println("[INFO]Imported list from:"+path.getPath());
             }catch (Exception e){e.printStackTrace();}
 
-        }else
-            return;
+        }
 
     }
 
@@ -175,7 +221,7 @@ public class NameData {
                 return;
             }
 
-            if(dataFile.exists()!=true){
+            if(!dataFile.exists()){
                 nameList= new ArrayList<>();
                 return;
             }
@@ -201,12 +247,11 @@ public class NameData {
 
     //------------------------------------------------------
     public void add(String text){
-        String[] temp;
+        String[] splitedText;
 
         if(text.contains("\n")||text.contains("\t")){
-            temp=text.split("\n");
-            for(int i=0;i<temp.length;i++)
-                nameList.add(temp[i]);
+            splitedText=text.split("\n");
+            nameList.addAll(Arrays.asList(splitedText));
         }else {
             nameList.add(text);
             listSize=nameList.size();
@@ -242,10 +287,7 @@ public class NameData {
     //------------------------------------------------------
     public boolean isEmpty(boolean taoluMode){
         if(taoluMode){
-            if(nameList.isEmpty()&&chooseList.isEmpty())
-                return true;
-            else
-                return false;
+            return nameList.isEmpty() && chooseList.isEmpty();
         }
         return nameList.isEmpty();
     }
@@ -253,7 +295,7 @@ public class NameData {
     Random random =new Random();
 
     //------------------------------------------------------
-    public String randomGet(boolean taoluMode){
+    public String randomGet(){
         if(newAlgo)
             return  nameList.get(secRandom.nextInt(nameList.size()));
         else
@@ -272,16 +314,14 @@ public class NameData {
     }
 
     //------------------------------------------------------
-    public int saveToFile(){
+    public void saveToFile(){
 
         try{
             ObjectOutputStream oos =new ObjectOutputStream(new FileOutputStream(dataFile));
             oos.writeObject(nameList);
             oos.close();
-            return 0;
         }catch (Exception e){
             e.printStackTrace();
-            return -1;
         }
 
     }

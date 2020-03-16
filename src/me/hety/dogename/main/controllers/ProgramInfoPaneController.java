@@ -38,8 +38,9 @@ public class ProgramInfoPaneController extends VBox {
     void showLicense(ActionEvent event) {
         TextArea textArea=new TextArea(LicenseText.text);
         textArea.setFont(Font.font("Microsoft YaHei",14));
-        textArea.setPrefWidth(678);
-        textArea.setPrefHeight(456);
+        textArea.setMinWidth(600);
+        textArea.setPrefHeight(400);
+        textArea.setEditable(false);
         new DialogMaker(rootPane).creatDialogWithOneBtn("开源协议（LGPL v3）",textArea);
     }
 

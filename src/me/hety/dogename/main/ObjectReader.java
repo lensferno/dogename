@@ -9,5 +9,4 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class ObjectReader {
-
 }

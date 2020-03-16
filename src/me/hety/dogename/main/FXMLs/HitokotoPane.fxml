@@ -6,24 +6,23 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="794.0" spacing="15.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="794.0" spacing="15.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="『我觉得在这里干尽坏事的玩家，都是些在现实世界中也烂到骨子里的家伙。』" textAlignment="CENTER" wrappingWidth="794.0">
+      <Text fx:id="hitokotoContent" strokeType="OUTSIDE" strokeWidth="0.0" text="『我觉得在这里干尽坏事的玩家，都是些在现实世界中也烂到骨子里的家伙。』" textAlignment="CENTER" wrappingWidth="794.0">
          <font>
             <Font name="Microsoft YaHei Bold" size="30.0" />
          </font>
       </Text>
       <Rectangle fill="#1f93ff41" height="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="795.0" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="出自：刀剑神域　　|　　上传者：hitokoto" textAlignment="CENTER" wrappingWidth="794.0">
+      <Text fx:id="contentInfo" strokeType="OUTSIDE" strokeWidth="0.0" text="出自：刀剑神域　　|　　上传者：hitokoto" textAlignment="CENTER" wrappingWidth="794.0">
          <font>
             <Font name="Microsoft YaHei" size="16.0" />
          </font>
       </Text>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="分类： 动画" textAlignment="CENTER" wrappingWidth="794.0">
+      <Text fx:id="contentType" strokeType="OUTSIDE" strokeWidth="0.0" text="分类： 动画" textAlignment="CENTER" wrappingWidth="794.0">
          <font>
             <Font name="Microsoft YaHei" size="14.0" />
          </font>
       </Text>
    </children>
-</VBox>
+</fx:root>

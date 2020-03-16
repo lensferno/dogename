@@ -41,12 +41,12 @@
       </HBox>
       <HBox alignment="CENTER" spacing="5.0">
          <children>
-            <JFXButton onAction="#exoprtNameList" prefHeight="28.0" prefWidth="120.0" ripplerFill="#4997fc" text="导出">
+            <JFXButton onAction="#exoprtNameList" prefHeight="28.0" prefWidth="120.0" ripplerFill="#4997fc" text="备份">
                <font>
                   <Font name="Microsoft YaHei" size="17.0" />
                </font>
             </JFXButton>
-            <JFXButton onAction="#importNameList" prefHeight="28.0" prefWidth="120.0" ripplerFill="#4997fc" text="导入">
+            <JFXButton onAction="#importNameList" prefHeight="28.0" prefWidth="120.0" ripplerFill="#4997fc" text="恢复">
                <font>
                   <Font name="Microsoft YaHei" size="17.0" />
                </font>
