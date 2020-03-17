@@ -1,18 +1,26 @@
 package me.hety.dogename.main;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.net.HttpURLConnection;
 
 public class Common {
+
+    public static void write(byte[] bytes,File file){
+        try {
+            FileOutputStream fileOutputStream=new FileOutputStream(file);
+            fileOutputStream.write(bytes);
+            fileOutputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch (IOException ioe){
+            ioe.printStackTrace();
+        }
+    }
 
     public static int download(String URL,String fileLocation){
         try{

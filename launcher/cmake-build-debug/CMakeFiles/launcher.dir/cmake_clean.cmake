@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/launcher.dir/main.cpp.obj"
+  "CMakeFiles/launcher.dir/main/GetRegValue.cpp.obj"
+  "CMakeFiles/launcher.dir/main/main.cpp.obj"
   "launcher.exe"
   "launcher.exe.manifest"
   "launcher.pdb"

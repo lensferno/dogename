@@ -122,32 +122,59 @@ launcher/fast:
 	$(MAKE) -f CMakeFiles\launcher.dir\build.make CMakeFiles/launcher.dir/build
 .PHONY : launcher/fast
 
-main.obj: main.cpp.obj
+main/GetRegValue.obj: main/GetRegValue.cpp.obj
 
-.PHONY : main.obj
+.PHONY : main/GetRegValue.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\launcher.dir\build.make CMakeFiles/launcher.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+main/GetRegValue.cpp.obj:
+	$(MAKE) -f CMakeFiles\launcher.dir\build.make CMakeFiles/launcher.dir/main/GetRegValue.cpp.obj
+.PHONY : main/GetRegValue.cpp.obj
 
-main.i: main.cpp.i
+main/GetRegValue.i: main/GetRegValue.cpp.i
 
-.PHONY : main.i
+.PHONY : main/GetRegValue.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\launcher.dir\build.make CMakeFiles/launcher.dir/main.cpp.i
-.PHONY : main.cpp.i
+main/GetRegValue.cpp.i:
+	$(MAKE) -f CMakeFiles\launcher.dir\build.make CMakeFiles/launcher.dir/main/GetRegValue.cpp.i
+.PHONY : main/GetRegValue.cpp.i
 
-main.s: main.cpp.s
+main/GetRegValue.s: main/GetRegValue.cpp.s
 
-.PHONY : main.s
+.PHONY : main/GetRegValue.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\launcher.dir\build.make CMakeFiles/launcher.dir/main.cpp.s
-.PHONY : main.cpp.s
+main/GetRegValue.cpp.s:
+	$(MAKE) -f CMakeFiles\launcher.dir\build.make CMakeFiles/launcher.dir/main/GetRegValue.cpp.s
+.PHONY : main/GetRegValue.cpp.s
+
+main/main.obj: main/main.cpp.obj
+
+.PHONY : main/main.obj
+
+# target to build an object file
+main/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\launcher.dir\build.make CMakeFiles/launcher.dir/main/main.cpp.obj
+.PHONY : main/main.cpp.obj
+
+main/main.i: main/main.cpp.i
+
+.PHONY : main/main.i
+
+# target to preprocess a source file
+main/main.cpp.i:
+	$(MAKE) -f CMakeFiles\launcher.dir\build.make CMakeFiles/launcher.dir/main/main.cpp.i
+.PHONY : main/main.cpp.i
+
+main/main.s: main/main.cpp.s
+
+.PHONY : main/main.s
+
+# target to generate assembly for a file
+main/main.cpp.s:
+	$(MAKE) -f CMakeFiles\launcher.dir\build.make CMakeFiles/launcher.dir/main/main.cpp.s
+.PHONY : main/main.cpp.s
 
 # Help Target
 help:
@@ -158,9 +185,12 @@ help:
 	@echo ... launcher
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... main/GetRegValue.obj
+	@echo ... main/GetRegValue.i
+	@echo ... main/GetRegValue.s
+	@echo ... main/main.obj
+	@echo ... main/main.i
+	@echo ... main/main.s
 .PHONY : help
 
 

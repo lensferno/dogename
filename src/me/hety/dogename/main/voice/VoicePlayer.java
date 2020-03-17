@@ -1,6 +1,7 @@
 package me.hety.dogename.main.voice;
 
 import javazoom.spi.mpeg.sampled.file.MpegAudioFileReader;
+import me.hety.dogename.main.Common;
 import okhttp3.*;
 import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.NotNull;
@@ -47,7 +48,7 @@ public class VoicePlayer {
         if (!cachedVoice.exists()) {
 
             getVoiceData(name,speaker,speed,intonation,cachedVoice);
-            playSound(cachedVoice);
+            //playSound(cachedVoice);
 
         } else {
             new Thread(() -> {
@@ -71,7 +72,7 @@ public class VoicePlayer {
                         .add("spd",speed)
                         .add("per",speaker)
                         .add("pit",intonation)
-                        .add("aue","6")
+                        .add("aue","3")
                         .build();
 
                 Request request=new Request.Builder()
@@ -89,11 +90,12 @@ public class VoicePlayer {
 
                     @Override
                     public void onResponse(@NotNull Call call, @NotNull Response response) {
-                        if(request.header("Content-type").contains("json")){
+                        if(response.header("Content-type").contains("json")){
                             log.warning("Request error:"+response.toString());
                         }else {
                             boolean success=cacheVoiceFile(response,cachedVoice);
                             if (success) {
+                                System.out.println("cache voice success");
                                 playSound(cachedVoice);
                             }
                         }
@@ -117,9 +119,9 @@ public class VoicePlayer {
             if(!cacheVoice.exists())
                 cacheVoice.createNewFile();
 
-            FileOutputStream cacheFile=new FileOutputStream(cacheVoice);
-            IOUtils.write(response.body().bytes(),cacheFile);
-
+            //FileOutputStream cacheFile=new FileOutputStream(cacheVoice);
+            Common.write(response.body().bytes(),cacheVoice);
+            //IOUtils.write(response.body().bytes(),cacheFile);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -157,6 +159,7 @@ public class VoicePlayer {
             line.close();
         } catch (Exception e) {
             log.warning("Error to play voice audio:"+e.toString());
+            e.printStackTrace();
         }
     }
 
