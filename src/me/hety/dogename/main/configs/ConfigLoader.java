@@ -45,6 +45,7 @@ public class ConfigLoader {
             if(!configFile.exists()){
                 configFile.createNewFile();
                 mainConfig=new MainConfig();
+                writeConfigToFile("files"+ File.separator+"Config.json","files"+ File.separator+"VoiceConfig.json");
                 return mainConfig;
             }
             InputStream inputStream=new FileInputStream(configFile);
@@ -55,6 +56,7 @@ public class ConfigLoader {
         }catch (Exception e){
             log.warning("Error to load config file:"+e.toString()+"\nUse Default config.");
             mainConfig=new MainConfig();
+            writeConfigToFile("files"+ File.separator+"Config.json","files"+ File.separator+"VoiceConfig.json");
             e.printStackTrace();
         }
 
@@ -90,6 +92,7 @@ public class ConfigLoader {
         }catch (Exception e){
             log.warning("Error to load config file:"+e.toString()+"\nUse Default config.");
             voiceConfig=new VoiceConfig();
+
             e.printStackTrace();
         }
 

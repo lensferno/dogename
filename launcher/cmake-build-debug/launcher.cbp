@@ -82,7 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="G:/projects/dogename/launcher/main.cpp">
+		<Unit filename="G:/projects/dogename/launcher/main/GetRegValue.cpp">
+			<Option target="launcher"/>
+		</Unit>
+		<Unit filename="G:/projects/dogename/launcher/main/GetRegValue.h">
+			<Option target="launcher"/>
+		</Unit>
+		<Unit filename="G:/projects/dogename/launcher/main/main.cpp">
 			<Option target="launcher"/>
 		</Unit>
 		<Unit filename="G:/projects/dogename/launcher/CMakeLists.txt">

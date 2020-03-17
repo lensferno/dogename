@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-G:/projects/dogename/launcher/main.cpp
+G:/projects/dogename/launcher/main/GetRegValue.h
+string
+-
+
+G:/projects/dogename/launcher/main/main.cpp
 iostream
 -
 vector
@@ -25,4 +29,6 @@ cstdio
 -
 fstream
 -
+GetRegValue.h
+G:/projects/dogename/launcher/main/GetRegValue.h
 

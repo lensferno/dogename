@@ -28,6 +28,11 @@ public class TokenManager {
 
     public TokenManager(){
 
+
+    }
+
+    public void init(){
+
         if(tokenFile.exists()){
             loadToken();
 
@@ -52,7 +57,10 @@ public class TokenManager {
             }
 
         }
+    }
 
+    public String getTokenStatus() {
+        return tokenStatus;
     }
 
     public Token getToken() {
@@ -107,7 +115,7 @@ public class TokenManager {
         ObjectInputStream ois;
         try{
             ois =new ObjectInputStream(new FileInputStream(tokenFile));
-            this.token=(Token) ois.readObject();
+            this.token =(Token) ois.readObject();
             ois.close();
         }catch (Exception e){
             e.printStackTrace();

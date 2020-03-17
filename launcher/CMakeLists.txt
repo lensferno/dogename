@@ -3,4 +3,4 @@ project(launcher)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(launcher main.cpp)
+add_executable(launcher main/main.cpp main/GetRegValue.h main/GetRegValue.cpp)

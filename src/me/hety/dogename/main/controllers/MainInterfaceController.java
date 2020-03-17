@@ -7,13 +7,15 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import me.hety.dogename.main.DialogMaker;
-import me.hety.dogename.main.Voice;
 import me.hety.dogename.main.chooser.Chooser;
 import me.hety.dogename.main.configs.ConfigLoader;
 import me.hety.dogename.main.configs.MainConfig;
 import me.hety.dogename.main.configs.VoiceConfig;
 import me.hety.dogename.main.data.History;
 import me.hety.dogename.main.data.NameData;
+import me.hety.dogename.main.voice.Token;
+import me.hety.dogename.main.voice.TokenManager;
+import me.hety.dogename.main.voice.VoicePlayer;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -25,7 +27,9 @@ public class MainInterfaceController {
 
     //ConfigLoader configLoader=new ConfigLoader();
 
-    Voice voice=new Voice();
+    Token token;
+    TokenManager tokenManager=new TokenManager();
+
 
     History history=new History();
 
@@ -68,6 +72,10 @@ public class MainInterfaceController {
     public MainInterfaceController(){
         history.loadHistory();
         nameData.readIgnoreList();
+        tokenManager.init();
+        if(tokenManager.getTokenStatus().equals("ok")){
+            token=tokenManager.getToken();
+        }
     }
 
     MainConfig mainConfig;
@@ -219,7 +227,7 @@ public class MainInterfaceController {
 
         anPaiBtn.setText("不玩了！");
 
-        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,history,nameData,voice);
+        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,history,nameData,token,voiceConfig);
 
         chooser.run(
                 (short) mainConfig.getSpeedProperty(),
@@ -261,7 +269,7 @@ public class MainInterfaceController {
 
         anPaiBtn.setText("不玩了！");
 
-        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,history,nameData,voice);
+        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,history,nameData,token,voiceConfig);
 
         chooser.run(
                 Short.parseShort(mainConfig.getMaxNumberProperty()),

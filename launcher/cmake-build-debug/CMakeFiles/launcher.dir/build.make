@@ -56,32 +56,47 @@ include CMakeFiles/launcher.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/launcher.dir/flags.make
 
-CMakeFiles/launcher.dir/main.cpp.obj: CMakeFiles/launcher.dir/flags.make
-CMakeFiles/launcher.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=G:\projects\dogename\launcher\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/launcher.dir/main.cpp.obj"
-	D:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\launcher.dir\main.cpp.obj -c G:\projects\dogename\launcher\main.cpp
+CMakeFiles/launcher.dir/main/main.cpp.obj: CMakeFiles/launcher.dir/flags.make
+CMakeFiles/launcher.dir/main/main.cpp.obj: ../main/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=G:\projects\dogename\launcher\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/launcher.dir/main/main.cpp.obj"
+	D:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\launcher.dir\main\main.cpp.obj -c G:\projects\dogename\launcher\main\main.cpp
 
-CMakeFiles/launcher.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/launcher.dir/main.cpp.i"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\projects\dogename\launcher\main.cpp > CMakeFiles\launcher.dir\main.cpp.i
+CMakeFiles/launcher.dir/main/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/launcher.dir/main/main.cpp.i"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\projects\dogename\launcher\main\main.cpp > CMakeFiles\launcher.dir\main\main.cpp.i
 
-CMakeFiles/launcher.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/launcher.dir/main.cpp.s"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\projects\dogename\launcher\main.cpp -o CMakeFiles\launcher.dir\main.cpp.s
+CMakeFiles/launcher.dir/main/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/launcher.dir/main/main.cpp.s"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\projects\dogename\launcher\main\main.cpp -o CMakeFiles\launcher.dir\main\main.cpp.s
+
+CMakeFiles/launcher.dir/main/GetRegValue.cpp.obj: CMakeFiles/launcher.dir/flags.make
+CMakeFiles/launcher.dir/main/GetRegValue.cpp.obj: ../main/GetRegValue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=G:\projects\dogename\launcher\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/launcher.dir/main/GetRegValue.cpp.obj"
+	D:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\launcher.dir\main\GetRegValue.cpp.obj -c G:\projects\dogename\launcher\main\GetRegValue.cpp
+
+CMakeFiles/launcher.dir/main/GetRegValue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/launcher.dir/main/GetRegValue.cpp.i"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E G:\projects\dogename\launcher\main\GetRegValue.cpp > CMakeFiles\launcher.dir\main\GetRegValue.cpp.i
+
+CMakeFiles/launcher.dir/main/GetRegValue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/launcher.dir/main/GetRegValue.cpp.s"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S G:\projects\dogename\launcher\main\GetRegValue.cpp -o CMakeFiles\launcher.dir\main\GetRegValue.cpp.s
 
 # Object files for target launcher
 launcher_OBJECTS = \
-"CMakeFiles/launcher.dir/main.cpp.obj"
+"CMakeFiles/launcher.dir/main/main.cpp.obj" \
+"CMakeFiles/launcher.dir/main/GetRegValue.cpp.obj"
 
 # External object files for target launcher
 launcher_EXTERNAL_OBJECTS =
 
-launcher.exe: CMakeFiles/launcher.dir/main.cpp.obj
+launcher.exe: CMakeFiles/launcher.dir/main/main.cpp.obj
+launcher.exe: CMakeFiles/launcher.dir/main/GetRegValue.cpp.obj
 launcher.exe: CMakeFiles/launcher.dir/build.make
 launcher.exe: CMakeFiles/launcher.dir/linklibs.rsp
 launcher.exe: CMakeFiles/launcher.dir/objects1.rsp
 launcher.exe: CMakeFiles/launcher.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=G:\projects\dogename\launcher\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable launcher.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=G:\projects\dogename\launcher\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable launcher.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\launcher.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

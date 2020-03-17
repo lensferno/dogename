@@ -5,9 +5,11 @@ import javafx.animation.AnimationTimer;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.Label;
-import me.hety.dogename.main.Voice;
+import me.hety.dogename.main.configs.VoiceConfig;
 import me.hety.dogename.main.data.History;
 import me.hety.dogename.main.data.NameData;
+import me.hety.dogename.main.voice.Token;
+import me.hety.dogename.main.voice.VoicePlayer;
 
 import java.io.*;
 import java.security.SecureRandom;
@@ -47,6 +49,11 @@ public final class Chooser {
     Logger log =Logger.getLogger("ChooserLogger");
 
     boolean taoluMode;
+
+    Token token;
+    VoicePlayer voicePlayer;
+
+    VoiceConfig voiceConfig;
 
     Random random =new Random();
 
@@ -92,7 +99,7 @@ public final class Chooser {
     private String HISTORY_FILE;
     private File historyFile;
 
-    Voice voice;
+    String speaker,speakSpeed,intonation;
 
     void writeIgnoreList(){
         nameData.writeIgnoreList("");
@@ -161,7 +168,7 @@ public final class Chooser {
                     System.gc();
                     history.addHistory(chosenName);
                     if(voicePlay)
-                        voice.playVoice(chosenName);
+                        voicePlayer.playVoice(chosenName,speaker,intonation,speakSpeed);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -261,7 +268,7 @@ public final class Chooser {
                     System.gc();
                     history.addHistory(chosenName);
                     if(voicePlay)
-                        voice.playVoice(chosenName);
+                        voicePlayer.playVoice(chosenName,speaker,intonation,speakSpeed);
                     return;
                 }else
                     ignoreTimesOut=true;
@@ -334,7 +341,7 @@ public final class Chooser {
         numbTimer.start();
     }
 
-    public void set(StringProperty upLabelText, StringProperty downLabelText, JFXButton anpaiBtn, History history,NameData nameData,Voice voice){
+    public void set(StringProperty upLabelText, StringProperty downLabelText, JFXButton anpaiBtn, History history, NameData nameData, Token token, VoiceConfig voiceConfig){
 
         this.upLabelText=upLabelText;
         this.downLabelText=downLabelText;
@@ -342,8 +349,16 @@ public final class Chooser {
         this.anpaiBtn = anpaiBtn;
         this.history = history;
         this.nameData = nameData;
-        this.voice = voice;
 
+        this.token=token;
+        this.voicePlayer=new VoicePlayer(token);
+
+        this.voiceConfig=voiceConfig;
+
+        this.speaker=String.valueOf(voiceConfig.getSpeaker());
+        this.speakSpeed=String.valueOf(voiceConfig.getSpeed());
+        this.intonation=String.valueOf(voiceConfig.getIntonation());
+        this.speaker=voiceConfig.getSpeaker();
     }
 
 
