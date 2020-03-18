@@ -13,6 +13,7 @@ import me.hety.dogename.main.configs.MainConfig;
 import me.hety.dogename.main.configs.VoiceConfig;
 import me.hety.dogename.main.data.History;
 import me.hety.dogename.main.data.NameData;
+import me.hety.dogename.main.ocr.Ocr;
 import me.hety.dogename.main.voice.Token;
 import me.hety.dogename.main.voice.TokenManager;
 import me.hety.dogename.main.voice.VoicePlayer;
@@ -30,6 +31,7 @@ public class MainInterfaceController {
     Token token;
     TokenManager tokenManager=new TokenManager();
 
+    Ocr ocrTool=null;
 
     History history=new History();
 
@@ -117,7 +119,7 @@ public class MainInterfaceController {
             new DialogMaker(rootPane).creatMessageDialog("(・。・)","安排中......\n为保证运行的稳定，此时还不能进行该操作哦。");
             return;
         }
-        NameManagerPaneController nameManagerPaneController =new NameManagerPaneController(nameData,rootPane);
+        NameManagerPaneController nameManagerPaneController =new NameManagerPaneController(nameData,rootPane,ocrTool);
         new DialogMaker(rootPane).creatDialogWithOneBtn("名单管理",nameManagerPaneController);
     }
 

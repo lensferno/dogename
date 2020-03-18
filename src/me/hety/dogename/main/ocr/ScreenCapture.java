@@ -1,4 +1,4 @@
-package me.hety.dogename.main.screencapture;
+package me.hety.dogename.main.ocr;
 
 import java.io.*;
 import javax.swing.*;
@@ -11,24 +11,46 @@ import javax.imageio.*;
 
 public class ScreenCapture {
     // test main
-    public static void main(String[] args) throws Exception {
-        String userdir = System.getProperty("user.dir");
-        File tempFile = new File("d:", "temp.png");
+    /*
+    public static void main(String[] args) {
+        File tempFile = new File( "files"+File.separator+"ocr.png");
         ScreenCapture capture = ScreenCapture.getInstance();
         capture.captureImage();
-        JFrame frame = new JFrame();
-        JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout());
         JLabel imagebox = new JLabel();
-        panel.add(BorderLayout.CENTER, imagebox);
         imagebox.setIcon(capture.getPickedIcon());
-        capture.saveToFile(tempFile);
-        capture.captureImage();
-        imagebox.setIcon(capture.getPickedIcon());
-        frame.setContentPane(panel);
-        frame.setSize(400, 300);
-        frame.show();
-        System.out.println("Over");
+        try {
+            capture.saveToFile(tempFile);
+            System.out.println("Over");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+*/
+
+    public static final String SCREEN_CAPTURE_LOCA="files"+File.separator+"ocr.png";
+
+    private static boolean canceled =false;
+
+    public static boolean getScreenCapture(){
+
+        try {
+            File tempFile = new File(SCREEN_CAPTURE_LOCA);
+            ScreenCapture capture = ScreenCapture.getInstance();
+            capture.captureImage();
+            if(canceled){
+                return false;
+            }
+            JLabel imagebox = new JLabel();
+            imagebox.setIcon(capture.getPickedIcon());
+            capture.saveToFile(tempFile);
+            System.out.println("Over");
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     private ScreenCapture() {
@@ -47,6 +69,26 @@ public class ScreenCapture {
                 pickedImage = fullScreenImage.getSubimage(recX, recY, recW,
                         recH);
                 dialog.setVisible(false);
+            }
+        });
+
+        labFullScreenImage.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                dialog.setVisible(false);
+                canceled =true;
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                dialog.setVisible(false);
+                canceled =true;
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                dialog.setVisible(false);
+                canceled =true;
             }
         });
 
@@ -73,10 +115,12 @@ public class ScreenCapture {
 
             public void mouseMoved(MouseEvent e) {
                 labFullScreenImage.drawCross(e.getX(), e.getY());
+                //messageLabel.setLocation(e.getX(), e.getY());
             }
         });
 
         cp.add(BorderLayout.CENTER, labFullScreenImage);
+        //cp.add(messageLabel);
         dialog.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
         dialog.setAlwaysOnTop(true);
         dialog.setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
@@ -88,14 +132,6 @@ public class ScreenCapture {
     // Singleton Pattern
     public static ScreenCapture getInstance() {
         return defaultCapturer;
-    }
-
-    /** 捕捉全屏慕 */
-    public Icon captureFullScreen() {
-        fullScreenImage = robot.createScreenCapture(new Rectangle(Toolkit
-                .getDefaultToolkit().getScreenSize()));
-        ImageIcon icon = new ImageIcon(fullScreenImage);
-        return icon;
     }
 
     /** 捕捉屏幕的一个矫形区域 */
@@ -127,15 +163,6 @@ public class ScreenCapture {
         ImageIO.write(getPickedImage(), defaultImageFormater, file);
     }
 
-    /** 储存为一个文件,为PNG格式 */
-    public void saveAsPNG(File file) throws IOException {
-        ImageIO.write(getPickedImage(), "png", file);
-    }
-
-    /** 储存为一个JPEG格式图像文件 */
-    public void saveAsJPEG(File file) throws IOException {
-        ImageIO.write(getPickedImage(), "JPEG", file);
-    }
 
     /** 写入一个OutputStream */
     public void write(OutputStream out) throws IOException {
@@ -148,6 +175,7 @@ public class ScreenCapture {
     private int recX, recY, recH, recW; // 截取的图像
     private boolean isFirstPoint = true;
     private BackgroundImage labFullScreenImage = new BackgroundImage();
+    //private Label messageLabel = new Label("按任意键可退出。");
     private Robot robot;
     private BufferedImage fullScreenImage;
     private BufferedImage pickedImage;

@@ -7,86 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/launcher/dogename.rc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launcher/main/GetRegValue.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launcher/main/GetRegValue.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/screencapture/ScreenCapture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baidu_aip_java_sdk_4_12_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20160810.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/OcrPaneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/ocr/Ocr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_4_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_4_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_2_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_2_2_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/dogename-old.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/DialogBuilder/DialogBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/DialogBuilder/DialogBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/DialogBuilder/MessageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/DialogBuilder/MessageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/DialogBuilder/MyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/DialogBuilder/MyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/GuShiCi.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/GuShiCi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/InterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/InterfaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/MoveWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/MoveWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/MoveWindowByTouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/MoveWindowByTouch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/NameManager/NameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/NameManager/NameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/NewData.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/NewData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/ProgramMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/ProgramMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/SystemSimpleMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/SystemSimpleMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/UICtrl_old.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/UICtrl_old.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/everydaySaying/Gushici.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/everydaySaying/Gushici.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/everydaySaying/Hitokoto.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/everydaySaying/Hitokoto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/me/hety/dogename/main/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/main/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/UIFileData.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/UIFileData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/backData.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/backData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/dogename.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/dogename.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/img1Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/img1Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/img1Data_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/img1Data_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/img1Data_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/img1Data_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/uifiles/HuajiForce.gif" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/uifiles/HuajiForce.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/uifiles/UI.css" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/uifiles/UI.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/uifiles/UI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/uifiles/UI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/uifiles/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/uifiles/back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/uifiles/img1.png" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/uifiles/img1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename-old/src/sourcesData/uifiles/lailelaodi.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dogename-old/src/main/sourcesData/uifiles/lailelaodi.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/launcher.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/launcher.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/launcher.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/cmake-build-debug/launcher.exe" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/cmake-build-debug/launcher.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/launcher_main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/main/launcher_main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/launcher/main/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogename.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dogename.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Voice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/chooser/Chooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/chooser/Chooser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/TokenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/TokenManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/VoicePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/VoicePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/extra/7z.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NameManagerPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NameManagerPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/data/NameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/data/NameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/screencapture/ScreenCapture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/ocr/ScreenCapture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/Common.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/Common.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/Voice$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/Voice$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/Voice$Token.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/Voice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/ConfigLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/ConfigLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +68,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last.edited.regexp" value="Sample Text" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/dogename-old/src" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/me/hety/dogename/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -154,7 +94,7 @@
       <recent name="G:\projects\dogename\dogename-old\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager">
     <configuration name="DogeMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="me.hety.dogename.main.Main" />
       <module name="dogename" />
@@ -162,22 +102,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DogeMain_old" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="ProgramMain" />
-      <module name="dogename-old" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="me.hety.dogename.main.screencapture.ScreenCapture" />
-      <module name="dogename" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -200,11 +126,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.DogeMain_old" />
-      <item itemvalue="Application.DogeMain" />
-      <item itemvalue="Application.test" />
-    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -257,18 +178,18 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="506" y="539" key="#com.intellij.debugger.ui.breakpoints.BreakpointsConfigurationDialogFactory.BreakpointsConfigurationDialog.AddFieldBreakpointDialog/0.0.1440.860@0.0.1440.860" timestamp="1584012088506" />
-    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584441500891">
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584502609223">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1584441500891" />
+    <state x="174" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1584502609223" />
     <state x="438" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584358061363">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="438" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1584358061363" />
-    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1584355293793">
+    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1584518902564">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1584355293793" />
+    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1584518902564" />
     <state x="347" y="178" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584441473721">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -321,22 +242,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1396" height="228" key="GridCell.Tab.-1.right/0.0.1440.860@0.0.1440.860" timestamp="1584359613063" />
-    <state width="1396" height="189" key="GridCell.Tab.0.bottom" timestamp="1584441653942">
+    <state width="1396" height="189" key="GridCell.Tab.0.bottom" timestamp="1584522967798">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1584441653942" />
-    <state width="1396" height="189" key="GridCell.Tab.0.center" timestamp="1584441653942">
+    <state width="1396" height="189" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1584522967798" />
+    <state width="1396" height="189" key="GridCell.Tab.0.center" timestamp="1584522967798">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1584441653942" />
-    <state width="1396" height="189" key="GridCell.Tab.0.left" timestamp="1584441653942">
+    <state width="1396" height="189" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1584522967798" />
+    <state width="1396" height="189" key="GridCell.Tab.0.left" timestamp="1584522967798">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1584441653942" />
-    <state width="1396" height="189" key="GridCell.Tab.0.right" timestamp="1584441653942">
+    <state width="1396" height="189" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1584522967798" />
+    <state width="1396" height="189" key="GridCell.Tab.0.right" timestamp="1584522967798">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1584441653942" />
+    <state width="1396" height="189" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1584522967798" />
     <state x="621" y="557" width="742" height="298" key="GridCell.Tab.1.bottom" timestamp="1584359935523">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -417,19 +338,14 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="89" y="40" key="new project wizard/0.0.1440.860@0.0.1440.860" timestamp="1584269614075" />
-    <state x="376" y="190" width="672" height="677" key="run.anything.popup" timestamp="1583758150878">
+    <state x="376" y="190" width="672" height="677" key="run.anything.popup" timestamp="1584514931417">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="376" y="190" width="672" height="677" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1583758150878" />
+    <state x="376" y="190" width="672" height="677" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1584514931417" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dogename-old/src/main/ProgramMain.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/dogename-old/src/main/ProgramMain.java</url>
           <line>109</line>
@@ -444,19 +360,6 @@
           <url>file://$PROJECT_DIR$/dogename-old/src/main/ProgramMain.java</url>
           <line>170</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dogename-old/src/main/ProgramMain.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/dogename-old/src/main/ProgramMain.java</url>
-          <line>74</line>
-          <properties class="main.ProgramMain">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/me/hety/dogename/main/controllers/VoiceSettingsPaneController.java</url>

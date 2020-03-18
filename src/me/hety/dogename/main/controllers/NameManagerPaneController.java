@@ -7,26 +7,35 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import me.hety.dogename.main.Common;
 import me.hety.dogename.main.DialogMaker;
 import me.hety.dogename.main.data.NameData;
+import me.hety.dogename.main.ocr.Ocr;
 
 import java.io.File;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Logger;
 
 public class NameManagerPaneController extends VBox  {
 
     NameData nameData;
     Pane rootPane;
+    Ocr ocrTool;
+
+    Logger log = Logger.getLogger("NameManagerPaneLOgger");
 
     public static final ObservableList<String> shownNameList = FXCollections.observableArrayList();
 
-    public NameManagerPaneController(NameData nameData, Pane rootPane){
+    public NameManagerPaneController(NameData nameData, Pane rootPane, Ocr ocrTool){
         FXMLLoader loader=new FXMLLoader(getClass().getResource("/me/hety/dogename/main/FXMLs/NameManagerPane.fxml"));
         loader.setRoot(this);
         loader.setController(this);
@@ -41,6 +50,7 @@ public class NameManagerPaneController extends VBox  {
         shownNameList.setAll(nameData.getNameList());
         this.nameList.setItems(shownNameList);
 
+        this.ocrTool=ocrTool;
     }
 
     @FXML
@@ -159,5 +169,35 @@ public class NameManagerPaneController extends VBox  {
         inputName.clear();
         System.gc();
     }
+
+    @FXML
+    void addNameFromScreen(ActionEvent event) {
+        FXMLLoader fxmlLoader;
+        Parent parent;
+
+        Stage stage=new Stage();
+
+        try{
+            fxmlLoader=new FXMLLoader(getClass().getResource("/me/hety/dogename/main/FXMLs/OcrPane.fxml"));
+            parent=fxmlLoader.load();
+        }catch (Exception e){
+            log.warning("Error to load main interface FXML :"+e.toString());
+            return;
+        }
+
+        Scene scene=new Scene(parent,515,604);
+        stage.setTitle("Ocr模块");
+        stage.setScene(scene);
+        log.fine("窗口加载完成");
+
+        stage.show();
+
+    }
+
+    @FXML
+    void copyTo(ActionEvent event) {
+        inputName.setText(inputName.getText()+ Common.getClipboardString());
+    }
+
 
 }
