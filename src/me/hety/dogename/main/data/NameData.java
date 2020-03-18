@@ -29,8 +29,8 @@ public class NameData {
 
     //不做注释了，自己慢慢看。：）
 
-    File nameIgnoreFile =new File("files\\IgnoredNameList.data");
-    File numbIgnoreFile =new File("files\\IgnoredNumberList.data");
+    File nameIgnoreFile =new File("files"+File.separator+"IgnoredNameList.data");
+    File numbIgnoreFile =new File("files"+File.separator+"IgnoredNumberList.data");
 
     public void writeIgnoreList(String switchy){
 
@@ -229,6 +229,8 @@ public class NameData {
             ObjectInputStream ois =new ObjectInputStream(new FileInputStream(dataFile));
             this.nameList=(ArrayList)ois.readObject();
 
+            System.out.println(nameList.size()+" names loaded.");
+
             listSize=nameList.size();
             this.chooseList=new ArrayList<>(nameList);
 
@@ -249,7 +251,13 @@ public class NameData {
     public void add(String text){
         String[] splitedText;
 
-        if(text.contains("\n")||text.contains("\t")){
+        if(text.contains("\n")&&text.contains("\r")){//-----------windows
+            splitedText=text.split("\r\n");
+            nameList.addAll(Arrays.asList(splitedText));
+        }else if(text.contains("\n")){//--------------------------linux,unix
+            splitedText=text.split("\n");
+            nameList.addAll(Arrays.asList(splitedText));
+        }else if(text.contains("\r")){//--------------------------macos
             splitedText=text.split("\n");
             nameList.addAll(Arrays.asList(splitedText));
         }else {
