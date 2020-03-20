@@ -1038,7 +1038,7 @@ public class UICtrl {
         oldW=(short)stage.getWidth();
         oldH=(short)stage.getHeight();
 
-        EventHandler eventHandler=new MoveWindow(stage);
+        EventHandler eventHandler=new MoveWindowByMouse(stage);
 
         scene.setOnMousePressed(eventHandler);
         scene.setOnMouseDragged(eventHandler);

@@ -28,13 +28,14 @@ public class ScreenCapture {
     }
 */
 
-    public static final String SCREEN_CAPTURE_LOCA="files"+File.separator+"ocr.png";
+    public static final String SCREEN_CAPTURE_LOCA="files"+File.separator+"ocrCache.png";
 
     private static boolean canceled =false;
 
     public static boolean getScreenCapture(){
 
         try {
+            canceled=false;
             File tempFile = new File(SCREEN_CAPTURE_LOCA);
             ScreenCapture capture = ScreenCapture.getInstance();
             capture.captureImage();
@@ -65,32 +66,21 @@ public class ScreenCapture {
         cp.setLayout(new BorderLayout());
         labFullScreenImage.addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent evn) {
+                if (evn.getButton()==MouseEvent.BUTTON3){
+                    canceled=true;
+                    System.out.println("captureCancel");
+
+                    dialog.setVisible(false);
+                    return;
+                }
                 isFirstPoint = true;
                 pickedImage = fullScreenImage.getSubimage(recX, recY, recW,
                         recH);
                 dialog.setVisible(false);
+
             }
         });
 
-        labFullScreenImage.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                dialog.setVisible(false);
-                canceled =true;
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                dialog.setVisible(false);
-                canceled =true;
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                dialog.setVisible(false);
-                canceled =true;
-            }
-        });
 
         labFullScreenImage.addMouseMotionListener(new MouseMotionAdapter() {
             public void mouseDragged(MouseEvent evn) {

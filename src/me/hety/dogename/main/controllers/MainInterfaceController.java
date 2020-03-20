@@ -3,9 +3,15 @@ package me.hety.dogename.main.controllers;
 import com.jfoenix.controls.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import me.hety.dogename.main.DialogMaker;
 import me.hety.dogename.main.chooser.Chooser;
 import me.hety.dogename.main.configs.ConfigLoader;
@@ -19,6 +25,8 @@ import me.hety.dogename.main.voice.TokenManager;
 import me.hety.dogename.main.voice.VoicePlayer;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -75,6 +83,8 @@ public class MainInterfaceController {
         history.loadHistory();
         nameData.readIgnoreList();
         tokenManager.init();
+        this.ignoreNameList=nameData.getIgnoreNameList();
+        this.ignoreNumberList=nameData.getIgnoreNumberList();
         if(tokenManager.getTokenStatus().equals("ok")){
             token=tokenManager.getToken();
         }
@@ -95,6 +105,10 @@ public class MainInterfaceController {
             numbChoose.setSelected(oldValue);
         });*/
 
+    }
+
+    public void setImg(InputStream stream){
+        mainView.setImage(new Image(stream));
     }
 
     public void setUpConfig(ConfigLoader configLoader){
@@ -145,6 +159,33 @@ public class MainInterfaceController {
 
     @FXML
     void miniMode(ActionEvent event) {
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("/me/hety/dogename/main/FXMLs/MiniPane.fxml"));
+        Parent parent;
+        try {
+            parent=loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        Scene miniScene=new Scene(parent,300,134);
+        Stage miniStage=new Stage();
+        miniStage.setScene(miniScene);
+        miniStage.initStyle(StageStyle.UNDECORATED);
+
+        MiniPaneController miniPaneController=loader.getController();
+        miniPaneController.setBase(history,nameData,token,voiceConfig,mainConfig);
+
+        Stage currentStage=(Stage)anPaiBtn.getScene().getWindow();
+        miniPaneController.setForwStage(currentStage);
+
+        miniPaneController.setCurrentStage(miniStage);
+        miniPaneController.setCurrentScene(miniScene);
+
+        miniPaneController.setListeners();
+
+        miniStage.show();
+        currentStage.close();
 
     }
 
@@ -173,8 +214,8 @@ public class MainInterfaceController {
 
     Random random=new Random();
 
-    HashSet ignoreNameList=new HashSet<String>();
-    HashSet ignoreNumberList=new HashSet<String>();
+    HashSet<String> ignoreNameList;
+    HashSet<String> ignoreNumberList;
 
     NameData nameData=new NameData();
     //boolean isRunning=false;
@@ -217,7 +258,7 @@ public class MainInterfaceController {
             return;
         }
 
-        if((ignoreNameList.size()>=nameData.getSize())&&mainConfig.isIgnorePastProperty()){
+        if((nameData.getIgnoreNameList().size()>=nameData.getSize())&&mainConfig.isIgnorePastProperty()){
 
             if(mainConfig.isEqualModeProperty()) {
                 new DialogMaker(rootPane).creatDialogWithOKAndCancel("啊？", "全部名字都被点完啦！\n要把名字的忽略列表重置吗？",e ->nameData.clearNameIgnoreList());
@@ -255,7 +296,7 @@ public class MainInterfaceController {
                 return;
             }
 
-            if(ignoreNumberList.size()>=(maxNumber-minNumber+1) && mainConfig.isIgnorePastProperty()){
+            if(nameData.getIgnoreNumberList().size()>=(maxNumber-minNumber+1) && mainConfig.isIgnorePastProperty()){
                 if(mainConfig.isEqualModeProperty()) {
                     new DialogMaker(rootPane).creatDialogWithOKAndCancel("啊？", "全部数字都被点完啦！\n要把数字的忽略列表重置吗？", e ->nameData.clearNumberIgnoreList());
                 }else {
@@ -265,7 +306,7 @@ public class MainInterfaceController {
             }
 
         }catch (Exception e){
-            new DialogMaker(rootPane).creatMessageDialog("嗯哼？","倒是输入个有效的数字啊~");
+            new DialogMaker(rootPane).creatMessageDialog("嗯哼？","输入个有效的数字啊~");
             return;
         }
 

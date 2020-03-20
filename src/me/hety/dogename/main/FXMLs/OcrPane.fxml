@@ -8,7 +8,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="499.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.hety.dogename.main.controllers.OcrPaneController">
    <children>
       <TextArea fx:id="ocrText" prefHeight="566.0" prefWidth="236.0" promptText="识别出的内容会在这里显示">
@@ -56,6 +55,21 @@
                </font>
             </Label>
             <Label alignment="TOP_LEFT" prefHeight="50.0" prefWidth="236.0" text="３．确保正确后请将左侧的文字复制后粘贴到名字输入框中，以便添加名字。" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" prefHeight="24.0" prefWidth="236.0" text="４．点击鼠标右键可退出截图。" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </Label>
+            <Label text="注意：">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" prefHeight="24.0" prefWidth="236.0" text="　　　　本功能需要联网使用" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
                <font>
                   <Font name="Microsoft YaHei" size="13.0" />
                </font>

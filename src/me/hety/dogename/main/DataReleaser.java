@@ -11,6 +11,10 @@ public class DataReleaser {
     public static InputStream getDogenameStream(){
         return new ByteArrayInputStream(Base64.decodeBase64(dogename.data));
     }
-    
+
+    public static InputStream getMainPicStream(){
+        return new ByteArrayInputStream(Base64.decodeBase64(MainInterfaceImage.data));
+    }
+
 
 }

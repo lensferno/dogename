@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import me.hety.dogename.main.Common;
 import me.hety.dogename.main.ocr.Ocr;
 import me.hety.dogename.main.ocr.ScreenCapture;
@@ -28,39 +29,66 @@ public class OcrPaneController {
     @FXML
     private JFXSpinner loadingSpinner;
 
+    Stage pStage;
+
+    public void setpStage(Stage pStage) {
+        this.pStage = pStage;
+    }
 
     @FXML
     void addNew(ActionEvent event) {
-        if(ocr==null){
-            ocr=new Ocr();
-            ocr.init();
+
+        Stage stage=(Stage)ocrText.getScene().getWindow();
+        stage.hide();
+        pStage.hide();
+
+        //等待系统动画结束
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        //ocrText.getScene().getWindow().
+
         boolean captureSuccess=ScreenCapture.getScreenCapture();
+
         if(!captureSuccess){
-            statusText.setText("状态：截屏失败");
+            statusText.setText("状态：截屏失败。");
+            System.out.println("状态：截屏失败。");
+            pStage.show();
+            stage.show();
             return;
         }
         loadingSpinner.setVisible(true);
 
+        if(ocr==null){
+            ocr=new Ocr();
+            ocr.init();
+        }
+
         new Thread(()->{
             boolean ocrSuccrss=ocr.identifyPrecisely(ScreenCapture.SCREEN_CAPTURE_LOCA);
+
             if (ocrSuccrss) {
 
                 Platform.runLater(()->{
                     ocrText.setText(ocrText.getText()+ocr.getResult());
                     statusText.setText("状态：成功。");
+                    System.out.println("状态：成功。");
                     loadingSpinner.setVisible(false);
+
                 });
             }else {
                 Platform.runLater(()->{
-                    ocrText.setText(ocrText.getText()+ocr.getResult());
+                    ocrText.setText(ocr.getResult());
                     statusText.setText("状态：失败。");
+                    System.out.println("状态：失败。");
                     loadingSpinner.setVisible(false);
+
                 });
             }
         }).start();
-
+        pStage.show();
+        stage.show();
     }
 
     @FXML
