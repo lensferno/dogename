@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 public class Main extends Application {
 
-    Logger log =Logger.getLogger("mainLOgger");
+    Logger log =Logger.getLogger("mainLogger");
 
     public static void main(String[] args){launch(args);}
 
@@ -50,6 +50,8 @@ public class Main extends Application {
         mainInterfaceController.setUpConfig(configLoader);
 
         mainInterfaceController.bindProperties();
+
+        mainInterfaceController.setImg(DataReleaser.getMainPicStream());
 
         primaryStage.setOnCloseRequest(event -> configLoader.writeConfigToFile("files"+ File.separator+"Config.json","files"+ File.separator+"VoiceConfig.json"));
 

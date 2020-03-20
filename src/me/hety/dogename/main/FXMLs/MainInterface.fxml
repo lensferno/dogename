@@ -32,7 +32,7 @@
                   <Font name="Microsoft YaHei" size="14.0" />
                </font>
             </Label>
-            <ImageView fx:id="mainView" fitHeight="261.0" fitWidth="141.0" layoutX="14.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mainView" fitHeight="152.0" fitWidth="152.0" layoutX="841.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                
             </ImageView>
             <JFXButton layoutX="14.0" layoutY="19.0" onAction="#showProgramInfo" text="程序信息">

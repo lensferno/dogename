@@ -1,10 +1,10 @@
-package main;
+package me.hety.dogename.main.controllers.WindowListeners;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class MoveWindow implements EventHandler<MouseEvent> {
+public class MoveWindowByMouse implements EventHandler<MouseEvent> {
 
     private Stage primaryStage;
     private double oldStageX;
@@ -12,8 +12,8 @@ public class MoveWindow implements EventHandler<MouseEvent> {
     private double oldScreenX;
     private double oldScreenY;
 
-    public MoveWindow(Stage primaryStage) {
-        this.primaryStage = primaryStage;
+    public MoveWindowByMouse(Stage stage) {
+        this.primaryStage = stage;
     }
 
     @Override

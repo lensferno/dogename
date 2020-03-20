@@ -190,6 +190,8 @@ public class NameManagerPaneController extends VBox  {
         stage.setScene(scene);
         log.fine("窗口加载完成");
 
+        OcrPaneController ocrPaneController= fxmlLoader.getController();
+        ocrPaneController.setpStage((Stage)inputName.getScene().getWindow());
         stage.show();
 
     }

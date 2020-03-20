@@ -1,4 +1,4 @@
-package main;
+package me.hety.dogename.main.controllers.WindowListeners;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.TouchEvent;
@@ -12,8 +12,8 @@ public class MoveWindowByTouch implements EventHandler<TouchEvent> {
     private double oldScreenX;
     private double oldScreenY;
 
-    public MoveWindowByTouch(Stage primaryStage) {
-        this.primaryStage = primaryStage;
+    public MoveWindowByTouch(Stage stage) {
+        this.primaryStage = stage;
     }
 
     @Override
