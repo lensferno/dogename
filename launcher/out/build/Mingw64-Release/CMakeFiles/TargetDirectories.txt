@@ -1,3 +1,0 @@
-G:/projects/dogename/launcher/out/build/Mingw64-Release/CMakeFiles/launcher.dir
-G:/projects/dogename/launcher/out/build/Mingw64-Release/CMakeFiles/edit_cache.dir
-G:/projects/dogename/launcher/out/build/Mingw64-Release/CMakeFiles/rebuild_cache.dir

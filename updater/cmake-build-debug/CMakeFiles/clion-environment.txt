@@ -1,4 +1,0 @@
-ToolSet: w64 3.3 (local)@F:\gcc\gcc
-Options: 
-
-Options:
