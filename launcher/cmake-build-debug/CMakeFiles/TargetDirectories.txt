@@ -1,3 +1,0 @@
-G:/projects/dogename/launcher/cmake-build-debug/CMakeFiles/launcher.dir
-G:/projects/dogename/launcher/cmake-build-debug/CMakeFiles/edit_cache.dir
-G:/projects/dogename/launcher/cmake-build-debug/CMakeFiles/rebuild_cache.dir
