@@ -68,7 +68,7 @@ public class Main extends Application {
 
     private void startMessageThread(MainInterfaceController mainInterfaceController){
         new Thread(()->{
-            String messageTexe=Common.getHtml("https://gitee.com/eatenid/dogename/raw/master/message.txt",false);
+            String messageTexe=Common.getHtml("https://gitee.com/hety2002/dogename/raw/master/message.txt",false);
             Platform.runLater(()->mainInterfaceController.message.setText(messageTexe));
         }).start();
     }

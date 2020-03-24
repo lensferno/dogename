@@ -88,7 +88,7 @@
                   </JFXButton>
                </children>
             </HBox>
-            <JFXTextArea editable="false" layoutX="194.0" layoutY="321.0" prefHeight="168.0" prefWidth="650.0">
+            <JFXTextArea fx:id="message" editable="false" layoutX="194.0" layoutY="321.0" prefHeight="168.0" prefWidth="650.0">
                <font>
                   <Font name="Microsoft YaHei" size="15.0" />
                </font>
