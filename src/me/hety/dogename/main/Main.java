@@ -1,6 +1,7 @@
 package me.hety.dogename.main;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -60,7 +61,16 @@ public class Main extends Application {
         }else {
             new Hitokoto().showHitokoto(mainInterfaceController.getRootPane());
         }
+
+        startMessageThread(mainInterfaceController);
         
+    }
+
+    private void startMessageThread(MainInterfaceController mainInterfaceController){
+        new Thread(()->{
+            String messageTexe=Common.getHtml("https://gitee.com/eatenid/dogename/raw/master/message.txt",false);
+            Platform.runLater(()->mainInterfaceController.message.setText(messageTexe));
+        }).start();
     }
 
 }
