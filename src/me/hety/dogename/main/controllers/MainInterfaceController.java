@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.Random;
 
 public class MainInterfaceController {
+    public JFXTextArea message;
 
     //ConfigLoader configLoader=new ConfigLoader();
 
