@@ -53,7 +53,7 @@ public class Main extends Application {
 
         mainInterfaceController.setImg(DataReleaser.getMainPicStream());
 
-        primaryStage.setOnCloseRequest(event -> configLoader.writeConfigToFile("files"+ File.separator+"Config.json","files"+ File.separator+"VoiceConfig.json"));
+        primaryStage.setOnCloseRequest(event -> configLoader.writeAllConfigToFile("files"+ File.separator+"Config.json","files"+ File.separator+"VoiceConfig.json"));
 
         if (new Random().nextBoolean()) {
             new Gushici().showGushici(mainInterfaceController.getRootPane());

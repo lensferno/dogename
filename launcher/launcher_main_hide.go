@@ -145,6 +145,7 @@ Loop:
 
 //--------------------------runner------------------------------------------------------------------
 func runDogename(workDir string, javaRuntimePath string, mainProgramFile string) {
+	fmt.Print("\n启动主程序中......")
 	fmt.Println("\n如果您不需要命令行输出信息，可以使用\"launcher_hide.exe\"代替本程序。\n ")
 	cmd := exec.Command(javaRuntimePath, "-jar", mainProgramFile)
 	cmd.Dir = workDir
