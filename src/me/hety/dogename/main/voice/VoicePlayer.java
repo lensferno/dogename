@@ -25,6 +25,7 @@ public class VoicePlayer {
 
     public VoicePlayer(Token token){
         this.token=token;
+
     }
 
     String cachedVoicePath="caches"+separator+"voice"+separator;
