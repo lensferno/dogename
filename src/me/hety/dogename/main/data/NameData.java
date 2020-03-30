@@ -62,8 +62,10 @@ public class NameData {
         try{
 
             if(!nameIgnoreFile.exists()){
+                nameIgnoreFile.getParentFile().mkdirs();
                 nameIgnoreFile.createNewFile();
                 ignoreNameList= new HashSet<>();
+                writeIgnoreList("not number");
                 return;
             }
 
@@ -73,8 +75,10 @@ public class NameData {
         }catch (EOFException e){
             ignoreNameList=new HashSet<>();
             log.warning("Past name list is empty.");
+            writeIgnoreList("not number");
         }catch (Exception e){
             ignoreNameList=new HashSet<>();
+            writeIgnoreList("not number");
             log.warning("Failed to load past name list:"+e.toString());
             e.printStackTrace();
         }
@@ -82,8 +86,10 @@ public class NameData {
         try{
 
             if(!numbIgnoreFile.exists()){
+                numbIgnoreFile.getParentFile().mkdirs();
                 numbIgnoreFile.createNewFile();
                 ignoreNumberList= new HashSet<>();
+                writeIgnoreList("not name");
                 return;
             }
 
@@ -93,9 +99,11 @@ public class NameData {
         }catch (EOFException e){
             ignoreNumberList=new HashSet<>();
             log.warning("Ignored number list is empty.");
+            writeIgnoreList("not name");
         }catch (Exception e){
             ignoreNumberList=new HashSet<>();
             log.warning("Failed to load ignored number list");
+            writeIgnoreList("not name");
             e.printStackTrace();
         }
 
@@ -173,7 +181,7 @@ public class NameData {
 
         HashSet<Integer> alreadyList = new HashSet<>();
         List<String> tempList = new LinkedList<>();
-        int i = 0;
+        int i;
         Random random = new Random();
         while (tempList.size() < nameList.size()) {
             i = random.nextInt(nameList.size());
@@ -207,7 +215,6 @@ public class NameData {
         File oldDataFile=new File("D:\\dogename\\files\\data");
 
         try{
-            dataFile.createNewFile();
 
             if(oldDataFile.exists()) {
                 ObjectInputStream ois =new ObjectInputStream(new FileInputStream(oldDataFile));
@@ -222,7 +229,10 @@ public class NameData {
             }
 
             if(!dataFile.exists()){
+                dataFile.getParentFile().mkdirs();
+                dataFile.createNewFile();
                 nameList= new ArrayList<>();
+                saveToFile();
                 return;
             }
 
@@ -238,9 +248,11 @@ public class NameData {
             nameList=new ArrayList<>();
             chooseList=new ArrayList<>();
             log.warning("Data file is empty.");
+            saveToFile();
         }catch (Exception e){
             nameList=new ArrayList<>();
             chooseList=new ArrayList<>();
+            saveToFile();
             log.warning("Failed to load data file.");
             e.printStackTrace();
         }

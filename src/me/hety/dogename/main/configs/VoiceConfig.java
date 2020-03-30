@@ -1,19 +1,8 @@
 package me.hety.dogename.main.configs;
 
-import com.google.gson.annotations.Expose;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXSlider;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.SingleSelectionModel;
-
-import java.util.ArrayList;
 
 public class VoiceConfig {
     

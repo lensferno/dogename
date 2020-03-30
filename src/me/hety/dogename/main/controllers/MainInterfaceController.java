@@ -22,17 +22,17 @@ import me.hety.dogename.main.data.NameData;
 import me.hety.dogename.main.ocr.Ocr;
 import me.hety.dogename.main.voice.Token;
 import me.hety.dogename.main.voice.TokenManager;
-import me.hety.dogename.main.voice.VoicePlayer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Random;
 
-public class MainInterfaceController {
+public final class MainInterfaceController {
+
     public JFXTextArea message;
 
     //ConfigLoader configLoader=new ConfigLoader();
@@ -122,10 +122,6 @@ public class MainInterfaceController {
         new DialogMaker(rootPane).creatDialogWithOneBtn("程序信息",new ProgramInfoPaneController(rootPane));
     }
 
-    @FXML
-    void nameChoose_selected(ActionEvent event) {
-
-    }
 
     @FXML
     void showNameManger(ActionEvent event) {
@@ -139,10 +135,6 @@ public class MainInterfaceController {
     }
 
 
-    @FXML
-    void numbChoose_selected(ActionEvent event) {
-
-    }
 
     @FXML
     void showNunberSetting(ActionEvent event) {
@@ -157,6 +149,7 @@ public class MainInterfaceController {
 
     }
 
+    Logger log= LogManager.getLogger();
 
     @FXML
     void miniMode(ActionEvent event) {
@@ -165,7 +158,7 @@ public class MainInterfaceController {
         try {
             parent=loader.load();
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Error in loading MiniPane Fxml:"+e);
             return;
         }
 
@@ -202,13 +195,15 @@ public class MainInterfaceController {
 
         settingsPaneController.setRootPane(rootPane);
 
+        settingsPaneController.setNameData(nameData);
+
         new DialogMaker(rootPane).creatDialogWithOneBtn("更多设置",settingsPaneController);
     }
 
     @FXML
     void showHistory(ActionEvent event) {
 
-        HistoryPaneController historyPaneController =new HistoryPaneController(history);
+        HistoryPaneController historyPaneController =new HistoryPaneController(history,rootPane);
 
         new DialogMaker(rootPane).creatDialogWithOneBtn("历史记录",historyPaneController);
     }
@@ -243,7 +238,6 @@ public class MainInterfaceController {
         }
 
     }
-
 
 
     public void setToggleGroup(){
@@ -325,6 +319,10 @@ public class MainInterfaceController {
                 mainConfig.isTaoluModeProperty(),
                 mainConfig.isVoicePlayProperty()
         );
+    }
+
+    public Label getTopBar() {
+        return topBar;
     }
 
     public Pane getRootPane() {

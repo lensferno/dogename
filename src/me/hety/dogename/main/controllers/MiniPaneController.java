@@ -1,10 +1,6 @@
 package me.hety.dogename.main.controllers;
 
 import com.jfoenix.controls.JFXButton;
-import com.sun.deploy.util.JVMParameters;
-import com.sun.javafx.UnmodifiableArrayList;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.util.LineInputStream;
-import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -23,9 +19,7 @@ import me.hety.dogename.main.controllers.WindowListeners.MoveWindowByTouch;
 import me.hety.dogename.main.data.History;
 import me.hety.dogename.main.data.NameData;
 import me.hety.dogename.main.voice.Token;
-import me.hety.dogename.main.voice.VoicePlayer;
 
-import java.util.List;
 import java.util.Random;
 
 public class MiniPaneController {
@@ -82,7 +76,7 @@ public class MiniPaneController {
 
     @FXML
     void recoverMode(ActionEvent event) {
-        this.forwStage.show();;
+        this.forwStage.show();
         currentStage.close();
     }
 

@@ -1,15 +1,14 @@
 package me.hety.dogename.main.data;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 public class History {
 
-    Logger log =Logger.getLogger("HistoryLogger");
+    Logger log = LogManager.getLogger();
 
 
     private String HISTORY_FILE;
@@ -24,8 +23,11 @@ public class History {
         try {
             File historyFile = new File(HISTORY_FILE);
             if (!historyFile.exists()) {
+                historyFile.getParentFile().mkdirs();
                 historyFile.createNewFile();
+
                 history = new ArrayList<>();
+                writeHistory();
                 return;
             }
 
@@ -34,10 +36,11 @@ public class History {
 
         } catch (EOFException e){
             history =new ArrayList<>();
-            log.warning("History file is empty.");
+            log.warn("History file is empty.");
+            writeHistory();
         }catch (Exception e) {
             history = new ArrayList<>();
-            log.warning("Failed to load history file:"+e.toString());
+            log.error("Failed to load history file:"+e.toString());
             e.printStackTrace();
         }
     }
@@ -70,7 +73,7 @@ public class History {
             oos.writeObject(history);
             oos.close();
         }catch (Exception e){
-            e.printStackTrace();
+            log.error("Error in writing history file:"+e);
         }
     }
 

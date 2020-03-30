@@ -1,10 +1,6 @@
 package me.hety.dogename.main.configs;
 
-import com.google.gson.annotations.Expose;
-import javafx.beans.InvalidationListener;
 import javafx.beans.property.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 
 public class MainConfig {
 

@@ -1,15 +1,9 @@
 package me.hety.dogename.main.controllers;
 
-import com.google.gson.Gson;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import me.hety.dogename.main.Common;
-import me.hety.dogename.main.DialogMaker;
-import me.hety.dogename.main.sayings.Gushici;
 
 import java.util.logging.Logger;
 

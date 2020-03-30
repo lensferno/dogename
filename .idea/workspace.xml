@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SPLITTER_PROPORTION" value="0.611194" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="dogename:jar" />
@@ -7,10 +10,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/log/test.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/message.txt" beforeDir="false" afterPath="$PROJECT_DIR$/message.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/Common.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/DialogMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/DialogMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/AdvancedVoiceSettingsPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/AdvancedVoiceSettingsPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/GushiciPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/GushiciPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/HistoryPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/HistoryPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/HitokotoPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/HitokotoPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/MainInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/MainInterface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameListPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameListPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameManagerPane_old.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NameManagerPane_old.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NumberSettingPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/NumberSettingPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/OcrPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/OcrPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/SettingsPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/SettingsPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/SettingsPane_old.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/SettingsPane_old.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/VoiceSettingsPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/VoiceSettingsPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/miniPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/miniPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/ObjectReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/ObjectReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/chooser/Chooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/chooser/Chooser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/ConfigLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/VoiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/VoiceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/adapters/DoublePropertyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/adapters/DoublePropertyAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/GushiciPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/GushiciPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/HistoryPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/HistoryPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/HitokotoPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/HitokotoPaneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MiniPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MiniPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NameManagerPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NameManagerPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NumberSettingsPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/NumberSettingsPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/OcrPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/OcrPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/SettingsPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/SettingsPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/data/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/data/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/data/NameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/data/NameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/ocr/Ocr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/ocr/Ocr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/ocr/ScreenCapture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/ocr/ScreenCapture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/ocr/ScreenCapture_fx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/ocr/ScreenCapture_fx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/sayings/Gushici.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/sayings/Gushici.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/sayings/Hitokoto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/sayings/Hitokoto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/TokenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/TokenManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/VoicePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/VoicePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/Common.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/Common.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/HistoryPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/HistoryPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/MainInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/MainInterface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NameListPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NameListPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NameManagerPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NumberSettingPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/NumberSettingPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/SettingsPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/FXMLs/SettingsPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/ConfigLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/ConfigLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/MainConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/MainConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/VoiceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/hety/dogename/main/configs/VoiceConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +105,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -60,7 +119,8 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35428572" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="jprofiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -150,7 +210,14 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="337" y="67" key="#Custom_Plugin_Repositories" timestamp="1585536535451">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="337" y="67" key="#Custom_Plugin_Repositories/0.0.1440.860@0.0.1440.860" timestamp="1585536535451" />
     <state x="60" y="103" width="1328" height="679" key="#Getter_Template" timestamp="1583800984047">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -183,10 +250,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="438" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1584358061363" />
-    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1584670264702">
+    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1585532534161">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1584670264702" />
+    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1585532534161" />
     <state x="347" y="178" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584799318186">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -215,14 +282,18 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="448" y="181" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1440.860@0.0.1440.860" timestamp="1584801189193" />
+    <state x="468" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585535722312">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="468" y="286" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.860@0.0.1440.860" timestamp="1585535722312" />
     <state x="92" y="92" width="1256" height="676" key="DiffContextDialog" timestamp="1584356285082">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="92" y="92" width="1256" height="676" key="DiffContextDialog/0.0.1440.860@0.0.1440.860" timestamp="1584356285082" />
-    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1584801134147">
+    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1585536797708">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1584801134147" />
+    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1585536797708" />
     <state width="1396" height="228" key="GridCell.Tab.-1.bottom" timestamp="1584359613063">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -239,22 +310,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1396" height="228" key="GridCell.Tab.-1.right/0.0.1440.860@0.0.1440.860" timestamp="1584359613063" />
-    <state width="1015" height="175" key="GridCell.Tab.0.bottom" timestamp="1584674602235">
+    <state width="1396" height="189" key="GridCell.Tab.0.bottom" timestamp="1585554177198">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1015" height="175" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1584674602235" />
-    <state width="1015" height="175" key="GridCell.Tab.0.center" timestamp="1584674602235">
+    <state width="1396" height="189" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1585554177198" />
+    <state width="1396" height="189" key="GridCell.Tab.0.center" timestamp="1585554177198">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1015" height="175" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1584674602235" />
-    <state width="1015" height="175" key="GridCell.Tab.0.left" timestamp="1584674602235">
+    <state width="1396" height="189" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1585554177198" />
+    <state width="1396" height="189" key="GridCell.Tab.0.left" timestamp="1585554177197">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1015" height="175" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1584674602235" />
-    <state width="1015" height="175" key="GridCell.Tab.0.right" timestamp="1584674602235">
+    <state width="1396" height="189" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1585554177197" />
+    <state width="1396" height="189" key="GridCell.Tab.0.right" timestamp="1585554177198">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1015" height="175" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1584674602235" />
+    <state width="1396" height="189" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1585554177198" />
     <state x="621" y="557" width="742" height="298" key="GridCell.Tab.1.bottom" timestamp="1584359935523">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -291,10 +362,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="382" y="235" key="NewModule_or_Project.wizard/0.0.1440.860@0.0.1440.860" timestamp="1583758807303" />
-    <state x="248" y="38" key="SettingsEditor" timestamp="1584843086095">
+    <state x="56" y="74" key="SettingsEditor" timestamp="1585537876203">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="248" y="38" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1584843086095" />
+    <state x="56" y="74" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1585537876203" />
     <state x="519" y="212" key="chooseDestDirectoryDialog" timestamp="1584319206883">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -327,10 +398,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="621" y="557" width="758" height="336" key="dock-window-3/0.0.1440.860@0.0.1440.860" timestamp="1584359908498" />
-    <state x="578" y="58" width="759" height="735" key="find.popup" timestamp="1584356031673">
+    <state x="578" y="58" width="759" height="735" key="find.popup" timestamp="1585530170330">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="578" y="58" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1584356031673" />
+    <state x="578" y="58" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1585530170330" />
     <state x="89" y="40" key="new project wizard" timestamp="1584269614075">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

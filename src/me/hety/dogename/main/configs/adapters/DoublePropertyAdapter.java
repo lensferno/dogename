@@ -2,7 +2,6 @@ package me.hety.dogename.main.configs.adapters;
 
 import com.google.gson.*;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 
 import java.lang.reflect.Type;
 

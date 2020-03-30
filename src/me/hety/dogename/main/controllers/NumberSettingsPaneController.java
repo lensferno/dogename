@@ -1,11 +1,8 @@
 package me.hety.dogename.main.controllers;
 
 import com.jfoenix.controls.JFXTextField;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.VBox;
 import me.hety.dogename.main.configs.MainConfig;
 import me.hety.dogename.main.data.NameData;
