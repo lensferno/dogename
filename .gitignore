@@ -4,3 +4,5 @@
 /target
 *.token
 /target/
+/log/
+/logs/

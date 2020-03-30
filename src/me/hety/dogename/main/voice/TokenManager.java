@@ -2,12 +2,16 @@ package me.hety.dogename.main.voice;
 
 import com.google.gson.Gson;
 import me.hety.dogename.main.Common;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class TokenManager {
+
+    Logger log= LogManager.getLogger();
 
     public static final String separator=File.separator;
 
@@ -26,10 +30,6 @@ public class TokenManager {
 
     //boolean netAvailable =true;
 
-    public TokenManager(){
-
-
-    }
 
     public void init(){
 
@@ -71,15 +71,18 @@ public class TokenManager {
 
         //token是空的就返回false
         if (token == null || token.getAccessToken() == null) {
+            log.info("Token was null");
             return false;
         }
 
         //token过期了就返回false
         if (token.isTokenTimeOut()) {
+            log.info("Token expired.");
             return false;
         }
 
         //正常的话就返回ture
+        log.info("Token OK.");
         return true;
     }
 
@@ -90,6 +93,7 @@ public class TokenManager {
             token=new Gson().fromJson(Common.getHtml(TOKEN_API_URL +"?grant_type=client_credentials&client_id="+API_KEY+"&client_secret="+SEC_KEY,true), Token.class);
             token.setExpTime();
         }catch (Exception e){
+            log.error("Error to get Token:"+e);
             token=null;
         }
     }
@@ -106,7 +110,7 @@ public class TokenManager {
             stream.close();
             return true;
         }catch (Exception e){
-            e.printStackTrace();
+            log.info("Network is not available.");
             return false;
         }
     }
@@ -118,7 +122,7 @@ public class TokenManager {
             this.token =(Token) ois.readObject();
             ois.close();
         }catch (Exception e){
-            e.printStackTrace();
+            log.error("Error in loading Token:"+e);
             this.token=null;
         }
     }
@@ -130,7 +134,7 @@ public class TokenManager {
             oos.writeObject(token);
             oos.close();
         }catch (Exception e){
-            e.printStackTrace();
+            log.error("Error in writing Token:"+e);
         }
     }
 

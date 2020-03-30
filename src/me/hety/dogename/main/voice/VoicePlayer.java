@@ -3,7 +3,6 @@ package me.hety.dogename.main.voice;
 import javazoom.spi.mpeg.sampled.file.MpegAudioFileReader;
 import me.hety.dogename.main.Common;
 import okhttp3.*;
-import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.sound.sampled.*;
@@ -146,8 +145,8 @@ public class VoicePlayer {
             stream = AudioSystem.getAudioInputStream(format, stream);
             AudioFormat target = stream.getFormat();
             DataLine.Info dinfo = new DataLine.Info(SourceDataLine.class, target, AudioSystem.NOT_SPECIFIED);
-            SourceDataLine line = null;
-            int len = -1;
+            SourceDataLine line;
+            int len;
             line = (SourceDataLine) AudioSystem.getLine(dinfo);
             line.open(target);
             line.start();

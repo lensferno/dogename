@@ -3,6 +3,7 @@ package me.hety.dogename.main.sayings;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import javafx.application.Platform;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import me.hety.dogename.main.Common;
 import me.hety.dogename.main.DialogMaker;
@@ -19,22 +20,25 @@ public class Hitokoto {
         return Common.getHtml(HITOKOTO_API,false);
     }
 
-    public void showHitokoto(Pane rootPane){
+    public void showHitokoto(Pane rootPane, Label topBar){
 
         new Thread(()->{
 
-            hitokotoJSON = getHitokoto();
+            //hitokotoJSON = getHitokoto();
 
             String hitokoto, from,author,creator, type;
 
             if((hitokotoJSON = getHitokoto())!=null){
                 HitokotoData hitokotoData=new Gson().fromJson(hitokotoJSON, HitokotoData.class);
+
                 hitokoto=hitokotoData.getHitokoto();
                 from=hitokotoData.getFrom();
                 author=hitokotoData.getAuthor();
                 creator=hitokotoData.getCreator();
                 type=hitokotoData.getType();
+
                 Platform.runLater(()->{
+                    topBar.setText("《"+from+"》："+hitokoto+" ("+author+")");
                     HitokotoPaneController hitokotoPaneController=new HitokotoPaneController(hitokoto, from,author,creator, type);
                     new DialogMaker(rootPane).creatDialogWithOneBtn("每日一句话",hitokotoPaneController);
                 });
@@ -42,7 +46,7 @@ public class Hitokoto {
         }).start();
     }
 
-    class HitokotoData {
+    static class HitokotoData {
 
         private int id;
         private String hitokoto;

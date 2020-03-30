@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.*?>
-<?import com.jfoenix.validation.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.image.*?>
 <?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-
 <Pane fx:id="rootPane" prefHeight="711.0" prefWidth="1007.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.hety.dogename.main.controllers.MainInterfaceController">
    <children>
       <Pane fx:id="mainPane" prefHeight="710.0" prefWidth="1007.0">
@@ -41,7 +36,7 @@
                </font></JFXButton>
             <HBox alignment="CENTER" layoutX="194.0" layoutY="496.0" prefHeight="62.0" prefWidth="650.0" spacing="30.0">
                <children>
-                  <JFXRadioButton fx:id="nameChoose" layoutX="223.0" layoutY="508.0" onAction="#nameChoose_selected" selected="true" text="名字挑选法">
+                  <JFXRadioButton fx:id="nameChoose" layoutX="223.0" layoutY="508.0" selected="true" text="名字挑选法">
                      <font>
                         <Font name="Microsoft YaHei UI" size="17.0" />
                      </font>
@@ -52,7 +47,7 @@
                      </font>
                   </JFXButton>
                   <Line endY="60.0" stroke="#00000068" strokeWidth="2.0" />
-                  <JFXRadioButton fx:id="numbChoose" layoutX="540.0" layoutY="508.0" onAction="#numbChoose_selected" text="号码挑选法">
+                  <JFXRadioButton fx:id="numbChoose" layoutX="540.0" layoutY="508.0" text="号码挑选法">
                      <font>
                         <Font name="Microsoft YaHei UI" size="17.0" />
                      </font>

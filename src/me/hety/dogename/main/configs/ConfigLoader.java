@@ -8,14 +8,15 @@ import me.hety.dogename.main.configs.adapters.DoublePropertyAdapter;
 import me.hety.dogename.main.configs.adapters.IntegerPropertyAdapter;
 import me.hety.dogename.main.configs.adapters.StringPropertyAdapter;
 import org.apache.commons.io.IOUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.logging.Logger;
 
 public class ConfigLoader {
 
-    Logger log =Logger.getLogger("configLoaderLogger");
+    Logger log = LogManager.getLogger();
 
     //ConfigValuesBean config;
     private MainConfig mainConfig;
@@ -44,7 +45,6 @@ public class ConfigLoader {
             if(!configFile.exists()){
                 configFile.getParentFile().mkdirs();
                 configFile.createNewFile();
-
                 mainConfig=new MainConfig();
                 writeMainConfigToFile("files"+ File.separator+"Config.json");
                 return mainConfig;
@@ -59,10 +59,10 @@ public class ConfigLoader {
                 return mainConfig;
             }
         }catch (Exception e){
-            log.warning("Error to load config file:"+e.toString()+"\nUse Default config.");
+            log.error("Error to load config file:"+e+"\nUse Default config.");
+
             mainConfig=new MainConfig();
             writeMainConfigToFile("files"+ File.separator+"Config.json");
-            e.printStackTrace();
             return mainConfig;
         }
 
@@ -104,10 +104,10 @@ public class ConfigLoader {
             }
 
         }catch (Exception e){
-            log.warning("Error to load voice config file:"+e.toString()+"\nUse Default voice config.");
+            log.error("Error to load voice config file:"+e+"\nUse Default voice config.");
+
             voiceConfig=new VoiceConfig();
             writeVoiceConfigToFile("files"+ File.separator+"VoiceConfig.json");
-            e.printStackTrace();
             return voiceConfig;
         }
 
@@ -158,8 +158,8 @@ public class ConfigLoader {
             OutputStream voiceConfigFileStream=new FileOutputStream(voiceConfigFile);
             IOUtils.write(VoiceConfigtoJSON(this.voiceConfig).getBytes(StandardCharsets.UTF_8),voiceConfigFileStream);
 
-        }catch (IOException ioe){
-            ioe.printStackTrace();
+        }catch (Exception e){
+            log.error("Error in writing all config:"+e);
         }
     }
 
@@ -175,8 +175,8 @@ public class ConfigLoader {
             OutputStream stream=new FileOutputStream(outputFile);
             IOUtils.write(toJSON(this.mainConfig).getBytes(StandardCharsets.UTF_8),stream);
 
-        }catch (IOException ioe){
-            ioe.printStackTrace();
+        }catch (Exception e){
+            log.error("Error in writing main config:"+e);
         }
     }
 
@@ -192,8 +192,8 @@ public class ConfigLoader {
             OutputStream voiceConfigFileStream=new FileOutputStream(voiceConfigFile);
             IOUtils.write(VoiceConfigtoJSON(this.voiceConfig).getBytes(StandardCharsets.UTF_8),voiceConfigFileStream);
 
-        }catch (IOException ioe){
-            ioe.printStackTrace();
+        }catch (Exception e){
+            log.error("Error in writing voice config:"+e);
         }
     }
 

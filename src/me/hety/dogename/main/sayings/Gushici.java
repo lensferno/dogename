@@ -3,6 +3,7 @@ package me.hety.dogename.main.sayings;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import javafx.application.Platform;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import me.hety.dogename.main.Common;
 import me.hety.dogename.main.DialogMaker;
@@ -18,11 +19,11 @@ public class Gushici {
         return Common.getHtml(GUSHICI_API,false);
     }
 
-    public void showGushici(Pane rootPane){
+    public void showGushici(Pane rootPane, Label topBar){
 
         new Thread(()->{
 
-            gushiciJSON=getGushici();
+            //gushiciJSON=getGushici();
 
             String content, title, author, type;
 
@@ -33,6 +34,7 @@ public class Gushici {
                 author=gushiciData.getAuthor();
                 type=gushiciData.getType();
                 Platform.runLater(()->{
+                    topBar.setText(content+" ——"+author+"《"+title+"》");
                     GushiciPaneController gushiciPaneController=new GushiciPaneController(content, title, author, type);
                     new DialogMaker(rootPane).creatDialogWithOneBtn("每日古诗词",gushiciPaneController);
                 });

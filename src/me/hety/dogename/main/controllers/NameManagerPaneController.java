@@ -1,6 +1,5 @@
 package me.hety.dogename.main.controllers;
 
-import com.google.gson.Gson;
 import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,10 +18,6 @@ import me.hety.dogename.main.data.NameData;
 import me.hety.dogename.main.ocr.Ocr;
 
 import java.io.File;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
 import java.util.logging.Logger;
 
 public class NameManagerPaneController extends VBox  {

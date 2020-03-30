@@ -4,12 +4,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.util.logging.Logger;
 
 public class GushiciPaneController extends VBox {
 
-    Logger log=Logger.getLogger("GushiciPaneLogger");
+    Logger log= LogManager.getLogger();
     @FXML
     public Text contentText;
 
@@ -27,7 +28,8 @@ public class GushiciPaneController extends VBox {
         try {
             loader.load();
         }catch(Exception e){
-            log.warning("Error to load Gushici pane FXML: "+e.toString());
+            log.error("Error to load Gushici pane FXML: "+e.toString());
+
             //e.printStackTrace();
         }
         contentText.setText("“"+content+"”");

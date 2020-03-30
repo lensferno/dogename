@@ -45,7 +45,7 @@ public class Ocr {
         StringBuffer stringBuffer=new StringBuffer();
 
         for(int i=0;i<resultArray.length();i++){
-            stringBuffer.append(resultArray.getJSONObject(i).getString("words")+"\n");
+            stringBuffer.append(resultArray.getJSONObject(i).getString("words")).append("\n");
         }
         result=stringBuffer.toString();
 

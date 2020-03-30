@@ -1,5 +1,8 @@
 package me.hety.dogename.main;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
@@ -8,12 +11,15 @@ import java.awt.datatransfer.Transferable;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
 import java.net.HttpURLConnection;
 
 public class Common {
+
+    static Logger log= LogManager.getLogger();
 
     public static void write(byte[] bytes,File file){
         try {
@@ -22,11 +28,10 @@ public class Common {
             fileOutputStream.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }catch (IOException ioe){
-            ioe.printStackTrace();
+        }catch (Exception e){
+            log.error("Error in writting file"+"\""+file.getName()+"\""+":"+e);
         }
     }
-
 
     public static void copyToClipboard(String text) {
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -41,8 +46,7 @@ public class Common {
         if (trans != null) {
             if (trans.isDataFlavorSupported(DataFlavor.stringFlavor)) {
                 try {
-                    String text = (String) trans.getTransferData(DataFlavor.stringFlavor);
-                    return text;
+                    return (String) trans.getTransferData(DataFlavor.stringFlavor);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -94,23 +98,25 @@ public class Common {
 
             System.out.println("--------------------------------------------------------------------");
             System.out.println("[INFO]Getting："+conn.getURL());
-            System.out.println("[INFO]URL compress type："+conn.getContentEncoding());
+            System.out.println("[INFO]Content compress type："+conn.getContentEncoding());
 
             InputStream is = conn.getInputStream();
             String connEncoding=conn.getContentEncoding();
+
             if(connEncoding==null)
                 connEncoding="none";
+
             switch (connEncoding) {
                 case "deflate":
                     InflaterInputStream deflate = new InflaterInputStream(is, new Inflater(true));
-                    bis = new BufferedReader(new InputStreamReader(deflate, "utf-8"));
+                    bis = new BufferedReader(new InputStreamReader(deflate, StandardCharsets.UTF_8));
                     break;
                 case "gzip":
                     GZIPInputStream gzip = new GZIPInputStream(is);
-                    bis = new BufferedReader(new InputStreamReader(gzip, "utf-8"));
+                    bis = new BufferedReader(new InputStreamReader(gzip, StandardCharsets.UTF_8));
                     break;
                 default:
-                    bis = new BufferedReader(new InputStreamReader(is, "utf-8"));
+                    bis = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
                     break;
             }
             String temp;
@@ -118,9 +124,14 @@ public class Common {
                 sb.append(temp);
                 sb.append("\n");
             }
-        }catch(Exception e){e.printStackTrace();return null;}
+        }catch(Exception e){
+            log.error("Error in getting HTML:"+e);
+            return null;
+        }
+
         if(output)
             System.out.println("[INFO]Got："+sb.toString());
+
         return sb.toString();
     }
 }

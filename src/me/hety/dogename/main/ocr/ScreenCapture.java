@@ -32,6 +32,7 @@ public class ScreenCapture {
 
     private static boolean canceled =false;
 
+
     public static boolean getScreenCapture(){
 
         try {
@@ -178,8 +179,8 @@ class BackgroundImage extends JLabel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawRect(x, y, w, h);
-        String area = Integer.toString(w) + " * " + Integer.toString(h);
-        g.drawString(area, x + (int) w / 2 - 15, y + (int) h / 2);
+        String area = w + " * " + h;
+        g.drawString(area, x + w / 2 - 15, y + h / 2);
         g.drawLine(lineX, 0, lineX, getHeight());
 
         g.drawLine(0, lineY, getWidth(), lineY);

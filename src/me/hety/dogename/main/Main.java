@@ -10,15 +10,16 @@ import me.hety.dogename.main.configs.ConfigLoader;
 import me.hety.dogename.main.controllers.MainInterfaceController;
 import me.hety.dogename.main.sayings.Gushici;
 import me.hety.dogename.main.sayings.Hitokoto;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 import java.io.File;
 import java.util.Random;
-import java.util.logging.Logger;
 
 public class Main extends Application {
 
-    Logger log =Logger.getLogger("mainLogger");
+    Logger log = LogManager.getLogger();
 
     public static void main(String[] args){launch(args);}
 
@@ -31,14 +32,13 @@ public class Main extends Application {
             fxmlLoader=new FXMLLoader(getClass().getResource("/me/hety/dogename/main/FXMLs/MainInterface.fxml"));
             parent=fxmlLoader.load();
         }catch (Exception e){
-            log.warning("Error to load main interface FXML :"+e.toString());
+            log.error("Error to load main interface FXML :"+e.toString());
             return;
         }
 
         Scene scene=new Scene(parent,990,700);
         primaryStage.setTitle("DogeName 叁号姬");
         primaryStage.setScene(scene);
-        log.fine("窗口加载完成");
 
         primaryStage.show();
 
@@ -57,13 +57,13 @@ public class Main extends Application {
         primaryStage.setOnCloseRequest(event -> configLoader.writeAllConfigToFile("files"+ File.separator+"Config.json","files"+ File.separator+"VoiceConfig.json"));
 
         if (new Random().nextBoolean()) {
-            new Gushici().showGushici(mainInterfaceController.getRootPane());
+            new Gushici().showGushici(mainInterfaceController.getRootPane(),mainInterfaceController.getTopBar());
         }else {
-            new Hitokoto().showHitokoto(mainInterfaceController.getRootPane());
+            new Hitokoto().showHitokoto(mainInterfaceController.getRootPane(),mainInterfaceController.getTopBar());
         }
 
         startMessageThread(mainInterfaceController);
-        
+
     }
 
     private void startMessageThread(MainInterfaceController mainInterfaceController){
