@@ -1,0 +1,36 @@
+{
+    "ver": 3,
+    "update_message": "update_message",
+    "resources": [
+        {
+            "name": "gitee",
+            "urls": [
+                "http://asdaaa",
+                "http://asdaaa",
+                "http://asdaaa",
+                "http://asdaaa"
+            ],
+            "md5": [
+                "39asd48sarf7ny2398q4uy7",
+                "39asd48sarf7ny2398q4uy7",
+                "39asd48sarf7ny2398q4uy7",
+                "39asd48sarf7ny2398q4uy7"
+            ]
+        },
+        {
+            "name": "github",
+            "urls": [
+                "http://asdaaa",
+                "http://asdaaa",
+                "http://asdaaa",
+                "http://asdaaa"
+            ],
+            "md5": [
+                "39asd48sarf7ny2398q4uy7",
+                "39asd48sarf7ny2398q4uy7",
+                "39asd48sarf7ny2398q4uy7",
+                "39asd48sarf7ny2398q4uy7"
+            ]
+        }
+    ]
+}
