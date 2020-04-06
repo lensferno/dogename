@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="dogeupdater:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/dogeupdater_jar</output-path>
+    <root id="archive" name="dogeupdater.jar">
+      <element id="module-output" name="dogeupdater" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-core/2.13.1/log4j-core-2.13.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.13.1/log4j-api-2.13.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/jfoenix/jfoenix/8.0.9/jfoenix-8.0.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

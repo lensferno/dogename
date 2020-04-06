@@ -56,7 +56,7 @@ public class Common {
         return null;
     }
 //---------------------------------------------------------------------------------------
-
+/*
     public static int download(String URL,String fileLocation){
         try{
             URL sourcesURL = new URL(URL);
@@ -83,7 +83,7 @@ public class Common {
             return -1;
         }
     }
-
+*/
     public static String getHtml(String address,boolean output)
     {
         StringBuffer sb = new StringBuffer();
