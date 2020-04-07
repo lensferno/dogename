@@ -21,6 +21,7 @@ public class DownloadTask {
 
     public void addPackage(String field){
         String[] url_md5=field.split("::");
+        System.out.println(String.format("Added package %s,md5:%s",url_md5));
         packages.add(new Package(url_md5[0],url_md5[1],saveLocation));
     }
 
@@ -32,10 +33,11 @@ public class DownloadTask {
         return taskNumber;
     }
 
-    public boolean startDownload(SimpleStringProperty message, int totalPackage, SimpleDoubleProperty progress){
+    public boolean startDownload(SimpleStringProperty message, int totalPackage, SimpleDoubleProperty progress,String saveLocation){
         for(int i=0;i<packages.size();i++){
-            message.set(message.get()+String.format("正在下载第 %d 个包，共 %d 个包...\n",i,totalPackage));
+            message.set(message.get()+String.format("正在下载第 %d 个包，共 %d 个包...\n",i+1,totalPackage));
             progress.set(i/totalPackage);
+            packages.get(i).setSaveLocation(saveLocation);
             int downloadStat=packages.get(i).startDownload();
             if(downloadStat==-1){
                 return false;
@@ -58,6 +60,7 @@ class Package {
 
     private String md5;
     private String downloadURL;
+    private String packageName;
 
     private String saveLocation;
 
@@ -73,6 +76,8 @@ class Package {
         this.downloadURL = downloadURL;
         this.md5 = md5;
         this.saveLocation = saveLocation;
+        String[] temp=downloadURL.split("/");
+        packageName=temp[temp.length-1];
     }
 
     public int startDownload(){
@@ -80,7 +85,11 @@ class Package {
     }
 
     public boolean checkMD5(){
-        return Md5.checkMd5(saveLocation,md5);
+        System.out.println(String.format("Checking:%s ,md5:",saveLocation+packageName,md5));
+        return Md5.checkMd5(saveLocation+packageName,md5);
     }
 
+    public void setSaveLocation(String saveLocation) {
+        this.saveLocation = saveLocation;
+    }
 }

@@ -60,13 +60,13 @@ public class Updater {
 
     public boolean doUpdate(String saveLocation, int downloadResources, boolean checkMd5, SimpleStringProperty message, SimpleDoubleProperty progress){
         DownloadTask downloadTask = new DownloadTask(saveLocation);
-        int totalPackage=updateInfo.getResources().size();
+        int totalPackage=updateInfo.getResources().get(downloadResources).getUrls().size();
 
-        for(int i=0;i<updateInfo.getResources().size();i++){
+        for(int i=0;i<updateInfo.getResources().get(downloadResources).getUrls().size();i++){
             downloadTask.addPackage(updateInfo.getResources().get(downloadResources).getUrls().get(i));
         }
 
-        boolean downloadSucceeded=downloadTask.startDownload(message,totalPackage,progress);
+        boolean downloadSucceeded=downloadTask.startDownload(message,totalPackage,progress,saveLocation);
 
         if(!downloadSucceeded){
             return downloadSucceeded;
@@ -74,13 +74,13 @@ public class Updater {
 
         if(checkMd5){
             for(int i=0;i<totalPackage;i++){
-                message.set(message.get()+String.format("检查第 %d 个包，共 %d 个包...\n",i,totalPackage));
+                message.set(message.get()+String.format("检查第 %d 个包，共 %d 个包...\n",i+1,totalPackage));
                 boolean packageCurrent=downloadTask.checkPackages(i);
                 if(!packageCurrent){
-                    message.set(message.get()+String.format("第 %d 个包校验有误。\n",i));
+                    message.set(message.get()+String.format("第 %d 个包校验有误。\n",i+1));
                     return packageCurrent;
                 }
-                message.set(message.get()+String.format("第 %d 个包校验无误。\n",i));
+                message.set(message.get()+String.format("第 %d 个包校验无误。\n",i+1));
             }
         }
 

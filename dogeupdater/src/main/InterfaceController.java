@@ -14,6 +14,7 @@ import main.update.ResourcesType;
 import main.update.Updater;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Optional;
 import java.util.Timer;
@@ -61,7 +62,7 @@ public class InterfaceController {
         infoTextArea.setText("检查可用更新...\n");
         new Thread(()->{
             updater=new Updater();
-            if(updater.checkUpdate(whichResources,3)){
+            if(updater.checkUpdate(whichResources,currentVer)){
                 updateProgram();
             }else{
                 Platform.runLater(()->{
@@ -70,7 +71,6 @@ public class InterfaceController {
                     alert.setHeaderText("");
                     alert.setContentText("已经是最新版啦！");
                     alert.showAndWait();
-                    settingsPane.setVisible(false);
                 });
 
             }
@@ -138,6 +138,7 @@ public class InterfaceController {
         this.javaPid=args[0];
         this.oldJarPath =args[1];
         this.currentVer=Integer.parseInt(args[2]);
+        this.saveLocation=new File(oldJarPath).getParent()+"\\";
     }
 
     void updateProgram(){
@@ -246,8 +247,8 @@ public class InterfaceController {
     private String info=null;
     private void killOldProgram(){
         try {
-            Process killProcess=Runtime.getRuntime().exec("taskkill /PID"+javaPid);
-            BufferedReader reader=new BufferedReader(new InputStreamReader(killProcess.getInputStream()));
+            Process killProcess=Runtime.getRuntime().exec(String.format("taskkill /PID %s",javaPid));
+            BufferedReader reader=new BufferedReader(new InputStreamReader(killProcess.getInputStream(), StandardCharsets.UTF_8));
             new Thread(()->{
                 try{
                     while((info=reader.readLine())!=null) {

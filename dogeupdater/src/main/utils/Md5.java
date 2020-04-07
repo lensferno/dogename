@@ -16,6 +16,7 @@ public class Md5 {
 
     public static boolean checkMd5(File file,String md5){
         if(!FileAccessChecker.checkReadAccess(file)){
+            System.out.println("File can't be read!");
             return false;
         }
         ByteOutputStream dataStream=new ByteOutputStream();
@@ -42,6 +43,7 @@ public class Md5 {
         String realMd5=getMd5(data);
 
         if (realMd5 == null) {
+            System.out.println(String.format("Giving md5 value:%s,true value:%s",md5,realMd5));
             return false;
         }else {
             return md5.toLowerCase().equals(realMd5);
@@ -66,7 +68,7 @@ public class Md5 {
                 sb.append(Integer.toHexString(bt));
             }
 
-            return sb.toString();
+            return sb.toString().toLowerCase();
 
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
