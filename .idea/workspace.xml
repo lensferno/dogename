@@ -11,7 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/utils/Net.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/Net.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/InterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/InterfaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/update/DownloadTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/update/DownloadTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/update/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/update/Updater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/utils/FileAccessChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/FileAccessChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/utils/Md5.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/Md5.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +100,7 @@
     <configuration name="DogeUpdater" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.UpdaterMain" />
       <module name="dogeupdater" />
-      <option name="PROGRAM_PARAMETERS" value="12452124 D:\TestDir 2" />
+      <option name="PROGRAM_PARAMETERS" value="4452 D:\TestDir\dogename.jar 2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -200,18 +204,18 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="506" y="539" key="#com.intellij.debugger.ui.breakpoints.BreakpointsConfigurationDialogFactory.BreakpointsConfigurationDialog.AddFieldBreakpointDialog/0.0.1440.860@0.0.1440.860" timestamp="1584012088506" />
-    <state x="101" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586250877382">
+    <state x="101" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586255903102">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="101" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1586250877382" />
+    <state x="101" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1586255903102" />
     <state x="438" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584358061363">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="438" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1584358061363" />
-    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1586228763197">
+    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1586254520030">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1586228763197" />
+    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1586254520030" />
     <state x="347" y="178" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586144936410">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -272,22 +276,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1396" height="228" key="GridCell.Tab.-1.right/0.0.1440.860@0.0.1440.860" timestamp="1584359613063" />
-    <state width="1396" height="189" key="GridCell.Tab.0.bottom" timestamp="1586174676393">
+    <state width="1396" height="189" key="GridCell.Tab.0.bottom" timestamp="1586257554046">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1586174676393" />
-    <state width="1396" height="189" key="GridCell.Tab.0.center" timestamp="1586174676393">
+    <state width="1396" height="189" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
+    <state width="1396" height="189" key="GridCell.Tab.0.center" timestamp="1586257554046">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1586174676393" />
-    <state width="1396" height="189" key="GridCell.Tab.0.left" timestamp="1586174676392">
+    <state width="1396" height="189" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
+    <state width="1396" height="189" key="GridCell.Tab.0.left" timestamp="1586257554046">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1586174676392" />
-    <state width="1396" height="189" key="GridCell.Tab.0.right" timestamp="1586174676393">
+    <state width="1396" height="189" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
+    <state width="1396" height="189" key="GridCell.Tab.0.right" timestamp="1586257554046">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1396" height="189" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1586174676393" />
+    <state width="1396" height="189" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
     <state x="621" y="557" width="742" height="298" key="GridCell.Tab.1.bottom" timestamp="1584359935523">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

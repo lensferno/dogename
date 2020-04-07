@@ -90,8 +90,10 @@ public class FileAccessChecker {
 
         //是文件吗？存在吗？
         if (file.isDirectory()) {
+            System.out.println(String.format("%s is not a file!",file.toString()));
             return false;
         } else if (!file.exists()) {
+            System.out.println(String.format("File %s doesn't exists!",file.toString()));
             return false;
         }
 
@@ -103,6 +105,7 @@ public class FileAccessChecker {
             }
             return true;
         } catch (IOException e) {
+            System.out.println(String.format("File %s can't be read! Reason: %s",file.toString(),e.toString()));
             return false;
         }
 
