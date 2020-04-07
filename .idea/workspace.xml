@@ -10,27 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dogeupdater_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/dogeupdater.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/main/InterfaceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/main/UpdaterMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/main/downloader/UpdateDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/main/update/ResourcesType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/main/update/Updater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/main/update/pojos/Resource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/main/update/pojos/UpdateInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/FileAccessChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/Md5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/Net.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/resources/MainInterface.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dogeupdater/src/resources/waiting.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/update/update_info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/hety.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/hety.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/utils/Net.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/Net.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +96,7 @@
     <configuration name="DogeUpdater" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.UpdaterMain" />
       <module name="dogeupdater" />
-      <option name="PROGRAM_PARAMETERS" value="12452124 D:\ 24" />
+      <option name="PROGRAM_PARAMETERS" value="12452124 D:\TestDir 2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -219,18 +200,18 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="506" y="539" key="#com.intellij.debugger.ui.breakpoints.BreakpointsConfigurationDialogFactory.BreakpointsConfigurationDialog.AddFieldBreakpointDialog/0.0.1440.860@0.0.1440.860" timestamp="1584012088506" />
-    <state x="126" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586173539606">
+    <state x="101" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586250877382">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="126" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1586173539606" />
+    <state x="101" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1586250877382" />
     <state x="438" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584358061363">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="438" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1584358061363" />
-    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1586171999273">
+    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1586228763197">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1586171999273" />
+    <state x="756" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1586228763197" />
     <state x="347" y="178" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586144936410">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -251,6 +232,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="504" y="340" width="471" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.860@0.0.1440.860" timestamp="1584319537535" />
+    <state x="450" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586229394754">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="450" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.860@0.0.1440.860" timestamp="1586229394754" />
     <state x="400" y="97" key="#com.intellij.unscramble.UnscrambleDialog" timestamp="1584348409854">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -375,10 +360,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="621" y="557" width="758" height="336" key="dock-window-3/0.0.1440.860@0.0.1440.860" timestamp="1584359908498" />
-    <state x="578" y="58" width="759" height="735" key="find.popup" timestamp="1586090601685">
+    <state x="578" y="58" width="759" height="735" key="find.popup" timestamp="1586250961729">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="578" y="58" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1586090601685" />
+    <state x="578" y="58" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1586250961729" />
     <state x="89" y="40" key="new project wizard" timestamp="1585555755586">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

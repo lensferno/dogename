@@ -5,31 +5,24 @@
         {
             "name": "gitee",
             "urls": [
-                "http://asdaaa",
-                "http://asdaaa",
-                "http://asdaaa",
-                "http://asdaaa"
-            ],
-            "md5": [
-                "39asd48sarf7ny2398q4uy7",
-                "39asd48sarf7ny2398q4uy7",
-                "39asd48sarf7ny2398q4uy7",
-                "39asd48sarf7ny2398q4uy7"
+                "https://gitee.com/hety2002/dogename/raw/master/update/update_files/doge_update.7z.001::67A380CF7DC80EBD7EA24220A2C155EB",
+                "https://gitee.com/hety2002/dogename/raw/master/update/update_files/doge_update.7z.002::C5072E5A3ED578BC63DA6FEF1A6D31E0",
+                "https://gitee.com/hety2002/dogename/raw/master/update/update_files/doge_update.7z.003::482E9472DD21718A874A9DAB077413EE",
+                "https://gitee.com/hety2002/dogename/raw/master/update/update_files/doge_update.7z.004::A7F01018A745E0DB2670277F13E103C4",
+                "https://gitee.com/hety2002/dogename/raw/master/update/update_files/doge_update.7z.005::EA8964D69B4FE56865441C9B931DE079",
+                "https://gitee.com/hety2002/dogename/raw/master/update/update_files/doge_update.7z.006::4B859BC1DEFE20208465336DCEDE283D"
             ]
+
         },
         {
             "name": "github",
             "urls": [
-                "http://asdaaa",
-                "http://asdaaa",
-                "http://asdaaa",
-                "http://asdaaa"
-            ],
-            "md5": [
-                "39asd48sarf7ny2398q4uy7",
-                "39asd48sarf7ny2398q4uy7",
-                "39asd48sarf7ny2398q4uy7",
-                "39asd48sarf7ny2398q4uy7"
+                "https://github.com/eatenid/dogename/raw/master/update/update_files/doge_update.7z.001::67A380CF7DC80EBD7EA24220A2C155EB",
+                "https://github.com/eatenid/dogename/raw/master/update/update_files/doge_update.7z.002::C5072E5A3ED578BC63DA6FEF1A6D31E0",
+                "https://github.com/eatenid/dogename/raw/master/update/update_files/doge_update.7z.003::482E9472DD21718A874A9DAB077413EE",
+                "https://github.com/eatenid/dogename/raw/master/update/update_files/doge_update.7z.004::A7F01018A745E0DB2670277F13E103C4",
+                "https://github.com/eatenid/dogename/raw/master/update/update_files/doge_update.7z.005::EA8964D69B4FE56865441C9B931DE079",
+                "https://github.com/eatenid/dogename/raw/master/update/update_files/doge_update.7z.006::4B859BC1DEFE20208465336DCEDE283D"
             ]
         }
     ]

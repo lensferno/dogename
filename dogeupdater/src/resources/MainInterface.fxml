@@ -17,8 +17,7 @@
       </ImageView>
       <Pane>
          <children>
-            <JFXTextArea prefHeight="240.0" prefWidth="576.0" />
-            <JFXTabPane prefHeight="240.0" prefWidth="576.0">
+            <JFXTabPane fx:id="settingsPane" prefHeight="240.0" prefWidth="576.0">
                <tabs>
                   <Tab text="更新源选择">
                     <content>
@@ -92,6 +91,22 @@
                         </AnchorPane>
                     </content>
                   </Tab>
+                  <Tab fx:id="infoTab" text="信息">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <JFXTextArea fx:id="infoTextArea" editable="false" prefHeight="206.0" prefWidth="576.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                              </JFXTextArea>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
                </tabs>
                <VBox.margin>
                   <Insets />
@@ -101,7 +116,7 @@
       </Pane>
       <HBox alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="576.0" spacing="10.0">
          <children>
-            <ProgressBar prefHeight="18.0" prefWidth="381.0" progress="0.0" />
+            <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="381.0" progress="0.0" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="33.609375" />
             <JFXButton fx:id="startUpdate" onAction="#doUpdate" prefHeight="29.0" prefWidth="129.0" text="开始下载并更新">
                <font>

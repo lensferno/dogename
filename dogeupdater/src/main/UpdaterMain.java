@@ -17,7 +17,7 @@ public class UpdaterMain extends Application {
     //args need to be received: [Dogename Pid] [File Path of Dogename Jar] [Current version]
     public static void main(String[] args){
         if(args.length!=3){
-            System.out.println("请传入正确的2个参数：[主程序进程号（PID）] [主程序文件位置] [当前版本]");
+            System.out.println("请传入正确的3个参数：[主程序进程号（PID）] [主程序文件位置] [当前版本]");
             System.exit(0);
             return;
         }
