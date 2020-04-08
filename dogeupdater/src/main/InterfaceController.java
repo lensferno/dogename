@@ -24,16 +24,16 @@ public class InterfaceController {
 
     @FXML
     private JFXCheckBox backupBtn;
-    
+
     @FXML
     private JFXCheckBox openOnFinishedBtn;
 
     @FXML
     private JFXRadioButton githubBtn;
-    
+
     @FXML
     private JFXRadioButton giteeBtn;
-    
+
     @FXML
     private JFXButton startUpdate;
 
@@ -60,12 +60,12 @@ public class InterfaceController {
         progress.set(0);
         settingsPane.getSelectionModel().select(infoTab);
         infoTextArea.setText("检查可用更新...\n");
-        new Thread(()->{
-            updater=new Updater();
-            if(updater.checkUpdate(whichResources,currentVer)){
+        new Thread(() -> {
+            updater = new Updater();
+            if (updater.checkUpdate(whichResources, currentVer)) {
                 updateProgram();
-            }else{
-                Platform.runLater(()->{
+            } else {
+                Platform.runLater(() -> {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("哟~");
                     alert.setHeaderText("");
@@ -77,46 +77,46 @@ public class InterfaceController {
         }).start();
     }
 
-    public void doUpdateAutomatically(){
-        TimerTask timerTask=new TimerTask() {
+    public void doUpdateAutomatically() {
+        TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
                 doUpdate();
             }
         };
 
-        Timer timer=new Timer();
-        timer.schedule(timerTask,5000);
+        Timer timer = new Timer();
+        timer.schedule(timerTask, 5000);
 
     }
 
     private Updater updater;
 
-    private int whichResources=0;
+    private int whichResources = 0;
 
-    private SimpleBooleanProperty githubResources=new SimpleBooleanProperty(false);
+    private SimpleBooleanProperty githubResources = new SimpleBooleanProperty(false);
 
-    private SimpleBooleanProperty backupOldJar=new SimpleBooleanProperty(true);
+    private SimpleBooleanProperty backupOldJar = new SimpleBooleanProperty(true);
 
-    private SimpleBooleanProperty openOnFinished=new SimpleBooleanProperty(true);
+    private SimpleBooleanProperty openOnFinished = new SimpleBooleanProperty(true);
 
-    private SimpleBooleanProperty checkUpdateFile=new SimpleBooleanProperty(true);
+    private SimpleBooleanProperty checkUpdateFile = new SimpleBooleanProperty(true);
 
-    private SimpleStringProperty infoText=new SimpleStringProperty();
+    private SimpleStringProperty infoText = new SimpleStringProperty();
 
-    private SimpleDoubleProperty progress=new SimpleDoubleProperty(0);
+    private SimpleDoubleProperty progress = new SimpleDoubleProperty(0);
 
-    public void init(){
-        ToggleGroup toggleGroup=new ToggleGroup();
+    public void init() {
+        ToggleGroup toggleGroup = new ToggleGroup();
         githubBtn.setToggleGroup(toggleGroup);
         giteeBtn.setToggleGroup(toggleGroup);
 
         githubBtn.selectedProperty().bindBidirectional(githubResources);
 
-        githubResources.addListener((t,oldValue,newValue)->{
-            if(newValue==true){
+        githubResources.addListener((t, oldValue, newValue) -> {
+            if (newValue == true) {
                 whichResources = ResourcesType.GITHUB;
-            }else{
+            } else {
                 whichResources = ResourcesType.GITEE;
             }
         });
@@ -134,36 +134,36 @@ public class InterfaceController {
     private String saveLocation;
     private int currentVer;
 
-    public void setArgs(String[] args){
-        this.javaPid=args[0];
-        this.oldJarPath =args[1];
-        this.currentVer=Integer.parseInt(args[2]);
-        this.saveLocation=new File(oldJarPath).getParent()+"\\";
+    public void setArgs(String[] args) {
+        this.javaPid = args[0];
+        this.oldJarPath = args[1];
+        this.currentVer = Integer.parseInt(args[2]);
+        this.saveLocation = new File(oldJarPath).getParent() + "\\";
     }
 
-    void updateProgram(){
+    void updateProgram() {
 
-        Platform.runLater(()->{
+        Platform.runLater(() -> {
             topImg.setVisible(true);
-            infoText.set(infoText.get()+"杀死程序进程...\n");
+            infoText.set(infoText.get() + "杀死程序进程...\n");
         });
 
         killOldProgram();
 
-        if(backupOldJar.get()){
+        if (backupOldJar.get()) {
 
-            Platform.runLater(() -> infoText.set(infoText.get()+"备份原程序...\n"));
-            boolean backupSucceed=backupOldFile(oldJarPath);
+            Platform.runLater(() -> infoText.set(infoText.get() + "备份原程序...\n"));
+            boolean backupSucceed = backupOldFile(oldJarPath);
 
             if (!backupSucceed) {
-                Platform.runLater(()->{
+                Platform.runLater(() -> {
                     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("备份失败");
                     alert.setHeaderText("备份过程看起来好像失败了。");
                     alert.setContentText("要继续进行升级工作吗？");
 
                     Optional<ButtonType> result = alert.showAndWait();
-                    if (result.get() == ButtonType.CANCEL){
+                    if (result.get() == ButtonType.CANCEL) {
                         return;
                     }
                 });
@@ -171,14 +171,14 @@ public class InterfaceController {
         }
 
 
-        Task<Void> downloadTask=new Task<Void>() {
+        Task<Void> downloadTask = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                boolean downloadSucceed=downloadUpdateFile();
+                boolean downloadSucceed = downloadUpdateFile();
 
-                if(downloadSucceed){
+                if (downloadSucceed) {
                     succeeded();
-                }else{
+                } else {
                     failed();
                 }
 
@@ -190,11 +190,11 @@ public class InterfaceController {
                 super.succeeded();
                 updateMessage("Done!");
 
-                Platform.runLater(() -> infoText.set(infoText.get()+"替换旧的程序文件...\n"));
-                boolean replaceOldJarFileSucceed=replaceOldJar(oldJarPath);
+                Platform.runLater(() -> infoText.set(infoText.get() + "替换旧的程序文件...\n"));
+                boolean replaceOldJarFileSucceed = replaceOldJar(oldJarPath);
 
-                if (!replaceOldJarFileSucceed){
-                    Platform.runLater(()->{
+                if (!replaceOldJarFileSucceed) {
+                    Platform.runLater(() -> {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("啊呀！");
                         alert.setHeaderText("出问题啦！");
@@ -204,7 +204,7 @@ public class InterfaceController {
                     });
                 }
 
-                if(openOnFinished.get()) {
+                if (openOnFinished.get()) {
                     runNewProgram();
                 }
 
@@ -220,7 +220,7 @@ public class InterfaceController {
             protected void failed() {
                 super.failed();
                 updateMessage("Failed!");
-                Platform.runLater(()->{
+                Platform.runLater(() -> {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("啊呀！");
                     alert.setHeaderText("出问题啦！");
@@ -230,31 +230,32 @@ public class InterfaceController {
             }
         };
 
-        Platform.runLater(() -> infoText.set(infoText.get()+"下载更新包...\n"));
+        Platform.runLater(() -> infoText.set(infoText.get() + "下载更新包...\n"));
 
         new Thread(downloadTask).start();
     }
 
-    private boolean replaceOldJar(String oldJarFilePath){
+    private boolean replaceOldJar(String oldJarFilePath) {
         return true;
     }
 
 
-    private void runNewProgram(){
+    private void runNewProgram() {
 
     }
 
-    private String info=null;
-    private void killOldProgram(){
+    private String info = null;
+
+    private void killOldProgram() {
         try {
-            Process killProcess=Runtime.getRuntime().exec(String.format("taskkill /PID %s",javaPid));
-            BufferedReader reader=new BufferedReader(new InputStreamReader(killProcess.getInputStream(), StandardCharsets.UTF_8));
-            new Thread(()->{
-                try{
-                    while((info=reader.readLine())!=null) {
-                        Platform.runLater(()->infoText.set(infoText.get()+info+'\n'));
+            Process killProcess = Runtime.getRuntime().exec(String.format("taskkill /PID %s", javaPid));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(killProcess.getInputStream(), StandardCharsets.UTF_8));
+            new Thread(() -> {
+                try {
+                    while ((info = reader.readLine()) != null) {
+                        Platform.runLater(() -> infoText.set(infoText.get() + info + '\n'));
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }).start();
@@ -263,20 +264,20 @@ public class InterfaceController {
         }
     }
 
-    private boolean downloadUpdateFile(){
-        SimpleStringProperty textPerproty=new SimpleStringProperty();
+    private boolean downloadUpdateFile() {
+        SimpleStringProperty textPerproty = new SimpleStringProperty();
         textPerproty.bindBidirectional(infoTextArea.textProperty());
-        return updater.doUpdate(saveLocation,whichResources,checkUpdateFile.get(),textPerproty,progress);
+        return updater.doUpdate(saveLocation, whichResources, checkUpdateFile.get(), textPerproty, progress);
     }
 
-    private boolean backupOldFile(String oldJarFilePath){
+    private boolean backupOldFile(String oldJarFilePath) {
         //File oldJarFile=new File(filePath);
-        File oldJarFile=new File(oldJarFilePath);
-        File backupJarFile=new File(oldJarFile.getParent()+"dogename_backup.jar");
+        File oldJarFile = new File(oldJarFilePath);
+        File backupJarFile = new File(oldJarFile.getParent() + "dogename_backup.jar");
 
-        try{
-            Files.copy(oldJarFile.toPath(),backupJarFile.toPath());
-        } catch (Exception e){
+        try {
+            Files.copy(oldJarFile.toPath(), backupJarFile.toPath());
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }

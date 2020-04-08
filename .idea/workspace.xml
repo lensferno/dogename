@@ -2,6 +2,7 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="SPLITTER_PROPORTION" value="0.611194" />
+    <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
@@ -10,17 +11,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/render.experimental.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/smartfox_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/InterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/InterfaceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/update/DownloadTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/update/DownloadTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/update/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/update/Updater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/utils/FileAccessChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/FileAccessChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/utils/Md5.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/Md5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/utils/Net.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/Net.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="dogename" />
@@ -35,6 +47,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -90,6 +105,24 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.DogeUpdater">
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DogeMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="me.hety.dogename.main.Main" />
       <module name="dogename" />
@@ -107,24 +140,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -256,10 +271,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="92" y="92" width="1256" height="676" key="DiffContextDialog/0.0.1440.860@0.0.1440.860" timestamp="1584356285082" />
-    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1585903766507">
+    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1586311299702">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1585903766507" />
+    <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1586311299702" />
     <state width="1396" height="228" key="GridCell.Tab.-1.bottom" timestamp="1584359613063">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -328,10 +343,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="382" y="235" key="NewModule_or_Project.wizard/0.0.1440.860@0.0.1440.860" timestamp="1583758807303" />
-    <state x="176" y="79" key="SettingsEditor" timestamp="1586089723296">
+    <state x="127" y="63" width="1021" height="738" key="SettingsEditor" timestamp="1586316285078">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="176" y="79" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1586089723296" />
+    <state x="127" y="63" width="1021" height="738" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1586316285078" />
     <state x="519" y="212" key="chooseDestDirectoryDialog" timestamp="1584319206883">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -380,6 +395,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="190" width="672" height="677" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1584514931417" />
+    <state x="435" y="140" width="672" height="678" key="search.everywhere.popup" timestamp="1586308907338">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="435" y="140" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1586308907338" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
