@@ -9,20 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DownloadTask {
-    List<Package> packages=new ArrayList<>();
+    List<Package> packages = new ArrayList<>();
 
     private int taskNumber;
 
     String saveLocation;
 
-    public DownloadTask(String saveLocation){
-        this.saveLocation=saveLocation;
+    public DownloadTask(String saveLocation) {
+        this.saveLocation = saveLocation;
     }
 
-    public void addPackage(String field){
-        String[] url_md5=field.split("::");
-        System.out.println(String.format("Added package %s,md5:%s",url_md5));
-        packages.add(new Package(url_md5[0],url_md5[1],saveLocation));
+    public void addPackage(String field) {
+        String[] url_md5 = field.split("::");
+        System.out.println(String.format("Added package %s,md5:%s", url_md5));
+        packages.add(new Package(url_md5[0], url_md5[1], saveLocation));
     }
 
     public void setTaskNumber(int taskNumber) {
@@ -33,13 +33,13 @@ public class DownloadTask {
         return taskNumber;
     }
 
-    public boolean startDownload(SimpleStringProperty message, int totalPackage, SimpleDoubleProperty progress,String saveLocation){
-        for(int i=0;i<packages.size();i++){
-            message.set(message.get()+String.format("正在下载第 %d 个包，共 %d 个包...\n",i+1,totalPackage));
-            progress.set(i/totalPackage);
+    public boolean startDownload(SimpleStringProperty message, int totalPackage, SimpleDoubleProperty progress, String saveLocation) {
+        for (int i = 0; i < packages.size(); i++) {
+            message.set(message.get() + String.format("正在下载第 %d 个包，共 %d 个包...\n", i + 1, totalPackage));
+            progress.set(i / totalPackage);
             packages.get(i).setSaveLocation(saveLocation);
-            int downloadStat=packages.get(i).startDownload();
-            if(downloadStat==-1){
+            int downloadStat = packages.get(i).startDownload();
+            if (downloadStat == -1) {
                 return false;
             }
         }
@@ -47,7 +47,7 @@ public class DownloadTask {
         return true;
     }
 
-    public boolean checkPackages(int whichPackage){
+    public boolean checkPackages(int whichPackage) {
         return packages.get(whichPackage).checkMD5();
     }
 
@@ -76,17 +76,17 @@ class Package {
         this.downloadURL = downloadURL;
         this.md5 = md5;
         this.saveLocation = saveLocation;
-        String[] temp=downloadURL.split("/");
-        packageName=temp[temp.length-1];
+        String[] temp = downloadURL.split("/");
+        packageName = temp[temp.length - 1];
     }
 
-    public int startDownload(){
+    public int startDownload() {
         return Net.download(downloadURL, saveLocation);
     }
 
-    public boolean checkMD5(){
-        System.out.println(String.format("Checking:%s ,md5:",saveLocation+packageName,md5));
-        return Md5.checkMd5(saveLocation+packageName,md5);
+    public boolean checkMD5() {
+        System.out.println(String.format("Checking:%s ,md5:", saveLocation + packageName, md5));
+        return Md5.checkMd5(saveLocation + packageName, md5);
     }
 
     public void setSaveLocation(String saveLocation) {

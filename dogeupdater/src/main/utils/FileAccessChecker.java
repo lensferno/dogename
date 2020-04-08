@@ -2,18 +2,19 @@ package main.utils;
 
 import java.io.*;
 
+
 public class FileAccessChecker {
 
-    public static boolean checkWriteAccessForDir(String dirPath){
+    public static boolean checkWriteAccessForDir(String dirPath) {
 
-        File dir=new File(dirPath);
+        File dir = new File(dirPath);
 
-        if(!dirFileCanBeDelete(new File(dir,"delete_test.tmp"))){
+        if (!dirFileCanBeDelete(new File(dir, "delete_test.tmp"))) {
             return false;
         }
 
-        File testFile=new File(dir,"temp.tmp");
-        try(FileWriter fileWriter=new FileWriter(testFile)) {
+        File testFile = new File(dir, "temp.tmp");
+        try (FileWriter fileWriter = new FileWriter(testFile)) {
 
             testFile.createNewFile();
             fileWriter.write("test");
@@ -29,7 +30,7 @@ public class FileAccessChecker {
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
-    private static boolean dirFileCanBeDelete(File testFile){
+    private static boolean dirFileCanBeDelete(File testFile) {
 
         try {
             testFile.createNewFile();
@@ -40,60 +41,60 @@ public class FileAccessChecker {
         return true;
     }
 
-    public static boolean checkWriteAccessForFile(String filePath){
+    public static boolean checkWriteAccessForFile(String filePath) {
 
-        File file=new File(filePath);
+        File file = new File(filePath);
 
         ByteArrayOutputStream backupByte = new ByteArrayOutputStream();
 
-        try(FileOutputStream fileTestOutputStream=new FileOutputStream(file,true);
-            FileInputStream fileInputStream=new FileInputStream(file) ){
+        try (FileOutputStream fileTestOutputStream = new FileOutputStream(file, true);
+             FileInputStream fileInputStream = new FileInputStream(file)) {
 
-            if(!checkReadAccess(filePath)){
+            if (!checkReadAccess(filePath)) {
                 return false;
             }
 
             byte[] b = new byte[1024];
             int len;
-            while((len = fileInputStream.read(b)) != -1) {
+            while ((len = fileInputStream.read(b)) != -1) {
                 backupByte.write(b, 0, len);
             }
 
-            byte[] testByte={0};
+            byte[] testByte = {0};
 
             fileTestOutputStream.write(testByte);
             fileTestOutputStream.flush();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
 
         //备份写回去的异常捕捉单独拎出来try是因为测试的输出流在try结束后才关闭
-        try (FileOutputStream fileBackupOutputStream=new FileOutputStream(file,false)){
+        try (FileOutputStream fileBackupOutputStream = new FileOutputStream(file, false)) {
             fileBackupOutputStream.write(backupByte.toByteArray());
             fileBackupOutputStream.flush();
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
 
         return true;
     }
 
-    public static boolean checkReadAccess(String filePath){
+    public static boolean checkReadAccess(String filePath) {
 
-        File file=new File(filePath);
+        File file = new File(filePath);
 
         return checkReadAccess(file);
     }
 
-    public static boolean checkReadAccess(File file){
+    public static boolean checkReadAccess(File file) {
 
         //是文件吗？存在吗？
         if (file.isDirectory()) {
-            System.out.println(String.format("%s is not a file!",file.toString()));
+            System.out.println(String.format("%s is not a file!", file.toString()));
             return false;
         } else if (!file.exists()) {
-            System.out.println(String.format("File %s doesn't exists!",file.toString()));
+            System.out.println(String.format("File %s doesn't exists!", file.toString()));
             return false;
         }
 
@@ -105,13 +106,13 @@ public class FileAccessChecker {
             }
             return true;
         } catch (IOException e) {
-            System.out.println(String.format("File %s can't be read! Reason: %s",file.toString(),e.toString()));
+            System.out.println(String.format("File %s can't be read! Reason: %s", file.toString(), e.toString()));
             return false;
         }
 
     }
 
-    public static boolean checkFullAccessForFile(String file){
+    public static boolean checkFullAccessForFile(String file) {
         return checkReadAccess(file) && checkWriteAccessForFile(file);
     }
 
