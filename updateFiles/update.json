@@ -1,0 +1,13 @@
+{
+    "ver": 300,
+    "desc": "历史记录可以搜索和手动清空\n增加了语音设置\n新增截屏识别文字以添加名单功能\n\n当前版本不支持自动更新，请手动前往“https://github.com/eatenid/dogename/releases/tag/3.0”查看最新版本并下载。",
+    "UpdateResources": [
+        {
+            "type": "gitee",
+            "updateURL": [
+                "https://gitee.com/hety2002/dogename/raw/master/update/update_files/doge_update.7z.001",
+                "https://gitee.com/hety2002/dogename/raw/master/update/update_files/doge_update.7z.002"
+            ]
+        }
+    ]
+}
