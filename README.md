@@ -17,6 +17,7 @@
 
 #### 用法介绍
 待补充，*~~咕咕咕~~*
+
 ![ ](https://github.com/eatenid/dogename/raw/master/gugu.jpg "咕咕")
 
 ## 截图/Screenshot:
@@ -32,7 +33,7 @@
 
 [Gson](https://github.com/google/gson "Gson")(2.8.5)，用于Json数据的解析与生成。
 
-[OkHttp3](https://github.com/square/okhttp "OkHttp")(4.2.2)，用于语言部分的数据请求。
+[OkHttp3](https://github.com/square/okhttp "OkHttp")(4.2.2)，用于语音部分的数据请求。
 
 [gushici](https://github.com/xenv/gushici/ "古诗词")项目提供的古诗词接口和数据。
 
