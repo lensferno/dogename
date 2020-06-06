@@ -1,16 +1,17 @@
 package me.hety.dogename.main.data;
 
 import com.google.gson.Gson;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import java.util.*;
-import java.util.logging.Logger;
 
 public class NameData {
 
-    Logger log = Logger.getLogger("NameDataLogger");
+    Logger log = LogManager.getLogger("NameDataLogger");
 
     private List<String> nameList;
 
@@ -74,12 +75,12 @@ public class NameData {
 
         }catch (EOFException e){
             ignoreNameList=new HashSet<>();
-            log.warning("Past name list is empty.");
+            log.warn("Past name list is empty.");
             writeIgnoreList("not number");
         }catch (Exception e){
             ignoreNameList=new HashSet<>();
             writeIgnoreList("not number");
-            log.warning("Failed to load past name list:"+e.toString());
+            log.warn("Failed to load past name list:"+e.toString());
             e.printStackTrace();
         }
 
@@ -98,16 +99,16 @@ public class NameData {
 
         }catch (EOFException e){
             ignoreNumberList=new HashSet<>();
-            log.warning("Ignored number list is empty.");
+            log.warn("Ignored number list is empty.");
             writeIgnoreList("not name");
         }catch (Exception e){
             ignoreNumberList=new HashSet<>();
-            log.warning("Failed to load ignored number list");
+            log.warn("Failed to load ignored number list");
             writeIgnoreList("not name");
             e.printStackTrace();
         }
 
-        System.out.println("There are "+ignoreNameList.size()+" names and "+ignoreNumberList.size()+" numbers ignored.");
+        log.info("There are "+ignoreNameList.size()+" names and "+ignoreNumberList.size()+" numbers ignored.");
     }
 
 
@@ -149,8 +150,8 @@ public class NameData {
                 FileOutputStream oos =new FileOutputStream(path);
                 oos.write(new Gson().toJson(nameList).getBytes(StandardCharsets.UTF_8));
                 oos.close();
-                System.out.println("[INFO]Exported list to:"+path.getPath());
-            }catch (Exception e){e.printStackTrace();}
+                log.info("Exported list to:"+path.getPath());
+            }catch (Exception e){log.warn("error in export namelist: "+e.toString());e.printStackTrace();}
 
         }
     }
@@ -170,8 +171,8 @@ public class NameData {
                 }
 
                 nameList=new Gson().fromJson(sb.toString(),List.class);
-                System.out.println("[INFO]Imported list from:"+path.getPath());
-            }catch (Exception e){e.printStackTrace();}
+                log.info("Imported list from:"+path.getPath());
+            }catch (Exception e){log.warn("error in import namelist:"+e.toString());e.printStackTrace();}
 
         }
 
@@ -239,7 +240,7 @@ public class NameData {
             ObjectInputStream ois =new ObjectInputStream(new FileInputStream(dataFile));
             this.nameList=(ArrayList)ois.readObject();
 
-            System.out.println(nameList.size()+" names loaded.");
+            log.info(nameList.size()+" names loaded.");
 
             listSize=nameList.size();
             this.chooseList=new ArrayList<>(nameList);
@@ -247,13 +248,13 @@ public class NameData {
         }catch (EOFException EOFe){
             nameList=new ArrayList<>();
             chooseList=new ArrayList<>();
-            log.warning("Data file is empty.");
+            log.warn("Data file is empty.");
             saveToFile();
         }catch (Exception e){
             nameList=new ArrayList<>();
             chooseList=new ArrayList<>();
             saveToFile();
-            log.warning("Failed to load data file.");
+            log.warn("Failed to load data file.");
             e.printStackTrace();
         }
 

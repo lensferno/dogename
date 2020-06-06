@@ -3,20 +3,24 @@ package me.hety.dogename.main.voice;
 import javazoom.spi.mpeg.sampled.file.MpegAudioFileReader;
 import me.hety.dogename.main.Common;
 import okhttp3.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import javax.sound.sampled.*;
-import java.io.*;
-import java.net.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.URLEncoder;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
 
 public class VoicePlayer {
 
     public static final String separator=File.separator;
 
-    Logger log=Logger.getLogger("VoicePlayerLogger");
+    Logger log= LogManager.getLogger("VoicePlayerLogger");
 
     private final String VOICE_API="https://tsn.baidu.com/text2audio";
 
@@ -85,17 +89,17 @@ public class VoicePlayer {
                 okHttpClient.newCall(request).enqueue(new Callback() {
                     @Override
                     public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                        log.warning("Failed to get voice:"+e.toString());
+                        log.warn("Failed to get voice:"+e.toString());
                     }
 
                     @Override
                     public void onResponse(@NotNull Call call, @NotNull Response response) {
                         if(response.header("Content-type").contains("json")){
-                            log.warning("Request error:"+response.toString());
+                            log.warn("Request error:"+response.toString());
                         }else {
                             boolean success=cacheVoiceFile(response,cachedVoice);
                             if (success) {
-                                System.out.println("cache voice success");
+                                log.info("cache voice of "+name+" to file "+cachedVoice.getPath()+" success");
                                 playSound(cachedVoice);
                             }
                         }
@@ -125,7 +129,7 @@ public class VoicePlayer {
             return true;
         } catch (Exception e) {
             e.printStackTrace();
-            log.warning("Error to cache voice file:"+e.toString());
+            log.warn("Error to cache voice file:"+e.toString());
             return false;
         }
 
@@ -158,7 +162,7 @@ public class VoicePlayer {
             line.stop();
             line.close();
         } catch (Exception e) {
-            log.warning("Error to play voice audio:"+e.toString());
+            log.warn("Error to play voice audio:"+e.toString());
             e.printStackTrace();
         }
     }
