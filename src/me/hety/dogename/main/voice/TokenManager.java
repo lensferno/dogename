@@ -16,7 +16,11 @@ public class TokenManager {
     public static final String separator=File.separator;
 
     String cachedVoicePath="caches\\voice\\";
-
+    
+    final private int TOKEN_NULL = -2;
+    final private int TOKEN_EXPIRED = -1;
+    final private int TOKEN_OK = 0;
+    
     final String API_KEY="dIHCtamVdD0ERO1yyFir2iI4";
     final String SEC_KEY="HmpBQY3gG4PyZ0cmudnCbMeoMcMejuuW";
 
@@ -27,31 +31,52 @@ public class TokenManager {
     private Token token=null;
 
     String tokenStatus="ok";
+    
+    private void updateTokenStatus(int statusCode){
+        switch(statusCode){
+                case TOKEN_OK:
+                    tokenStatus="ok";
+                    break;
+                            
+                case TOKEN_EXPIRED:
+                    if(netAvailable()){ refreshToken();}
 
-    //boolean netAvailable =true;
+                    if(checkTokenAvailable()!=0){ tokenStatus="not ok";}
+                    break;
+                            
+                case TOKEN_NULL:
+                    if(netAvailable()){ refreshToken();}
+
+                    if(checkTokenAvailable()!=0){ tokenStatus="not ok";}
+                    break;
+                            
+                default :
+                    tokenStatus="not ok";
+                    break;
+            }
+    }
+    
+    private void refreshToken(){
+	
+        fetchToken();
+        writeToken();
+    }
 
 
     public void init(){
 
         if(tokenFile.exists()){
             loadToken();
-
-            if (checkTokenAvailable()){
-                tokenStatus="ok";
-            }else {
-                tokenStatus="not ok";
-            }
+            updateTokenStatus(checkTokenAvailable());
+            
         }else{
+            
             if(netAvailable()){
+                
+            refreshToken();
+            
+            updateTokenStatus(checkTokenAvailable());
 
-                fetchToken();
-                writeToken();
-
-                if (checkTokenAvailable()){
-                    tokenStatus="ok";
-                }else {
-                    tokenStatus="not ok";
-                }
             }else {
                 tokenStatus="not ok";
             }
@@ -67,23 +92,23 @@ public class TokenManager {
         return token;
     }
 
-    private boolean checkTokenAvailable() {
+    private int checkTokenAvailable() {
 
-        //token是空的就返回false
+        //token是空的就返回-2
         if (token == null || token.getAccessToken() == null) {
             log.info("Token was null");
-            return false;
+            return -2;
         }
 
-        //token过期了就返回false
+        //token过期了就返回-1
         if (token.isTokenTimeOut()) {
             log.info("Token expired.");
-            return false;
+            return -1;
         }
 
-        //正常的话就返回ture
+        //正常的话就返回0
         log.info("Token OK.");
-        return true;
+        return 0;
     }
 
 
@@ -100,6 +125,7 @@ public class TokenManager {
 
     private boolean netAvailable(){
         try {
+            
             URL sourcesURL = new URL("http://www.baidu.com");
             HttpURLConnection connection = (HttpURLConnection) sourcesURL.openConnection();
             connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36");
@@ -108,6 +134,7 @@ public class TokenManager {
             InputStream stream = connection.getInputStream();
             stream.read();
             stream.close();
+            
             return true;
         }catch (Exception e){
             log.info("Network is not available.");

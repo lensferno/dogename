@@ -9,22 +9,35 @@
       <artifact name="dogeupdater:jar" />
     </artifacts-to-build>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/render.experimental.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/smartfox_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profiles.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/InterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/InterfaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/update/DownloadTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/update/DownloadTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/utils/FileAccessChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/FileAccessChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogeupdater/src/main/utils/Net.java" beforeDir="false" afterPath="$PROJECT_DIR$/dogeupdater/src/main/utils/Net.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dogename.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dogename.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/TokenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/TokenManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +46,6 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="dogename" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,20 +61,12 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1Y1qziZdMWGzl19y3OvDQoXLC41" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -73,17 +75,18 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last.edited.regexp" value="Sample Text" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/dogename-old/src" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/me/hety/dogename/main/resources" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20683111" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -104,7 +107,7 @@
       <recent name="G:\projects\dogename\src\me\hety\dogename\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DogeUpdater">
+  <component name="RunManager" selected="Application.DogeMain">
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -167,13 +170,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -199,9 +201,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="90" key="#Java/0.0.1440.860@0.0.1440.860" timestamp="1585903793883" />
-    <state x="82" y="21" width="1257" height="808" key="#Project_Structure" timestamp="1586144959662">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="78" y="0" width="1257" height="808" key="#Project_Structure" timestamp="1591014646087">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="78" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1591014646087" />
     <state x="82" y="21" width="1257" height="808" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1586144959662" />
     <state x="175" y="51" width="1189" height="770" key="#Setter_Template" timestamp="1583800698833">
       <screen x="0" y="0" width="1440" height="860" />
@@ -271,9 +274,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="92" y="92" width="1256" height="676" key="DiffContextDialog/0.0.1440.860@0.0.1440.860" timestamp="1584356285082" />
-    <state x="394" y="172" key="FileChooserDialogImpl" timestamp="1586311299702">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="218" y="113" key="FileChooserDialogImpl" timestamp="1591014629231">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="218" y="113" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591014629231" />
     <state x="394" y="172" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1586311299702" />
     <state width="1396" height="228" key="GridCell.Tab.-1.bottom" timestamp="1584359613063">
       <screen x="0" y="0" width="1440" height="860" />
@@ -291,21 +295,25 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1396" height="228" key="GridCell.Tab.-1.right/0.0.1440.860@0.0.1440.860" timestamp="1584359613063" />
-    <state width="1396" height="189" key="GridCell.Tab.0.bottom" timestamp="1586257554046">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1591023643656">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591023643656" />
     <state width="1396" height="189" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
-    <state width="1396" height="189" key="GridCell.Tab.0.center" timestamp="1586257554046">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1591023643656">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591023643656" />
     <state width="1396" height="189" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
-    <state width="1396" height="189" key="GridCell.Tab.0.left" timestamp="1586257554046">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1591023643655">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591023643655" />
     <state width="1396" height="189" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
-    <state width="1396" height="189" key="GridCell.Tab.0.right" timestamp="1586257554046">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1591023643656">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591023643656" />
     <state width="1396" height="189" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
     <state x="621" y="557" width="742" height="298" key="GridCell.Tab.1.bottom" timestamp="1584359935523">
       <screen x="0" y="0" width="1440" height="860" />
@@ -343,9 +351,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="382" y="235" key="NewModule_or_Project.wizard/0.0.1440.860@0.0.1440.860" timestamp="1583758807303" />
-    <state x="127" y="63" width="1021" height="738" key="SettingsEditor" timestamp="1586316285078">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="147" y="0" width="969" height="728" key="SettingsEditor" timestamp="1591018072027">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="147" y="0" width="969" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591018072027" />
     <state x="127" y="63" width="1021" height="738" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1586316285078" />
     <state x="519" y="212" key="chooseDestDirectoryDialog" timestamp="1584319206883">
       <screen x="0" y="0" width="1440" height="860" />
@@ -359,10 +368,6 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="81" y="99" width="1256" height="676" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.860@0.0.1440.860" timestamp="1584848067995" />
-    <state x="206" y="126" key="com.intellij.ide.util.TipDialog" timestamp="1582120763811">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="206" y="126" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1582120763811" />
     <state x="497" y="388" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583828563471">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -379,9 +384,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="621" y="557" width="758" height="336" key="dock-window-3/0.0.1440.860@0.0.1440.860" timestamp="1584359908498" />
-    <state x="578" y="58" width="759" height="735" key="find.popup" timestamp="1586250961729">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="320" y="52" width="720" height="623" key="find.popup" timestamp="1591014750345">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="320" y="52" width="720" height="623" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1591014750345" />
     <state x="578" y="58" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1586250961729" />
     <state x="89" y="40" key="new project wizard" timestamp="1585555755586">
       <screen x="0" y="0" width="1440" height="860" />

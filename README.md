@@ -40,3 +40,10 @@
 “每日一句话”的数据来自[一言](https://hitokoto.cn/ "一言")
 
 本项目还使用了 百度AI SDK 来实现OCR功能。
+
+
+
+## 下载/Download：
+[这里](https://github.com/eatenid/dogename/releases "这里")
+
+
