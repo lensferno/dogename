@@ -29,15 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profiles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dogename.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/TokenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/TokenManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/SettingsPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/SettingsPaneController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,10 +344,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="382" y="235" key="NewModule_or_Project.wizard/0.0.1440.860@0.0.1440.860" timestamp="1583758807303" />
-    <state x="147" y="0" width="969" height="728" key="SettingsEditor" timestamp="1591018072027">
+    <state x="147" y="0" width="969" height="728" key="SettingsEditor" timestamp="1591434581461">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="147" y="0" width="969" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591018072027" />
+    <state x="147" y="0" width="969" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591434581461" />
     <state x="127" y="63" width="1021" height="738" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1586316285078" />
     <state x="519" y="212" key="chooseDestDirectoryDialog" timestamp="1584319206883">
       <screen x="0" y="0" width="1440" height="860" />

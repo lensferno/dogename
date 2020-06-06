@@ -1,6 +1,8 @@
 package me.hety.dogename.main.controllers;
 
-import com.jfoenix.controls.*;
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.JFXSlider;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -97,6 +99,16 @@ public class SettingsPaneController extends VBox {
         cycleTimesBar.valueProperty().bindBidirectional(mainConfig.cycleTimesPropertyProperty());
 
         speedBar.valueProperty().bindBidirectional(mainConfig.speedPropertyProperty());
+
+        mainConfig.ignorePastPropertyProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue==true){
+                //如果 忽略被点过的名字 选上就把套路模式的按钮给取消掉
+                taoluModeBtn.setSelected(false);
+            }else{
+                //如果 忽略被点过的名字 被取消后就把机会均等模式的按钮给取消掉
+                equalModeBtn.setSelected(false);
+            }
+        });
     }
 
     public void setToggleGroup(){
