@@ -21,7 +21,7 @@ public class Main extends Application {
 
     Logger log = LogManager.getLogger();
 
-    public static void main(String[] args){System.out.println(args.length);launch(args);}
+    public static void main(String[] args){System.out.println("Received "+args.length+" args");launch(args);}
 
     @Override
     public void start(Stage primaryStage) {

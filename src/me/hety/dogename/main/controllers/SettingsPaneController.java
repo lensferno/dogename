@@ -13,8 +13,9 @@ import me.hety.dogename.main.DialogMaker;
 import me.hety.dogename.main.configs.MainConfig;
 import me.hety.dogename.main.configs.VoiceConfig;
 import me.hety.dogename.main.data.NameData;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.util.logging.Logger;
 
 public class SettingsPaneController extends VBox {
     @FXML
@@ -54,7 +55,7 @@ public class SettingsPaneController extends VBox {
 
     NameData nameData;
 
-    Logger log = Logger.getLogger("SettingsPaneControllerLogger");
+    Logger log = LogManager.getLogger("SettingsPaneControllerLogger");
 
     public SettingsPaneController(){
         FXMLLoader loader=new FXMLLoader(getClass().getResource("/me/hety/dogename/main/FXMLs/SettingsPane.fxml"));
@@ -63,7 +64,7 @@ public class SettingsPaneController extends VBox {
         try {
             loader.load();
         }catch(Exception e){
-            log.warning("Error to load settings pane FXML: "+e.toString());
+            log.warn("Error to load settings pane FXML: "+e.toString());
         }
     }
 
@@ -100,8 +101,8 @@ public class SettingsPaneController extends VBox {
 
         speedBar.valueProperty().bindBidirectional(mainConfig.speedPropertyProperty());
 
-        mainConfig.ignorePastPropertyProperty().addListener((observable, oldValue, newValue) -> {
-            if(newValue==true){
+        mainConfig.ignorePastPropertyProperty().addListener((observable, oldValue, isIgnorePast) -> {
+            if(isIgnorePast){
                 //如果 忽略被点过的名字 选上就把套路模式的按钮给取消掉
                 taoluModeBtn.setSelected(false);
             }else{

@@ -13,7 +13,7 @@ public class MainConfig {
     public final int METHOD_NUMBER = 1; // 数字挑选法
 
     public final int DEFAULT_CYCLE_TIMES = 120; // 默认轮回次数:120
-    public final int DEFAULT_SPEED = 20; // 默认速度:20ms,对应滑动条80的位置
+    public final int DEFAULT_SPEED = 80; // 默认速度:20ms,对应滑动条80的位置
 
     public final boolean DEFAULT_RANDOM_TIMES = true; // 默认挑选轮回次数是否随机:ture
 

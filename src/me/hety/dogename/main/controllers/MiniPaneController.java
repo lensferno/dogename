@@ -144,7 +144,7 @@ public class MiniPaneController {
         chooser.set(chosenNameLabel.textProperty(),chosenNameLabel.textProperty(),anPaiBtn,history,nameData,token,voiceConfig);
 
         chooser.run(
-                (short) mainConfig.getSpeedProperty(),
+                (short)(100-mainConfig.getSpeedProperty()) ,
                 mainConfig.getCycleTimesProperty(),
                 mainConfig.isIgnorePastProperty(),
                 mainConfig.isEqualModeProperty(),
@@ -182,7 +182,7 @@ public class MiniPaneController {
         chooser.run(
                 Short.parseShort(mainConfig.getMaxNumberProperty()),
                 Short.parseShort(mainConfig.getMinNumberProperty()),
-                (short) mainConfig.getSpeedProperty(),
+                (short)(100-mainConfig.getSpeedProperty()) ,
                 mainConfig.getCycleTimesProperty(),
                 mainConfig.isIgnorePastProperty(),
                 mainConfig.isEqualModeProperty(),

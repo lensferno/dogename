@@ -268,7 +268,7 @@ public final class MainInterfaceController {
         chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,history,nameData,token,voiceConfig);
 
         chooser.run(
-                (short) mainConfig.getSpeedProperty(),
+                (short)(100-mainConfig.getSpeedProperty()) ,
                 mainConfig.getCycleTimesProperty(),
                 mainConfig.isIgnorePastProperty(),
                 mainConfig.isEqualModeProperty(),
@@ -312,7 +312,7 @@ public final class MainInterfaceController {
         chooser.run(
                 Short.parseShort(mainConfig.getMaxNumberProperty()),
                 Short.parseShort(mainConfig.getMinNumberProperty()),
-                (short) mainConfig.getSpeedProperty(),
+                (short)(100-mainConfig.getSpeedProperty()) ,
                 mainConfig.getCycleTimesProperty(),
                 mainConfig.isIgnorePastProperty(),
                 mainConfig.isEqualModeProperty(),

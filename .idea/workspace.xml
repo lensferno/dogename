@@ -6,7 +6,7 @@
   </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="dogeupdater:jar" />
+      <artifact name="dogename:jar" />
     </artifacts-to-build>
   </component>
   <component name="BranchesTreeState">
@@ -30,7 +30,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MainInterfaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MiniPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/MiniPaneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/SettingsPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/SettingsPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/data/NameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/data/NameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/VoicePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/voice/VoicePlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,22 +89,22 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\projects\dogename\src\me\hety\dogename\main\controllers\WindowListeners" />
-      <recent name="G:\projects\dogename\dogename-old\src\main" />
-      <recent name="G:\projects\dogename\dogename-old\src" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="main.update" />
       <recent name="me.hety.dogename.main" />
       <recent name="me.hety.dogename" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\projects\dogename\src\me\hety\dogename\main\resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="me.hety.dogename.main.resources" />
       <recent name="me.hety.dogename.main.chooser" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\projects\dogename\src\me\hety\dogename\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\projects\dogename\src\me\hety\dogename\main\controllers\WindowListeners" />
+      <recent name="G:\projects\dogename\dogename-old\src\main" />
+      <recent name="G:\projects\dogename\dogename-old\src" />
     </key>
   </component>
   <component name="RunManager" selected="Application.DogeMain">
@@ -247,6 +254,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="504" y="340" width="471" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.860@0.0.1440.860" timestamp="1584319537535" />
+    <state x="427" y="195" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1591437345107">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="427" y="195" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1366.728@0.0.1366.728" timestamp="1591437345107" />
     <state x="450" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586229394754">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -288,25 +299,25 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1396" height="228" key="GridCell.Tab.-1.right/0.0.1440.860@0.0.1440.860" timestamp="1584359613063" />
-    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1591023643656">
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1591451793880">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591023643656" />
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591451793880" />
     <state width="1396" height="189" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
-    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1591023643656">
+    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1591451793880">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591023643656" />
+    <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591451793880" />
     <state width="1396" height="189" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
-    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1591023643655">
+    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1591451793880">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591023643655" />
+    <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591451793880" />
     <state width="1396" height="189" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
-    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1591023643656">
+    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1591451793880">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591023643656" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591451793880" />
     <state width="1396" height="189" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1586257554046" />
     <state x="621" y="557" width="742" height="298" key="GridCell.Tab.1.bottom" timestamp="1584359935523">
       <screen x="0" y="0" width="1440" height="860" />
@@ -377,10 +388,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="621" y="557" width="758" height="336" key="dock-window-3/0.0.1440.860@0.0.1440.860" timestamp="1584359908498" />
-    <state x="320" y="52" width="720" height="623" key="find.popup" timestamp="1591014750345">
+    <state x="263" y="53" width="720" height="623" key="find.popup" timestamp="1591451021196">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="320" y="52" width="720" height="623" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1591014750345" />
+    <state x="263" y="53" width="720" height="623" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1591451021196" />
     <state x="578" y="58" width="759" height="735" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1586250961729" />
     <state x="89" y="40" key="new project wizard" timestamp="1585555755586">
       <screen x="0" y="0" width="1440" height="860" />
