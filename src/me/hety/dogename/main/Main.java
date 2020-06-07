@@ -1,5 +1,6 @@
 package me.hety.dogename.main;
 
+import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -68,9 +69,49 @@ public class Main extends Application {
 
     private void startMessageThread(MainInterfaceController mainInterfaceController){
         new Thread(()->{
-            String messageTexe=Common.getHtml("https://gitee.com/hety2002/dogename/raw/master/message.txt",false);
-            Platform.runLater(()->mainInterfaceController.message.setText(messageTexe));
+            String messageJson=Common.getHtml("https://gitee.com/hety2002/dogename/raw/master/message2.txt",false);
+            MessageBean messageBean =new Gson().fromJson(messageJson,MessageBean.class);
+            if (messageBean==null&&messageBean.getMessage()==null){
+                return;
+            }
+            String messageShow="";
+
+            if(messageBean.getType().equals("other")){
+                messageShow=messageBean.getMessage();
+            }else if (messageBean.getType().equals("update")){
+                if (messageBean.getLower_ver_show()>3.2){
+                    messageShow=messageBean.getMessage();
+                }
+            }
+            String finalMessageShow = messageShow;
+
+            Platform.runLater(()->mainInterfaceController.message.setText(finalMessageShow));
         }).start();
     }
 
+}
+class MessageBean{
+    private String type;
+    private double lower_ver_show;
+    private String message;
+    public void setType(String type) {
+        this.type = type;
+    }
+    public String getType() {
+        return type;
+    }
+
+    public void setLower_ver_show(double lower_ver_show) {
+        this.lower_ver_show = lower_ver_show;
+    }
+    public double getLower_ver_show() {
+        return lower_ver_show;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    public String getMessage() {
+        return message;
+    }
 }
