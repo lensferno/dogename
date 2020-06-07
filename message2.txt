@@ -1,0 +1,5 @@
+{
+    "type": "update",
+    "lower_ver_show": 3.2,
+    "message": "Dogename 叁号机的第二个版本已经发布，您可以前往以下地址手动下载替换更新：\nGithub：https://github.com/eatenid/dogename/releases\n码云（Gitee）：https://gitee.com/hety2002/dogename/releases\n----------------------------------------\n本次更新的主要内容有：\n-修复语音Token过期后“忘记”更新的Bug\n-修复点击“小窗模式”会崩溃的Bug\n-修复设置页面上部分按钮逻辑错误的Bug\n-调整了速度调节条的显示逻辑（越大越快）\n----------------------------------------\n就这就这就这"
+}
