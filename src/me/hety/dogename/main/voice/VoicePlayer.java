@@ -50,14 +50,15 @@ public class VoicePlayer {
         File cachedVoice = new File(cachedVoicePath + cachedVoiceName + ".mp3");
 
         if (!cachedVoice.exists()) {
-
+            System.out.println("Voice of "+cachedVoice+" not exists,fetch from network.");
             getVoiceData(name,speaker,speed,intonation,cachedVoice);
             //playSound(cachedVoice);
 
         } else {
             new Thread(() -> {
+                System.out.println("Voice of "+cachedVoice+" exists,playing cache.");
                 playSound(cachedVoice);
-            });
+            }).start();
         }
 
     }

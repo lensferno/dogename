@@ -79,7 +79,7 @@ public class Main extends Application {
             if(messageBean.getType().equals("other")){
                 messageShow=messageBean.getMessage();
             }else if (messageBean.getType().equals("update")){
-                if (messageBean.getLower_ver_show()>3.2){
+                if (messageBean.getLower_ver_show()>3.21){
                     messageShow=messageBean.getMessage();
                 }
             }
