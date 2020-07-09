@@ -1,3 +1,5 @@
+*高三了，先鸽一段时间*
+
 # 一个用来点名的玩意/Some thing to choose name
 
 ![ ](https://github.com/eatenid/dogename/raw/master/top.png "哟嚯！")
