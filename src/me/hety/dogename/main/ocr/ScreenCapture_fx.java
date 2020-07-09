@@ -24,9 +24,10 @@ public class ScreenCapture_fx extends Application {
         Scene scene=new Scene(root,weigh,height);
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setFullScreen(true);
     }
 
     public static void main(String[] args){
-
+        launch(args);
     }
 }

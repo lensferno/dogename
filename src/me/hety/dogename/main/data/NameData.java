@@ -271,7 +271,7 @@ public class NameData {
             splitedText=text.split("\n");
             nameList.addAll(Arrays.asList(splitedText));
         }else if(text.contains("\r")){//--------------------------macos
-            splitedText=text.split("\n");
+            splitedText=text.split("\r");
             nameList.addAll(Arrays.asList(splitedText));
         }else {
             nameList.add(text);
