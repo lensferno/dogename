@@ -13,8 +13,8 @@
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.6" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.14" level="project" />
     <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:8.0.9" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.13.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.13.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.13.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.13.2" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:4.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:2.2.2" level="project" />

@@ -51,16 +51,18 @@ public class ProgramInfoPaneController extends VBox {
 
     @FXML
     void showHelp(ActionEvent event) {
-
+        try {
+            Desktop.getDesktop().browse(new URI("https://github.com/eatenid/dogename/blob/master/mdfilesres/usage.md"));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void viewCode(ActionEvent event) {
         try {
             Desktop.getDesktop().browse(new URI("https://github.com/eatenid/dogename"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
     }
