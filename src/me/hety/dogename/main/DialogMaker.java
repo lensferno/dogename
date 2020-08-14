@@ -32,7 +32,6 @@ public class DialogMaker {
         OKButton.setFont(Font.font("Microsoft YaHei",FontWeight.BOLD,12));
         OKButton.setPrefWidth(60);
         OKButton.setPrefHeight(30);
-        OKButton.setOnAction(e -> dialog.close());
 
         Text messageText=new Text(message);
         messageText.setFont(Font.font("Microsoft YaHei",14));
@@ -49,14 +48,13 @@ public class DialogMaker {
         OKButton.setFont(Font.font("Microsoft YaHei",FontWeight.BOLD,12));
         OKButton.setPrefWidth(60);
         OKButton.setPrefHeight(30);
-        OKButton.setOnAction(e -> dialog.close());
 
         creatDialog(title,body,OKButton);
 
         dialog.show();
     }
 
-    //创建只有一个按钮的dialog
+    //创建有OK和cancel按钮的dialog
     public void creatDialogWithOKAndCancel(@NamedArg("title") String title, @NamedArg("message") String message,@NamedArg("OKEvent") EventHandler<ActionEvent> OKEvent){
         //dialog.setPrefHeight(rootPane.getPrefHeight());
         //dialog.setPrefWidth(rootPane.getPrefWidth());
@@ -65,7 +63,6 @@ public class DialogMaker {
         CancelButton.setFont(Font.font("Microsoft YaHei",FontWeight.BOLD,12));
         CancelButton.setPrefWidth(60);
         CancelButton.setPrefHeight(30);
-        CancelButton.setOnAction(e -> dialog.close());
 
         JFXButton OKButton = new JFXButton("是！");
         OKButton.setFont(Font.font("Microsoft YaHei",FontWeight.BOLD,12));
@@ -74,8 +71,6 @@ public class DialogMaker {
         OKButton.setTextFill(Paint.valueOf("red"));
         OKButton.addEventHandler(ActionEvent.ACTION,e -> {dialog.close();});
         OKButton.addEventHandler(ActionEvent.ACTION,OKEvent);
-
-        OKButton.setOnAction(OKEvent);
 
         Text messageText=new Text(message);
         messageText.setFont(Font.font("Microsoft YaHei",14));
@@ -104,6 +99,12 @@ public class DialogMaker {
         dialog = new JFXDialog(tempPane,content,JFXDialog.DialogTransition.TOP);
 
         dialog.setOnDialogClosed(event -> rootPane.getChildren().remove(tempPane));
+
+        for (JFXButton button : buttons) {
+            button.addEventHandler(ActionEvent.ACTION, e -> {
+                dialog.close();
+            });
+        }
 
         content.setActions(buttons);
 

@@ -1,5 +1,6 @@
 package me.hety.dogename.main.controllers;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import me.hety.dogename.main.DataReleaser;
 import me.hety.dogename.main.DialogMaker;
 
@@ -51,6 +54,26 @@ public class ProgramInfoPaneController extends VBox {
 
     @FXML
     void showHelp(ActionEvent event) {
+
+        JFXButton YesButton = new JFXButton("好的～去吧去吧");
+        YesButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
+        YesButton.setPrefWidth(160);
+        YesButton.setPrefHeight(40);
+        YesButton.addEventHandler(ActionEvent.ACTION,e -> jumpToHelp());
+
+        JFXButton cancelButton = new JFXButton("算了算了");
+        cancelButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
+        cancelButton.setPrefWidth(100);
+        cancelButton.setPrefHeight(40);
+
+        Text messageText=new Text("即将跳转到本程序Github页面上的使用帮助，是否继续？");
+        messageText.setFont(Font.font("Microsoft YaHei",14));
+
+        new DialogMaker(rootPane).creatDialog("查看帮助",messageText,cancelButton,YesButton);
+
+    }
+
+    private void jumpToHelp(){
         try {
             Desktop.getDesktop().browse(new URI("https://github.com/eatenid/dogename/blob/master/mdfilesres/usage.md"));
         } catch (IOException | URISyntaxException e) {
@@ -60,8 +83,41 @@ public class ProgramInfoPaneController extends VBox {
 
     @FXML
     void viewCode(ActionEvent event) {
+        JFXButton githubButton = new JFXButton("前往Github查看");
+        githubButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
+        githubButton.setPrefWidth(150);
+        githubButton.setPrefHeight(40);
+        githubButton.addEventHandler(ActionEvent.ACTION,e -> jumpToGithub());
+
+        JFXButton giteeButton = new JFXButton("前往Gitee查看");
+        giteeButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
+        giteeButton.setPrefWidth(150);
+        giteeButton.setPrefHeight(40);
+        giteeButton.addEventHandler(ActionEvent.ACTION,e -> jumpToGitee());
+
+        JFXButton cancelButton = new JFXButton("哪都不去");
+        cancelButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
+        cancelButton.setPrefWidth(100);
+        cancelButton.setPrefHeight(40);
+
+        Text messageText=new Text("Dogename在Github和码云(Gitee)都发布有代码和介绍。\n您想去哪里？\nGithub：将跳转到https://github.com/eatenid/dogename\nGitee：将跳转到https://gitee.com/hety2002/dogename");
+        messageText.setFont(Font.font("Microsoft YaHei",14));
+
+        new DialogMaker(rootPane).creatDialog("查看源代码",messageText,cancelButton,githubButton,giteeButton);
+
+    }
+
+    private void jumpToGithub(){
         try {
             Desktop.getDesktop().browse(new URI("https://github.com/eatenid/dogename"));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void jumpToGitee(){
+        try {
+            Desktop.getDesktop().browse(new URI("https://gitee.com/hety2002/dogename"));
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
