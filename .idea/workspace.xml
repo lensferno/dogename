@@ -9,6 +9,9 @@
       <artifact name="dogename:jar" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -29,13 +32,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb273c4-97d8-4b4e-bc17-3a7f133006ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mdfilesres/gugu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mdfilesres/icon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mdfilesres/top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mdfilesres/usage.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mdfilesres/you-want.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dogename.iml" beforeDir="false" afterPath="$PROJECT_DIR$/dogename.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/MainInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/MainInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/FXMLs/ProgramInfoPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/ProgramInfoPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/hety/dogename/main/controllers/ProgramInfoPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gugu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/you-want.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +67,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/me/hety/dogename/main/configs/MainConfig.java" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\ideaIC-2020.2.win\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1Y1qziZdMWGzl19y3OvDQoXLC41" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -79,12 +94,12 @@
     <property name="last.edited.regexp" value="Sample Text" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/dogename-old/src" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20683111" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -106,24 +121,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.DogeMain">
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DogeMain" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="me.hety.dogename.main.Main" />
       <module name="dogename" />
@@ -145,11 +142,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.DogeMain" />
       <item itemvalue="Application.DogeUpdater" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -168,23 +184,23 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="82" y="0" width="1326" height="860" key="#Project_Structure" timestamp="1597334992305">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="93" y="0" width="1326" height="860" key="#Project_Structure" timestamp="1597367202016">
+      <screen x="0" y="0" width="1638" height="824" />
     </state>
     <state x="78" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1591658534749" />
     <state x="82" y="0" width="1326" height="860" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1597334992305" />
+    <state x="93" y="0" key="#Project_Structure/0.0.1638.824@0.0.1638.824" timestamp="1597367202016" />
     <state x="571" y="322" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1597333566097">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -193,10 +209,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="427" y="195" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1366.728@0.0.1366.728" timestamp="1591437345107" />
-    <state x="218" y="113" key="FileChooserDialogImpl" timestamp="1591014629231">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="261" y="128" key="FileChooserDialogImpl" timestamp="1597367043015">
+      <screen x="0" y="0" width="1638" height="824" />
     </state>
     <state x="218" y="113" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591014629231" />
+    <state x="261" y="128" key="FileChooserDialogImpl/0.0.1638.824@0.0.1638.824" timestamp="1597367043015" />
     <state width="1397" height="222" key="GridCell.Tab.0.bottom" timestamp="1597335507249">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -217,11 +234,12 @@
     </state>
     <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591615636551" />
     <state width="1397" height="222" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1597335507248" />
-    <state x="155" y="0" width="969" height="728" key="SettingsEditor" timestamp="1597334292273">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="176" y="0" width="1103" height="706" key="SettingsEditor" timestamp="1597367132017">
+      <screen x="0" y="0" width="1638" height="824" />
     </state>
     <state x="147" y="0" width="969" height="728" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591434581461" />
     <state x="155" y="0" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1597334292273" />
+    <state x="176" y="0" width="1103" height="706" key="SettingsEditor/0.0.1638.824@0.0.1638.824" timestamp="1597367132017" />
     <state x="263" y="53" width="720" height="623" key="find.popup" timestamp="1591451021196">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

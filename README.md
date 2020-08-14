@@ -2,7 +2,7 @@
 
 # 一个用来点名的玩意/Some thing to choose name
 
-![ ](https://github.com/eatenid/dogename/raw/master/top.png "哟嚯！")
+![图片加载不出来欸~](https://github.com/eatenid/dogename/raw/master/mdfilesres/top.png "哟嚯！")
 
 看下面
 
@@ -18,13 +18,11 @@
 
 
 #### 用法介绍
-待补充，*~~咕咕咕~~*
-
-![ ](https://github.com/eatenid/dogename/raw/master/gugu.jpg "咕咕")
+[去去去➡](https://github.com/eatenid/dogename/blob/master/mdfilesres/usage.md)
 
 ## 截图/Screenshot:
 
-#### [来来来~](https://github.com/eatenid/dogename/blob/master/you-want.md "我要康康")
+#### [来来来~](https://github.com/eatenid/dogename/blob/master/mdfilesres/you-want.md "我要康康")
 
 
 ## 使用到的第三方库/Third-party library used：
