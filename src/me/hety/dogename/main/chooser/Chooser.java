@@ -2,16 +2,13 @@ package me.hety.dogename.main.chooser;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.AnimationTimer;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.control.Label;
 import me.hety.dogename.main.configs.VoiceConfig;
 import me.hety.dogename.main.data.History;
 import me.hety.dogename.main.data.NameData;
 import me.hety.dogename.main.voice.Token;
 import me.hety.dogename.main.voice.VoicePlayer;
 
-import java.io.*;
 import java.security.SecureRandom;
 import java.util.Random;
 import java.util.logging.Logger;
@@ -41,10 +38,14 @@ import java.util.logging.Logger;
 　＊＊╠╬╬╬╬╬╬╬╬＊﹨　　／　　／／
 
          */
+//一坨屎山，有待修改😒
 
 public final class Chooser {
 
     Logger log =Logger.getLogger("ChooserLogger");
+
+    final int UPPER_LABEL_ID = 1;
+    final int UNDER_LABEL_ID = 2;
 
     boolean taoluMode;
 
@@ -60,11 +61,13 @@ public final class Chooser {
 
     boolean voicePlay=true;
 
-    int chosenTime=120;
-    int times=0;
-    int already=0;
-    int singleCycle=0;
-    int showWhich=1;
+    int totalMaxCount =120;
+    int cycleMaxCount =0;
+
+    int totalCount =0;
+    int totalCycleCount =0;
+
+    int shownLabelId =1;
 
     String chosenName;
 
@@ -80,10 +83,6 @@ public final class Chooser {
 
     public JFXButton anpaiBtn;
 
-    public Label chosen_1;
-    public Label chosen_2;
-
-    public boolean isNameChoose=true;
     public short speed;
 
     NameData nameData;
@@ -94,8 +93,6 @@ public final class Chooser {
     StringProperty downLabelText;
 
     History history;
-    private String HISTORY_FILE;
-    private File historyFile;
 
     String speaker,speakSpeed,intonation;
 
@@ -103,22 +100,20 @@ public final class Chooser {
         nameData.writeIgnoreList("");
     }
 
-    SimpleBooleanProperty beTrueProperty=new SimpleBooleanProperty();
-    SimpleBooleanProperty beFalseProperty=new SimpleBooleanProperty();
 
     AnimationTimer timer =new AnimationTimer() {
         @Override
         public void handle(long now) {
 
             if(forceStop){
-                already=chosenTime+1;
+                totalCount = totalMaxCount +1;
             }
 
             try{
                 Thread.sleep(speed);
             }catch (Exception e){e.printStackTrace(); }
 
-            if(already>=chosenTime){
+            if(totalCount >= totalMaxCount){
                 if(!nameData.getIgnoreNameList().contains(chosenName)||!ignorePast||forceStop){
 
                     forceStop=false;
@@ -129,12 +124,12 @@ public final class Chooser {
                         writeIgnoreList();
 
                     cycleEnd=true;
-                    already=0;
-                    singleCycle=0;
+                    totalCount =0;
+                    totalCycleCount =0;
                     ignoreTimesOut=false;
 
-                    switch (showWhich){
-                        case 1:{
+                    switch (shownLabelId){
+                        case UPPER_LABEL_ID:{
 
                             if(downLabelText.get().contains("→")||downLabelText.get().contains("←"))
                                 downLabelText.set(downLabelText.get().replace("→ ","").replace(" ←",""));
@@ -146,7 +141,7 @@ public final class Chooser {
 
                             break;
                         }
-                        case 2:{
+                        case UNDER_LABEL_ID:{
                             if(upLabelText.get().contains("→")||upLabelText.get().contains("←"))
                                 upLabelText.set(upLabelText.get().replace("→ ","").replace(" ←",""));
 
@@ -160,8 +155,6 @@ public final class Chooser {
                     }
                     isRunning=false;
                     anpaiBtn.setText("安排一下");
-                    beTrueProperty.set(true);
-                    beFalseProperty.set(false);
                     stop();
                     System.gc();
                     history.addHistory(chosenName);
@@ -174,35 +167,35 @@ public final class Chooser {
 
 
             }
-            if(singleCycle>=times&&!ignoreTimesOut){
+            if(totalCycleCount >= cycleMaxCount &&!ignoreTimesOut){
                 cycleEnd=true;
-                singleCycle=0;
+                totalCycleCount =0;
             }
 
             if(cycleEnd){
                 //times=(int)(1+Math.random()*(chosenTime-already));
-                times=1+random.nextInt(chosenTime-already+1);
+                cycleMaxCount =1+random.nextInt(totalMaxCount - totalCount +1);
                 cycleEnd=false;
                 //showWhich=(int)(1+Math.random()*2);
-                showWhich=1+random.nextInt(2);
+                shownLabelId =1+random.nextInt(2);
             }
 
 
 
-            switch (showWhich){
-                case 1:{
+            switch (shownLabelId){
+                case UPPER_LABEL_ID:{
                     chosenName= nameData.randomGet();
                     upLabelText.set(chosenName);
-                    already++;
-                    singleCycle++;
+                    totalCount++;
+                    totalCycleCount++;
                     break;
                 }
 
-                case 2:{
+                case UNDER_LABEL_ID:{
                     chosenName= nameData.randomGet();
                     downLabelText.set(chosenName);
-                    already++;
-                    singleCycle++;
+                    totalCount++;
+                    totalCycleCount++;
                     break;
                 }
             }
@@ -217,14 +210,14 @@ public final class Chooser {
         public void handle(long now) {
 
             if(forceStop){
-                already=chosenTime+1;
+                totalCount = totalMaxCount +1;
             }
 
             try{
                 Thread.sleep(speed);
             }catch (Exception e){e.printStackTrace(); }
 
-            if(already>=chosenTime){
+            if(totalCount >= totalMaxCount){
                 if(!nameData.getIgnoreNumberList().contains(chosenName)||!ignorePast||forceStop){
 
                     forceStop=false;
@@ -235,13 +228,13 @@ public final class Chooser {
                         writeIgnoreList();
 
                     cycleEnd=true;
-                    already=0;
-                    singleCycle=0;
+                    totalCount =0;
+                    totalCycleCount =0;
                     ignoreTimesOut=false;
 
 
-                    switch (showWhich){
-                        case 1:{
+                    switch (shownLabelId){
+                        case UPPER_LABEL_ID:{
                             if(downLabelText.get().contains("→")||downLabelText.get().contains("←"))
                                 downLabelText.set(downLabelText.get().replace("→ ","").replace(" ←",""));
 
@@ -249,7 +242,7 @@ public final class Chooser {
 
                             break;
                         }
-                        case 2:{
+                        case UNDER_LABEL_ID:{
                             if(upLabelText.get().contains("→")||upLabelText.get().contains("←"))
                                 upLabelText.set(upLabelText.get().replace("→ ","").replace(" ←",""));
 
@@ -260,8 +253,6 @@ public final class Chooser {
                     }
                     isRunning=false;
                     anpaiBtn.setText("安排一下");
-                    beTrueProperty.set(true);
-                    beFalseProperty.set(false);
                     stop();
                     System.gc();
                     history.addHistory(chosenName);
@@ -273,31 +264,31 @@ public final class Chooser {
 
             }
 
-            showWhich=1+random.nextInt(2);
+            shownLabelId =1+random.nextInt(2);
             //speed=(short)(65+random.nextInt(100));
 
-            switch (showWhich){
-                case 1:{
+            switch (shownLabelId){
+                case UPPER_LABEL_ID:{
                     if(newAlgo)
                         chosenName=String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1));
                     else
                         chosenName=String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1));
 
                     upLabelText.set(chosenName);
-                    already++;
-                    singleCycle++;
+                    totalCount++;
+                    totalCycleCount++;
                     break;
                 }
 
-                case 2:{
+                case UNDER_LABEL_ID:{
                     if(newAlgo)
                         chosenName=String.valueOf(minNumber+random.nextInt(maxNumber-minNumber+1));
                     else
                         chosenName=String.valueOf(minNumber+secRandom.nextInt(maxNumber-minNumber+1));
 
                     downLabelText.set(chosenName);
-                    already++;
-                    singleCycle++;
+                    totalCount++;
+                    totalCycleCount++;
                     break;
                 }
             }
@@ -315,7 +306,7 @@ public final class Chooser {
     public void run(short speed,int chosenTime,boolean ignorePast,boolean equalMode,boolean taoluMode,boolean voicePlay){
 
         this.speed = speed;
-        this.chosenTime = chosenTime;
+        this.totalMaxCount = chosenTime;
         this.ignorePast = ignorePast;
         this.equalMode = equalMode;
         this.taoluMode = taoluMode;
@@ -329,7 +320,7 @@ public final class Chooser {
         this.maxNumber = maxNumber;
         this.minNumber = minNumber;
         this.speed = speed;
-        this.chosenTime = chosenTime;
+        this.totalMaxCount = chosenTime;
         this.ignorePast = ignorePast;
         this.equalMode = equalMode;
         this.taoluMode = taoluMode;
