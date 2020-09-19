@@ -71,17 +71,12 @@ public class NameManagerPaneController extends VBox  {
                 "问一下",
                 "真的要这个名字吗？该操作无法撤销，除非您已经备份了名单。",
                 e -> {
-                    nameData.delete(nameList.getSelectionModel().getSelectedItems().get(0));
-                    shownNameList.remove(nameList.getSelectionModel().getSelectedItems().get(0));
+                    String deletedName = nameList.getSelectionModel().getSelectedItems().get(0);
+                    
+                    nameData.delete(deletedName);
+                    shownNameList.remove(deletedName);
 
-                    //删除忽略列表中被清除的名字
-                    for(int i=0;i<nameData.getIgnoreNameList().size();i++){
-                        if(!nameData.getIgnoreNameList().contains(nameData.get(i))){
-                            nameData.getIgnoreNameList().remove(nameData.get(i));
-                        }
-                    }
-
-                    //删除套路列表中被清除的名字
+                    //删除套路列表中所有的名字
                     nameData.clearTaoluedName();
 
                     nameData.saveToFile();

@@ -297,7 +297,10 @@ public class NameData {
     public void delete(String name){
         if(nameList.isEmpty())
             return;
+
         nameList.remove(name);
+        ignoreNameList.remove(name);
+
         chooseList=new ArrayList<>(nameList);
         listSize=nameList.size();
         System.gc();
