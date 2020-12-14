@@ -44,6 +44,11 @@
                   <Font name="Microsoft YaHei" size="13.0" />
                </font>
             </JFXButton>
+            <JFXButton buttonType="RAISED" onAction="#showLibLicense" prefHeight="30.0" prefWidth="150.0" ripplerFill="#006063" style="-fx-background-color: #B2EBF2;" text="其他开源许可">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </JFXButton>
          </children>
       </HBox>
    </children>

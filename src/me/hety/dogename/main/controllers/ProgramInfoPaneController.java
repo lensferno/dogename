@@ -14,6 +14,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import me.hety.dogename.main.DataReleaser;
 import me.hety.dogename.main.DialogMaker;
+import me.hety.dogename.resources.LicenseText;
 
 import java.awt.*;
 import java.io.IOException;
@@ -50,6 +51,16 @@ public class ProgramInfoPaneController extends VBox {
         textArea.setPrefHeight(400);
         textArea.setEditable(false);
         new DialogMaker(rootPane).creatDialogWithOneBtn("开源协议（LGPL v3）",textArea);
+    }
+
+    @FXML
+    void showLibLicense(ActionEvent event) {
+        TextArea textArea=new TextArea(LicenseText.libLicense);
+        textArea.setFont(Font.font("Microsoft YaHei",14));
+        textArea.setMinWidth(600);
+        textArea.setPrefHeight(400);
+        textArea.setEditable(false);
+        new DialogMaker(rootPane).creatDialogWithOneBtn("其他开源许可",textArea);
     }
 
     @FXML

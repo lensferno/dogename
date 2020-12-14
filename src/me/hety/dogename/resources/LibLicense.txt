@@ -1,0 +1,27 @@
+
+This program uses the following libraries in accordance with the Apache License 2.0,
+You can get the full text of Apache License 2.0 at http://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------------------
+JFoenix (8.0.4)
+--------------------------------------------------
+  Copyright © JFoenix 2015-2017
+  https://github.com/jfoenixadmin/JFoenix
+  
+--------------------------------------------------
+Apache Commons Codec (1.11)
+--------------------------------------------------
+  Copyright © 2002-2020 The Apache Software Foundation
+  http://commons.apache.org/proper/commons-codec/
+
+--------------------------------------------------
+Gson (2.8.5)
+--------------------------------------------------
+  Copyright 2008 Google Inc.
+  https://github.com/google/gson
+
+--------------------------------------------------
+OkHttp3 (4.2.2)
+--------------------------------------------------
+  Copyright 2019 Square, Inc.
+  https://github.com/square/okhttp
