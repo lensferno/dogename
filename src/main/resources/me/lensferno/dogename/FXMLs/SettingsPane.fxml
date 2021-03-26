@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.*?>
+
+<fx:root prefHeight="360.0" prefWidth="593.0" style="-fx-background-color: white;" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="50.0" prefWidth="592.0" spacing="10.0">
+         <children>
+            <Pane prefHeight="50.0" prefWidth="296.0">
+               <children>
+                  <JFXRadioButton fx:id="ignoreOnce" layoutX="14.0" layoutY="14.0" selected="true" text="人人有份(跳过已点过的名字)">
+                     <font>
+                        <Font name="Microsoft YaHei" size="17.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="296.0">
+               <children>
+                  <JFXCheckBox fx:id="equalModeBtn" checkedColor="#079cd7" layoutX="14.0" layoutY="11.0" onAction="#equalBtnAction" prefHeight="28.0" prefWidth="162.0" text="记录已点过的名字" unCheckedColor="#13aecf">
+                     <font>
+                        <Font name="Microsoft YaHei" size="14.0" />
+                     </font>
+                  </JFXCheckBox>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <HBox prefHeight="50.0" prefWidth="592.0" spacing="10.0">
+         <children>
+            <Pane prefHeight="50.0" prefWidth="296.0">
+               <children>
+                  <JFXRadioButton fx:id="chooseOnce" layoutX="14.0" layoutY="14.0" text="概率均分(不跳过已点过的名字)">
+                     <font>
+                        <Font name="Microsoft YaHei" size="17.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="286.0" spacing="1.0">
+               <children>
+                  <JFXButton buttonType="RAISED" onAction="#clearIgnoreList" prefHeight="30.0" prefWidth="131.0" ripplerFill="#04d5ff" style="-fx-background-color: rgba(0,0,0,0.09);" text="清空记录" textFill="#1797e3">
+                     <font>
+                        <Font name="Microsoft YaHei" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="11.0" onAction="#showEqualMode" prefHeight="30.0" prefWidth="131.0" ripplerFill="#00e842" style="-fx-background-color: rgba(0,0,0,0.09);" text="选项说明" textFill="#294f65">
+                     <font>
+                        <Font name="Microsoft YaHei" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Line endX="592.0" />
+      <Pane prefHeight="50.0" prefWidth="592.0">
+         <children>
+            <JFXRadioButton fx:id="randomTimes" layoutX="14.0" layoutY="14.0" selected="true" text="挑选次数随机（100~250）">
+               <font>
+                  <Font name="Microsoft YaHei" size="17.0" />
+               </font>
+            </JFXRadioButton>
+         </children>
+      </Pane>
+      <HBox prefHeight="50.0" prefWidth="592.0">
+         <children>
+            <JFXRadioButton fx:id="fixedTimes" text="挑选次数固定：">
+               <font>
+                  <Font name="Microsoft YaHei" size="17.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXSlider fx:id="cycleTimesBar" max="200.0" min="3.0" prefHeight="18.0" prefWidth="386.0" showTickLabels="true" showTickMarks="true" value="120.0" />
+         </children>
+         <padding>
+            <Insets left="14.0" top="14.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <Line endX="592.0" />
+      <HBox prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="23.0" prefWidth="57.0" text="调速：">
+               <font>
+                  <Font name="Microsoft YaHei" size="17.0" />
+               </font>
+            </Label>
+            <JFXSlider fx:id="speedBar" majorTickUnit="10.0" prefHeight="15.0" prefWidth="479.0" showTickLabels="true" showTickMarks="true" value="80.0" />
+         </children>
+         <padding>
+            <Insets left="14.0" top="14.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <Line endX="592.0" />
+      <Pane prefHeight="50.0" prefWidth="593.0">
+         <children>
+            <JFXCheckBox fx:id="newAlgoBtn" checkedColor="#079cd7" layoutX="14.0" layoutY="14.0" selected="true" text="使用Java SecureRandom随机算法" textFill="#2c2424" unCheckedColor="#13aecf">
+               <font>
+                  <Font name="Microsoft YaHei" size="14.0" />
+               </font>
+            </JFXCheckBox>
+         </children>
+      </Pane>
+      <HBox prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <JFXCheckBox fx:id="showSayingBtn" checkedColor="#079cd7" prefHeight="31.0" prefWidth="188.0" selected="true" text="启动时展示一言/古诗词" textFill="#2c2424" unCheckedColor="#13aecf">
+               <font>
+                  <Font name="Microsoft YaHei" size="14.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="voicePlayBtn" checkedColor="#079cd7" prefHeight="31.0" prefWidth="82.0" selected="true" text="语音播报" textFill="#2c2424" unCheckedColor="#13aecf">
+               <font>
+                  <Font name="Microsoft YaHei" size="14.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXButton onAction="#showVoiceSettingsPane" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: rgba(0,0,0,0.09);" text="语音设置">
+               <font>
+                  <Font name="Microsoft YaHei" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets left="14.0" top="14.0" />
+         </padding>
+      </HBox>
+   </children>
+</fx:root>
