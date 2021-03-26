@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.*?>
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="499.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.lensferno.dogename.controllers.OcrPaneController">
+   <children>
+      <TextArea fx:id="ocrText" prefHeight="566.0" prefWidth="236.0" promptText="识别出的内容会在这里显示">
+         <font>
+            <Font name="Microsoft YaHei" size="14.0" />
+         </font>
+      </TextArea>
+      <VBox alignment="TOP_CENTER" prefHeight="538.0" prefWidth="236.0" spacing="10.0">
+         <children>
+            <Pane>
+               <children>
+                  <JFXSpinner fx:id="loadingSpinner" mouseTransparent="true" prefHeight="63.0" prefWidth="231.0" visible="false" />
+                  <Text fx:id="statusText" layoutX="1.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="236.0">
+                     <font>
+                        <Font name="Microsoft YaHei" size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Line endX="236.0" stroke="#0000006d" strokeWidth="2.0" />
+            <JFXButton onAction="#addNew" prefHeight="40.0" prefWidth="205.0" text="截屏并开始识别">
+               <font>
+                  <Font name="Microsoft YaHei" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton onAction="#copyText" prefHeight="40.0" prefWidth="205.0" text="复制内容">
+               <font>
+                  <Font name="Microsoft YaHei" size="14.0" />
+               </font>
+            </JFXButton>
+            <Line endX="236.0" stroke="#0000006d" strokeWidth="2.0" />
+            <Label text="小提示：">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" prefHeight="67.0" prefWidth="236.0" text="1．点击“截屏并开始识别”可开始截取屏幕内容并开始识别，识别出来的文字会添加进左侧的文本框中。" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" prefHeight="48.0" prefWidth="236.0" text="２．识别完成后请对右侧的识别内容进行修改，使得一行只有一个名字。" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" prefHeight="50.0" prefWidth="236.0" text="３．确保正确后请将左侧的文字复制后粘贴到名字输入框中，以便添加名字。" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" prefHeight="24.0" prefWidth="236.0" text="４．点击鼠标右键可退出截图。" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </Label>
+            <Label text="注意：">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" prefHeight="24.0" prefWidth="236.0" text="　　　　本功能需要联网使用" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="Microsoft YaHei" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+   </padding>
+</HBox>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="134.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.lensferno.dogename.controllers.MiniPaneController">
+   <children>
+      <Label fx:id="chosenNameLabel" alignment="CENTER" prefHeight="68.0" prefWidth="300.0" text="（´□｀川）" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Microsoft YaHei" size="48.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="67.0" prefWidth="405.0" spacing="20.0">
+         <children>
+            <JFXButton fx:id="miniModeBtn" onAction="#recoverMode" prefHeight="60.0" prefWidth="166.0" text="恢复">
+               <font>
+                  <Font name="Microsoft YaHei" size="26.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="anPaiBtn" onAction="#anPai" prefHeight="60.0" prefWidth="166.0" text="安排一下">
+               <font>
+                  <Font name="Microsoft YaHei" size="26.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</VBox>
