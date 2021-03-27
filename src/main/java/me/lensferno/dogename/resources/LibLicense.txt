@@ -15,6 +15,12 @@ Apache Commons Codec (1.11)
   http://commons.apache.org/proper/commons-codec/
 
 --------------------------------------------------
+Apache Commons Codec (1.11)
+--------------------------------------------------
+  Copyright © 2002-2020 The Apache Software Foundation
+  http://commons.apache.org/proper/commons-codec/
+
+--------------------------------------------------
 Gson (2.8.5)
 --------------------------------------------------
   Copyright 2008 Google Inc.
