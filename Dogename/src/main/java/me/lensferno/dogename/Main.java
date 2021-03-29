@@ -12,6 +12,8 @@ import me.lensferno.dogename.sayings.Hitokoto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
+import java.lang.management.ManagementFactory;
 import java.util.Random;
 
 public class Main extends Application {
@@ -22,6 +24,20 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
+        try {
+            String pid = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
+
+            new File("process").mkdirs();
+
+            File tempFile = new File("process" + File.separator + pid);
+            tempFile.createNewFile();
+            tempFile.deleteOnExit();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         FXMLLoader fxmlLoader;
         Parent parent;
 
@@ -51,7 +67,10 @@ public class Main extends Application {
 
         mainInterfaceController.setImg(DataReleaser.getMainPicStream());
 
-        primaryStage.setOnCloseRequest(event -> configLoader.writeAllConfigToFile(configLoader.getMainConfigLocation(),configLoader.getVoiceConfigLocation()));
+        primaryStage.setOnCloseRequest(event -> {
+            configLoader.writeAllConfigToFile(configLoader.getMainConfigLocation(), configLoader.getVoiceConfigLocation());
+            System.exit(0);
+        });
         
         if (mainInterfaceController.getMainConfig().isShowSaying()) {
             if (new Random().nextBoolean()){
