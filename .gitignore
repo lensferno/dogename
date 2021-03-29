@@ -1,9 +1,9 @@
-/out
-/files
-/caches
-/target
+out
+files
+caches
+target
 *.token
-/target/
-/log/
-/logs/
+target
+log
+logs
 .idea
