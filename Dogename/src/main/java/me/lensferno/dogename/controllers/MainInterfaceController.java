@@ -183,7 +183,7 @@ public final class MainInterfaceController {
         miniPaneController.setListeners();
 
         miniStage.show();
-        currentStage.close();
+        currentStage.hide();
 
     }
 
