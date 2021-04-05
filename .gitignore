@@ -8,3 +8,7 @@ log
 logs
 .idea
 process
+pkg
+*.exe
+*.jar
+*.log
