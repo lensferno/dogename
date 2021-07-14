@@ -5,214 +5,207 @@ import javafx.beans.property.*;
 
 public class MainConfig {
 
-    // ConfigValuesBean configValuesBean =new ConfigValuesBean();
-
     // ---------------------- Default values ---------------------------------------------------------
 
-    @Expose
-    private final String NEWEST_CONFIG_VERSION = "2";
-
-    private String currentConfigVersion = null;
+    private final int currentVersion = 3;
 
     @Expose
-    public final boolean DEFAULT_NAME_CHOOSE = true;
+    public static final boolean DEFAULT_NAME_CHOOSE = true;
 
-    public final int METHOD_NAME = 0; // 名字挑选法
-    public final int METHOD_NUMBER = 1; // 数字挑选法
+    public static final int METHOD_NAME = 0; // 名字挑选法
+    public static final int METHOD_NUMBER = 1; // 数字挑选法
 
-    public final int DEFAULT_CYCLE_TIMES = 120; // 默认轮回次数:120
-    public final int DEFAULT_SPEED = 80; // 默认速度:20ms,对应滑动条80的位置
+    public static final int DEFAULT_MAX_TOTAL_COUNT = 120; // 默认轮回次数:120
+    public static final int DEFAULT_SPEED = 80; // 默认速度:20ms,对应滑动条80的位置
 
-    public final boolean DEFAULT_RANDOM_TIMES = true; // 默认挑选轮回次数是否随机:ture
+    public static final boolean DEFAULT_RANDOM_TIMES = true; // 默认挑选轮回次数是否随机:ture
 
-    public final boolean DEFAULT_IGNORE_PAST = true; // 默认忽略已经点过的名字:ture
+    public static final boolean DEFAULT_IGNORE_PAST = true; // 默认忽略已经点过的名字:ture
 
-    public final boolean DEFAULT_EQUAL_MODE = true; // 默认开启"机会均等"
+    public static final boolean DEFAULT_EQUAL_MODE = true; // 默认开启"机会均等"
 
-    public final boolean DEFAULT_NEW_ALGO = true; // 默认使用新算法"Java sec random"
-    public final boolean DEFAULT_VOICE_PLAY = true; // 默认使用语音播报
+    public static final boolean DEFAULT_NEW_ALGO = true; // 默认使用新算法"Java sec random"
+    public static final boolean DEFAULT_VOICE_PLAY = true; // 默认使用语音播报
 
-    public final boolean DEFAULT_SHOW_SAYING = true;
+    public static final boolean DEFAULT_SHOW_SAYING = true;
 
     // ----------------------Properties----------------------------------------------------------------
 
-    private SimpleBooleanProperty nameChooseProperty;
+    private SimpleBooleanProperty nameChoose;
 
-    private SimpleBooleanProperty randomTimesProperty; // 挑选次数是否随机
-    private SimpleBooleanProperty ignorePastProperty; // 是否忽略已经被点过的名字
+    private SimpleBooleanProperty randomCount; // 挑选次数是否随机
+    private SimpleBooleanProperty passSelectedResult; // 是否忽略已经被点过的名字/数字
 
-    private SimpleIntegerProperty chooseMethodProperty; // 挑选方式: 0->名字挑选法 1->数字挑选法
-    private SimpleIntegerProperty cycleTimesProperty; // 挑选轮回次数,旧称"chosenTime"
+    private SimpleIntegerProperty chooseMethod; // 挑选方式: 0->名字挑选法 1->数字挑选法
+    private SimpleIntegerProperty maxTotalCount; // 挑选轮回次数
 
-    private SimpleIntegerProperty speedProperty; // 速度
+    private SimpleIntegerProperty speed; // 速度
 
-    private SimpleStringProperty minNumberProperty; // 最小值
-    private SimpleStringProperty maxNumberProperty; // 最大值
+    private SimpleStringProperty minNumber; // 最小值
+    private SimpleStringProperty maxNumber; // 最大值
 
-    private SimpleBooleanProperty equalModeProperty; // 是否开启"机会均等"
+    private SimpleBooleanProperty equalMode; // 是否开启"机会均等"
 
-    private SimpleBooleanProperty newAlgoProperty; // 是否使用新算法
-    private SimpleBooleanProperty voicePlayProperty; // 是否使用语音播报
+    private SimpleBooleanProperty secureRandom; // 是否使用secure random
+    private SimpleBooleanProperty voicePlay; // 是否使用语音播报
 
     private SimpleBooleanProperty showSaying;
 
     // -------------------------- 初始化 --------------------------------------------------------------
     public MainConfig() {
-        randomTimesProperty = new SimpleBooleanProperty(DEFAULT_RANDOM_TIMES);
-        ignorePastProperty = new SimpleBooleanProperty(DEFAULT_IGNORE_PAST);
+        randomCount = new SimpleBooleanProperty(DEFAULT_RANDOM_TIMES);
+        passSelectedResult = new SimpleBooleanProperty(DEFAULT_IGNORE_PAST);
 
-        chooseMethodProperty = new SimpleIntegerProperty(METHOD_NAME);
-        nameChooseProperty = new SimpleBooleanProperty(DEFAULT_NAME_CHOOSE);
+        chooseMethod = new SimpleIntegerProperty(METHOD_NAME);
+        nameChoose = new SimpleBooleanProperty(DEFAULT_NAME_CHOOSE);
 
-        cycleTimesProperty = new SimpleIntegerProperty(DEFAULT_CYCLE_TIMES);
+        maxTotalCount = new SimpleIntegerProperty(DEFAULT_MAX_TOTAL_COUNT);
 
-        speedProperty = new SimpleIntegerProperty(DEFAULT_SPEED);
+        speed = new SimpleIntegerProperty(DEFAULT_SPEED);
 
-        minNumberProperty = new SimpleStringProperty("0");
-        maxNumberProperty = new SimpleStringProperty("10");
+        minNumber = new SimpleStringProperty("0");
+        maxNumber = new SimpleStringProperty("10");
 
-        equalModeProperty = new SimpleBooleanProperty(DEFAULT_EQUAL_MODE);
+        equalMode = new SimpleBooleanProperty(DEFAULT_EQUAL_MODE);
 
-        newAlgoProperty = new SimpleBooleanProperty(DEFAULT_NEW_ALGO);
-        voicePlayProperty = new SimpleBooleanProperty(DEFAULT_VOICE_PLAY);
+        secureRandom = new SimpleBooleanProperty(DEFAULT_NEW_ALGO);
+        voicePlay = new SimpleBooleanProperty(DEFAULT_VOICE_PLAY);
 
         showSaying = new SimpleBooleanProperty(DEFAULT_SHOW_SAYING);
-
-        currentConfigVersion = NEWEST_CONFIG_VERSION;
     }
 
     // -------------------------- Getters and Setters ---------------------------------------------
 
-    public boolean isNameChooseProperty() {
-        return nameChooseProperty.get();
+    public boolean getNameChoose() {
+        return nameChoose.get();
     }
 
-    public SimpleBooleanProperty nameChoosePropertyProperty() {
-        return nameChooseProperty;
+    public SimpleBooleanProperty nameChooseProperty() {
+        return nameChoose;
     }
 
-    public void setNameChooseProperty(boolean nameChooseProperty) {
-        this.nameChooseProperty.set(nameChooseProperty);
+    public void setNameChoose(boolean nameChoose) {
+        this.nameChoose.set(nameChoose);
     }
 
-    public boolean isRandomTimesProperty() {
-        return randomTimesProperty.get();
+    public boolean getRandomCount() {
+        return randomCount.get();
     }
 
-    public SimpleBooleanProperty randomTimesPropertyProperty() {
-        return randomTimesProperty;
+    public SimpleBooleanProperty randomCountProperty() {
+        return randomCount;
     }
 
-    public void setRandomTimesProperty(boolean randomTimesProperty) {
-        this.randomTimesProperty.set(randomTimesProperty);
+    public void setRandomCount(boolean randomCount) {
+        this.randomCount.set(randomCount);
     }
 
-    public boolean isIgnorePastProperty() {
-        return ignorePastProperty.get();
+    public boolean getPassSelectedResult() {
+        return passSelectedResult.get();
     }
 
-    public SimpleBooleanProperty ignorePastPropertyProperty() {
-        return ignorePastProperty;
+    public SimpleBooleanProperty passSelectedResultProperty() {
+        return passSelectedResult;
     }
 
-    public void setIgnorePastProperty(boolean ignorePastProperty) {
-        this.ignorePastProperty.set(ignorePastProperty);
+    public void setPassSelectedResult(boolean passSelectedResult) {
+        this.passSelectedResult.set(passSelectedResult);
     }
 
-    public int getChooseMethodProperty() {
-        return chooseMethodProperty.get();
+    public int getChooseMethod() {
+        return chooseMethod.get();
     }
 
-    public SimpleIntegerProperty chooseMethodPropertyProperty() {
-        return chooseMethodProperty;
+    public SimpleIntegerProperty chooseMethodProperty() {
+        return chooseMethod;
     }
 
-    public void setChooseMethodProperty(int chooseMethodProperty) {
-        this.chooseMethodProperty.set(chooseMethodProperty);
+    public void setChooseMethod(int chooseMethod) {
+        this.chooseMethod.set(chooseMethod);
     }
 
-    public int getCycleTimesProperty() {
-        return cycleTimesProperty.get();
+    public int getMaxTotalCount() {
+        return maxTotalCount.get();
     }
 
-    public SimpleIntegerProperty cycleTimesPropertyProperty() {
-        return cycleTimesProperty;
+    public SimpleIntegerProperty maxTotalCountProperty() {
+        return maxTotalCount;
     }
 
-    public void setCycleTimesProperty(int cycleTimesProperty) {
-        this.cycleTimesProperty.set(cycleTimesProperty);
+    public void setMaxTotalCount(int maxTotalCount) {
+        this.maxTotalCount.set(maxTotalCount);
     }
 
-    public int getSpeedProperty() {
-        return speedProperty.get();
+    public int getSpeed() {
+        return speed.get();
     }
 
-    public SimpleIntegerProperty speedPropertyProperty() {
-        return speedProperty;
+    public SimpleIntegerProperty speedProperty() {
+        return speed;
     }
 
-    public void setSpeedProperty(int speedProperty) {
-        this.speedProperty.set(speedProperty);
+    public void setSpeed(int speed) {
+        this.speed.set(speed);
     }
 
-    public String getMinNumberProperty() {
-        return minNumberProperty.get();
+    public String getMinNumber() {
+        return minNumber.get();
     }
 
-    public SimpleStringProperty minNumberPropertyProperty() {
-        return minNumberProperty;
+    public SimpleStringProperty minNumberProperty() {
+        return minNumber;
     }
 
-    public void setMinNumberProperty(String minNumberProperty) {
-        this.minNumberProperty.set(minNumberProperty);
+    public void setMinNumber(String minNumber) {
+        this.minNumber.set(minNumber);
     }
 
-    public String getMaxNumberProperty() {
-        return maxNumberProperty.get();
+    public String getMaxNumber() {
+        return maxNumber.get();
     }
 
-    public SimpleStringProperty maxNumberPropertyProperty() {
-        return maxNumberProperty;
+    public SimpleStringProperty maxNumberProperty() {
+        return maxNumber;
     }
 
-    public void setMaxNumberProperty(String maxNumberProperty) {
-        this.maxNumberProperty.set(maxNumberProperty);
+    public void setMaxNumber(String maxNumber) {
+        this.maxNumber.set(maxNumber);
     }
 
-    public boolean isEqualModeProperty() {
-        return equalModeProperty.get();
+    public boolean getEqualMode() {
+        return equalMode.get();
     }
 
-    public SimpleBooleanProperty equalModePropertyProperty() {
-        return equalModeProperty;
+    public SimpleBooleanProperty equalModeProperty() {
+        return equalMode;
     }
 
-    public void setEqualModeProperty(boolean equalModeProperty) {
-        this.equalModeProperty.set(equalModeProperty);
+    public void setEqualMode(boolean equalMode) {
+        this.equalMode.set(equalMode);
     }
 
-    public boolean isNewAlgoProperty() {
-        return newAlgoProperty.get();
+    public boolean getSecureRandom() {
+        return secureRandom.get();
     }
 
-    public SimpleBooleanProperty newAlgoPropertyProperty() {
-        return newAlgoProperty;
+    public SimpleBooleanProperty secureRandomProperty() {
+        return secureRandom;
     }
 
-    public void setNewAlgoProperty(boolean newAlgoProperty) {
-        this.newAlgoProperty.set(newAlgoProperty);
+    public void setSecureRandom(boolean secureRandom) {
+        this.secureRandom.set(secureRandom);
     }
 
-    public boolean isVoicePlayProperty() {
-        return voicePlayProperty.get();
+    public boolean getVoicePlay() {
+        return voicePlay.get();
     }
 
-    public SimpleBooleanProperty voicePlayPropertyProperty() {
-        return voicePlayProperty;
+    public SimpleBooleanProperty voicePlayProperty() {
+        return voicePlay;
     }
 
-    public void setVoicePlayProperty(boolean voicePlayProperty) {
-        this.voicePlayProperty.set(voicePlayProperty);
+    public void setVoicePlay(boolean voicePlay) {
+        this.voicePlay.set(voicePlay);
     }
 
     public boolean isShowSaying() {
@@ -227,16 +220,8 @@ public class MainConfig {
         this.showSaying.set(showSaying);
     }
 
-    public String getCurrentConfigVersion() {
-        return currentConfigVersion;
-    }
-
-    public void setCurrentConfigVersion(String currentConfigVersion) {
-        this.currentConfigVersion = currentConfigVersion;
-    }
-
-    public String getNewestConfigVersion() {
-        return NEWEST_CONFIG_VERSION;
+    public int getCurrentConfigVersion() {
+        return currentVersion;
     }
 
 }

@@ -53,8 +53,7 @@ public class History {
         if(history.size()>2000) {
             history.clear();
         }
-        history.add((history.size() + 1) +". "+name);
-
+        history.add(String.format("%d. %s", (history.size() + 1), name));
         writeHistory();
     }
 

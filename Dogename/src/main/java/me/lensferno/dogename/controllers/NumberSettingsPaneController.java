@@ -29,10 +29,10 @@ public class NumberSettingsPaneController extends VBox {
 
     public void bindProperties(MainConfig mainConfig){
 
-        minValueField.textProperty().bindBidirectional(mainConfig.minNumberPropertyProperty());
+        minValueField.textProperty().bindBidirectional(mainConfig.minNumberProperty());
         minValueField.textProperty().addListener((observable, oldValue, newValue) -> nameData.clearNumberIgnoreList() );
 
-        maxValueField.textProperty().bindBidirectional(mainConfig.maxNumberPropertyProperty());
+        maxValueField.textProperty().bindBidirectional(mainConfig.maxNumberProperty());
         maxValueField.textProperty().addListener((observable, oldValue, newValue) -> nameData.clearNumberIgnoreList() );
     }
 

@@ -17,6 +17,9 @@ public class NameData {
 
     private List<String> chooseList;
     private int listSize = 0;
+    
+    public static final int NAME_ONLY = 0;
+    public static final int NUMBER_ONLY = 1;
 
 
     HashSet<String> ignoreNameList=new HashSet<>();
@@ -33,30 +36,37 @@ public class NameData {
     File nameIgnoreFile =new File("files"+File.separator+"IgnoredNameList.data");
     File numbIgnoreFile =new File("files"+File.separator+"IgnoredNumberList.data");
 
-    public void writeIgnoreList(String switchy){
-
-        if(!switchy.equals("not name")) {
-            try {
-                ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nameIgnoreFile));
-                oos.writeObject(ignoreNameList);
-                oos.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+    public void writeIgnoreList(int switchy){
+        switch (switchy) {
+            case NAME_ONLY:
+                writeNameIgnoreList();
+            case NUMBER_ONLY:
+                writeNumberIgnoreList();
+            default:
+                writeNumberIgnoreList();
+                writeNameIgnoreList();
         }
-
-        if(!switchy.equals("not number")) {
-            try {
-                ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(numbIgnoreFile));
-                oos.writeObject(ignoreNumberList);
-                oos.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
     }
 
+    private void writeNameIgnoreList() {
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nameIgnoreFile));
+            oos.writeObject(ignoreNameList);
+            oos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void writeNumberIgnoreList() {
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(numbIgnoreFile));
+            oos.writeObject(ignoreNumberList);
+            oos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public void readIgnoreList(){
 
@@ -66,7 +76,7 @@ public class NameData {
                 nameIgnoreFile.getParentFile().mkdirs();
                 nameIgnoreFile.createNewFile();
                 ignoreNameList= new HashSet<>();
-                writeIgnoreList("not number");
+                writeIgnoreList(NAME_ONLY);
                 return;
             }
 
@@ -76,10 +86,10 @@ public class NameData {
         }catch (EOFException e){
             ignoreNameList=new HashSet<>();
             log.warn("Past name list is empty.");
-            writeIgnoreList("not number");
+            writeIgnoreList(NAME_ONLY);
         }catch (Exception e){
             ignoreNameList=new HashSet<>();
-            writeIgnoreList("not number");
+            writeIgnoreList(NAME_ONLY);
             log.warn("Failed to load past name list:"+e.toString());
             e.printStackTrace();
         }
@@ -90,7 +100,7 @@ public class NameData {
                 numbIgnoreFile.getParentFile().mkdirs();
                 numbIgnoreFile.createNewFile();
                 ignoreNumberList= new HashSet<>();
-                writeIgnoreList("not name");
+                writeIgnoreList(NUMBER_ONLY);
                 return;
             }
 
@@ -100,11 +110,11 @@ public class NameData {
         }catch (EOFException e){
             ignoreNumberList=new HashSet<>();
             log.warn("Ignored number list is empty.");
-            writeIgnoreList("not name");
+            writeIgnoreList(NUMBER_ONLY);
         }catch (Exception e){
             ignoreNumberList=new HashSet<>();
             log.warn("Failed to load ignored number list");
-            writeIgnoreList("not name");
+            writeIgnoreList(NUMBER_ONLY);
             e.printStackTrace();
         }
 
@@ -114,12 +124,12 @@ public class NameData {
 
     public void clearNameIgnoreList(){
         ignoreNameList.clear();
-        writeIgnoreList("not number");
+        writeIgnoreList(NAME_ONLY);
     }
 
     public void clearNumberIgnoreList(){
         ignoreNumberList.clear();
-        writeIgnoreList("not name");
+        writeIgnoreList(NUMBER_ONLY);
     }
 
 
@@ -316,8 +326,8 @@ public class NameData {
     Random random =new Random();
 
     //------------------------------------------------------
-    public String randomGet(){
-        if(newAlgo)
+    public String randomGet(boolean secureRandom){
+        if(secureRandom)
             return  nameList.get(secRandom.nextInt(nameList.size()));
         else
             return  nameList.get(random.nextInt(nameList.size()));

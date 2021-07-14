@@ -1,6 +1,7 @@
 package me.lensferno.dogename.voice;
 
 import javazoom.spi.mpeg.sampled.file.MpegAudioFileReader;
+import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.utils.FileProcessor;
 import okhttp3.*;
 import org.apache.logging.log4j.LogManager;
@@ -23,12 +24,13 @@ public class VoicePlayer {
     Logger log= LogManager.getLogger("VoicePlayerLogger");
 
     private final String VOICE_API="https://tsn.baidu.com/text2audio";
+    private VoiceConfig voiceConfig = null;
 
     Token token;
 
-    public VoicePlayer(Token token){
-        this.token=token;
-
+    public VoicePlayer(Token token, VoiceConfig voiceConfig){
+        this.token = token;
+        this.voiceConfig = voiceConfig;
     }
 
     String cachedVoicePath="caches"+separator+"voice"+separator;
@@ -42,10 +44,14 @@ public class VoicePlayer {
             .build();
 
 
-    public void playVoice(String name,String speaker,String intonation,String speed) {
+    public void playVoice(String name) {
+        String speaker = voiceConfig.getSpeaker();
+        String intonation = String.valueOf(voiceConfig.getIntonation());
+        String speed = String.valueOf(voiceConfig.getSpeed());
 
         String cachedVoiceName;
         cachedVoiceName = name + "_" + speaker+ "_" + speed +"_"+intonation;
+        cachedVoiceName = String.format("%s_%s_%s_%s", name, speaker, speed,intonation);
 
         File cachedVoice = new File(cachedVoicePath + cachedVoiceName + ".mp3");
 

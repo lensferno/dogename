@@ -12,16 +12,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import me.lensferno.dogename.select.Selector;
 import me.lensferno.dogename.utils.DialogMaker;
-import me.lensferno.dogename.choose.Chooser;
 import me.lensferno.dogename.configs.ConfigLoader;
 import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.data.NameData;
 import me.lensferno.dogename.ocr.Ocr;
-import me.lensferno.dogename.voice.Token;
-import me.lensferno.dogename.voice.TokenManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -34,11 +32,6 @@ import java.util.Random;
 public final class MainInterfaceController {
 
     public JFXTextArea message;
-
-    //ConfigLoader configLoader=new ConfigLoader();
-
-    Token token;
-    TokenManager tokenManager=new TokenManager();
 
     Ocr ocrTool=null;
 
@@ -60,9 +53,6 @@ public final class MainInterfaceController {
     private JFXButton anPaiBtn;
 
     @FXML
-    private JFXButton anPaiX10Btn;
-
-    @FXML
     private Pane mainPane;
 
     @FXML
@@ -72,7 +62,7 @@ public final class MainInterfaceController {
     private JFXButton showNameMangerButton;
 
     @FXML
-    private Label chosen_1;
+    private Label upperLabel;
 
     @FXML
     private ImageView mainView;
@@ -81,35 +71,27 @@ public final class MainInterfaceController {
     private JFXButton miniModeBtn;
 
     @FXML
-    private Label chosen_2;
+    private Label downLabel;
 
     public MainInterfaceController(){
         history.loadHistory();
         nameData.readIgnoreList();
-        tokenManager.init();
         this.ignoreNameList=nameData.getIgnoreNameList();
         this.ignoreNumberList=nameData.getIgnoreNumberList();
-        if(tokenManager.getTokenStatus().equals("ok")){
-            token=tokenManager.getToken();
-        }
     }
 
     MainConfig mainConfig;
     VoiceConfig voiceConfig;
 
     public void bindProperties(){
-        nameChoose.selectedProperty().bindBidirectional(mainConfig.nameChoosePropertyProperty());
-        //mainConfig.nameChoosePropertyProperty().not()
+        nameChoose.selectedProperty().bindBidirectional(mainConfig.nameChooseProperty());
 
-        numbChoose.selectedProperty().bind(mainConfig.nameChoosePropertyProperty().not());
+        numbChoose.selectedProperty().bind(mainConfig.nameChooseProperty().not());
         numbChoose.selectedProperty().unbind();
 
-/*
-        mainConfig.nameChoosePropertyProperty().addListener((observable, oldValue, newValue) -> {
-            //numbChoose.selectedProperty().unbind();
-            numbChoose.setSelected(oldValue);
-        });*/
-
+        mainConfig.nameChooseProperty().addListener((observable, oldValue, newValue) -> {
+            mainConfig.setChooseMethod(mainConfig.getNameChoose() ? MainConfig.METHOD_NAME : MainConfig.METHOD_NUMBER);
+        });
     }
 
     public void setImg(InputStream stream){
@@ -130,7 +112,7 @@ public final class MainInterfaceController {
     @FXML
     void showNameManger(ActionEvent event) {
 
-        if (chooser.isRunning()){
+        if (selector.isWorkerRunning()){
             new DialogMaker(rootPane).createMessageDialog("(・。・)","安排中......\n为保证运行的稳定，此时还不能进行该操作哦。");
             return;
         }
@@ -138,12 +120,10 @@ public final class MainInterfaceController {
         new DialogMaker(rootPane).createDialogWithOneBtn("名单管理",nameManagerPaneController);
     }
 
-
-
     @FXML
     void showNunberSetting(ActionEvent event) {
 
-        if (chooser.isRunning()){
+        if (selector.isWorkerRunning()){
             new DialogMaker(rootPane).createMessageDialog("(・。・)","安排中......\n为保证运行的稳定，此时还不能进行该操作哦。");
             return;
         }
@@ -172,7 +152,7 @@ public final class MainInterfaceController {
         miniStage.initStyle(StageStyle.UNDECORATED);
 
         MiniPaneController miniPaneController=loader.getController();
-        miniPaneController.setBase(history,nameData,token,voiceConfig,mainConfig);
+        miniPaneController.setBase(nameData, mainConfig, selector);
 
         Stage currentStage=(Stage)anPaiBtn.getScene().getWindow();
         miniPaneController.setForwStage(currentStage);
@@ -184,7 +164,6 @@ public final class MainInterfaceController {
 
         miniStage.show();
         currentStage.hide();
-
     }
 
     @FXML
@@ -218,31 +197,41 @@ public final class MainInterfaceController {
     HashSet<String> ignoreNumberList;
 
     NameData nameData=new NameData();
-    //boolean isRunning=false;
 
-    Chooser chooser=new Chooser();
+    Selector selector =new Selector();
+
+    public void init(){
+
+        selector.initialVariable(mainConfig, nameData, history, upperLabel.textProperty(), downLabel.textProperty());
+        selector.addStoppedEventListener((observableValue, oldValue, stop)->{
+            if (stop) {
+                anPaiBtn.setText("安排一下");
+            } else {
+                anPaiBtn.setText("不玩了！");
+            }
+        });
+    }
     
     @FXML
     void anPai() {
 
-        if(chooser.isRunning()){
-            chooser.setForceStop(true);
+        if(selector.isWorkerRunning()){
+            selector.forceStop();
             anPaiBtn.setText("安排一下");
             return;
         }
         
-        if(mainConfig.isRandomTimesProperty()) {
-            mainConfig.setCycleTimesProperty(100+random.nextInt(151));
+        if(mainConfig.getRandomCount()) {
+            mainConfig.setMaxTotalCount(100+random.nextInt(151));
         }
 
-        if(mainConfig.isNameChooseProperty()){
-            runNameMode(chooser);
+        if(mainConfig.getNameChoose()){
+            runNameMode();
         }else {
-            runNumberMode(chooser);
+            runNumberMode();
         }
 
     }
-
 
     public void setToggleGroup(){
         ToggleGroup toggleGroup =new ToggleGroup();
@@ -250,16 +239,16 @@ public final class MainInterfaceController {
         numbChoose.setToggleGroup(toggleGroup);
     }
 
-    private void runNameMode(Chooser chooser){
+    private void runNameMode(){
 
         if(nameData.isEmpty()){
             new DialogMaker(rootPane).createMessageDialog("哦霍~","现在名单还是空的捏~请前往名单管理添加名字 或 使用数字挑选法。");
             return;
         }
 
-        if((nameData.getIgnoreNameList().size()>=nameData.getSize())&&mainConfig.isIgnorePastProperty()){
+        if((nameData.getIgnoreNameList().size() >= nameData.getSize()) && mainConfig.getPassSelectedResult()){
 
-            if(mainConfig.isEqualModeProperty()) {
+            if(mainConfig.getEqualMode()) {
                 new DialogMaker(rootPane).createDialogWithOKAndCancel("啊？", "全部名字都被点完啦！\n要把名字的忽略列表重置吗？", e ->nameData.clearNameIgnoreList());
             }else {
                 new DialogMaker(rootPane).createMessageDialog("啊？", "全部名字都被点完啦！\n请多添加几个名字 或 点击“机会均等”的“重置”按钮。");
@@ -269,33 +258,23 @@ public final class MainInterfaceController {
 
         anPaiBtn.setText("不玩了！");
 
-        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,history,nameData,token,voiceConfig);
-
-        chooser.run(
-                (short)(100-mainConfig.getSpeedProperty()) ,
-                mainConfig.getCycleTimesProperty(),
-                mainConfig.isIgnorePastProperty(),
-                mainConfig.isEqualModeProperty(),
-                mainConfig.isVoicePlayProperty()
-        );
-
+        selector.run();
     }
 
-
-    private void runNumberMode(Chooser chooser){
+    private void runNumberMode(){
 
         try{
 
-            int minNumber=Integer.parseInt(mainConfig.getMinNumberProperty());
-            int maxNumber=Integer.parseInt(mainConfig.getMaxNumberProperty());
+            int minNumber=Integer.parseInt(mainConfig.getMinNumber());
+            int maxNumber=Integer.parseInt(mainConfig.getMaxNumber());
 
-            if(maxNumber-minNumber<=0){
+            if(maxNumber-minNumber <= 0){
                 new DialogMaker(rootPane).createMessageDialog("嗯哼？","数字要前小后大啊~");
                 return;
             }
 
-            if(nameData.getIgnoreNumberList().size()>=(maxNumber-minNumber+1) && mainConfig.isIgnorePastProperty()){
-                if(mainConfig.isEqualModeProperty()) {
+            if(nameData.getIgnoreNumberList().size() >= (maxNumber-minNumber+1) && mainConfig.getPassSelectedResult()){
+                if(mainConfig.getEqualMode()) {
                     new DialogMaker(rootPane).createDialogWithOKAndCancel("啊？", "全部数字都被点完啦！\n要把数字的忽略列表重置吗？", e ->nameData.clearNumberIgnoreList());
                 }else {
                     new DialogMaker(rootPane).createMessageDialog("啊？", "全部数字都被点完啦！\n请扩大数字范围 或 点击“机会均等”的“重置”按钮。");
@@ -310,17 +289,7 @@ public final class MainInterfaceController {
 
         anPaiBtn.setText("不玩了！");
 
-        chooser.set(chosen_1.textProperty(),chosen_2.textProperty(),anPaiBtn,history,nameData,token,voiceConfig);
-
-        chooser.run(
-                Short.parseShort(mainConfig.getMaxNumberProperty()),
-                Short.parseShort(mainConfig.getMinNumberProperty()),
-                (short)(100-mainConfig.getSpeedProperty()) ,
-                mainConfig.getCycleTimesProperty(),
-                mainConfig.isIgnorePastProperty(),
-                mainConfig.isEqualModeProperty(),
-                mainConfig.isVoicePlayProperty()
-        );
+        selector.run();
     }
 
     public Label getTopBar() {

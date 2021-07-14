@@ -84,25 +84,25 @@ public class SettingsPaneController extends VBox {
     public void bindProperties(MainConfig mainConfig){
         setMainConfig(mainConfig);
 
-        ignoreOnce.selectedProperty().bindBidirectional(mainConfig.ignorePastPropertyProperty());
-        chooseOnce.setSelected(!mainConfig.isIgnorePastProperty());
+        ignoreOnce.selectedProperty().bindBidirectional(mainConfig.passSelectedResultProperty());
+        chooseOnce.setSelected(!mainConfig.getPassSelectedResult());
 
-        randomTimes.selectedProperty().bindBidirectional(mainConfig.randomTimesPropertyProperty());
-        fixedTimes.setSelected(!mainConfig.isRandomTimesProperty());
+        randomTimes.selectedProperty().bindBidirectional(mainConfig.randomCountProperty());
+        fixedTimes.setSelected(!mainConfig.getRandomCount());
 
-        equalModeBtn.selectedProperty().bindBidirectional(mainConfig.equalModePropertyProperty());
+        equalModeBtn.selectedProperty().bindBidirectional(mainConfig.equalModeProperty());
 
-        newAlgoBtn.selectedProperty().bindBidirectional(mainConfig.newAlgoPropertyProperty());
+        newAlgoBtn.selectedProperty().bindBidirectional(mainConfig.secureRandomProperty());
 
-        voicePlayBtn.selectedProperty().bindBidirectional(mainConfig.voicePlayPropertyProperty());
+        voicePlayBtn.selectedProperty().bindBidirectional(mainConfig.voicePlayProperty());
 
-        cycleTimesBar.valueProperty().bindBidirectional(mainConfig.cycleTimesPropertyProperty());
+        cycleTimesBar.valueProperty().bindBidirectional(mainConfig.maxTotalCountProperty());
 
-        speedBar.valueProperty().bindBidirectional(mainConfig.speedPropertyProperty());
+        speedBar.valueProperty().bindBidirectional(mainConfig.speedProperty());
 
         showSayingBtn.selectedProperty().bindBidirectional(mainConfig.showSayingProperty());
 
-        mainConfig.ignorePastPropertyProperty().addListener((observable, oldValue, isIgnorePast) -> {
+        mainConfig.passSelectedResultProperty().addListener((observable, oldValue, isIgnorePast) -> {
             if(!isIgnorePast)
             {
                 //如果 忽略被点过的名字 被取消后就把机会均等模式的按钮给取消掉
@@ -145,7 +145,7 @@ public class SettingsPaneController extends VBox {
 
     @FXML
     void equalBtnAction(ActionEvent event) {
-        if(!mainConfig.isIgnorePastProperty()){
+        if(!mainConfig.getPassSelectedResult()){
             equalModeBtn.setSelected(false);
             new DialogMaker(rootPane).createMessageDialog("且慢","无法在“概率均分”的模式下使用，如需使用请在“人人有份”模式下启用。");
         }

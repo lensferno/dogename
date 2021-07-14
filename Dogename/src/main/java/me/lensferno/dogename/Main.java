@@ -67,6 +67,8 @@ public class Main extends Application {
 
         mainInterfaceController.setImg(DataReleaser.getMainPicStream());
 
+        mainInterfaceController.init();
+
         primaryStage.setOnCloseRequest(event -> {
             configLoader.writeAllConfigToFile(configLoader.getMainConfigLocation(), configLoader.getVoiceConfigLocation());
             System.exit(0);

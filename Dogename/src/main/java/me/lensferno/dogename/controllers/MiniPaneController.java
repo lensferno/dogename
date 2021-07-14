@@ -8,15 +8,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import me.lensferno.dogename.utils.DialogMaker;
-import me.lensferno.dogename.choose.Chooser;
+import me.lensferno.dogename.select.Selector;
 import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.controllers.WindowListeners.MoveWindowByMouse;
 import me.lensferno.dogename.controllers.WindowListeners.MoveWindowByTouch;
-import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.data.NameData;
 import me.lensferno.dogename.voice.Token;
 
@@ -45,10 +42,6 @@ public class MiniPaneController {
 
     private Random random=new Random();
     private NameData nameData;
-    private Pane rootPane;
-    private History history;
-    private Token token;
-    private VoiceConfig voiceConfig;
 
     Stage currentStage;
     Scene currentScene;
@@ -61,17 +54,10 @@ public class MiniPaneController {
         this.currentStage = currentStage;
     }
 
-    public void setBase(History history, NameData nameData, Token token, VoiceConfig voiceConfig, MainConfig mainConfig){
-
-        this.history = history;
+    public void setBase(NameData nameData, MainConfig mainConfig, Selector selector){
         this.nameData = nameData;
-
-        this.token=token;
-
-        this.voiceConfig=voiceConfig;
-
         this.mainConfig=mainConfig;
-
+        this.selector = selector;
     }
 
     @FXML
@@ -102,90 +88,66 @@ public class MiniPaneController {
         miniModeBtn.setOnTouchMoved(touchHandler);
     }
 
-
-
     private MainConfig mainConfig;
-    Chooser chooser=new Chooser();
+    private Selector selector =new Selector();
 
     @FXML
     void anPai() {
-        if(chooser.isRunning()){
-            chooser.setForceStop(true);
+
+        if(selector.isWorkerRunning()){
+            selector.forceStop();
             anPaiBtn.setText("安排一下");
             return;
         }
 
-        if(mainConfig.isRandomTimesProperty()) {
-            mainConfig.setCycleTimesProperty(100+random.nextInt(151));
+        if(mainConfig.getRandomCount()) {
+            mainConfig.setMaxTotalCount(100+random.nextInt(151));
         }
 
-        if(mainConfig.isNameChooseProperty()){
-            runNameMode(chooser);
-        }else {
-            runNumberMode(chooser);
+        if(mainConfig.getNameChoose()){
+            runNameMode();
+        } else {
+            runNumberMode();
         }
 
     }
 
-
-    private void runNameMode(Chooser chooser){
+    private void runNameMode(){
 
         if(nameData.isEmpty()){
             return;
         }
 
-        if((nameData.getIgnoreNameList().size()>=nameData.getSize())&&mainConfig.isIgnorePastProperty()){
-
+        if((nameData.getIgnoreNameList().size()>=nameData.getSize())&&mainConfig.getPassSelectedResult()){
             return;
         }
 
         anPaiBtn.setText("不玩了！");
 
-        chooser.set(chosenNameLabel.textProperty(),chosenNameLabel.textProperty(),anPaiBtn,history,nameData,token,voiceConfig);
-
-        chooser.run(
-                (short)(100-mainConfig.getSpeedProperty()) ,
-                mainConfig.getCycleTimesProperty(),
-                mainConfig.isIgnorePastProperty(),
-                mainConfig.isEqualModeProperty(),
-                mainConfig.isVoicePlayProperty()
-        );
-
+        selector.run();
     }
 
-
-    private void runNumberMode(Chooser chooser){
+    private void runNumberMode(){
 
         try{
 
-            int minNumber=Integer.parseInt(mainConfig.getMinNumberProperty());
-            int maxNumber=Integer.parseInt(mainConfig.getMaxNumberProperty());
+            int minNumber=Integer.parseInt(mainConfig.getMinNumber());
+            int maxNumber=Integer.parseInt(mainConfig.getMaxNumber());
 
             if(maxNumber-minNumber<=0){
                 return;
             }
 
-            if(nameData.getIgnoreNumberList().size()>=(maxNumber-minNumber+1) && mainConfig.isIgnorePastProperty()){
+            if(nameData.getIgnoreNumberList().size()>=(maxNumber-minNumber+1) && mainConfig.getPassSelectedResult()){
                 return;
             }
 
         }catch (Exception e){
-            new DialogMaker(rootPane).createMessageDialog("嗯哼？","倒是输入个有效的数字啊~");
             return;
         }
 
         anPaiBtn.setText("不玩了！");
 
-        chooser.set(chosenNameLabel.textProperty(),chosenNameLabel.textProperty(),anPaiBtn,history,nameData,token,voiceConfig);
-
-        chooser.run(
-                Short.parseShort(mainConfig.getMaxNumberProperty()),
-                Short.parseShort(mainConfig.getMinNumberProperty()),
-                (short)(100-mainConfig.getSpeedProperty()) ,
-                mainConfig.getCycleTimesProperty(),
-                mainConfig.isIgnorePastProperty(),
-                mainConfig.isEqualModeProperty(),
-                mainConfig.isVoicePlayProperty()
-        );
+        selector.run();
     }
 }

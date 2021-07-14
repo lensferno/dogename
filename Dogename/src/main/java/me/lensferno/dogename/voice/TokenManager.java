@@ -14,12 +14,14 @@ public class TokenManager {
     Logger log= LogManager.getLogger();
 
     public static final String separator=File.separator;
-
-    String cachedVoicePath="caches\\voice\\";
     
-    final private int TOKEN_NULL = -2;
-    final private int TOKEN_EXPIRED = -1;
-    final private int TOKEN_OK = 0;
+    private final int TOKEN_NULL = -2;
+    private final int TOKEN_EXPIRED = -1;
+    
+    public static final int TOKEN_OK = 0;
+    public static final int TOKEN_BAD = 1;
+    
+    private int tokenStatus = TOKEN_OK;
     
     final String API_KEY="dIHCtamVdD0ERO1yyFir2iI4";
     final String SEC_KEY="HmpBQY3gG4PyZ0cmudnCbMeoMcMejuuW";
@@ -28,36 +30,33 @@ public class TokenManager {
 
     File tokenFile=new File("API_voice.token");
 
-    private Token token=null;
-
-    String tokenStatus="ok";
+    private Token token = null;
     
     private void updateTokenStatus(int statusCode){
         switch(statusCode){
-                case TOKEN_OK:
-                    tokenStatus="ok";
-                    break;
-                            
-                case TOKEN_EXPIRED:
-                    if(netAvailable()){ refreshToken();}
+            case TOKEN_OK:
+                tokenStatus = TOKEN_OK;
+                break;
 
-                    if(checkTokenAvailable()!=0){ tokenStatus="not ok";}
-                    break;
-                            
-                case TOKEN_NULL:
-                    if(netAvailable()){ refreshToken();}
+            case TOKEN_EXPIRED:
 
-                    if(checkTokenAvailable()!=0){ tokenStatus="not ok";}
-                    break;
-                            
-                default :
-                    tokenStatus="not ok";
+            case TOKEN_NULL:
+                if(netAvailable()){
+                    refreshToken();
+                }
+
+                if(checkTokenAvailable()!=0){
+                    tokenStatus = TOKEN_BAD;
+                }
+                break;
+
+            default :
+                    tokenStatus = TOKEN_BAD;
                     break;
             }
     }
     
     private void refreshToken(){
-	
         fetchToken();
         writeToken();
     }
@@ -78,13 +77,13 @@ public class TokenManager {
             updateTokenStatus(checkTokenAvailable());
 
             }else {
-                tokenStatus="not ok";
+                tokenStatus = TOKEN_BAD;
             }
 
         }
     }
 
-    public String getTokenStatus() {
+    public int getTokenStatus() {
         return tokenStatus;
     }
 

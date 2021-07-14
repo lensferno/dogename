@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.paint.*?>
-<?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.*?>
 
 <Pane fx:id="rootPane" prefHeight="711.0" prefWidth="1007.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.lensferno.dogename.controllers.MainInterfaceController">
    <children>
       <Pane fx:id="mainPane" prefHeight="710.0" prefWidth="1007.0">
          <children>
-            <Label fx:id="chosen_1" alignment="CENTER" layoutX="194.0" layoutY="60.0" prefHeight="117.0" prefWidth="650.0" text="（´□｀川）" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="upperLabel" alignment="CENTER" layoutX="194.0" layoutY="60.0" prefHeight="117.0" prefWidth="650.0" text="（´□｀川）" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Microsoft YaHei" size="86.0" />
                </font>
@@ -31,7 +21,7 @@
                <font>
                   <Font name="Microsoft YaHei" size="14.0" />
                </font></JFXButton>
-            <Label fx:id="chosen_2" alignment="CENTER" layoutX="194.0" layoutY="177.0" prefHeight="117.0" prefWidth="650.0" text="✋(　˙0˙)" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="downLabel" alignment="CENTER" layoutX="194.0" layoutY="177.0" prefHeight="117.0" prefWidth="650.0" text="✋(　˙0˙)" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Microsoft YaHei" size="86.0" />
                </font>

@@ -17,6 +17,10 @@ public class HtmlRequseter {
 
     static Logger log = LogManager.getLogger();
 
+    public static String getHtml(String address) {
+        return getHtml(address, false);
+    }
+
     public static String getHtml(String address,boolean output)
     {
         StringBuilder sb = new StringBuilder();
@@ -28,10 +32,6 @@ public class HtmlRequseter {
 
             conn.setRequestProperty("Accept-Encoding", "gzip,deflate");
             conn.connect();
-
-            System.out.println("--------------------------------------------------------------------");
-            System.out.println("[INFO]Getting："+conn.getURL());
-            System.out.println("[INFO]Content compress type："+conn.getContentEncoding());
 
             InputStream is = conn.getInputStream();
             String connEncoding=conn.getContentEncoding();
