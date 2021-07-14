@@ -7,7 +7,7 @@ import javafx.beans.value.ChangeListener;
 import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.data.History;
-import me.lensferno.dogename.data.NameData;
+import me.lensferno.dogename.data.Data;
 import me.lensferno.dogename.select.core.Worker;
 import me.lensferno.dogename.voice.TokenManager;
 import me.lensferno.dogename.voice.VoicePlayer;
@@ -43,8 +43,8 @@ public final class Selector {
         processor.stopProcess();
     }
 
-    public void initialVariable(MainConfig config, NameData nameData, History history, StringProperty... labelTexts) {
-        processor.initialVariable(config, voicePlayer, nameData, history, labelTexts);
+    public void initialVariable(MainConfig config, Data data, History history, StringProperty... labelTexts) {
+        processor.initialVariable(config, voicePlayer, data, history, labelTexts);
     }
 
     public boolean isWorkerRunning() {
@@ -62,8 +62,8 @@ public final class Selector {
 
         MainConfig config = null;
 
-        protected void initialVariable(MainConfig config, VoicePlayer voicePlayer, NameData nameData, History history, StringProperty... labelTexts) {
-            coreWorker = new Worker(labelTexts, config, nameData, history, voicePlayer);
+        protected void initialVariable(MainConfig config, VoicePlayer voicePlayer, Data data, History history, StringProperty... labelTexts) {
+            coreWorker = new Worker(labelTexts, config, data, history, voicePlayer);
             this.config = config;
         }
 

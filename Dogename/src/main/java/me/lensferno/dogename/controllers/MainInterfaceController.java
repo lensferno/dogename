@@ -18,7 +18,7 @@ import me.lensferno.dogename.configs.ConfigLoader;
 import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.data.History;
-import me.lensferno.dogename.data.NameData;
+import me.lensferno.dogename.data.Data;
 import me.lensferno.dogename.ocr.Ocr;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,7 +26,6 @@ import org.apache.logging.log4j.Logger;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashSet;
 import java.util.Random;
 
 public final class MainInterfaceController {
@@ -75,9 +74,6 @@ public final class MainInterfaceController {
 
     public MainInterfaceController(){
         history.loadHistory();
-        nameData.readIgnoreList();
-        this.ignoreNameList=nameData.getIgnoreNameList();
-        this.ignoreNumberList=nameData.getIgnoreNumberList();
     }
 
     MainConfig mainConfig;
@@ -116,7 +112,7 @@ public final class MainInterfaceController {
             new DialogMaker(rootPane).createMessageDialog("(・。・)","安排中......\n为保证运行的稳定，此时还不能进行该操作哦。");
             return;
         }
-        NameManagerPaneController nameManagerPaneController =new NameManagerPaneController(nameData,rootPane,ocrTool);
+        NameManagerPaneController nameManagerPaneController =new NameManagerPaneController(data,rootPane,ocrTool);
         new DialogMaker(rootPane).createDialogWithOneBtn("名单管理",nameManagerPaneController);
     }
 
@@ -127,7 +123,7 @@ public final class MainInterfaceController {
             new DialogMaker(rootPane).createMessageDialog("(・。・)","安排中......\n为保证运行的稳定，此时还不能进行该操作哦。");
             return;
         }
-        NumberSettingsPaneController numberSettingsPaneController =new NumberSettingsPaneController(nameData);
+        NumberSettingsPaneController numberSettingsPaneController =new NumberSettingsPaneController(data);
         numberSettingsPaneController.bindProperties(mainConfig);
         new DialogMaker(rootPane).createDialogWithOneBtn("调整数字",numberSettingsPaneController);
 
@@ -152,7 +148,7 @@ public final class MainInterfaceController {
         miniStage.initStyle(StageStyle.UNDECORATED);
 
         MiniPaneController miniPaneController=loader.getController();
-        miniPaneController.setBase(nameData, mainConfig, selector);
+        miniPaneController.setBase(data, mainConfig, selector);
 
         Stage currentStage=(Stage)anPaiBtn.getScene().getWindow();
         miniPaneController.setForwStage(currentStage);
@@ -178,7 +174,7 @@ public final class MainInterfaceController {
 
         settingsPaneController.setRootPane(rootPane);
 
-        settingsPaneController.setNameData(nameData);
+        settingsPaneController.setData(data);
 
         new DialogMaker(rootPane).createDialogWithOneBtn("更多设置",settingsPaneController);
     }
@@ -193,16 +189,13 @@ public final class MainInterfaceController {
 
     Random random=new Random();
 
-    HashSet<String> ignoreNameList;
-    HashSet<String> ignoreNumberList;
-
-    NameData nameData=new NameData();
+    Data data =new Data();
 
     Selector selector =new Selector();
 
     public void init(){
 
-        selector.initialVariable(mainConfig, nameData, history, upperLabel.textProperty(), downLabel.textProperty());
+        selector.initialVariable(mainConfig, data, history, upperLabel.textProperty(), downLabel.textProperty());
         selector.addStoppedEventListener((observableValue, oldValue, stop)->{
             if (stop) {
                 anPaiBtn.setText("安排一下");
@@ -241,15 +234,15 @@ public final class MainInterfaceController {
 
     private void runNameMode(){
 
-        if(nameData.isEmpty()){
+        if(data.isEmpty()){
             new DialogMaker(rootPane).createMessageDialog("哦霍~","现在名单还是空的捏~请前往名单管理添加名字 或 使用数字挑选法。");
             return;
         }
 
-        if((nameData.getIgnoreNameList().size() >= nameData.getSize()) && mainConfig.getPassSelectedResult()){
+        if(data.compareNameIgnoreList() && mainConfig.getPassSelectedResult()){
 
             if(mainConfig.getEqualMode()) {
-                new DialogMaker(rootPane).createDialogWithOKAndCancel("啊？", "全部名字都被点完啦！\n要把名字的忽略列表重置吗？", e ->nameData.clearNameIgnoreList());
+                new DialogMaker(rootPane).createDialogWithOKAndCancel("啊？", "全部名字都被点完啦！\n要把名字的忽略列表重置吗？", e -> data.clearNameIgnoreList());
             }else {
                 new DialogMaker(rootPane).createMessageDialog("啊？", "全部名字都被点完啦！\n请多添加几个名字 或 点击“机会均等”的“重置”按钮。");
             }
@@ -273,9 +266,9 @@ public final class MainInterfaceController {
                 return;
             }
 
-            if(nameData.getIgnoreNumberList().size() >= (maxNumber-minNumber+1) && mainConfig.getPassSelectedResult()){
+            if(data.getNumberIgnoreListSize() >= (maxNumber-minNumber+1) && mainConfig.getPassSelectedResult()){
                 if(mainConfig.getEqualMode()) {
-                    new DialogMaker(rootPane).createDialogWithOKAndCancel("啊？", "全部数字都被点完啦！\n要把数字的忽略列表重置吗？", e ->nameData.clearNumberIgnoreList());
+                    new DialogMaker(rootPane).createDialogWithOKAndCancel("啊？", "全部数字都被点完啦！\n要把数字的忽略列表重置吗？", e -> data.clearNumberIgnoreList());
                 }else {
                     new DialogMaker(rootPane).createMessageDialog("啊？", "全部数字都被点完啦！\n请扩大数字范围 或 点击“机会均等”的“重置”按钮。");
                 }

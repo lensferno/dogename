@@ -12,7 +12,7 @@ import javafx.scene.layout.VBox;
 import me.lensferno.dogename.utils.DialogMaker;
 import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
-import me.lensferno.dogename.data.NameData;
+import me.lensferno.dogename.data.Data;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -54,7 +54,7 @@ public class SettingsPaneController extends VBox {
 
     Pane rootPane;
 
-    NameData nameData;
+    Data data;
 
     Logger log = LogManager.getLogger("SettingsPaneControllerLogger");
 
@@ -138,8 +138,8 @@ public class SettingsPaneController extends VBox {
     @FXML
     void clearIgnoreList(ActionEvent event) {
         new DialogMaker(rootPane).createDialogWithOKAndCancel("真的吗？","真的要重置吗？",(e)->{
-            nameData.clearNumberIgnoreList();
-            nameData.clearNameIgnoreList();
+            data.clearNumberIgnoreList();
+            data.clearNameIgnoreList();
         });
     }
 
@@ -151,7 +151,7 @@ public class SettingsPaneController extends VBox {
         }
     }
 
-    public void setNameData(NameData nameData) {
-        this.nameData = nameData;
+    public void setData(Data data) {
+        this.data = data;
     }
 }

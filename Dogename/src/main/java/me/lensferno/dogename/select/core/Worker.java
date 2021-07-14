@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.StringProperty;
 import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.data.History;
-import me.lensferno.dogename.data.NameData;
+import me.lensferno.dogename.data.Data;
 
 import me.lensferno.dogename.utils.Random;
 import me.lensferno.dogename.voice.VoicePlayer;
@@ -20,7 +20,7 @@ public final class Worker {
 
     //挑选方法
     private final int selectMethod = MainConfig.METHOD_NAME;
-    private final NameData nameData;
+    private final Data data;
 
     private final History history;
 
@@ -52,10 +52,10 @@ public final class Worker {
 
     private final Counter counter = new Counter();
 
-    public Worker(StringProperty[] labelTexts, MainConfig config, NameData nameData, History history, VoicePlayer voicePlayer) {
+    public Worker(StringProperty[] labelTexts, MainConfig config, Data data, History history, VoicePlayer voicePlayer) {
         this.labelTexts = labelTexts;
         this.config = config;
-        this.nameData = nameData;
+        this.data = data;
         this.history = history;
         this.voicePlayer = voicePlayer;
     }
@@ -77,7 +77,7 @@ public final class Worker {
             // 如果不是这三种情况就选到符合其中一种情况为止
             // 由于后两者在安排进程中不可能改变，因此继续挑选后只有选中的结果不在忽略名单中才会结束挑选
             // 若忽略名单已满（名单中数量=总的名单数量），点击“安排一下”时会提示已满，无法再进行挑选，因此在运行时总有 忽略名单<总名单，总有名字不在忽略列表中，不会死循环，放心吧
-            boolean resultIgnored = (config.getChooseMethod() == MainConfig.METHOD_NAME) ? (nameData.getIgnoreNameList().contains(selectedResult)) : (nameData.getIgnoreNumberList().contains(selectedResult));
+            boolean resultIgnored = (config.getChooseMethod() == MainConfig.METHOD_NAME) ? (data.checkNameIgnored(selectedResult)) : (data.checkNumberIgnored(selectedResult));
             if (!resultIgnored || !config.getPassSelectedResult() || forceStop) {
                 this.stopSelect();
                 finalResult = true;
@@ -96,11 +96,15 @@ public final class Worker {
 
     public void stopSelect() {
         if (config.getPassSelectedResult()) {
-            nameData.getIgnoreNameList().add(selectedResult);
+            if (config.nameChooseProperty().getValue()) {
+                data.addNameToIgnoreList(selectedResult);
+            } else {
+                data.addNumberToIgnoreList(selectedResult);
+            }
         }
 
         if (config.getEqualMode()) {
-            nameData.writeIgnoreList(NameData.NAME_ONLY);
+            data.writeIgnoreList(Data.IGNORELIST_ALL);
         }
 
         history.addHistory(selectedResult);
@@ -118,7 +122,7 @@ public final class Worker {
     private String pick(int selectMethod) {
         switch (selectMethod) {
             case MainConfig.METHOD_NAME:
-                return nameData.randomGet(config.getSecureRandom());
+                return data.randomGet(config.getSecureRandom());
             case MainConfig.METHOD_NUMBER:
                 randomNumber.setUseSecureRandom(config.getSecureRandom());
                 return String.valueOf(randomNumber.getRandomNumber(numberRange[MIN_NUMBER], numberRange[MAX_NUMBER]));

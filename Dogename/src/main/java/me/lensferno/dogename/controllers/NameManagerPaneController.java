@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import me.lensferno.dogename.utils.DialogMaker;
-import me.lensferno.dogename.data.NameData;
+import me.lensferno.dogename.data.Data;
 import me.lensferno.dogename.ocr.Ocr;
 import me.lensferno.dogename.utils.Clipboard;
 
@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 public class NameManagerPaneController extends VBox  {
 
-    NameData nameData;
+    Data data;
     Pane rootPane;
     Ocr ocrTool;
 
@@ -30,7 +30,7 @@ public class NameManagerPaneController extends VBox  {
 
     public static final ObservableList<String> shownNameList = FXCollections.observableArrayList();
 
-    public NameManagerPaneController(NameData nameData, Pane rootPane, Ocr ocrTool){
+    public NameManagerPaneController(Data data, Pane rootPane, Ocr ocrTool){
         FXMLLoader loader=new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/NameManagerPane.fxml"));
         loader.setRoot(this);
         loader.setController(this);
@@ -39,10 +39,10 @@ public class NameManagerPaneController extends VBox  {
         }catch(Exception e){
             e.printStackTrace();
         }
-        this.nameData=nameData;
+        this.data=data;
         this.rootPane=rootPane;
 
-        shownNameList.setAll(nameData.getNameList());
+        shownNameList.setAll(data.getNameList());
         this.nameList.setItems(shownNameList);
 
         this.ocrTool=ocrTool;
@@ -73,10 +73,10 @@ public class NameManagerPaneController extends VBox  {
                 e -> {
                     String deletedName = nameList.getSelectionModel().getSelectedItems().get(0);
                     
-                    nameData.delete(deletedName);
+                    data.delete(deletedName);
                     shownNameList.remove(deletedName);
 
-                    nameData.saveToFile();
+                    data.saveToFile();
                     System.gc();
                 });
 
@@ -89,19 +89,19 @@ public class NameManagerPaneController extends VBox  {
                 "真的要删掉所有名字吗？该操作无法撤销，除非您已经备份了名单。",
                 e -> {
                     //delete all name
-                    nameData.deleteAll();
-                    shownNameList.setAll(nameData.getNameList());
-                    nameData.saveToFile();
+                    data.deleteAllName();
+                    shownNameList.setAll(data.getNameList());
+                    data.saveToFile();
                 });
 
     }
 
     @FXML
     void makeMass(ActionEvent event) {
-        nameData.makeMass();
+        data.makeMass();
         shownNameList.clear();
-        shownNameList.setAll(nameData.getNameList());
-        nameData.saveToFile();
+        shownNameList.setAll(data.getNameList());
+        data.saveToFile();
     }
 
     @FXML
@@ -110,7 +110,7 @@ public class NameManagerPaneController extends VBox  {
         fileChooser.setInitialFileName("nameList.txt");
         fileChooser.setTitle("想保存到哪？");
         File file = fileChooser.showSaveDialog(rootPane.getScene().getWindow());
-        nameData.exportNameList(file);
+        data.exportNameList(file);
         System.gc();
     }
 
@@ -125,14 +125,14 @@ public class NameManagerPaneController extends VBox  {
                     fileChooser.setTitle("告诉我在哪？");
                     File file = fileChooser.showOpenDialog(rootPane.getScene().getWindow());
 
-                    nameData.importNameList(file);
+                    data.importNameList(file);
                     shownNameList.clear();
-                    shownNameList.setAll(nameData.getNameList());
+                    shownNameList.setAll(data.getNameList());
 
-                    nameData.clearNameIgnoreList();
-                    nameData.clearNumberIgnoreList();
+                    data.clearNameIgnoreList();
+                    data.clearNumberIgnoreList();
 
-                    nameData.saveToFile();
+                    data.saveToFile();
                     System.gc();
         });
 
@@ -146,12 +146,12 @@ public class NameManagerPaneController extends VBox  {
             return;
         }
 
-        nameData.add(inputName.getText());
+        data.add(inputName.getText());
 
         shownNameList.clear();
-        shownNameList.setAll(nameData.getNameList());
+        shownNameList.setAll(data.getNameList());
 
-        nameData.saveToFile();
+        data.saveToFile();
         inputName.clear();
         System.gc();
     }

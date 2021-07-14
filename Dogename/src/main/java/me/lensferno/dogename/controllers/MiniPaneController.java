@@ -11,11 +11,9 @@ import javafx.scene.input.TouchEvent;
 import javafx.stage.Stage;
 import me.lensferno.dogename.select.Selector;
 import me.lensferno.dogename.configs.MainConfig;
-import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.controllers.WindowListeners.MoveWindowByMouse;
 import me.lensferno.dogename.controllers.WindowListeners.MoveWindowByTouch;
-import me.lensferno.dogename.data.NameData;
-import me.lensferno.dogename.voice.Token;
+import me.lensferno.dogename.data.Data;
 
 import java.util.Random;
 
@@ -41,7 +39,7 @@ public class MiniPaneController {
     }
 
     private Random random=new Random();
-    private NameData nameData;
+    private Data data;
 
     Stage currentStage;
     Scene currentScene;
@@ -54,8 +52,8 @@ public class MiniPaneController {
         this.currentStage = currentStage;
     }
 
-    public void setBase(NameData nameData, MainConfig mainConfig, Selector selector){
-        this.nameData = nameData;
+    public void setBase(Data data, MainConfig mainConfig, Selector selector){
+        this.data = data;
         this.mainConfig=mainConfig;
         this.selector = selector;
     }
@@ -114,11 +112,11 @@ public class MiniPaneController {
 
     private void runNameMode(){
 
-        if(nameData.isEmpty()){
+        if(data.isEmpty()){
             return;
         }
 
-        if((nameData.getIgnoreNameList().size()>=nameData.getSize())&&mainConfig.getPassSelectedResult()){
+        if(data.compareNameIgnoreList()&&mainConfig.getPassSelectedResult()){
             return;
         }
 
@@ -138,7 +136,7 @@ public class MiniPaneController {
                 return;
             }
 
-            if(nameData.getIgnoreNumberList().size()>=(maxNumber-minNumber+1) && mainConfig.getPassSelectedResult()){
+            if(data.getNumberIgnoreListSize()>=(maxNumber-minNumber+1) && mainConfig.getPassSelectedResult()){
                 return;
             }
 
