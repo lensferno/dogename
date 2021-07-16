@@ -1,7 +1,7 @@
 package me.lensferno.dogename.voice;
 
 import com.google.gson.Gson;
-import me.lensferno.dogename.utils.HtmlRequseter;
+import me.lensferno.dogename.utils.NetworkUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -114,7 +114,7 @@ public class TokenManager {
     void fetchToken(){
         try{
             token=new Gson().fromJson(
-                    HtmlRequseter.getHtml(
+                    NetworkUtil.getHtml(
                             TOKEN_API_URL
                         + "?grant_type=client_credentials&client_id=" + API_KEY
                         + "&client_secret=" + SEC_KEY,

@@ -1,6 +1,17 @@
 
-This program uses the following libraries in accordance with the Apache License 2.0,
-You can get the full text of Apache License 2.0 at http://www.apache.org/licenses/LICENSE-2.0
+This program uses the following library in accordance with the Gnu General Public License,
+You can get the full text of Apache License 2.0 at
+https://www.gnu.org/licenses/gpl-3.0.html
+
+--------------------------------------------------
+Java Stream Player (9.0.4)
+--------------------------------------------------
+  Copyright © goxr3plus
+  https://github.com/goxr3plus/java-stream-player
+
+and uses the following libraries in accordance with the Apache License 2.0,
+You can get the full text of Apache License 2.0 at
+http://www.apache.org/licenses/LICENSE-2.0
 
 --------------------------------------------------
 JFoenix (8.0.4)
@@ -15,19 +26,13 @@ Apache Commons Codec (1.11)
   http://commons.apache.org/proper/commons-codec/
 
 --------------------------------------------------
-Apache Commons Codec (1.11)
+Apache Commons IO (2.6)
 --------------------------------------------------
   Copyright © 2002-2020 The Apache Software Foundation
-  http://commons.apache.org/proper/commons-codec/
+  http://commons.apache.org/proper/commons-io/
 
 --------------------------------------------------
 Gson (2.8.5)
 --------------------------------------------------
   Copyright 2008 Google Inc.
   https://github.com/google/gson
-
---------------------------------------------------
-OkHttp3 (4.2.2)
---------------------------------------------------
-  Copyright 2019 Square, Inc.
-  https://github.com/square/okhttp

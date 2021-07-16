@@ -15,39 +15,43 @@
 ------------
 
 
-#### - 用法介绍
-[去去去➡](https://github.com/lensferno/dogename/blob/main/res/usage.md)
+#### 用法介绍
+[这里](https://github.com/lensferno/dogename/blob/main/res/usage.md)
+
+---
+
+## 截图/Screenshot:
+
+[这里](https://github.com/lensferno/dogename/blob/main/res/you-want.md "我要康康")
+
+## 下载/Download：
+[来这里](https://github.com/lensferno/dogename/releases "这里")
 
 ---
 
 
 
-## 截图/Screenshot:
-
-[来来来~](https://github.com/lensferno/dogename/blob/main/res/you-want.md "我要康康")
-
-## 下载/Download：
-[来这里](https://github.com/lensferno/dogename/releases "这里")
-
 
 ## 使用到的第三方库/Third-party library used：
 
-- [JFoenix](https://github.com/jfoenixadmin/JFoenix "JFoenix")(8.0.4)，UI界面库。
-- [Apache Commons Codec](http://commons.apache.org/proper/commons-codec/ "Apache Commons Codec")(1.11)，用于Base64解码。
-- [Apache Commons IO](https://commons.apache.org/proper/commons-io/)(2.6)，用于对文件进行部分操作
-- [Gson](https://github.com/google/gson "Gson")(2.8.5)，用于Json数据的解析与生成。
-- [OkHttp3](https://github.com/square/okhttp "OkHttp")(4.2.2)，用于语音部分的数据请求。
-- [gushici](https://github.com/xenv/gushici/ "古诗词")项目提供的古诗词接口和数据。
-- “每日一句话”的数据来自[一言](https://hitokoto.cn/ "一言")
-- 本项目还使用了 百度AI SDK 来实现OCR功能。
+- [JFoenix](https://github.com/jfoenixadmin/JFoenix "JFoenix")(8.0.4)，UI界面库；
+- [Apache Commons Codec](http://commons.apache.org/proper/commons-codec/ "Apache Commons Codec")(1.11)，用于Base64和MD5的编解码；
+- [Apache Commons IO](https://commons.apache.org/proper/commons-io/)(2.6)，用于对文件进行部分操作；
+- [Gson](https://github.com/google/gson "Gson")(2.8.5)，用于Json数据的解析与生成；
+- [Java Stream Player](https://github.com/goxr3plus/java-stream-player "Java Stream Player")(9.0.4)，用于语音中声音的播放；
+- [gushici](https://github.com/xenv/gushici/ "古诗词")项目提供的古诗词接口和数据；
+- “每日一句话”的数据来自[一言](https://hitokoto.cn/ "一言")；
+- 本项目还使用了 百度AI SDK 来实现OCR功能；
 
 ------
 
 #### License信息
 
-本程序使用[GNU Lesser General Public License](http://www.gnu.org/licenses/lgpl-3.0.html "LGPL") (LGPL,version 3)开源许可证，
+本程序使用[GNU General Public License](http://www.gnu.org/licenses/gpl-3.0.html "GPL") (GPL,version 3)开源许可证，
 
+遵循[GPL](http://www.gnu.org/licenses/gpl-3.0.html "GNU General Public License 3")使用了以下库：
 
+- [Java Stream Player](https://github.com/goxr3plus/java-stream-player "Java Stream Player")(9.0.4)
 
 遵循[Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0 "Apache License 2.0")使用了以下库：
 
@@ -58,8 +62,3 @@
 - [Apache Commons IO](https://commons.apache.org/proper/commons-io/)(2.6)
 
 - [Gson](https://github.com/google/gson "Gson")(2.8.5)
-
-- [OkHttp3](https://github.com/square/okhttp "OkHttp")(4.2.2)
-
-  
-

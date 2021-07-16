@@ -14,12 +14,13 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import me.lensferno.dogename.DataReleaser;
 import me.lensferno.dogename.utils.DialogMaker;
-import me.lensferno.dogename.resources.LicenseText;
+import me.lensferno.dogename.utils.IOUtil;
 
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 
 public class ProgramInfoPaneController extends VBox {
 
@@ -42,20 +43,19 @@ public class ProgramInfoPaneController extends VBox {
         this.rootPane=rootPane;
     }
 
-
     @FXML
     void showLicense(ActionEvent event) {
-        TextArea textArea=new TextArea(LicenseText.text);
+        TextArea textArea=new TextArea(IOUtil.inputStreamToString(getClass().getResourceAsStream("/gpl-3.0.txt"), StandardCharsets.UTF_8));
         textArea.setFont(Font.font("Microsoft YaHei",14));
         textArea.setMinWidth(600);
         textArea.setPrefHeight(400);
         textArea.setEditable(false);
-        new DialogMaker(rootPane).createDialogWithOneBtn("开源协议（LGPL v3）",textArea);
+        new DialogMaker(rootPane).createDialogWithOneBtn("开源协议（GPL v3）",textArea);
     }
 
     @FXML
     void showLibLicense(ActionEvent event) {
-        TextArea textArea=new TextArea(LicenseText.libLicense);
+        TextArea textArea=new TextArea(IOUtil.inputStreamToString(getClass().getResourceAsStream("/LibLicense.txt"), StandardCharsets.UTF_8));
         textArea.setFont(Font.font("Microsoft YaHei",14));
         textArea.setMinWidth(600);
         textArea.setPrefHeight(400);

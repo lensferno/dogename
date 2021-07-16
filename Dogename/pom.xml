@@ -73,37 +73,42 @@
             <version>4.2.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.googlecode.soundlibs/mp3spi -->
-        <dependency>
-            <groupId>com.googlecode.soundlibs</groupId>
-            <artifactId>mp3spi</artifactId>
-            <version>1.9.5.4</version>
-        </dependency>
-
         <dependency>
             <groupId>com.baidu.aip</groupId>
             <artifactId>java-sdk</artifactId>
             <version>4.12.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.goxr3plus</groupId>
+            <artifactId>java-stream-player</artifactId>
+            <version>9.0.4</version>
+        </dependency>
+
     </dependencies>
 
-
     <repositories>
+
         <repository>
             <id>central</id>
             <name>aliyun maven</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
             <layout>default</layout>
-            <!-- 是否开启发布版构件下载 -->
+
             <releases>
                 <enabled>true</enabled>
             </releases>
-            <!-- 是否开启快照版构件下载 -->
+
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+
     </repositories>
     
 </project>

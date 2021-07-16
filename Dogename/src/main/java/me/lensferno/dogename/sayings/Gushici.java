@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import me.lensferno.dogename.utils.DialogMaker;
 import me.lensferno.dogename.controllers.GushiciPaneController;
-import me.lensferno.dogename.utils.HtmlRequseter;
+import me.lensferno.dogename.utils.NetworkUtil;
 
 public class Gushici {
 
@@ -16,7 +16,7 @@ public class Gushici {
     String gushiciJSON = null;
 
     private String getGushici() {
-        return HtmlRequseter.getHtml(GUSHICI_API,false);
+        return NetworkUtil.getHtml(GUSHICI_API);
     }
 
     public void showGushici(Pane rootPane, Label topBar){
