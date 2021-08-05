@@ -65,7 +65,11 @@ public class Main extends Application {
 
         mainInterfaceController.bindProperties();
 
-        mainInterfaceController.setImg(DataReleaser.getMainPicStream());
+        try {
+            mainInterfaceController.setImg(getClass().getResourceAsStream("/images/doge.png"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         mainInterfaceController.init();
 

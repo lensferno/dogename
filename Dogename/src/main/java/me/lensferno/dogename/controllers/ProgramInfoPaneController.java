@@ -12,7 +12,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import me.lensferno.dogename.DataReleaser;
 import me.lensferno.dogename.utils.DialogMaker;
 import me.lensferno.dogename.utils.IOUtil;
 
@@ -38,8 +37,13 @@ public class ProgramInfoPaneController extends VBox {
         }catch(Exception e){
             e.printStackTrace();
         }
-        Image dogeImage=new Image(DataReleaser.getDogenameStream());
-        dogeView.setImage(dogeImage);
+
+        try {
+            dogeView.setImage(new Image(getClass().getResourceAsStream("/images/banner.png")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         this.rootPane=rootPane;
     }
 

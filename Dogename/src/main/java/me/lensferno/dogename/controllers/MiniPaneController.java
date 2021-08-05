@@ -1,6 +1,7 @@
 package me.lensferno.dogename.controllers;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -28,17 +29,17 @@ public class MiniPaneController {
     @FXML
     private JFXButton miniModeBtn;
 
-    Stage forwStage;
+    Stage oldStage;
 
-    public Stage getForwStage() {
-        return forwStage;
+    public Stage getOldStage() {
+        return oldStage;
     }
 
-    public void setForwStage(Stage forwStage) {
-        this.forwStage = forwStage;
+    public void setOldStage(Stage oldStage) {
+        this.oldStage = oldStage;
     }
 
-    private Random random=new Random();
+    private Random random = new Random();
     private Data data;
 
     Stage currentStage;
@@ -52,24 +53,32 @@ public class MiniPaneController {
         this.currentStage = currentStage;
     }
 
-    public void setBase(Data data, MainConfig mainConfig, Selector selector){
+    StringProperty[] oldTextProperties = null;
+
+    public void setBase(Data data, MainConfig mainConfig, Selector selector) {
         this.data = data;
-        this.mainConfig=mainConfig;
+        this.mainConfig = mainConfig;
         this.selector = selector;
+        this.selector.setLabelTexts(chosenNameLabel.textProperty());
+        this.oldTextProperties = oldTextProperties;
     }
 
     @FXML
     void recoverMode(ActionEvent event) {
-        this.forwStage.show();
+        this.oldStage.setOnShown((e) -> {
+            selector.setLabelTexts(oldTextProperties);
+        });
+        this.oldStage.show();
+
         currentStage.close();
     }
 
-    public void setListeners(){
-        EventHandler<MouseEvent> mouseHandler=new MoveWindowByMouse(currentStage);
+    public void setListeners() {
+        EventHandler<MouseEvent> mouseHandler = new MoveWindowByMouse(currentStage);
         chosenNameLabel.setOnMousePressed(mouseHandler);
         chosenNameLabel.setOnMouseDragged(mouseHandler);
 
-        EventHandler<TouchEvent> touchHandler=new MoveWindowByTouch(currentStage);
+        EventHandler<TouchEvent> touchHandler = new MoveWindowByTouch(currentStage);
         chosenNameLabel.setOnTouchPressed(touchHandler);
         chosenNameLabel.setOnTouchMoved(touchHandler);
 
@@ -87,22 +96,22 @@ public class MiniPaneController {
     }
 
     private MainConfig mainConfig;
-    private Selector selector =new Selector();
+    private Selector selector = new Selector();
 
     @FXML
     void anPai() {
 
-        if(selector.isWorkerRunning()){
+        if (selector.isWorkerRunning()) {
             selector.forceStop();
             anPaiBtn.setText("安排一下");
             return;
         }
 
-        if(mainConfig.getRandomCount()) {
-            mainConfig.setMaxTotalCount(100+random.nextInt(151));
+        if (mainConfig.getRandomCount()) {
+            mainConfig.setMaxTotalCount(100 + random.nextInt(151));
         }
 
-        if(mainConfig.getNameChoose()){
+        if (mainConfig.getNameChoose()) {
             runNameMode();
         } else {
             runNumberMode();
@@ -110,13 +119,13 @@ public class MiniPaneController {
 
     }
 
-    private void runNameMode(){
+    private void runNameMode() {
 
-        if(data.isEmpty()){
+        if (data.isEmpty()) {
             return;
         }
 
-        if(data.compareNameIgnoreList()&&mainConfig.getPassSelectedResult()){
+        if (data.compareNameIgnoreList() && mainConfig.getPassSelectedResult()) {
             return;
         }
 
@@ -125,22 +134,22 @@ public class MiniPaneController {
         selector.run();
     }
 
-    private void runNumberMode(){
+    private void runNumberMode() {
 
-        try{
+        try {
 
-            int minNumber=Integer.parseInt(mainConfig.getMinNumber());
-            int maxNumber=Integer.parseInt(mainConfig.getMaxNumber());
+            int minNumber = Integer.parseInt(mainConfig.getMinNumber());
+            int maxNumber = Integer.parseInt(mainConfig.getMaxNumber());
 
-            if(maxNumber-minNumber<=0){
+            if (maxNumber - minNumber <= 0) {
                 return;
             }
 
-            if(data.getNumberIgnoreListSize()>=(maxNumber-minNumber+1) && mainConfig.getPassSelectedResult()){
+            if (data.getNumberIgnoreListSize() >= (maxNumber - minNumber + 1) && mainConfig.getPassSelectedResult()) {
                 return;
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             return;
         }
 

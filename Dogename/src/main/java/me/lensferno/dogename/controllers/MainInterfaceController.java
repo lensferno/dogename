@@ -151,7 +151,7 @@ public final class MainInterfaceController {
         miniPaneController.setBase(data, mainConfig, selector);
 
         Stage currentStage=(Stage)anPaiBtn.getScene().getWindow();
-        miniPaneController.setForwStage(currentStage);
+        miniPaneController.setOldStage(currentStage);
 
         miniPaneController.setCurrentStage(miniStage);
         miniPaneController.setCurrentScene(miniScene);

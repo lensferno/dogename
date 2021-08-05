@@ -60,6 +60,10 @@ public final class Worker {
         this.voicePlayer = voicePlayer;
     }
 
+    public void setLabelTexts(StringProperty[] labelTexts) {
+        this.labelTexts = labelTexts;
+    }
+
     private void select() {
         // try的位置待定（前面or后面）
         // 延时用，用于调整挑选速度

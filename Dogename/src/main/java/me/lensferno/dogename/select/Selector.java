@@ -55,6 +55,10 @@ public final class Selector {
         processor.stoppedIndicatorProperty().addListener(listener);
     }
 
+    public void setLabelTexts(StringProperty... labelTexts) {
+        processor.setWorkerLabelTexts(labelTexts);
+    }
+
     // ---------------------------------------------------
     static class Processor extends AnimationTimer {
 
@@ -65,6 +69,10 @@ public final class Selector {
         protected void initialVariable(MainConfig config, VoicePlayer voicePlayer, Data data, History history, StringProperty... labelTexts) {
             coreWorker = new Worker(labelTexts, config, data, history, voicePlayer);
             this.config = config;
+        }
+
+        protected void setWorkerLabelTexts(StringProperty... labelTexts) {
+            coreWorker.setLabelTexts(labelTexts);
         }
 
         protected void updateNewValue() {
