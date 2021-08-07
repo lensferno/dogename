@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
@@ -16,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="692.0" spacing="10.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="692.0" spacing="10.0" type="VBox" xmlns="http://javafx.com/javafx/8.0.301" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="dogeView" fitHeight="150.0" fitWidth="664.0" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="NONE" />
          </cursor></ImageView>
-      <JFXTextArea editable="false" focusColor="#0072ffbf" labelFloat="true" prefHeight="227.0" prefWidth="678.0" text="该程序以Google Material Design为界面风格，使用Java语言编写，是一个用来点名的家伙。&#10;这是一个开源软件，源代码可在https://github.com/lensferno/dogename查看和获取。&#10;（大更新基本上是不会有的了ヾ§ ￣▽)ゞ，等什么时候有空了再考虑吧（=´∇｀=））&#10;---------------------------------------------------------------------------------------&#10;About me：&#10;　Github主页：https://github.com/lensferno&#10;　联系：lensferno@outlook.com　／　ulcch@foxmail.com　／　2318724550&#10;---------------------------------------------------------------------------------------&#10;使用到的第三方库：&#10;JFoenix(8.0.4)，UI界面库。&#10;Apache Commons Codec(1.11)，用于Base64解码。&#10;Apache Commons IO(2.6)，用于对文件进行部分操作&#10;Gson(2.8.5)，用于Json数据的解析与生成。&#10;OkHttp3(4.2.2)，用于语音部分的数据请求。&#10;gushici项目提供的古诗词接口和数据。&#10;“每日一句话”的数据来自一言&#10;本项目还使用了 百度AI SDK 来实现OCR功能。&#10;">
+      <JFXTextArea editable="false" focusColor="#0072ffbf" labelFloat="true" prefHeight="227.0" prefWidth="678.0" text="该程序以Google Material Design为界面风格，使用Java语言编写，是一个用来点名的家伙。&#10;这是一个开源软件，源代码可在https://github.com/lensferno/dogename查看和获取。&#10;（大更新基本上是不会有的了ヾ§ ￣▽)ゞ，等什么时候有空了再考虑吧（=´∇｀=））&#10;---------------------------------------------------------------------------------------&#10;About me：&#10;　Github主页：https://github.com/lensferno&#10;　联系：lensferno@outlook.com　／　ulcch@foxmail.com　／　2318724550&#10;---------------------------------------------------------------------------------------&#10;使用到的第三方库：&#10;JFoenix(8.0.4)，UI界面库。&#10;Apache Commons Codec(1.11)，用于Base64和MD5的编解码。&#10;Apache Commons IO(2.6)，用于对文件进行部分操作&#10;Gson(2.8.5)，用于Json数据的解析与生成。&#10;Java Stream Player(9.0.4)，用于语音中声音的播放。&#10;OkHttp3(4.2.2)，用于语音部分的数据请求。&#10;gushici项目提供的古诗词接口和数据。&#10;“每日一句话”的数据来自一言&#10;本项目还使用了 百度AI SDK 来实现OCR功能。&#10;">
          <font>
             <Font name="Microsoft YaHei" size="13.0" />
          </font>
@@ -39,7 +32,7 @@
                   <Font name="Microsoft YaHei" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" onAction="#showLicense" prefHeight="30.0" prefWidth="150.0" ripplerFill="#006063" style="-fx-background-color: #B2EBF2;" text="开源协议（LGPL v3）">
+            <JFXButton buttonType="RAISED" onAction="#showLicense" prefHeight="30.0" prefWidth="150.0" ripplerFill="#006063" style="-fx-background-color: #B2EBF2;" text="开源协议（GPL v3）">
                <font>
                   <Font name="Microsoft YaHei" size="13.0" />
                </font>

@@ -199,8 +199,12 @@ public final class MainInterfaceController {
         selector.addStoppedEventListener((observableValue, oldValue, stop)->{
             if (stop) {
                 anPaiBtn.setText("安排一下");
+                nameChoose.setDisable(false);
+                numbChoose.setDisable(false);
             } else {
                 anPaiBtn.setText("不玩了！");
+                nameChoose.setDisable(true);
+                numbChoose.setDisable(true);
             }
         });
     }

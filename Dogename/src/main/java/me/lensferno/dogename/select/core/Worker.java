@@ -13,7 +13,7 @@ public final class Worker {
 
     private final Random randomNumber = new Random();
 
-    private final StringProperty[] labelTexts;
+    private StringProperty[] labelTexts;
     private final SimpleBooleanProperty stoppedIndicator = new SimpleBooleanProperty(true);
 
     private final MainConfig config;
