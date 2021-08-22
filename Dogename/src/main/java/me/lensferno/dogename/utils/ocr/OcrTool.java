@@ -1,7 +1,6 @@
 package me.lensferno.dogename.utils.ocr;
 
 import com.baidu.aip.ocr.AipOcr;
-import com.google.gson.Gson;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,16 +17,16 @@ public class OcrTool {
     String result;
     int resultNum=0;
 
-    public boolean requestOcrAPI(String imageFileLocation){
-        JSONObject respondJSON=client.accurateGeneral(imageFileLocation, new HashMap<>());
+    public void requestOcrAPI(String imageFileLocation){
+        JSONObject respondJSON=client.basicGeneral(imageFileLocation, new HashMap<>());
         if (respondJSON==null){
             result="错误：返回了空的数据。";
-            return false;
+            return;
         }
         if(!respondJSON.has("words_result")){
             String errorCode=respondJSON.get("error_code").toString();
             result=findErrorMsg(errorCode);
-            return false;
+            return;
         }
         resultNum=respondJSON.getInt("words_result_num");
         System.out.println("total result:"+resultNum);
@@ -39,9 +38,6 @@ public class OcrTool {
             stringBuffer.append(resultArray.getJSONObject(i).getString("words")).append("\n");
         }
         result=stringBuffer.toString();
-
-        return true;
-
     }
 
     public String getResult() {
