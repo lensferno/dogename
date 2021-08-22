@@ -19,7 +19,7 @@ import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.data.Data;
-import me.lensferno.dogename.ocr.Ocr;
+import me.lensferno.dogename.utils.ocr.OcrTool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -32,7 +32,7 @@ public final class MainInterfaceController {
 
     public JFXTextArea message;
 
-    Ocr ocrTool=null;
+    OcrTool ocrTool=null;
 
     History history=new History();
 

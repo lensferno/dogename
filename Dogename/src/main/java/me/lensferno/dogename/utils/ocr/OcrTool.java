@@ -1,13 +1,13 @@
-package me.lensferno.dogename.ocr;
+package me.lensferno.dogename.utils.ocr;
 
 import com.baidu.aip.ocr.AipOcr;
+import com.google.gson.Gson;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.util.HashMap;
 
-public class Ocr {
+public class OcrTool {
 
     public static final String APP_ID = "17411446";
     public static final String API_KEY = "R2ggZhk6nB7ORE4Ozy9iAPdc";
@@ -15,29 +15,20 @@ public class Ocr {
 
     AipOcr client = new AipOcr(APP_ID, API_KEY, SECRET_KEY);
 
-    public void init(){
-        client.setConnectionTimeoutInMillis(2000);
-        client.setSocketTimeoutInMillis(60000);
-    }
-
     String result;
     int resultNum=0;
 
-    public boolean identifyPrecisely(String imgFileLoca){
-        HashMap<String,String> params=new HashMap<>();
-        params.put("probability","false");
-        JSONObject respondJSON=client.accurateGeneral("files"+ File.separator+"ocrCache.png",params);
-
+    public boolean requestOcrAPI(String imageFileLocation){
+        JSONObject respondJSON=client.accurateGeneral(imageFileLocation, new HashMap<>());
         if (respondJSON==null){
             result="错误：返回了空的数据。";
             return false;
         }
         if(!respondJSON.has("words_result")){
-            String errorCode=respondJSON.getString("error_code");
+            String errorCode=respondJSON.get("error_code").toString();
             result=findErrorMsg(errorCode);
             return false;
         }
-
         resultNum=respondJSON.getInt("words_result_num");
         System.out.println("total result:"+resultNum);
         JSONArray resultArray=respondJSON.getJSONArray("words_result");
@@ -55,10 +46,6 @@ public class Ocr {
 
     public String getResult() {
         return result;
-    }
-
-    public int getResultNum() {
-        return resultNum;
     }
 
     private String findErrorMsg(String errorCode){

@@ -3,13 +3,15 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXSpinner?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.*?>
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="499.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.lensferno.dogename.controllers.OcrPaneController">
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="499.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.301" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.lensferno.dogename.controllers.OcrPaneController">
    <children>
       <TextArea fx:id="ocrText" prefHeight="566.0" prefWidth="236.0" promptText="识别出的内容会在这里显示">
          <font>
@@ -21,11 +23,6 @@
             <Pane>
                <children>
                   <JFXSpinner fx:id="loadingSpinner" mouseTransparent="true" prefHeight="63.0" prefWidth="231.0" visible="false" />
-                  <Text fx:id="statusText" layoutX="1.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="236.0">
-                     <font>
-                        <Font name="Microsoft YaHei" size="14.0" />
-                     </font>
-                  </Text>
                </children>
             </Pane>
             <Line endX="236.0" stroke="#0000006d" strokeWidth="2.0" />

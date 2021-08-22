@@ -14,7 +14,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import me.lensferno.dogename.utils.DialogMaker;
 import me.lensferno.dogename.data.Data;
-import me.lensferno.dogename.ocr.Ocr;
+import me.lensferno.dogename.utils.ocr.OcrTool;
 import me.lensferno.dogename.utils.Clipboard;
 
 import java.io.File;
@@ -24,13 +24,13 @@ public class NameManagerPaneController extends VBox  {
 
     Data data;
     Pane rootPane;
-    Ocr ocrTool;
+    OcrTool ocrTool;
 
     Logger log = Logger.getLogger("NameManagerPaneLOgger");
 
     public static final ObservableList<String> shownNameList = FXCollections.observableArrayList();
 
-    public NameManagerPaneController(Data data, Pane rootPane, Ocr ocrTool){
+    public NameManagerPaneController(Data data, Pane rootPane, OcrTool ocrTool){
         FXMLLoader loader=new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/NameManagerPane.fxml"));
         loader.setRoot(this);
         loader.setController(this);
@@ -177,7 +177,7 @@ public class NameManagerPaneController extends VBox  {
         log.fine("窗口加载完成");
 
         OcrPaneController ocrPaneController= fxmlLoader.getController();
-        ocrPaneController.setpStage((Stage)inputName.getScene().getWindow());
+        ocrPaneController.setMainStage((Stage)inputName.getScene().getWindow());
         stage.show();
 
     }
