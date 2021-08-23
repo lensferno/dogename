@@ -20,7 +20,7 @@ public class Hitokoto {
         return NetworkUtil.getHtml(HITOKOTO_API);
     }
 
-    public void showHitokoto(Pane rootPane, Label topBar) {
+    public void showHitokoto(Pane rootPane, Label topBar, boolean showOnDialog) {
 
         new Thread(() -> {
 
@@ -39,8 +39,10 @@ public class Hitokoto {
 
                 Platform.runLater(() -> {
                     topBar.setText(String.format("《%s》：%s (%s)", from, hitokoto, author));
-                    HitokotoPaneController hitokotoPaneController = new HitokotoPaneController(hitokoto, from, author, creator, type);
-                    new DialogMaker(rootPane).createDialogWithOneBtn("每日一句话", hitokotoPaneController);
+                    if (showOnDialog) {
+                        HitokotoPaneController hitokotoPaneController = new HitokotoPaneController(hitokoto, from, author, creator, type);
+                        new DialogMaker(rootPane).createDialogWithOneBtn("每日一言", hitokotoPaneController);
+                    }
                 });
             }
         }).start();

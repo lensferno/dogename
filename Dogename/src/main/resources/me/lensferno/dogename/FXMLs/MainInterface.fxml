@@ -21,7 +21,7 @@
                <font>
                   <Font name="Microsoft YaHei" size="14.0" />
                </font></JFXButton>
-            <Label fx:id="downLabel" alignment="CENTER" layoutX="194.0" layoutY="177.0" prefHeight="117.0" prefWidth="650.0" text="✋(　˙0˙)" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="downLabel" alignment="CENTER" layoutX="194.0" layoutY="177.0" prefHeight="117.0" prefWidth="650.0" text="(¯﹃¯)" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Microsoft YaHei" size="86.0" />
                </font>

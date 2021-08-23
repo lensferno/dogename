@@ -22,7 +22,7 @@ public class ScreenCapture {
 
     private OcrTool ocrTool;
 
-    private final String cacheImageFileLocation = "caches/image/ocrImageCache.jpg";
+    private final String cacheImageFileLocation = "caches/image/ocrImageCache.png";
 
     private final Runnable finalEvent = new Runnable() {
         @Override
@@ -30,9 +30,9 @@ public class ScreenCapture {
             if (ocrTool == null) {
                 ocrTool = new OcrTool();
             }
+            end.set(true);
             ocrTool.requestOcrAPI(cacheImageFileLocation);
             result.set(ocrTool.getResult());
-            end.set(true);
         }
     };
 
@@ -152,6 +152,8 @@ public class ScreenCapture {
     }
 
     private void createNewSelectedAreaRectangle() {
+        rootPane.getChildren().removeAll(Width_Follow, Height_Follow, Width_Fixed, Height_Fixed);
+
         Width_Follow = new Line();
         Height_Follow = new Line();
         Width_Fixed = new Line();

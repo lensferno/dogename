@@ -77,14 +77,13 @@ public class Main extends Application {
             configLoader.writeAllConfigToFile(configLoader.getMainConfigLocation(), configLoader.getVoiceConfigLocation());
             System.exit(0);
         });
-        
-        if (mainInterfaceController.getMainConfig().isShowSaying()) {
-            if (new Random().nextBoolean()){
-                new Gushici().showGushici(mainInterfaceController.getRootPane(),mainInterfaceController.getTopBar());
-            }else {
-                new Hitokoto().showHitokoto(mainInterfaceController.getRootPane(),mainInterfaceController.getTopBar());
-            }
+
+        if (new Random().nextBoolean()){
+            new Gushici().showGushici(mainInterfaceController.getRootPane(),mainInterfaceController.getTopBar(), mainInterfaceController.getMainConfig().isShowSaying());
+        } else {
+            new Hitokoto().showHitokoto(mainInterfaceController.getRootPane(),mainInterfaceController.getTopBar(), mainInterfaceController.getMainConfig().isShowSaying());
         }
+
 
     }
 

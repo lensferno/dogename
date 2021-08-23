@@ -19,7 +19,7 @@ public class Gushici {
         return NetworkUtil.getHtml(GUSHICI_API);
     }
 
-    public void showGushici(Pane rootPane, Label topBar){
+    public void showGushici(Pane rootPane, Label topBar, boolean showOnDialog){
 
         new Thread(()->{
 
@@ -35,8 +35,10 @@ public class Gushici {
                 type=gushiciData.getType();
                 Platform.runLater(()->{
                     topBar.setText(content+" ——"+author+"《"+title+"》");
-                    GushiciPaneController gushiciPaneController=new GushiciPaneController(content, title, author, type);
-                    new DialogMaker(rootPane).createDialogWithOneBtn("每日古诗词",gushiciPaneController);
+                    if (showOnDialog) {
+                        GushiciPaneController gushiciPaneController=new GushiciPaneController(content, title, author, type);
+                        new DialogMaker(rootPane).createDialogWithOneBtn("每日古诗词",gushiciPaneController);
+                    }
                 });
             }
         }).start();

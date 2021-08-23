@@ -48,7 +48,7 @@ public class ProgramInfoPaneController extends VBox {
     }
 
     @FXML
-    void showLicense(ActionEvent event) {
+    void showLicense() {
         TextArea textArea=new TextArea(IOUtil.inputStreamToString(getClass().getResourceAsStream("/gpl-3.0.txt"), StandardCharsets.UTF_8));
         textArea.setFont(Font.font("Microsoft YaHei",14));
         textArea.setMinWidth(600);
@@ -58,7 +58,7 @@ public class ProgramInfoPaneController extends VBox {
     }
 
     @FXML
-    void showLibLicense(ActionEvent event) {
+    void showLibLicense() {
         TextArea textArea=new TextArea(IOUtil.inputStreamToString(getClass().getResourceAsStream("/LibLicense.txt"), StandardCharsets.UTF_8));
         textArea.setFont(Font.font("Microsoft YaHei",14));
         textArea.setMinWidth(600);
@@ -68,7 +68,7 @@ public class ProgramInfoPaneController extends VBox {
     }
 
     @FXML
-    void showHelp(ActionEvent event) {
+    void showHelp() {
 
         JFXButton YesButton = new JFXButton("好的～去吧去吧");
         YesButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
@@ -97,7 +97,7 @@ public class ProgramInfoPaneController extends VBox {
     }
 
     @FXML
-    void viewCode(ActionEvent event) {
+    void viewCode() {
         JFXButton githubButton = new JFXButton("前往Github查看");
         githubButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
         githubButton.setPrefWidth(150);

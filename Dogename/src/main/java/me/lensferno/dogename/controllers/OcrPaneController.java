@@ -22,6 +22,8 @@ public class OcrPaneController {
         this.mainStage = mainStage;
     }
 
+
+
     @FXML
     void addNew() {
 
@@ -39,7 +41,7 @@ public class OcrPaneController {
         ScreenCapture screenCapture = new ScreenCapture();
 
         ocrText.textProperty().bindBidirectional(screenCapture.resultProperty());
-        loadingSpinner.visibleProperty().bind(screenCapture.endProperty().not());
+        loadingSpinner.visibleProperty().set(true);
 
         screenCapture.startCapture();
 
@@ -47,6 +49,7 @@ public class OcrPaneController {
             if (end) {
                 mainStage.show();
                 thisStage.show();
+                loadingSpinner.visibleProperty().set(false);
             }
         });
     }
