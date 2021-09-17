@@ -34,11 +34,6 @@ public class ProgramInfoPaneController extends VBox {
         loader.setController(this);
         try {
             loader.load();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
             dogeView.setImage(new Image(getClass().getResourceAsStream("/images/banner.png")));
         } catch (Exception e) {
             e.printStackTrace();

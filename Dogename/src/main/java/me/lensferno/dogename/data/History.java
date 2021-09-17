@@ -1,20 +1,22 @@
 package me.lensferno.dogename.data;
 
+import me.lensferno.dogename.utils.FilePath;
+
 import java.io.*;
 import java.util.ArrayList;
 
 public class History {
 
-    public static final String separator = File.separator;
     ArrayList<String> history;
-    private String HISTORY_FILE;
+
+    private final String HISTORY_FILE = FilePath.toSpecificPathForm("files/history.data");
 
     public void loadHistory() {
 
-        HISTORY_FILE = "files" + separator + "history.data";
+        File historyFile = new File(HISTORY_FILE);
 
         try {
-            File historyFile = new File(HISTORY_FILE);
+
             if (!historyFile.exists()) {
                 historyFile.getParentFile().mkdirs();
                 historyFile.createNewFile();
@@ -52,7 +54,6 @@ public class History {
 
     private void writeHistory() {
 
-        HISTORY_FILE = "files" + separator + "history.data";
         File historyFile = new File(HISTORY_FILE);
 
         try {

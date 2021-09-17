@@ -10,6 +10,7 @@ import me.lensferno.dogename.configs.adapters.BooleanPropertyAdapter;
 import me.lensferno.dogename.configs.adapters.DoublePropertyAdapter;
 import me.lensferno.dogename.configs.adapters.IntegerPropertyAdapter;
 import me.lensferno.dogename.configs.adapters.StringPropertyAdapter;
+import me.lensferno.dogename.utils.FilePath;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
@@ -18,8 +19,8 @@ import java.nio.charset.StandardCharsets;
 public class ConfigLoader {
 
 
-    private final String mainConfigLocation = "files" + File.separator + "Config.json";
-    private final String voiceConfigLocation = "files" + File.separator + "VoiceConfig.json";
+    private final String mainConfigLocation = FilePath.toSpecificPathForm("files/Config.json");
+    private final String voiceConfigLocation = FilePath.toSpecificPathForm("files/VoiceConfig.json");
     //ConfigValuesBean config;
     private MainConfig mainConfig;
     private VoiceConfig voiceConfig;

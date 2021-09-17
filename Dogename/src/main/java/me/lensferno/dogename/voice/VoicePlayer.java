@@ -3,6 +3,7 @@ package me.lensferno.dogename.voice;
 import com.goxr3plus.streamplayer.stream.StreamPlayer;
 import com.goxr3plus.streamplayer.stream.StreamPlayerException;
 import me.lensferno.dogename.configs.VoiceConfig;
+import me.lensferno.dogename.utils.FilePath;
 import me.lensferno.dogename.utils.IOUtil;
 import me.lensferno.dogename.utils.NetworkUtil;
 
@@ -11,10 +12,10 @@ import java.net.URLEncoder;
 
 public class VoicePlayer {
 
-    public static final String separator = File.separator;
-
     private final String VOICE_API = "https://tsn.baidu.com/text2audio";
-    String cachePath = "caches" + separator + "voice" + separator;
+
+    String cachePath = FilePath.toSpecificPathForm("caches/voice/");
+
     Token token;
     StreamPlayer streamPlayer = new StreamPlayer();
     private VoiceConfig voiceConfig = null;

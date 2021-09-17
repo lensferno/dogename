@@ -9,7 +9,6 @@ import java.net.URL;
 
 public class TokenManager {
 
-    public static final String separator = File.separator;
     public static final int TOKEN_OK = 0;
     public static final int TOKEN_BAD = 1;
     final String API_KEY = "dIHCtamVdD0ERO1yyFir2iI4";

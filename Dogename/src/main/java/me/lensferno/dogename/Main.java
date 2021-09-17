@@ -9,6 +9,7 @@ import me.lensferno.dogename.configs.ConfigLoader;
 import me.lensferno.dogename.controllers.MainInterfaceController;
 import me.lensferno.dogename.sayings.Gushici;
 import me.lensferno.dogename.sayings.Hitokoto;
+import me.lensferno.dogename.utils.FilePath;
 
 import java.io.File;
 import java.lang.management.ManagementFactory;
@@ -28,7 +29,7 @@ public class Main extends Application {
 
             new File("process").mkdirs();
 
-            File tempFile = new File("process" + File.separator + pid);
+            File tempFile = new File(FilePath.toSpecificPathForm("process/" + pid));
             tempFile.createNewFile();
             tempFile.deleteOnExit();
 

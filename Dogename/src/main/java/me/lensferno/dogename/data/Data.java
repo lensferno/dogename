@@ -1,6 +1,7 @@
 package me.lensferno.dogename.data;
 
 import com.google.gson.Gson;
+import me.lensferno.dogename.utils.FilePath;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -20,7 +21,7 @@ public class Data {
 
     public Data() {
 
-        dataFile = new File("files" + File.separator + "Namelist.data");
+        dataFile = new File(FilePath.toSpecificPathForm("files/Namelist.data"));
 
         try {
 
@@ -210,8 +211,8 @@ public class Data {
 
     class IgnoreList {
 
-        private final File nameIgnoreFile = new File("files" + File.separator + "IgnoredNameList.data");
-        private final File numbIgnoreFile = new File("files" + File.separator + "IgnoredNumberList.data");
+        private final File nameIgnoreFile = new File(FilePath.toSpecificPathForm("files/IgnoredNameList.data"));
+        private final File numbIgnoreFile = new File(FilePath.toSpecificPathForm("files/IgnoredNumberList.data"));
         private HashSet<String> ignoreNameList = new HashSet<>();
         private HashSet<String> ignoreNumberList = new HashSet<>();
 
@@ -250,7 +251,7 @@ public class Data {
         public void readIgnoreList() {
             readNameIgnoreList();
             readNumberIgnoreList();
-            System.out.println("There are " + ignoreNameList.size() + " names and " + ignoreNumberList.size() + " numbers ignored.");
+            System.out.println(String.format("There are %d names and %d numbers ignored", ignoreNameList.size(), ignoreNumberList.size()));
         }
 
         private void readNameIgnoreList() {

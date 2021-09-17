@@ -22,6 +22,7 @@ import me.lensferno.dogename.data.Data;
 import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.select.Selector;
 import me.lensferno.dogename.utils.DialogMaker;
+import me.lensferno.dogename.utils.FilePath;
 import me.lensferno.dogename.utils.ocr.OcrTool;
 
 import java.io.File;
@@ -86,8 +87,8 @@ public final class MainInterfaceController {
     }
 
     public void setUpConfig(ConfigLoader configLoader) {
-        mainConfig = configLoader.readConfigFromFile("files" + File.separator + "Config.json");
-        voiceConfig = configLoader.readVoiceConfigFromFile("files" + File.separator + "VoiceConfig.json");
+        mainConfig = configLoader.readConfigFromFile(FilePath.toSpecificPathForm("files/Config.json"));
+        voiceConfig = configLoader.readVoiceConfigFromFile(FilePath.toSpecificPathForm("files/VoiceConfig.json"));
     }
 
     @FXML
