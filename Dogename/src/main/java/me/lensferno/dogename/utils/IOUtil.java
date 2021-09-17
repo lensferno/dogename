@@ -1,6 +1,9 @@
 package me.lensferno.dogename.utils;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.nio.charset.Charset;
 
 public class IOUtil {
@@ -38,7 +41,7 @@ public class IOUtil {
         }
     }
 
-    public static void writeFile(byte[] bytes, File file) throws Exception{
+    public static void writeFile(byte[] bytes, File file) throws Exception {
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         fileOutputStream.write(bytes);
         fileOutputStream.close();

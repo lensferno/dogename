@@ -28,13 +28,13 @@ public class ProgramInfoPaneController extends VBox {
 
     Pane rootPane;
 
-    public ProgramInfoPaneController(Pane rootPane){
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/ProgramInfoPane.fxml"));
+    public ProgramInfoPaneController(Pane rootPane) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/ProgramInfoPane.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         try {
             loader.load();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -44,51 +44,51 @@ public class ProgramInfoPaneController extends VBox {
             e.printStackTrace();
         }
 
-        this.rootPane=rootPane;
+        this.rootPane = rootPane;
     }
 
     @FXML
     void showLicense() {
-        TextArea textArea=new TextArea(IOUtil.inputStreamToString(getClass().getResourceAsStream("/gpl-3.0.txt"), StandardCharsets.UTF_8));
-        textArea.setFont(Font.font("Microsoft YaHei",14));
+        TextArea textArea = new TextArea(IOUtil.inputStreamToString(getClass().getResourceAsStream("/gpl-3.0.txt"), StandardCharsets.UTF_8));
+        textArea.setFont(Font.font("Microsoft YaHei", 14));
         textArea.setMinWidth(600);
         textArea.setPrefHeight(400);
         textArea.setEditable(false);
-        new DialogMaker(rootPane).createDialogWithOneBtn("开源协议（GPL v3）",textArea);
+        new DialogMaker(rootPane).createDialogWithOneBtn("开源协议（GPL v3）", textArea);
     }
 
     @FXML
     void showLibLicense() {
-        TextArea textArea=new TextArea(IOUtil.inputStreamToString(getClass().getResourceAsStream("/LibLicense.txt"), StandardCharsets.UTF_8));
-        textArea.setFont(Font.font("Microsoft YaHei",14));
+        TextArea textArea = new TextArea(IOUtil.inputStreamToString(getClass().getResourceAsStream("/LibLicense.txt"), StandardCharsets.UTF_8));
+        textArea.setFont(Font.font("Microsoft YaHei", 14));
         textArea.setMinWidth(600);
         textArea.setPrefHeight(400);
         textArea.setEditable(false);
-        new DialogMaker(rootPane).createDialogWithOneBtn("其他开源许可",textArea);
+        new DialogMaker(rootPane).createDialogWithOneBtn("其他开源许可", textArea);
     }
 
     @FXML
     void showHelp() {
 
         JFXButton YesButton = new JFXButton("好的～去吧去吧");
-        YesButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
+        YesButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD, 14));
         YesButton.setPrefWidth(160);
         YesButton.setPrefHeight(40);
-        YesButton.addEventHandler(ActionEvent.ACTION,e -> jumpToHelp());
+        YesButton.addEventHandler(ActionEvent.ACTION, e -> jumpToHelp());
 
         JFXButton cancelButton = new JFXButton("算了算了");
-        cancelButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
+        cancelButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD, 14));
         cancelButton.setPrefWidth(100);
         cancelButton.setPrefHeight(40);
 
-        Text messageText=new Text("即将跳转到本程序Github页面上的使用帮助，是否继续？");
-        messageText.setFont(Font.font("Microsoft YaHei",14));
+        Text messageText = new Text("即将跳转到本程序Github页面上的使用帮助，是否继续？");
+        messageText.setFont(Font.font("Microsoft YaHei", 14));
 
-        new DialogMaker(rootPane).createDialog("查看帮助",messageText,cancelButton,YesButton);
+        new DialogMaker(rootPane).createDialog("查看帮助", messageText, cancelButton, YesButton);
 
     }
 
-    private void jumpToHelp(){
+    private void jumpToHelp() {
         try {
             Desktop.getDesktop().browse(new URI("https://github.com/lensferno/dogename/blob/main/res/usage.md"));
         } catch (IOException | URISyntaxException e) {
@@ -99,30 +99,30 @@ public class ProgramInfoPaneController extends VBox {
     @FXML
     void viewCode() {
         JFXButton githubButton = new JFXButton("前往Github查看");
-        githubButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
+        githubButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD, 14));
         githubButton.setPrefWidth(150);
         githubButton.setPrefHeight(40);
-        githubButton.addEventHandler(ActionEvent.ACTION,e -> jumpToGithub());
+        githubButton.addEventHandler(ActionEvent.ACTION, e -> jumpToGithub());
 
         JFXButton giteeButton = new JFXButton("前往Gitee查看");
-        giteeButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
+        giteeButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD, 14));
         giteeButton.setPrefWidth(150);
         giteeButton.setPrefHeight(40);
-        giteeButton.addEventHandler(ActionEvent.ACTION,e -> jumpToGitee());
+        giteeButton.addEventHandler(ActionEvent.ACTION, e -> jumpToGitee());
 
         JFXButton cancelButton = new JFXButton("哪都不去");
-        cancelButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD,14));
+        cancelButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD, 14));
         cancelButton.setPrefWidth(100);
         cancelButton.setPrefHeight(40);
 
-        Text messageText=new Text("Dogename在Github和码云(Gitee)都发布有代码和介绍。\n您想去哪里？\nGithub：将跳转到https://github.com/lensferno/dogename\nGitee：将跳转到https://gitee.com/lensferno/dogename");
-        messageText.setFont(Font.font("Microsoft YaHei",14));
+        Text messageText = new Text("Dogename在Github和码云(Gitee)都发布有代码和介绍。\n您想去哪里？\nGithub：将跳转到https://github.com/lensferno/dogename\nGitee：将跳转到https://gitee.com/lensferno/dogename");
+        messageText.setFont(Font.font("Microsoft YaHei", 14));
 
-        new DialogMaker(rootPane).createDialog("查看源代码",messageText,cancelButton,githubButton,giteeButton);
+        new DialogMaker(rootPane).createDialog("查看源代码", messageText, cancelButton, githubButton, giteeButton);
 
     }
 
-    private void jumpToGithub(){
+    private void jumpToGithub() {
         try {
             Desktop.getDesktop().browse(new URI("https://github.com/lensferno/dogename"));
         } catch (IOException | URISyntaxException e) {
@@ -130,7 +130,7 @@ public class ProgramInfoPaneController extends VBox {
         }
     }
 
-    private void jumpToGitee(){
+    private void jumpToGitee() {
         try {
             Desktop.getDesktop().browse(new URI("https://gitee.com/lensferno/dogename"));
         } catch (IOException | URISyntaxException e) {

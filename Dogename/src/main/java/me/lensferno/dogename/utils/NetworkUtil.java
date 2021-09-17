@@ -1,10 +1,10 @@
 package me.lensferno.dogename.utils;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.URL;
@@ -15,8 +15,6 @@ import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
 
 public class NetworkUtil {
-
-    private static Logger log = LogManager.getLogger();
 
     public static final String REQUEST_USERAGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67";
 
@@ -61,12 +59,12 @@ public class NetworkUtil {
 
             is.close();
         } catch (Exception e) {
-            log.error("Error in getting HTML:" + e);
+            System.out.println("Error in getting HTML:" + e);
             return null;
         }
 
         if (output)
-            System.out.println("[INFO]Got：" + sb.toString());
+            System.out.println("[INFO]Got：" + sb);
 
         return sb.toString();
     }

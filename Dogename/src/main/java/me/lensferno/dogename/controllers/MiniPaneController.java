@@ -10,26 +10,30 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
 import javafx.stage.Stage;
-import me.lensferno.dogename.select.Selector;
 import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.controllers.WindowListeners.MoveWindowByMouse;
 import me.lensferno.dogename.controllers.WindowListeners.MoveWindowByTouch;
 import me.lensferno.dogename.data.Data;
+import me.lensferno.dogename.select.Selector;
 
 import java.util.Random;
 
 public class MiniPaneController {
 
+    Stage oldStage;
+    Stage currentStage;
+    Scene currentScene;
+    StringProperty[] oldTextProperties = null;
     @FXML
     private Label chosenNameLabel;
-
     @FXML
     private JFXButton anPaiBtn;
-
     @FXML
     private JFXButton miniModeBtn;
-
-    Stage oldStage;
+    private final Random random = new Random();
+    private Data data;
+    private MainConfig mainConfig;
+    private Selector selector = new Selector();
 
     public Stage getOldStage() {
         return oldStage;
@@ -39,12 +43,6 @@ public class MiniPaneController {
         this.oldStage = oldStage;
     }
 
-    private Random random = new Random();
-    private Data data;
-
-    Stage currentStage;
-    Scene currentScene;
-
     public void setCurrentScene(Scene currentScene) {
         this.currentScene = currentScene;
     }
@@ -52,8 +50,6 @@ public class MiniPaneController {
     public void setCurrentStage(Stage currentStage) {
         this.currentStage = currentStage;
     }
-
-    StringProperty[] oldTextProperties = null;
 
     public void setBase(Data data, MainConfig mainConfig, Selector selector) {
         this.data = data;
@@ -94,9 +90,6 @@ public class MiniPaneController {
         miniModeBtn.setOnTouchPressed(touchHandler);
         miniModeBtn.setOnTouchMoved(touchHandler);
     }
-
-    private MainConfig mainConfig;
-    private Selector selector = new Selector();
 
     @FXML
     void anPai() {

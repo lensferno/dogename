@@ -2,28 +2,27 @@ package me.lensferno.dogename.configs;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import javafx.beans.property.*;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import me.lensferno.dogename.configs.adapters.BooleanPropertyAdapter;
 import me.lensferno.dogename.configs.adapters.DoublePropertyAdapter;
 import me.lensferno.dogename.configs.adapters.IntegerPropertyAdapter;
 import me.lensferno.dogename.configs.adapters.StringPropertyAdapter;
 import org.apache.commons.io.IOUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 public class ConfigLoader {
 
-    Logger log = LogManager.getLogger();
 
+    private final String mainConfigLocation = "files" + File.separator + "Config.json";
+    private final String voiceConfigLocation = "files" + File.separator + "VoiceConfig.json";
     //ConfigValuesBean config;
     private MainConfig mainConfig;
     private VoiceConfig voiceConfig;
-    
-    private final String mainConfigLocation = "files"+ File.separator+"Config.json";
-    private final String voiceConfigLocation = "files"+ File.separator+"VoiceConfig.json";
 
     public String getMainConfigLocation() {
         return mainConfigLocation;
@@ -37,43 +36,43 @@ public class ConfigLoader {
         return mainConfig;
     }
 
-    public MainConfig readConfigFromFile(String fileLocation){
+    public MainConfig readConfigFromFile(String fileLocation) {
 
         //property属性应该要自定义一个json适配器才能解析出来
-        Gson gson=new GsonBuilder()
-                .registerTypeAdapter(SimpleBooleanProperty.class,new BooleanPropertyAdapter())
-                .registerTypeAdapter(SimpleIntegerProperty.class,new IntegerPropertyAdapter())
-                .registerTypeAdapter(SimpleStringProperty.class,new StringPropertyAdapter())
-                .registerTypeAdapter(SimpleDoubleProperty.class,new DoublePropertyAdapter())
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(SimpleBooleanProperty.class, new BooleanPropertyAdapter())
+                .registerTypeAdapter(SimpleIntegerProperty.class, new IntegerPropertyAdapter())
+                .registerTypeAdapter(SimpleStringProperty.class, new StringPropertyAdapter())
+                .registerTypeAdapter(SimpleDoubleProperty.class, new DoublePropertyAdapter())
                 .setPrettyPrinting()
                 .create();
 
         String ConfigJSON;
 
-        try{
-            File configFile=new File(fileLocation);
-            if(!configFile.exists()){
+        try {
+            File configFile = new File(fileLocation);
+            if (!configFile.exists()) {
                 configFile.getParentFile().mkdirs();
                 configFile.createNewFile();
-                mainConfig=new MainConfig();
+                mainConfig = new MainConfig();
                 writeMainConfigToFile(mainConfigLocation);
                 return mainConfig;
             }
-            InputStream inputStream=new FileInputStream(configFile);
-            ConfigJSON=IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+            InputStream inputStream = new FileInputStream(configFile);
+            ConfigJSON = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
 
-            mainConfig=gson.fromJson(ConfigJSON,MainConfig.class);
+            mainConfig = gson.fromJson(ConfigJSON, MainConfig.class);
 
             if (mainConfig == null) {
-                mainConfig=new MainConfig();
+                mainConfig = new MainConfig();
                 writeMainConfigToFile(mainConfigLocation);
                 return mainConfig;
             }
 
-        }catch (Exception e){
-            log.error("Error to load config file:"+e+"\nUse Default config.");
+        } catch (Exception e) {
+            System.out.println("Error to load config file:" + e + "\nUse Default config.");
 
-            mainConfig=new MainConfig();
+            mainConfig = new MainConfig();
             writeMainConfigToFile(mainConfigLocation);
             return mainConfig;
         }
@@ -81,44 +80,44 @@ public class ConfigLoader {
         return this.mainConfig;
     }
 
-    public VoiceConfig readVoiceConfigFromFile(String fileLocation){
+    public VoiceConfig readVoiceConfigFromFile(String fileLocation) {
 
         //property属性应该要自定义一个json适配器才能解析出来
-        Gson gson=new GsonBuilder()
-                .registerTypeAdapter(SimpleBooleanProperty.class,new BooleanPropertyAdapter())
-                .registerTypeAdapter(SimpleIntegerProperty.class,new IntegerPropertyAdapter())
-                .registerTypeAdapter(SimpleStringProperty.class,new StringPropertyAdapter())
-                .registerTypeAdapter(SimpleDoubleProperty.class,new DoublePropertyAdapter())
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(SimpleBooleanProperty.class, new BooleanPropertyAdapter())
+                .registerTypeAdapter(SimpleIntegerProperty.class, new IntegerPropertyAdapter())
+                .registerTypeAdapter(SimpleStringProperty.class, new StringPropertyAdapter())
+                .registerTypeAdapter(SimpleDoubleProperty.class, new DoublePropertyAdapter())
                 .setPrettyPrinting()
                 .create();
 
         String ConfigJSON;
 
-        try{
-            File configFile=new File(fileLocation);
-            if(!configFile.exists()){
+        try {
+            File configFile = new File(fileLocation);
+            if (!configFile.exists()) {
                 configFile.getParentFile().mkdirs();
                 configFile.createNewFile();
 
-                voiceConfig=new VoiceConfig();
+                voiceConfig = new VoiceConfig();
                 writeVoiceConfigToFile(voiceConfigLocation);
                 return voiceConfig;
             }
-            InputStream inputStream=new FileInputStream(configFile);
-            ConfigJSON=IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+            InputStream inputStream = new FileInputStream(configFile);
+            ConfigJSON = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
 
             writeVoiceConfigToFile(voiceConfigLocation);
-            voiceConfig=gson.fromJson(ConfigJSON,VoiceConfig.class);
+            voiceConfig = gson.fromJson(ConfigJSON, VoiceConfig.class);
             if (voiceConfig == null) {
-                voiceConfig=new VoiceConfig();
+                voiceConfig = new VoiceConfig();
                 writeVoiceConfigToFile(voiceConfigLocation);
                 return voiceConfig;
             }
 
-        }catch (Exception e){
-            log.error("Error to load voice config file:"+e+"\nUse Default voice config.");
+        } catch (Exception e) {
+            System.out.println("Error to load voice config file:" + e + "\nUse Default voice config.");
 
-            voiceConfig=new VoiceConfig();
+            voiceConfig = new VoiceConfig();
             writeVoiceConfigToFile(voiceConfigLocation);
             return voiceConfig;
         }
@@ -127,85 +126,85 @@ public class ConfigLoader {
     }
 
     //
-    public MainConfig setValuesToProperty(){
+    public MainConfig setValuesToProperty() {
         //mainconfig.set..(config.get..)
         //...so on
         //
         return this.mainConfig;
     }
 
-    private String toJSON(MainConfig config){
+    private String toJSON(MainConfig config) {
 
-        Gson gson=new GsonBuilder()
-            .registerTypeAdapter(SimpleBooleanProperty.class,new BooleanPropertyAdapter())
-            .registerTypeAdapter(SimpleIntegerProperty.class,new IntegerPropertyAdapter())
-            .registerTypeAdapter(SimpleStringProperty.class,new StringPropertyAdapter())
-            .setPrettyPrinting()
-            .create();
-
-        return gson.toJson(config);
-    }
-
-    private String VoiceConfigtoJSON(VoiceConfig config){
-
-        Gson gson=new GsonBuilder()
-                .registerTypeAdapter(SimpleDoubleProperty.class,new DoublePropertyAdapter())
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(SimpleBooleanProperty.class, new BooleanPropertyAdapter())
+                .registerTypeAdapter(SimpleIntegerProperty.class, new IntegerPropertyAdapter())
+                .registerTypeAdapter(SimpleStringProperty.class, new StringPropertyAdapter())
                 .setPrettyPrinting()
                 .create();
 
         return gson.toJson(config);
     }
 
-    public void writeAllConfigToFile(String outputLocation, String voiceConfigFile){
+    private String VoiceConfigtoJSON(VoiceConfig config) {
+
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(SimpleDoubleProperty.class, new DoublePropertyAdapter())
+                .setPrettyPrinting()
+                .create();
+
+        return gson.toJson(config);
+    }
+
+    public void writeAllConfigToFile(String outputLocation, String voiceConfigFile) {
         File outputFile = new File(outputLocation);
 
-        try{
-            if(! outputFile.exists()){
+        try {
+            if (!outputFile.exists()) {
                 outputFile.getParentFile().mkdirs();
                 outputFile.createNewFile();
             }
-            OutputStream stream=new FileOutputStream(outputFile);
-            IOUtils.write(toJSON(this.mainConfig).getBytes(StandardCharsets.UTF_8),stream);
+            OutputStream stream = new FileOutputStream(outputFile);
+            IOUtils.write(toJSON(this.mainConfig).getBytes(StandardCharsets.UTF_8), stream);
 
-            OutputStream voiceConfigFileStream=new FileOutputStream(voiceConfigFile);
-            IOUtils.write(VoiceConfigtoJSON(this.voiceConfig).getBytes(StandardCharsets.UTF_8),voiceConfigFileStream);
+            OutputStream voiceConfigFileStream = new FileOutputStream(voiceConfigFile);
+            IOUtils.write(VoiceConfigtoJSON(this.voiceConfig).getBytes(StandardCharsets.UTF_8), voiceConfigFileStream);
 
-        }catch (Exception e){
-            log.error("Error in writing all config:"+e);
+        } catch (Exception e) {
+            System.out.println("Error in writing all config:" + e);
         }
     }
 
-    public void writeMainConfigToFile(String outputLocation){
+    public void writeMainConfigToFile(String outputLocation) {
         File outputFile = new File(outputLocation);
 
-        try{
-            if(! outputFile.exists()){
+        try {
+            if (!outputFile.exists()) {
                 outputFile.getParentFile().mkdirs();
                 outputFile.createNewFile();
             }
 
-            OutputStream stream=new FileOutputStream(outputFile);
-            IOUtils.write(toJSON(this.mainConfig).getBytes(StandardCharsets.UTF_8),stream);
+            OutputStream stream = new FileOutputStream(outputFile);
+            IOUtils.write(toJSON(this.mainConfig).getBytes(StandardCharsets.UTF_8), stream);
 
-        }catch (Exception e){
-            log.error("Error in writing main config:"+e);
+        } catch (Exception e) {
+            System.out.println("Error in writing main config:" + e);
         }
     }
 
-    public void writeVoiceConfigToFile(String voiceConfigFile){
+    public void writeVoiceConfigToFile(String voiceConfigFile) {
         File outputFile = new File(voiceConfigFile);
 
-        try{
+        try {
 
-            if(! outputFile.exists()) {
+            if (!outputFile.exists()) {
                 outputFile.getParentFile().mkdirs();
                 outputFile.createNewFile();
             }
-            OutputStream voiceConfigFileStream=new FileOutputStream(voiceConfigFile);
-            IOUtils.write(VoiceConfigtoJSON(this.voiceConfig).getBytes(StandardCharsets.UTF_8),voiceConfigFileStream);
+            OutputStream voiceConfigFileStream = new FileOutputStream(voiceConfigFile);
+            IOUtils.write(VoiceConfigtoJSON(this.voiceConfig).getBytes(StandardCharsets.UTF_8), voiceConfigFileStream);
 
-        }catch (Exception e){
-            log.error("Error in writing voice config:"+e);
+        } catch (Exception e) {
+            System.out.println("Error in writing voice config:" + e);
         }
     }
 

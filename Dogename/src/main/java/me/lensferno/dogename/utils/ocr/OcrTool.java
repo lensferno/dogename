@@ -15,37 +15,37 @@ public class OcrTool {
     AipOcr client = new AipOcr(APP_ID, API_KEY, SECRET_KEY);
 
     String result;
-    int resultNum=0;
+    int resultNum = 0;
 
-    public void requestOcrAPI(String imageFileLocation){
-        JSONObject respondJSON=client.basicGeneral(imageFileLocation, new HashMap<>());
-        if (respondJSON==null){
-            result="错误：返回了空的数据。";
+    public void requestOcrAPI(String imageFileLocation) {
+        JSONObject respondJSON = client.basicGeneral(imageFileLocation, new HashMap<>());
+        if (respondJSON == null) {
+            result = "错误：返回了空的数据。";
             return;
         }
-        if(!respondJSON.has("words_result")){
-            String errorCode=respondJSON.get("error_code").toString();
-            result=findErrorMsg(errorCode);
+        if (!respondJSON.has("words_result")) {
+            String errorCode = respondJSON.get("error_code").toString();
+            result = findErrorMsg(errorCode);
             return;
         }
-        resultNum=respondJSON.getInt("words_result_num");
-        System.out.println("total result:"+resultNum);
-        JSONArray resultArray=respondJSON.getJSONArray("words_result");
+        resultNum = respondJSON.getInt("words_result_num");
+        System.out.println("total result:" + resultNum);
+        JSONArray resultArray = respondJSON.getJSONArray("words_result");
 
-        StringBuffer stringBuffer=new StringBuffer();
+        StringBuffer stringBuffer = new StringBuffer();
 
-        for(int i=0;i<resultArray.length();i++){
+        for (int i = 0; i < resultArray.length(); i++) {
             stringBuffer.append(resultArray.getJSONObject(i).getString("words")).append("\n");
         }
-        result=stringBuffer.toString();
+        result = stringBuffer.toString();
     }
 
     public String getResult() {
         return result;
     }
 
-    private String findErrorMsg(String errorCode){
-        switch (errorCode){
+    private String findErrorMsg(String errorCode) {
+        switch (errorCode) {
             case "1":
                 return "服务器内部错误，请尝试再次请求。";
             case "3":
@@ -77,7 +77,7 @@ public class OcrTool {
             case "282000":
                 return "服务器内部错误，如果您使用的是\n高精度接口，原因可能是您上传的图片\n中文字过多，识别超时导致的\n建议您对图片进行切割后再识别，\n其他情况请再次请求。";
             default:
-                return "未知错误。错误码："+errorCode;
+                return "未知错误。错误码：" + errorCode;
         }
 
     }

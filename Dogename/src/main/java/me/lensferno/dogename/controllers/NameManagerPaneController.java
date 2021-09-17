@@ -1,6 +1,8 @@
 package me.lensferno.dogename.controllers;
 
-import com.jfoenix.controls.*;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXTextArea;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,57 +14,49 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import me.lensferno.dogename.utils.DialogMaker;
 import me.lensferno.dogename.data.Data;
-import me.lensferno.dogename.utils.ocr.OcrTool;
 import me.lensferno.dogename.utils.Clipboard;
+import me.lensferno.dogename.utils.DialogMaker;
+import me.lensferno.dogename.utils.ocr.OcrTool;
 
 import java.io.File;
 import java.util.logging.Logger;
 
-public class NameManagerPaneController extends VBox  {
+public class NameManagerPaneController extends VBox {
 
+    public static final ObservableList<String> shownNameList = FXCollections.observableArrayList();
     Data data;
     Pane rootPane;
     OcrTool ocrTool;
-
     Logger log = Logger.getLogger("NameManagerPaneLOgger");
+    @FXML
+    private JFXListView<String> nameList;
+    @FXML
+    private JFXButton deleteAll;
+    @FXML
+    private JFXButton addName;
+    @FXML
+    private JFXButton deleteName;
+    @FXML
+    private JFXTextArea inputName;
 
-    public static final ObservableList<String> shownNameList = FXCollections.observableArrayList();
-
-    public NameManagerPaneController(Data data, Pane rootPane, OcrTool ocrTool){
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/NameManagerPane.fxml"));
+    public NameManagerPaneController(Data data, Pane rootPane, OcrTool ocrTool) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/NameManagerPane.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         try {
             loader.load();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        this.data=data;
-        this.rootPane=rootPane;
+        this.data = data;
+        this.rootPane = rootPane;
 
         shownNameList.setAll(data.getNameList());
         this.nameList.setItems(shownNameList);
 
-        this.ocrTool=ocrTool;
+        this.ocrTool = ocrTool;
     }
-
-    @FXML
-    private JFXListView<String> nameList;
-
-    @FXML
-    private JFXButton deleteAll;
-
-    @FXML
-    private JFXButton addName;
-
-    @FXML
-    private JFXButton deleteName;
-
-    @FXML
-    private JFXTextArea inputName;
-
 
     @FXML
     void deleteName(ActionEvent event) {
@@ -72,7 +66,7 @@ public class NameManagerPaneController extends VBox  {
                 "真的要这个名字吗？该操作无法撤销，除非您已经备份了名单。",
                 e -> {
                     String deletedName = nameList.getSelectionModel().getSelectedItems().get(0);
-                    
+
                     data.delete(deletedName);
                     shownNameList.remove(deletedName);
 
@@ -134,15 +128,15 @@ public class NameManagerPaneController extends VBox  {
 
                     data.saveToFile();
                     System.gc();
-        });
+                });
 
     }
 
     @FXML
     void addName(ActionEvent event) {
 
-        if(inputName.getText().equals("")){
-            new DialogMaker(rootPane).createMessageDialog("诶诶诶~","输入框怎么是空的呢？");
+        if (inputName.getText().equals("")) {
+            new DialogMaker(rootPane).createMessageDialog("诶诶诶~", "输入框怎么是空的呢？");
             return;
         }
 
@@ -161,30 +155,30 @@ public class NameManagerPaneController extends VBox  {
         FXMLLoader fxmlLoader;
         Parent parent;
 
-        Stage stage=new Stage();
+        Stage stage = new Stage();
 
-        try{
-            fxmlLoader=new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/OcrPane.fxml"));
-            parent=fxmlLoader.load();
-        }catch (Exception e){
-            log.warning("Error to load main interface FXML :"+e.toString());
+        try {
+            fxmlLoader = new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/OcrPane.fxml"));
+            parent = fxmlLoader.load();
+        } catch (Exception e) {
+            log.warning("Error to load main interface FXML :" + e);
             return;
         }
 
-        Scene scene=new Scene(parent,515,604);
+        Scene scene = new Scene(parent, 515, 604);
         stage.setTitle("Ocr模块");
         stage.setScene(scene);
         log.fine("窗口加载完成");
 
-        OcrPaneController ocrPaneController= fxmlLoader.getController();
-        ocrPaneController.setMainStage((Stage)inputName.getScene().getWindow());
+        OcrPaneController ocrPaneController = fxmlLoader.getController();
+        ocrPaneController.setMainStage((Stage) inputName.getScene().getWindow());
         stage.show();
 
     }
 
     @FXML
     void copyTo(ActionEvent event) {
-        inputName.setText(inputName.getText()+ Clipboard.getClipboardString());
+        inputName.setText(inputName.getText() + Clipboard.getClipboardString());
     }
 
 

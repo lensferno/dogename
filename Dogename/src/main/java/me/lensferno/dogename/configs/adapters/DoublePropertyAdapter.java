@@ -9,18 +9,18 @@ public class DoublePropertyAdapter implements JsonSerializer<SimpleDoublePropert
 
     @Override
     public SimpleDoubleProperty deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
-        if(jsonElement==null) {
+        if (jsonElement == null) {
             throw new JsonParseException("Json is wrong.");
-        }else {
+        } else {
             return new SimpleDoubleProperty(jsonElement.getAsDouble());
         }
     }
 
     @Override
     public JsonElement serialize(SimpleDoubleProperty simpleDoubleProperty, Type type, JsonSerializationContext jsonSerializationContext) {
-        if(simpleDoubleProperty==null){
+        if (simpleDoubleProperty == null) {
             throw new JsonParseException("Json is wrong.");
-        }else {
+        } else {
             return new JsonPrimitive(simpleDoubleProperty.get());
         }
     }

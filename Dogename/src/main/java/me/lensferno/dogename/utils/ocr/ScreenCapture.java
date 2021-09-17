@@ -20,10 +20,18 @@ import java.io.File;
 
 public class ScreenCapture {
 
-    private OcrTool ocrTool;
-
     private final String cacheImageFileLocation = "caches/image/ocrImageCache.png";
-
+    private final SimpleStringProperty result = new SimpleStringProperty();
+    private final SimpleBooleanProperty end = new SimpleBooleanProperty(true);
+    private final ImageView screenImageView = new ImageView();
+    private final Pane rootPane = new Pane();
+    private final Stage stage = new Stage();
+    private final int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+    private final int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+    private final Line MouseLine_X = new Line();
+    private final Line MouseLine_Y = new Line();
+    ScreenshotTool screenshotTool = new ScreenshotTool();
+    private OcrTool ocrTool;
     private final Runnable finalEvent = new Runnable() {
         @Override
         public void run() {
@@ -35,18 +43,19 @@ public class ScreenCapture {
             result.set(ocrTool.getResult());
         }
     };
+    private double dragStartX = 0;
+    private double dragStartY = 0;
 
-    private final SimpleStringProperty result = new SimpleStringProperty();
-    private final SimpleBooleanProperty end = new SimpleBooleanProperty(true);
+    private double dragEndX = 0;
+    private double dragEndY = 0;
 
-    private final ImageView screenImageView = new ImageView();
-    private final Pane rootPane = new Pane();
-    private final Stage stage = new Stage();
+    private double selectedAreaWidth = 0;
+    private double selectedAreaHeight = 0;
 
-    private final int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-    private final int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
-
-    ScreenshotTool screenshotTool = new ScreenshotTool();
+    private Line Width_Follow;
+    private Line Height_Follow;
+    private Line Width_Fixed;
+    private Line Height_Fixed;
 
     public void startCapture() {
         end.set(false);
@@ -70,7 +79,7 @@ public class ScreenCapture {
         Scene scene = new Scene(rootPane, screenWidth, screenHeight);
         //rootPane.setStyle("-fx-background-color: black");
         scene.setOnKeyPressed(e -> {
-            if (e.getCode().equals(KeyCode.ESCAPE)){
+            if (e.getCode().equals(KeyCode.ESCAPE)) {
                 stage.close();
                 end.set(true);
             }
@@ -84,20 +93,6 @@ public class ScreenCapture {
         stage.setScene(scene);
         stage.show();
     }
-
-    private double dragStartX = 0;
-    private double dragStartY = 0;
-
-    private double dragEndX = 0;
-    private double dragEndY = 0;
-
-    private double selectedAreaWidth = 0;
-    private double selectedAreaHeight = 0;
-
-    private Line Width_Follow;
-    private Line Height_Follow;
-    private Line Width_Fixed;
-    private Line Height_Fixed;
 
     private void addEventListeners() {
         rootPane.setOnMousePressed(e -> {
@@ -113,16 +108,16 @@ public class ScreenCapture {
         rootPane.setOnMouseReleased(e -> {
             dragEndX = e.getX();
             dragEndY = e.getY();
-            int clipPositionX = (int)dragStartX;
-            int clipPositionY = (int)dragStartY;
+            int clipPositionX = (int) dragStartX;
+            int clipPositionY = (int) dragStartY;
             if (selectedAreaWidth < 0) {
-                clipPositionX = (int)dragEndX;
+                clipPositionX = (int) dragEndX;
             }
             if (selectedAreaHeight < 0) {
-                clipPositionY = (int)dragEndY;
+                clipPositionY = (int) dragEndY;
             }
             try {
-                this.saveImage(clipPositionX, clipPositionY, Math.abs((int)selectedAreaWidth), Math.abs((int)selectedAreaHeight));
+                this.saveImage(clipPositionX, clipPositionY, Math.abs((int) selectedAreaWidth), Math.abs((int) selectedAreaHeight));
                 this.runFinalEvent(finalEvent);
             } catch (Exception exc) {
                 exc.printStackTrace();
@@ -136,7 +131,7 @@ public class ScreenCapture {
         Platform.runLater(finalEvent);
     }
 
-    private void saveImage(int x, int y, int width, int height){
+    private void saveImage(int x, int y, int width, int height) {
         try {
             File outputFile = new File(cacheImageFileLocation);
             File outputDir = outputFile.getParentFile();
@@ -181,9 +176,6 @@ public class ScreenCapture {
         Height_Follow.layoutYProperty().set(dragStartY);
     }
 
-    private final Line MouseLine_X = new Line();
-    private final Line MouseLine_Y = new Line();
-
     private void addMouseLine() {
         MouseLine_X.layoutXProperty().set(0);
         MouseLine_X.endXProperty().set(screenWidth);
@@ -215,8 +207,17 @@ public class ScreenCapture {
         Height_Follow.endYProperty().set(selectedAreaHeight);
     }
 
+    public SimpleStringProperty resultProperty() {
+        return result;
+    }
+
+    public SimpleBooleanProperty endProperty() {
+        return end;
+    }
+
     class ScreenshotTool {
         BufferedImage fullscreenBufferedImage;
+
         public Image getFullScreenshotImageData() {
             try {
                 Robot robot = new Robot();
@@ -232,16 +233,8 @@ public class ScreenCapture {
             }
         }
 
-        public void saveClippedImage(int x, int y, int width, int height, String formateName, File output) throws Exception{
-                ImageIO.write(fullscreenBufferedImage.getSubimage(x, y, width, height), formateName, output);
+        public void saveClippedImage(int x, int y, int width, int height, String formateName, File output) throws Exception {
+            ImageIO.write(fullscreenBufferedImage.getSubimage(x, y, width, height), formateName, output);
         }
-    }
-
-    public SimpleStringProperty resultProperty() {
-        return result;
-    }
-
-    public SimpleBooleanProperty endProperty() {
-        return end;
     }
 }

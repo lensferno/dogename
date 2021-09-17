@@ -3,31 +3,26 @@ package me.lensferno.dogename.controllers;
 import com.jfoenix.controls.JFXSpinner;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import me.lensferno.dogename.utils.ocr.ScreenCapture;
 import me.lensferno.dogename.utils.Clipboard;
+import me.lensferno.dogename.utils.ocr.ScreenCapture;
 
 public class OcrPaneController {
 
+    Stage mainStage;
     @FXML
     private TextArea ocrText;
-
     @FXML
     private JFXSpinner loadingSpinner;
-
-    Stage mainStage;
 
     public void setMainStage(Stage mainStage) {
         this.mainStage = mainStage;
     }
 
-
-
     @FXML
     void addNew() {
 
-        Stage thisStage=(Stage)ocrText.getScene().getWindow();
+        Stage thisStage = (Stage) ocrText.getScene().getWindow();
         thisStage.hide();
         mainStage.hide();
 

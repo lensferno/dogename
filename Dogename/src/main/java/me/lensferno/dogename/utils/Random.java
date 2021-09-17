@@ -13,16 +13,16 @@ public final class Random {
         this.useSecureRandom = useSecureRandom;
     }
 
-    public int getRandomNumber (int minNumber, int maxNumber) {
-        if (useSecureRandom){
+    public int getRandomNumber(int minNumber, int maxNumber) {
+        if (useSecureRandom) {
             return minNumber + secRandom.nextInt(maxNumber - minNumber + 1);
         } else {
             return minNumber + random.nextInt(maxNumber - minNumber + 1);
         }
     }
 
-    public int getRandomNumber (int maxNumber) {
-        if (useSecureRandom){
+    public int getRandomNumber(int maxNumber) {
+        if (useSecureRandom) {
             return secRandom.nextInt(maxNumber + 1);
         } else {
             return random.nextInt(maxNumber + 1);

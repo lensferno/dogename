@@ -1,8 +1,6 @@
 package me.lensferno.dogename.data;
 
 import com.google.gson.Gson;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -11,19 +9,47 @@ import java.util.*;
 
 public class Data {
 
-    Logger log = LogManager.getLogger("dataLogger");
-
     public static final int IGNORELIST_NAME_ONLY = 0;
     public static final int IGNORELIST_NUMBER_ONLY = 1;
     public static final int IGNORELIST_ALL = 2;
-
-
-    private List<String> nameList;
-    private IgnoreList ignoreList = new IgnoreList();
-
     File dataFile;
-
     SecureRandom secRandom = new SecureRandom();
+    Random random = new Random();
+    private List<String> nameList;
+    private final IgnoreList ignoreList = new IgnoreList();
+
+    public Data() {
+
+        dataFile = new File("files" + File.separator + "Namelist.data");
+
+        try {
+
+            if (!dataFile.exists()) {
+                dataFile.getParentFile().mkdirs();
+                dataFile.createNewFile();
+                nameList = new ArrayList<>();
+                saveToFile();
+                return;
+            }
+
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataFile));
+            this.nameList = (ArrayList) ois.readObject();
+
+            System.out.println(nameList.size() + " names loaded.");
+
+        } catch (EOFException EOFe) {
+            nameList = new ArrayList<>();
+            System.out.println("Data file is empty.");
+            saveToFile();
+        } catch (Exception e) {
+            nameList = new ArrayList<>();
+            saveToFile();
+            System.out.println("Failed to load data file.");
+            e.printStackTrace();
+        }
+
+        ignoreList.readIgnoreList();
+    }
 
     public List<String> getNameList() {
         return nameList;
@@ -35,9 +61,9 @@ public class Data {
                 FileOutputStream oos = new FileOutputStream(path);
                 oos.write(new Gson().toJson(nameList).getBytes(StandardCharsets.UTF_8));
                 oos.close();
-                log.info("Exported list to:" + path.getPath());
+                System.out.println("Exported list to:" + path.getPath());
             } catch (Exception e) {
-                log.warn("error in export namelist: " + e.toString());
+                System.out.println("error in export namelist: " + e);
                 e.printStackTrace();
             }
         }
@@ -58,9 +84,9 @@ public class Data {
                 }
 
                 nameList = new Gson().fromJson(sb.toString(), List.class);
-                log.info("Imported list from:" + path.getPath());
+                System.out.println("Imported list from:" + path.getPath());
             } catch (Exception e) {
-                log.warn("error in import namelist:" + e.toString());
+                System.out.println("error in import namelist:" + e);
                 e.printStackTrace();
             }
 
@@ -86,56 +112,6 @@ public class Data {
 
     }
 
-    public Data() {
-
-
-        if (System.getProperty("os.name").toLowerCase().contains("window"))
-            dataFile = new File("files\\Namelist.data");
-        else
-            dataFile = new File("files/Namelist.data");
-
-        File oldDataFile = new File("D:\\dogename\\files\\data");
-
-        try {
-
-            if (oldDataFile.exists()) {
-                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(oldDataFile));
-                this.nameList = (ArrayList) ois.readObject();
-
-                ois.close();
-                oldDataFile.delete();
-                saveToFile();
-                return;
-            }
-
-            if (!dataFile.exists()) {
-                dataFile.getParentFile().mkdirs();
-                dataFile.createNewFile();
-                nameList = new ArrayList<>();
-                saveToFile();
-                return;
-            }
-
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataFile));
-            this.nameList = (ArrayList) ois.readObject();
-
-            log.info(nameList.size() + " names loaded.");
-
-        } catch (EOFException EOFe) {
-            nameList = new ArrayList<>();
-            log.warn("Data file is empty.");
-            saveToFile();
-        } catch (Exception e) {
-            nameList = new ArrayList<>();
-            saveToFile();
-            log.warn("Failed to load data file.");
-            e.printStackTrace();
-        }
-
-        ignoreList.readIgnoreList();
-    }
-
-
     public void add(String text) {
         String[] splitedText;
 
@@ -158,7 +134,6 @@ public class Data {
         System.gc();
     }
 
-
     public boolean compareNameIgnoreList() {
         return ignoreList.getNameIgnoreListSize() >= nameList.size();
     }
@@ -176,8 +151,6 @@ public class Data {
     public boolean isEmpty() {
         return nameList.isEmpty();
     }
-
-    Random random = new Random();
 
     public String randomGet(boolean secureRandom) {
         if (secureRandom)
@@ -237,12 +210,10 @@ public class Data {
 
     class IgnoreList {
 
-        private HashSet<String> ignoreNameList = new HashSet<>();
-
-        private HashSet<String> ignoreNumberList = new HashSet<>();
-
         private final File nameIgnoreFile = new File("files" + File.separator + "IgnoredNameList.data");
         private final File numbIgnoreFile = new File("files" + File.separator + "IgnoredNumberList.data");
+        private HashSet<String> ignoreNameList = new HashSet<>();
+        private HashSet<String> ignoreNumberList = new HashSet<>();
 
         public void writeIgnoreList(int switchy) {
             switch (switchy) {
@@ -279,7 +250,7 @@ public class Data {
         public void readIgnoreList() {
             readNameIgnoreList();
             readNumberIgnoreList();
-            log.info("There are " + ignoreNameList.size() + " names and " + ignoreNumberList.size() + " numbers ignored.");
+            System.out.println("There are " + ignoreNameList.size() + " names and " + ignoreNumberList.size() + " numbers ignored.");
         }
 
         private void readNameIgnoreList() {
@@ -319,11 +290,11 @@ public class Data {
                 this.ignoreNumberList = (HashSet) ois.readObject();
             } catch (EOFException e) {
                 ignoreNumberList = new HashSet<>();
-                log.warn("Ignored number list is empty.");
+                System.out.println("Ignored number list is empty.");
                 writeIgnoreList(IGNORELIST_NUMBER_ONLY);
             } catch (Exception e) {
                 ignoreNumberList = new HashSet<>();
-                log.warn("Failed to load ignored number list");
+                System.out.println("Failed to load ignored number list");
                 writeIgnoreList(IGNORELIST_NUMBER_ONLY);
                 e.printStackTrace();
             }

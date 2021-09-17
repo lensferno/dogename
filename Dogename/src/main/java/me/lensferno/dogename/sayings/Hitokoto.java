@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
-import me.lensferno.dogename.utils.DialogMaker;
 import me.lensferno.dogename.controllers.HitokotoPaneController;
+import me.lensferno.dogename.utils.DialogMaker;
 import me.lensferno.dogename.utils.NetworkUtil;
 
 public class Hitokoto {
@@ -60,24 +60,20 @@ public class Hitokoto {
 
         private String creator;
 
-        public void setId(int id) {
-            this.id = id;
-        }
-
         public int getId() {
             return id;
         }
 
-        public void setHitokoto(String hitokoto) {
-            this.hitokoto = hitokoto;
+        public void setId(int id) {
+            this.id = id;
         }
 
         public String getHitokoto() {
             return hitokoto;
         }
 
-        public void setType(String type) {
-            this.type = type;
+        public void setHitokoto(String hitokoto) {
+            this.hitokoto = hitokoto;
         }
 
         /**
@@ -143,28 +139,32 @@ public class Hitokoto {
             return type;
         }
 
-        public void setFrom(String from) {
-            this.from = from;
+        public void setType(String type) {
+            this.type = type;
         }
 
         public String getFrom() {
             return from;
         }
 
-        public void setAuthor(String author) {
-            this.author = author;
+        public void setFrom(String from) {
+            this.from = from;
         }
 
         public String getAuthor() {
             return author;
         }
 
-        public void setCreator(String creator) {
-            this.creator = creator;
+        public void setAuthor(String author) {
+            this.author = author;
         }
 
         public String getCreator() {
             return creator;
+        }
+
+        public void setCreator(String creator) {
+            this.creator = creator;
         }
 
     }

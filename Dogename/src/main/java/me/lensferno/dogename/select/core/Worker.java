@@ -3,54 +3,39 @@ package me.lensferno.dogename.select.core;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.StringProperty;
 import me.lensferno.dogename.configs.MainConfig;
-import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.data.Data;
-
+import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.utils.Random;
 import me.lensferno.dogename.voice.VoicePlayer;
 
 public final class Worker {
 
     private final Random randomNumber = new Random();
-
-    private StringProperty[] labelTexts;
     private final SimpleBooleanProperty stoppedIndicator = new SimpleBooleanProperty(true);
-
     private final MainConfig config;
-
     //挑选方法
     private final int selectMethod = MainConfig.METHOD_NAME;
     private final Data data;
-
     private final History history;
-
     private final VoicePlayer voicePlayer;
-
-    private int speed = 0;
-
     //数值范围最大最小值
     private final int[] numberRange = new int[2];
     private final int MIN_NUMBER = 0;
     private final int MAX_NUMBER = 1;
-
+    private final Counter counter = new Counter();
+    private StringProperty[] labelTexts;
+    private int speed = 0;
     //挑选次数和每一轮的挑选次数
     private int maxTotalCount = MainConfig.DEFAULT_MAX_TOTAL_COUNT;
     private int maxCycleCount = 0;
-
     //已经挑选了多少次
     private int totalCount = 0;
     private int cycleCount = 0;
-
     private boolean finalResult = true;
-
     private boolean forceStop = false;
-
     private String selectedResult;
     private boolean continueSelecting = false;
-
     private int resultLabelId = 0;
-
-    private final Counter counter = new Counter();
 
     public Worker(StringProperty[] labelTexts, MainConfig config, Data data, History history, VoicePlayer voicePlayer) {
         this.labelTexts = labelTexts;
@@ -150,6 +135,31 @@ public final class Worker {
         }
     }
 
+    public boolean getStoppedIndicator() {
+        return stoppedIndicator.get();
+    }
+
+    public SimpleBooleanProperty stoppedIndicatorProperty() {
+        return stoppedIndicator;
+    }
+
+    public void setNumberRange(int minNumber, int maxNumber) {
+        this.numberRange[MIN_NUMBER] = minNumber;
+        this.numberRange[MAX_NUMBER] = maxNumber;
+    }
+
+    public void setForceStop(boolean forceStop) {
+        this.forceStop = forceStop;
+    }
+
+    public void setMaxTotalCount(int maxTotalCount) {
+        this.maxTotalCount = maxTotalCount;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
     // 这里有个内部类Counter计数菌
     final class Counter {
 
@@ -182,30 +192,5 @@ public final class Worker {
         protected int getNewResultLabelId() {
             return newResultLabelId;
         }
-    }
-
-    public boolean getStoppedIndicator() {
-        return stoppedIndicator.get();
-    }
-
-    public SimpleBooleanProperty stoppedIndicatorProperty() {
-        return stoppedIndicator;
-    }
-
-    public void setNumberRange(int minNumber, int maxNumber) {
-        this.numberRange[MIN_NUMBER] = minNumber;
-        this.numberRange[MAX_NUMBER] = maxNumber;
-    }
-
-    public void setForceStop(boolean forceStop) {
-        this.forceStop = forceStop;
-    }
-
-    public void setMaxTotalCount(int maxTotalCount) {
-        this.maxTotalCount = maxTotalCount;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
     }
 }

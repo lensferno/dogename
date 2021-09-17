@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 
 public class MoveWindowByMouse implements EventHandler<MouseEvent> {
 
-    private Stage primaryStage;
+    private final Stage primaryStage;
     private double oldStageX;
     private double oldStageY;
     private double oldScreenX;

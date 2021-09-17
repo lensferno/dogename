@@ -6,8 +6,8 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
-import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.data.Data;
+import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.select.core.Worker;
 import me.lensferno.dogename.voice.TokenManager;
 import me.lensferno.dogename.voice.VoicePlayer;
@@ -62,9 +62,8 @@ public final class Selector {
     // ---------------------------------------------------
     static class Processor extends AnimationTimer {
 
-        private Worker coreWorker;
-
         MainConfig config = null;
+        private Worker coreWorker;
 
         protected void initialVariable(MainConfig config, VoicePlayer voicePlayer, Data data, History history, StringProperty... labelTexts) {
             coreWorker = new Worker(labelTexts, config, data, history, voicePlayer);

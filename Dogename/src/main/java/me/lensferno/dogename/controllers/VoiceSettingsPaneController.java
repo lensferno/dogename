@@ -13,25 +13,18 @@ import me.lensferno.dogename.configs.VoiceConfig;
 import java.util.logging.Logger;
 
 public class VoiceSettingsPaneController extends VBox {
+    public static final ObservableList<String> shownSpeakerList = FXCollections.observableArrayList();
+    private final String[] speakers = {
+            "1", "0", "3", "4",
+            "106", "110", "111", "103", "5"};
     Logger log = Logger.getLogger("VoiceSettingsPaneControllerLogger");
-
-    VoiceConfig voiceConfig=new VoiceConfig();
-
-
+    VoiceConfig voiceConfig = new VoiceConfig();
     @FXML
     private JFXSlider intonationBar;
-
     @FXML
     private JFXComboBox<String> speakerSelectBar;
-
     @FXML
     private JFXSlider voiceSpeedBar;
-
-    public static final ObservableList<String> shownSpeakerList = FXCollections.observableArrayList();
-
-    private final String[] speakers={
-            "1","0","3","4",
-            "106","110","111","103","5"};
     //度小宇=1,度小美=0,度逍遥=3,度丫丫=4
     //度博文=106,度小童=110,度小萌=111,度米朵=103,度小娇=5
 
@@ -42,9 +35,9 @@ public class VoiceSettingsPaneController extends VBox {
         try {
             loader.load();
         } catch (Exception e) {
-            log.warning("Error to load settings pane FXML: " + e.toString());
+            log.warning("Error to load settings pane FXML: " + e);
         }
-        if(shownSpeakerList.isEmpty()) {
+        if (shownSpeakerList.isEmpty()) {
             shownSpeakerList.addAll(
                     "度小宇=1", "度小美=0", "度逍遥=3", "度丫丫=4",
                     "度博文=106", "度小童=110", "度小萌=111", "度米朵=103", "度小娇=5");
@@ -53,14 +46,14 @@ public class VoiceSettingsPaneController extends VBox {
         speakerSelectBar.setItems(shownSpeakerList);
     }
 
-    public void bindPropertied(VoiceConfig voiceConfig){
+    public void bindPropertied(VoiceConfig voiceConfig) {
 
-        this.voiceConfig=voiceConfig;
+        this.voiceConfig = voiceConfig;
 
         //speakerSelectBar.
 
         speakerSelectBar.selectionModelProperty().addListener((observable, oldValue, newValue) -> {
-            System.out.println("what?"+newValue.getSelectedIndex());
+            System.out.println("what?" + newValue.getSelectedIndex());
             this.voiceConfig.setSpeaker(speakers[newValue.getSelectedIndex()]);
             this.voiceConfig.setSelectedSpeaker(newValue.getSelectedIndex());
         });
@@ -77,7 +70,6 @@ public class VoiceSettingsPaneController extends VBox {
     void showAdvancedVoiceSettings(ActionEvent event) {
 
     }
-
 
 
 }

@@ -34,20 +34,20 @@ aue =6 ，返回为二进制wav文件，具体header信息 Content-Type: audio/w
         return System.currentTimeMillis() > expTime;
     }
 
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
-    }
-
     public String getAccessToken() {
         return accessToken;
     }
 
-    public void setExpiresIn(long expiresIn) {
-        this.expiresIn = expiresIn;
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
     public long getExpiresIn() {
         return expiresIn;
+    }
+
+    public void setExpiresIn(long expiresIn) {
+        this.expiresIn = expiresIn;
     }
 
 }

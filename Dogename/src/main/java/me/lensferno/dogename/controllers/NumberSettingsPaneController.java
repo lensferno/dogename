@@ -9,31 +9,30 @@ import me.lensferno.dogename.data.Data;
 
 public class NumberSettingsPaneController extends VBox {
     Data data;
-    public NumberSettingsPaneController(Data data){
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/NumberSettingPane.fxml"));
+    @FXML
+    private JFXTextField minValueField;
+    @FXML
+    private JFXTextField maxValueField;
+
+    public NumberSettingsPaneController(Data data) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/NumberSettingPane.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         try {
             loader.load();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        this.data=data;
+        this.data = data;
     }
 
-    @FXML
-    private JFXTextField minValueField;
-
-    @FXML
-    private JFXTextField maxValueField;
-
-    public void bindProperties(MainConfig mainConfig){
+    public void bindProperties(MainConfig mainConfig) {
 
         minValueField.textProperty().bindBidirectional(mainConfig.minNumberProperty());
-        minValueField.textProperty().addListener((observable, oldValue, newValue) -> data.clearNumberIgnoreList() );
+        minValueField.textProperty().addListener((observable, oldValue, newValue) -> data.clearNumberIgnoreList());
 
         maxValueField.textProperty().bindBidirectional(mainConfig.maxNumberProperty());
-        maxValueField.textProperty().addListener((observable, oldValue, newValue) -> data.clearNumberIgnoreList() );
+        maxValueField.textProperty().addListener((observable, oldValue, newValue) -> data.clearNumberIgnoreList());
     }
 
 }

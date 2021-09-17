@@ -14,11 +14,10 @@ public class VoicePlayer {
     public static final String separator = File.separator;
 
     private final String VOICE_API = "https://tsn.baidu.com/text2audio";
-    private VoiceConfig voiceConfig = null;
-
     String cachePath = "caches" + separator + "voice" + separator;
-
     Token token;
+    StreamPlayer streamPlayer = new StreamPlayer();
+    private VoiceConfig voiceConfig = null;
 
     public VoicePlayer(Token token, VoiceConfig voiceConfig) {
         this.token = token;
@@ -89,8 +88,6 @@ public class VoicePlayer {
 
         return success;
     }
-
-    StreamPlayer streamPlayer = new StreamPlayer();
 
     private void playSound(File file) {
         try {
