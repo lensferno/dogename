@@ -13,18 +13,16 @@ public class Data {
     public static final int IGNORELIST_NAME_ONLY = 0;
     public static final int IGNORELIST_NUMBER_ONLY = 1;
     public static final int IGNORELIST_ALL = 2;
-    File dataFile;
-    SecureRandom secRandom = new SecureRandom();
-    Random random = new Random();
+
+    private final File dataFile = new File(FilePath.toSpecificPathForm("files/Namelist.data"));
+    private final SecureRandom secRandom = new SecureRandom();
+    private final Random random = new Random();
+
     private List<String> nameList;
     private final IgnoreList ignoreList = new IgnoreList();
 
     public Data() {
-
-        dataFile = new File(FilePath.toSpecificPathForm("files/Namelist.data"));
-
         try {
-
             if (!dataFile.exists()) {
                 dataFile.getParentFile().mkdirs();
                 dataFile.createNewFile();
@@ -48,7 +46,6 @@ public class Data {
             System.out.println("Failed to load data file.");
             e.printStackTrace();
         }
-
         ignoreList.readIgnoreList();
     }
 
@@ -90,9 +87,7 @@ public class Data {
                 System.out.println("error in import namelist:" + e);
                 e.printStackTrace();
             }
-
         }
-
     }
 
     public void makeMass() {
@@ -209,7 +204,7 @@ public class Data {
         return ignoreList.getNumberIgnoreListSize();
     }
 
-    class IgnoreList {
+    static class IgnoreList {
 
         private final File nameIgnoreFile = new File(FilePath.toSpecificPathForm("files/IgnoredNameList.data"));
         private final File numbIgnoreFile = new File(FilePath.toSpecificPathForm("files/IgnoredNumberList.data"));
@@ -251,7 +246,7 @@ public class Data {
         public void readIgnoreList() {
             readNameIgnoreList();
             readNumberIgnoreList();
-            System.out.println(String.format("There are %d names and %d numbers ignored", ignoreNameList.size(), ignoreNumberList.size()));
+            System.out.printf("There are %d names and %d numbers ignored", ignoreNameList.size(), ignoreNumberList.size());
         }
 
         private void readNameIgnoreList() {

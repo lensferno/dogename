@@ -18,7 +18,7 @@ public class VoicePlayer {
 
     Token token;
     StreamPlayer streamPlayer = new StreamPlayer();
-    private VoiceConfig voiceConfig = null;
+    private final VoiceConfig voiceConfig;
 
     public VoicePlayer(Token token, VoiceConfig voiceConfig) {
         this.token = token;

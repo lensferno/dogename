@@ -16,7 +16,6 @@ public class History {
         File historyFile = new File(HISTORY_FILE);
 
         try {
-
             if (!historyFile.exists()) {
                 historyFile.getParentFile().mkdirs();
                 historyFile.createNewFile();
@@ -57,7 +56,6 @@ public class History {
         File historyFile = new File(HISTORY_FILE);
 
         try {
-
             if (!historyFile.exists()) {
                 historyFile.createNewFile();
             }

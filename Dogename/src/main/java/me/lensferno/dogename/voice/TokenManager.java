@@ -32,7 +32,6 @@ public class TokenManager {
                 if (netAvailable()) {
                     refreshToken();
                 }
-
                 if (checkTokenAvailable() != 0) {
                     tokenStatus = TOKEN_BAD;
                 }
@@ -55,19 +54,13 @@ public class TokenManager {
         if (tokenFile.exists()) {
             loadToken();
             updateTokenStatus(checkTokenAvailable());
-
         } else {
-
             if (netAvailable()) {
-
                 refreshToken();
-
                 updateTokenStatus(checkTokenAvailable());
-
             } else {
                 tokenStatus = TOKEN_BAD;
             }
-
         }
     }
 
@@ -98,17 +91,10 @@ public class TokenManager {
         return 0;
     }
 
-
     void fetchToken() {
         try {
             token = new Gson().fromJson(
-                    NetworkUtil.getHtml(
-                            TOKEN_API_URL
-                                    + "?grant_type=client_credentials&client_id=" + API_KEY
-                                    + "&client_secret=" + SEC_KEY,
-                            true)
-                    , Token.class);
-
+                NetworkUtil.getHtml(String.format("%s?grant_type=client_credentials&client_id=%s&client_secret=%s", TOKEN_API_URL, API_KEY, SEC_KEY), true), Token.class);
             token.setExpTime();
         } catch (Exception e) {
             System.out.println("Error to get Token:" + e);
@@ -118,7 +104,6 @@ public class TokenManager {
 
     private boolean netAvailable() {
         try {
-
             URL sourcesURL = new URL("http://www.baidu.com");
             HttpURLConnection connection = (HttpURLConnection) sourcesURL.openConnection();
             connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36");
@@ -136,9 +121,8 @@ public class TokenManager {
     }
 
     private void loadToken() {
-        ObjectInputStream ois;
         try {
-            ois = new ObjectInputStream(new FileInputStream(tokenFile));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(tokenFile));
             this.token = (Token) ois.readObject();
             ois.close();
         } catch (Exception e) {
@@ -148,7 +132,6 @@ public class TokenManager {
     }
 
     private void writeToken() {
-
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(tokenFile));
             oos.writeObject(token);
