@@ -80,7 +80,6 @@ public class Data {
                     sb.append(temp);
                     sb.append("\n");
                 }
-
                 nameList = new Gson().fromJson(sb.toString(), List.class);
                 System.out.println("Imported list from:" + path.getPath());
             } catch (Exception e) {
@@ -105,7 +104,6 @@ public class Data {
         }
         nameList.clear();
         nameList.addAll(tempList);
-
     }
 
     public void add(String text) {
@@ -246,7 +244,7 @@ public class Data {
         public void readIgnoreList() {
             readNameIgnoreList();
             readNumberIgnoreList();
-            System.out.printf("There are %d names and %d numbers ignored", ignoreNameList.size(), ignoreNumberList.size());
+            System.out.printf("There are %d names and %d numbers ignored\n", ignoreNameList.size(), ignoreNumberList.size());
         }
 
         private void readNameIgnoreList() {

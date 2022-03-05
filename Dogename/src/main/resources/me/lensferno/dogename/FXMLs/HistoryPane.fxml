@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.layout.*?>
-<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="287.0" spacing="5.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="339.0" spacing="5.0" type="VBox" xmlns="http://javafx.com/javafx/8.0.321" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <JFXListView fx:id="historyList" prefHeight="270.0" prefWidth="301.0" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="历史记录超过2000条时会自动清空列表重新记录">
@@ -17,7 +17,12 @@
             <Font name="Microsoft YaHei" size="12.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="searchBar" promptText="查找...">
+      <Text fx:id="searchMessage" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="312.240234375">
+         <font>
+            <Font name="Microsoft YaHei" size="12.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="searchBar" promptText="输入查找内容...">
          <font>
             <Font name="Microsoft YaHei" size="14.0" />
          </font>

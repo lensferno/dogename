@@ -12,12 +12,12 @@ public final class Worker {
 
     private final Random randomNumber = new Random();
     private final SimpleBooleanProperty stoppedIndicator = new SimpleBooleanProperty(true);
+
     private final MainConfig config;
-    //挑选方法
-    private final int selectMethod = MainConfig.METHOD_NAME;
     private final Data data;
     private final History history;
     private final VoicePlayer voicePlayer;
+
     //数值范围最大最小值
     private final int[] numberRange = new int[2];
     private final int MIN_NUMBER = 0;
@@ -25,9 +25,11 @@ public final class Worker {
     private final Counter counter = new Counter();
     private StringProperty[] labelTexts;
     private int speed = 0;
+
     //挑选次数和每一轮的挑选次数
     private int maxTotalCount = MainConfig.DEFAULT_MAX_TOTAL_COUNT;
     private int maxCycleCount = 0;
+
     //已经挑选了多少次
     private int totalCount = 0;
     private int cycleCount = 0;
@@ -165,7 +167,7 @@ public final class Worker {
 
         private int newResultLabelId = 0;
 
-        protected void count() {
+        private void count() {
             newResultLabelId = resultLabelId;
 
             // 每一轮的计数到达最大时并且不强制继续这轮挑选时，重置这一轮的挑选，并指派新的显示label
@@ -181,7 +183,7 @@ public final class Worker {
             totalCount++;
         }
 
-        protected void resetCounter() {
+        private void resetCounter() {
             totalCount = 0;
             cycleCount = 0;
             maxCycleCount = 0;
@@ -189,7 +191,7 @@ public final class Worker {
             continueSelecting = false;
         }
 
-        protected int getNewResultLabelId() {
+        private int getNewResultLabelId() {
             return newResultLabelId;
         }
     }

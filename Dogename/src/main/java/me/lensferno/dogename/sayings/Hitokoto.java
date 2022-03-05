@@ -11,10 +11,7 @@ import me.lensferno.dogename.utils.NetworkUtil;
 
 public class Hitokoto {
 
-
     private final String HITOKOTO_API = "https://v1.hitokoto.cn/";
-
-    String hitokotoJSON = null;
 
     private String getHitokoto() {
         return NetworkUtil.getHtml(HITOKOTO_API);
@@ -24,18 +21,15 @@ public class Hitokoto {
 
         new Thread(() -> {
 
-            //hitokotoJSON = getHitokoto();
-
-            String hitokoto, from, author, creator, type;
+            String hitokotoJSON = null;
 
             if ((hitokotoJSON = getHitokoto()) != null) {
                 HitokotoData hitokotoData = new Gson().fromJson(hitokotoJSON, HitokotoData.class);
-
-                hitokoto = hitokotoData.getHitokoto();
-                from = hitokotoData.getFrom();
-                author = hitokotoData.getAuthor();
-                creator = hitokotoData.getCreator();
-                type = hitokotoData.getType();
+                String  hitokoto = hitokotoData.getHitokoto(),
+                        from = hitokotoData.getFrom(),
+                        author = hitokotoData.getAuthor(),
+                        creator = hitokotoData.getCreator(),
+                        type = hitokotoData.getType();
 
                 Platform.runLater(() -> {
                     topBar.setText(String.format("《%s》：%s (%s)", from, hitokoto, author));
@@ -45,7 +39,7 @@ public class Hitokoto {
                     }
                 });
             }
-        }).start();
+        },"HitokotoThread").start();
     }
 
     static class HitokotoData {

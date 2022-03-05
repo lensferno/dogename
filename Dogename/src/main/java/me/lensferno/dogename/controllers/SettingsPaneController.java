@@ -131,7 +131,8 @@ public class SettingsPaneController extends VBox {
     void equalBtnAction(ActionEvent event) {
         if (!mainConfig.getPassSelectedResult()) {
             equalModeBtn.setSelected(false);
-            new DialogMaker(rootPane).createMessageDialog("且慢", "无法在“概率均分”的模式下使用，如需使用请在“人人有份”模式下启用。");
+            new DialogMaker(rootPane).createMessageDialog("且慢",
+                    "无法在“概率均分”的模式下使用，如需使用请在“人人有份”模式下启用。");
         }
     }
 

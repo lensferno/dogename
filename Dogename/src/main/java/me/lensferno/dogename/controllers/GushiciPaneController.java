@@ -27,8 +27,8 @@ public class GushiciPaneController extends VBox {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        contentText.setText("“" + content + "”");
-        contentInfo.setText("《" + title + "》" + "——" + author);
+        contentText.setText(String.format("“%s”", content));
+        contentInfo.setText(String.format("《%s》——%s", title, author));
         contentType.setText(type);
     }
 }

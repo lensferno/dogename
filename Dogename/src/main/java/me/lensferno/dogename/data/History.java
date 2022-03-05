@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class History {
 
-    ArrayList<String> history;
+    private ArrayList<String> history;
 
     private final String HISTORY_FILE = FilePath.toSpecificPathForm("files/history.data");
 
@@ -70,6 +70,7 @@ public class History {
 
     public void clearHistory() {
         this.history.clear();
+        writeHistory();
     }
 
 }

@@ -27,8 +27,8 @@ public class HitokotoPaneController extends VBox {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        hitokotoContent.setText("『 " + hitokoto + " 』");
-        contentInfo.setText("出自：" + from + "　　|　　作者：" + author + "　　|　　上传者：" + creator);
+        hitokotoContent.setText(String.format("『 %s 』", hitokoto));
+        contentInfo.setText(String.format("出自：%s　　|　　作者：%s　　|　　上传者：%s", from, author, creator));
         contentType.setText(type);
     }
 }

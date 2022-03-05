@@ -1,5 +1,7 @@
 package me.lensferno.dogename;
 
+import java.util.Properties;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,7 +25,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
         try {
             String pid = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
 
@@ -82,8 +83,6 @@ public class Main extends Application {
         } else {
             new Hitokoto().showHitokoto(mainInterfaceController.getRootPane(), mainInterfaceController.getTopBar(), mainInterfaceController.getMainConfig().isShowSaying());
         }
-
-
     }
 
 }

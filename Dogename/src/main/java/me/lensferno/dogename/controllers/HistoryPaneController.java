@@ -10,15 +10,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.utils.DialogMaker;
 
+import java.util.ArrayList;
+
 public class HistoryPaneController extends VBox {
 
-    public static final ObservableList<String> shownHistoryList = FXCollections.observableArrayList();
     History history;
-    Pane rootPane;
-    int pointer = 0;
+
+    public static final ObservableList<String> historyListCollection = FXCollections.observableArrayList();
+    private final Pane rootPane;
+
     @FXML
     private JFXListView<String> historyList;
 
@@ -31,6 +35,9 @@ public class HistoryPaneController extends VBox {
     @FXML
     private JFXButton nextBtn;
 
+    @FXML
+    private Text searchMessage;
+
     public HistoryPaneController(History history, Pane rootPane) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/HistoryPane.fxml"));
         loader.setRoot(this);
@@ -40,82 +47,89 @@ public class HistoryPaneController extends VBox {
 
         try {
             loader.load();
-            shownHistoryList.setAll(history.getHistoryList());
-            historyList.setItems(shownHistoryList);
-            searchBar.textProperty().addListener((observable, oldValue, newValue) -> pointer = 0);
-
+            historyListCollection.setAll(history.getHistoryList());
+            historyList.setItems(historyListCollection);
+            searchBar.textProperty().addListener((observable, oldValue, newValue) -> searchIndex = 0);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     private void pointOutSearchResult(int pointer) {
+        historyList.scrollTo(pointer);
         historyList.getSelectionModel().select(pointer);
+        historyList.getFocusModel().focus(pointer);
     }
+
+    private int searchIndex = 0;
 
     @FXML
     void upSearch(ActionEvent event) {
+        searchMessage.textProperty().set("");
 
         String searchText = searchBar.getText();
-        String[] historyArrayList = history.getHistoryList().toArray(new String[0]);
-
-        if (historyArrayList.length == 0) {
+        if (searchText.isEmpty()) {
             return;
         }
 
-        if (pointer > historyArrayList.length - 1 || pointer < 0) {
-            pointer = historyArrayList.length - 1;
+        ArrayList<String> historyArrayList = history.getHistoryList();
+        if (historyArrayList.isEmpty()) {
+            searchIndex = 0;
+            return;
         }
 
-        while (!historyArrayList[pointer].contains(searchText)) {
-            pointer--;
-            if (pointer < 0) {
-                pointer = historyArrayList.length - 1;
-                return;
-            }
-        }
-        pointOutSearchResult(pointer);
-        pointer--;
-        if (pointer < 0) {
-            pointer = historyArrayList.length - 1;
+        // 逐个查找，直到searchIndex == 0
+        while (searchIndex > 0 && !historyArrayList.get(searchIndex).contains(searchText)) {
+            searchIndex--;
         }
 
+        pointOutSearchResult(searchIndex);
+
+        // 上移索引，避免原地停留
+        searchIndex--;
+        if (searchIndex < 0) {
+            searchIndex = historyArrayList.size() - 1;
+            searchMessage.textProperty().set("到达列表开头，再次点击将从列表尾部重新搜索");
+        }
     }
 
     @FXML
     void downSearch(ActionEvent event) {
+        searchMessage.textProperty().set("");
 
         String searchText = searchBar.getText();
-        String[] historyArrayList = history.getHistoryList().toArray(new String[0]);
-
-        if (historyArrayList.length == 0) {
+        if (searchText.isEmpty()) {
             return;
         }
 
-        if (pointer > historyArrayList.length - 1 || pointer < 0) {
-            pointer = 0;
+        ArrayList<String> historyList = history.getHistoryList();
+
+        if (historyList.isEmpty()) {
+            searchIndex = 0;
+            return;
         }
 
-        while (!historyArrayList[pointer].contains(searchText)) {
-            pointer++;
-            if (pointer < historyArrayList.length - 1) {
-                pointer = 0;
-                return;
-            }
-        }
-        pointOutSearchResult(pointer);
-        pointer++;
-        if (pointer < historyArrayList.length - 1) {
-            pointer = 0;
+        // 逐个查找，直到最后一个元素
+        while (searchIndex < historyList.size() - 1 && !historyList.get(searchIndex).contains(searchText)) {
+            searchIndex++;
         }
 
+        pointOutSearchResult(searchIndex);
+
+        // 下移索引，避免原地停留
+        searchIndex++;
+        if (searchIndex >= historyList.size()) {
+            searchIndex = 0;
+            searchMessage.textProperty().set("到达列表尾部，再次点击将返回列表开头重新搜索");
+        }
     }
 
     @FXML
     void clearHistory() {
         new DialogMaker(rootPane).createDialogWithOKAndCancel("且慢！", "真的要清除全部历史记录吗？", (e) -> {
             this.history.clearHistory();
-            pointer = 0;
+            historyListCollection.clear();
+            searchIndex = 0;
         });
     }
 

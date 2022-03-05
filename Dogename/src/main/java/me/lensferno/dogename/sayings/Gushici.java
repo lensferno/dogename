@@ -13,8 +13,6 @@ public class Gushici {
 
     private final String GUSHICI_API = "https://v1.jinrishici.com/all.json";
 
-    String gushiciJSON = null;
-
     private String getGushici() {
         return NetworkUtil.getHtml(GUSHICI_API);
     }
@@ -23,18 +21,17 @@ public class Gushici {
 
         new Thread(() -> {
 
-            //gushiciJSON=getGushici();
-
-            String content, title, author, type;
+            String gushiciJSON = null;
 
             if ((gushiciJSON = getGushici()) != null) {
                 GushiciData gushiciData = new Gson().fromJson(gushiciJSON, GushiciData.class);
-                content = gushiciData.getContent();
-                title = gushiciData.getTitle();
-                author = gushiciData.getAuthor();
-                type = gushiciData.getType();
+
+                String  content = gushiciData.getContent(),
+                        title = gushiciData.getTitle(),
+                        author = gushiciData.getAuthor(),
+                        type = gushiciData.getType();
+
                 Platform.runLater(() -> {
-                    topBar.setText(content + " ——" + author + "《" + title + "》");
                     topBar.setText(String.format("%s ——%s 《%s》", content, author, title));
                     if (showOnDialog) {
                         GushiciPaneController gushiciPaneController = new GushiciPaneController(content, title, author, type);
@@ -42,7 +39,7 @@ public class Gushici {
                     }
                 });
             }
-        }).start();
+        }, "GushiciThread").start();
 
     }
 
