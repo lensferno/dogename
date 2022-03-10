@@ -4,16 +4,22 @@
 
 看下面
 
-
 ## 介绍/Introduce
+
 这是一个基于Java语言，以Google Material Design（Google MD）为设计风格的，用来点名的东西。
 
 不定时更新（咕），大更新应该不会有，除非忍不住。
 
+
+
+// update：（其实是不想再去动这座屎山了...别去看代码，血压会高的）
+
+// 怕是要重写一遍了...想弃坑了... ωωω
+
 ------------
 
-
 #### 用法介绍
+
 [这里](https://github.com/lensferno/dogename/blob/main/res/usage.md)
 
 ---
@@ -23,12 +29,10 @@
 [这里](https://github.com/lensferno/dogename/blob/main/res/you-want.md "我要康康")
 
 ## 下载/Download：
+
 [来这里](https://github.com/lensferno/dogename/releases "这里")
 
 ---
-
-
-
 
 ## 使用到的第三方库/Third-party library used：
 
