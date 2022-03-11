@@ -18,7 +18,7 @@ public class Data {
     private final SecureRandom secRandom = new SecureRandom();
     private final Random random = new Random();
 
-    private List<String> nameList;
+    private ArrayList<String> nameList;
     private final IgnoreList ignoreList = new IgnoreList();
 
     public Data() {
@@ -30,12 +30,11 @@ public class Data {
                 saveToFile();
                 return;
             }
-
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataFile));
             this.nameList = (ArrayList) ois.readObject();
+            ois.close();
 
             System.out.println(nameList.size() + " names loaded.");
-
         } catch (EOFException EOFe) {
             nameList = new ArrayList<>();
             System.out.println("Data file is empty.");
@@ -46,6 +45,7 @@ public class Data {
             System.out.println("Failed to load data file.");
             e.printStackTrace();
         }
+
         ignoreList.readIgnoreList();
     }
 
@@ -64,28 +64,33 @@ public class Data {
                 System.out.println("error in export namelist: " + e);
                 e.printStackTrace();
             }
+
+            this.saveToFile();
         }
     }
 
     public void importNameList(File path) {
         if (path != null) {
-
             try {
                 FileInputStream fis = new FileInputStream(path);
-                String temp;
                 BufferedReader bis = new BufferedReader(new InputStreamReader(fis, StandardCharsets.UTF_8));
+
+                String temp;
                 StringBuilder sb = new StringBuilder();
 
                 while ((temp = bis.readLine()) != null) {
                     sb.append(temp);
                     sb.append("\n");
                 }
-                nameList = new Gson().fromJson(sb.toString(), List.class);
+                fis.close();
+                nameList = new Gson().fromJson(sb.toString(), ArrayList.class);
                 System.out.println("Imported list from:" + path.getPath());
             } catch (Exception e) {
                 System.out.println("error in import namelist:" + e);
                 e.printStackTrace();
             }
+
+            this.saveToFile();
         }
     }
 
@@ -104,6 +109,8 @@ public class Data {
         }
         nameList.clear();
         nameList.addAll(tempList);
+
+        this.saveToFile();
     }
 
     public void add(String text) {
@@ -126,6 +133,7 @@ public class Data {
         }
 
         System.gc();
+        this.saveToFile();
     }
 
     public boolean compareNameIgnoreList() {
@@ -139,6 +147,7 @@ public class Data {
         nameList.remove(name);
         ignoreList.removeName(name);
 
+        this.saveToFile();
         System.gc();
     }
 
@@ -154,7 +163,6 @@ public class Data {
     }
 
     public void saveToFile() {
-
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(dataFile));
             oos.writeObject(nameList);
@@ -162,12 +170,12 @@ public class Data {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public void deleteAllName() {
         nameList.clear();
         ignoreList.clearNameIgnoreList();
+        this.saveToFile();
     }
 
     public boolean checkNameIgnored(String name) {
@@ -259,7 +267,7 @@ public class Data {
 
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nameIgnoreFile));
                 this.ignoreNameList = (HashSet) ois.readObject();
-
+                ois.close();
             } catch (EOFException e) {
                 ignoreNameList = new HashSet<>();
                 writeIgnoreList(IGNORELIST_NAME_ONLY);
@@ -282,6 +290,7 @@ public class Data {
                 }
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(numbIgnoreFile));
                 this.ignoreNumberList = (HashSet) ois.readObject();
+                ois.close();
             } catch (EOFException e) {
                 ignoreNumberList = new HashSet<>();
                 System.out.println("Ignored number list is empty.");

@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -54,26 +55,23 @@ public class NameManagerPaneController extends VBox {
 
         shownNameList.setAll(data.getNameList());
         this.nameList.setItems(shownNameList);
+        this.nameList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         this.ocrTool = ocrTool;
     }
 
     @FXML
     void deleteName(ActionEvent event) {
-
         new DialogMaker(rootPane).createDialogWithOKAndCancel(
                 "问一下",
-                "真的要这个名字吗？该操作无法撤销，除非您已经备份了名单。",
+                "真的要这个(些)名字吗？该操作无法撤销，除非您已经备份了名单。",
                 e -> {
-                    String deletedName = nameList.getSelectionModel().getSelectedItems().get(0);
-
-                    data.delete(deletedName);
-                    shownNameList.remove(deletedName);
-
-                    data.saveToFile();
-                    System.gc();
+                    String[] deletedNames = nameList.getSelectionModel().getSelectedItems().toArray(new String[0]);
+                    for (String deletedName : deletedNames) {
+                        data.delete(deletedName);
+                        shownNameList.remove(deletedName);
+                    }
                 });
-
     }
 
     @FXML
@@ -82,12 +80,9 @@ public class NameManagerPaneController extends VBox {
                 "问一下",
                 "真的要删掉所有名字吗？该操作无法撤销，除非您已经备份了名单。",
                 e -> {
-                    //delete all name
                     data.deleteAllName();
                     shownNameList.setAll(data.getNameList());
-                    data.saveToFile();
                 });
-
     }
 
     @FXML
@@ -95,7 +90,6 @@ public class NameManagerPaneController extends VBox {
         data.makeMass();
         shownNameList.clear();
         shownNameList.setAll(data.getNameList());
-        data.saveToFile();
     }
 
     @FXML
@@ -110,7 +104,6 @@ public class NameManagerPaneController extends VBox {
 
     @FXML
     void importNameList(ActionEvent event) {
-
         new DialogMaker(rootPane).createDialogWithOKAndCancel(
                 "问一下",
                 "导入恢复名单会覆盖当前已有的名单，是否继续？",
@@ -126,15 +119,12 @@ public class NameManagerPaneController extends VBox {
                     data.clearNameIgnoreList();
                     data.clearNumberIgnoreList();
 
-                    data.saveToFile();
                     System.gc();
                 });
-
     }
 
     @FXML
     void addName(ActionEvent event) {
-
         if (inputName.getText().equals("")) {
             new DialogMaker(rootPane).createMessageDialog("诶诶诶~", "输入框怎么是空的呢？");
             return;
@@ -145,7 +135,6 @@ public class NameManagerPaneController extends VBox {
         shownNameList.clear();
         shownNameList.setAll(data.getNameList());
 
-        data.saveToFile();
         inputName.clear();
         System.gc();
     }
@@ -173,13 +162,10 @@ public class NameManagerPaneController extends VBox {
         OcrPaneController ocrPaneController = fxmlLoader.getController();
         ocrPaneController.setMainStage((Stage) inputName.getScene().getWindow());
         stage.show();
-
     }
 
     @FXML
-    void copyTo(ActionEvent event) {
+    void paste(ActionEvent event) {
         inputName.setText(inputName.getText() + Clipboard.getClipboardString());
     }
-
-
 }
