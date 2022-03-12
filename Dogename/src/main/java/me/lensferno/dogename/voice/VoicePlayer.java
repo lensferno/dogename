@@ -1,5 +1,6 @@
 package me.lensferno.dogename.voice;
 
+import javazoom.spi.mpeg.sampled.file.MpegAudioFileReader;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.utils.FilePath;
 import me.lensferno.dogename.utils.IOUtil;
@@ -92,8 +93,13 @@ public class VoicePlayer {
 
     private void playSound(File file) {
         try {
-            AudioInputStream sourceAudioInputStream = AudioSystem.getAudioInputStream(file);
-
+            AudioInputStream sourceAudioInputStream;
+            if (voiceConfig.getAudioFormat() == VoiceConfig.AUDIO_FORMAT_WAV) {
+                sourceAudioInputStream = AudioSystem.getAudioInputStream(file);
+            } else {
+                sourceAudioInputStream = new MpegAudioFileReader().getAudioInputStream(file);
+            }
+            
             AudioFormat sourceFormat = sourceAudioInputStream.getFormat();
             AudioFormat targetFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED,
                     sourceFormat.getSampleRate(), 16, sourceFormat.getChannels(),
