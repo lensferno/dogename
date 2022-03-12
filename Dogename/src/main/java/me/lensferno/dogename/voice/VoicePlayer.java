@@ -1,39 +1,38 @@
 package me.lensferno.dogename.voice;
 
-import com.goxr3plus.streamplayer.stream.StreamPlayer;
-import com.goxr3plus.streamplayer.stream.StreamPlayerException;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.utils.FilePath;
 import me.lensferno.dogename.utils.IOUtil;
 import me.lensferno.dogename.utils.NetworkUtil;
 
+import javax.sound.sampled.*;
 import java.io.File;
 import java.net.URLEncoder;
 
 public class VoicePlayer {
 
-    private final String VOICE_API = "https://tsn.baidu.com/text2audio";
+    private static final String VOICE_API = "https://tsn.baidu.com/text2audio";
 
-    String cachePath = FilePath.toSpecificPathForm("caches/voice/");
+    public static final String cachePath = FilePath.toSpecificPathForm("caches/voice/");
 
-    Token token;
-    StreamPlayer streamPlayer = new StreamPlayer();
-    private final VoiceConfig voiceConfig;
+    private final Token token;
+
+    public static VoiceConfig voiceConfig;
 
     public VoicePlayer(Token token, VoiceConfig voiceConfig) {
         this.token = token;
-        this.voiceConfig = voiceConfig;
+        VoicePlayer.voiceConfig = voiceConfig;
     }
 
     public void playVoice(String name) {
 
-        String speaker = voiceConfig.getSpeaker();
+        String speaker = voiceConfig.getSpeakerIdString();
         String intonation = String.valueOf(voiceConfig.getIntonation());
         String speed = String.valueOf(voiceConfig.getSpeed());
 
         String cacheName = String.format("%s_%s_%s_%s", name, speaker, speed, intonation);
 
-        File cache = new File(cachePath + cacheName + ".mp3");
+        File cache = new File(String.format("%s%s.%s", cachePath, cacheName, VoiceConfig.getAudioFileSuffix(voiceConfig.getAudioFormat())));
 
         new Thread(() -> {
             if (!cache.exists()) {
@@ -52,13 +51,14 @@ public class VoicePlayer {
         boolean success;
         try {
             String requestUrl = String.format(
-                    "%s?ctp=1&lan=zh&tok=%s&cuid=%s&spd=%s&pit=%s&per=%s&aue=3&tex=%s",
+                    "%s?ctp=1&lan=zh&tok=%s&cuid=%s&spd=%s&pit=%s&per=%s&aue=%s&tex=%s",
                     VOICE_API,
                     token.getAccessToken(),
                     NetworkUtil.getMacMD5(),
                     speed,
                     intonation,
                     speaker,
+                    voiceConfig.getAudioFormat(),
                     URLEncoder.encode(name, "UTF-8")
             );
 
@@ -92,12 +92,31 @@ public class VoicePlayer {
 
     private void playSound(File file) {
         try {
-            streamPlayer.open(file);
-            streamPlayer.play();
-            //streamPlayer.setGain(voiceConfig.getVolume() * 0.1);
-        } catch (StreamPlayerException e) {
-            e.printStackTrace();
-            file.delete();
+            AudioInputStream sourceAudioInputStream = AudioSystem.getAudioInputStream(file);
+
+            AudioFormat sourceFormat = sourceAudioInputStream.getFormat();
+            AudioFormat targetFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED,
+                    sourceFormat.getSampleRate(), 16, sourceFormat.getChannels(),
+                    sourceFormat.getChannels() * 2, sourceFormat.getSampleRate(), false);
+
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(targetFormat, sourceAudioInputStream);
+
+            DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class, targetFormat, AudioSystem.NOT_SPECIFIED);
+
+            SourceDataLine audioLine = (SourceDataLine) AudioSystem.getLine(dataLineInfo);
+            audioLine.open(targetFormat);
+            audioLine.start();
+
+            byte[] buffer = new byte[1024];
+            int length = audioInputStream.read(buffer);
+            while (length > 0) {
+                audioLine.write(buffer, 0, length);
+                length = audioInputStream.read(buffer);
+            }
+
+            audioLine.drain();
+            audioLine.stop();
+            audioLine.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

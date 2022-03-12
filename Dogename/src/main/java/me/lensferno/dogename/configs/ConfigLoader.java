@@ -11,19 +11,17 @@ import me.lensferno.dogename.configs.adapters.DoublePropertyAdapter;
 import me.lensferno.dogename.configs.adapters.IntegerPropertyAdapter;
 import me.lensferno.dogename.configs.adapters.StringPropertyAdapter;
 import me.lensferno.dogename.utils.FilePath;
+import me.lensferno.dogename.voice.VoicePlayer;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 public class ConfigLoader {
-
-
     private final String mainConfigLocation = FilePath.toSpecificPathForm("files/Config.json");
     private final String voiceConfigLocation = FilePath.toSpecificPathForm("files/VoiceConfig.json");
     //ConfigValuesBean config;
     private MainConfig mainConfig;
-    private VoiceConfig voiceConfig;
 
     public String getMainConfigLocation() {
         return mainConfigLocation;
@@ -38,7 +36,6 @@ public class ConfigLoader {
     }
 
     public MainConfig readConfigFromFile(String fileLocation) {
-
         //property属性应该要自定义一个json适配器才能解析出来
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(SimpleBooleanProperty.class, new BooleanPropertyAdapter())
@@ -48,7 +45,7 @@ public class ConfigLoader {
                 .setPrettyPrinting()
                 .create();
 
-        String ConfigJSON;
+        String configJson;
 
         try {
             File configFile = new File(fileLocation);
@@ -60,9 +57,10 @@ public class ConfigLoader {
                 return mainConfig;
             }
             InputStream inputStream = new FileInputStream(configFile);
-            ConfigJSON = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+            configJson = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+            inputStream.close();
 
-            mainConfig = gson.fromJson(ConfigJSON, MainConfig.class);
+            mainConfig = gson.fromJson(configJson, MainConfig.class);
 
             if (mainConfig == null) {
                 mainConfig = new MainConfig();
@@ -82,7 +80,6 @@ public class ConfigLoader {
     }
 
     public VoiceConfig readVoiceConfigFromFile(String fileLocation) {
-
         //property属性应该要自定义一个json适配器才能解析出来
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(SimpleBooleanProperty.class, new BooleanPropertyAdapter())
@@ -92,7 +89,7 @@ public class ConfigLoader {
                 .setPrettyPrinting()
                 .create();
 
-        String ConfigJSON;
+        String configJson;
 
         try {
             File configFile = new File(fileLocation);
@@ -100,38 +97,31 @@ public class ConfigLoader {
                 configFile.getParentFile().mkdirs();
                 configFile.createNewFile();
 
-                voiceConfig = new VoiceConfig();
+                VoicePlayer.voiceConfig = new VoiceConfig();
                 writeVoiceConfigToFile(voiceConfigLocation);
-                return voiceConfig;
+                return VoicePlayer.voiceConfig;
             }
             InputStream inputStream = new FileInputStream(configFile);
-            ConfigJSON = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+            configJson = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+            inputStream.close();
 
-            writeVoiceConfigToFile(voiceConfigLocation);
-            voiceConfig = gson.fromJson(ConfigJSON, VoiceConfig.class);
-            if (voiceConfig == null) {
-                voiceConfig = new VoiceConfig();
+            VoicePlayer.voiceConfig = gson.fromJson(configJson, VoiceConfig.class);
+
+            if (VoicePlayer.voiceConfig == null) {
+                VoicePlayer.voiceConfig = new VoiceConfig();
                 writeVoiceConfigToFile(voiceConfigLocation);
-                return voiceConfig;
+                return VoicePlayer.voiceConfig;
             }
 
         } catch (Exception e) {
             System.out.println("Error to load voice config file:" + e + "\nUse Default voice config.");
 
-            voiceConfig = new VoiceConfig();
+            VoicePlayer.voiceConfig = new VoiceConfig();
             writeVoiceConfigToFile(voiceConfigLocation);
-            return voiceConfig;
+            return VoicePlayer.voiceConfig;
         }
 
-        return this.voiceConfig;
-    }
-
-    //
-    public MainConfig setValuesToProperty() {
-        //mainconfig.set..(config.get..)
-        //...so on
-        //
-        return this.mainConfig;
+        return VoicePlayer.voiceConfig;
     }
 
     private String toJSON(MainConfig config) {
@@ -146,8 +136,7 @@ public class ConfigLoader {
         return gson.toJson(config);
     }
 
-    private String VoiceConfigtoJSON(VoiceConfig config) {
-
+    private String getConfigJson(VoiceConfig config) {
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(SimpleDoubleProperty.class, new DoublePropertyAdapter())
                 .setPrettyPrinting()
@@ -168,7 +157,7 @@ public class ConfigLoader {
             IOUtils.write(toJSON(this.mainConfig).getBytes(StandardCharsets.UTF_8), stream);
 
             OutputStream voiceConfigFileStream = new FileOutputStream(voiceConfigFile);
-            IOUtils.write(VoiceConfigtoJSON(this.voiceConfig).getBytes(StandardCharsets.UTF_8), voiceConfigFileStream);
+            IOUtils.write(getConfigJson(VoicePlayer.voiceConfig).getBytes(StandardCharsets.UTF_8), voiceConfigFileStream);
 
         } catch (Exception e) {
             System.out.println("Error in writing all config:" + e);
@@ -202,7 +191,7 @@ public class ConfigLoader {
                 outputFile.createNewFile();
             }
             OutputStream voiceConfigFileStream = new FileOutputStream(voiceConfigFile);
-            IOUtils.write(VoiceConfigtoJSON(this.voiceConfig).getBytes(StandardCharsets.UTF_8), voiceConfigFileStream);
+            IOUtils.write(getConfigJson(VoicePlayer.voiceConfig).getBytes(StandardCharsets.UTF_8), voiceConfigFileStream);
 
         } catch (Exception e) {
             System.out.println("Error in writing voice config:" + e);

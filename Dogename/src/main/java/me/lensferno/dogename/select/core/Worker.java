@@ -3,6 +3,7 @@ package me.lensferno.dogename.select.core;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.StringProperty;
 import me.lensferno.dogename.configs.MainConfig;
+import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.data.Data;
 import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.utils.Random;

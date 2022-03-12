@@ -24,6 +24,7 @@ import me.lensferno.dogename.select.Selector;
 import me.lensferno.dogename.utils.DialogMaker;
 import me.lensferno.dogename.utils.FilePath;
 import me.lensferno.dogename.utils.ocr.OcrTool;
+import me.lensferno.dogename.voice.VoicePlayer;
 
 import java.io.File;
 import java.io.IOException;
@@ -38,10 +39,10 @@ public final class MainInterfaceController {
 
     History history = new History();
     MainConfig mainConfig;
-    VoiceConfig voiceConfig;
     Random random = new Random();
     Data data = new Data();
     Selector selector = new Selector();
+
     @FXML
     private Pane rootPane;
     @FXML
@@ -88,7 +89,7 @@ public final class MainInterfaceController {
 
     public void setUpConfig(ConfigLoader configLoader) {
         mainConfig = configLoader.readConfigFromFile(FilePath.toSpecificPathForm("files/Config.json"));
-        voiceConfig = configLoader.readVoiceConfigFromFile(FilePath.toSpecificPathForm("files/VoiceConfig.json"));
+        VoicePlayer.voiceConfig = configLoader.readVoiceConfigFromFile(FilePath.toSpecificPathForm("files/VoiceConfig.json"));
     }
 
     @FXML
@@ -108,7 +109,7 @@ public final class MainInterfaceController {
     }
 
     @FXML
-    void showNunberSetting(ActionEvent event) {
+    void showNumberSetting(ActionEvent event) {
 
         if (selector.isWorkerRunning()) {
             new DialogMaker(rootPane).createMessageDialog("(・。・)", "安排中......\n为保证运行的稳定，此时还不能进行该操作哦。");
@@ -158,8 +159,6 @@ public final class MainInterfaceController {
 
         settingsPaneController.setToggleGroup();
         settingsPaneController.bindProperties(mainConfig);
-
-        settingsPaneController.setVoiceConfig(voiceConfig);
 
         settingsPaneController.setRootPane(rootPane);
 

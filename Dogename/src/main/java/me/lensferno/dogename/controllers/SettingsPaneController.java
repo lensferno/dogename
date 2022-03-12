@@ -13,14 +13,14 @@ import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.data.Data;
 import me.lensferno.dogename.utils.DialogMaker;
+import me.lensferno.dogename.voice.VoicePlayer;
 
 
 public class SettingsPaneController extends VBox {
-
     MainConfig mainConfig;
-    VoiceConfig voiceConfig;
     Pane rootPane;
     Data data;
+
     @FXML
     private JFXCheckBox showSayingBtn;
     @FXML
@@ -42,7 +42,6 @@ public class SettingsPaneController extends VBox {
     @FXML
     private JFXRadioButton fixedTimes;
 
-
     public SettingsPaneController() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/me/lensferno/dogename/FXMLs/SettingsPane.fxml"));
         loader.setRoot(this);
@@ -56,10 +55,6 @@ public class SettingsPaneController extends VBox {
 
     public void setMainConfig(MainConfig mainConfig) {
         this.mainConfig = mainConfig;
-    }
-
-    public void setVoiceConfig(VoiceConfig voiceConfig) {
-        this.voiceConfig = voiceConfig;
     }
 
     public void setRootPane(Pane rootPane) {
@@ -107,8 +102,8 @@ public class SettingsPaneController extends VBox {
 
     @FXML
     void showVoiceSettingsPane(ActionEvent event) {
-        VoiceSettingsPaneController voiceSettingsPaneController = new VoiceSettingsPaneController();
-        voiceSettingsPaneController.bindPropertied(voiceConfig);
+        VoiceSettingsPaneController voiceSettingsPaneController = new VoiceSettingsPaneController(rootPane);
+        voiceSettingsPaneController.bindPropertied();
         new DialogMaker(rootPane).createDialogWithOneBtn("语音设置", voiceSettingsPaneController);
     }
 
@@ -116,7 +111,6 @@ public class SettingsPaneController extends VBox {
     void showEqualMode(ActionEvent event) {
         new DialogMaker(rootPane).createMessageDialog("什么？",
                 "//有待补充。;-)");
-
     }
 
     @FXML

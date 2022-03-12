@@ -27,7 +27,7 @@ public class History {
 
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(historyFile));
             history = (ArrayList<String>) ois.readObject();
-
+            ois.close();
         } catch (EOFException e) {
             history = new ArrayList<>();
             System.out.println("History file is empty.");

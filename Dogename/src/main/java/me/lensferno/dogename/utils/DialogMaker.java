@@ -3,6 +3,7 @@ package me.lensferno.dogename.utils;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.controls.events.JFXDialogEvent;
 import javafx.beans.NamedArg;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,7 +22,6 @@ public class DialogMaker {
     Pane rootPane;
     JFXDialog dialog;
 
-
     public DialogMaker(@NamedArg("rootPane") Pane rootPane) {
         this.rootPane = rootPane;
     }
@@ -39,7 +39,7 @@ public class DialogMaker {
     }
 
     //创建只有一个按钮的dialog
-    public void createDialogWithOneBtn(@NamedArg("title") String title, @NamedArg("theBody") Node body) {
+    public void createDialogWithOneBtn(@NamedArg("title") String title, @NamedArg("theBody") Node body, @NamedArg("OKEvent") EventHandler<JFXDialogEvent> event) {
         //dialog.setPrefHeight(rootPane.getPrefHeight());
         //dialog.setPrefWidth(rootPane.getPrefWidth());
 
@@ -47,10 +47,19 @@ public class DialogMaker {
         OKButton.setFont(Font.font("Microsoft YaHei", FontWeight.BOLD, 12));
         OKButton.setPrefWidth(60);
         OKButton.setPrefHeight(30);
+        OKButton.addEventHandler(ActionEvent.ACTION, e -> dialog.close());
 
         createDialog(title, body, OKButton);
 
+        if (event != null) {
+            dialog.setOnDialogClosed(event);
+        }
+
         dialog.show();
+    }
+
+    public void createDialogWithOneBtn(@NamedArg("title") String title, @NamedArg("theBody") Node body) {
+        createDialogWithOneBtn(title, body, null);
     }
 
     //创建有OK和cancel按钮的dialog

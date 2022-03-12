@@ -52,7 +52,7 @@
                         <Font name="Microsoft YaHei UI" size="17.0" />
                      </font>
                   </JFXRadioButton>
-                  <JFXButton layoutX="698.0" layoutY="502.0" onAction="#showNunberSetting" prefHeight="36.0" prefWidth="92.0" ripplerFill="#00eafff7" text="调整数字">
+                  <JFXButton layoutX="698.0" layoutY="502.0" onAction="#showNumberSetting" prefHeight="36.0" prefWidth="92.0" ripplerFill="#00eafff7" text="调整数字">
                      <font>
                         <Font name="Microsoft YaHei UI" size="17.0" />
                      </font>

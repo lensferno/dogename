@@ -50,7 +50,7 @@
                         <Font name="Microsoft YaHei" size="17.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" onAction="#copyTo" prefHeight="35.0" prefWidth="176.0" style="-fx-background-color: rgb(255, 255, 255);" text="粘贴剪贴板内容">
+                  <JFXButton buttonType="RAISED" onAction="#paste" prefHeight="35.0" prefWidth="176.0" style="-fx-background-color: rgb(255, 255, 255);" text="粘贴剪贴板内容">
                      <font>
                         <Font name="Microsoft YaHei" size="17.0" />
                      </font>
