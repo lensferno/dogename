@@ -10,8 +10,6 @@
 
 不定时更新（咕），大更新应该不会有，除非忍不住。
 
-
-
 // update：（其实是不想再去动这座屎山了...别去看代码，血压会高的）
 
 // 怕是要重写一遍了...想弃坑了... ωωω
@@ -50,10 +48,6 @@
 #### License信息
 
 本程序使用[GNU General Public License](http://www.gnu.org/licenses/gpl-3.0.html "GPL") (GPL,version 3)开源许可证，
-
-遵循[GPL](http://www.gnu.org/licenses/gpl-3.0.html "GNU General Public License 3")使用了以下库：
-
-- [Java Stream Player](https://github.com/goxr3plus/java-stream-player "Java Stream Player")(9.0.4)
 
 遵循[Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0 "Apache License 2.0")使用了以下库：
 

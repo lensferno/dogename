@@ -19,14 +19,5 @@
     <orderEntry type="library" name="Maven: org.json:json:20160810" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.25" level="project" />
-    <orderEntry type="library" name="Maven: com.github.goxr3plus:java-stream-player:9.0.4" level="project" />
-    <orderEntry type="library" name="Maven: com.googlecode.soundlibs:mp3spi:1.9.5.4" level="project" />
-    <orderEntry type="library" name="Maven: com.googlecode.soundlibs:jlayer:1.0.1.4" level="project" />
-    <orderEntry type="library" name="Maven: junit:junit:3.8.2" level="project" />
-    <orderEntry type="library" name="Maven: org.jflac:jflac-codec:1.5.2" level="project" />
-    <orderEntry type="library" name="Maven: com.github.trilarion:vorbis-support:1.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.googlecode.soundlibs:tritonus-all:0.3.7.2" level="project" />
-    <orderEntry type="library" name="Maven: com.googlecode.soundlibs:jorbis:0.0.17-2" level="project" />
-    <orderEntry type="library" name="Maven: com.github.goxr3plus:jaudiotagger:2.2.7" level="project" />
   </component>
 </module>
