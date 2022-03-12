@@ -1,6 +1,7 @@
 package me.lensferno.dogename.voice;
 
 import javazoom.spi.mpeg.sampled.file.MpegAudioFileReader;
+import me.lensferno.dogename.configs.GlobalConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.utils.FilePath;
 import me.lensferno.dogename.utils.IOUtil;
@@ -17,23 +18,20 @@ public class VoicePlayer {
     public static final String cachePath = FilePath.toSpecificPathForm("caches/voice/");
 
     private final Token token;
-
-    public static VoiceConfig voiceConfig;
-
-    public VoicePlayer(Token token, VoiceConfig voiceConfig) {
+    
+    public VoicePlayer(Token token) {
         this.token = token;
-        VoicePlayer.voiceConfig = voiceConfig;
     }
 
     public void playVoice(String name) {
 
-        String speaker = voiceConfig.getSpeakerIdString();
-        String intonation = String.valueOf(voiceConfig.getIntonation());
-        String speed = String.valueOf(voiceConfig.getSpeed());
+        String speaker = GlobalConfig.voiceConfig.getSpeakerIdString();
+        String intonation = String.valueOf(GlobalConfig.voiceConfig.getIntonation());
+        String speed = String.valueOf(GlobalConfig.voiceConfig.getSpeed());
 
         String cacheName = String.format("%s_%s_%s_%s", name, speaker, speed, intonation);
 
-        File cache = new File(String.format("%s%s.%s", cachePath, cacheName, VoiceConfig.getAudioFileSuffix(voiceConfig.getAudioFormat())));
+        File cache = new File(String.format("%s%s.%s", cachePath, cacheName, VoiceConfig.getAudioFileSuffix(GlobalConfig.voiceConfig.getAudioFormat())));
 
         new Thread(() -> {
             if (!cache.exists()) {
@@ -59,7 +57,7 @@ public class VoicePlayer {
                     speed,
                     intonation,
                     speaker,
-                    voiceConfig.getAudioFormat(),
+                    GlobalConfig.voiceConfig.getAudioFormat(),
                     URLEncoder.encode(name, "UTF-8")
             );
 
@@ -94,12 +92,12 @@ public class VoicePlayer {
     private void playSound(File file) {
         try {
             AudioInputStream sourceAudioInputStream;
-            if (voiceConfig.getAudioFormat() == VoiceConfig.AUDIO_FORMAT_WAV) {
+            if (GlobalConfig.voiceConfig.getAudioFormat() == VoiceConfig.AUDIO_FORMAT_WAV) {
                 sourceAudioInputStream = AudioSystem.getAudioInputStream(file);
             } else {
                 sourceAudioInputStream = new MpegAudioFileReader().getAudioInputStream(file);
             }
-            
+
             AudioFormat sourceFormat = sourceAudioInputStream.getFormat();
             AudioFormat targetFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED,
                     sourceFormat.getSampleRate(), 16, sourceFormat.getChannels(),

@@ -16,17 +16,15 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import me.lensferno.dogename.configs.ConfigLoader;
+import me.lensferno.dogename.configs.GlobalConfig;
 import me.lensferno.dogename.configs.MainConfig;
-import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.data.Data;
 import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.select.Selector;
 import me.lensferno.dogename.utils.DialogMaker;
 import me.lensferno.dogename.utils.FilePath;
 import me.lensferno.dogename.utils.ocr.OcrTool;
-import me.lensferno.dogename.voice.VoicePlayer;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Random;
@@ -38,7 +36,6 @@ public final class MainInterfaceController {
     OcrTool ocrTool = null;
 
     History history = new History();
-    MainConfig mainConfig;
     Random random = new Random();
     Data data = new Data();
     Selector selector = new Selector();
@@ -72,14 +69,15 @@ public final class MainInterfaceController {
         history.loadHistory();
     }
 
+    private final ToggleGroup toggleGroup = new ToggleGroup();
     public void bindProperties() {
-        nameChoose.selectedProperty().bindBidirectional(mainConfig.nameChooseProperty());
+        nameChoose.setToggleGroup(toggleGroup);
+        numbChoose.setToggleGroup(toggleGroup);
 
-        numbChoose.selectedProperty().bind(mainConfig.nameChooseProperty().not());
-        numbChoose.selectedProperty().unbind();
-
-        mainConfig.nameChooseProperty().addListener((observable, oldValue, newValue) -> {
-            mainConfig.setChooseMethod(mainConfig.getNameChoose() ? MainConfig.METHOD_NAME : MainConfig.METHOD_NUMBER);
+        toggleGroup.selectToggle(GlobalConfig.mainConfig.getChooseMethod() == MainConfig.METHOD_NAME ? nameChoose : numbChoose);
+        toggleGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            GlobalConfig.mainConfig.setChooseMethod(newValue == nameChoose ? MainConfig.METHOD_NAME : MainConfig.METHOD_NUMBER);
+            System.out.println("change!"+(newValue == nameChoose));
         });
     }
 
@@ -88,8 +86,8 @@ public final class MainInterfaceController {
     }
 
     public void setUpConfig(ConfigLoader configLoader) {
-        mainConfig = configLoader.readConfigFromFile(FilePath.toSpecificPathForm("files/Config.json"));
-        VoicePlayer.voiceConfig = configLoader.readVoiceConfigFromFile(FilePath.toSpecificPathForm("files/VoiceConfig.json"));
+        configLoader.readMainConfig(FilePath.toSpecificPathForm("files/Config.json"));
+        configLoader.loadVoiceConfig(FilePath.toSpecificPathForm("files/VoiceConfig.json"));
     }
 
     @FXML
@@ -116,9 +114,8 @@ public final class MainInterfaceController {
             return;
         }
         NumberSettingsPaneController numberSettingsPaneController = new NumberSettingsPaneController(data);
-        numberSettingsPaneController.bindProperties(mainConfig);
+        numberSettingsPaneController.bindProperties(GlobalConfig.mainConfig);
         new DialogMaker(rootPane).createDialogWithOneBtn("调整数字", numberSettingsPaneController);
-
     }
 
     @FXML
@@ -138,7 +135,7 @@ public final class MainInterfaceController {
         miniStage.initStyle(StageStyle.UNDECORATED);
 
         MiniPaneController miniPaneController = loader.getController();
-        miniPaneController.setBase(data, mainConfig, selector);
+        miniPaneController.setBase(data, selector);
 
         Stage currentStage = (Stage) anPaiBtn.getScene().getWindow();
         miniPaneController.setOldStage(currentStage);
@@ -154,11 +151,10 @@ public final class MainInterfaceController {
 
     @FXML
     void showSettings(ActionEvent event) {
-
         SettingsPaneController settingsPaneController = new SettingsPaneController();
 
         settingsPaneController.setToggleGroup();
-        settingsPaneController.bindProperties(mainConfig);
+        settingsPaneController.bindProperties();
 
         settingsPaneController.setRootPane(rootPane);
 
@@ -177,7 +173,7 @@ public final class MainInterfaceController {
 
     public void init() {
 
-        selector.initialVariable(mainConfig, data, history, upperLabel.textProperty(), downLabel.textProperty());
+        selector.initialVariable(data, history, upperLabel.textProperty(), downLabel.textProperty());
         selector.addStoppedEventListener((observableValue, oldValue, stop) -> {
             if (stop) {
                 anPaiBtn.setText("安排一下");
@@ -200,11 +196,11 @@ public final class MainInterfaceController {
             return;
         }
 
-        if (mainConfig.getRandomCount()) {
-            mainConfig.setMaxTotalCount(100 + random.nextInt(151));
+        if (GlobalConfig.mainConfig.getRandomCount()) {
+            GlobalConfig.mainConfig.setMaxTotalCount(100 + random.nextInt(151));
         }
 
-        if (mainConfig.getNameChoose()) {
+        if (GlobalConfig.mainConfig.getChooseMethod() == MainConfig.METHOD_NAME) {
             runNameMode();
         } else {
             runNumberMode();
@@ -225,9 +221,9 @@ public final class MainInterfaceController {
             return;
         }
 
-        if (data.compareNameIgnoreList() && mainConfig.getPassSelectedResult()) {
+        if (data.compareNameIgnoreList() && GlobalConfig.mainConfig.getIgnoreSelectedResult()) {
 
-            if (mainConfig.getEqualMode()) {
+            if (GlobalConfig.mainConfig.getEqualMode()) {
                 new DialogMaker(rootPane).createDialogWithOKAndCancel("啊？", "全部名字都被点完啦！\n要把名字的忽略列表重置吗？", e -> data.clearNameIgnoreList());
             } else {
                 new DialogMaker(rootPane).createMessageDialog("啊？", "全部名字都被点完啦！\n请多添加几个名字 或 点击“机会均等”的“重置”按钮。");
@@ -244,16 +240,16 @@ public final class MainInterfaceController {
 
         try {
 
-            int minNumber = Integer.parseInt(mainConfig.getMinNumber());
-            int maxNumber = Integer.parseInt(mainConfig.getMaxNumber());
+            int minNumber = Integer.parseInt(GlobalConfig.mainConfig.getMinNumber());
+            int maxNumber = Integer.parseInt(GlobalConfig.mainConfig.getMaxNumber());
 
             if (maxNumber - minNumber <= 0) {
                 new DialogMaker(rootPane).createMessageDialog("嗯哼？", "数字要前小后大啊~");
                 return;
             }
 
-            if (data.getNumberIgnoreListSize() >= (maxNumber - minNumber + 1) && mainConfig.getPassSelectedResult()) {
-                if (mainConfig.getEqualMode()) {
+            if (data.getNumberIgnoreListSize() >= (maxNumber - minNumber + 1) && GlobalConfig.mainConfig.getIgnoreSelectedResult()) {
+                if (GlobalConfig.mainConfig.getEqualMode()) {
                     new DialogMaker(rootPane).createDialogWithOKAndCancel("啊？", "全部数字都被点完啦！\n要把数字的忽略列表重置吗？", e -> data.clearNumberIgnoreList());
                 } else {
                     new DialogMaker(rootPane).createMessageDialog("啊？", "全部数字都被点完啦！\n请扩大数字范围 或 点击“机会均等”的“重置”按钮。");
@@ -280,6 +276,6 @@ public final class MainInterfaceController {
     }
 
     public MainConfig getMainConfig() {
-        return mainConfig;
+        return GlobalConfig.mainConfig;
     }
 }

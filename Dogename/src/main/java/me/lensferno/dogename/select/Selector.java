@@ -4,6 +4,7 @@ import javafx.animation.AnimationTimer;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
+import me.lensferno.dogename.configs.GlobalConfig;
 import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.data.Data;
@@ -24,10 +25,9 @@ public final class Selector {
 
     public void initialVoicePlayer() {
         TokenManager tokenManager = new TokenManager();
-        VoiceConfig voiceConfig = new VoiceConfig();
         tokenManager.init();
         if (tokenManager.getTokenStatus() == TokenManager.TOKEN_OK) {
-            voicePlayer = new VoicePlayer(tokenManager.getToken(), voiceConfig);
+            voicePlayer = new VoicePlayer(tokenManager.getToken());
         }
     }
 
@@ -43,8 +43,8 @@ public final class Selector {
         processor.stopProcess();
     }
 
-    public void initialVariable(MainConfig config, Data data, History history, StringProperty... labelTexts) {
-        processor.initialVariable(config, voicePlayer, data, history, labelTexts);
+    public void initialVariable(Data data, History history, StringProperty... labelTexts) {
+        processor.initialVariable(voicePlayer, data, history, labelTexts);
     }
 
     public boolean isWorkerRunning() {
@@ -61,13 +61,10 @@ public final class Selector {
 
     // ---------------------------------------------------
     static class Processor extends AnimationTimer {
-
-        MainConfig config = null;
         private Worker coreWorker;
 
-        protected void initialVariable(MainConfig config, VoicePlayer voicePlayer, Data data, History history, StringProperty... labelTexts) {
-            coreWorker = new Worker(labelTexts, config, data, history, voicePlayer);
-            this.config = config;
+        protected void initialVariable(VoicePlayer voicePlayer, Data data, History history, StringProperty... labelTexts) {
+            coreWorker = new Worker(labelTexts, data, history, voicePlayer);
         }
 
         protected void setWorkerLabelTexts(StringProperty... labelTexts) {
@@ -75,8 +72,8 @@ public final class Selector {
         }
 
         protected void updateNewValue() {
-            coreWorker.setSpeed(100 - config.getSpeed());
-            coreWorker.setMaxTotalCount(config.getMaxTotalCount());
+            coreWorker.setSpeed(100 - GlobalConfig.mainConfig.getSpeed());
+            coreWorker.setMaxTotalCount(GlobalConfig.mainConfig.getMaxTotalCount());
         }
 
         protected SimpleBooleanProperty stoppedIndicatorProperty() {
@@ -100,12 +97,10 @@ public final class Selector {
         }
 
         public void setNumberRange() {
-            int minNumber = Integer.parseInt(config.getMinNumber());
-            int maxNumber = Integer.parseInt(config.getMaxNumber());
+            int minNumber = Integer.parseInt(GlobalConfig.mainConfig.getMinNumber());
+            int maxNumber = Integer.parseInt(GlobalConfig.mainConfig.getMaxNumber());
             coreWorker.setNumberRange(minNumber, maxNumber);
         }
-
     }
-
 }
 

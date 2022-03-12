@@ -12,6 +12,7 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import me.lensferno.dogename.configs.GlobalConfig;
 import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.utils.DialogMaker;
 import me.lensferno.dogename.voice.VoicePlayer;
@@ -56,7 +57,7 @@ public class VoiceSettingsPaneController extends VBox {
         }
         if (speakerList.isEmpty()) {
             speakerList.addAll(
-                    "度小宇=1", "度小美=0", "度逍遥=3", "度丫丫=4"
+                    "度小宇", "度小美", "度逍遥", "度丫丫"
                     // 非高级API用户，这些精品音频库用不了（等把“高级设置”弄出来再说吧...）
                     /*, "度博文=106", "度小童=110", "度小萌=111", "度米朵=103", "度小娇=5"*/);
         }
@@ -74,20 +75,20 @@ public class VoiceSettingsPaneController extends VBox {
         audioFormatMap.put(VoiceConfig.AUDIO_FORMAT_WAV, wavFormatButton);
         audioFormatMap.put(VoiceConfig.AUDIO_FORMAT_MP3, mp3FormatButton);
 
-        audioFormatToggleGroup.selectToggle(audioFormatMap.get(VoicePlayer.voiceConfig.getAudioFormat()));
+        audioFormatToggleGroup.selectToggle(audioFormatMap.get(GlobalConfig.voiceConfig.getAudioFormat()));
         audioFormatToggleGroup.selectedToggleProperty().addListener((observable, oldValue, selectBtn) ->
-                VoicePlayer.voiceConfig.setAudioFormat(selectBtn.equals(wavFormatButton) ? VoiceConfig.AUDIO_FORMAT_WAV : VoiceConfig.AUDIO_FORMAT_MP3));
+                GlobalConfig.voiceConfig.setAudioFormat(selectBtn.equals(wavFormatButton) ? VoiceConfig.AUDIO_FORMAT_WAV : VoiceConfig.AUDIO_FORMAT_MP3));
 
-        speakerSelectBar.getSelectionModel().select(VoicePlayer.voiceConfig.getSpeaker());
+        speakerSelectBar.getSelectionModel().select(GlobalConfig.voiceConfig.getSpeaker());
         speakerSelectBar.valueProperty().addListener((observable, oldValue, newValue) -> {
             int selectedSpeakerIndex = speakerSelectBar.getSelectionModel().getSelectedIndex();
 
-            VoicePlayer.voiceConfig.setSpeakerIdString(speakers[selectedSpeakerIndex]);
-            VoicePlayer.voiceConfig.setSpeaker(selectedSpeakerIndex);
+            GlobalConfig.voiceConfig.setSpeakerIdString(speakers[selectedSpeakerIndex]);
+            GlobalConfig.voiceConfig.setSpeaker(selectedSpeakerIndex);
         });
 
-        voiceSpeedBar.valueProperty().bindBidirectional(VoicePlayer.voiceConfig.speedProperty());
-        intonationBar.valueProperty().bindBidirectional(VoicePlayer.voiceConfig.intonationProperty());
+        voiceSpeedBar.valueProperty().bindBidirectional(GlobalConfig.voiceConfig.speedProperty());
+        intonationBar.valueProperty().bindBidirectional(GlobalConfig.voiceConfig.intonationProperty());
     }
 
     @FXML

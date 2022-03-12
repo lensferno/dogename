@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
 import javafx.stage.Stage;
+import me.lensferno.dogename.configs.GlobalConfig;
 import me.lensferno.dogename.configs.MainConfig;
 import me.lensferno.dogename.controllers.WindowListeners.MoveWindowByMouse;
 import me.lensferno.dogename.controllers.WindowListeners.MoveWindowByTouch;
@@ -32,12 +33,7 @@ public class MiniPaneController {
     private JFXButton miniModeBtn;
     private final Random random = new Random();
     private Data data;
-    private MainConfig mainConfig;
     private Selector selector = new Selector();
-
-    public Stage getOldStage() {
-        return oldStage;
-    }
 
     public void setOldStage(Stage oldStage) {
         this.oldStage = oldStage;
@@ -51,19 +47,16 @@ public class MiniPaneController {
         this.currentStage = currentStage;
     }
 
-    public void setBase(Data data, MainConfig mainConfig, Selector selector) {
+    public void setBase(Data data, Selector selector) {
         this.data = data;
-        this.mainConfig = mainConfig;
         this.selector = selector;
         this.selector.setLabelTexts(chosenNameLabel.textProperty());
-        this.oldTextProperties = oldTextProperties;
     }
 
     @FXML
     void recoverMode(ActionEvent event) {
-        this.oldStage.setOnShown((e) -> {
-            selector.setLabelTexts(oldTextProperties);
-        });
+        // todo: 待修复：界面恢复后label无法正常显示名字
+        this.oldStage.setOnShown((e) -> selector.setLabelTexts(oldTextProperties));
         this.oldStage.show();
 
         currentStage.close();
@@ -100,11 +93,11 @@ public class MiniPaneController {
             return;
         }
 
-        if (mainConfig.getRandomCount()) {
-            mainConfig.setMaxTotalCount(100 + random.nextInt(151));
+        if (GlobalConfig.mainConfig.getRandomCount()) {
+            GlobalConfig.mainConfig.setMaxTotalCount(100 + random.nextInt(151));
         }
 
-        if (mainConfig.getNameChoose()) {
+        if (GlobalConfig.mainConfig.getChooseMethod() == MainConfig.METHOD_NAME) {
             runNameMode();
         } else {
             runNumberMode();
@@ -118,7 +111,7 @@ public class MiniPaneController {
             return;
         }
 
-        if (data.compareNameIgnoreList() && mainConfig.getPassSelectedResult()) {
+        if (data.compareNameIgnoreList() && GlobalConfig.mainConfig.getIgnoreSelectedResult()) {
             return;
         }
 
@@ -131,14 +124,14 @@ public class MiniPaneController {
 
         try {
 
-            int minNumber = Integer.parseInt(mainConfig.getMinNumber());
-            int maxNumber = Integer.parseInt(mainConfig.getMaxNumber());
+            int minNumber = Integer.parseInt(GlobalConfig.mainConfig.getMinNumber());
+            int maxNumber = Integer.parseInt(GlobalConfig.mainConfig.getMaxNumber());
 
             if (maxNumber - minNumber <= 0) {
                 return;
             }
 
-            if (data.getNumberIgnoreListSize() >= (maxNumber - minNumber + 1) && mainConfig.getPassSelectedResult()) {
+            if (data.getNumberIgnoreListSize() >= (maxNumber - minNumber + 1) && GlobalConfig.mainConfig.getIgnoreSelectedResult()) {
                 return;
             }
 

@@ -2,8 +2,8 @@ package me.lensferno.dogename.select.core;
 
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.StringProperty;
+import me.lensferno.dogename.configs.GlobalConfig;
 import me.lensferno.dogename.configs.MainConfig;
-import me.lensferno.dogename.configs.VoiceConfig;
 import me.lensferno.dogename.data.Data;
 import me.lensferno.dogename.data.History;
 import me.lensferno.dogename.utils.Random;
@@ -14,7 +14,6 @@ public final class Worker {
     private final Random randomNumber = new Random();
     private final SimpleBooleanProperty stoppedIndicator = new SimpleBooleanProperty(true);
 
-    private final MainConfig config;
     private final Data data;
     private final History history;
     private final VoicePlayer voicePlayer;
@@ -40,9 +39,8 @@ public final class Worker {
     private boolean continueSelecting = false;
     private int resultLabelId = 0;
 
-    public Worker(StringProperty[] labelTexts, MainConfig config, Data data, History history, VoicePlayer voicePlayer) {
+    public Worker(StringProperty[] labelTexts, Data data, History history, VoicePlayer voicePlayer) {
         this.labelTexts = labelTexts;
-        this.config = config;
         this.data = data;
         this.history = history;
         this.voicePlayer = voicePlayer;
@@ -69,8 +67,8 @@ public final class Worker {
             // 如果不是这三种情况就选到符合其中一种情况为止
             // 由于后两者在安排进程中不可能改变，因此继续挑选后只有选中的结果不在忽略名单中才会结束挑选
             // 若忽略名单已满（名单中数量=总的名单数量），点击“安排一下”时会提示已满，无法再进行挑选，因此在运行时总有 忽略名单<总名单，总有名字不在忽略列表中，不会死循环，放心吧
-            boolean resultIgnored = (config.getChooseMethod() == MainConfig.METHOD_NAME) ? (data.checkNameIgnored(selectedResult)) : (data.checkNumberIgnored(selectedResult));
-            if (!resultIgnored || !config.getPassSelectedResult() || forceStop) {
+            boolean resultIgnored = (GlobalConfig.mainConfig.getChooseMethod() == MainConfig.METHOD_NAME) ? (data.checkNameIgnored(selectedResult)) : (data.checkNumberIgnored(selectedResult));
+            if (!resultIgnored || !GlobalConfig.mainConfig.getIgnoreSelectedResult() || forceStop) {
                 this.stopSelect();
                 finalResult = true;
                 return;
@@ -83,25 +81,25 @@ public final class Worker {
         resultLabelId = counter.getNewResultLabelId();
         finalResult = false;
 
-        this.selectedResult = this.pick(config.getChooseMethod());
+        this.selectedResult = this.pick(GlobalConfig.mainConfig.getChooseMethod());
     }
 
     public void stopSelect() {
-        if (config.getPassSelectedResult()) {
-            if (config.nameChooseProperty().getValue()) {
+        if (GlobalConfig.mainConfig.getIgnoreSelectedResult()) {
+            if (GlobalConfig.mainConfig.getChooseMethod() == MainConfig.METHOD_NAME) {
                 data.addNameToIgnoreList(selectedResult);
             } else {
                 data.addNumberToIgnoreList(selectedResult);
             }
         }
 
-        if (config.getEqualMode()) {
+        if (GlobalConfig.mainConfig.getEqualMode()) {
             data.writeIgnoreList(Data.IGNORELIST_ALL);
         }
 
         history.addHistory(selectedResult);
 
-        if (config.getVoicePlay() && voicePlayer != null) {
+        if (GlobalConfig.mainConfig.getVoicePlay() && voicePlayer != null) {
             voicePlayer.playVoice(selectedResult);
         }
 
@@ -114,9 +112,9 @@ public final class Worker {
     private String pick(int selectMethod) {
         switch (selectMethod) {
             case MainConfig.METHOD_NAME:
-                return data.randomGet(config.getSecureRandom());
+                return data.randomGet(GlobalConfig.mainConfig.getSecureRandom());
             case MainConfig.METHOD_NUMBER:
-                randomNumber.setUseSecureRandom(config.getSecureRandom());
+                randomNumber.setUseSecureRandom(GlobalConfig.mainConfig.getSecureRandom());
                 return String.valueOf(randomNumber.getRandomNumber(numberRange[MIN_NUMBER], numberRange[MAX_NUMBER]));
             default:
                 return "(´･ω･`)?";

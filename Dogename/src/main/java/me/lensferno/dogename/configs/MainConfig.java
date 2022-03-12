@@ -8,9 +8,7 @@ import javafx.beans.property.SimpleStringProperty;
 public class MainConfig {
 
     // ---------------------- Default values ---------------------------------------------------------
-
     @Expose
-    public static final boolean DEFAULT_NAME_CHOOSE = true;
     public static final int METHOD_NAME = 0; // 名字挑选法
     public static final int METHOD_NUMBER = 1; // 数字挑选法
     public static final int DEFAULT_MAX_TOTAL_COUNT = 120; // 默认轮回次数:120
@@ -21,13 +19,10 @@ public class MainConfig {
     public static final boolean DEFAULT_NEW_ALGO = true; // 默认使用新算法"Java sec random"
     public static final boolean DEFAULT_VOICE_PLAY = true; // 默认使用语音播报
     public static final boolean DEFAULT_SHOW_SAYING = true;
-    private final int currentVersion = 3;
 
     // ----------------------Properties----------------------------------------------------------------
-    private final SimpleBooleanProperty nameChoose;
-
     private final SimpleBooleanProperty randomCount; // 挑选次数是否随机
-    private final SimpleBooleanProperty passSelectedResult; // 是否忽略已经被点过的名字/数字
+    private final SimpleBooleanProperty ignoreSelectedResult; // 是否忽略已经被点过的名字/数字
 
     private final SimpleIntegerProperty chooseMethod; // 挑选方式: 0->名字挑选法 1->数字挑选法
     private final SimpleIntegerProperty maxTotalCount; // 挑选轮回次数
@@ -47,10 +42,9 @@ public class MainConfig {
     // -------------------------- 初始化 --------------------------------------------------------------
     public MainConfig() {
         randomCount = new SimpleBooleanProperty(DEFAULT_RANDOM_TIMES);
-        passSelectedResult = new SimpleBooleanProperty(DEFAULT_IGNORE_PAST);
+        ignoreSelectedResult = new SimpleBooleanProperty(DEFAULT_IGNORE_PAST);
 
         chooseMethod = new SimpleIntegerProperty(METHOD_NAME);
-        nameChoose = new SimpleBooleanProperty(DEFAULT_NAME_CHOOSE);
 
         maxTotalCount = new SimpleIntegerProperty(DEFAULT_MAX_TOTAL_COUNT);
 
@@ -68,19 +62,6 @@ public class MainConfig {
     }
 
     // -------------------------- Getters and Setters ---------------------------------------------
-
-    public boolean getNameChoose() {
-        return nameChoose.get();
-    }
-
-    public void setNameChoose(boolean nameChoose) {
-        this.nameChoose.set(nameChoose);
-    }
-
-    public SimpleBooleanProperty nameChooseProperty() {
-        return nameChoose;
-    }
-
     public boolean getRandomCount() {
         return randomCount.get();
     }
@@ -93,16 +74,16 @@ public class MainConfig {
         return randomCount;
     }
 
-    public boolean getPassSelectedResult() {
-        return passSelectedResult.get();
+    public boolean getIgnoreSelectedResult() {
+        return ignoreSelectedResult.get();
     }
 
-    public void setPassSelectedResult(boolean passSelectedResult) {
-        this.passSelectedResult.set(passSelectedResult);
+    public void setIgnoreSelectedResult(boolean ignoreSelectedResult) {
+        this.ignoreSelectedResult.set(ignoreSelectedResult);
     }
 
-    public SimpleBooleanProperty passSelectedResultProperty() {
-        return passSelectedResult;
+    public SimpleBooleanProperty ignoreSelectedResultProperty() {
+        return ignoreSelectedResult;
     }
 
     public int getChooseMethod() {
@@ -212,9 +193,4 @@ public class MainConfig {
     public SimpleBooleanProperty showSayingProperty() {
         return showSaying;
     }
-
-    public int getCurrentConfigVersion() {
-        return currentVersion;
-    }
-
 }

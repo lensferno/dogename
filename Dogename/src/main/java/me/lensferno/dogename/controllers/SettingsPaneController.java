@@ -9,15 +9,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import me.lensferno.dogename.configs.MainConfig;
-import me.lensferno.dogename.configs.VoiceConfig;
+import me.lensferno.dogename.configs.GlobalConfig;
 import me.lensferno.dogename.data.Data;
 import me.lensferno.dogename.utils.DialogMaker;
-import me.lensferno.dogename.voice.VoicePlayer;
 
 
 public class SettingsPaneController extends VBox {
-    MainConfig mainConfig;
     Pane rootPane;
     Data data;
 
@@ -34,9 +31,9 @@ public class SettingsPaneController extends VBox {
     @FXML
     private JFXCheckBox equalModeBtn;
     @FXML
-    private JFXRadioButton ignoreOnce;
+    private JFXRadioButton ignoreSelectedResultBtn;
     @FXML
-    private JFXRadioButton chooseOnce;
+    private JFXRadioButton notIgnoreSelectedResultBtn;
     @FXML
     private JFXRadioButton randomTimes;
     @FXML
@@ -53,47 +50,48 @@ public class SettingsPaneController extends VBox {
         }
     }
 
-    public void setMainConfig(MainConfig mainConfig) {
-        this.mainConfig = mainConfig;
-    }
-
     public void setRootPane(Pane rootPane) {
         this.rootPane = rootPane;
     }
 
-    public void bindProperties(MainConfig mainConfig) {
-        setMainConfig(mainConfig);
+    private final ToggleGroup chooseRuleToggleGroup = new ToggleGroup();
+    private final ToggleGroup chooseCountRuleToggleGroup = new ToggleGroup();
 
-        ignoreOnce.selectedProperty().bindBidirectional(mainConfig.passSelectedResultProperty());
-        chooseOnce.setSelected(!mainConfig.getPassSelectedResult());
+    public void bindProperties() {
+        ignoreSelectedResultBtn.setToggleGroup(chooseRuleToggleGroup);
+        notIgnoreSelectedResultBtn.setToggleGroup(chooseRuleToggleGroup);
+        chooseRuleToggleGroup.selectToggle(GlobalConfig.mainConfig.getIgnoreSelectedResult() ? ignoreSelectedResultBtn : notIgnoreSelectedResultBtn);
+        chooseRuleToggleGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) ->
+                GlobalConfig.mainConfig.setIgnoreSelectedResult(newValue == ignoreSelectedResultBtn));
 
-        randomTimes.selectedProperty().bindBidirectional(mainConfig.randomCountProperty());
-        fixedTimes.setSelected(!mainConfig.getRandomCount());
-
-        equalModeBtn.selectedProperty().bindBidirectional(mainConfig.equalModeProperty());
-
-        newAlgoBtn.selectedProperty().bindBidirectional(mainConfig.secureRandomProperty());
-
-        voicePlayBtn.selectedProperty().bindBidirectional(mainConfig.voicePlayProperty());
-
-        cycleTimesBar.valueProperty().bindBidirectional(mainConfig.maxTotalCountProperty());
-
-        speedBar.valueProperty().bindBidirectional(mainConfig.speedProperty());
-
-        showSayingBtn.selectedProperty().bindBidirectional(mainConfig.showSayingProperty());
-
-        mainConfig.passSelectedResultProperty().addListener((observable, oldValue, isIgnorePast) -> {
+        GlobalConfig.mainConfig.ignoreSelectedResultProperty().addListener((observable, oldValue, isIgnorePast) -> {
             if (!isIgnorePast) {
-                //如果 忽略被点过的名字 被取消后就把机会均等模式的按钮给取消掉
+                //如果“忽略被点过的名字”选项被取消后就把机会均等模式的按钮给取消掉
                 equalModeBtn.setSelected(false);
             }
         });
+
+        randomTimes.setToggleGroup(chooseCountRuleToggleGroup);
+        fixedTimes.setToggleGroup(chooseCountRuleToggleGroup);
+        chooseCountRuleToggleGroup.selectToggle(GlobalConfig.mainConfig.getRandomCount() ? randomTimes : fixedTimes);
+        chooseCountRuleToggleGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) ->
+                GlobalConfig.mainConfig.setRandomCount(newValue == randomTimes));
+
+        newAlgoBtn.selectedProperty().bindBidirectional(GlobalConfig.mainConfig.secureRandomProperty());
+
+        voicePlayBtn.selectedProperty().bindBidirectional(GlobalConfig.mainConfig.voicePlayProperty());
+
+        cycleTimesBar.valueProperty().bindBidirectional(GlobalConfig.mainConfig.maxTotalCountProperty());
+
+        speedBar.valueProperty().bindBidirectional(GlobalConfig.mainConfig.speedProperty());
+
+        showSayingBtn.selectedProperty().bindBidirectional(GlobalConfig.mainConfig.showSayingProperty());
     }
 
     public void setToggleGroup() {
         ToggleGroup pastGroup = new ToggleGroup();
-        chooseOnce.setToggleGroup(pastGroup);
-        ignoreOnce.setToggleGroup(pastGroup);
+        notIgnoreSelectedResultBtn.setToggleGroup(pastGroup);
+        ignoreSelectedResultBtn.setToggleGroup(pastGroup);
 
         ToggleGroup fixedTimesGroup = new ToggleGroup();
         randomTimes.setToggleGroup(fixedTimesGroup);
@@ -123,7 +121,7 @@ public class SettingsPaneController extends VBox {
 
     @FXML
     void equalBtnAction(ActionEvent event) {
-        if (!mainConfig.getPassSelectedResult()) {
+        if (!GlobalConfig.mainConfig.getIgnoreSelectedResult()) {
             equalModeBtn.setSelected(false);
             new DialogMaker(rootPane).createMessageDialog("且慢",
                     "无法在“概率均分”的模式下使用，如需使用请在“人人有份”模式下启用。");
