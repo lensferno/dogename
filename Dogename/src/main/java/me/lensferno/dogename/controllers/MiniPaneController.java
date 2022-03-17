@@ -53,9 +53,12 @@ public class MiniPaneController {
         this.selector.setLabelTexts(chosenNameLabel.textProperty());
     }
 
+    public void setOldTextProperties(StringProperty ...stringProperty) {
+        this.oldTextProperties = stringProperty;
+    }
+
     @FXML
     void recoverMode(ActionEvent event) {
-        // todo: 待修复：界面恢复后label无法正常显示名字
         this.oldStage.setOnShown((e) -> selector.setLabelTexts(oldTextProperties));
         this.oldStage.show();
 

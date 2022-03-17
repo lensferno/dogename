@@ -97,9 +97,7 @@ public final class Selector {
         }
 
         public void setNumberRange() {
-            int minNumber = Integer.parseInt(GlobalConfig.mainConfig.getMinNumber());
-            int maxNumber = Integer.parseInt(GlobalConfig.mainConfig.getMaxNumber());
-            coreWorker.setNumberRange(minNumber, maxNumber);
+            coreWorker.setNumberRange();
         }
     }
 }

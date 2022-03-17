@@ -144,9 +144,9 @@ public final class Worker {
         return stoppedIndicator;
     }
 
-    public void setNumberRange(int minNumber, int maxNumber) {
-        this.numberRange[MIN_NUMBER] = minNumber;
-        this.numberRange[MAX_NUMBER] = maxNumber;
+    public void setNumberRange() {
+        this.numberRange[MIN_NUMBER] = Integer.parseInt(GlobalConfig.mainConfig.getMinNumber());
+        this.numberRange[MAX_NUMBER] = Integer.parseInt(GlobalConfig.mainConfig.getMaxNumber());
     }
 
     public void setForceStop(boolean forceStop) {

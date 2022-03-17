@@ -144,6 +144,7 @@ public final class MainInterfaceController {
         miniPaneController.setCurrentScene(miniScene);
 
         miniPaneController.setListeners();
+        miniPaneController.setOldTextProperties(upperLabel.textProperty(), downLabel.textProperty());
 
         miniStage.show();
         currentStage.hide();
